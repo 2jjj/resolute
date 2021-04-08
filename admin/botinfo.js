@@ -14,6 +14,7 @@ module.exports.run = async (client, message, args) => {
   .addField(" ❤️ Meu criador"," ▸ <@!798574984582791208>") 
   .addField(" 📅 Dia que o bot foi criado", " ▸ 20/12/2020")
   .addField(" 🛠️ Linguagem"," ▸ JavaScript")
+  .addField(` 🕶️ Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`)
   .addField(" 🗜️ Meu prefixo"," ▸ s.")
 
   await message.channel.send(embed);
