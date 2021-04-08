@@ -1,26 +1,13 @@
-const express = require('express');
-const app = express();
 const Discord = require("discord.js"); 
 const client = new Discord.Client(); 
 const config = require("./config.json");
-
-
-app.get("/", (request, response) => {
-  const ping = new Date();
-  ping.setHours(ping.getHours() - 3);
-  console.log(`Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT); 
 
   client.on('ready', () => {
       let activities_list = [
         "",
         "Digite s.help para ajuda!",
-        "Me adicione > spr4y.xyz/resolute.html",
-        "Meu criador é o Spray!",
+        "spr4y.xyz/resolute.html",
         `Estou em ${client.guilds.cache.size} servidores!🔥`,
-        `Com ${client.users.cache.size} Pessoas! 🔥`
       ];
       console.log(`Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
       setInterval(() => {
