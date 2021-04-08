@@ -7,7 +7,7 @@ const config = require("./config.json");
         "",
         "Digite s.help para ajuda!",
         "spr4y.xyz/resolute.html",
-        `Estou em ${client.guilds.cache.size} servidores!🔥`,
+        `Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`,
       ];
       console.log(`Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
       setInterval(() => {
