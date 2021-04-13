@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
     .setTitle("Comando de Ajuda!")
     .setURL("http://spr4y.xyz/resolute.html")
     .setColor(0x00AE86)
-    .setDescription("🚓 - Moderação.\n🤖 - Comandos de diversão\n👽 - Outros comanos")
+    .setDescription("👽 - Outros comandos\n🤖 - Comandos de diversão\n🚓 - Moderação.\n")
     .setFooter("Help, ")
     .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
     .setTimestamp()
