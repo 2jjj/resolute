@@ -25,11 +25,11 @@ exports.run = async (bot, message, args) => {
 
       //embed moderação.
       let embed_1 = new Discord.MessageEmbed()
-      .setTitle("Moderação - Resolute")
+      .setTitle("\nModeração - Resolute")
       .setAuthor("Resolute", "https://cdn.discordapp.com/avatars/798574984582791208/3a984f4ef094773d2bd139a0ea9fbddc.png?size=1024")
       .setColor(0x00AE86)
       .setDescription("\n**Emoji - adicionar emojis de outros servidores para o seu!\n\n Invite Block - Bloqueia invites de outros servidores!\n\n UserInfo - Mostrar a informação de um usuário que você marcar.\n\n Servericon - Mostrar o icone do servidor\n\n Serverinfo - Mostrar as informações do servidor.\n\n Ban - Dê ban alguém do servidor.\n\n Warn - Avise algum membro do servidor.\n\n Kick - Chute alguém do servidor.\n\n**")
-      .setFooter("Help, ")
+      .setFooter("")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       .setTimestamp()
       msg.edit(embed_1)
@@ -38,11 +38,11 @@ exports.run = async (bot, message, args) => {
 
     fun.on(`collect`, r => {
       let embed_2 = new Discord.MessageEmbed()
-        .setTitle("Fun - Resolute")
+        .setTitle("\nFun - Resolute")
         .setAuthor("Resolute", "https://cdn.discordapp.com/avatars/798574984582791208/3a984f4ef094773d2bd139a0ea9fbddc.png?size=1024")
         .setColor(0x00AE86)
         .setDescription("\n**Avatar - Veja o avatar de alguém.\n\n Kiss - Beije alguém virtualmente.\n\n Hug - Abraçe alguém virtualmente.\n\n Coinflip - Jogue cara ou coroa.\n\n**")
-        .setFooter("Help, ")
+        .setFooter("")
         .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
         .setTimestamp()
       msg.edit(embed_2)
@@ -51,11 +51,11 @@ exports.run = async (bot, message, args) => {
   
     outros.on(`collect`, r => {
       let embed_3 = new Discord.MessageEmbed()
-        .setTitle("Outros - Resolute")
+        .setTitle("\nOutros - Resolute")
         .setAuthor("Resolute", "https://cdn.discordapp.com/avatars/798574984582791208/3a984f4ef094773d2bd139a0ea9fbddc.png?size=1024")
         .setColor(0x00AE86)
         .setDescription("\n**Sugestão - De uma Sugestão para o servidor.\n\nUptime - Veja quanto tempo estou online.\n\nPing - Veja a minha latência\n\nLembrete - Defina algum lembrete.\n\nBotinfo - Saiba as informações sobre o Resolute.\n\nSay - Para eu falar oque você deseja!\n\n**")
-        .setFooter("Help, ")
+        .setFooter("")
         .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
         .setTimestamp()
       msg.edit(embed_3)
@@ -68,7 +68,7 @@ exports.run = async (bot, message, args) => {
         .setURL("http://spr4y.xyz/resolute.html")
         .setColor(0x00AE86)
         .setDescription("***🚓 - Moderação.\n\n\n🤖 - Comandos de diversão\n\n\n👽 - Outros comandos***")
-        .setFooter("Help, ")
+        .setFooter("")
         .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
         .setTimestamp()
       msg.edit(embed_voltar)
