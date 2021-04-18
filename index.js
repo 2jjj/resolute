@@ -6,7 +6,7 @@ const config = require("./config.json");
       let activities_list = [
         "",
         "Prefixo: s.help",
-        "spr4y.xyz/resolute.html",
+        "spr4y.xyz/resolute",
         `Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`,
       ];
       console.log(`Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
