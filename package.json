@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "um simples bot de ajuda",
   "main": "index.js",
   "scripts": {

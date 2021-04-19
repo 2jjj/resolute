@@ -4,8 +4,6 @@ const config = require("./config.json");
 
   client.on('ready', () => {
       let activities_list = [
-        "",
-        "Prefixo: s.help",
         "spr4y.xyz/resolute",
         `Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`,
       ];
