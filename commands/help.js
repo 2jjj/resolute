@@ -5,7 +5,7 @@ exports.run = async (bot, message, args) => {
   let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-      \n> Moderação - 🚓
+      \n> Moderação - <a:sprayzado:833804539332657232>
       \n> Fun - 🤖
       \n> Outros - 👽
       **
@@ -14,7 +14,7 @@ exports.run = async (bot, message, args) => {
     .setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif")
   message.channel.send(message.author, embed).then(msg => {
     msg.react(`⬅️`).then(() => {
-      msg.react(`🚓`);
+      msg.react(`<a:sprayzado:833804539332657232>`);
       msg.react(`🤖`);
       msg.react(`👽`);
     })
@@ -22,7 +22,7 @@ exports.run = async (bot, message, args) => {
     const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `⬅️` && user.id == message.author.id, { time: 20000 })
     const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `👽` && user.id == message.author.id, { time: 20000 })
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `🤖` && user.id == message.author.id, { time: 20000 })
-    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `🚓` && user.id == message.author.id, { time: 20000 })
+    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `833804539332657232` && user.id == message.author.id, { time: 20000 })
 
     moderacao.on(`collect`, r => {
 
