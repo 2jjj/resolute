@@ -16,26 +16,13 @@ const config = require("./config.json");
       }, 5000);
   });
 
+  client.on('message', message=> {
+    if (message.mentions.has(client.user.id)) {
+      message.channel.send("👾 Olá!\n > Meu prefixo é s. \n > Me adicione! **https://top.gg/bot/764919941538775050**");
+  };
+  });
 
-client.on('message', message => {
-     if (message.author.bot) return;
-     if (message.channel.type == 'dm') return;
-     if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
-     if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
-
-    const args = message.content
-        .trim().slice(config.prefix.length)
-        .split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    try {
-        const commandFile = require(`./commands/${command}.js`)
-        commandFile.run(client, message, args);
-    } catch (err) {
-    console.error('Erro:' + err);
-  }
-});
-
+client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./commands/${r}.js`).run(client,t,e)}catch(t){console.error("Erro:"+t)}});
 client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./admin/${r}.js`).run(client,t,e)}catch(t){console.error("Erro:"+t)}});
 
 client.login("NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.bPM1dr3Fe2DpZWzxA5HcXEZKlKw");
