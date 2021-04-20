@@ -5,31 +5,33 @@ exports.run = async (bot, message, args) => {
   let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-      \n> Moderação - <a:sprayzado:833804539332657232>
-      \n> Fun - 🤖
-      \n> Outros - 👽
+      \n> Moderação - <a:1_:834087521230258245>
+      \n> Fun - <a:2_:834087530579361813>
+      \n> Outros - <a:3_:834087539043598347>
       **
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
     .setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif")
   message.channel.send(message.author, embed).then(msg => {
     msg.react(`⬅️`).then(() => {
-      msg.react(`<a:sprayzado:833804539332657232>`);
-      msg.react(`🤖`);
-      msg.react(`👽`);
+      msg.react(`<a:1_:834087521230258245>`);
+      msg.react(`<a:2_:834087530579361813>`);
+      msg.react(`<a:3_:834087539043598347>`);
     })
 
     const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `⬅️` && user.id == message.author.id, { time: 20000 })
-    const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `👽` && user.id == message.author.id, { time: 20000 })
-    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `🤖` && user.id == message.author.id, { time: 20000 })
-    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `833804539332657232` && user.id == message.author.id, { time: 20000 })
-
+    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `834087521230258245` && user.id == message.author.id, { time: 20000 })
+    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `834087530579361813` && user.id == message.author.id, { time: 20000 })
+    const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `834087539043598347` && user.id == message.author.id, { time: 20000 })
+    
     moderacao.on(`collect`, r => {
 
       //embed moderação.
       let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Moderação <a:spr4y:833819662894628884> 
+        \n> s.lock
+        \n> s.unlock
         \n> s.ban
         \n> s.botinfo
         \n> s.clear
@@ -48,6 +50,7 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Fun <a:spr4y:833819662894628884> 
+        \n> s.meme
         \n> s.coinflip
         \n> s.kiss
         \n> s.hug
@@ -64,6 +67,7 @@ exports.run = async (bot, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Outros <a:spr4y:833819662894628884> 
+        \n> s.covid | Fique em casa!
         \n> s.help
         \n> s.userinfo
         \n> s.avatar
@@ -84,13 +88,13 @@ exports.run = async (bot, message, args) => {
       let embed_voltar = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-        \n> Moderação - <a:sprayzado:833804539332657232>
-        \n> Fun - 🤖
-        \n> Outros - 👽
-        **
-      `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
-      .setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif")
+      \n> Moderação - <a:1_:834087521230258245>
+      \n> Fun - <a:2_:834087530579361813>
+      \n> Outros - <a:3_:834087539043598347>
+      **
+    `)
+    .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
+    .setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif")
       msg.edit(embed_voltar)
       r.users.remove(message.author.id)
     })
