@@ -35,7 +35,7 @@ exports.run = async (bot, message, args) => {
         \n> s.ban
         \n> s.botinfo
         \n> s.clear
-        \n> s.inviteblock
+        \n> s.inviteblock (DESENVOLVIMENTO)
         \n> s.kick
         \n> s.warn
         **
@@ -54,7 +54,7 @@ exports.run = async (bot, message, args) => {
         \n> s.coinflip
         \n> s.kiss
         \n> s.hug
-        \n> s.say
+        \n> s.say (DESENVOLVIMENTO)
         **
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824309499002900/image0_2.gif")
