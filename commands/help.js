@@ -36,14 +36,6 @@ exports.run = async (bot, message, args) => {
         \n> s.inviteblock
         \n> s.kick
         \n> s.warn
-        \n> s.help
-        \n> s.userinfo
-        \n> s.avatar
-        \n> s.status
-        \n> s.sugestão
-        \n> s.uptime
-        \n> s.ping
-        \n> s.emoji
         **
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824445742448680/image8.gif")
@@ -72,7 +64,14 @@ exports.run = async (bot, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Outros <a:spr4y:833819662894628884> 
-        \n> INDISPONIVEL POR ENQUANTO.
+        \n> s.help
+        \n> s.userinfo
+        \n> s.avatar
+        \n> s.status
+        \n> s.sugestão
+        \n> s.uptime
+        \n> s.ping
+        \n> s.emoji
         **
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
@@ -85,7 +84,7 @@ exports.run = async (bot, message, args) => {
       let embed_voltar = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-        \n> Moderação - 🚓
+        \n> Moderação - <a:sprayzado:833804539332657232>
         \n> Fun - 🤖
         \n> Outros - 👽
         **
@@ -96,4 +95,4 @@ exports.run = async (bot, message, args) => {
       r.users.remove(message.author.id)
     })
   })
-}
+} 
