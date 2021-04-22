@@ -5,7 +5,6 @@ exports.run = async (bot, message, args) => {
   let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-      \n> *Para reportar problemas chame meu dono, <@798574984582791208>*
       \n> Moderação - <a:1_:834087521230258245>
       \n> Fun - <a:2_:834087530579361813>
       \n> Outros - <a:3_:834087539043598347>
@@ -85,20 +84,6 @@ exports.run = async (bot, message, args) => {
       r.users.remove(message.author.id)
     })
 
-    voltar.on(`collect`, r => {
-      let embed_voltar = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> 
-        \n> *Para reportar problemas chame meu dono, <@798574984582791208>*
-        \n> Moderação - <a:1_:834087521230258245>
-        \n> Fun - <a:2_:834087530579361813>
-        \n> Outros - <a:3_:834087539043598347>
-        **
-      `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
-      .setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif")
-      msg.edit(embed_voltar)
-      r.users.remove(message.author.id)
-    })
+    voltar.on("collect",e=>{let a=(new Discord.MessageEmbed).setColor("#e1ff00").setDescription("**<a:spr4y:833819662894628884> Comando de ajuda. <a:spr4y:833819662894628884> \n        \n> *Para dar sugestões ou reportar problemas, s.report\n        \n> Moderação - <a:1_:834087521230258245>\n        \n> Fun - <a:2_:834087530579361813>\n        \n> Outros - <a:3_:834087539043598347>\n        **\n      ").setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif").setThumbnail("https://cdn.discordapp.com/attachments/833789118986059836/833806024279851068/download.gif");msg.edit(a),e.users.remove(message.author.id)});
   })
 } 

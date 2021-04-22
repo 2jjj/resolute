@@ -16,6 +16,7 @@
     "firebase": "^8.2.1",
     "fs": "0.0.1-security",
     "google-translate-api": "^2.3.0",
+    "imageapi.js": "^1.6.1",
     "lyrics-finder": "^21.7.0",
     "moment": "^2.29.1",
     "novelcovid": "^3.0.0",
