@@ -50,7 +50,7 @@ os comandos de música estão sendo atualizados da versão v11 para a v12 do dis
 
 O projeto é desenvolvido pelo [Spray](https://github.com/sprayx) apenas, mas estou aceitando novos contribuidores para o github ou desenvolvedores
 
-- [Pull Request](https://github.com/tamzi/ReadMe-MasterTemplates/pulls)
+- [Pull Request](https://github.com/sprayx/Resolute/pulls)
 
 
 <hr>
