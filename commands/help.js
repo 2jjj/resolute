@@ -66,7 +66,6 @@ exports.run = async (bot, message, args) => {
         \n> s.kiss
         \n> s.hug
         \n> s.say
-        \n> s.sayembed
         **
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824309499002900/image0_2.gif")
