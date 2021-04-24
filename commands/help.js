@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) => {
     **http://spr4y.xyz/resolute**
 
     > <:info:835206734225473546> Lista de comandos
-    **http://spr4y.xyz/resolute#comandos**
+    **http://spr4y.xyz/resolute#commands**
   `)
   .setImage(avatar)
   .setThumbnail(avatar)
