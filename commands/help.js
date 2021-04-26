@@ -9,14 +9,14 @@ exports.run = async (bot, message, args) => {
       > Outros - <a:3___:836268637257990184>
       > Random - <a:4_:836268669516251136>
       > Games - <a:5___:836268658795347990>
-      > Voltar - ⬅️
+      > Voltar - <:Voltar:836330128073687092>
       \n » **Links**:
       > http://spr4y.xyz/resolute
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
   message.channel.send(message.author, embed).then(msg => {
-    msg.react(`⬅️`).then(() => {
+    msg.react(`<:Voltar:836330128073687092>`).then(() => {
       msg.react(`<a:1__:836268679263027230>`);
       msg.react(`<a:2_:836268689484546088>`);
       msg.react(`<a:3___:836268637257990184>`);
@@ -25,7 +25,7 @@ exports.run = async (bot, message, args) => {
     })
     
     //Emojis
-    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.name == `⬅️` && user.id == message.author.id, { time: 20000 })
+    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 20000 })
     const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268679263027230` && user.id == message.author.id, { time: 20000 })
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 20000 })
     const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 20000 })
@@ -143,7 +143,7 @@ exports.run = async (bot, message, args) => {
         > Outros - <a:3___:836268637257990184>
         > Random - <a:4_:836268669516251136>
         > Games - <a:5___:836268658795347990>
-        > Voltar - ⬅️
+        > Voltar - <:Voltar:836330128073687092>
         \n » **Links**:
         > http://spr4y.xyz/resolute
       `)
