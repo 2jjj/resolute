@@ -8,6 +8,8 @@ exports.run = async (bot, message, args) => {
       > Fun - <a:2_:836268689484546088>
       > Outros - <a:3___:836268637257990184>
       > Random - <a:4_:836268669516251136>
+      > Games - <a:5___:836268658795347990>
+      > Voltar - ⬅️
       \n » **Links**:
       > http://spr4y.xyz/resolute
     `)
@@ -140,6 +142,8 @@ exports.run = async (bot, message, args) => {
         > Fun - <a:2_:836268689484546088>
         > Outros - <a:3___:836268637257990184>
         > Random - <a:4_:836268669516251136>
+        > Games - <a:5___:836268658795347990>
+        > Voltar - ⬅️
         \n » **Links**:
         > http://spr4y.xyz/resolute
       `)
