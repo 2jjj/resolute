@@ -8,7 +8,7 @@ const { APIMessage, Structures } = require("discord.js");
       let activities_list = [
         ``,
         `Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`,
-        `spr4y.xyz/resolute`,
+        `spr4y.xyz/resolute.html`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
