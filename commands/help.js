@@ -98,7 +98,7 @@ exports.run = async (bot, message, args) => {
       > **s.status**
       > **s.sugestão**
       > **s.uptime**
-      > **s.votacao**
+      > **s.votar**
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
