@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
   .setDescription("⠀")
   .setColor("RANDOM")
   .setThumbnail(avatar)
-  .addField(" ❤️ Meu criador"," ▸ <@!798574984582791208>") 
+  .addField(" ❤️ Meu criador"," ▸ <@!798574984582791208>, <@!836345581424738354>") 
   .addField(" 📅 Dia que o bot foi criado", " ▸ 11/10/2020")
   .addField(" 🛠️ Linguagem"," ▸ JavaScript")
   .addField(` 🕶️ Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`)
