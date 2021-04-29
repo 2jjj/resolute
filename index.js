@@ -7,17 +7,18 @@ const { APIMessage, Structures } = require("discord.js");
   client.on('ready', () => {
       let activities_list = [
         ``,
-        `Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`,
+        `Com ${client.guilds.cache.size} servidores & ${client.users.cache.size} pessoas <3`,
         `spr4y.xyz/resolute.html`,
+        `Versão 1.1`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
           client.user.setActivity(activities_list[index]);
       }, 5000);
 
-      console.log(`[+] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
-      console.log(`[+] => Database iniciada.`)
-      console.log(`[+] => Config carregada.`)
+      console.log(`[INFO] - [+] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
+      console.log(`[INFO] - [+] => Database iniciada.`)
+      console.log(`[INFO] - [+] => Config carregada.`)
     });
 
   client.on('message', message=> {
