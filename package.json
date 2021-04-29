@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bot de diversão, moderação e outros comandos.",
   "main": "index.js",
   "scripts": {
