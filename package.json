@@ -1,7 +1,7 @@
 {
   "name": "resolute",
   "version": "1.0.0",
-  "description": "um simples bot de ajuda",
+  "description": "Bot de diversão, moderação e outros comandos.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
