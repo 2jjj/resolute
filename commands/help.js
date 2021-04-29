@@ -11,7 +11,7 @@ exports.run = async (bot, message, args) => {
       > Games - <a:5___:836268658795347990>
       > Voltar - <:Voltar:836330128073687092>
       \n » **Links**:
-      > http://spr4y.xyz/resolute
+      > http://spr4y.xyz/resolute.html
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
@@ -37,23 +37,23 @@ exports.run = async (bot, message, args) => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
-      > **s.aviso**
-      > **s.ban**
-      > **s.banlist**
-      > **s.botinfo**
-      > **s.clear**
-      > **s.inviteblock**
-      > **s.kick**
-      > **s.lock**
-      > **s.report**
-      > **s.servericon**
-      > **s.serverinfo**
-      > **s.userinfo**
-      > **s.unlock**
-      > **s.warn**
-      > **s.welcome**
+      > ⇝ **s.aviso**
+      > ⇝ **s.ban**
+      > ⇝ **s.banlist**
+      > ⇝ **s.botinfo**
+      > ⇝ **s.clear**
+      > ⇝ **s.inviteblock**
+      > ⇝ **s.kick**
+      > ⇝ **s.lock**
+      > ⇝ **s.report**
+      > ⇝ **s.servericon**
+      > ⇝ **s.serverinfo**
+      > ⇝ **s.userinfo**
+      > ⇝ **s.unlock**
+      > ⇝ **s.warn**
+      > ⇝ **s.welcome**
       `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_1)
       //r.users.remove(message.author.id)
@@ -64,19 +64,18 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > **s.carinho**
-      > **s.coinflip**
-      > **s.highfive**
-      > **s.hug**
-      > **s.kiss**
-      > **s.matar**
-      > **s.meme**
-      > **s.morder**
-      > **s.pisar**
-      > **s.say**
-      > **s.ship**
+      > **⇝ s.carinho**
+      > **⇝ s.coinflip**
+      > **⇝ s.highfive**
+      > **⇝ s.hug**
+      > **⇝ s.kiss**
+      > **⇝ s.meme**
+      > **⇝ s.morder**
+      > **⇝ s.pisar**
+      > **⇝ s.say**
+      > **⇝ s.ship**
       `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
+      .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_2)
       //r.users.remove(message.author.id)
@@ -87,20 +86,20 @@ exports.run = async (bot, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
-      > **s.ascii**
-      > **s.avatar**
-      > **s.clima**
-      > **s.covid**
-      > **s.emoji**
-      > **s.horas**
-      > **s.ping**
-      > **s.sorteador**
-      > **s.status**
-      > **s.sugestão**
-      > **s.uptime**
-      > **s.votar**
+      > **⇝ s.ascii**
+      > **⇝ s.avatar**
+      > **⇝ s.clima**
+      > **⇝ s.covid**
+      > **⇝ s.emoji**
+      > **⇝ s.horas**
+      > **⇝ s.ping**
+      > **⇝ s.sorteador**
+      > **⇝ s.status**
+      > **⇝ s.sugestão**
+      > **⇝ s.uptime**
+      > **⇝ s.votar**
       `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
+      .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_3)
       //r.users.remove(message.author.id)
@@ -110,10 +109,10 @@ exports.run = async (bot, message, args) => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Random:**\n
-      > **s.stonks**
-      > **s.notstonks**
+      > **⇝ s.stonks**
+      > **⇝ s.notstonks**
       `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
+      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_4)
     })
@@ -122,11 +121,12 @@ exports.run = async (bot, message, args) => {
       let embed_5 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Games:**\n
-      > **s.minecraft**
-      > **s.valorant**
-      > **s.steam**
+      > **⇝ s.minecraft**
+      > **⇝ s.valorant**
+      > **⇝ s.valorant**
+      > **⇝ s.steam**
       `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833824277832663040/a_9d9bbd759d56a3bedbf6aaedf9ef1507.gif")
+      .setImage("https://i.pinimg.com/originals/cc/1e/4a/cc1e4a2ec356aee8ed91a2ffd99a3862.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_5)
     })
@@ -145,7 +145,7 @@ exports.run = async (bot, message, args) => {
         > Games - <a:5___:836268658795347990>
         > Voltar - <:Voltar:836330128073687092>
         \n » **Links**:
-        > http://spr4y.xyz/resolute
+        > http://spr4y.xyz/resolute.html
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)

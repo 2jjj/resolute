@@ -13,12 +13,12 @@ exports.run = async (client, message, args) => {
     const msg = await canal.send(
       new Discord.MessageEmbed()
       .setColor("#FFFFF1")
-      .addField("Autor:", message.author)
-      .addField("Conteúdo", content)
-      .setFooter("ID do Autor: " + message.author.id)
+      .addField("<:info:835206734225473546> ⇝ Autor:", message.author)
+      .addField("<:info:835206734225473546> ⇝ Conteúdo", content)
+      .setFooter("<:info:835206734225473546> ⇝ ID do Autor: " + message.author.id)
       .setTimestamp()
     );
-    await message.channel.send(`${message.author} a mensagem foi enviada com sucesso!`);
+    await message.channel.send(`${message.author} A mensagem foi enviada com sucesso!`);
 
     const emojis = ["✔️", "❎"];
 

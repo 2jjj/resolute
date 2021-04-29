@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
   var noargs = new Discord.MessageEmbed()
     .setColor('BLUE')
     .setTitle('⛅')
-    .setDescription('• Aqui você pode ver o clima de qualquer lugar do mundo, explore o clima dos paises e cidades.')
+    .setDescription('<:info:835206734225473546> » Aqui você pode ver o clima de qualquer lugar do mundo, explore o clima dos paises e cidades.')
     .addField("Exemplo", '`' + prefix + 'clima SP ou São Paulo`')
 
   if (!args[0]) { return message.channel.send(noargs) }
