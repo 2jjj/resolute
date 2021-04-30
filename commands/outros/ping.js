@@ -15,7 +15,7 @@ exports.run = async(bot, message, args) => { // Aqui definimos nosso client, mes
     .setTitle(message.author.username)
     .setColor('RANDOM')
     .setThumbnail(message.author.displayAvatarURL())
-    .setDescription("Espero que não esteja alto <:hmm:834796010323574794>!")
+    .setDescription("Espero que não esteja alto <:2637settings:837767461138071572>!")
     .addField(`<a:check:835206263075242029> ⇝ Help`, [
         `Use \`s.help\` para saber mais comandos!`
     ])

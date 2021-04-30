@@ -11,10 +11,10 @@ module.exports.run = async (client, message, args) => {
   let uptime = `🗓️ ${days.toFixed()} dias\n🗓️ ${hours.toFixed()} horas\n🗓️ ${minutes.toFixed()} minutos\n🗓️ ${seconds.toFixed()} segundos`;
 
   const embed = new Discord.MessageEmbed()
-    .setTitle(`Tempo de atividade 🕰️`)
+    .setTitle(`<:3999activity:837769393290477629> Tempo de atividade 🕰️`)
     .setThumbnail("https://imgur.com/WZMylbw.gif")
     .setColor("#FF0000")
-    .setDescription(`**Estou online há:**\n${uptime}`)
+    .setDescription(`**<:info:835206734225473546> Estou online há:**\n${uptime}`)
 
   message.channel.send(embed);
 };

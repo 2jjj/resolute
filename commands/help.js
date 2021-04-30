@@ -4,14 +4,14 @@ exports.run = async (bot, message, args) => {
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
       \n » **Comandos**:
-      > Moderação - <a:1__:836268679263027230>
-      > Fun - <a:2_:836268689484546088>
-      > Outros - <a:3___:836268637257990184>
-      > Random - <a:4_:836268669516251136>
-      > Games - <a:5___:836268658795347990>
-      > Voltar - <:Voltar:836330128073687092>
+      > <:2044settings:837769393307123812> Moderação - <a:1__:836268679263027230>
+      > <:2044settings:837769393307123812> Fun - <a:2_:836268689484546088>
+      > <:2044settings:837769393307123812> Outros - <a:3___:836268637257990184>
+      > <:2044settings:837769393307123812> Random - <a:4_:836268669516251136>
+      > <:2044settings:837769393307123812> Games - <a:5___:836268658795347990>
+      > <:2044settings:837769393307123812> Voltar - <:Voltar:836330128073687092>
       \n » **Links**:
-      > http://spr4y.xyz/resolute.html
+      > https://spr4y.xyz/resolute
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
@@ -138,12 +138,12 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
         \n » **Comandos**:
-        > Moderação - <a:1__:836268679263027230>
-        > Fun - <a:2_:836268689484546088>
-        > Outros - <a:3___:836268637257990184>
-        > Random - <a:4_:836268669516251136>
-        > Games - <a:5___:836268658795347990>
-        > Voltar - <:Voltar:836330128073687092>
+        > <:2044settings:837769393307123812> Moderação - <a:1__:836268679263027230>
+        > <:2044settings:837769393307123812> Fun - <a:2_:836268689484546088>
+        > <:2044settings:837769393307123812> Outros - <a:3___:836268637257990184>
+        > <:2044settings:837769393307123812> Random - <a:4_:836268669516251136>
+        > <:2044settings:837769393307123812> Games - <a:5___:836268658795347990>
+        > <:2044settings:837769393307123812> Voltar - <:Voltar:836330128073687092>
         \n » **Links**:
         > http://spr4y.xyz/resolute.html
       `)

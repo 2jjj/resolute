@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
 
     var embed = new Discord.MessageEmbed()
         .setColor('BLUE')
-        .setTitle(`Votação aberta por ${message.author.username}`)
+        .setTitle(`<:info:835206734225473546> | Votação aberta por ${message.author.username}`)
         .setDescription(content)
 
     if (!content) { return message.inlineReply('`' + prefix + 'votar O que você quer que seja votado.`') }
