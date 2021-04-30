@@ -3,14 +3,14 @@ exports.run = async (bot, message, args) => {
   let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
-      \n » **Comandos**:
+      \n » **Comandos:**\n
       <:info:835206734225473546> | Moderação - <a:1__:836268679263027230>
       <:info:835206734225473546> | Fun - <a:2_:836268689484546088>
       <:info:835206734225473546> | Outros - <a:3___:836268637257990184>
       <:info:835206734225473546> | Random - <a:4_:836268669516251136>
       <:info:835206734225473546> | Games - <a:5___:836268658795347990>
       <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
-      \n » **Links**:
+      \n » **Links:**
       > http://spr4y.xyz/resolute
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
@@ -137,14 +137,14 @@ exports.run = async (bot, message, args) => {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
-        \n » **Comandos**:
+        \n » **Comandos:**\n
         <:info:835206734225473546> | Moderação - <a:1__:836268679263027230>
         <:info:835206734225473546> | Fun - <a:2_:836268689484546088>
         <:info:835206734225473546> | Outros - <a:3___:836268637257990184>
         <:info:835206734225473546> | Random - <a:4_:836268669516251136>
         <:info:835206734225473546> | Games - <a:5___:836268658795347990>
         <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
-        \n » **Links**:
+        \n » **Links:**
         > http://spr4y.xyz/resolute
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
