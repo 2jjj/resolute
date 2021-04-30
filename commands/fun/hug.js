@@ -11,7 +11,7 @@ var list = [
 var rand = list[Math.floor(Math.random() * list.length)];
 let user = message.mentions.users.first() || client.users.cache.get(args[0]);
 if (!user) {
-return message.reply('lembre-se de mencionar um usuário válido para abraçar!');
+return message.reply('<:info:835206734225473546> | lembre-se de mencionar um usuário válido para abraçar!');
 }
 /*
 message.channel.send(`${message.author.username} **acaba de abraçar** ${user.username}! :heart:`, {files: [rand]});

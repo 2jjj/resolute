@@ -9,7 +9,7 @@ const { APIMessage, Structures } = require("discord.js");
         ``,
         `Com ${client.guilds.cache.size} servidores & ${client.users.cache.size} pessoas <3`,
         `spr4y.xyz/resolute.html`,
-        `Versão 1.1`,
+        `Versão 1.2`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
