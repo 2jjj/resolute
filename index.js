@@ -8,7 +8,7 @@ const { APIMessage, Structures } = require("discord.js");
       let activities_list = [
         ``,
         `Com ${client.guilds.cache.size} servidores & ${client.users.cache.size} pessoas <3`,
-        `spr4y.xyz/resolute.html`,
+        `spr4y.xyz/resolute`,
         `Versão 1.2`,
       ];
       setInterval(() => {
