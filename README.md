@@ -22,7 +22,7 @@
 
 ### Descrição
 
-Resolute é um bot de Fun/Moderação/Social/Anime.
+Resolute é um bot de Fun/Moderação/Social/Anime/Economia.
 os comandos de música estão sendo atualizados da versão v11 para a v12 do discord.js
  - [Adicione o resolute](https://discord.com/oauth2/authorize?client_id=764919941538775050&permissions=8&scope=bot)
  - [Website](http://spr4y.xyz/resolute)
