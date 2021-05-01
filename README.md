@@ -4,7 +4,7 @@
   <h2 align="center">Resolute Bot (V 1.3)</h2>
 
   <p align="center">
-        Aceitando contribuições no projeto/documentação.
+        Aceitando contribuições no Projeto/Documentação.
     <br>
     </p>
 </p>
