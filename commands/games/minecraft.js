@@ -24,5 +24,5 @@ exports.run = async (client, message, args) => {
     .addField(`${site}`, `${link1}`)
     .addField(`${ps}`, `${link2}`)
     .setFooter(`Plataformas: ${win}, ${mc}, ${li}, ${an}, ${ios}, ${x} 360/One, Raspberry Pi, Windows Phone, ${pt} 4/Vita, Wii U, tvOS, ${nsw}, New Nintendo 3DS`)
-  return message.channel.send(GameEmbed)
+   return message.channel.send(GameEmbed)
 }
