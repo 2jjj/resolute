@@ -27,9 +27,9 @@ module.exports.run = async (client, message, args) => {
         let amount = Math.floor(Math.random() * 5000) + 1;
 
         let embed1 = new Discord.MessageEmbed()
-        .setTitle(":dollar: **|** Trabalho")
+        .setTitle("<a:money:838087280052535346> **|** Trabalho")
         .setColor("#008000")
-        .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou: \n\n:dollar: Dinheiro: **R$${amount}**`)
+        .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou: \n\n<a:money:838087280052535346> Dinheiro: **R$${amount}**`)
         .setFooter("Que homem trabalhador, tenho orgulho de você!")
         .setTimestamp();
 
