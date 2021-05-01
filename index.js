@@ -46,6 +46,4 @@ client.on("guildMemberRemove", (member) => {
 	console.log(`[ECONOMIA] O ${member.tag} saiu do servidor ${member.guild.name}, e teve todos os Status de Economia removidos!`);
 })
 
-
-
 client.login(config.token);
