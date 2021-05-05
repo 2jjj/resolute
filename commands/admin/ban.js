@@ -19,3 +19,4 @@ exports.run = (bot,message,args) => {
 
 message.channel.send(`Você foi banido do servidor ${message.guild.name} pelo motivo: ${banReason}`)
 }
+
