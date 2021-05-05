@@ -9,7 +9,7 @@ const db = require("quick.db");
         ``,
         `Com ${client.guilds.cache.size} servidores & ${client.users.cache.size} pessoas <3`,
         `spr4y.xyz/resolute`,
-        `Versão 1.2`,
+        `Versão 1.2.0`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);

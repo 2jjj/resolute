@@ -7,7 +7,7 @@ client.on("message", async message => {
   if (regex.exec(message.content)) {
     await message.delete({timeout: 1000});
       await message.channel.send(
-        `${message.author} **você não pode postar link de outros servidores aqui!**`
+        `<:info:835206734225473546> » ${message.author} **Você não pode postar link de outros servidores aqui!**`
       );
   }
 });

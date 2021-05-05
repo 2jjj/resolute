@@ -7,12 +7,12 @@ exports.run = (bot,message,args) => {
   if(!kickMember) return message.reply("use **s.kick <@Pessoa> <Motivo>** para kickar alguém.");
   let kickReason = args.join(" ").slice(22) || args.slice(1).join(" ");
   if(!kickReason){
-    kickReason = "O motivo não foi especificado."
+    kickReason = "<:info:835206734225473546> » O motivo não foi especificado."
   }
   
   try {
     kickMember.kick({reason: kickReason})
-    message.channel.send(`:boot: ${kickMember} **foi** \`Kickado\` **pelo** \`Motivo:\`**${kickReason}**`);
+    message.channel.send(`<:info:835206734225473546> > ${kickMember} **foi** \`Kickado\` **pelo** \`Motivo:\`**${kickReason}**`);
   } catch (error) {
     message.reply(`${error}`)
   }

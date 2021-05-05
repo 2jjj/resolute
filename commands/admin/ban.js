@@ -1,13 +1,13 @@
 const Discord = require ("discord.js")
 
 exports.run = (bot,message,args) => {
-  if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para executar o comando.");
-  if(args.lenght === 0) return message.reply("use **s.ban <@Pessoa> <Motivo>** para banir alguém.");
+  if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("<:info:835206734225473546> » Você não tem permissão para executar o comando.");
+  if(args.lenght === 0) return message.reply("<:info:835206734225473546> » Use **s.ban <@Pessoa> <Motivo>** para banir alguém.");
   let banMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-  if(!banMember) return message.reply("use **s.ban <@Pessoa> <Motivo>** para banir alguém.");
+  if(!banMember) return message.reply("<:info:835206734225473546> » Use **s.ban <@Pessoa> <Motivo>** para banir alguém.");
   let banReason = args.join(" ").slice(22) || args.slice(1).join(" ");
   if(!banReason){
-    banReason = "O motivo não foi especificado."
+    banReason = "<:info:835206734225473546> » O motivo não foi especificado."
   }
   
   try {
@@ -17,6 +17,6 @@ exports.run = (bot,message,args) => {
     message.reply(`${error}`)
   }
 
-message.channel.send(`Você foi banido do servidor ${message.guild.name} pelo motivo: ${banReason}`)
+message.channel.send(`<:info:835206734225473546> » Você foi banido do servidor ${message.guild.name} pelo motivo: ${banReason}`)
 }
 
