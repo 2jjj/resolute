@@ -42,13 +42,13 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | **s.inviteblock**
       > <:spr4yxyz:837798446584168468> | **s.kick**
       > <:spr4yxyz:837798446584168468> | **s.lock**
-      > <:spr4yxyz:837798446584168468> | **s.report**
+      > <:spr4yxyz:837798446584168468> | **s.report(Desenvolvimento)**
       > <:spr4yxyz:837798446584168468> | **s.servericon**
       > <:spr4yxyz:837798446584168468> | **s.serverinfo**
       > <:spr4yxyz:837798446584168468> | **s.userinfo**
       > <:spr4yxyz:837798446584168468> | **s.unlock**
       > <:spr4yxyz:837798446584168468> | **s.warn**
-      > <:spr4yxyz:837798446584168468> | **s.welcome**
+      > <:spr4yxyz:837798446584168468> | **s.welcome(Desenvolvimento)**
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
