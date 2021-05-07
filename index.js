@@ -7,9 +7,10 @@ const db = require("quick.db");
   client.on('ready', () => {
       let activities_list = [
         ``,
-        `Com ${client.guilds.cache.size} servidores & ${client.users.cache.size} pessoas <3`,
+        `Em ${client.guilds.cache.size} servidores, com ${client.users.cache.size} pessoas!`,
         `spr4y.xyz/resolute`,
         `Versão 1.2.0`,
+	      `Meu criador -> Spray#7194`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
