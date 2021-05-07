@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://github.com/sprayx/ResoluteBot">
   </a>
-  <h2 align="center">Resolute Bot (V 1.3)</h2>
+  <h2 align="center">Resolute Bot (V 1.2.0)</h2>
 
   <p align="center">
         Aceitando contribuições no Projeto/Documentação.
