@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
     .setDescription(motivo)
 
     membro.send(embed) // Aqui o bot irá mandar a embed no privado do membro que levou o aviso "warn".
-    message.channel.send(`**:wink: - aviso enviado com sucesso!**`) // Aqui vai ser a mensagem que o bot irá mandar no chat para o autor que executou o comando.
+    message.channel.send(`**${message.author} | <:2637settings:837767461138071572> - Aviso enviado com sucesso!**`) // Aqui vai ser a mensagem que o bot irá mandar no chat para o autor que executou o comando.
 }
 
 exports.help = {
