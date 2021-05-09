@@ -1,4 +1,3 @@
-//muito obrigado. Rody#4191
 const Discord = require("discord.js")
 const weather = require("weather-js")
 const db = require('quick.db')
