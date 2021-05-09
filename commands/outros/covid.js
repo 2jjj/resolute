@@ -38,6 +38,9 @@ module.exports.run = async(client,message,args)=> {
     }catch(e){
 message.channel.send(e)
     }
-}
-}
+}}
 
+exports.help = {
+    name: 'covid',
+    aliases: ["covid"]
+}
