@@ -114,13 +114,13 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
       > **<:spr4yxyz:837798446584168468> | s.daily**
-      > **<:spr4yxyz:837798446584168468> | s.depositar**
+      > **<:spr4yxyz:837798446584168468> | s.depositar \`<quantidade>\`**
       > **<:spr4yxyz:837798446584168468> | s.leaderboard**
       > **<:spr4yxyz:837798446584168468> | s.money**
-      > **<:spr4yxyz:837798446584168468> | s.pay**
-      > **<:spr4yxyz:837798446584168468> | s.roubar**
-      > **<:spr4yxyz:837798446584168468> | s.saque**
-      > **<:spr4yxyz:837798446584168468> | s.setmoney (Admin)**
+      > **<:spr4yxyz:837798446584168468> | s.pay \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.roubar \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.saque \`<quantidade_dinheiro>\`**
+      > **<:spr4yxyz:837798446584168468> | s.setmoney (Admin+)**
       > **<:spr4yxyz:837798446584168468> | s.trabalhar**
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
