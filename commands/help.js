@@ -37,19 +37,19 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
       > <:spr4yxyz:837798446584168468> | **s.aviso ⇝ \`s.aviso <@user>\`**
-      > <:spr4yxyz:837798446584168468> | **s.ban ⇝ \`s.aviso <@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.ban ⇝ \`s.ban <@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.banlist**
       > <:spr4yxyz:837798446584168468> | **s.botinfo**
       > <:spr4yxyz:837798446584168468> | **s.clear**
       > <:spr4yxyz:837798446584168468> | **s.inviteblock**
-      > <:spr4yxyz:837798446584168468> | **s.kick**
+      > <:spr4yxyz:837798446584168468> | **s.kick ⇝ \`s.kick <@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.lock**
       > <:spr4yxyz:837798446584168468> | **s.report(Desenvolvimento)**
-      > <:spr4yxyz:837798446584168468> | **s.servericon**
-      > <:spr4yxyz:837798446584168468> | **s.serverinfo**
-      > <:spr4yxyz:837798446584168468> | **s.userinfo**
+      > <:spr4yxyz:837798446584168468> | **s.servericon ⇝ \`s.servericon <ID>\`**
+      > <:spr4yxyz:837798446584168468> | **s.serverinfo ⇝ \`s.serverinfo <ID>\`**
+      > <:spr4yxyz:837798446584168468> | **s.userinfo ⇝ \`s.userinfo <ID>\`**
       > <:spr4yxyz:837798446584168468> | **s.unlock**
-      > <:spr4yxyz:837798446584168468> | **s.warn**
+      > <:spr4yxyz:837798446584168468> | **s.warn ⇝ \`s.warn <@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.welcome(Desenvolvimento)**
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
