@@ -31,7 +31,11 @@ exports.run = async (bot, message, args) => {
             .addField("<:1143arrowturquoise:837773741340622858> Arquitetura", `\`${os.arch()}\``,true)
             .addField("<:1143arrowturquoise:837773741340622858> Plataforma", `\`\`${os.platform()}\`\``,true)
             .setFooter("Status")
-    
             message.channel.send(embedStats)
             })
-}
+          }
+              
+          exports.help = {
+            name: 'ping',
+            aliases: ["pingar"]
+        }          
