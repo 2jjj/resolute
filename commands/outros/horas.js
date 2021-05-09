@@ -13,6 +13,7 @@ exports.run = (client, message) => { // exportando o evento client e message
     message.channel.send(embed) // enviara a mensagem
 
 }
+
 exports.help = {
     name: "hora",
     aliases: ["horas"]

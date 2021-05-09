@@ -26,3 +26,8 @@ exports.run = async (client, message, args) => {
     .setFooter(`Plataformas: ${win}, ${mc}, ${li}, ${an}, ${ios}, ${x} 360/One, Raspberry Pi, Windows Phone, ${pt} 4/Vita, Wii U, tvOS, ${nsw}, New Nintendo 3DS`)
    return message.channel.send(GameEmbed)
 }
+
+exports.help = {
+  name: "minecraft",
+  aliases: ["minecraft"]
+}
