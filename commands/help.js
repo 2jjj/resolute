@@ -72,7 +72,7 @@ exports.run = async (bot, message, args) => {
       > **<:spr4yxyz:837798446584168468> | s.morder**
       > **<:spr4yxyz:837798446584168468> | s.pisar**
       > **<:spr4yxyz:837798446584168468> | s.say**
-      > **<:spr4yxyz:837798446584168468> | s.ship**
+      > **<:spr4yxyz:837798446584168468> | s.ship ⇝ \`s.ship <ID>\`**
       > **<:spr4yxyz:837798446584168468> | s.stonks**
       > **<:spr4yxyz:837798446584168468> | s.notstonks**
       `)
