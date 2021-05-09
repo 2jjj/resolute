@@ -17,7 +17,7 @@ const db = require("quick.db");
           client.user.setActivity(activities_list[index]);
       }, 5000);
       
-      console.log(`[INFO] - [+] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
+      console.log(`[INFO] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
     });
 
   client.on('message', message=> {
