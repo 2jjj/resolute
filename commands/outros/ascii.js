@@ -17,6 +17,9 @@ figlet(ascii, function(err, data) { //coração
    }
    message.channel.send('fix\n' + data + '')
 });
-}
-}
+}}}
+
+exports.help = {
+  name: 'ascii',
+  aliases: ["ascii"]
 }
