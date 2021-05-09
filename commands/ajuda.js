@@ -98,7 +98,7 @@ exports.run = async (bot, message, args) => {
       > **<:spr4yxyz:837798446584168468> | s.votar**
       > **<:spr4yxyz:837798446584168468> | s.minecraft**
       > **<:spr4yxyz:837798446584168468> | s.valorant**
-      > **<:spr4yxyz:837798446584168468> | s.steam**
+      > **<:spr4yxyz:837798446584168468> | s.steam \`<game>\`**
       `)
       .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
