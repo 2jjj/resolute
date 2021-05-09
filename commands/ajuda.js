@@ -49,7 +49,7 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | **s.serverinfo ⇝ \`s.serverinfo <ID>\`**
       > <:spr4yxyz:837798446584168468> | **s.userinfo ⇝ \`s.userinfo <ID>\`**
       > <:spr4yxyz:837798446584168468> | **s.unlock**
-      > <:spr4yxyz:837798446584168468> | **s.warn ⇝ \`s.warn <@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.warn ⇝ \`<@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.welcome(Desenvolvimento)**
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
