@@ -11,6 +11,8 @@ exports.run = async (bot, message, args) => {
       <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
       \n » **Links:**
       > http://spr4y.xyz/resolute
+      \n » 
+      > Feito por Spray#7194
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
