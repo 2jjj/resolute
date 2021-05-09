@@ -14,6 +14,6 @@ exports.run = (client, message) => { // exportando o evento client e message
 
 }
 exports.help = {
-    name: "hora"
+    name: "hora",
+    aliases: ["horas"]
 }
-//fim do codigo

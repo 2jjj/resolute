@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
       `**${message.author.username}, a sintaxe correta é:** ` +
         "`" +
         "s.emoji <nomedoemoji>`"
-    ); //Troque a exclamação ! da mensagem acima pelo seu prefixo
+    ); 
   let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
   if (!emoji) {
@@ -20,3 +20,8 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(`<:${args[0]}:${emoji.id}>`);
   }
 };
+
+exports.help = {
+  name: 'emoji',
+  aliases: ["emoji"]
+}
