@@ -10,9 +10,8 @@ exports.run = async (bot, message, args) => {
       <:info:835206734225473546> | Economia - <a:4_:836268669516251136>
       <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
       \n » **Links:**
-      > http://spr4y.xyz/resolute
-      \n » 
-      > Feito por Spray#0007
+      > http://resolutebot.xyz
+      \n » **Feito por Spray#0007 | Versão 1.2.5**
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
@@ -137,9 +136,8 @@ exports.run = async (bot, message, args) => {
         <:info:835206734225473546> | Economia - <a:4_:836268669516251136>
         <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
         \n » **Links:**
-        > http://spr4y.xyz/resolute
-        \n » 
-        > Feito por Spray#0007 | Versão 1.2.5
+        > http://resolutebot.xyz
+        \n » **Feito por Spray#0007 | Versão 1.2.5**
     `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
@@ -149,5 +147,5 @@ exports.run = async (bot, message, args) => {
 
 exports.help = {
   name: "help",
-  aliases: ["help"]
+  aliases: ["ajuda"]
 }
