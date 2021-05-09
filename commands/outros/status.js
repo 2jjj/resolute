@@ -34,10 +34,4 @@ exports.run = async (bot, message, args) => {
     
             message.channel.send(embedStats)
             })
-
-
 }
-
-   module.exports.help = {
-       name: "stats"
-   }
