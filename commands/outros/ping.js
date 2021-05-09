@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
-exports.run = async(bot, message, args) => { // Aqui definimos nosso client, message e args
+exports.run = async(bot, message, args) => { 
 
-    let embed = new Discord.MessageEmbed() // Aqui vai ser a primeira embed que o bot irá mostrar
+    let embed = new Discord.MessageEmbed() 
     .setTitle(message.author.username)
     .setColor('RANDOM')
     .setThumbnail(message.author.displayAvatarURL())
@@ -11,7 +11,7 @@ exports.run = async(bot, message, args) => { // Aqui definimos nosso client, mes
         `Use \`s.help\` para saber mais comandos!`
     ])
 
-    let embed2 = new Discord.MessageEmbed() // Aqui vai ser a segunda embed que o bot irá mostrar
+    let embed2 = new Discord.MessageEmbed() 
     .setTitle(message.author.username)
     .setColor('RANDOM')
     .setThumbnail(message.author.displayAvatarURL())
@@ -20,7 +20,7 @@ exports.run = async(bot, message, args) => { // Aqui definimos nosso client, mes
         `Use \`s.help\` para saber mais comandos!`
     ])
 
-    let embed_ping = new Discord.MessageEmbed() // Aqui vai ser a terceira embed que o bot irá mostrar
+    let embed_ping = new Discord.MessageEmbed() 
     .setTitle(message.author.username)
     .setColor('RANDOM')
     .setThumbnail(message.author.displayAvatarURL())
@@ -31,11 +31,11 @@ exports.run = async(bot, message, args) => { // Aqui definimos nosso client, mes
         `Use \`s.help\` para saber mais comandos!`
     ])
 
-    const msg = await message.channel.send(embed) // Aqui o bot irá mostrar a primeira embed
-    setTimeout(() => { // Aqui criamos um timeout para mostrar a primeira embed com a duração de 3 segundos, para depois editar ela e mostrar a segunda embed
+    const msg = await message.channel.send(embed)
+    setTimeout(() => {
       msg.edit(embed2)
-    }, 3000) // 1000 ms = 1s
-    setTimeout(() => { // Aqui criamos um timeout para mostrar a embed final com a duração de 5 segundos
+    }, 3000) 
+    setTimeout(() => {
       msg.edit(embed_ping)
     }, 5000)
 
