@@ -37,7 +37,7 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
       > <:spr4yxyz:837798446584168468> | **s.aviso ⇝ \`s.aviso <@user>\`**
-      > <:spr4yxyz:837798446584168468> | **s.ban**
+      > <:spr4yxyz:837798446584168468> | **s.ban ⇝ \`s.aviso <@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.banlist**
       > <:spr4yxyz:837798446584168468> | **s.botinfo**
       > <:spr4yxyz:837798446584168468> | **s.clear**
