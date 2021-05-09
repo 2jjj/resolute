@@ -1,7 +1,7 @@
 {
   "name": "resolute",
-  "version": "1.2.0",
-  "description": "Simples bot de ajuda, moderação, diversão e economia.",
+  "version": "1.2.5",
+  "description": "Ajuda, Moderação, Fun, Economia e Música",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
