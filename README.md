@@ -4,7 +4,7 @@
   <h2 align="center">Resolute Bot (V 1.2.5)</h2>
 
   <p align="center">
-        Aceitando contribuições no Projeto/Documentação.
+        Aceitando contribuições!
     <br>
     </p>
 </p>
@@ -22,8 +22,7 @@
 
 ### Descrição
 
-Resolute é um bot de Fun/Moderação/Social/Anime/Economia.
-os comandos de música estão sendo atualizados da versão v11 para a v12 do discord.js
+Resolute é um bot de Fun/Moderação/Música/Economia/Outros.
  - [Adicione o resolute](https://discord.com/oauth2/authorize?client_id=764919941538775050&permissions=8&scope=bot)
  - [Website](http://spr4y.xyz/resolute)
 
@@ -43,20 +42,19 @@ os comandos de música estão sendo atualizados da versão v11 para a v12 do dis
 ### Updates
   🚧 👷‍ ⛏ 👷 🔧️ 🚧
 - [x] Comandos por reação.
-- [x] Adicionado mais 20 comandos
-- [ ] Suporte para música
-- [ ] Bot verificado
+- [x] Adicionado mais 30 comandos
+- [x] Suporte para economia
+- [x] Bot verificado
 
 
-O projeto é desenvolvido pelo [Spray](https://github.com/sprayx) apenas, mas estou aceitando novos contribuidores para o github ou desenvolvedores
+O projeto é desenvolvido pelo [Spray](https://github.com/sprayx).
 
-- [Pull Request](https://github.com/sprayx/Resolute/pulls)
+- [Pull Request](https://github.com/sprayx/ResoluteDocs/pulls)
 
 
 <hr>
 
 ### Lançamentos
-- [x] Agora o bot está com o MS muito baixo e o código em geral otimizado.
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Website
+- [ ] Docs
+- [ ] Verificação do bot
