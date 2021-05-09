@@ -16,7 +16,7 @@ const db = require("quick.db");
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
           client.user.setActivity(activities_list[index]);
       }, 5000);
-
+      
       console.log(`[INFO] - [+] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
       console.log(`[INFO] - [+] => Database iniciada.`)
       console.log(`[INFO] - [+] => Config carregada.`)
