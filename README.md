@@ -4,7 +4,6 @@
   <h2 align="center">Resolute Bot (V 1.2.5)</h2>
 
   <p align="center">
-        Aceitando contribuições!
     <br>
     </p>
 </p>
