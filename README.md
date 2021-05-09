@@ -34,7 +34,7 @@ Resolute é um bot de Fun/Moderação/Música/Economia/Outros.
 
 2. O prefixo do bot é **s.**
     * Mas se você mencionar o bot ele te dará todas as informações necessárias.
-    * ou **s.help** para ajuda.
+    * ou **s.help** para obter ajuda de todos os comandos.
 
 
 <hr>
