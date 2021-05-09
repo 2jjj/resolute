@@ -36,18 +36,18 @@ exports.run = async (bot, message, args) => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
-      > <:spr4yxyz:837798446584168468> | **s.aviso ⇝ \`s.aviso <@user> <motivo>\`**
-      > <:spr4yxyz:837798446584168468> | **s.ban ⇝ \`<@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.aviso \`s.aviso <@user> <motivo>\`**
+      > <:spr4yxyz:837798446584168468> | **s.ban \`<@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.banlist**
       > <:spr4yxyz:837798446584168468> | **s.botinfo**
       > <:spr4yxyz:837798446584168468> | **s.clear**
-      > <:spr4yxyz:837798446584168468> | **s.kick ⇝ \`<@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.kick \`<@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.lock**
-      > <:spr4yxyz:837798446584168468> | **s.servericon ⇝ \`s.servericon <ID>\`**
-      > <:spr4yxyz:837798446584168468> | **s.serverinfo ⇝ \`s.serverinfo <ID>\`**
-      > <:spr4yxyz:837798446584168468> | **s.userinfo ⇝ \`s.userinfo <ID>\`**
+      > <:spr4yxyz:837798446584168468> | **s.servericon | \`s.servericon <ID>\`**
+      > <:spr4yxyz:837798446584168468> | **s.serverinfo | \`s.serverinfo <ID>\`**
+      > <:spr4yxyz:837798446584168468> | **s.userinfo | \`s.userinfo <ID>\`**
       > <:spr4yxyz:837798446584168468> | **s.unlock**
-      > <:spr4yxyz:837798446584168468> | **s.warn ⇝ \`<@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.warn \`<@user>\`**
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -61,15 +61,15 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
       > **<:spr4yxyz:837798446584168468> | s.carinho \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.coinflip**
-      > **<:spr4yxyz:837798446584168468> | s.highfive ⇝ \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.hug ⇝ \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.kiss ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.coinflip \`<cara ou coroa>\`**
+      > **<:spr4yxyz:837798446584168468> | s.highfive \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.hug \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.kiss \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.meme**
-      > **<:spr4yxyz:837798446584168468> | s.morder ⇝ \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.pisar ⇝ \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.say ⇝ \`<frase>\`**
-      > **<:spr4yxyz:837798446584168468> | s.ship ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.morder \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.pisar \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.say \`<frase>\`**
+      > **<:spr4yxyz:837798446584168468> | s.ship \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.stonks**
       > **<:spr4yxyz:837798446584168468> | s.notstonks**
       `)
