@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) => {
       \n » **Links:**
       > http://spr4y.xyz/resolute
       \n » 
-      > Feito por Spray#7194
+      > Feito por Spray#0007
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
