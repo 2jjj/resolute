@@ -8,9 +8,9 @@ const db = require("quick.db");
       let activities_list = [
         ``,
         `Em ${client.guilds.cache.size} servidores, com ${client.users.cache.size} pessoas!`,
-        `spr4y.xyz/resolute`,
+        `resolutebot.xyz`,
         `Versão 1.2.5`,
-	      `Meu criador -> Spray#7194`,
+	      `Meu criador -> Spray#0007`,
       ];
       setInterval(() => {
           const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);

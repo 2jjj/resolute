@@ -139,7 +139,7 @@ exports.run = async (bot, message, args) => {
         \n » **Links:**
         > http://spr4y.xyz/resolute
         \n » 
-        > Feito por Spray#7194 | Versão 1.2.5
+        > Feito por Spray#0007 | Versão 1.2.5
     `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
