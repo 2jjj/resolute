@@ -23,7 +23,7 @@ const db = require("quick.db");
   client.on('message', message=> {
     if (message.content.startsWith('<')) {
       if (message.content.endsWith('>')){
-          if (message.mentions.has(client.user.id)) { return message.inlineReply(`👾 Olá! ${message.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione! **http://resolutebot.xyz**`).then(msg => msg.delete({ timeout: 15000 })).catch(err => { return }) }
+          if (message.mentions.has(client.user.id)) { return message.inlineReply(`👾 Olá! ${message.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(msg => msg.delete({ timeout: 15000 })).catch(err => { return }) }
       }
     }
   });
