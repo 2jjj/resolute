@@ -42,7 +42,7 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | **s.botinfo**
       > <:spr4yxyz:837798446584168468> | **s.clear**
       > <:spr4yxyz:837798446584168468> | **s.inviteblock**
-      > <:spr4yxyz:837798446584168468> | **s.kick ⇝ \`s.kick <@user>\`**
+      > <:spr4yxyz:837798446584168468> | **s.kick ⇝ \`<@user>\`**
       > <:spr4yxyz:837798446584168468> | **s.lock**
       > <:spr4yxyz:837798446584168468> | **s.report(Desenvolvimento)**
       > <:spr4yxyz:837798446584168468> | **s.servericon ⇝ \`s.servericon <ID>\`**
