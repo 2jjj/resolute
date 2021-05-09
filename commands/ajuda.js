@@ -63,16 +63,16 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > **<:spr4yxyz:837798446584168468> | s.carinho \`s.carinho <@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.carinho \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.coinflip**
-      > **<:spr4yxyz:837798446584168468> | s.highfive ⇝ \`s.highfive <@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.hug ⇝ \`s.hug <@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.kiss ⇝ \`s.kiss <@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.highfive ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.hug ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.kiss ⇝ \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.meme**
-      > **<:spr4yxyz:837798446584168468> | s.morder ⇝ \`s.morder <@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.pisar ⇝ \`s.pisar <@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.say ⇝ \`s.say <frase>\`**
-      > **<:spr4yxyz:837798446584168468> | s.ship ⇝ \`s.ship <@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.morder ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.pisar ⇝ \`<@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.say ⇝ \`<frase>\`**
+      > **<:spr4yxyz:837798446584168468> | s.ship ⇝ \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.stonks**
       > **<:spr4yxyz:837798446584168468> | s.notstonks**
       `)
@@ -88,15 +88,15 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
       > **<:spr4yxyz:837798446584168468> | s.ascii**
-      > **<:spr4yxyz:837798446584168468> | s.avatar \`s.avatar <@user>\`**
+      > **<:spr4yxyz:837798446584168468> | s.avatar \`<@user>\`**
       > **<:spr4yxyz:837798446584168468> | s.clima**
-      > **<:spr4yxyz:837798446584168468> | s.covid \`s.covid <pais>\`**
-      > **<:spr4yxyz:837798446584168468> | s.emoji \`s.emoji <nome_emoji>\`**
+      > **<:spr4yxyz:837798446584168468> | s.covid \`<pais>\`**
+      > **<:spr4yxyz:837798446584168468> | s.emoji \`<nome_emoji>\`**
       > **<:spr4yxyz:837798446584168468> | s.horas**
       > **<:spr4yxyz:837798446584168468> | s.ping**
-      > **<:spr4yxyz:837798446584168468> | s.sorteador \`s.sorteador <numero>\`**
+      > **<:spr4yxyz:837798446584168468> | s.sorteador**
       > **<:spr4yxyz:837798446584168468> | s.status**
-      > **<:spr4yxyz:837798446584168468> | s.sugestao \`s.sugestao <sugestão>\`**
+      > **<:spr4yxyz:837798446584168468> | s.sugestao \`<sugestão>\`**
       > **<:spr4yxyz:837798446584168468> | s.uptime**
       > **<:spr4yxyz:837798446584168468> | s.votar**
       > **<:spr4yxyz:837798446584168468> | s.minecraft**
