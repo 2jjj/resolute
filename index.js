@@ -18,14 +18,12 @@ const db = require("quick.db");
       }, 5000);
       
       console.log(`[INFO] - [+] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`);
-      console.log(`[INFO] - [+] => Database iniciada.`)
-      console.log(`[INFO] - [+] => Config carregada.`)
     });
 
   client.on('message', message=> {
     if (message.content.startsWith('<')) {
       if (message.content.endsWith('>')){
-          if (message.mentions.has(client.user.id)) { return message.inlineReply(`👾 Olá! ${message.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione! **https://top.gg/bot/764919941538775050**`).then(msg => msg.delete({ timeout: 5000 })).catch(err => { return }) }
+          if (message.mentions.has(client.user.id)) { return message.inlineReply(`👾 Olá! ${message.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione! **https://resolutebot.xyz**`).then(msg => msg.delete({ timeout: 15000 })).catch(err => { return }) }
       }
     }
   });
