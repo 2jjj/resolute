@@ -16,3 +16,8 @@ exports.run = async (client, message, args) => {
     .setFooter(`Plataformas: ${win}`)
   return message.channel.send(GameEmbed)
 }
+
+exports.help = {
+  name: "valorant",
+  aliases: ["valorant"]
+}
