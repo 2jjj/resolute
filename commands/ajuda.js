@@ -62,15 +62,15 @@ exports.run = async (bot, message, args) => {
       > **<:spr4yxyz:837798446584168468> | \`s.carinho\` **<@user>**
       > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` **<cara ou coroa>**
       > **<:spr4yxyz:837798446584168468> | \`s.highfive\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> | s.hug \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.kiss \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.meme**
-      > **<:spr4yxyz:837798446584168468> | s.morder \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.pisar \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.say \`<frase>\`**
-      > **<:spr4yxyz:837798446584168468> | s.ship \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.stonks**
-      > **<:spr4yxyz:837798446584168468> | s.notstonks**
+      > **<:spr4yxyz:837798446584168468> | \`s.hug\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.kiss\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.meme\`
+      > **<:spr4yxyz:837798446584168468> | \`s.morder\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.pisar\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.say\` **<frase>**
+      > **<:spr4yxyz:837798446584168468> | \`s.ship\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.stonks\`
+      > **<:spr4yxyz:837798446584168468> | \`s.notstonks\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
