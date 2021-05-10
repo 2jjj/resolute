@@ -59,18 +59,18 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > **<:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
-      > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` <cara ou coroa>
-      > **<:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.hug\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.kiss\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.meme\`
-      > **<:spr4yxyz:837798446584168468> | \`s.morder\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.pisar\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.say\` frase
-      > **<:spr4yxyz:837798446584168468> | \`s.ship\` @usuário
-      > **<:spr4yxyz:837798446584168468> | \`s.stonks\`
-      > **<:spr4yxyz:837798446584168468> | \`s.notstonks\`
+      > <:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
+      > <:spr4yxyz:837798446584168468> |  \`s.coinflip\` <cara ou coroa>
+      > <:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.hug\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.kiss\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.meme\`
+      > <:spr4yxyz:837798446584168468> | \`s.morder\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.pisar\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.say\` frase
+      > <:spr4yxyz:837798446584168468> | \`s.ship\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.stonks\`
+      > <:spr4yxyz:837798446584168468> | \`s.notstonks\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
