@@ -5,7 +5,6 @@ const { APIMessage, Structures } = require("discord.js");
 const db = require("quick.db");
 const fs = require('fs');
 const glob = require('glob')
-require('./QuoteMessage')
 
   client.on('ready', () => {
       let activities_list = [
