@@ -83,21 +83,19 @@ exports.run = async (bot, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
-      > **<:spr4yxyz:837798446584168468> | s.ascii**
-      > **<:spr4yxyz:837798446584168468> | s.avatar \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.clima**
-      > **<:spr4yxyz:837798446584168468> | s.covid \`<pais>\`**
-      > **<:spr4yxyz:837798446584168468> | s.emoji \`<nome_emoji>\`**
-      > **<:spr4yxyz:837798446584168468> | s.horas**
-      > **<:spr4yxyz:837798446584168468> | s.ping**
-      > **<:spr4yxyz:837798446584168468> | s.sorteador**
-      > **<:spr4yxyz:837798446584168468> | s.status**
-      > **<:spr4yxyz:837798446584168468> | s.sugestao \`<sugestão>\`**
-      > **<:spr4yxyz:837798446584168468> | s.uptime**
-      > **<:spr4yxyz:837798446584168468> | s.votar**
-      > **<:spr4yxyz:837798446584168468> | s.minecraft**
-      > **<:spr4yxyz:837798446584168468> | s.valorant**
-      > **<:spr4yxyz:837798446584168468> | s.steam \`<game>\`**
+      > <:spr4yxyz:837798446584168468> | \`s.ascii\`
+      > <:spr4yxyz:837798446584168468> | \`s.avatar\` **<@user>**
+      > <:spr4yxyz:837798446584168468> | \`s.clima\`
+      > <:spr4yxyz:837798446584168468> | \`s.covid\` **<pais>**
+      > <:spr4yxyz:837798446584168468> | \`s.emoji\` **<nome_emoji>**
+      > <:spr4yxyz:837798446584168468> | \`s.horas\`
+      > <:spr4yxyz:837798446584168468> | \`s.ping\`
+      > <:spr4yxyz:837798446584168468> | \`s.sorteador\`
+      > <:spr4yxyz:837798446584168468> | \`s.status\`
+      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` **<sugestão>**
+      > <:spr4yxyz:837798446584168468> | \`s.uptime\`
+      > <:spr4yxyz:837798446584168468> | \`s.votar\`
+      > <:spr4yxyz:837798446584168468> | \`s.steam\` **<game>**
       `)
       .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -109,15 +107,15 @@ exports.run = async (bot, message, args) => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
-      > **<:spr4yxyz:837798446584168468> | s.daily**
-      > **<:spr4yxyz:837798446584168468> | s.depositar \`<quantidade>\`**
-      > **<:spr4yxyz:837798446584168468> | s.leaderboard**
-      > **<:spr4yxyz:837798446584168468> | s.money**
-      > **<:spr4yxyz:837798446584168468> | s.pay \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.roubar \`<@user>\`**
-      > **<:spr4yxyz:837798446584168468> | s.saque \`<quantidade_dinheiro>\`**
-      > **<:spr4yxyz:837798446584168468> | s.setmoney (Admin+)**
-      > **<:spr4yxyz:837798446584168468> | s.trabalhar**
+      > <:spr4yxyz:837798446584168468> | \`s.daily\`
+      > <:spr4yxyz:837798446584168468> | \`s.depositar\` **<quantidade>**
+      > <:spr4yxyz:837798446584168468> | \`s.leaderboard\`
+      > <:spr4yxyz:837798446584168468> | \`s.money\`
+      > <:spr4yxyz:837798446584168468> | \`s.pay\` **<@user>**
+      > <:spr4yxyz:837798446584168468> | s.roubar **<@user>**
+      > <:spr4yxyz:837798446584168468> | \`s.saque\` **<quantidade_dinheiro>**
+      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` **(Admin+)**
+      > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -137,7 +135,7 @@ exports.run = async (bot, message, args) => {
         <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
         \n » **Links:**
         > http://resolutebot.xyz
-        \n » **Feito por Spray#0007 | Versão 1.2.5**
+        \n » **Feito por Spray#0007 | Versão 1.2.5b**
     `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
@@ -146,6 +144,6 @@ exports.run = async (bot, message, args) => {
 } 
 
 exports.help = {
-  name: "help",
+  name: "ajuda",
   aliases: ["ajuda"]
 }

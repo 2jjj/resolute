@@ -135,7 +135,7 @@ exports.run = async (bot, message, args) => {
         <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
         \n » **Links:**
         > http://resolutebot.xyz
-        \n » **Feito por Spray#0007 | Versão 1.2.5**
+        \n » **Feito por Spray#0007 | Versão 1.2.5b**
     `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
