@@ -59,6 +59,9 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
+      > <:spr4yxyz:837798446584168468> | \`s.wanted\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.laranjo\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`s.primeiraspalavras\` <frase>
       > <:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
       > <:spr4yxyz:837798446584168468> |  \`s.coinflip\` <cara ou coroa>
       > <:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
