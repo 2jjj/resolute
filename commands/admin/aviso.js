@@ -13,7 +13,7 @@ exports.run = (bot, message, args) => {
     let embed = new Discord.MessageEmbed() 
     .setTitle(`WARN - ${membro.username}`)
     .setColor('RANDOM')
-    .setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
+    .setFooter(`<:staff:835643948151996446> **|** Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setDescription(motivo)
 
     membro.send(embed) 
