@@ -7,16 +7,17 @@ module.exports.run = async (client, message, args) => {
 
 
   let embed = new Discord.MessageEmbed()
-  .setTitle("  **Resolute ~ Informações**")
+  .setTitle(" *Informações*")
   .setDescription("⠀")
   .setColor("RANDOM")
   .setThumbnail(avatar)
-  .addField("<:5579developerbadge:837769393378820147> | Meu criador"," ▸ <@!836345581424738354>") 
-  .addField("<:9189arrowblue:837773741391347712> Dia que o bot foi criado", " ▸ 11/10/2020")
-  .addField("<:9136_js:837774154827956264> | Linguagem"," ▸ JavaScript")
-  .addField(`<:6554connection:837769393257185340> | Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`)
-  .addField("<:3899britishtea:837773943145889822>  Meu prefixo"," ▸ s.")
-
+  .addField("<:developer:841128172299878401> | Desenvolvedor: **Spray.#0007**")
+  .addField(`<a:BP_alerta_gif:841129076672299108> | Bot criado no dia: **11/10/2020**`)
+  .addField(`<:iala:841129532773367808> | Estou em ${client.guilds.cache.size} servidores!, com ${client.users.cache.size} pessoas!`)
+  .addField(`<:dy_girlHello:841125764690739203> | Versão discord.js: **12.5.1**`)
+  .addField(`<a:pumpkinsmile:841130240352321557> | Estou na versão **1.2.5**`)
+  .addField(`<:staff:835643948151996446> | Me adicione: *https://resolutebot.xyz*`)
+  
   await message.channel.send(embed);
 }
 
