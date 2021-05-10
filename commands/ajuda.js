@@ -112,7 +112,7 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`s.leaderboard\`
       > <:spr4yxyz:837798446584168468> | \`s.money\`
       > <:spr4yxyz:837798446584168468> | \`s.pay\` **<@user>**
-      > <:spr4yxyz:837798446584168468> | s.roubar **<@user>**
+      > <:spr4yxyz:837798446584168468> | \`s.roubar\` **<@user>**
       > <:spr4yxyz:837798446584168468> | \`s.saque\` **<quantidade_dinheiro>**
       > <:spr4yxyz:837798446584168468> | \`s.setmoney\` **(Admin+)**
       > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
