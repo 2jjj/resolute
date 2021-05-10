@@ -114,7 +114,7 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`s.pay\` @usuário
       > <:spr4yxyz:837798446584168468> | \`s.roubar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`s.saque\` qtd de dinheiro
-      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` | Apenas Admin+
+      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` | Admin+
       > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
@@ -146,4 +146,4 @@ exports.run = async (bot, message, args) => {
 exports.help = {
   name: "ajuda",
   aliases: ["ajuda"]
-}
+} 
