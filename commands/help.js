@@ -108,12 +108,12 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
       > <:spr4yxyz:837798446584168468> | \`s.daily\`
-      > <:spr4yxyz:837798446584168468> | \`s.depositar\` quantidade
+      > <:spr4yxyz:837798446584168468> | \`s.depositar\` <quantidade>
       > <:spr4yxyz:837798446584168468> | \`s.leaderboard\`
       > <:spr4yxyz:837798446584168468> | \`s.money\`
-      > <:spr4yxyz:837798446584168468> | \`s.pay\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.roubar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.saque\` qtd de dinheiro
+      > <:spr4yxyz:837798446584168468> | \`s.pay\` <@usuário>
+      > <:spr4yxyz:837798446584168468> | \`s.roubar\` <@usuário>
+      > <:spr4yxyz:837798446584168468> | \`s.saque\` <dinheiro>
       > <:spr4yxyz:837798446584168468> | \`s.setmoney\` | Admin+
       > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
       `)
