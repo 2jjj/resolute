@@ -14,7 +14,7 @@ module.exports.run = async(client,message,args)=> {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit("<a:spray:833804244342931486> Canal bloquado.")
+        msg.edit("<a:spray:833804244342931486> Canal bloqueado.")
 
     }catch(e){
         message.channel.send(e)
