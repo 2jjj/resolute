@@ -3,8 +3,6 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const { APIMessage, Structures } = require("discord.js");
 const db = require("quick.db");
-const fs = require('fs');
-const glob = require('glob')
 
   client.on('ready', () => {
       let activities_list = [
