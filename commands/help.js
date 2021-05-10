@@ -11,7 +11,7 @@ exports.run = async (bot, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.2.5\`
+      \n » \`Desenvolvido por Spray#0007 | Versão 1.2.5b\`
     `)
     .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
   //
@@ -60,7 +60,7 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
       > **<:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
-      > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` cara ou coroa
+      > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` <cara ou coroa>
       > **<:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
       > **<:spr4yxyz:837798446584168468> | \`s.hug\` @usuário
       > **<:spr4yxyz:837798446584168468> | \`s.kiss\` @usuário
@@ -86,13 +86,13 @@ exports.run = async (bot, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`s.ascii\`
       > <:spr4yxyz:837798446584168468> | \`s.avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`s.clima\`
-      > <:spr4yxyz:837798446584168468> | \`s.covid\` pais, exemplo: s.covid br
-      > <:spr4yxyz:837798446584168468> | \`s.emoji\` emoji
+      > <:spr4yxyz:837798446584168468> | \`s.covid\` <pais>
+      > <:spr4yxyz:837798446584168468> | \`s.emoji\` <emoji>
       > <:spr4yxyz:837798446584168468> | \`s.horas\`
       > <:spr4yxyz:837798446584168468> | \`s.ping\`
       > <:spr4yxyz:837798446584168468> | \`s.sorteador\`
       > <:spr4yxyz:837798446584168468> | \`s.status\`
-      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` sua sugestão
+      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` <sugestão>
       > <:spr4yxyz:837798446584168468> | \`s.uptime\`
       > <:spr4yxyz:837798446584168468> | \`s.votar\`
       > <:spr4yxyz:837798446584168468> | \`s.steam\` <jogo>
