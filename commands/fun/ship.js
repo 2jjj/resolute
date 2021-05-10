@@ -5,10 +5,7 @@ exports.run = async (client, message, args) => {
   let user = message.mentions.members.first()
   if (!user || message.author.id === user.id)
     return message.inlineReply("Você não pode fazer um Ship com você mesmo.")
-
-  if (user.id === '798574984582791208')
-    return message.inlineReply("Spray ant namoros 👍")
-
+    
   if (user.id === message.author.id) {
     return message.inlineReply('Você não pode usar este comando com você mesmo.')
   }

@@ -1,13 +1,13 @@
 const Discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
-  const user = message.author; //trocar user por message.author
+  const user = message.author;
   let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
-  const sayMessage = args.join(' ') //pegar os args (coração)
+  const sayMessage = args.join(' ') 
   if(!sayMessage) {
-    message.reply('<:info:835206734225473546> | Falta o que você vai falar!') //se apenas colocar sayembed
+    message.reply('<:info:835206734225473546> | Falta o que você vai falar!') 
   } else {
-  const say = new Discord.MessageEmbed() //se tiver tudo bonitin:
+  const say = new Discord.MessageEmbed()
   .setAuthor(user.tag, avatar)
   .setDescription(sayMessage)
   message.delete()
