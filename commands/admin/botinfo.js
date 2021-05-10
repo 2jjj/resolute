@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 
   let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
   let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
   .addField(`<:dy_girlHello:841125764690739203> | Versão discord.js: **12.5.1**`)
   .addField(`<a:pumpkinsmile:841130240352321557> | Estou na versão **1.2.5**`)
   .addField(`<:staff:835643948151996446> | Me adicione: *https://resolutebot.xyz*`)
-  
+
   await message.channel.send(embed);
 }
 
