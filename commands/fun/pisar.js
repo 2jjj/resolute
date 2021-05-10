@@ -38,10 +38,6 @@ exports.run = async (client, message, args) => {
     return message.reply(nouser)
   }
 
-  if (user.id === '798574984582791208') {
-    return message.inlineReply('spray imortal fml sem escândalo 😎 👍')
-  }
-
   if (user.id === message.author.id) {
     return message.inlineReply('Você não pode usar este comando com você mesmo.')
   }
