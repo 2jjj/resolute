@@ -35,18 +35,18 @@ exports.run = async (bot, message, args) => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.aviso\` <@user> <motivo>
-      > <:spr4yxyz:837798446584168468> | \`s.ban\` <@user>
+      > <:spr4yxyz:837798446584168468> | \`s.aviso\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.ban\` @usuário <motivo>
       > <:spr4yxyz:837798446584168468> | \`s.banlist\`
-      > <:spr4yxyz:837798446584168468> | \`s.botinfo\`
+      > <:spr4yxyz:837798446584168468> | \`s.botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`s.clear\`
-      > <:spr4yxyz:837798446584168468> | \`s.kick\` <@user>
+      > <:spr4yxyz:837798446584168468> | \`s.kick\` @usuário
       > <:spr4yxyz:837798446584168468> | \`s.lock\`
-      > <:spr4yxyz:837798446584168468> | \`s.servericon\` <id>
-      > <:spr4yxyz:837798446584168468> | \`s.serverinfo\` <id>
-      > <:spr4yxyz:837798446584168468> | \`s.userinfo\` <id>
+      > <:spr4yxyz:837798446584168468> | \`s.servericon\` id do servidor
+      > <:spr4yxyz:837798446584168468> | \`s.serverinfo\` id do servidor
+      > <:spr4yxyz:837798446584168468> | \`s.userinfo\` id do usuário
       > <:spr4yxyz:837798446584168468> | \`s.unlock\`
-      > <:spr4yxyz:837798446584168468> | \`s.warn\` <@user>
+      > <:spr4yxyz:837798446584168468> | \`s.warn\` @usuário
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -59,16 +59,16 @@ exports.run = async (bot, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > **<:spr4yxyz:837798446584168468> | \`s.carinho\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` **<cara ou coroa>**
-      > **<:spr4yxyz:837798446584168468> | \`s.highfive\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> | \`s.hug\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> | \`s.kiss\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
+      > **<:spr4yxyz:837798446584168468> |  \`s.coinflip\` cara ou coroa
+      > **<:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
+      > **<:spr4yxyz:837798446584168468> | \`s.hug\` @usuário
+      > **<:spr4yxyz:837798446584168468> | \`s.kiss\` @usuário
       > **<:spr4yxyz:837798446584168468> | \`s.meme\`
-      > **<:spr4yxyz:837798446584168468> | \`s.morder\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> | \`s.pisar\` **<@user>**
-      > **<:spr4yxyz:837798446584168468> | \`s.say\` **<frase>**
-      > **<:spr4yxyz:837798446584168468> | \`s.ship\` **<@user>**
+      > **<:spr4yxyz:837798446584168468> | \`s.morder\` @usuário
+      > **<:spr4yxyz:837798446584168468> | \`s.pisar\` @usuário
+      > **<:spr4yxyz:837798446584168468> | \`s.say\` frase
+      > **<:spr4yxyz:837798446584168468> | \`s.ship\` @usuário
       > **<:spr4yxyz:837798446584168468> | \`s.stonks\`
       > **<:spr4yxyz:837798446584168468> | \`s.notstonks\`
       `)
@@ -84,18 +84,18 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
       > <:spr4yxyz:837798446584168468> | \`s.ascii\`
-      > <:spr4yxyz:837798446584168468> | \`s.avatar\` **<@user>**
+      > <:spr4yxyz:837798446584168468> | \`s.avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`s.clima\`
-      > <:spr4yxyz:837798446584168468> | \`s.covid\` **<pais>**
-      > <:spr4yxyz:837798446584168468> | \`s.emoji\` **<nome_emoji>**
+      > <:spr4yxyz:837798446584168468> | \`s.covid\` pais, exemplo: s.covid br
+      > <:spr4yxyz:837798446584168468> | \`s.emoji\` emoji
       > <:spr4yxyz:837798446584168468> | \`s.horas\`
       > <:spr4yxyz:837798446584168468> | \`s.ping\`
       > <:spr4yxyz:837798446584168468> | \`s.sorteador\`
       > <:spr4yxyz:837798446584168468> | \`s.status\`
-      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` **<sugestão>**
+      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` sua sugestão
       > <:spr4yxyz:837798446584168468> | \`s.uptime\`
       > <:spr4yxyz:837798446584168468> | \`s.votar\`
-      > <:spr4yxyz:837798446584168468> | \`s.steam\` **<game>**
+      > <:spr4yxyz:837798446584168468> | \`s.steam\` <jogo>
       `)
       .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -108,13 +108,13 @@ exports.run = async (bot, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
       > <:spr4yxyz:837798446584168468> | \`s.daily\`
-      > <:spr4yxyz:837798446584168468> | \`s.depositar\` **<quantidade>**
+      > <:spr4yxyz:837798446584168468> | \`s.depositar\` quantidade
       > <:spr4yxyz:837798446584168468> | \`s.leaderboard\`
       > <:spr4yxyz:837798446584168468> | \`s.money\`
-      > <:spr4yxyz:837798446584168468> | \`s.pay\` **<@user>**
-      > <:spr4yxyz:837798446584168468> | \`s.roubar\` **<@user>**
-      > <:spr4yxyz:837798446584168468> | \`s.saque\` **<quantidade_dinheiro>**
-      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` **(Admin+)**
+      > <:spr4yxyz:837798446584168468> | \`s.pay\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.roubar\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`s.saque\` qtd de dinheiro
+      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` | Apenas Admin+
       > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
