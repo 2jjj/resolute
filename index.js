@@ -9,7 +9,7 @@ const db = require("quick.db");
         ``,
         `Em ${client.guilds.cache.size} servidores, com ${client.users.cache.size} pessoas!`,
         `resolutebot.xyz`,
-        `Versão 1.2.5`,
+        `Versão 1.2.5b'`,
 	      `Meu criador -> Spray#0007`,
       ];
       setInterval(() => {
