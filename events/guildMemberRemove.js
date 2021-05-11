@@ -1,6 +1,6 @@
 const db = require("quick.db");
 const client = new Discord.Client();
-const discord = require("discord.js");
+const Discord = require("discord.js"); 
 
 client.on("guildMemberRemove", (member) => {
 	db.delete(`money_${member.guild.id}_${member.id}`); 
