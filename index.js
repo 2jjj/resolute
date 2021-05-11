@@ -16,16 +16,17 @@ mongoose
     .catch(err => console.log(err));
 
     client.on('ready', () => {
-      let activities_list = [
-        "",
-        `Online | SHARD 0`,
-        `resolutebot.xyz | SHARD 0`,
-        `${client.guilds.cache.size} servidores | SHARD 0`,
-      ];
-      setInterval(() => {
-          const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-          client.user.setActivity(activities_list[index]);
-      }, 5000);
+      const status = [ 
+        {name: 'resolutebot.xyz | Shard: 0', type: 'PLAYING'}, 
+        {name: 'Sendo desenvolvido | Shard: 0', type: 'PLAYING'}, 
+        {name: `Versão 1.2.5 | Shard: 0`, type: 'PLAYING'}
+     ] 
+      function Presence() { 
+            const base = status[Math.floor(Math.random() * status.length)] 
+            client.user.setActivity(base)
+        } 
+        Presence(); 
+        setInterval(() => Presence(), 6100) 	
   });
   
 client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});
