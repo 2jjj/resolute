@@ -6,16 +6,28 @@ const quickdb = require("quick.db");
 const fs = require("fs")
 const mongoose = require('mongoose');
 const db = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
+
 mongoose
     .connect(db, { 
         useNewUrlParser: true,
         useCreateIndex: true
       })
-    .then(() => console.log('MongoDB connected...'))
+    .then(() => console.log('MongoDB Conectado.'))
     .catch(err => console.log(err));
 
-
-client.on("ready",()=>{let e=["",`Em ${client.guilds.cache.size} servidores, com ${client.users.cache.size} pessoas!`,"resolutebot.xyz","Versão 1.2.5(Beta)","Meu criador -> Spray#0007"];setInterval(()=>{const s=Math.floor(Math.random()*(e.length-1)+1);client.user.setActivity(e[s])},5e3),console.log(`[INFO] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`)});
+    client.on('ready', () => {
+      let activities_list = [
+        "",
+        `Online | SHARD 0`,
+        `resolutebot.xyz | SHARD 0`,
+        `${client.guilds.cache.size} servidores | SHARD 0`,
+      ];
+      setInterval(() => {
+          const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+          client.user.setActivity(activities_list[index]);
+      }, 5000);
+  });
+  
 client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});
 
 //Comandos
