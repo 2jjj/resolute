@@ -56,11 +56,9 @@ const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNb
   })
 
   client.on("guildDelete", async (guild) => {
-    console.log("+1")
-    const dono = await client.guilds.fetch(guild.id).then(guilda => client.users.fetch(guilda.ownerID).then(o => `${o.tag} (${o.id})`))
+    console.log("-1")
     let embed = new Discord.MessageEmbed()
     .setTitle(`-1 server 😔`)
-    .setThumbnail(client.user.displayAvatarURL())
     .setTimestamp()
     .setColor('#FFC4E7')
     webhook.send(embed);
