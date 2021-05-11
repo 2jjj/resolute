@@ -145,8 +145,3 @@ exports.run = async (bot, message, args) => {
   });
 })
 } 
-
-exports.help = {
-  name: "ajuda",
-  aliases: ["ajuda"]
-} 

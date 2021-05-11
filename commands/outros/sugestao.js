@@ -26,8 +26,3 @@ exports.run = async (client, message, args) => {
       await msg.react(emojis[i])
     }
 }}
-
-exports.help = {
-  name: "sugestao",
-  aliases: ["sugestao"]
-}

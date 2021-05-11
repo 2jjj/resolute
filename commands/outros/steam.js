@@ -19,8 +19,3 @@ provider.search(arg).then(result => { //vai mostrar o resultado
     })
 })
 }
-
-exports.help = {
-    name: "steam",
-    aliases: ["steam"]
-}

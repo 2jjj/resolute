@@ -7,8 +7,3 @@ let numero = Math.ceil(Math.random() * 100)
 message.channel.send(`⇝ ` + numero) 
 
 }
-
-exports.help = {
-    name: 'sorteador',
-    aliases: ["sortear"]
-}

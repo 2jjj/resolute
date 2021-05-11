@@ -4,7 +4,9 @@ const config = require("./config.json");
 const { APIMessage, Structures } = require("discord.js");
 const db = require("quick.db");
 const fs = require("fs")
-const colors = require("colors");
+const mongoose = require("mongoose")
+
+mongoose.connect('mongodb+srv://spray:<password>@cluster0.u1wmc.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true})
 
 client.on("ready",()=>{let e=["",`Em ${client.guilds.cache.size} servidores, com ${client.users.cache.size} pessoas!`,"resolutebot.xyz","Versão 1.2.5(Beta)","Meu criador -> Spray#0007"];setInterval(()=>{const s=Math.floor(Math.random()*(e.length-1)+1);client.user.setActivity(e[s])},5e3),console.log(`[INFO] => Ligado Com Sucesso em ${client.guilds.cache.size} servidores, ${client.users.cache.size} Usuarios!`)});
 client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});

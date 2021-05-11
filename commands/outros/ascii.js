@@ -19,7 +19,3 @@ figlet(ascii, function(err, data) {
 });
 }}}
 
-exports.help = {
-  name: 'ascii',
-  aliases: ["ascii"]
-}

@@ -16,7 +16,3 @@ let user = message.mentions.users.first() || client.users.cache.get(args[0]) || 
 
 }; 
 
-exports.help = {
-  name: 'avatar',
-  aliases: ["avatar"]
-}

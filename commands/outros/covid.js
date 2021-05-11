@@ -40,7 +40,3 @@ message.channel.send(e)
     }
 }}
 
-exports.help = {
-    name: 'covid',
-    aliases: ["covid"]
-}
