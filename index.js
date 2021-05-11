@@ -42,9 +42,7 @@ client.on("guildMemberRemove", (member) => {
 })
 
 //https://discord.com/api/webhooks/841393653155102740/vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ
-client.on("guildCreate", async (guild) => {
-
-  const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ")
+const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ")
   client.on("guildCreate", async (guild) => {
     console.log("+1")
     const dono = await client.guilds.fetch(guild.id).then(guilda => client.users.fetch(guilda.ownerID).then(o => `${o.tag} (${o.id})`))
@@ -56,6 +54,14 @@ client.on("guildCreate", async (guild) => {
     .setColor('#FFC4E7')
     webhook.send(embed);
   })
-})
+
+  client.on("guildMemberRemove", (member) => {
+    db.delete(`money_${member.guild.id}_${member.id}`); 
+    db.delete(`bank_${member.guild.id}_${member.id}`); 
+    db.delete(`work_${member.guild.id}_${member.id}`); 
+    db.delete(`daily_${member.guild.id}_${member.id}`); 
+    db.delete(`rob_${member.guild.id}_${member.id}`); 
+    console.log(`[ECONOMIA] O ${member.tag} saiu do servidor ${member.guild.name}, e teve todos os status de economia removidos!`);
+  })
 
 client.login(config.token);
