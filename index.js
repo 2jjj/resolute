@@ -17,9 +17,9 @@ mongoose
 
     client.on('ready', () => {
       const status = [ 
-        {name: 'resolutebot.xyz | Shard: 0', type: 'PLAYING'}, 
-        {name: 'Sendo desenvolvido | Shard: 0', type: 'PLAYING'}, 
-        {name: `Versão 1.2.5 | Shard: 0`, type: 'PLAYING'}
+        {name: 'resolutebot.xyz | Shard 0', type: 'PLAYING'}, 
+        {name: 'Sendo desenvolvido | Shard 0', type: 'PLAYING'}, 
+        {name: `Versão 1.2.5 | Shard 0`, type: 'PLAYING'}
      ] 
       function Presence() { 
             const base = status[Math.floor(Math.random() * status.length)] 
