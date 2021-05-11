@@ -1,5 +1,5 @@
 const db = require("quick.db");
-module.exports = async (client) => {
+module.exports = (client, message) => {
 
 client.on("guildMemberRemove", (member) => {
 	db.delete(`money_${member.guild.id}_${member.id}`); 

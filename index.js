@@ -20,6 +20,7 @@ client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if
 class Message extends(Structures.get("Message")){async inlineReply(e,s){const a=void 0===((s||e||{}).allowedMentions||{}).repliedUser||(s||e).allowedMentions.repliedUser;delete((s||e||{}).allowedMentions||{}).repliedUser;const t=e instanceof APIMessage?e.resolveData():APIMessage.create(this.channel,e,s).resolveData();if(Object.assign(t.data,{message_reference:{message_id:this.id}}),t.data.allowed_mentions&&0!==Object.keys(t.data.allowed_mentions).length||(t.data.allowed_mentions={parse:["users","roles","everyone"]}),void 0===t.data.allowed_mentions.replied_user&&Object.assign(t.data.allowed_mentions,{replied_user:a}),Array.isArray(t.data.content))return Promise.all(t.split().map(e=>(e.data.allowed_mentions=t.data.allowed_mentions,e)).map(this.inlineReply.bind(this)));const{data:n,files:l}=await t.resolveFiles();return this.client.api.channels[this.channel.id].messages.post({data:n,files:l}).then(e=>this.client.actions.MessageCreate.handle(e).message)}}Structures.extend("Message",()=>Message);
 
 //Eventos
+
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
@@ -29,4 +30,5 @@ fs.readdir(__dirname + "/events/", (err, files) => {
     console.log("[Evento] -> "+eventName)
   });
 });
+
 client.login(config.token);
