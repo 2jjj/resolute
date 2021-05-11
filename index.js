@@ -55,13 +55,15 @@ const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNb
     webhook.send(embed);
   })
 
-  client.on("guildMemberRemove", (member) => {
-    db.delete(`money_${member.guild.id}_${member.id}`); 
-    db.delete(`bank_${member.guild.id}_${member.id}`); 
-    db.delete(`work_${member.guild.id}_${member.id}`); 
-    db.delete(`daily_${member.guild.id}_${member.id}`); 
-    db.delete(`rob_${member.guild.id}_${member.id}`); 
-    console.log(`[ECONOMIA] O ${member.tag} saiu do servidor ${member.guild.name}, e teve todos os status de economia removidos!`);
+  client.on("guildDelete", async (guild) => {
+    console.log("+1")
+    const dono = await client.guilds.fetch(guild.id).then(guilda => client.users.fetch(guilda.ownerID).then(o => `${o.tag} (${o.id})`))
+    let embed = new Discord.MessageEmbed()
+    .setTitle(`-1 server 😔`)
+    .setThumbnail(client.user.displayAvatarURL())
+    .setTimestamp()
+    .setColor('#FFC4E7')
+    webhook.send(embed);
   })
 
 client.login(config.token);
