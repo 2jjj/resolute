@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client(); 
 const config = require("./config.json");
 const { APIMessage, Structures } = require("discord.js");
-const quickdb = require("quick.db");
 const fs = require("fs")
 const mongoose = require('mongoose');
 const db = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
