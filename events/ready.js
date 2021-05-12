@@ -1,10 +1,16 @@
-const m = require('moment');
-const colors = require('colors');
-const config = require('../config.json');
+const Discord = require("discord.js")
+const {ShardingManager} = require('discord.js');
 
 module.exports = (client, shard) => {
-
-client.on('ready', async () => {
-    console.log("on")
-})
+    const status = [  
+        {name: `resolutebot.xyz | Shard: 0`, type: 'PLAYING'}, 
+        {name: `Online :) | Shard: 0`, type: 'WATCHING'}, 
+        {name: `Versão 1.2.5 | Shard: 0`, type: 'LISTENING'}
+      ] 
+      function Presence() { 
+              const base = status[Math.floor(Math.random() * status.length)] 
+              client.user.setActivity(base)
+          } 
+          Presence(); 
+          setInterval(() => Presence(), 6100)          
 }
