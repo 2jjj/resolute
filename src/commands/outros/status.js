@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const os = require('os')
 const cpuStat = require("cpu-stat");
 const moment = require("moment") 
+const db = require("quick.db");
 
 
 exports.run = async (bot, message, args) => {

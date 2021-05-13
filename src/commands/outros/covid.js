@@ -1,5 +1,7 @@
 const Discord = require("discord.js")
 const api = require("novelcovid")
+const db = require("quick.db");
+
 module.exports.run = async(client,message,args)=> {
 
     let prefix = db.get(`prefix_${message.guild.id}`)

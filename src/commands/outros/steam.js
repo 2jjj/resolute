@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
-var steam = require('steam-provider') //npm i steam-provider
+var steam = require('steam-provider') 
+const db = require("quick.db");
+
 var provider = new steam.SteamProvider();
 
 exports.run = (bot, message, args) => {

@@ -1,4 +1,5 @@
 var figlet = require('figlet');
+const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
 

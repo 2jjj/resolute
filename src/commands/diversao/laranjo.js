@@ -2,6 +2,7 @@ const jimp = require("jimp")
 const Discord = require('discord.js')
 const cooldowns = {}
 const ms = require("ms")
+const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
     

@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 var Jimp = require("jimp")
+const db = require("quick.db");
 
 exports.run = async (bot, message, args) => {
 

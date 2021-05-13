@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const moment = require('moment'); 
+const db = require("quick.db");
 
 exports.run = (client, message) => { 
 

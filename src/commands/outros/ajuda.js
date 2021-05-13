@@ -1,3 +1,5 @@
+const db = require("quick.db");
+
 exports.run = async (client, message, args) => {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
