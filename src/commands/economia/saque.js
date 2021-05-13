@@ -2,6 +2,10 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 module.exports.run = async (client, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     let member = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
 
     let embed2 = new Discord.MessageEmbed()

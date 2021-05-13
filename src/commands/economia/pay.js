@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 module.exports.run = async (client, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
+    
     let user = message.mentions.members.first() 
 
     let member = db.fetch(`money_${message.guild.id}_${message.author.id}`)

@@ -3,6 +3,9 @@ const db = require("quick.db");
 const ms = require("parse-ms");
 
 module.exports.run = async (client, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
     
     let user = message.author;
 
