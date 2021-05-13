@@ -41,7 +41,7 @@ exports.run = async (client, message, args) => {
     if (args[0].length > 2) {
         let caracter = new Discord.MessageEmbed()
             .setColor('#8B0000')
-            .setTitle('O prefixo não pode ter mais de 2 caracteres.')
+            .setTitle('O prefixo não pode ter mais do que 2 caracteres.')
         return message.inlineReply(caracter)
     }
 
