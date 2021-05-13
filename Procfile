@@ -1,1 +1,1 @@
-worker: node clusters.js 
+worker: node clusters.js
