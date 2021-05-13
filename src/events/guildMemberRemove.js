@@ -1,7 +1,8 @@
 const db = require("quick.db");
 const Discord = require("discord.js")
 
-module.exports = (client, member) => {
+module.exports = async (client, member) => {
+
 	db.delete(`money_${member.guild.id}_${member.id}`); 
 	db.delete(`bank_${member.guild.id}_${member.id}`); 
 	db.delete(`work_${member.guild.id}_${member.id}`); 
