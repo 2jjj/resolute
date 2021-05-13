@@ -1,6 +1,10 @@
 var figlet = require('figlet');
 
 exports.run = async (client, message, args) => {
+
+let prefix = db.get(`prefix_${message.guild.id}`)
+if (prefix === null) prefix = "s."
+
 const ascii = args.join(" "); 
 
 if(!ascii) { 

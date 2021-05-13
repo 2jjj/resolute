@@ -2,6 +2,10 @@ const Discord = require("discord.js");
 
 exports.run = async(bot, message, args) => { 
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
+    
     let embed = new Discord.MessageEmbed() 
     .setTitle(message.author.username)
     .setColor('RANDOM')

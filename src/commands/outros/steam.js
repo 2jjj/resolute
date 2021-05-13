@@ -3,6 +3,9 @@ var steam = require('steam-provider') //npm i steam-provider
 var provider = new steam.SteamProvider();
 
 exports.run = (bot, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
  
 let arg = args.join(' ') //Puxa os argumentos do  usuário
 if(!arg) return message.channel.send(`${message.author}, você precisa colocar um jogo!`) //retorna quando o usuário não coloca um jogo

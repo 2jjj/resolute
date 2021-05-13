@@ -6,6 +6,9 @@ const moment = require("moment")
 
 exports.run = async (bot, message, args) => {
 
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
            let { version } = require("discord.js");
     
            cpuStat.usagePercent(function(err, percent, seconds) {

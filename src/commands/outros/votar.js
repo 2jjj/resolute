@@ -6,6 +6,9 @@ exports.run = async (client, message, args) => {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     var content = args.join(' ')
 
     if (content.length > 600) { return message.inlineReply('<:bravinha:841126251741970452> O conteúdo a ser votado não pode passar de **600 caracteres.**') }

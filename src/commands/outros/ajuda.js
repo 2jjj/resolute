@@ -1,10 +1,8 @@
-const Discord = require('discord.js');
-module.exports = {
-  name: 'ajuda',
-  aliases: ['ajuda', 'help'],
-  cooldown: 3,
-  guildOnly: false,
-  async run(client, message, args) {
+exports.run = async (client, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
   let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
@@ -150,4 +148,3 @@ module.exports = {
   });
 })
 } 
-}

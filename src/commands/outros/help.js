@@ -1,9 +1,5 @@
-module.exports = {
-  name: 'help',
-  aliases: ['ajuda', 'help'],
-  cooldown: 3,
-  guildOnly: false,
-  async run(client, message, args) {
+exports.run = async (client, message, args) => {
+
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
@@ -148,5 +144,4 @@ module.exports = {
       msg.edit(embed)
   });
 })
-} 
 }

@@ -2,6 +2,9 @@ const Discord = require("discord.js")
 const api = require("novelcovid")
 module.exports.run = async(client,message,args)=> {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     let arg = args.slice(0).join(" ")
 
     if(!arg) return message.reply("Você precisa colocar o pais.")
