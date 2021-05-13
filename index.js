@@ -32,13 +32,13 @@ const eventFiles = fs.readdirSync('./events').filter((file) => file.endsWith('.j
 for (const folder of commandFolders) {
   const commandFiles = fs.readdirSync(`./src/commands/${folder}`).filter(file => file.endsWith('.js'));
   for (const file of commandFiles) {
-    const command = require(`./commands/${folder}/${file}`);
+    const command = require(`./src/commands/${folder}/${file}`);
     client.commands.set(command.name, command);
   }
 }
 
 for (const file of eventFiles) {
-  const event = require(`./events/${file}`);
+  const event = require(`./src/events/${file}`);
   const eventBind = file.split('.')[0];
   console.info(`\x1b[37m\x1b[44mINFO\x1b[0m: Loading event: ${file}; Bind: ${eventBind}`);
   client.on(eventBind, event.bind(null, client));
