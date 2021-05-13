@@ -32,7 +32,7 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
     const event = require(__dirname + `/src/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
-    console.log("[Evento]: "+eventName)
+    console.log("[EVENTO] - "+eventName)
   });
 });
 
@@ -43,7 +43,7 @@ fs.readdir("./src/commands/", (err, files) => {
     let props = require(`./src/commands/${file}`);
     let commandName = file.split(".")[0];
     client.commands.set(commandName, props);
-    console.log("[Comando]: "+commandName)
+    console.log("[COMANDO] - "+commandName)
   });
 });
 
