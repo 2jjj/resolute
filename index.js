@@ -29,7 +29,7 @@ class Message extends(Structures.get("Message")){async inlineReply(e,s){const a=
 
 client.commands = new Collection();
 
-fs.readdir(__dirname + "/src/events/", (err, files) => {
+fs.readdir(__dirname + "./src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     const event = require(__dirname + `/events/${file}`);
