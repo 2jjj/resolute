@@ -1,4 +1,3 @@
-  
 const Discord = require("discord.js")
 const db = require("quick.db")
 
@@ -18,7 +17,7 @@ exports.run = async (client, message, args) => {
         let format = new Discord.MessageEmbed()
             .setColor('#8B0000')
             .setTitle('Siga o formato correto')
-            .setDescription('`' + prefix + 'setprefix NovoPrefixo`\n \nExemplo: `' + prefix + 'setprefix $`')
+            .setDescription('`' + prefix + 'setprefix NovoPrefixo`\n \nExemplo: `' + prefix + 'setprefix !`')
         return message.inlineReply(format)
     }
 
@@ -41,7 +40,7 @@ exports.run = async (client, message, args) => {
     if (args[0].length > 2) {
         let caracter = new Discord.MessageEmbed()
             .setColor('#8B0000')
-            .setTitle('O prefixo não pode ter mais do que 2 caracteres.')
+            .setTitle('O prefixo não pode ter mais de 2 caracteres.')
         return message.inlineReply(caracter)
     }
 

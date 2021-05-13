@@ -4,10 +4,11 @@ const config = require("./config.json");
 const { APIMessage, Structures } = require("discord.js");
 const fs = require("fs")
 const mongoose = require('mongoose');
-const db = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
+const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
+const db = require("quick.db")
 
 mongoose
-    .connect(db, { 
+    .connect(mongodb, { 
         useNewUrlParser: true,
         useCreateIndex: true
       })
