@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
     let embed = new Discord.MessageEmbed()
     .setTitle(`WARN - ${membro.username}`)
     .setColor('RANDOM')
-    .setFooter(`<:info:835206734225473546> » Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
+    .setFooter(`» Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setDescription(motivo)
 
     // Aqui envia a mensagem no privado da pessoa que foi punida.
