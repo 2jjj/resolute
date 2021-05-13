@@ -21,6 +21,7 @@ class Message extends(Structures.get("Message")){async inlineReply(e,s){const a=
 
 
 client.commands = new Discord.Collection();
+client.config = config;
 
 const commandFolders = fs.readdirSync('./src/commands');
 const eventFiles = fs.readdirSync('./src/events').filter((file) => file.endsWith('.js'));
