@@ -1,8 +1,11 @@
 const db = require("quick.db");
-
+const Discord = require("discord.js")
 
 exports.run = async (client, message, args) => {
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
 
+  
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***

@@ -2,7 +2,9 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 
 exports.run = async (client, message, args) => {
-
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+    
     if (!message.member.hasPermission('MANAGE_CHANNELS')) {
         var perms = new Discord.MessageEmbed()
             .setColor('#FF0000')
