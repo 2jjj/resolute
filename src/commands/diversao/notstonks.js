@@ -2,6 +2,9 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
 
+   let prefix = db.get(`prefix_${message.guild.id}`)
+   if (prefix === null) prefix = "s."
+
    var list = [
       'https://imgur.com/qPzrtI3.gif',
       'https://imgur.com/DA1TD46.gif'

@@ -3,6 +3,11 @@ const Jimp = require("jimp");
 
 module.exports.run = (bot, message, args) =>
 {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
+    
     let GuildMember = message.mentions.members.first();
 
     if(!GuildMember)

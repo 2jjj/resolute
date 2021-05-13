@@ -2,6 +2,10 @@ const discord = require('discord.js')
 const randompuppy = require('random-puppy')
 
 exports.run = async (client, message, args) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+    
         const meme = ["meme", "dankmeme", "discordmeme"]
         const random = meme[Math.floor(Math.random() * meme.length)] //this returns any random string from the array meme
 

@@ -2,6 +2,9 @@ const Discord = require("discord.js")
 
 exports.run = async (client, message, args) => {
 
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
   let user = message.mentions.members.first()
   if (!user || message.author.id === user.id)
     return message.inlineReply("Você não pode fazer um Ship com você mesmo.")
