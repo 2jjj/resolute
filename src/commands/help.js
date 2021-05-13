@@ -1,6 +1,10 @@
-const Discord = require('discord.js');
-exports.run = async (bot, message, args) => {
-  let embed = new Discord.MessageEmbed()
+module.exports = {
+  name: 'help',
+  aliases: ['ajuda', 'help'],
+  cooldown: 3,
+  guildOnly: false,
+  async run(client, message, args) {
+    let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
       \n » **Categorias:**\n
@@ -145,3 +149,4 @@ exports.run = async (bot, message, args) => {
   });
 })
 } 
+}
