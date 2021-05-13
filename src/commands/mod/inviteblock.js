@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
+  
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
 
 client.on("message", async message => {
   const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;

@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 
-exports.run =async (bot, message, args) => {
+exports.run = async (bot, message, args) => {
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
     let inline = true
     let resence = true
     const status = {

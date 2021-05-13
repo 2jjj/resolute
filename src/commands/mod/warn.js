@@ -2,6 +2,10 @@ const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+    
+
     // Aqui é para definir a permissão de cargo para o uso do comando.
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:info:835206734225473546> » Sem permissão!")
 

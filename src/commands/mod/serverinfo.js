@@ -1,6 +1,9 @@
 const Discord = require("discord.js"); 
  
 exports.run = async (client, message, args) => {
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
  
     let serverembed = new Discord.MessageEmbed() 
     .setColor("#6400b6")

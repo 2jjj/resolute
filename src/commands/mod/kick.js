@@ -1,6 +1,10 @@
 const Discord = require ("discord.js")
 
 exports.run = (bot,message,args) => {
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
   if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("você não tem permissão para executar o comando.");
   if(args.lenght === 0) return message.reply("use **s.kick <@Pessoa> <Motivo>** para kickar alguém.");
   let kickMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);

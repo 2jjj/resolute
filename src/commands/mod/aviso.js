@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 
 exports.run = (bot, message, args) => {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:staff:835643948151996446> **|** Sem permissão!") 
 
     let membro = message.mentions.users.first() 

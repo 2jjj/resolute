@@ -1,6 +1,11 @@
 const Discord = require ("discord.js")
 
 exports.run = (bot,message,args) => {
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
+  
   if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("<:info:835206734225473546> » Você não tem permissão para executar o comando.");
   if(args.lenght === 0) return message.reply("<:info:835206734225473546> » Use **s.ban <@Pessoa> <Motivo>** para banir alguém.");
   let banMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);

@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
   if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
       "<:info:835206734225473546> **|** Você não tem a permissão de `Gerenciar Mensagens` para usar esse comando"
