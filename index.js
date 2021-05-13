@@ -37,5 +37,4 @@ for (const file of eventFiles) {
   client.on(eventBind, event.bind(null, client));
 }
 
-
 client.login(config.token);
