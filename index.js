@@ -36,5 +36,15 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
   });
 });
 
+fs.readdir("./src/commands/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./src/commands/${file}`);
+    let commandName = file.split(".")[0];
+    client.commands.set(commandName, props);
+    console.log("[Comando]: "+commandName)
+  });
+});
 
 client.login(config.token);
