@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://github.com/sprayx/ResoluteBot">
+  <a href="https://github.com/sprayx/ResoluteComoUsar">
   </a>
-  <h2 align="center">Resolute Bot (V 1.2.5b)</h2>
+  <h2 align="center">Resolute Bot (V 1.2.5(Beta)</h2>
 
   <p align="center">
     <br>
@@ -54,6 +54,6 @@ O projeto é desenvolvido pelo [Spray](https://github.com/sprayx).
 <hr>
 
 ### Lançamentos
-- [ ] Website
-- [ ] Docs
-- [ ] Verificação do bot
+- [x] Website
+- [x] Docs
+- [x] Verificação do bot
