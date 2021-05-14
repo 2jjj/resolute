@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
         
         var list = [
                 'https://imgur.com/jVL0mbR.gif',
-                'https://imgur.com/TRHBCon.gif'
+                'https://cdn.dicionariopopular.com/imagens/image-347.jpg'
         ]
 
         var rand = list[Math.floor(Math.random() * list.length)]

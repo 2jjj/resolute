@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
 
    var list = [
       'https://imgur.com/qPzrtI3.gif',
-      'https://imgur.com/DA1TD46.gif'
+      'https://i.redd.it/p4oj8jsgj3551.png'
    ]
 
    var rand = list[Math.floor(Math.random() * list.length)]
