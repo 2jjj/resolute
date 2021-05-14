@@ -148,16 +148,17 @@ exports.run = async (client, message, args) => {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
-        \n » **Comandos:**\n
-        <:info:835206734225473546> | Moderação - <a:1__:836268679263027230>
-        <:info:835206734225473546> | Fun - <a:2_:836268689484546088>
-        <:info:835206734225473546> | Outros - <a:3___:836268637257990184>
-        <:info:835206734225473546> | Economia - <a:4_:836268669516251136>
-        <:info:835206734225473546> | Voltar - <:Voltar:836330128073687092>
+        \n » **Categorias:**\n
+        <a:1__:836268679263027230> | Moderação
+        <a:2_:836268689484546088> | Diversão
+        <a:3___:836268637257990184> | Outros
+        <a:4_:836268669516251136> | Economia
+        <a:5___:836268658795347990> | Configuráveis 
+        <:Voltar:836330128073687092> | Voltar
         \n » **Links:**
         > http://resolutebot.xyz
-        \n » **Feito por Spray#0007 | Versão 1.2.5b**
-    `)
+        \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
+      `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
   });
