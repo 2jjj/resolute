@@ -28,6 +28,7 @@ exports.run = async (client, message, args) => {
       msg.react(`<a:2_:836268689484546088>`);
       msg.react(`<a:3___:836268637257990184>`);
       msg.react(`<a:4_:836268669516251136>`);
+      msg.react(`<a:5___:836268658795347990>`);
     })
     
     //Emojis
@@ -36,6 +37,7 @@ exports.run = async (client, message, args) => {
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 20000 })
     const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 20000 })
     const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 20000 })
+    const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 20000 })
 
     ////////////
     moderacao.on(`collect`, r => {
@@ -131,7 +133,16 @@ exports.run = async (client, message, args) => {
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_4)
     })
-    
+
+    configuraveis.on(`collect`, r => {
+      let embed_5 = new Discord.MessageEmbed()
+      .setColor('#e1ff00')
+      .setDescription(`**» Categoria de Configuraveis:**\n
+      > <:spr4yxyz:837798446584168468> | \`s.setprefix\` <prefixo>
+      `)
+      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
+      msg.edit(embed_5)    
+    })
 
     voltar.on(`collect`, r => {
       let embed = new Discord.MessageEmbed()
