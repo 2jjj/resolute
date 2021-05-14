@@ -15,16 +15,56 @@ mongoose
     .then(() => console.log('MongoDB Conectado.'))
     .catch(err => console.log(err));
 
+
 client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é **s.**, use **s.ajuda** para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});
 
-//Comandos
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/diversao/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/mod/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/outros/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/economia/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
-client.on("message",t=>{if(t.author.bot)return;if("dm"==t.channel.type)return;if(!t.content.toLowerCase().startsWith(config.prefix.toLowerCase()))return;if(t.content.startsWith(`<@!${client.user.id}>`)||t.content.startsWith(`<@${client.user.id}>`))return;const e=t.content.trim().slice(config.prefix.length).split(/ +/g),r=e.shift().toLowerCase();try{require(`./src/commands/configuraveis/${r}.js`).run(client,t,e)}catch(t){console.error("[+]Erro:"+t)}});
+client.on('message', message => {
 
+  var prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) { prefix = "s." }
+
+  if (message.author.bot) return;
+  if (message.channel.type == 'dm') return;
+  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
+  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+
+ const args = message.content
+     .trim().slice(prefix.length)
+     .split(/ +/g);
+ const command = args.shift().toLowerCase();
+
+ try {
+    const commandFile = require(`./src/commands/outros/${command}.js`)
+    commandFile.run(client, message, args);
+ } catch (err) {
+ console.error('Erro:' + err);
+}
+try {
+  const commandFile = require(`./src/commands/mod/${command}.js`)
+  commandFile.run(client, message, args);
+} catch (err) {
+console.error('Erro:' + err);
+}
+try {
+  const commandFile = require(`./src/commands/economia/${command}.js`)
+  commandFile.run(client, message, args);
+} catch (err) {
+console.error('Erro:' + err);
+}
+try {
+  const commandFile = require(`./src/commands/diversao/${command}.js`)
+  commandFile.run(client, message, args);
+} catch (err) {
+console.error('Erro:' + err);
+}
+try {
+  const commandFile = require(`./src/commands/configuraveis/${command}.js`)
+  commandFile.run(client, message, args);
+} catch (err) {
+console.error('Erro:' + err);
+}
+});
+   
 class Message extends Structures.get("Message") {
   async inlineReply(content, options) {
       const mentionRepliedUser = typeof ((options || content || {}).allowedMentions || {}).repliedUser === "undefined" ? true : ((options || content).allowedMentions).repliedUser;
@@ -51,7 +91,6 @@ class Message extends Structures.get("Message") {
           .then(d => this.client.actions.MessageCreate.handle(d).message);
   }
 }
-
 Structures.extend("Message", () => Message)
 
 fs.readdir(__dirname + "/src/events/", (err, files) => {
