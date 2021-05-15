@@ -15,6 +15,7 @@ exports.run = async (client, message, args) => {
       <a:3___:836268637257990184> | Outros
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
+      <a:6_:836268649790439464> | Ticket
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
@@ -29,6 +30,7 @@ exports.run = async (client, message, args) => {
       msg.react(`<a:3___:836268637257990184>`);
       msg.react(`<a:4_:836268669516251136>`);
       msg.react(`<a:5___:836268658795347990>`);
+      msg.react(`<a:6_:836268649790439464>`);
     })
     
     //Emojis
@@ -37,6 +39,7 @@ exports.run = async (client, message, args) => {
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 20000 })
     const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 20000 })
     const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 20000 })
+    const ticket = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 20000 })
     const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 20000 })
 
     ////////////
@@ -44,18 +47,18 @@ exports.run = async (client, message, args) => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.aviso\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.ban\` @usuário <motivo>
-      > <:spr4yxyz:837798446584168468> | \`s.banlist\`
-      > <:spr4yxyz:837798446584168468> | \`s.botinfo\` 
-      > <:spr4yxyz:837798446584168468> | \`s.clear\`
-      > <:spr4yxyz:837798446584168468> | \`s.kick\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.lock\`
-      > <:spr4yxyz:837798446584168468> | \`s.servericon\` id do servidor
-      > <:spr4yxyz:837798446584168468> | \`s.serverinfo\` id do servidor
-      > <:spr4yxyz:837798446584168468> | \`s.userinfo\` id do usuário
-      > <:spr4yxyz:837798446584168468> | \`s.unlock\`
-      > <:spr4yxyz:837798446584168468> | \`s.warn\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}aviso\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ban\` @usuário <motivo>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}banlist\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}clear\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}kick\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}lock\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}servericon\` id do servidor
+      > <:spr4yxyz:837798446584168468> | \`${prefix}serverinfo\` id do servidor
+      > <:spr4yxyz:837798446584168468> | \`${prefix}userinfo\` id do usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}unlock\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}warn\` @usuário
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -68,21 +71,21 @@ exports.run = async (client, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.wanted\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.laranjo\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`s.primeiraspalavras\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`s.carinho\` @usuário
-      > <:spr4yxyz:837798446584168468> |  \`s.coinflip\` <cara ou coroa>
-      > <:spr4yxyz:837798446584168468> | \`s.highfive\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.hug\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.kiss\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.meme\`
-      > <:spr4yxyz:837798446584168468> | \`s.morder\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.pisar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.say\` frase
-      > <:spr4yxyz:837798446584168468> | \`s.ship\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.stonks\`
-      > <:spr4yxyz:837798446584168468> | \`s.notstonks\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}wanted\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}laranjo\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}primeiraspalavras\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}carinho\` @usuário
+      > <:spr4yxyz:837798446584168468> |  \`${prefix}coinflip\` <cara ou coroa>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}highfive\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}hug\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}kiss\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}meme\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}morder\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}pisar\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}say\` frase
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ship\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}stonks\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}notstonks\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -95,19 +98,19 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.ascii\`
-      > <:spr4yxyz:837798446584168468> | \`s.avatar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`s.clima\`
-      > <:spr4yxyz:837798446584168468> | \`s.covid\` <pais>
-      > <:spr4yxyz:837798446584168468> | \`s.emoji\` <emoji>
-      > <:spr4yxyz:837798446584168468> | \`s.horas\`
-      > <:spr4yxyz:837798446584168468> | \`s.ping\`
-      > <:spr4yxyz:837798446584168468> | \`s.sorteador\`
-      > <:spr4yxyz:837798446584168468> | \`s.status\`
-      > <:spr4yxyz:837798446584168468> | \`s.sugestao\` <sugestão>
-      > <:spr4yxyz:837798446584168468> | \`s.uptime\`
-      > <:spr4yxyz:837798446584168468> | \`s.votar\`
-      > <:spr4yxyz:837798446584168468> | \`s.steam\` <jogo>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
+      > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}covid\` <pais>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}emoji\` <emoji>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}horas\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ping\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteador\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}status\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}sugestao\` <sugestão>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}uptime\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}votar\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}steam\` <jogo>
       `)
       .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -119,15 +122,15 @@ exports.run = async (client, message, args) => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.daily\`
-      > <:spr4yxyz:837798446584168468> | \`s.depositar\` <quantidade>
-      > <:spr4yxyz:837798446584168468> | \`s.leaderboard\`
-      > <:spr4yxyz:837798446584168468> | \`s.money\`
-      > <:spr4yxyz:837798446584168468> | \`s.pay\` <@usuário>
-      > <:spr4yxyz:837798446584168468> | \`s.roubar\` <@usuário>
-      > <:spr4yxyz:837798446584168468> | \`s.saque\` <dinheiro>
-      > <:spr4yxyz:837798446584168468> | \`s.setmoney\` | Admin+
-      > <:spr4yxyz:837798446584168468> | \`s.trabalhar\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}daily\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}depositar\` <quantidade>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}leaderboard\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}money\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}pay\` <@usuário>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}roubar\` <@usuário>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}saque\` <dinheiro>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}setmoney\` | Admin+
+      > <:spr4yxyz:837798446584168468> | \`${prefix}trabalhar\`
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -144,20 +147,32 @@ exports.run = async (client, message, args) => {
       msg.edit(embed_5)    
     })
 
+    ticket.on(`collect`, r => {
+      let embed_6 = new Discord.MessageEmbed()
+      .setColor('#e1ff00')
+      .setDescription(`**» Categoria de Configuraveis:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
+      > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
+      `)
+      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
+      msg.edit(embed_6)    
+    })
+
     voltar.on(`collect`, r => {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
-        \n » **Categorias:**\n
-        <a:1__:836268679263027230> | Moderação
-        <a:2_:836268689484546088> | Diversão
-        <a:3___:836268637257990184> | Outros
-        <a:4_:836268669516251136> | Economia
-        <a:5___:836268658795347990> | Configuráveis 
-        <:Voltar:836330128073687092> | Voltar
-        \n » **Links:**
-        > http://resolutebot.xyz
-        \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
+      \n » **Categorias:**\n
+      <a:1__:836268679263027230> | Moderação
+      <a:2_:836268689484546088> | Diversão
+      <a:3___:836268637257990184> | Outros
+      <a:4_:836268669516251136> | Economia
+      <a:5___:836268658795347990> | Configuráveis 
+      <a:6_:836268649790439464> | Ticket
+      <:Voltar:836330128073687092> | Voltar
+      \n » **Links:**
+      > http://resolutebot.xyz
+      \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
       `)
       .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
       msg.edit(embed)
