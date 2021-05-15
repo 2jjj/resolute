@@ -48,6 +48,7 @@ exports.run = async (client, message, args) => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}slowmode\` <tempo(ms)>
       > <:spr4yxyz:837798446584168468> | \`${prefix}aviso\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}ban\` @usuário <motivo>
       > <:spr4yxyz:837798446584168468> | \`${prefix}banlist\`
