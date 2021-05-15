@@ -22,7 +22,7 @@ module.exports = {
 
         if (args[0] === 'off') {
 
-            if (currentCooldown === 0) return message.channel.send('slowmode do canal está desativado.').then(m => m.delete({ timeout: 5000 }));
+            if (currentCooldown === 0) return message.channel.send('Slowmode do canal está desativado.').then(m => m.delete({ timeout: 5000 }));
 
             embed.setTitle('Slowmode Desativado.')
                 .setColor('#00ff00')
