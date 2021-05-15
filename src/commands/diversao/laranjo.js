@@ -20,7 +20,7 @@ let resta = [time.seconds, 'segundos']
  
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
-message.reply(`Espere **\`${time}\`** para executar outro comando**`)
+message.reply(`**Espere **\`${time}\`** para executar outro comando**`)
        return;
     } else {
 cooldowns[message.author.id].lastCmd = Date.now() 
