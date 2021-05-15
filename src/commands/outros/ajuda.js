@@ -150,7 +150,7 @@ exports.run = async (client, message, args) => {
     ticket.on(`collect`, r => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Configuraveis:**\n
+      .setDescription(`**» Categoria de Ticket:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
       > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
       `)
