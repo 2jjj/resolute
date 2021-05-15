@@ -1,17 +1,29 @@
-const Discord = require('discord.js')
+const Discord = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
+let canal = client.channels.cache.get("842984263392428032")
+let bug = args.join(' ');
+if(!bug) {
+return message.channel.send({embed: {
+description: "Descreva o bug encontrado!",
+color: "RED"
+}
+});
+}
+let embed = new Discord.MessageEmbed()
+.setTitle("Novo Bug reportado")
+.setThumbnail(client.user.displayAvatarURL())
+.addField("Servidor que reportou", `${message.guild.name}`)
+.addField("Reportado por", `${message.author.tag}`)
+.addField("Menção", `${message.author}`)
+.addField("ID de quem reportou", `${message.author.id}`)
+.addField("Bug", `\`${bug}\``)
+.setColor([255,182,193])
+canal.send(embed)
 
-let user = client.users.cache.get("836345581424738354")
-
-const reporte = args.join(" ")
-if(!reporte) return message.channel.send(`${message.author} você deve digitar o bug`) 
-
-const embed = new Discord.MessageEmbed()
-.setTitle("Novo bug")
-.addField("Autor Da Mensagem", `\`${message.author.tag}\`\n\`${message.author.id}\``)
-.addField("Bug Reportado", `${reporte}`)
-.setFooter(`Reportado em ${message.guild.name}`)
-.setColor("RANDOM")
-user.send(embed)
+message.channel.send({embed: {
+description: "<a:check:835206263075242029> Seu bug foi computado e enviado para minha equipe, muito obrigado! <3",
+color: "RED"
+}
+});
 }
