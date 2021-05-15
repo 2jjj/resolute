@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@replit/database": "^2.0.0",
+    "canvas": "^2.7.0",
     "cluster": "^0.7.7",
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",

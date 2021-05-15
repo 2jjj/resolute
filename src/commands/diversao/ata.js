@@ -1,9 +1,8 @@
 const db = require("quick.db")
 
-exports.run = async (client, message, args, idioma, prefixo, canvas, Canvas) => {
+exports.run = async (client, message, args, idioma) => {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
-
 
       const Canvas = require(`canvas`);
       const canvas = Canvas.createCanvas(300, 300);
