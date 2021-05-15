@@ -8,6 +8,8 @@ const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 const Canvas = require(`canvas`);
 
+
+//Conexão ao MongoDB
 mongoose
     .connect(mongodb, { 
         useNewUrlParser: true,
@@ -17,9 +19,11 @@ mongoose
     .catch(err => console.log(err));
 
 
-
+//se mencionar o bot
 client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é \`s.\`, use \`s.ajuda\` para ajuda!\n > Me adicione -> **http://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});
 
+
+//Command Handler
 client.on('message', message => {
 
   var prefix = db.get(`prefix_${message.guild.id}`)
@@ -73,6 +77,8 @@ console.error('Erro:' + err);
 }
 });
    
+
+//inlinereply
 class Message extends Structures.get("Message") {
   async inlineReply(content, options) {
       const mentionRepliedUser = typeof ((options || content || {}).allowedMentions || {}).repliedUser === "undefined" ? true : ((options || content).allowedMentions).repliedUser;
@@ -101,6 +107,8 @@ class Message extends Structures.get("Message") {
 }
 Structures.extend("Message", () => Message)
 
+
+//quote message
 Message.prototype.quote = async function (content, options) {
   const reference = {
     message_id: (
@@ -130,6 +138,8 @@ Message.prototype.quote = async function (content, options) {
   return msg
 }
 
+
+//Carregando eventos
 fs.readdir(__dirname + "/src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
