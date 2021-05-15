@@ -20,8 +20,9 @@ exports.run = async (client, message, args) => {
       \n » **Links:**
       > http://resolutebot.xyz
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
+      \n » \`Use s.report para reportar bugs.\`
     `)
-    .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
+    .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
   //
   message.channel.send(message.author, embed).then(msg => {
     msg.react(`<:Voltar:836330128073687092>`).then(() => {
@@ -99,6 +100,7 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
       > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
@@ -133,7 +135,8 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}setmoney\` | Admin+
       > <:spr4yxyz:837798446584168468> | \`${prefix}trabalhar\`
       `)
-      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
+      .setImage("https://i.pinimg.com/originals/24/5f/33/245f33d5b2bbc7de141c8f54bfeab550.gif")
+      //o ngc q vai em cima
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_4)
     })
@@ -155,7 +158,7 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
       > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
       `)
-      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
+      .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
     })
 
@@ -174,8 +177,9 @@ exports.run = async (client, message, args) => {
       \n » **Links:**
       > http://resolutebot.xyz
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
-      `)
-      .setImage("https://cdn.discordapp.com/attachments/833789118986059836/833806087702446181/image0.gif")
+      \n » \`Use s.report para reportar bugs.\`
+    `)
+    .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
       msg.edit(embed)
   });
 })
