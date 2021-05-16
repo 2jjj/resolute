@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
+      \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
@@ -179,7 +179,7 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
+      \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
