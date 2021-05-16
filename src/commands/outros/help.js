@@ -16,6 +16,7 @@ exports.run = async (client, message, args) => {
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
       <a:6_:836268649790439464> | Ticket
+      <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
@@ -32,6 +33,7 @@ exports.run = async (client, message, args) => {
       msg.react(`<a:4_:836268669516251136>`);
       msg.react(`<a:5___:836268658795347990>`);
       msg.react(`<a:6_:836268649790439464>`);
+      msg.react(`<:music:843602147051700284>`);
     })
     
     //Emojis
@@ -42,6 +44,7 @@ exports.run = async (client, message, args) => {
     const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 20000 })
     const ticket = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 20000 })
     const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 20000 })
+    const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 20000 })
 
     ////////////
     moderacao.on(`collect`, r => {
@@ -167,6 +170,20 @@ exports.run = async (client, message, args) => {
       msg.edit(embed_6)    
     })
 
+    music.on(`collect`, r => {
+      let embed_7 = new Discord.MessageEmbed()
+      .setColor('#e1ff00')
+      .setDescription(`**» Categoria de Ticket:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}stop\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}pause\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}despausar\` 
+      `)
+      .setImage("https://i.pinimg.com/originals/d9/d4/40/d9d4406eda8b13a30a6a0de486f93402.gif")
+      msg.edit(embed_7)    
+    })
+
     voltar.on(`collect`, r => {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
@@ -178,6 +195,7 @@ exports.run = async (client, message, args) => {
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
       <a:6_:836268649790439464> | Ticket
+      <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > http://resolutebot.xyz
