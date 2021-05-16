@@ -72,6 +72,7 @@ exports.run = async (client, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}cachorro\` <frase> 
       > <:spr4yxyz:837798446584168468> | \`${prefix}trump\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}bolsonaro\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}ata\`
@@ -102,6 +103,8 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}perfil\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}sobremim\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
       > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
