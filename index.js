@@ -75,6 +75,12 @@ try {
 } catch (err) {
 console.error('Erro:' + err);
 }
+try {
+  const commandFile = require(`./src/commands/music/${command}.js`)
+  commandFile.run(client, message, args);
+} catch (err) {
+console.error('Erro:' + err);
+}
 });
    
 
