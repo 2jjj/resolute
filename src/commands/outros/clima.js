@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
 
     var noresult = new Discord.MessageEmbed()
       .setColor('#FF0000')
-      .setTitle('<:2754danger:837767461058641931> | Parece que ocorreu um erro no meu sistema de busca')
+      .setTitle('<:2754danger:843589030495125514> | Parece que ocorreu um erro no meu sistema de busca')
       .setDescription('<:info:835206734225473546> `Nenhuma cidade/estado foi encontrado`')
 
     if (!city) { return message.inlineReply(':x: Formato incorreto! | `' + prefix + 'clima SP/RJ/MG ou o nome da Cidade/Estado`') }
