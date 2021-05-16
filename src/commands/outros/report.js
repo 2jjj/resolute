@@ -8,7 +8,7 @@ let canal = client.channels.cache.get("842984263392428032")
 let bug = args.join(' ');
 if(!bug) {
 return message.channel.send({embed: {
-description: "Descreva o bug encontrado!",
+description: "<:information:843542771814236170> Descreva o bug encontrado!",
 color: "RED"
 }
 });

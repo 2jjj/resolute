@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     return message.channel.send(
       `**${message.author.username}, a sintaxe correta é:** ` +
         "`" +
-        "s.emoji <nomedoemoji>`"
+        `${prefix}emoji <nomedoemoji>`
     ); 
   let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 

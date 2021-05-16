@@ -49,7 +49,7 @@ module.exports = {
  }
 
  let ganhador = m.reactions.cache.get("💎").users.cache.filter((u) => !u.bot).random();
- channel.send(`Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
+ channel.send(`<:4693_pink_hair_popcorn:843542215708114994> Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
  
  }, ms(args[0]));
  },
