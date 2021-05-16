@@ -84,7 +84,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}highfive\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}hug\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}kiss\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}meme\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}morder\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}pisar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}say\` frase
