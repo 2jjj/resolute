@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
       \n » **Links:**
       > http://resolutebot.xyz
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
-      \n » \`Use s.report para reportar bugs.\`
+      \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
   //
@@ -180,7 +180,7 @@ exports.run = async (client, message, args) => {
       \n » **Links:**
       > http://resolutebot.xyz
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3\`
-      \n » \`Use s.report para reportar bugs.\`
+      \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
       msg.edit(embed)
