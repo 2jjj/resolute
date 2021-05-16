@@ -104,6 +104,7 @@ exports.run = async (client, message, args) => {
       .setDescription(`**» Outros comandos:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}perfil\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}sobremim\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio> - no minimo 1m
       > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
       > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
