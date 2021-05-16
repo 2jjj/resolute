@@ -52,7 +52,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}aviso\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}ban\` @usuário <motivo>
       > <:spr4yxyz:837798446584168468> | \`${prefix}banlist\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}clear\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}kick\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}lock\`
@@ -103,6 +102,7 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
       > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
