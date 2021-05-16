@@ -110,7 +110,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}covid\` <pais>
       > <:spr4yxyz:837798446584168468> | \`${prefix}emoji\` <emoji>
       > <:spr4yxyz:837798446584168468> | \`${prefix}horas\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}ping\`
