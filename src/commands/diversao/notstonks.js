@@ -1,20 +1,23 @@
-const Discord = require('discord.js')
-const db = require("quick.db");
+const Canvas = require('canvas');
+const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
+let prefix = db.get(`prefix_${message.guild.id}`)
+if (prefix === null) prefix = "s."
 
-   let prefix = db.get(`prefix_${message.guild.id}`)
-   if (prefix === null) prefix = "s."
+let pessoa = message.mentions.users.first() || client.users.cache.get(args[0]);
 
-   var list = [
-      'https://imgur.com/qPzrtI3.gif',
-      'https://i.redd.it/p4oj8jsgj3551.png'
-   ]
+if(!pessoa){
+pessoa = message.author
+}
+    const wallpaper = await Canvas.loadImage('https://cdn.discordapp.com/attachments/819648612594090023/822540141351927828/not-stonks.jpg');
+    const avatar = await Canvas.loadImage(pessoa.avatarURL({dynamic: false, format: 'png'}));
+    const canva = Canvas.createCanvas(wallpaper.width, wallpaper.height);
+    const ctx = canva.getContext('2d');
+    ctx.drawImage(wallpaper, 0, 0, canva.width, canva.height);
+    ctx.drawImage(avatar, 200, 30, 200, 200);
+    const attach = new Discord.MessageAttachment(canva.toBuffer(), 'teste.png');
+    message.channel.send(attach);
 
-   var rand = list[Math.floor(Math.random() * list.length)]
-
-   var embed = new Discord.MessageEmbed()
-      .setColor('BLUE')
-      .setImage(rand)
-   await message.inlineReply(embed)
+    
 }
