@@ -9,13 +9,13 @@ exports.run = async (bot, message, args) => {
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
-      "🚨 | Você não tem permissão para limpar mensagens, sorry."
+      "<:bravinha:841126251741970452> | Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
     );
     
   const deleteCount = parseInt(args[0], 10);
   if (!deleteCount || deleteCount < 1 || deleteCount > 1000)
     return message.reply(
-        "🚨 | forneça um número de até **1000 mensagens** a serem excluídas."
+        "<:Aviso:843862131720192001> | Forneça um número de até **1000 mensagens** a serem excluídas."
       );
  
   const fetched = await message.channel.messages.fetch({
@@ -23,7 +23,7 @@ exports.run = async (bot, message, args) => {
   });
   message.channel.bulkDelete(fetched); {
       let embed = new Discord.MessageEmbed()
-      .setDescription(`**♻️ O chat foi Limpo.**`)
+      .setDescription(`**<:2637settings:843854352867262504> O chat foi Limpo por ${message.author}**`)
       .setColor('BLUE')
       .setTitle('`Resolute - Clear`')
       .setFooter(`• Autor: ${message.author.username}`, message.author.displayAvatarURL({format: "png"}));

@@ -1,3 +1,4 @@
+/* 
 const Discord = require("discord.js");
 const db = require("quick.db");
 
@@ -16,3 +17,4 @@ client.on("message", async message => {
   }
 });
 }
+*/
