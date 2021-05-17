@@ -10,7 +10,7 @@ module.exports.run = async(client,message,args)=> {
 
     if(db.fetch(`lock.${message.channel.id}`)) return message.reply("<:7300lock:843854352653484084> | Este canal já está bloqueado.")
 
-    let msg = await message.channel.send("Aguarde um momento...")
+    let msg = await message.channel.send("<:7300lock:843854352653484084> » Aguarde um momento...")
 
     try {
         db.set(`lock.${message.channel.id}`,message.author.id)
