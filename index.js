@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client(); 
 const config = require("./config.json");
-const { APIMessage, Structures } = require("discord.js");
+require("./inlineReply")
+require("./quote")
 const fs = require("fs")
 const mongoose = require('mongoose');
 const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
-const Canvas = require(`canvas`);
 client.queue = new Map();
 
 
@@ -85,7 +85,6 @@ console.error('Erro:' + err);
 }
 });
    
-
 //Carregando eventos
 fs.readdir(__dirname + "/src/events/", (err, files) => {
   if (err) return console.error(err);
