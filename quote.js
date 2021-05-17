@@ -1,7 +1,5 @@
 const { APIMessage, Structures, Message } = require("discord.js");
 
-
-//quote message
 Message.prototype.quote = async function (content, options) {
     const reference = {
       message_id: (

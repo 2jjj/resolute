@@ -1,6 +1,5 @@
 const { APIMessage, Structures } = require("discord.js");
 
-//inlinereply
 class Message extends Structures.get("Message") {
     async inlineReply(content, options) {
         const mentionRepliedUser = typeof ((options || content || {}).allowedMentions || {}).repliedUser === "undefined" ? true : ((options || content).allowedMentions).repliedUser;
