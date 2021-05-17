@@ -34,13 +34,13 @@ exports.run = (client, message, args) => {
             return message.channel.send(help);
         }
 
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({embed: {color: "#ff0000", description: "<a:erradogst:842084346970112041> Você não tem permissão para utilizar este comando!"}})
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({embed: {color: "#ff0000", description: "<:information:843542771814236170> Você não tem permissão para utilizar este comando! | Permissão necessária: BAN_MEMBERS"}}) 
 
         const usuario = message.mentions.members.first()
     
         const motivo = args.slice(1).join(" ");
 
-        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "<a:erradogst:842084346970112041> Eu não tenho permissão para banir este usuário!"}})
+        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "<:information:843542771814236170> Eu não tenho permissão para banir este usuário! | Permissão necessária: BAN_MEMBERS"}})
 
         const embed = new Discord.MessageEmbed()
         .setTitle("Novo Banimento!")

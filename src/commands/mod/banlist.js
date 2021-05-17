@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s." 
 
-if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('❌ Não tens permissão para ver a lista de membros banidos!'); //Verifica se quem enviou o comando tem permissão para ver os membros banidos
+if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("Você não possui permissões para usar este comando | Permissão: `BAN_MEMBERS`");
 if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.channel.send('❌ Não tenho permissão para ver a lista de membros banidos!'); //Verifica se o bot tem permissão para ver os membros banidos
 
 const bans = await message.guild.fetchBans(); //Obtém a lista de membros banidos do servidor

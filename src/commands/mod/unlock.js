@@ -6,7 +6,7 @@ module.exports.run = async(client,message,args)=> {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
     if(!db.fetch(`lock.${message.channel.id}`)) return message.reply("<:info:835206734225473546> » Esse canal não está bloqueado.")
 

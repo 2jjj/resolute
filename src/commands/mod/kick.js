@@ -1,25 +1,28 @@
-const Discord = require ("discord.js")
-const db = require("quick.db");
+const discord = require('discord.js')
+module.exports = { 
+    name: "kick",
+    description: "kickar alguém",
+    run: async(client, message, args) => {
+      if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Você não tem permiçõe suficientes para usar este comando | Permissão necessária:`KICK_MEMBERS`")
+        let target = message.mentions.members.first()
 
-exports.run = (bot,message,args) => {
+        if(!target) return message.reply("Por favor, mencione alguém para kickar!")
 
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
+        if(target.id === message.author.id) {
+            return message.reply("Você não pode se kickar!")
+        }
 
-  if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("você não tem permissão para executar o comando.");
-  if(args.lenght === 0) return message.reply("use **s.kick <@Pessoa> <Motivo>** para kickar alguém.");
-  let kickMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-  if(!kickMember) return message.reply("use **s.kick <@Pessoa> <Motivo>** para kickar alguém.");
-  let kickReason = args.join(" ").slice(22) || args.slice(1).join(" ");
-  if(!kickReason){
-    kickReason = "<:info:835206734225473546> » O motivo não foi especificado."
-  }
-  
-  try {
-    kickMember.kick({reason: kickReason})
-    message.channel.send(`<:info:835206734225473546> > ${kickMember} **foi** \`Kickado\` **pelo** \`Motivo:\`**${kickReason}**`);
-  } catch (error) {
-    message.reply(`${error}`)
-  }
+        let reason = args.slice(1).join(' ')
+
+        if(!reason) return message.reply("Por favor, dê um motivo!")
+
+        let embed = new discord.MessageEmbed()
+        .setTitle("Membro Kickado")
+        .setColor('RED')
+        .addField("Usuário", `${target.user}`)
+        .addField("Moderador", `${message.author}`)
+        .addField("Motivo", `${reason}`)
+        await message.channel.send(embed)
+        await target.kick(reason)
+    }
 }
-

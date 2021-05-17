@@ -21,5 +21,5 @@ exports.run = (bot, message, args) => {
     .setDescription(motivo)
 
     membro.send(embed) 
-    message.channel.send(`**${message.author} | <:staff:835643948151996446> **|** Aviso enviado com sucesso!**`) // Aqui vai ser a mensagem que o bot irá mandar no chat para o autor que executou o comando.
+    message.channel.send(`**${message.author} | <:staff:835643948151996446> **|** Aviso enviado com sucesso!**`)
 }

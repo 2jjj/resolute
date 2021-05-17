@@ -9,7 +9,7 @@ module.exports = {
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
 
-        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('Você não tem permissão para usar este comando.').then(m => m.delete({ timeout: 5000 }));
+        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
         if (!args[0]) return message.channel.send('Coloque o tempo para o slowmode!').then(m => m.delete({ timeout: 5000}));
 

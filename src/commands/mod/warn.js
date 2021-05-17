@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
     
 
     // Aqui é para definir a permissão de cargo para o uso do comando.
-    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:info:835206734225473546> » Sem permissão!")
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:info:835206734225473546> » Sem permissão! | Permissão necessária: `ADMINISTRATOR`")
 
     // Aqui o bot menciona o usuário para  que ele mencione um membro para punir.
     let membro = message.mentions.users.first()
