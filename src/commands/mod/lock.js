@@ -6,11 +6,11 @@ module.exports.run = async(client,message,args)=> {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("<:2637settings:843854352867262504> | Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
-    if(db.fetch(`lock.${message.channel.id}`)) return message.reply("Este canal já está bloqueado.")
+    if(db.fetch(`lock.${message.channel.id}`)) return message.reply("<:7300lock:843854352653484084> | Este canal já está bloqueado.")
 
-    let msg = await message.channel.send("Carregando...")
+    let msg = await message.channel.send("Aguarde um momento...")
 
     try {
         db.set(`lock.${message.channel.id}`,message.author.id)
@@ -18,7 +18,7 @@ module.exports.run = async(client,message,args)=> {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit("<a:spray:833804244342931486> Canal bloqueado.")
+        msg.edit("<:7300lock:843854352653484084> Canal bloqueado.")
 
     }catch(e){
         message.channel.send(e)
