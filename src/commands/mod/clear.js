@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
- 
+const db = require("quick.db") 
+
 exports.run = async (bot, message, args) => {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
@@ -24,8 +25,7 @@ exports.run = async (bot, message, args) => {
       let embed = new Discord.MessageEmbed()
       .setDescription(`**♻️ O chat foi Limpo.**`)
       .setColor('BLUE')
-      .setTitle('`CLEAR`')
-      .setThumbnail('https://imgur.com/Qxc4Lcr.gif')
+      .setTitle('`Resolute - Clear`')
       .setFooter(`• Autor: ${message.author.username}`, message.author.displayAvatarURL({format: "png"}));
       await message.channel.send(embed); 
   }
