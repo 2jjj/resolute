@@ -19,7 +19,9 @@ exports.run = async (client, message, args) => {
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
-      > http://resolutebot.xyz
+      > [Me adicione](https://resolutebot.xyz)
+      > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
+      > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
@@ -198,7 +200,9 @@ exports.run = async (client, message, args) => {
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
-      > http://resolutebot.xyz
+      > [Me adicione](https://resolutebot.xyz)
+      > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
+      > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)

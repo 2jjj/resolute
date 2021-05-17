@@ -8,9 +8,9 @@ module.exports.run = async(client,message,args)=> {
 
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
-    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply("<:info:835206734225473546> » Esse canal não está bloqueado.")
+    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply("<:7300lock:843854352653484084> » Esse canal não está bloqueado.")
 
-    let msg = await message.channel.send("<:info:835206734225473546> » Desbloqueando....")
+    let msg = await message.channel.send("<:7300lock:843854352653484084> » Aguarde um momento...")
 
     try {
         db.delete(`lock.${message.channel.id}`)
@@ -18,7 +18,7 @@ module.exports.run = async(client,message,args)=> {
             SEND_MESSAGES:true,
             ADD_REACTIONS:true
         })
-        msg.edit("<a:spr4y:833819662894628884> Canal desbloqueado.")
+        msg.edit("<:7300lock:843854352653484084> Canal desbloqueado.")
 
     }catch(e){
         message.channel.send(e)
