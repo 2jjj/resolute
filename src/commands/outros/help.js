@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
       > [Me adicione](https://resolutebot.xyz)
       > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
+      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
@@ -39,14 +39,14 @@ exports.run = async (client, message, args) => {
     })
     
     //Emojis
-    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 20000 })
-    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268679263027230` && user.id == message.author.id, { time: 20000 })
-    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 20000 })
-    const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 20000 })
-    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 20000 })
-    const ticket = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 20000 })
-    const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 20000 })
-    const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 20000 })
+    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 150000 })
+    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268679263027230` && user.id == message.author.id, { time: 150000 })
+    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 150000 })
+    const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 150000 })
+    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 150000 })
+    const ticket = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 150000 })
+    const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 150000 })
+    const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 150000 })
 
     ////////////
     moderacao.on(`collect`, r => {
@@ -155,7 +155,7 @@ exports.run = async (client, message, args) => {
       let embed_5 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Configuraveis:**\n
-      > <:spr4yxyz:837798446584168468> | \`s.setprefix\` <prefixo>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}setprefix\` <prefixo>
       `)
       .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
       msg.edit(embed_5)    
@@ -203,7 +203,7 @@ exports.run = async (client, message, args) => {
       > [Me adicione](https://resolutebot.xyz)
       > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.3 (Beta)\`
+      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
