@@ -95,6 +95,7 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}ship\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}stonks\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}notstonks\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}snake\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
