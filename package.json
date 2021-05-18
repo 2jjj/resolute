@@ -1,7 +1,7 @@
 {
   "name": "resolute",
-  "version": "1.3.0",
-  "description": "Ajuda, Moderação, Fun, Economia e Música",
+  "version": "1.3.2",
+  "description": "Ajuda, Moderação, Diversão, Economia e Música",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
