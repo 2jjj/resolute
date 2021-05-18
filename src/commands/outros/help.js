@@ -176,7 +176,7 @@ exports.run = async (client, message, args) => {
     music.on(`collect`, r => {
       let embed_7 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Ticket:**\n
+      .setDescription(`**» Categoria de Música:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
       > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}stop\` 
