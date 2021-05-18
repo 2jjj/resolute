@@ -21,9 +21,9 @@ module.exports.run = async(client,message,args)=> {
     var rand = list[Math.floor(Math.random() * list.length)]
 
     const antiraid = new Discord.MessageEmbed()
-    .setTitle("Comando de Antiraid - Resolute")
+    .setTitle("Comando de Defesa Off - Resolute")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setDescription("Aguarde o comando de AntiRaid está sendo executado.")
+    .setDescription("Aguarde o comando de Defesa Off está sendo executado.")
     .addField(`<:information:843590035848429579> Forma de Utilização:`, `<:y_pontinho:843648515695444019> \`${prefix}antiraid\``)
     .addField(`<:information:843590035848429579>`, `<:y_pontinho:843648515695444019> \`Todos irão ficar sem permissão para escrever nos chats.\``)
     .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
@@ -31,9 +31,9 @@ module.exports.run = async(client,message,args)=> {
     .setTimestamp();
 
     const antiraid2 = new Discord.MessageEmbed()
-    .setTitle("Comando de Antiraid - Resolute")
+    .setTitle("Comando de Defesa Off - Resolute")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setDescription(`Antiraid Desabilitado por ${message.author}`)
+    .setDescription(`Defesa Desabilitado por ${message.author}`)
     .addField(`<:information:843590035848429579> Forma de Utilização:`, `<:y_pontinho:843648515695444019> \`${prefix}antiraid\``)
     .addField(`<:information:843590035848429579>`, `<:y_pontinho:843648515695444019> \`Todos irão ficar sem permissão para escrever nos chats.\``)
     .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
