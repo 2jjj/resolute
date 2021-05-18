@@ -1,10 +1,6 @@
 const Discord = require("discord.js");
-const db = require("quick.db");
 
-exports.run = (bot, message, args) => {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+exports.run = (client, message, args) => {
 
     var list = [
         'https://imgur.com/ZNuAcum.gif',
@@ -30,7 +26,7 @@ exports.run = (bot, message, args) => {
     let embed = new Discord.MessageEmbed() 
     .setTitle(`WARN - ${membro.username}`)
     .setColor('RANDOM')
-    .setFooter(`<:staff:835643948151996446> **|** Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
+    .setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setImage(rand)
     .setDescription(motivo)
 
