@@ -24,7 +24,7 @@ exports.run = (client, message, args) => {
     if (!motivo) return message.reply("<:staff:835643948151996446> **|** Escreva um motivo do aviso do usuário!") 
 
     let embed = new Discord.MessageEmbed() 
-    .setTitle(`WARN - ${membro.username}`)
+    .setTitle(`Você foi avisado!! - ${membro.username}`)
     .setColor('RANDOM')
     .setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setImage(rand)
