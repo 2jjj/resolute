@@ -6,11 +6,35 @@ module.exports.run = async(client,message,args)=> {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
+    const embed1 = new Discord.MessageEmbed()
+    .setTitle("Sem permissão.")
+    .setColor("#ff0000")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .addField(`Você não possui a permissão de`, `GERENCIAR CANAIS`)
+    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setTimestamp();
 
-    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply("<:7300lock:843854352653484084> » Esse canal não está bloqueado.")
+    const embed2 = new Discord.MessageEmbed()
+    .setTitle("Este canal não está bloqueado.")
+    .setColor("#ff0000")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setTimestamp();
 
-    let msg = await message.channel.send("<:7300lock:843854352653484084> » Aguarde um momento...")
+    const embed3 = new Discord.MessageEmbed()
+    .setTitle("Este canal foi desbloqueado.")
+    .setColor("#ff0000")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Foi bloqueado por ${message.author}`)
+    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setTimestamp();
+
+
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(embed1);
+
+    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
+
+    let msg = await message.channel.send("<:spr4y:844590851769499708> » Aguarde um momento...")
 
     try {
         db.delete(`lock.${message.channel.id}`)
@@ -18,22 +42,9 @@ module.exports.run = async(client,message,args)=> {
             SEND_MESSAGES:true,
             ADD_REACTIONS:true
         })
-        msg.edit("<:7300lock:843854352653484084> Canal desbloqueado.")
+        msg.edit(embed3)
 
     }catch(e){
         message.channel.send(e)
     }
-}
-
-exports.conf = {
-    enabled: true,
-    guildOnly: true,
-    aliase:[]
-}
-
-exports.help = {
-    name:"unlock",
-    description:"Empty",
-    usage:"embed",
-    category:"moderation"
 }
