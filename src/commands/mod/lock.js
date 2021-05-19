@@ -32,9 +32,9 @@ module.exports.run = async(client,message,args)=> {
 
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(embed1);
 
-    if(db.fetch(`lock.${message.channel.id}`)) return message.reply("<:7300lock:843854352653484084> | Este canal já está bloqueado.")
+    if(db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
 
-    let msg = await message.channel.send("<:7300lock:843854352653484084> » Aguarde um momento...")
+    let msg = await message.channel.send("<:bloqueado:844640110203895829> » Este canal foi bloqueado.")
 
     try {
         db.set(`lock.${message.channel.id}`,message.author.id)
@@ -42,7 +42,7 @@ module.exports.run = async(client,message,args)=> {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit("<:7300lock:843854352653484084> Canal bloqueado.")
+        msg.edit(embed3)
 
     }catch(e){
         message.channel.send(e)
