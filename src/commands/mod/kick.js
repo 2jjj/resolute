@@ -3,18 +3,28 @@ module.exports = {
     name: "kick",
     description: "kickar alguém",
     run: async(client, message, args) => {
-      if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Você não tem permiçõe suficientes para usar este comando | Permissão necessária:`KICK_MEMBERS`")
+
+    const embed = new Discord.MessageEmbed()
+        .setTitle("Sem permissão.")
+        .setColor("#ff0000")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .addField(`Você não possui a permissão de`, `KICK_MEMBERS`)
+        .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+        .setTimestamp();
+
+
+      if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
         let target = message.mentions.members.first()
 
-        if(!target) return message.reply("Por favor, mencione alguém para kickar!")
+        if(!target) return message.reply("<:setaazul:843588568605523969> Por favor, mencione alguém para kickar!")
 
         if(target.id === message.author.id) {
-            return message.reply("Você não pode se kickar!")
+            return message.reply("<:setaazul:843588568605523969> Você não pode se kickar!")
         }
 
         let reason = args.slice(1).join(' ')
 
-        if(!reason) return message.reply("Por favor, dê um motivo!")
+        if(!reason) return message.reply("<:setaazul:843588568605523969> Por favor, dê um motivo!")
 
         let embed = new discord.MessageEmbed()
         .setTitle("Resolute - Membro Kickado")
