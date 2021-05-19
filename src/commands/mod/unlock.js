@@ -34,7 +34,7 @@ module.exports.run = async(client,message,args)=> {
 
     if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
 
-    let msg = await message.channel.send("<:spr4y:844590851769499708> » Aguarde um momento...")
+    let msg = await message.channel.send("<:spr4y:844590851769499708> » Este canal foi desbloqueado.")
 
     try {
         db.delete(`lock.${message.channel.id}`)
