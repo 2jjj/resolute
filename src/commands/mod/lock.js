@@ -48,16 +48,3 @@ module.exports.run = async(client,message,args)=> {
         message.channel.send(e)
     }
 }
-
-exports.conf = {
-    enabled: true,
-    guildOnly: true,
-    aliase:[]
-}
-
-exports.help = {
-    name:"lock",
-    description:"Empty",
-    usage:"embed",
-    category:"moderation"
-}
