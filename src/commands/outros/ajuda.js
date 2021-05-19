@@ -64,7 +64,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}serverinfo\` id do servidor
       > <:spr4yxyz:837798446584168468> | \`${prefix}userinfo\` id do usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}unlock\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}warn\` @usuário
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
