@@ -22,7 +22,6 @@ exports.run = async (client, message, args) => {
     { name: 'ﾠ', value: `<a:pumpkinsmile:841130240352321557> | Estou na versão **1.3.2 (BETA)**`, inline: false },
 		{ name: 'ﾠ', value: `<:staff:835643948151996446> | Me adicione: *https://resolutebot.xyz*`, inline: false },
 	)
-
   await message.channel.send(embed);
 }
 
