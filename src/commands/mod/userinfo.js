@@ -28,22 +28,18 @@ if (member.user.bot === true) {
                 //.setAuthor(member.user.username)
                 .setThumbnail((target.displayAvatarURL))
                 .setColor("#00ff00")
-                .addField("User", `${member.user.tag}`, inline)
-                .addField("ID", member.user.id, inline)
-                .addField("Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
-                .addField("Bot", `${bot}`,inline, true)
-                .addField("Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
-                .addField("Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
-                .addField("Entrou no discord em", member.user.createdAt)
-                .setFooter(`Informação sobre ${member.user.username}`)
+                .addField("<:Information:844591555225714688> | User", `${member.user.tag}`, inline)
+                .addField("<:Information:844591555225714688> | ID", member.user.id, inline)
+                .addField("<:Information:844591555225714688> | Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
+                .addField("<:Information:844591555225714688> | Bot", `${bot}`,inline, true)
+                .addField("<:Information:844591555225714688> | Status", `${status[member.user.presence.status]}`, inline, true)
+                .addField("<:Information:844591555225714688> | Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
+                .addField("<:Information:844591555225714688> | Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
+                .addField("<:Information:844591555225714688> | Entrou no discord em", member.user.createdAt)
+                .setFooter(`<:Information:844591555225714688> | Informação sobre ${member.user.username}`)
                 .setTimestamp()
     
             message.channel.send(embed);
 
             message.delete();
-    }
-
-    module.exports.help = {
-        name: "userinfo"
     }
