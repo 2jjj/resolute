@@ -17,7 +17,7 @@ module.exports = {
         if(!reason) return message.reply("Por favor, dê um motivo!")
 
         let embed = new discord.MessageEmbed()
-        .setTitle("Membro Kickado")
+        .setTitle("Resolute - Membro Kickado")
         .setColor('RED')
         .addField("Usuário", `${target.user}`)
         .addField("Moderador", `${message.author}`)
