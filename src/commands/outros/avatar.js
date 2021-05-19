@@ -12,7 +12,7 @@ let user = message.mentions.users.first() || client.users.cache.get(args[0]) || 
 
   let embed = new Discord.MessageEmbed() 
     .setColor(`#4cd8b2`) 
-    .setTitle(`<:info:835206734225473546> » Avatar de ${user.username}`) 
+    .setTitle(`<:information:843542771814236170> » Avatar de ${user.username}`) 
     .setImage(avatar) 
     .setFooter(`Autor: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}));
  await message.channel.send(embed); 
