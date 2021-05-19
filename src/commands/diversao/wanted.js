@@ -13,7 +13,7 @@ module.exports.run = (bot, message, args) =>
 
     if(!GuildMember)
     {
-        return message.reply(":no_entry: Mencione um usuário valido :no_entry:");
+        return message.reply("<:check_no:844591218545524788> Mencione um usuário válido.");
     }
 
     message.channel.startTyping();
@@ -35,9 +35,3 @@ module.exports.run = (bot, message, args) =>
         });
     });
 };
-exports.help = {
-    name: 'wanted',
-    aliases: ['procurado'],
-    status: 'on',
-    onlydev: 'false'
-}
