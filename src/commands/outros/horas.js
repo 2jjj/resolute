@@ -9,7 +9,7 @@ exports.run = (client, message) => {
     
     moment.locale('pt-br'); 
    let hora = moment().format('h:mm:ss a'); 
-   let data = moment().format('dddd'); // essa let falara a data (Obs: Ele vai puxar a data da sua hospedagem)
+   let data = moment().format('dddd'); 
     const embed = new Discord.MessageEmbed() 
     .setTitle("Hora")
     .addField("<:info:835206734225473546> » Hoje é ", `${data}`)
