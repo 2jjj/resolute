@@ -9,25 +9,25 @@ module.exports = {
  
  message.delete().catch(() => null);
  
- if (!args[0]) return message.channel.send(`Você não específicou tempo!`);
+ if (!args[0]) return message.channel.send(`<:information:843542771814236170> | Você não específicou tempo!`);
  
  if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
- `Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1s, 1m, 1h, 1d`
+ `<:information:843542771814236170> | Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
  );
  
- if (isNaN(args[0][0])) return message.channel.send(`Isso é um número por acaso?`);
+ if (isNaN(args[0][0])) return message.channel.send(`<:information:843542771814236170> | Isto não é um número.`);
  
  let channel = message.mentions.channels.first();
  
  if (!channel) return message.channel.send(
- `Você precisa marcar o canal para o sorteio!`
+ `<:information:843542771814236170> | Você precisa marcar o canal para o sorteio!`
  );
  
  let prize = args.slice(2).join(" ");
  
- if (!prize) return message.channel.send(`Você precisa falar o prêmio!`);
+ if (!prize) return message.channel.send(`<:setaazul:843588568605523969> Você precisa falar o prêmio!`);
  
- message.channel.send(`*Sorteio criado em ${channel}*`);
+ message.channel.send(`*<:setaazul:843588568605523969> Sorteio criado em ${channel}*`);
  
  let Embed = new MessageEmbed()
  .setTitle(`Novo sorteio!`)
@@ -49,7 +49,7 @@ module.exports = {
  }
 
  let ganhador = m.reactions.cache.get("💎").users.cache.filter((u) => !u.bot).random();
- channel.send(`<:4693_pink_hair_popcorn:843542215708114994> Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
+ channel.send(`<:winner:844591002638745600> Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
  
  }, ms(args[0]));
  },
