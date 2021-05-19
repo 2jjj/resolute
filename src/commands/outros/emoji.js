@@ -9,15 +9,15 @@ module.exports.run = async (client, message, args) => {
   message.delete();
   if (!args[0])
     return message.channel.send(
-      `**${message.author.username}, a sintaxe correta é:** ` +
+      `**${message.author.username}, A sintaxe correta é:** ` +
         "`" +
-        `${prefix}emoji <nomedoemoji>`
+        `${prefix}emoji <emoji>`
     ); 
   let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
   if (!emoji) {
     message.channel.send(
-      "`" + args[0] + "` **não é um emoji deste servidor.**"
+      "`" + args[0] + "` **Não é um emoji deste servidor.**"
     );
   } else if (emoji.animated === true) {
     message.channel.send(`<a:${args[0]}:${emoji.id}>`);
