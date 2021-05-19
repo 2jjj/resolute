@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
       .setFooter("<:info:835206734225473546> ⇝ ID do Autor: " + message.author.id)
       .setTimestamp()
     );
-    await message.channel.send(`<:px0:843541299344572446> ${message.author} A mensagem foi enviada com sucesso!`);
+    await message.channel.send(`<:check:843604256455000075> ${message.author} A mensagem foi enviada com sucesso!`);
 
     const emojis = ["✔️", "❎"];
 
