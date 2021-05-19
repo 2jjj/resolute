@@ -25,7 +25,7 @@ module.exports.run = async(client,message,args)=> {
     .setTitle("Este canal foi desbloqueado.")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Foi bloqueado por ${message.author}`)
+    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Foi desbloqueado por ${message.author}`)
     .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
     .setTimestamp();
 
