@@ -18,7 +18,7 @@ let embed = new Discord.MessageEmbed()
 .setColor('#ff0000')
 .setTitle(`Perfil de ${user.username}`)
 .setDescription(`Bugs reportados: ${totalbugs}\nSobre mim: **${aboutme}**`)
-.setFooter(` | Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}))
+.setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}))
 message.reply(embed)
     }
 }
