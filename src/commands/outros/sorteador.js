@@ -8,6 +8,6 @@ module.exports.run = async (client, message, args) => {
 
 let numero = Math.ceil(Math.random() * 100) 
 
-message.channel.send(`<a:az_stress:843542404489543690> ⇝ ` + numero) 
+message.channel.send(`⇝ ` + numero) 
 
 }
