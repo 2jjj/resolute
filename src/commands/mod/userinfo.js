@@ -33,7 +33,7 @@ if (member.user.bot === true) {
                 .addField("Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
                 .addField("Bot", `${bot}`,inline, true)
                 .addField("Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("Playing", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
+                .addField("Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
                 .addField("Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
                 .addField("Entrou no discord em", member.user.createdAt)
                 .setFooter(`Informação sobre ${member.user.username}`)
