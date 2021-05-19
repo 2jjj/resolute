@@ -14,7 +14,7 @@ color: "RED"
 });
 }
 let embed = new Discord.MessageEmbed()
-.setTitle("Novo Bug reportado")
+.setTitle("Novo Bug/Report reportado")
 .setThumbnail(client.user.displayAvatarURL())
 .addField("Servidor que reportou", `${message.guild.name}`)
 .addField("Reportado por", `${message.author.tag}`)
@@ -25,7 +25,7 @@ let embed = new Discord.MessageEmbed()
 canal.send(embed)
 
 message.channel.send({embed: {
-description: "<a:check:835206263075242029> Seu bug foi computado e enviado para minha equipe, muito obrigado! <3",
+description: "<a:check:835206263075242029> Seu bug/report foi computado e enviado para minha equipe, muito obrigado! <3",
 color: "RED"
 }
 });

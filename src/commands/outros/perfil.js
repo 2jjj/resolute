@@ -10,13 +10,10 @@ let prefix = db.get(`prefix_${message.guild.id}`)
 if (prefix === null) prefix = "s."
 
 const user = message.mentions.users.first() || message.author;
-//sobremim
+
 let aboutme = await db.fetch(`aboutme_${user.id}`);
 if (aboutme == null) aboutme = `Olá eu sou o ${user.username} (Você pode alterar isso usando ${prefix}sobremim)!`;
 
-let totalbugs = db.fetch(`bugs_${message.author}`);
-if (totalbugs == null) totalbugs = '0';
-//embed
 let embed = new Discord.MessageEmbed()
 .setColor('#ff0000')
 .setTitle(`Perfil de ${user.username}`)
