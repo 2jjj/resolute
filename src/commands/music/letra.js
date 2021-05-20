@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
     }
 
     let lyricsEmbed = new MessageEmbed()
-      .setTitle(`Letras da **__${queue.songs[0].title}__**`)
+      .setTitle(`Letras da **${queue.songs[0].title}**`)
       .setDescription(lyrics)
       .setColor("GREEN")
       .setTimestamp();
