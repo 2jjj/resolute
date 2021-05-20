@@ -83,7 +83,6 @@ console.error('Erro:' + err);
 }
 });
    
-//Carregando eventos
 fs.readdir(__dirname + "/src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
