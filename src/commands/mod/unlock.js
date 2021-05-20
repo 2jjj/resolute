@@ -22,10 +22,10 @@ module.exports.run = async(client,message,args)=> {
     .setTimestamp();
 
     const embed3 = new Discord.MessageEmbed()
-    .setTitle("Este canal foi desbloqueado.")
+    .setTitle("Resolute")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Foi desbloqueado por ${message.author}`)
+    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `desbloqueado por ${message.author}`)
     .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
     .setTimestamp();
 
@@ -34,7 +34,7 @@ module.exports.run = async(client,message,args)=> {
 
     if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
 
-    let msg = await message.channel.send("<:spr4y:844590851769499708> » Este canal foi desbloqueado.")
+    let msg = await message.channel.send('Sucesso!')
 
     try {
         db.delete(`lock.${message.channel.id}`)

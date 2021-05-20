@@ -12,7 +12,3 @@ exports.run = async(bot, message, args,)=> {
         message.channel.send(icone)
 }
 
-exports.help = {
-    name: 'servericon',
-    aliases: ["icon"]
-}
