@@ -14,7 +14,7 @@ exports.run = async (bot, message, args) => {
       format: "png",
     });
 
-    let img = await new DIG.Facepalm().getImage(avatar);
+    let img = await new DIG.Hitler().getImage(avatar);
 
     let attach = new Discord.MessageAttachment(img, "resolute.png");
     message.channel.send(attach);
