@@ -158,7 +158,25 @@ exports.run = async (client, message, args) => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Manipulação de imagens:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}setprefix\` <prefixo>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}blink\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ad\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}arte\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ata\` <frase>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}beautiful\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}blink\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}blur\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}bolsonaro\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}cachorro\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}confusedstonks\` <avatar> 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}delete\` <avatar> 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}facepalm\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}gay\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}hitler\` <avatar> 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}laranjo\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}\` <avatar>
+      > <:spr4yxyz:837798446584168468> | \`${prefix}\` <avatar>
+
       `)
       .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
