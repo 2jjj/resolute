@@ -72,7 +72,7 @@ try {
 console.error('Erro:' + err);
 }
 try {
-  const commandFile = require(`./src/commands/ticket/${command}.js`)
+  const commandFile = require(`./src/commands/manipulacao/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
 console.error('Erro:' + err);
