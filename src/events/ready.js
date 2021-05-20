@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports = async (client) => {
+
     const status = [  
         {name: `• Dev: MrSprayX#0012`, type: 'LISTENING'}, 
         {name: `• resolutebot.xyz`, type: 'LISTENING'}, 
