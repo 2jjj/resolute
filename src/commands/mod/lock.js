@@ -19,10 +19,10 @@ module.exports.run = async(client,message,args)=> {
     .setTimestamp();
 
     const embed3 = new Discord.MessageEmbed()
-    .setTitle("Este canal foi bloqueado.")
+    .setTitle("Resolute")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`<:bloqueado:844640110203895829> » Este canal foi bloqueado.`, `Foi bloqueado por ${message.author}`)
+    .addField(`<:bloqueado:844640110203895829> » Este canal foi bloqueado.`, `Bloqueado por ${message.author}`)
     .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
     .setTimestamp();
 
@@ -34,7 +34,7 @@ module.exports.run = async(client,message,args)=> {
 
     if(db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
 
-    let msg = await message.channel.send("<:bloqueado:844640110203895829> » Este canal foi bloqueado.")
+    let msg = await message.channel.send("Sucesso!")
 
     try {
         db.set(`lock.${message.channel.id}`,message.author.id)
