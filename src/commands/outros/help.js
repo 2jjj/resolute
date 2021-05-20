@@ -164,12 +164,10 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}primeiraspalavras\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}bolsonaro\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}cachorro\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}blink\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}ad\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}arte\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}ata\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}beautiful\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}blink\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}blur\` <avatar>
       > <:spr4yxyz:837798446584168468> | \`${prefix}confusedstonks\` <avatar> 
       > <:spr4yxyz:837798446584168468> | \`${prefix}delete\` <avatar> 
