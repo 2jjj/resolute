@@ -10,7 +10,7 @@ module.exports = (client) => {
 					type: 4,
 					data: {
 						content:
-							':x: **|** O Denky ainda não suporta comandos na DM. Utilize comandos apenas em servidores :blush:',
+							':x: **|** O Resolute não suporta comandos via DM, use os comandos em servidores.',
 					},
 				},
 			});
