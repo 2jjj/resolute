@@ -35,7 +35,7 @@ module.exports = (client) => {
 
 		if (!comando) return;
 
-		// Denky está pensando e informar que recebemos (ACK) o INTERACTION_CREATE
+		// Resolute está pensando e informar que recebemos (ACK) o INTERACTION_CREATE
 		client.api.interactions(interaction.id, interaction.token).callback.post({
 			data: {
 				type: 5,
