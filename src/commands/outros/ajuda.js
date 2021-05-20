@@ -76,13 +76,6 @@ exports.run = async (client, message, args) => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}cachorro\` <frase> 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}trump\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}bolsonaro\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ata\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}wanted\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}laranjo\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}primeiraspalavras\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}carinho\` @usuário
       > <:spr4yxyz:837798446584168468> |  \`${prefix}coinflip\` <cara ou coroa>
       > <:spr4yxyz:837798446584168468> | \`${prefix}highfive\` @usuário
@@ -92,7 +85,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}pisar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}say\` frase
       > <:spr4yxyz:837798446584168468> | \`${prefix}ship\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}stonks\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}snake\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
@@ -106,6 +98,8 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
+      > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
       > <:spr4yxyz:837798446584168468> | \`${prefix}perfil\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}sobremim\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio> - no minimo 1m
@@ -163,9 +157,9 @@ exports.run = async (client, message, args) => {
     ticket.on(`collect`, r => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Ticket:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
-      > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
+      .setDescription(`**» Categoria de Manipulação de imagens:**\n
+
+      
       `)
       .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
