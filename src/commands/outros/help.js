@@ -219,7 +219,7 @@ exports.run = async (client, message, args) => {
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
-      > [Me adicione](https://resolutebot.xyz)
+      > [Me adicione!](https://resolutebot.xyz)
       > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3.5 (Beta)\`
