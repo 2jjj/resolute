@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
       <a:3___:836268637257990184> | Outros
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
-      <a:6_:836268649790439464> | Ticket
+      <a:6_:836268649790439464> | Manipulação de imagens
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
