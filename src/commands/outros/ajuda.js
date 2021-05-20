@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
-    .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
+    .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <a:1__:836268679263027230> | Moderação
       <a:2_:836268689484546088> | Diversão
@@ -208,7 +208,7 @@ exports.run = async (client, message, args) => {
     voltar.on(`collect`, r => {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
+      .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <a:1__:836268679263027230> | Moderação
       <a:2_:836268689484546088> | Diversão
@@ -219,8 +219,8 @@ exports.run = async (client, message, args) => {
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
-      > [Me adicione](https://resolutebot.xyz)
-      > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
+      > [Me adicione!](https://resolutebot.xyz)
+      > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3.5 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
