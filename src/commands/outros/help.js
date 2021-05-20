@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
-    .setDescription(`> ***Olá ${message.author}, aqui estão minhas categorias com comandos!***
+    .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <a:1__:836268679263027230> | Moderação
       <a:2_:836268689484546088> | Diversão
