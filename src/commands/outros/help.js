@@ -192,9 +192,10 @@ exports.run = async (client, message, args) => {
       .setDescription(`**» Categoria de Música:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
       > <:spr4yxyz:837798446584168468> | \`${prefix}volume\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}letra\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}loop (Manutenção)\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}search\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}fila (Manutenção)\` 
+      > <:spr4yxyz:837798446584168468> | \`${prefix}fila\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}stop\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}pause\` 

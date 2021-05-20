@@ -215,14 +215,14 @@ exports.run = async (client, message, args) => {
       <a:3___:836268637257990184> | Outros
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
-      <a:6_:836268649790439464> | Ticket
+      <a:6_:836268649790439464> | Manipulação de imagens
       <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > [Me adicione](https://resolutebot.xyz)
-      > [Extensão de Música](https://github.com/sprayx/ResoluteMusic)
+      > [Extensão Música](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3 (Beta)\`
+      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3.5 (Beta)\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
