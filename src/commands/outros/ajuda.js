@@ -158,8 +158,7 @@ exports.run = async (client, message, args) => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Manipulação de imagens:**\n
-
-      
+      > <:spr4yxyz:837798446584168468> | \`${prefix}setprefix\` <prefixo>
       `)
       .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
