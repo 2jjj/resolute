@@ -14,8 +14,8 @@ exports.run = async (bot, message, args) => {
       format: "png",
     });
 
-    let img = await new DIG.Triggered().getImage(avatar);
+    let gif = await new DIG.Triggered().getImage(avatar);
 
-    let attach = new Discord.MessageAttachment(img, "resolute.png");
+    let attach = new Discord.MessageAttachment(gif, "resolute.gif");
     message.channel.send(attach);
   }
