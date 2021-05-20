@@ -26,10 +26,14 @@ module.exports.run = async (client, message, args) => {
 
     } else {
         let moneyEmbed = new Discord.MessageEmbed()
-        .setTitle(":dollar: **|** Recompensa Diária")
-        .setColor("#008000")
-        .setDescription(`<:info:835206734225473546> **»** Você coletou sua recompensa diária!\n\n <a:money:838087280052535346> Dinheiro Coletado: **\`R$${amount}\`**`);
-        
+        .setTitle("Você recebeu sua recompensa diária!")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription(`Você recebeu **\`R$${amount}\`** RCoins`)
+        .addField(`<:information:843590035848429579> Aviso`, `<:y_pontinho:843648515695444019> \`Você só pode resgatar sua próxima recompensa em ${}\``)
+        .addField(`<:information:843590035848429579> Exemplo:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @Spray#0007 Ofensa a staff\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setImage(rand)
+        .setTimestamp();        
         message.channel.send(`${user}`, moneyEmbed);
         db.add(`money_${message.guild.id}_${user.id}`, amount);
         db.set(`daily_${message.guild.id}_${user.id}`, Date.now());
