@@ -6,7 +6,7 @@ module.exports = async (client) => {
         {name: `• Dev: MrSprayX#0012`, type: 'LISTENING'}, 
         {name: `• resolutebot.xyz`, type: 'LISTENING'}, 
         {name: `• ${client.guilds.cache.size} guilds `, type: 'LISTENING'}, 
-        {name: `• Versão 1.3.2 (Beta)`, type: 'LISTENING'}
+        {name: `• Versão 1.3.5 (Beta)`, type: 'LISTENING'}
       ] 
       function Presence() { 
               const base = status[Math.floor(Math.random() * status.length)] 
