@@ -25,14 +25,14 @@ module.exports.run = async (client, message, args) => {
         message.channel.send(`${user}`, timeEmbed);
 
     } else {
+        let time = ms(timeout - (Date.now() - daily));
+
         let moneyEmbed = new Discord.MessageEmbed()
         .setTitle("Você recebeu sua recompensa diária!")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`Você recebeu **\`R$${amount}\`** RCoins`)
-        .addField(`<:information:843590035848429579> Aviso`, `<:y_pontinho:843648515695444019> \`Você só pode resgatar sua próxima recompensa em ${}\``)
-        .addField(`<:information:843590035848429579> Exemplo:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @Spray#0007 Ofensa a staff\``)
-        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setImage(rand)
+        .addField(`<:information:843590035848429579> Aviso`, `<:y_pontinho:843648515695444019> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();        
         message.channel.send(`${user}`, moneyEmbed);
         db.add(`money_${message.guild.id}_${user.id}`, amount);
