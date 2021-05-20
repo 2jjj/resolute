@@ -21,7 +21,7 @@ if(!serverQueue.connection.dispatcher)return
       } catch (error) {
         message.guild.me.voice.channel.leave();
         message.client.queue.delete(message.guild.id);
-        return sendError(`<a:__:835643988022263879> | O jogador parou e a fila foi liberada. ${error}`, message.channel);
+        return sendError(`<a:__:835643988022263879> | A fila foi liberada. ${error}`, message.channel);
       }
     message.client.queue.delete(message.guild.id);
     serverQueue.songs = [];
