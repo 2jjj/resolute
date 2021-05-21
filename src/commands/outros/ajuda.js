@@ -54,7 +54,6 @@ exports.run = async (client, message, args) => {
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}slowmode\` <tempo(ms)>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}aviso\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}ban\` @usuário <motivo>
       > <:spr4yxyz:837798446584168468> | \`${prefix}banlist\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}clear\`
@@ -105,7 +104,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio> - no minimo 1m
       > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ascii\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}emoji\` <emoji>
