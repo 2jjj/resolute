@@ -10,6 +10,6 @@ const manager = new ShardingManager('./index.js', {
 });
 
 manager.on('shardCreate', shard => {
-    console.log(cor.rainbow(`[SHARD] Iniciando shard ${shard.id}`))
+    console.log(cor.rainbow(`[INFO] - [SHARD] Iniciando shard ${shard.id}`))
 });
 manager.spawn();
