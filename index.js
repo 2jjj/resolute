@@ -9,7 +9,6 @@ const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 client.queue = new Map();
 
-
 //Conexão ao MongoDB
 /* 
 mongoose
