@@ -12,7 +12,7 @@ if(cluster.isMaster) {
 
     cluster.on('online', function(worker) {
         require("./shard");
-        console.log(`[CLUSTER] Worker ${worker.process.pid}  is online`.rainbow);
+        console.log(`[CLUSTER] Worker ${worker.process.pid} is online`.rainbow);
     });
 
     cluster.on('exit', function(worker, code, signal) {
