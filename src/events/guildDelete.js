@@ -8,7 +8,7 @@ const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNb
     client.channels.cache.get("841733238165995570").setName(`📝│Pessoas: ${client.users.cache.size}`).catch((e) => console.log((e)))
     console.log(`Fui removido de uma guild! | ${client.guilds.cache.size} | ${client.users.cache.size}`)
     let embed = new Discord.MessageEmbed()
-    .setTitle(`<:info:835206734225473546> | Fui removido de uma guild!`)
+    .setTitle(`<:Resoluteinfo:844971535927083088> | Fui removido de uma guild :(`)
     .setTimestamp()
     .setColor('#FFC4E7')
     webhook.send(embed);
