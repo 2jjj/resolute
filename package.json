@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "1.3.5",
+  "version": "0.05",
   "description": "Ajuda, Moderação, Diversão, Economia e Música.",
   "main": "index.js",
   "scripts": {
