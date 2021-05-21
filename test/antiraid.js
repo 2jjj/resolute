@@ -1,3 +1,5 @@
+//By MrSprayX#0002
+
 const Discord = require("discord.js")
 const db = require("quick.db")
 
