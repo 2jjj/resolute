@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
       > [Me adicione](https://resolutebot.xyz)
       > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3.5 (Beta)\`
+      \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
@@ -220,7 +220,7 @@ exports.run = async (client, message, args) => {
       > [Me adicione!](https://resolutebot.xyz)
       > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por MrSprayX#0012 | Versão 1.3.5 (Beta)\`
+      \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")

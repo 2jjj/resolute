@@ -1,11 +1,12 @@
 const Discord = require("discord.js")
+var numWorkers = require('os').cpus().length;
 
 module.exports = async (client) => {
     const status = [  
-        {name: `• Dev: MrSprayX#0012`, type: 'LISTENING'}, 
-        {name: `• resolutebot.xyz`, type: 'LISTENING'}, 
-        {name: `• ${client.guilds.cache.size} guilds `, type: 'LISTENING'}, 
-        {name: `• Versão 0.0.5`, type: 'LISTENING'}
+        {name: `• Dev: MrSprayX#0012 | Shard 0 [${numWorkers}]`, type: 'LISTENING'}, 
+        {name: `• resolutebot.xyz | Shard 0 [${numWorkers}]`, type: 'LISTENING'}, 
+        {name: `• ${client.guilds.cache.size} guilds | Shard 0 [${numWorkers}]`, type: 'LISTENING'}, 
+        {name: `• Versão 0.0.5 | Shard 0 [${numWorkers}]`, type: 'LISTENING'}
       ] 
       function Presence() { 
               const base = status[Math.floor(Math.random() * status.length)] 
