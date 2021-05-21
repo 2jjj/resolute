@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
   message.delete();
   if (!args[0])
     return message.channel.send(
-      `**${message.author.username}, A sintaxe correta é:** ` +
+      `**<:Resoluteinfo:844971535927083088> | ${message.author.username}, A sintaxe correta é:** ` +
         "`" +
         `${prefix}emoji <emoji>`
     ); 
@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 
   if (!emoji) {
     message.channel.send(
-      "`" + args[0] + "` **Não é um emoji deste servidor.**"
+      "`" + args[0] + "` **Não é um emoji deste servidor!**"
     );
   } else if (emoji.animated === true) {
     message.channel.send(`<a:${args[0]}:${emoji.id}>`);

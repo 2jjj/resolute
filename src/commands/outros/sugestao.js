@@ -14,13 +14,13 @@ exports.run = async (client, message, args) => {
   } else if (content.length > 1000) {
     return message.channel.send(`${message.author.username}, forneça uma sugestão de no máximo 1000 caracteres.`);
   } else {
-    var canal = message.guild.channels.cache.find(ch => ch.id === "699780010235527278");
+    var canal = message.guild.channels.cache.find(ch => ch.id === "841334310773850112");
     const msg = await canal.send(
       new Discord.MessageEmbed()
       .setColor("#FFFFF1")
-      .addField("<:info:835206734225473546> ⇝ Autor:", message.author)
-      .addField("<:info:835206734225473546> ⇝ Conteúdo", content)
-      .setFooter("<:info:835206734225473546> ⇝ ID do Autor: " + message.author.id)
+      .addField("<:Resoluteinfo:844971535927083088> ⇝ Autor:", message.author)
+      .addField("<:Resoluteinfo:844971535927083088> ⇝ Conteúdo", content)
+      .setFooter("<:Resoluteinfo:844971535927083088> ⇝ ID do Autor: " + message.author.id)
       .setTimestamp()
     );
     await message.channel.send(`<:check:843604256455000075> ${message.author} A mensagem foi enviada com sucesso!`);

@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-  const m = await message.channel.send('ping?');
+  const m = await message.channel.send('Ping?');
   
   let embed = new Discord.MessageEmbed()
   .setColor('#0099ff')

@@ -33,7 +33,7 @@ exports.run = async (bot, message, args) => {
             .addField("<:setaazul:843588568605523969> CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
             .addField("<:setaazul:843588568605523969> CPU Usada", `\`${percent.toFixed(2)}%\``,true)
             .addField("<:setaazul:843588568605523969> Arquitetura", `\`${os.arch()}\``,true)
-            .addField("<:setaazul:843588568605523969> Plataforma", `\`\`${os.platform()}\`\``,true)
+            .addField("<:setaazul:843588568605523969> OS", `\`\`${os.platform()}\`\``,true)
             .setFooter("Status")
             message.channel.send(embedStats)
             })

@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
                 }
             ]
         }).then(async channel=> {
-            message.channel.send(`✅ | ${message.author} Ticket criado com sucesso: ${channel}`).then(msg => msg.delete({timeout: 15000}));
+            message.channel.send(`🎫 | ${message.author} Seu ticket foi criado com sucesso: ${channel}`).then(msg => msg.delete({timeout: 15000}));
             channel.send(`<:check_yes:844591174916636712> | Olá ${message.author}, este é o seu ticket! 
 <:check_no:844591218545524788> | Caso queira fechar seu ticket, utilize **${prefix}close**.`)
         })

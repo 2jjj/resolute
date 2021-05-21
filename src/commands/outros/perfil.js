@@ -12,7 +12,7 @@ if (prefix === null) prefix = "s."
 const user = message.mentions.users.first() || message.author;
 
 let aboutme = await db.fetch(`aboutme_${user.id}`);
-if (aboutme == null) aboutme = `Olá eu sou o ${user.username} (Você pode alterar isso usando ${prefix}sobremim)!`;
+if (aboutme == null) aboutme = `Olá eu sou o ${user.username} (Você pode alterar isso usando ${prefix}sobremim <FRASE>)!`;
 
 let embed = new Discord.MessageEmbed()
 .setColor('#ff0000')

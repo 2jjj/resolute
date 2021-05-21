@@ -32,7 +32,7 @@ module.exports = {
  let Embed = new MessageEmbed()
  .setTitle(`Novo sorteio!`)
  .setDescription(
- `O Usuário ${message.author} Esta Sorteando: **${prize}**
+ `<:information:843542771814236170> O Usuário ${message.author} Esta Sorteando: **${prize}**
  Clique Em 💎 Para Participar`
  )
  .setTimestamp(Date.now() + ms(args[0]))

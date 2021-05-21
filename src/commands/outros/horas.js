@@ -12,8 +12,8 @@ exports.run = (client, message) => {
    let data = moment().format('dddd'); 
     const embed = new Discord.MessageEmbed() 
     .setTitle("Hora")
-    .addField("<:info:835206734225473546> » Hoje é ", `${data}`)
-    .addField("<:info:835206734225473546> » As horas são", `${hora}`)
+    .addField("<:Resoluteinfo:844971535927083088> » Hoje é ", `${data}`)
+    .addField("<:Resoluteinfo:844971535927083088> » As horas são", `${hora}`)
 
     message.channel.send(embed) 
 
