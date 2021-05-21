@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
     const channel = message.member.voice.channel;
     if (!channel) { 
         let embed23 = new discord.MessageEmbed()
-        .setTitle('Um erro foi encontrado!')
+        .setTitle('Erro')
         .setColor('#000001')
         .setDescription(`Você precisa estar em um canal de voz para digitar esse comando!`)
         return message.channel.send(embed23)
