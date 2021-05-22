@@ -4,7 +4,6 @@ const Discord = require("discord.js")
 exports.run = async (client, message, args) => {
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
-
   
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
@@ -20,7 +19,6 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > [Me adicione](https://resolutebot.xyz)
-      > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
@@ -99,8 +97,6 @@ exports.run = async (client, message, args) => {
       .setDescription(`**» Outros comandos:**\n
       > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}close\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}perfil\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sobremim\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio>
       > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> 
@@ -191,7 +187,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
       > <:spr4yxyz:837798446584168468> | \`${prefix}volume\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}letra\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}loop (Manutenção)\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}search\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}fila\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
@@ -218,7 +213,6 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > [Me adicione!](https://resolutebot.xyz)
-      > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
