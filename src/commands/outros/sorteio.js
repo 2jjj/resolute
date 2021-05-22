@@ -25,7 +25,7 @@ module.exports = {
  
  let prize = args.slice(2).join(" ");
  
- if (!prize) return message.channel.send(`<:setaazul:843588568605523969> Você precisa falar o prêmio!`);
+ if (!prize) return message.channel.send(`<:setaazul:843588568605523969> Você precisa escrever o prêmio!`);
  
  message.channel.send(`*<:setaazul:843588568605523969> Sorteio criado em ${channel}*`);
  
