@@ -48,7 +48,7 @@ module.exports = {
  }
 
  let ganhador = m.reactions.cache.get("💎").users.cache.filter((u) => !u.bot).random();
- channel.send(`<:winner:844591002638745600> Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
+ channel.send(`<:winner:844591002638745600> **Parabéns ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
  
  }, ms(args[0]));
  },
