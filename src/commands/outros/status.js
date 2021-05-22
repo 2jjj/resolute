@@ -29,7 +29,7 @@ exports.run = async (bot, message, args) => {
             .addField("<:setaazul:843588568605523969> Memória ultilizada", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
             .addField("<:setaazul:843588568605523969> Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
             .addField("<:setaazul:843588568605523969> Discord.js", `v${version}`, true)
-           // .addField("• Node", `${process.version}`, true)
+            .addField("<:setaazul:843588568605523969> Versão do Node", `${process.version}`, true)
             .addField("<:setaazul:843588568605523969> CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
             .addField("<:setaazul:843588568605523969> CPU Usada", `\`${percent.toFixed(2)}%\``,true)
             .addField("<:setaazul:843588568605523969> Arquitetura", `\`${os.arch()}\``,true)
