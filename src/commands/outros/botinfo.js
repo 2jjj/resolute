@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
     { name: 'ﾠ', value: `<:3434_Discord_js_logo:845779460899733553> | Versão discord.js: **${version}**`, inline: false },
     { name: 'ﾠ', value: `<:node:845780252940959744> | Versão Node: **${process.version}**`, inline: false },
     { name: 'ﾠ', value: `<a:pumpkinsmile:841130240352321557> | Estou na versão **0.0.5**`, inline: false },
-		{ name: 'ﾠ', value: `<:staff:835643948151996446> | Me adicione: *https://resolutebot.xyz*`, inline: false },
+		{ name: 'ﾠ', value: `<:tj_add_1:845780583165722625> | Me adicione: *https://resolutebot.xyz*`, inline: false },
 	)
   await message.channel.send(embed);
 }
