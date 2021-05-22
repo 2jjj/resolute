@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const client = new Discord.Client(); 
+const { Discord, Collection, Client } = require("discord.js");
+const client = new Client();
 const config = require("./config.json");
 require("./inlineReply")
 require("./quote")
@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 client.queue = new Map();
+client.commands = new Collection();
 
 //Conexão ao MongoDB
 /* 
@@ -22,67 +23,17 @@ mongoose
 */
 
 
-client.on("message",e=>{if(e.content.startsWith("<")&&e.content.endsWith(">")&&e.mentions.has(client.user.id))return e.inlineReply(`<:dy_girlHello:841125764690739203> Olá! ${e.author}\n > Meu prefixo é \`s.\`, use \`s.ajuda\` para ajuda!\n > Me adicione -> **https://resolutebot.xyz**`).then(e=>e.delete({timeout:15e3})).catch(e=>{})});
-
-client.on('message', message => {
-
-  var prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) { prefix = "s." }
-
-  if (message.author.bot) return;
-  if (message.channel.type == 'dm') return;
-  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
-  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
-
- const args = message.content
-     .trim().slice(prefix.length)
-     .split(/ +/g);
- const command = args.shift().toLowerCase();
-
- try {
-    const commandFile = require(`./src/commands/outros/${command}.js`)
-    commandFile.run(client, message, args);
- } catch (err) {
- console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/mod/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/economia/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/diversao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/configuraveis/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/manipulacao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
-try {
-  const commandFile = require(`./src/commands/music/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-console.error('Erro:' + err);
-}
+fs.readdir("./src/commands/outros/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./src/commands/outros/${file}`);
+    let commandName = file.split(".")[0];
+    client.commands.set(commandName, props);
+    console.log("[Comando]: "+commandName)
+  });
 });
-   
+
 fs.readdir(__dirname + "/src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
