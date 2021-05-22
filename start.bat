@@ -1,4 +1,4 @@
 :START
-@npm i
+@node .
 @pause
 goto :START
