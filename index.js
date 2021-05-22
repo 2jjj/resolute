@@ -23,11 +23,11 @@ mongoose
 */
 
 
-fs.readdir("./src/commands/outros/", (err, files) => {
+fs.readdir("./src/commands/music/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
-    let props = require(`./src/commands/outros/${file}`);
+    let props = require(`./src/commands/music/${file}`);
     let commandName = file.split(".")[0];
     client.commands.set(commandName, props);
     console.log("[Comando]: "+commandName)

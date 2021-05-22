@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const AssistaAoVideo = require("AssistaAoVideo");
 
 exports.run = async(client, message, args) => {
 
