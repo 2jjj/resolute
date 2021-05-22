@@ -20,8 +20,8 @@ exports.run = async (client, message, args) => {
 
     if (content) {
         return message.channel.send(embed).then(msg => {
-            msg.react('👍').catch(err => { return })
-            msg.react('👎').catch(err => { return })
+            msg.react(`<a:sim:845773734862258197>`).catch(err => { return })
+            msg.react(`<a:nao:845773685330804756>`).catch(err => { return })
         })
     }
 }
