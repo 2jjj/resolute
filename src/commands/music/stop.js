@@ -10,6 +10,10 @@ module.exports = {
   },
 
   run: async function (client, message, args) {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     const channel = message.member.voice.channel
     if (!channel)return sendError("<:info:835206734225473546> | Sinto muito, mas você precisa estar em um canal de voz para tocar música!", message.channel);
     const serverQueue = message.client.queue.get(message.guild.id);
