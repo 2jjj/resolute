@@ -4,6 +4,9 @@ const discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     if(!args[0]) return message.channel.send('<:info:835206734225473546> | Você deve me informar o nome ou uma url de uma musica!')
     let channel = message.member.voice.channel;
     if(!channel) return message.channel.send('<:info:835206734225473546> | Você deve estar em um canal de voz para utlizar esse comando!')
