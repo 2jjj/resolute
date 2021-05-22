@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
       .setColor("#FFFFF1")
       .addField("<:spr4yxyz:837798446584168468> Autor:", message.author)
       .addField("<:spr4yxyz:837798446584168468> Conteúdo", content)
-      .setFooter("<:Resoluteinfo:844971535927083088> ⇝ ID do Autor: " + message.author.id)
+      .setFooter("<:spr4yxyz:837798446584168468> ID do Autor: " + message.author.id)
       .setTimestamp()
     );
     await message.channel.send(`<:check:843604256455000075> ${message.author} A mensagem foi enviada com sucesso!`);
