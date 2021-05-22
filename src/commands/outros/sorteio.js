@@ -20,7 +20,7 @@ module.exports = {
  let channel = message.mentions.channels.first();
  
  if (!channel) return message.channel.send(
- `<:information:843542771814236170> | Você precisa marcar o canal para o sorteio!`
+ `<:spr4yxyz:837798446584168468> Você precisa marcar o canal para o sorteio!`
  );
  
  let prize = args.slice(2).join(" ");
