@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   var numWorkers = require('os').cpus().length;
 
   let embed = new Discord.MessageEmbed()
-  .setTitle(" *Informações*")
+  .setTitle("*Informações*")
   .setColor("RANDOM")
   .setThumbnail(avatar)
 	.addFields(
