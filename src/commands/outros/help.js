@@ -4,7 +4,6 @@ const Discord = require("discord.js")
 exports.run = async (client, message, args) => {
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
-
   
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
@@ -20,7 +19,6 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > [Me adicione](https://resolutebot.xyz)
-      > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
@@ -82,7 +80,7 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}kiss\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}morder\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}pisar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}say\` frase
+      > <:spr4yxyz:837798446584168468> | \`${prefix}say\` <frase>
       > <:spr4yxyz:837798446584168468> | \`${prefix}ship\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}snake\`
       `)
@@ -97,13 +95,11 @@ exports.run = async (client, message, args) => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\` - abre um ticket
-      > <:spr4yxyz:837798446584168468> | \`${prefix}close\` - fecha um ticket ~ usar no canal do ticket.
-      > <:spr4yxyz:837798446584168468> | \`${prefix}perfil\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sobremim\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio> - no minimo 1m
+      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}close\`
+      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio>
       > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> ~ reportar um bug pra minha equipe de desenvolvedores.
+      > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> 
       > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
       > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
       > <:spr4yxyz:837798446584168468> | \`${prefix}emoji\` <emoji>
@@ -191,7 +187,6 @@ exports.run = async (client, message, args) => {
       > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
       > <:spr4yxyz:837798446584168468> | \`${prefix}volume\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}letra\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}loop (Manutenção)\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}search\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}fila\` 
       > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
@@ -218,7 +213,6 @@ exports.run = async (client, message, args) => {
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
       > [Me adicione!](https://resolutebot.xyz)
-      > [Extensão Música(Open-Source)](https://github.com/sprayx/ResoluteMusic)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
