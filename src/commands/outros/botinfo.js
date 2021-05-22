@@ -1,5 +1,5 @@
 const db = require("quick.db");
-let { version, Discord } = require("discord.js");
+const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
   
