@@ -6,8 +6,8 @@ var provider = new steam.SteamProvider();
 
 exports.run = (bot, message, args) => {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+let prefix = db.get(`prefix_${message.guild.id}`)
+if (prefix === null) prefix = "s."
  
 let arg = args.join(' ') 
 if(!arg) return message.channel.send(`<:y_pontinho:843648515695444019> ${message.author}, Você precisa colocar um jogo!`) 
