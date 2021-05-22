@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
 
   const embed = new Discord.MessageEmbed()
     .setTitle(`<:Resoluteinfo:844971535927083088> Tempo de atividade`)
-    .setThumbnail("https://imgur.com/WZMylbw.gif")
+    //.setThumbnail("https://imgur.com/WZMylbw.gif")
     .setColor("#FF0000")
     .setDescription(`**<:N3UP_Servers:845357935155478548> Estou online a **\n${uptime}`)
 
