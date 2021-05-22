@@ -30,10 +30,9 @@ module.exports = {
  message.channel.send(`*<:setaazul:843588568605523969> Sorteio criado em ${channel}*`);
  
  let Embed = new MessageEmbed()
- .setTitle(`Novo sorteio!`)
+ .setTitle(`Sorteio!`)
  .setDescription(
- `<:information:843542771814236170> O Usuário ${message.author} Esta Sorteando: **${prize}**
- Clique Em 💎 Para Participar`
+ `<:spr4yxyz:837798446584168468> Sorteio criado por ${message.author} \n Clique Em 💎 Para Participar\nSorteio: **${prize}**`
  )
  .setTimestamp(Date.now() + ms(args[0]))
  .setColor("#00FFFF");
