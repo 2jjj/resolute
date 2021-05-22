@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
       .setColor("#FFFFF1")
       .addField("<:spr4yxyz:837798446584168468> Autor:", message.author)
-      .addField("<:Resoluteinfo:844971535927083088> ⇝ Conteúdo", content)
+      .addField("<:spr4yxyz:837798446584168468> Conteúdo", content)
       .setFooter("<:Resoluteinfo:844971535927083088> ⇝ ID do Autor: " + message.author.id)
       .setTimestamp()
     );
