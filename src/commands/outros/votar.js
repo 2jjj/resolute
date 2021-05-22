@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
         .setTitle(`<:Time:844591047719125012> Votação aberta por ${message.author.username}`)
         .setDescription(content)
 
-    if (!content) { return message.inlineReply('`' + prefix + 'votar <conteudo>`') }
+    if (!content) { return message.inlineReply('`' + prefix + 'votar <conteúdo>`') }
 
     if (content) {
         return message.channel.send(embed).then(msg => {
