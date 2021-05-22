@@ -2,6 +2,9 @@ const { MessageEmbed } = require("discord.js");
 
 exports.run = async(client, message, args) => {
 
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) prefix = "s."
+
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.channel.send("Não tem nada tocando no momento").catch(console.error);
 
