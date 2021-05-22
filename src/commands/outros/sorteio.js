@@ -12,7 +12,7 @@ module.exports = {
  if (!args[0]) return message.channel.send(`<:spr4yxyz:837798446584168468> Você não específicou tempo.`);
  
  if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
- `<:information:843542771814236170> | Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
+ `<:spr4yxyz:837798446584168468> Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
  );
  
  if (isNaN(args[0][0])) return message.channel.send(`<:spr4yxyz:837798446584168468> Isto não é um número!`);
