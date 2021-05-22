@@ -2,6 +2,10 @@ const { MessageEmbed } = require('discord.js')
 const discord = require('discord.js')
 
 exports.run = async (client, message) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     const channel = message.member.voice.channel;
     if (!channel) { 
         let embed23 = new discord.MessageEmbed()
