@@ -1,4 +1,8 @@
 exports.run = async(client, message) => {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     const channel = message.member.voice.channel;
     if (!channel) return message.channel.send('<:music:843602147051700284> | Você deve estar em um canal de voz para utlizar esse comando!');
     let queue = message.client.queue.get(message.guild.id)

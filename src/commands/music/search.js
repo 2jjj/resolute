@@ -15,6 +15,9 @@ module.exports = {
   },
 
   run: async function (client, message, args) {
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     let channel = message.member.voice.channel;
     if (!channel)return sendError("Sinto muito, mas você precisa estar em um canal de voz para tocar música", message.channel);
 
