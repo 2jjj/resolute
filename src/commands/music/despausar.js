@@ -10,6 +10,10 @@ module.exports = {
   },
 
   run: async function (client, message, args) {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
     const serverQueue = message.client.queue.get(message.guild.id);
     if (serverQueue && !serverQueue.playing) {
       serverQueue.playing = true;
