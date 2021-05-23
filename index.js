@@ -84,25 +84,5 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
   });
 });
 
-const manager = new ShardingManager('./index.js', { 
-  totalShards: 'auto', //numWorkers, //'auto',
-  token: "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c", 
-  respawn: true
-});
-
-manager.on('shardCreate', shard => {
-  console.log(cor.rainbow(`[INFO] - [SHARD] Iniciando shard ${shard.id}`))
-});
-
-manager.spawn();
-
-const cor = require("colors");
-var cluster = require('cluster');
-var numWorkers = require('os').cpus().length;
-console.log("-------------------------------------")
-console.log(`[SHARD ID] -> 0`)
-console.log(`[SHARD] (numWorkers) -> ${numWorkers}`)
-console.log("-------------------------------------")
-
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c | Canary
