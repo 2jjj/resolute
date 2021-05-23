@@ -6,6 +6,7 @@ const fs = require("fs")
 const mongoose = require('mongoose');
 const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
+const cor = require("colors");
 client.queue = new Map();
 client.commands = new Collection();
 
@@ -80,7 +81,7 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
     const event = require(__dirname + `/src/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
-    console.log("[INFO] - [EVENTO] - "+eventName)
+    console.log(cor.red("[INFO] - [EVENTO] - "+eventName))
   });
 });
 
