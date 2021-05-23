@@ -1,4 +1,4 @@
-const { Discord, Collection, Client } = require("discord.js");
+const { Discord, Collection, Client, ShardingManager } = require("discord.js");
 const client = new Client();
 require("./inlineReply")
 require("./quote")
@@ -84,6 +84,18 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
   });
 });
 
+const manager = new ShardingManager('./index.js', { 
+  totalShards: 'auto', //numWorkers, //'auto',
+  token: "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c", 
+  respawn: true
+});
+
+manager.on('shardCreate', shard => {
+  console.log(cor.rainbow(`[INFO] - [SHARD] Iniciando shard ${shard.id}`))
+});
+
+manager.spawn();
+
 var cluster = require('cluster');
 var numWorkers = require('os').cpus().length;
 console.log("-------------------------------------")
@@ -93,4 +105,3 @@ console.log("-------------------------------------")
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c | Canary
-client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c");
