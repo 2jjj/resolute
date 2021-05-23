@@ -25,6 +25,6 @@ if(cluster.isMaster) {
     app.all('/*', function(req, res) {res.send('process ' + process.pid + ' Diga Olá!').end();})
 
     var server = app.listen(8000, function() {
-        console.log(`[CLUSTER] Process ${process.pid} is listening to all incoming requests`.rainbow);
+        console.log(`[CLUSTER] Process ${process.pid} está ouvindo todas as solicitações recebidas`.rainbow);
     });
 }
