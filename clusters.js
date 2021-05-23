@@ -4,7 +4,7 @@ require("colors");
 if(cluster.isMaster) {
     var numWorkers = require('os').cpus().length;
 
-    console.log(`[CLUSTER] Master cluster(Configuração)${numWorkers} workers...`.rainbow);
+    console.log(`[CLUSTER] Master cluster setting up ${numWorkers} workers...`.rainbow);
 
     for(var i = 0; i < numWorkers; i++) {
         cluster.fork();
