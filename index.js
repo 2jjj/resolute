@@ -87,9 +87,8 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
 var cluster = require('cluster');
 var numWorkers = require('os').cpus().length;
 console.log("-------------------------------------")
-console.log("Comandos carregados.")
+console.log(`[SHARD ID] -> 0`)
 console.log(`[SHARD] (numWorkers) -> ${numWorkers}`)
-console.log(`[CLUSTER] Worker ${worker.process.pid}`)
 console.log("-------------------------------------")
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
