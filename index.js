@@ -88,7 +88,7 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
 var numWorkers = require('os').cpus().length;
 console.log("-------------------------------------")
 console.log("Comandos carregados.")
-console.log(`SHARDS(numWorkers) -> ${numWorkers}`)
+console.log(`Shards (numWorkers) -> ${numWorkers}`)
 console.log("-------------------------------------")
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
