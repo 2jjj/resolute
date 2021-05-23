@@ -4,7 +4,7 @@
   "description": "Ajuda, Moderação, Diversão, Economia e Música.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node clusters.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
