@@ -22,7 +22,7 @@ if(cluster.isMaster) {
     });
 } else {
     var app = require('express')();
-    app.all('/*', function(req, res) {res.send('processO ' + process.pid + ' Diga Olá!').end();})
+    app.all('/*', function(req, res) {res.send('process ' + process.pid + ' Diga Olá!').end();})
 
     var server = app.listen(8000, function() {
         console.log(`[CLUSTER] Process ${process.pid} is listening to all incoming requests`.rainbow);
