@@ -41,43 +41,36 @@ client.on('message', message => {
     const commandFile = require(`./src/commands/outros/${command}.js`)
     commandFile.run(client, message, args);
  } catch (err) {
- console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/mod/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/economia/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/diversao/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/configuraveis/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/manipulacao/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 try {
   const commandFile = require(`./src/commands/music/${command}.js`)
   commandFile.run(client, message, args);
 } catch (err) {
-console.error('Erro:' + err);
 }
 });
 
@@ -91,6 +84,9 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
   });
 });
 
+
+var numWorkers = require('os').cpus().length;
+console.log(`SHARDS(numWorkers) -> ${numWorkers}`)
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c | Canary
