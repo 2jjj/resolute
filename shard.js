@@ -1,11 +1,10 @@
-const config = require("./config.json");
 const {ShardingManager} = require('discord.js');
 var numWorkers = require('os').cpus().length;
 const cor = require("colors");
 
 const manager = new ShardingManager('./index.js', { 
-    totalShards: numWorkers, //numWorkers, //'auto',
-    token: config.token, 
+    totalShards: 'auto', //numWorkers, //'auto',
+    token: "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c", 
     respawn: true
 });
 
