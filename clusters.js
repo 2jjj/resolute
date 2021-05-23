@@ -4,7 +4,7 @@ require("colors");
 if(cluster.isMaster) {
     var numWorkers = require('os').cpus().length;
 
-    console.log(`[CLUSTER] Master cluster setting up ${numWorkers} workers...`.rainbow);
+    console.log(`[CLUSTER] Master cluster(Configuração)${numWorkers} workers...`.rainbow);
 
     for(var i = 0; i < numWorkers; i++) {
         cluster.fork();
@@ -12,7 +12,7 @@ if(cluster.isMaster) {
 
     cluster.on('online', function(worker) {
         require("./shard");
-        console.log(`[CLUSTER] Worker ${worker.process.pid} is online`.rainbow);
+        console.log(`[CLUSTER] Worker ${worker.process.pid} está online.`.rainbow);
     });
 
     cluster.on('exit', function(worker, code, signal) {
@@ -22,7 +22,7 @@ if(cluster.isMaster) {
     });
 } else {
     var app = require('express')();
-    app.all('/*', function(req, res) {res.send('process ' + process.pid + ' says hello!').end();})
+    app.all('/*', function(req, res) {res.send('processO ' + process.pid + ' Diga Olá!').end();})
 
     var server = app.listen(8000, function() {
         console.log(`[CLUSTER] Process ${process.pid} is listening to all incoming requests`.rainbow);
