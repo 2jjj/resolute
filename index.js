@@ -80,9 +80,11 @@ fs.readdir(__dirname + "/src/events/", (err, files) => {
     const event = require(__dirname + `/src/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
-    console.log("[EVENTO] - "+eventName)
+    console.log("[INFO] - [EVENTO] - "+eventName)
   });
 });
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c | Canary
+
+client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
