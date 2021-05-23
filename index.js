@@ -96,6 +96,7 @@ manager.on('shardCreate', shard => {
 
 manager.spawn();
 
+const cor = require("colors");
 var cluster = require('cluster');
 var numWorkers = require('os').cpus().length;
 console.log("-------------------------------------")
