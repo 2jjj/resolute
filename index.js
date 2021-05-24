@@ -22,11 +22,15 @@ mongoose
 
 */
 
-
 client.on('message', message => {
 
   var prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) { prefix = "s." }
+
+  if (message.content.startsWith('<')) {
+    if (message.content.endsWith('>'))
+        if (message.mentions.has(client.user.id)) { return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!!') }
+  } 
 
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
