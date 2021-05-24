@@ -133,7 +133,7 @@ stream.on('error', function(er)  {
         if (queue) {
         queue.songs.shift();
         play(queue.songs[0]);
-  	  return sendError(`Um erro ocorreu. \`${er}\``, message.channel)
+  	  return sendError(`<:Resoluteinfo:844971535927083088> Um erro ocorreu. \`${er}\``, message.channel)
 
        }
       }
