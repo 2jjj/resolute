@@ -38,7 +38,7 @@ exports.run = async (client, message, args) => {
         let embed = new discord.MessageEmbed()
         .setTitle('Adcionado a lista')
         .setColor('#000001')
-        .addField('Nome', song.title)
+        .addField('<:music:843602147051700284> Nome', song.title)
         .setThumbnail(song.thumbnail)
         .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
         .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
@@ -83,7 +83,7 @@ exports.run = async (client, message, args) => {
         .setTitle('Começei a tocar')
         .setColor("#000001")
         .setImage(song.thumbnail)
-        .addField('Nome', song.title)
+        .addField('<:music:843602147051700284> Nome', song.title)
         .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
         .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
         .addField('<:Resoluteinfo:844971535927083088> Duração', timeString)
@@ -97,9 +97,9 @@ exports.run = async (client, message, args) => {
         queueConstruct.connection = connection;
         play(queueConstruct.songs[0]);
     } catch (error) {
-        console.error(`<:info:835206734225473546> | Eu não consigo entrar nesse canal de voz`);
+        console.error(`<:music:843602147051700284> Eu não consigo entrar nesse canal de voz`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`<:info:835206734225473546> | Eu não consigo entrar nesse canal de voz ${error}`);
+        return message.channel.send(`<:music:843602147051700284> Eu não consigo entrar nesse canal de voz ${error}`);
     }
 }
