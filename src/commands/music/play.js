@@ -97,9 +97,9 @@ exports.run = async (client, message, args) => {
         queueConstruct.connection = connection;
         play(queueConstruct.songs[0]);
     } catch (error) {
-        console.error(`<:music:843602147051700284> Eu não consigo entrar nesse canal de voz`);
+        console.error(`<:Resoluteinfo:844971535927083088> Eu não consigo entrar nesse canal de voz`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`<:music:843602147051700284> Eu não consigo entrar nesse canal de voz ${error}`);
+        return message.channel.send(`<:Resoluteinfo:844971535927083088> Eu não consigo entrar nesse canal de voz ${error}`);
     }
 }
