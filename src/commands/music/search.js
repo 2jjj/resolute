@@ -118,7 +118,7 @@ module.exports = {
     var online = afk[message.guild.id]
     if (!song){
       if (!online.afk) {
-        sendError("Sai do canal pois não tem nenhuma musica na fila!.", message.channel)
+        sendError("<:Resoluteinfo:844971535927083088> Sai do canal pois não tem nenhuma musica na fila!.", message.channel)
         message.guild.me.voice.channel.leave();//
         message.client.queue.delete(message.guild.id);
       }
