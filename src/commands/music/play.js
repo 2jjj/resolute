@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core-discord');
 var scrapeYt = require("scrape-yt");
 const discord = require('discord.js')
+const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
 

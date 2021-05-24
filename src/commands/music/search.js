@@ -5,6 +5,7 @@ const ytdlDiscord = require("ytdl-core-discord");
 const YouTube = require("youtube-sr");
 const sendError = require("../../util/error");
 const fs = require('fs');
+const db = require("quick.db")
 
 module.exports = {
   info: {
