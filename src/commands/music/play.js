@@ -40,9 +40,9 @@ exports.run = async (client, message, args) => {
         .setColor('#000001')
         .addField('Nome', song.title)
         .setThumbnail(song.thumbnail)
-        .addField('Visualizações', song.views)
-        .addField('Requerido por', song.requester)
-        .addField('Duração', timeString)
+        .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
+        .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
+        .addField('<:Resoluteinfo:844971535927083088> Duração', timeString)
         return message.channel.send(embed)
     }
 
@@ -63,7 +63,7 @@ exports.run = async (client, message, args) => {
         if (!song) {
             queue.voiceChannel.leave();
             message.client.queue.delete(message.guild.id);
-            message.channel.send('<:music:843602147051700284> | Sem músicas na fila, então sai do canal de voz.')
+            message.channel.send('<:Resoluteinfo:844971535927083088> Sem músicas na fila, então sai do canal de voz.')
             return;
         }
 
@@ -84,9 +84,9 @@ exports.run = async (client, message, args) => {
         .setColor("#000001")
         .setImage(song.thumbnail)
         .addField('Nome', song.title)
-        .addField('Requerido por', song.requester)
-        .addField('Visualizações', song.views)
-        .addField('Duração', timeString)
+        .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
+        .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
+        .addField('<:Resoluteinfo:844971535927083088> Duração', timeString)
         queue.textChannel.send(noiceEmbed);
         message.react("<:check:843604256455000075>")
     };
