@@ -26,13 +26,13 @@ module.exports = {
 
         if(!reason) return message.reply("<:setaazul:843588568605523969> Por favor, dê um motivo!")
 
-        let embed = new discord.MessageEmbed()
+        let embed2 = new discord.MessageEmbed()
         .setTitle("Resolute - Membro Kickado")
         .setColor('RED')
         .addField("Usuário", `${target.user}`)
         .addField("Moderador", `${message.author}`)
         .addField("Motivo", `${reason}`)
-        await message.channel.send(embed)
+        await message.channel.send(embed2)
         await target.kick(reason)
     }
 }

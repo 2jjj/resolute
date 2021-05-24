@@ -2,7 +2,7 @@ const { Discord, Collection, Client, ShardingManager } = require("discord.js");
 const client = new Client();
 require("./inlineReply")
 require("./quote")
-const fs = require("fs")
+const { fs, readdirSync} = require("fs")
 const mongoose = require('mongoose');
 const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
@@ -22,62 +22,13 @@ mongoose
 
 */
 
-client.on('message', message => {
-
-  var prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) { prefix = "s." }
-
-  if (message.content.startsWith('<')) {
-    if (message.content.endsWith('>'))
-        if (message.mentions.has(client.user.id)) { return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!!') }
-  } 
-
-  if (message.author.bot) return;
-  if (message.channel.type == 'dm') return;
-  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
-  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
-
- const args = message.content
-     .trim().slice(prefix.length)
-     .split(/ +/g);
- const command = args.shift().toLowerCase();
-
- try {
-    const commandFile = require(`./src/commands/outros/${command}.js`)
-    commandFile.run(client, message, args);
- } catch (err) {
+for (const subFolder of readdirSync(`${__dirname}/src/commands/`)) {
+  for (const fileName of readdirSync(`${__dirname}/src/commands/${subFolder}/`)) {
+      let file = require(`${__dirname}/src/commands/${subFolder}/${fileName}`);
+      
+      client.commands.set(file.name, file);
+  }
 }
-try {
-  const commandFile = require(`./src/commands/mod/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/economia/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/diversao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/configuraveis/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/manipulacao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/music/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-});
 
 fs.readdir(__dirname + "/src/events/", (err, files) => {
   if (err) return console.error(err);
