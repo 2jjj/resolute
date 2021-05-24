@@ -31,7 +31,7 @@ module.exports = {
     var serverQueue = message.client.queue.get(message.guild.id);
     try {
            var searched = await YouTube.search(searchString, { limit: 10 });
-          if (searched[0] == undefined)return sendError("Parece que não consegui encontrar a música no YouTube", message.channel);
+          if (searched[0] == undefined)return sendError("<:Resoluteinfo:844971535927083088> Parece que não consegui encontrar a música no YouTube", message.channel);
                     let index = 0;
                     let embedPlay = new MessageEmbed()
                         .setColor("BLUE")
@@ -65,7 +65,7 @@ module.exports = {
                     return message.channel.send({
                         embed: {
                             color: "RED",
-                            description: "🆘  **|**  Não consegui obter nenhum resultado de pesquisa"
+                            description: "<:Resoluteinfo:844971535927083088> Não consegui obter nenhum resultado de pesquisa"
                         }
                     });
                 }
