@@ -24,7 +24,7 @@ module.exports = {
     serverQueue.volume = args[0]; 
     serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
     let spray = new MessageEmbed()
-    .setDescription(`<:music:843602147051700284> | Eu ajustei o volume para: **${args[0]/1}/100**`)
+    .setDescription(`<:Resoluteinfo:844971535927083088> Eu ajustei o volume para: **${args[0]/1}/100**`)
     .setAuthor("Gerenciamento do volume", `${message.author.displayAvatarURL({format: "png"})}`)
     .setColor("BLUE")
     return message.channel.send(spray);
