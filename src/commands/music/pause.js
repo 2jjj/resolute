@@ -24,11 +24,10 @@ module.exports = {
         return sendError(` ${error}`, message.channel);
       }	    
       let xd = new MessageEmbed()
-      .setDescription("⏸ Musica pausada para você!")
+      .setDescription("Musica pausada.")
       .setColor("YELLOW")
-      .setTitle("Musica pausada.")
       return message.channel.send(xd);
     }
-    return sendError("Não ha nada tocando.", message.channel);
+    return sendError("<:Resoluteinfo:844971535927083088> Não ha nada tocando.", message.channel);
   },
 };
