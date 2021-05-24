@@ -156,9 +156,9 @@ stream.on('error', function(er)  {
       .setAuthor("Musica iniciada!", "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
       .setThumbnail(song.img)
       .setColor("BLUE")
-      .addField("Nome", song.title, true)
-      .addField("Duração", song.duration, true)
-      .addField("Pedido por", song.req.tag, true)
+      .addField("<:Resoluteinfo:844971535927083088> Nome", song.title, true)
+      .addField("<:Resoluteinfo:844971535927083088> Duração", song.duration, true)
+      .addField("<:Resoluteinfo:844971535927083088> Pedido por", song.req.tag, true)
       .setFooter(`Views: ${song.views} | ${song.ago}`)
       queue.textChannel.send(thing);
     };
@@ -172,7 +172,7 @@ stream.on('error', function(er)  {
       console.error(`Eu não poderia entrar no canal de voz por: ${error}`);
       message.client.queue.delete(message.guild.id);
       await channel.leave();
-      return sendError(`Eu não poderia entrar no canal de voz por: ${error}`, message.channel);
+      return sendError(`<:Resoluteinfo:844971535927083088> Eu não poderia entrar no canal de voz por: ${error}`, message.channel);
     }
  
   },
