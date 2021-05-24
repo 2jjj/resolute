@@ -26,7 +26,7 @@ module.exports = {
     if (!permissions.has("SPEAK"))return sendError("<:Resoluteinfo:844971535927083088> Não posso falar neste canal de voz, verifique se tenho as permissões adequadas!", message.channel);
 
     var searchString = args.join(" ");
-    if (!searchString)return sendError("Você nao pesquisou por nada!", message.channel);
+    if (!searchString)return sendError("<:Resoluteinfo:844971535927083088> Você nao pesquisou por nada!", message.channel);
 
     var serverQueue = message.client.queue.get(message.guild.id);
     try {
