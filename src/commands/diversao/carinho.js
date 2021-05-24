@@ -1,3 +1,5 @@
+//Resolute 0.0.5
+
 const Discord = require('discord.js')
 const db = require('quick.db')
 
@@ -48,10 +50,6 @@ exports.run = async (client, message, args) => {
       .setTitle('<a:__:778990435938336769> Erro.')
       .setDescription('`' + prefix + 'carinho @user`')
     return message.reply(nouser)
-  }
-
-  if (user.id === '821471191578574888') {
-    return message.inlineReply('Agradeço o carinho, mas não vou retribuir desta vez, estou com sono')
   }
 
   if (user.id === message.author.id) {
