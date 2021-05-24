@@ -90,9 +90,9 @@ module.exports = {
       .setAuthor("Musica foi adicionada na fila", "https://cdn.discordapp.com/attachments/754170388115619872/784270025577463849/7b7a49c20326e3cbfdccb534ca0366f1.gif")
       .setThumbnail(song.img)
       .setColor("YELLOW")
-      .addField("Nome", song.title, true)
-      .addField("Duração", song.duration, true)
-      .addField("Pedido por", song.req.tag, true)
+      .addField("<:Resoluteinfo:844971535927083088> Nome", song.title, true)
+      .addField("<:Resoluteinfo:844971535927083088> Duração", song.duration, true)
+      .addField("<:Resoluteinfo:844971535927083088> Pedido por", song.req.tag, true)
       .setFooter(`Visualizações: ${song.views} | ${song.ago}`)
       return message.channel.send(thing);
     }
