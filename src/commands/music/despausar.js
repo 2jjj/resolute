@@ -19,9 +19,8 @@ module.exports = {
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
-      .setDescription("<:info:835206734225473546> | Musica despausada.")
+      .setDescription("<:music:843602147051700284> Musica despausada.")
       .setColor("YELLOW")
-      .setAuthor("Musica despausada!", "https://cdn.discordapp.com/attachments/837826996460453898/841740447226527754/blurple.png")
       return message.channel.send(xd);
     }
     return sendError("Não esta tocando nesse servidor", message.channel);
