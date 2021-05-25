@@ -1,7 +1,13 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+  name: "uptime",
+  aliases: ['up', 'uptime'],
+  cooldown: 3000 * 5, 
+  description: "Uptime",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -23,5 +29,5 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`**<:N3UP_Servers:845357935155478548> **Estou online** a **\n${uptime}`)
 
   message.channel.send(embed);
-};
-
+}
+}
