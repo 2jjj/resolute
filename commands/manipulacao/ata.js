@@ -1,6 +1,14 @@
 const db = require("quick.db")
 
-exports.run = async (client, message, args, idioma) => {
+module.exports = {
+  name: "ata",
+  aliases: ["atameme"],
+  cooldown: 1000 * 2, 
+  description: "dev",
+  category: "manipulacao",
+
+  async run (client, message, args) {
+
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
@@ -20,4 +28,4 @@ exports.run = async (client, message, args, idioma) => {
           message.delete()
           message.channel.stopTyping()
       })
-    }
+    }}

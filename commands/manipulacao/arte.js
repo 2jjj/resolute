@@ -2,7 +2,14 @@ const DIG = require("discord-image-generation");
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+  name: "arte",
+  aliases: ["artememe"],
+  cooldown: 1000 * 2, 
+  description: "dev",
+  category: "manipulacao",
+
+  async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -18,4 +25,4 @@ exports.run = async (bot, message, args) => {
 
     let attach = new Discord.MessageAttachment(img, "resolute.png");
     message.channel.send(attach);
-  }
+  }}
