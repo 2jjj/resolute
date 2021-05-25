@@ -9,7 +9,7 @@ const manager = new ShardingManager('./index.js', {
 });
 
 manager.on('shardCreate', shard => {
-    console.log(cor.red(`[[LOGS] - [SHARD] Iniciando shard ${shard.id}`))
+    console.log(cor.red(`[LOGS] - [SHARD] Iniciando shard ${shard.id}`))
     console.log(cor.red(`[LOGS] - [SHARD] Shard ID ${shard.id}`))
 });
 manager.spawn();
