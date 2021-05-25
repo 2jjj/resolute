@@ -5,7 +5,7 @@ module.exports = {
   name: "avatar",
   aliases: ['av', 'icon'],
   cooldown: 1000 * 2, 
-  description: "sortear",
+  description: "avatar",
   category: "outros",
 
   async run (client, message, args) {

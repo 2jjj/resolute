@@ -6,7 +6,7 @@ module.exports = {
     name: "horas",
     aliases: ['dia'],
     cooldown: 1000 * 2, 
-    description: "sortear",
+    description: "horas",
     category: "outros",
 
     async run (client, message, args) {

@@ -5,7 +5,7 @@ module.exports = {
     name: "random",
     aliases: ['sorteador', 'numero'],
     cooldown: 1000 * 2, 
-    description: "sortear",
+    description: "random",
     category: "outros",
 
     async run (client, message, args) {

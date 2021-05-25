@@ -5,7 +5,7 @@ module.exports = {
   name: "emoji",
   aliases: ['emojiinfo'],
   cooldown: 1000 * 2, 
-  description: "sortear",
+  description: "emoji",
   category: "outros",
 
   async run (client, message, args) {

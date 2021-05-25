@@ -4,7 +4,7 @@ module.exports = {
     name: "close",
     aliases: ['fechar'],
     cooldown: 1000 * 2, 
-    description: "sortear",
+    description: "close ticket",
     category: "outros",
 
     async run (client, message, args) {
