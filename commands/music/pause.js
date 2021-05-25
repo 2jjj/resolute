@@ -5,6 +5,7 @@ const db = require("quick.db")
 module.exports = {
   info: {
     name: "pause",
+    cooldown: 3000 * 5, 
     description: "pausar a musica que está tocando",
     usage: "",
     aliases: ["pause", "pausar"],
