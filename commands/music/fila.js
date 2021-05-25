@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['queue'],
     cooldown: 1000 * 2, 
     description: "fila",
-    category: "music",
+    category: "musica",
   
     async run (client, message, args) {
 

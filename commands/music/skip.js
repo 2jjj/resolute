@@ -1,14 +1,12 @@
 const db = require("quick.db")
 
 module.exports = {
-    info: {
-      name: "skip",
-      cooldown: 3000 * 5, 
-      description: "Pular a música",
-      aliases: ["skipar", "pular"],
-      category: "music",
-    },
-    
+    name: "skip",
+    aliases: ['pular'],
+    cooldown: 1000 * 2, 
+    description: "pular",
+    category: "musica",
+  
     async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)

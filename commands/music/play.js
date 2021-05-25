@@ -8,7 +8,7 @@ module.exports = {
     aliases: ['tocar'],
     cooldown: 1000 * 2, 
     description: "play",
-    category: "music",
+    category: "musica",
   
     async run (client, message, args) {
 

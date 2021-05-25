@@ -6,7 +6,7 @@ module.exports = {
   aliases: ['lyrics'],
   cooldown: 1000 * 2, 
   description: "letra",
-  category: "music",
+  category: "musica",
 
   async run (client, message, args) {
 

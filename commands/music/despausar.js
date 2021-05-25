@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['resume'],
   cooldown: 1000 * 2, 
   description: "despausar",
-  category: "music",
+  category: "musica",
 
   async run (client, message, args) {
 
