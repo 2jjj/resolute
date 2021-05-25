@@ -28,7 +28,6 @@ module.exports = {
     //.setThumbnail("https://imgur.com/WZMylbw.gif")
     .setColor("#FF0000")
     .setDescription(`<:N3UP_Servers:845357935155478548> Uptime \n${uptime}`)
-
   message.channel.send(embed);
 }
 }
