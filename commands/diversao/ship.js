@@ -1,7 +1,14 @@
 const Discord = require("discord.js")
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
+module.exports = {
+  name: "ship",
+  aliases: [],
+  cooldown: 1000 * 2, 
+  description: "dev",
+  category: "fun",
+
+async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -26,4 +33,4 @@ exports.run = async (client, message, args) => {
     .addField(`${user.user.username} ama você em:`, `💟 ${Math.floor(love)}% \n${loveLevel}`)
 
   return message.inlineReply(embed)
-}
+}}

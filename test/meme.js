@@ -2,7 +2,14 @@ const discord = require('discord.js')
 const randompuppy = require('random-puppy')
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "meme",
+    aliases: [],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "economia",
+  
+async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -17,3 +24,4 @@ exports.run = async (client, message, args) => {
         .setTimestamp()
         await message.channel.send(embed)
     }
+}

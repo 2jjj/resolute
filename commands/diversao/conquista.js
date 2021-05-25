@@ -1,8 +1,13 @@
 const Discord = require('discord.js');
 
 module.exports = {
-name: 'conquista',
-run: async(client, message, args) => {
+    name: "conquista",
+    aliases: [],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "fun",
+  
+async run (client, message, args) {
 
 const a = args.join("+")
 if(!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);

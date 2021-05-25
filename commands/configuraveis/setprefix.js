@@ -1,7 +1,14 @@
 const Discord = require("discord.js")
 const db = require("quick.db")
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "setprefix",
+    aliases: [],
+    cooldown: 1000 * 2, 
+    description: "setprefix",
+    category: "config",
+  
+    async run (client, message, args) {
 
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         let permss = new Discord.MessageEmbed()
@@ -68,4 +75,4 @@ exports.run = async (client, message, args) => {
             }
         })
     }) // aqui
-}
+}}

@@ -1,7 +1,14 @@
 const Discord = require('discord.js');
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
+module.exports = {
+  name: "hug",
+  aliases: ["abraçar"],
+  cooldown: 1000 * 2, 
+  description: "dev",
+  category: "fun",
+
+async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -31,4 +38,4 @@ let avatar = message.author.displayAvatarURL({format: 'png'});
         .setFooter('Resolute')
         .setAuthor(message.author.tag, avatar);
   await message.channel.send(embed);
-}
+}}
