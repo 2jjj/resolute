@@ -1,7 +1,14 @@
 const Discord = require("discord.js")
 const db = require("quick.db")
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+    name: "report",
+    aliases: ['bug', 'reportar'],
+    cooldown: 1000 * 2, 
+    description: "reportar",
+    category: "outros",
+
+    async run (client, message, args) {
 let prefix = db.get(`prefix_${message.guild.id}`)
 if (prefix === null) prefix = "s."
 let canal = client.channels.cache.get("842984263392428032")
@@ -29,4 +36,5 @@ description: "<a:check:835206263075242029> Seu bug/report foi computado e enviad
 color: "RED"
 }
 });
+}
 }

@@ -6,6 +6,7 @@ module.exports = {
   aliases: ['up', 'uptime'],
   cooldown: 3000 * 5, 
   description: "Uptime",
+  category: "outros",
 
   async run (client, message, args) {
 

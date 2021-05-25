@@ -4,7 +4,14 @@ const db = require("quick.db");
 
 var provider = new steam.SteamProvider();
 
-exports.run = (bot, message, args) => {
+module.exports = {
+    name: "steam",
+    aliases: ['game', 'steamgame'],
+    cooldown: 1000 * 2, 
+    description: "game",
+    category: "outros",
+
+    async run (client, message, args) {
 
 let prefix = db.get(`prefix_${message.guild.id}`)
 if (prefix === null) prefix = "s."
@@ -23,4 +30,5 @@ provider.search(arg).then(result => {
         return message.channel.send(embed)
     })
 })
+}
 }

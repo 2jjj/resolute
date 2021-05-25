@@ -1,8 +1,15 @@
 const db = require("quick.db");
 const Discord = require("discord.js");
 
-exports.run = async (client, message, args) => {
-  
+module.exports = {
+  name: "botinfo",
+  aliases: ['sobre', 'bot'],
+  cooldown: 1000 * 2, 
+  description: "botinfo",
+  category: "outros",
+
+  async run (client, message, args) {
+    
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
 
@@ -28,4 +35,4 @@ exports.run = async (client, message, args) => {
 	)
   await message.channel.send(embed);
 }
-
+}

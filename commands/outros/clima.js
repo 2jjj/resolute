@@ -2,7 +2,14 @@ const Discord = require("discord.js")
 const weather = require("weather-js")
 const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
+module.exports = {
+  name: "clima",
+  aliases: ['graus'],
+  cooldown: 1000 * 2, 
+  description: "clima",
+  category: "outros",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -51,4 +58,5 @@ exports.run = async (client, message, args) => {
 
     return message.channel.send(embed)
   })
+}
 }

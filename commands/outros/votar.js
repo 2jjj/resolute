@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['votacao', 'vote'],
     cooldown: 1000 * 2, 
     description: "Votação",
+    category: "outros",
 
     async run (client, message, args) {
 

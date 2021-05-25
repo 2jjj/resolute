@@ -2,10 +2,13 @@ const { MessageEmbed } = require("discord.js");
 const ms = require("ms");
 
 module.exports = {
- name: "sortear",
- timeout: 10000,
- aliases: [],
- run: async (bot, message, args) => {
+    name: "votar",
+    aliases: ['votacao', 'vote'],
+    cooldown: 1000 * 2, 
+    description: "sorteio",
+    category: "outros",
+
+ async run (client, message, args) {
  
  message.delete().catch(() => null);
  

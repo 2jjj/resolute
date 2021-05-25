@@ -3,8 +3,15 @@ const ms = require("ms")
 const db = require("quick.db")
 const Discord = require("discord.js")
 
-module.exports.run = async (client, message, args) => {
-    
+module.exports = {
+  name: "ping",
+  aliases: ['pp', 'latencia'],
+  cooldown: 1000 * 2, 
+  description: "ping",
+  category: "outros",
+
+  async run (client, message, args) {
+
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
@@ -19,4 +26,4 @@ module.exports.run = async (client, message, args) => {
   .setFooter('Resolute™');
 
   m.edit(embed);
-};
+}}

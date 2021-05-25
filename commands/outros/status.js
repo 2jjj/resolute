@@ -5,7 +5,14 @@ const moment = require("moment")
 const db = require("quick.db");
 
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+  name: "votar",
+  aliases: ['cpu', 'info'],
+  cooldown: 1000 * 2, 
+  description: "status",
+  category: "outros",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -38,4 +45,4 @@ exports.run = async (bot, message, args) => {
             message.channel.send(embedStats)
             })
           }
-              
+        }

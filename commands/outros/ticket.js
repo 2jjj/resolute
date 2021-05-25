@@ -1,7 +1,14 @@
 const { Client, Message } = require("discord.js")
 const db = require("quick.db")
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "ticket",
+    aliases: ['mail'],
+    cooldown: 1000 * 2, 
+    description: "ticket",
+    category: "outros",
+
+    async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
@@ -29,3 +36,4 @@ exports.run = async (client, message, args) => {
 <:check_no:844591218545524788> | Caso queira fechar seu ticket, utilize **${prefix}close**.`)
         })
     }
+}

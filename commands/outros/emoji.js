@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+  name: "emoji",
+  aliases: ['emojiinfo'],
+  cooldown: 1000 * 2, 
+  description: "sortear",
+  category: "outros",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -24,5 +31,5 @@ module.exports.run = async (client, message, args) => {
   } else {
     message.channel.send(`<:${args[0]}:${emoji.id}>`);
   }
-};
-
+}
+}

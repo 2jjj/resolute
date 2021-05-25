@@ -2,7 +2,13 @@ const { MessageEmbed } = require('discord.js')
 const db = require('quick.db');
 
 module.exports = {
-      run: async (client, message, args) => {
+      name: "sobremim",
+      aliases: ['votacao', 'vote'],
+      cooldown: 1000 * 2, 
+      description: "Votação",
+      category: "outros",
+  
+      async run (client, message, args) {
 
 const aboutme = args.join(' ');
 const user = message.author;
