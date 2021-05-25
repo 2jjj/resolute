@@ -2,7 +2,14 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 const ms = require("parse-ms");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+    name: "roubar",
+    aliases: ['roubo'],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "economia",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -74,4 +81,4 @@ module.exports.run = async (client, message, args) => {
             db.set(`rob_${message.guild.id}_${autor.id}`, Date.now());
         };
     };
-}
+}}

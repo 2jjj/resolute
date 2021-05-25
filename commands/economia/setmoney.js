@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+    name: "setmoney",
+    aliases: ['setdinheiro'],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "economia",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -29,4 +36,4 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
     .setFooter(`Money foi adicionado!`);
     message.channel.send(moneyEmbed);
-}
+}}

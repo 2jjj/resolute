@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+    name: "depositar",
+    aliases: ['dep'],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "economia",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -49,4 +56,4 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(`${message.author}`, embed7);
     db.add(`bank_${message.guild.id}_${message.author.id}`, args[0]);
     db.subtract(`money_${message.guild.id}_${message.author.id}`, args[0]);
-}
+}}
