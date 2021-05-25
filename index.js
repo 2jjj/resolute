@@ -69,13 +69,4 @@ fs.readdir(__dirname + "/events/", (err, files) => {
   });
 });
 
-/*
-for (const fileName of readdirSync(`${__dirname}/events/`)) {
-    let file = require(`${__dirname}/events/${fileName}`);
-    let eventEmiter = file.emiter;
-
-    client[eventEmiter](file.name, file.run.bind(null, client));
-}
-*/
-
-client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c").then(console.log("Online."))
+client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c");
