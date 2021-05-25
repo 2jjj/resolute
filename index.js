@@ -8,7 +8,7 @@ const cor = require("colors");
 const client = new Discord.Client();
 client.queue = new Map();
 client.commands = new Discord.Collection();
-const { readdirSync, read } = require('fs');
+const { readdirSync, fs } = require('fs');
 const Timeout = new Discord.Collection();
 const ms = require('ms');
 
