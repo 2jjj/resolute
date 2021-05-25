@@ -13,7 +13,6 @@ const Timeout = new Discord.Collection();
 const ms = require('ms');
 
 // Commands
-const prefix = '.';
 
 const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
@@ -24,6 +23,9 @@ for (const folder of commandFolders) {
 }}
 
 client.on("message", async (message) => {
+
+    var prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
 
     if (message.content.startsWith('<')) {
         if (message.content.endsWith('>'))
