@@ -25,6 +25,11 @@ for (const folder of commandFolders) {
 
 client.on("message", async (message) => {
 
+    if (message.content.startsWith('<')) {
+        if (message.content.endsWith('>'))
+            if (message.mentions.has(client.user.id)) { return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!!') }
+      } 
+
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return; //optional#
 
@@ -38,7 +43,7 @@ client.on("message", async (message) => {
 
         if (command) {
             if(command.cooldown) {
-                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`Please Wait \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` Before using this command again!`);
+                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[cooldown] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
                 Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
                 setTimeout(() => {
