@@ -10,6 +10,7 @@ client.queue = new Map();
 client.commands = new Discord.Collection();
 const { readdirSync, read } = require('fs');
 const Timeout = new Discord.Collection();
+const ms = require('ms');
 
 // Commands
 const prefix = '.';
@@ -59,5 +60,3 @@ for (const fileName of readdirSync(`${__dirname}/events/`)) {
 */
 
 client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
-.then(() => console.log(`Sesión iniciada correctamente, me llamo ${client.user.username}`))
-.catch((err) => console.log(`Error al iniciar sesión: ${err}`));
