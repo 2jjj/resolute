@@ -1,10 +1,16 @@
-/*const Discord = require("discord.js");
+const Discord = require("discord.js");
 const db = require("quick.db");
 
-exports.run = (client, message, args) => {
+module.exports = {
+  name: "avisar",
+  aliases: ['warn'],
+  cooldown: 1000 * 2, 
+  description: "warn",
+  category: "moderação",
+
+async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 
     var list = [
         'https://imgur.com/ZNuAcum.gif',
@@ -37,5 +43,4 @@ exports.run = (client, message, args) => {
     membro.send(embed) 
     message.channel.send(`<:bravinha:841126251741970452> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
 }
-
-*/
+}
