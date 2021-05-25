@@ -1,95 +1,63 @@
-const { Discord, Collection, Client, ShardingManager } = require("discord.js");
-const client = new Client();
+const Discord = require('discord.js');
 require("./inlineReply")
 require("./quote")
-const fs = require("fs")
 const mongoose = require('mongoose');
 const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 const cor = require("colors");
+const client = new Discord.Client();
 client.queue = new Map();
-client.commands = new Collection();
+client.commands = new Discord.Collection();
+const { readdirSync, read } = require('fs');
+const Timeout = new Discord.Collection();
 
-//Conexão ao MongoDB
-/* 
-mongoose
-    .connect(mongodb, { 
-        useNewUrlParser: true,
-        useCreateIndex: true
-      })
-    .then(() => console.log('MongoDB Conectado.'))
-    .catch(err => console.log(err));
+// Commands
+const prefix = '.';
 
+const commandFolders = readdirSync('./commands');
+for (const folder of commandFolders) {
+    const commandFiles = readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+    for (const file of commandFiles) {
+        const command = require(`./commands/${folder}/${file}`);
+        client.commands.set(command.name, command);
+}}
+
+client.on("message", async (message) => {
+
+    if(message.author.bot) return;
+    if(message.channel.type === 'dm') return; //optional#
+
+    if(message.content.startsWith(prefix)) {
+        const args = message.content.slice(prefix.length).trim().split(/ +/);
+
+        const commandName = args.shift().toLowerCase();
+
+        const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+        if(!command) return;
+
+        if (command) {
+            if(command.cooldown) {
+                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`Please Wait \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` Before using this command again!`);
+                command.run(client, message, args)
+                Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
+                setTimeout(() => {
+                    Timeout.delete(`${command.name}${message.author.id}`)
+                }, command.cooldown)
+            } else command.run(client, message, args);
+        }
+    }
+})
+
+// Events
+/*
+for (const fileName of readdirSync(`${__dirname}/events/`)) {
+    let file = require(`${__dirname}/events/${fileName}`);
+    let eventEmiter = file.emiter;
+
+    client[eventEmiter](file.name, file.run.bind(null, client));
+}
 */
 
-client.on('message', message => {
-
-  var prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) { prefix = "s." }
-
-  if (message.content.startsWith('<')) {
-    if (message.content.endsWith('>'))
-        if (message.mentions.has(client.user.id)) { return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!!') }
-  } 
-
-  if (message.author.bot) return;
-  if (message.channel.type == 'dm') return;
-  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
-  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
-
- const args = message.content
-     .trim().slice(prefix.length)
-     .split(/ +/g);
- const command = args.shift().toLowerCase();
-
- try {
-    const commandFile = require(`./src/commands/outros/${command}.js`)
-    commandFile.run(client, message, args);
- } catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/mod/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/economia/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/diversao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/configuraveis/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/manipulacao/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-try {
-  const commandFile = require(`./src/commands/music/${command}.js`)
-  commandFile.run(client, message, args);
-} catch (err) {
-}
-});
-
-fs.readdir(__dirname + "/src/events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach((file) => {
-    const event = require(__dirname + `/src/events/${file}`);
-    let eventName = file.split(".")[0];
-    client.on(eventName, event.bind(null, client));
-    console.log(cor.red("[INFO] - [EVENTO] - "+eventName))
-  });
-});
-
-//NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.H9PcHgR0A-fKMBP3bANolnziRM4 | Resolute
-//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c | Canary
-
 client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
+.then(() => console.log(`Sesión iniciada correctamente, me llamo ${client.user.username}`))
+.catch((err) => console.log(`Error al iniciar sesión: ${err}`));
