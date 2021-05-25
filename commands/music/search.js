@@ -10,12 +10,13 @@ const db = require("quick.db")
 module.exports = {
   info: {
     name: "search",
+    cooldown: 3000 * 5, 
     description: "Para pesquisar musicas",
     usage: "",
     aliases: ["sc", "procurar", "buscar"],
   },
 
-  run: async function (client, message, args) {
+  async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 

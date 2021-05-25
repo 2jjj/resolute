@@ -1,6 +1,15 @@
 const db = require("quick.db")
 
-exports.run = async(client, message) => {
+module.exports = {
+    info: {
+      name: "skip",
+      cooldown: 3000 * 5, 
+      description: "Pular a música",
+      usage: "",
+      aliases: ["skipar", "pular"],
+    },
+    
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -20,4 +29,4 @@ exports.run = async(client, message) => {
         message.react('<a:check_ravena:843602746543439902>')
         queue.connection.dispatcher.end('A música foi pulada.')
     }
-}
+}}

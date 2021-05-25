@@ -5,12 +5,13 @@ const db = require("quick.db")
 module.exports = {
   info: {
     name: "volume",
+    cooldown: 3000 * 5, 
     description: "Modificar o volume da fila.",
     usage: "",
     aliases: ["v", "vol"],
   },
-
-  run: async function (client, message, args) {
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
