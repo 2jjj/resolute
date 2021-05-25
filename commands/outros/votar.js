@@ -1,13 +1,8 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 
-module.exports = {
-    name: "ping",
-    aliases: ['p', 'pp'],
-    cooldown: 3000 * 5, 
-    description: "p",
 
-    async run (client, message, args) {
+exports.run = async (client, message, args) => {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -29,5 +24,4 @@ module.exports = {
             msg.react(`<a:nao:845773685330804756>`).catch(err => { return })
         })
     }
-}
 }
