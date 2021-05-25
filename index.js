@@ -56,14 +56,14 @@ client.on("message", async (message) => {
     }
 })
 
-// Events
-/*
-for (const fileName of readdirSync(`${__dirname}/events/`)) {
-    let file = require(`${__dirname}/events/${fileName}`);
-    let eventEmiter = file.emiter;
-
-    client[eventEmiter](file.name, file.run.bind(null, client));
-}
-*/
+fs.readdir(__dirname + "/events/", (err, files) => {
+    if (err) return console.error(err);
+    files.forEach((file) => {
+      const event = require(__dirname + `/events/${file}`);
+      let eventName = file.split(".")[0];
+      client.on(eventName, event.bind(null, client));
+      console.log(cor.red("[INFO] - [EVENTO] - "+eventName))
+    });
+});
 
 client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
