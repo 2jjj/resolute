@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db")
 
-exports.run = (client, message, args) => {
+module.exports = {
+  name: "ban",
+  aliases: ['banir'],
+  cooldown: 1000 * 2, 
+  description: "ban",
+  category: "moderação",
+
+async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -65,3 +72,4 @@ exports.run = (client, message, args) => {
         usuario.send(pv);
         usuario.ban();
     }
+  }

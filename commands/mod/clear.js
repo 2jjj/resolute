@@ -1,8 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db") 
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+  name: "clear",
+  aliases: ['limpar'],
+  cooldown: 1000 * 2, 
+  description: "limpar chat",
+  category: "moderação",
 
+  async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
@@ -13,9 +19,9 @@ exports.run = async (bot, message, args) => {
     );
     
   const deleteCount = parseInt(args[0], 10);
-  if (!deleteCount || deleteCount < 1 || deleteCount > 1000)
+  if (!deleteCount || deleteCount < 1 || deleteCount > 99)
     return message.reply(
-        "<:Aviso:843862131720192001> | Forneça um número de até **1000 mensagens** a serem excluídas."
+        "<:Aviso:843862131720192001> | Forneça um número de até **99 mensagens** a serem excluídas."
       );
  
   const fetched = await message.channel.messages.fetch({
@@ -29,4 +35,4 @@ exports.run = async (bot, message, args) => {
       .setFooter(`• Autor: ${message.author.username}`, message.author.displayAvatarURL({format: "png"}));
       await message.channel.send(embed); 
   }
-};
+}};

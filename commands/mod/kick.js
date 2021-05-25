@@ -1,8 +1,13 @@
 const discord = require('discord.js')
-module.exports = { 
+
+module.exports = {
     name: "kick",
-    description: "kickar alguém",
-    run: async(client, message, args) => {
+    aliases: ['expulsar'],
+    cooldown: 1000 * 2, 
+    description: "kick",
+    category: "moderação",
+  
+    async run (client, message, args) {
 
     const embed = new Discord.MessageEmbed()
         .setTitle("Sem permissão.")

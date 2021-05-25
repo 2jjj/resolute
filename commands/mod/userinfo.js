@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+  name: "userinfo",
+  aliases: ['ui'],
+  cooldown: 1000 * 2, 
+  description: "userinfo",
+  category: "moderação",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -43,3 +50,4 @@ if (member.user.bot === true) {
 
             message.delete();
     }
+  }

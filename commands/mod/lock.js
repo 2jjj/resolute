@@ -1,7 +1,14 @@
 const Discord = require("discord.js")
 const db = require("quick.db")
 
-module.exports.run = async(client,message,args)=> {
+module.exports = {
+    name: "lock",
+    aliases: ['bloquear'],
+    cooldown: 1000 * 2, 
+    description: "bloquear",
+    category: "moderação",
+  
+    async run (client, message, args) {
 
     const embed1 = new Discord.MessageEmbed()
     .setTitle("Sem permissão.")
@@ -47,4 +54,5 @@ module.exports.run = async(client,message,args)=> {
     }catch(e){
         message.channel.send(e)
     }
+}
 }

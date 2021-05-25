@@ -1,10 +1,17 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "banlist",
+    aliases: ['listabans'],
+    cooldown: 1000 * 2, 
+    description: "banlist",
+    category: "moderação",
+  
+async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s." 
+let prefix = db.get(`prefix_${message.guild.id}`)
+if (prefix === null) prefix = "s." 
 
 if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("Você não possui permissões para usar este comando | Permissão: `BAN_MEMBERS`");
 if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.channel.send('❌ Não tenho permissão para ver a lista de membros banidos!'); 
@@ -22,4 +29,4 @@ bans.map(user => {
 });
 
 message.channel.send('<:ban:843861447522910230> Lista de membros banidos:\n' + msg, { split: true });
-}
+}}

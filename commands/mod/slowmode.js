@@ -3,8 +3,13 @@ const ms = require('ms');
 const db = require("quick.db")
 
 module.exports = {
-    name: 'slowmode',
-    run: async (client, message, args) => {
+    name: "slowmode",
+    aliases: ['slow'],
+    cooldown: 1000 * 2, 
+    description: "slowmode",
+    category: "moderação",
+  
+    async run (client, message, args) {
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."

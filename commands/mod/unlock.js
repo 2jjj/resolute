@@ -1,7 +1,14 @@
 const Discord = require("discord.js")
 const db = require("quick.db")
 
-module.exports.run = async(client,message,args)=> {
+module.exports = {
+    name: "unlock",
+    aliases: ['desbloquear'],
+    cooldown: 1000 * 2, 
+    description: "desbloquear",
+    category: "moderação",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -47,4 +54,5 @@ module.exports.run = async(client,message,args)=> {
     }catch(e){
         message.channel.send(e)
     }
+}
 }
