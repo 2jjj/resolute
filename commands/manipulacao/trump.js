@@ -1,7 +1,15 @@
 const fetch = require('node-fetch');
 
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "trump",
+    aliases: ["trumpmeme"],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "manipulacao",
+  
+    async run (client, message, args) {
+    
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
@@ -24,3 +32,4 @@ exports.run = async (client, message, args) => {
             console.log(e.message)
         };
     }
+}

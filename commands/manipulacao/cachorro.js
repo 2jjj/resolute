@@ -4,8 +4,15 @@ const cooldowns = {}
 const ms = require("ms")
 const db = require("quick.db")
 
-exports.run = async (client, message, args) => {
-    
+module.exports = {
+    name: "cachorro",
+    aliases: ["cachorrinho"],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "manipulacao",
+  
+    async run (client, message, args) {
+
 let prefix = db.get(`prefix_${message.guild.id}`)
 if (prefix === null) prefix = "s."
 
@@ -21,3 +28,4 @@ if (prefix === null) prefix = "s."
             })
         })
     }
+}

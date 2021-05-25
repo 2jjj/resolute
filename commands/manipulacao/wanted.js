@@ -2,8 +2,14 @@ const Discord = require("discord.js");
 const Jimp = require("jimp");
 const db = require("quick.db");
 
-module.exports.run = (bot, message, args) =>
-{
+module.exports = {
+    name: "wanted",
+    aliases: ["procurado"],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "manipulacao",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -34,4 +40,4 @@ module.exports.run = (bot, message, args) =>
             message.reply(new Discord.MessageAttachment(buffer, "wanted.png")).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
         });
     });
-};
+}}

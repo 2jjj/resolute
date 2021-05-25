@@ -2,7 +2,14 @@ const Discord = require('discord.js')
 var Jimp = require("jimp")
 const db = require("quick.db");
 
-exports.run = async (bot, message, args) => {
+module.exports = {
+    name: "primeiraspalavras",
+    aliases: ["firstwords"],
+    cooldown: 1000 * 2, 
+    description: "dev",
+    category: "manipulacao",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -36,11 +43,4 @@ exports.run = async (bot, message, args) => {
             }
         }
     }
-}
-
-exports.help = {
-    name: "primeiraspalavras",
-    aliases: ['firstword', 'firstwords'],
-    status: 'on',
-    onlydev: 'false'
-}
+}}
