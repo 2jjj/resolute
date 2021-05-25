@@ -46,7 +46,7 @@ client.on("message", async (message) => {
 
         if (command) {
             if(command.cooldown) {
-                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[cooldown] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[COOLDOWN] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
                 Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
                 setTimeout(() => {
