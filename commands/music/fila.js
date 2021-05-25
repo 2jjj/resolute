@@ -2,7 +2,14 @@ const { MessageEmbed } = require('discord.js')
 const discord = require('discord.js')
 const db = require("quick.db")
 
-exports.run = async (client, message) => {
+module.exports = {
+    name: "fila",
+    aliases: ['queue'],
+    cooldown: 1000 * 2, 
+    description: "fila",
+    category: "music",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -31,4 +38,4 @@ exports.run = async (client, message) => {
     .addField('<:Resoluteinfo:844971535927083088> Tocando agora:', np, true)
     .setDescription(status)
     message.channel.send(embed)
-}
+}}

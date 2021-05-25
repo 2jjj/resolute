@@ -3,15 +3,13 @@ const sendError = require("../../util/error");
 const db = require("quick.db")
 
 module.exports = {
-  info: {
-    name: "resume",
-    cooldown: 3000 * 5, 
-    description: "Para despausar a musica.",
-    usage: "",
-    aliases: [],
-  },
+  name: "despausar",
+  aliases: ['resume'],
+  cooldown: 1000 * 2, 
+  description: "despausar",
+  category: "music",
 
-  run: async function (client, message, args) {
+  async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."

@@ -12,8 +12,8 @@ module.exports = {
     name: "search",
     cooldown: 3000 * 5, 
     description: "Para pesquisar musicas",
-    usage: "",
     aliases: ["sc", "procurar", "buscar"],
+    category: "music",
   },
 
   async run (client, message, args) {

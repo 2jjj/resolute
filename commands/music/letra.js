@@ -1,7 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 const db = require("quick.db")
 
-exports.run = async(client, message, args) => {
+module.exports = {
+  name: "letra",
+  aliases: ['lyrics'],
+  cooldown: 1000 * 2, 
+  description: "letra",
+  category: "music",
+
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
@@ -27,4 +34,4 @@ exports.run = async(client, message, args) => {
     if (lyricsEmbed.description.length >= 2048)
       lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;
     return message.channel.send(lyricsEmbed).catch(console.error);
-}
+}}

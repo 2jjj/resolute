@@ -7,10 +7,10 @@ module.exports = {
     name: "volume",
     cooldown: 3000 * 5, 
     description: "Modificar o volume da fila.",
-    usage: "",
     aliases: ["v", "vol"],
+    category: "music",
   },
-  
+
     async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)

@@ -3,7 +3,14 @@ var scrapeYt = require("scrape-yt");
 const discord = require('discord.js')
 const db = require("quick.db")
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "play",
+    aliases: ['tocar'],
+    cooldown: 1000 * 2, 
+    description: "play",
+    category: "music",
+  
+    async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
@@ -103,4 +110,4 @@ exports.run = async (client, message, args) => {
         await channel.leave();
         return message.channel.send(`<:Resoluteinfo:844971535927083088> Eu não consigo entrar nesse canal de voz ${error}`);
     }
-}
+}}

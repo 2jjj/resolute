@@ -5,8 +5,8 @@ module.exports = {
       name: "skip",
       cooldown: 3000 * 5, 
       description: "Pular a música",
-      usage: "",
       aliases: ["skipar", "pular"],
+      category: "music",
     },
     
     async run (client, message, args) {
