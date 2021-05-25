@@ -6,7 +6,7 @@ module.exports = {
   aliases: ['ui'],
   cooldown: 1000 * 2, 
   description: "userinfo",
-  category: "moderação",
+  category: "mod",
 
   async run (client, message, args) {
 

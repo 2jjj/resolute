@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['slow'],
     cooldown: 1000 * 2, 
     description: "slowmode",
-    category: "moderação",
+    category: "mod",
   
     async run (client, message, args) {
 

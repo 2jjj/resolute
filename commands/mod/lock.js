@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['bloquear'],
     cooldown: 1000 * 2, 
     description: "bloquear",
-    category: "moderação",
+    category: "mod",
   
     async run (client, message, args) {
 

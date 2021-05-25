@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['expulsar'],
     cooldown: 1000 * 2, 
     description: "kick",
-    category: "moderação",
+    category: "mod",
   
     async run (client, message, args) {
 
