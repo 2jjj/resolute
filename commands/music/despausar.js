@@ -5,6 +5,7 @@ const db = require("quick.db")
 module.exports = {
   info: {
     name: "resume",
+    cooldown: 3000 * 5, 
     description: "Para despausar a musica.",
     usage: "",
     aliases: [],
