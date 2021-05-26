@@ -5,7 +5,7 @@ module.exports = {
     name: "help",
     alias: ["ajuda"],
     category: "outros",
-    run: (client, message, args, prefix) => {
+    run: (client, message, args) => {
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
