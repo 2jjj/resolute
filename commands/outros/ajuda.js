@@ -20,7 +20,7 @@ module.exports = {
 
         const helpEmbed = new Discord.MessageEmbed()
         .setAuthor('Resolute - Ajuda', message.author.displayAvatarURL({dynamic: true}))
-        .setDescription(`**Developement by MrSprayX#0012**\n**prefixo atual: ${prefix}**`)
+        .setDescription(`**Desenvolvido por MrSprayX#0012**\n**prefixo atual: ${prefix}**`)
         .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:money1:846828402350489640> **Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:3624personframe:843854352934633542> **Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
