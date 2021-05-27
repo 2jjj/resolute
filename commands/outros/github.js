@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 module.exports = {
-  name: "emoji",
-  aliases: ['emojiinfo'],
+  name: "github",
+  aliases: ['repo'],
   cooldown: 1000 * 2, 
-  description: "emoji",
+  description: "github repo",
   category: "outros",
 
   async run (client, message, args) {
