@@ -1,7 +1,7 @@
 {
   "name": "resolute",
-  "version": "0.0.5",
-  "description": "Ajuda, Moderação, Diversão, Economia e Música.",
+  "version": "0.0.6",
+  "description": "Resolute é um bot com múltiplos comandos de moderação, diversão, manipulações de imagens, etc!",
   "main": "index.js",
   "scripts": {
     "start": "node clusters.js",
