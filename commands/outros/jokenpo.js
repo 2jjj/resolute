@@ -11,8 +11,8 @@ module.exports = {
 
     async run (bot, message, args) {
         let embed = new Discord.MessageEmbed()
-        .setTitle("pedra, papel, tesoura")
-        .setDescription("Reaja pra joga")
+        .setTitle("Pedra, Papel, Tesoura!")
+        .setDescription("Reaja para jogar!")
         .setTimestamp()
         let msg = await message.channel.send(embed)
         await msg.react("🗻")
@@ -37,7 +37,7 @@ module.exports = {
                 if((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "✂" && reaction.emoji.name === "📰") ||
                 (me === "📰" && reaction.emoji.name === "🗻")) {
-                    message.reply("você perdeu!");
+                    message.reply("Você perdeu!");
                 } else if (me === reaction.emoji.name) {
                     return message.reply("É um empate!");
                 } else {
