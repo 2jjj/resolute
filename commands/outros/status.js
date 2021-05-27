@@ -24,10 +24,10 @@ module.exports = {
                return console.log(err);
              }
             
-            let secs = Math.floor(bot.uptime % 60);
-            let days = Math.floor((bot.uptime % 31536000) / 86400);
-            let hours = Math.floor((bot.uptime / 3600) % 24);
-            let mins = Math.floor((bot.uptime / 60) % 60);
+            let secs = Math.floor(client.uptime % 60);
+            let days = Math.floor((client.uptime % 31536000) / 86400);
+            let hours = Math.floor((client.uptime / 3600) % 24);
+            let mins = Math.floor((client.uptime / 60) % 60);
     
              //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
              let embedStats = new Discord.MessageEmbed()
