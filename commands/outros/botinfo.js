@@ -24,7 +24,6 @@ module.exports = {
   .setColor("RANDOM")
   .setThumbnail(avatar)
 	.addFields(
-    { name: 'ﾠ', value: `<:info:845781463843602454> | **Shards**: **${numWorkers}**` },
 		{ name: 'ﾠ', value: '<:developer:843586491434401792> | **Desenvolvedor:** <@836345581424738354>, <@798574984582791208>' },
 		{ name: 'ﾠ', value: `<a:BP_alerta_gif:841129076672299108> | **Bot criado no dia:** **11/10/2020**`, inline: false },
 		{ name: 'ﾠ', value: `<:Resoluteinfo:844971535927083088> | **Estou em ${client.guilds.cache.size} servidores!**, **com ${client.users.cache.size} pessoas!**`, inline: false },
