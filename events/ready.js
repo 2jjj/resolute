@@ -3,7 +3,7 @@ var numWorkers = require('os').cpus().length;
 
 module.exports = async (client) => {
     const status = [  
-        {name: `• Dev: SprayX#0009 | resolutebot.xyz `, type: 'LISTENING'}, 
+        {name: `• Dev: Spray#0007 | resolutebot.xyz `, type: 'LISTENING'}, 
         {name: `• ${client.guilds.cache.size} guilds | Versão 0.0.6 `, type: 'LISTENING'}
       ] 
       function Presence() { 
