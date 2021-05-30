@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "botinfo",
-  aliases: ['sobre', 'bot'],
+  aliases: ['sobre', 'bot', 'aboutbot'],
   cooldown: 1000 * 2, 
   description: "botinfo",
   category: "outros",
