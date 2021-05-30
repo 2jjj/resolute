@@ -20,7 +20,7 @@ module.exports = {
   var numWorkers = require('os').cpus().length;
 
   let embed = new Discord.MessageEmbed()
-  .setTitle("**Resolute - BotInfo**")
+  .setTitle("**Resolute - Botinfo**")
   .setColor("RANDOM")
   .setThumbnail(avatar)
 	.addFields(
