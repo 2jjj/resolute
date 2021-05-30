@@ -34,11 +34,11 @@ async run (client, message, args) {
     if (!motivo) return message.reply("<:staff:835643948151996446> **|** Escreva um motivo do aviso do usuário!") 
 
     let embed = new Discord.MessageEmbed() 
-    .setTitle(`Você foi avisado!! - ${membro.username}`)
+    .setTitle(`Você foi avisado! - ${membro.username}`)
     .setColor('RANDOM')
     .setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setImage(rand)
-    .setDescription(motivo)
+    .setDescription(`**${motivo}**`)
 
     membro.send(embed) 
     message.channel.send(`<:bravinha:841126251741970452> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
