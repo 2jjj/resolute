@@ -19,7 +19,7 @@ module.exports = {
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
       let xd = new MessageEmbed()
-      .setDescription("<:music:843602147051700284> Musica despausada.")
+      .setDescription("> Musica despausada.")
       .setColor("YELLOW")
       return message.channel.send(xd);
     }
