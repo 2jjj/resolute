@@ -6,7 +6,7 @@ module.exports = {
     name: "comment",
     aliases: [],
     description: 'Ultiliza seu texto para um comentario do youtube!',
-    category: "fun",
+    category: "manipulacao",
     cooldown: 1000 * 2, 
 }
 
