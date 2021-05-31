@@ -19,14 +19,14 @@ module.exports = {
     if (prefix === null) prefix = "s."
 
     let channel = message.member.voice.channel;
-    if (!channel)return sendError("<:Resoluteinfo:844971535927083088> Sinto muito, mas você precisa estar em um canal de voz para tocar música", message.channel);
+    if (!channel)return sendError("> Sinto muito, mas você precisa estar em um canal de voz para tocar música", message.channel);
 
     const permissions = channel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT"))return sendError("<:Resoluteinfo:844971535927083088> Não consigo me conectar ao seu canal de voz, verifique se tenho as permissões adequadas!", message.channel);
-    if (!permissions.has("SPEAK"))return sendError("<:Resoluteinfo:844971535927083088> Não posso falar neste canal de voz, verifique se tenho as permissões adequadas!", message.channel);
+    if (!permissions.has("CONNECT"))return sendError("> Não consigo me conectar ao seu canal de voz, verifique se tenho as permissões adequadas!", message.channel);
+    if (!permissions.has("SPEAK"))return sendError("> Não posso falar neste canal de voz, verifique se tenho as permissões adequadas!", message.channel);
 
     var searchString = args.join(" ");
-    if (!searchString)return sendError("<:Resoluteinfo:844971535927083088> Você nao pesquisou por nada!", message.channel);
+    if (!searchString)return sendError("> Você nao pesquisou por nada!", message.channel);
 
     var serverQueue = message.client.queue.get(message.guild.id);
     try {
