@@ -13,7 +13,7 @@ module.exports = {
     if (prefix === null) prefix = "s."
 
     const channel = message.member.voice.channel;
-    if (!channel) return message.channel.send('<:music:843602147051700284> Você deve estar em um canal de voz para utlizar esse comando!');
+    if (!channel) return message.channel.send('> Você deve estar em um canal de voz para utlizar esse comando!');
     let queue = message.client.queue.get(message.guild.id)
     if(!queue){ return message.channel.send({
         embed: {
