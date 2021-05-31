@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
     name: "help",
-    alias: ["ajuda"],
+    aliases: ["ajuda"],
     category: "outros",
     run: (client, message, args) => {
 
