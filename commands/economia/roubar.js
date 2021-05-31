@@ -34,7 +34,7 @@ module.exports = {
     if(autor_money == null) autor_money = 0;
         
     if(user_money <= 0) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${autor}, você não pode roubar alguem que não possui dinheiro!`);
+        return message.channel.send(`> **»** ${autor}, você não pode roubar alguem que não possui dinheiro!`);
     };
 
     let timeout = 86400000;
@@ -47,7 +47,7 @@ module.exports = {
   
         let timeEmbed = new Discord.MessageEmbed()
         .setColor("#008000")
-        .setDescription(`<:info:835206734225473546> **»**Você já realizou um roubo hoje!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
+        .setDescription(`> **»**Você já realizou um roubo hoje!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
         
         message.channel.send(`${autor}`, timeEmbed);
     } else {
