@@ -15,7 +15,7 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    if(!args[0]) return message.channel.send('> Você deve me informar o **nome** ou um **link** de uma música!')
+    if(!args[0]) return message.channel.send('> Você deve me informar o **nome** ou um **link** de uma música ou video!')
     let channel = message.member.voice.channel;
     if(!channel) return message.channel.send('> Você deve estar em um canal de voz para utlizar esse comando!')
 
