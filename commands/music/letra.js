@@ -14,7 +14,7 @@ module.exports = {
   if (prefix === null) prefix = "s."
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return message.channel.send("Não tem nada tocando no momento").catch(console.error);
+    if (!queue) return message.channel.send("> Não tem nada tocando no momento").catch(console.error);
 
     let lyrics = null;
 
