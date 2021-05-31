@@ -118,7 +118,7 @@ module.exports = {
     var online = afk[message.guild.id]
     if (!song){
       if (!online.afk) {
-        sendError("<:Resoluteinfo:844971535927083088> Sai do canal pois não tem nenhuma musica na fila!.", message.channel)
+        sendError("> Sai do canal pois não tem nenhuma musica na fila!.", message.channel)
         message.guild.me.voice.channel.leave();//
         message.client.queue.delete(message.guild.id);
       }
@@ -133,7 +133,7 @@ stream.on('error', function(er)  {
         if (queue) {
         queue.songs.shift();
         play(queue.songs[0]);
-  	  return sendError(`<:Resoluteinfo:844971535927083088> Um erro ocorreu. \`${er}\``, message.channel)
+  	  return sendError(`> Um erro ocorreu. \`${er}\``, message.channel)
 
        }
       }
@@ -169,10 +169,10 @@ stream.on('error', function(er)  {
       channel.guild.voice.setSelfDeaf(true)
       play(queueConstruct.songs[0]);
     } catch (error) {
-      console.error(`Eu não poderia entrar no canal de voz por: ${error}`);
+      console.error(`> Eu não poderia entrar no canal de voz por: ${error}`);
       message.client.queue.delete(message.guild.id);
       await channel.leave();
-      return sendError(`<:Resoluteinfo:844971535927083088> Eu não poderia entrar no canal de voz por: ${error}`, message.channel);
+      return sendError(`> Eu não poderia entrar no canal de voz por: ${error}`, message.channel);
     }
  
   },
