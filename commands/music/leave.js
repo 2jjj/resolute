@@ -17,10 +17,10 @@ module.exports = {
           const kk = message.guild.me.voice.channel.leave();
       
              
-             const cu = new Discord.MessageEmbed()
+             const spr4y = new Discord.MessageEmbed()
              .setColor("#F781BE")
              .setDescription(`${message.author} me desconectou 🎵`);
-            await message.channel.send(cu);
+            await message.channel.send(spr4y);
              await kk
              await message.client.queue.delete(message.guild.id);
     }
