@@ -34,7 +34,7 @@ module.exports = {
     }
 
     const embed = new Discord.MessageEmbed()
-    .setTitle(`<a:money:838087280052535346> > Rank Monetário - ${message.guild.name}`)
+    .setTitle(`💸 > Rank Monetário - ${message.guild.name}`)
     .setDescription(content)
     .setColor(2686950)
     .setFooter(`Rank monetário ~`)
