@@ -20,9 +20,9 @@ module.exports = {
 
     try {
       lyrics = await lyricsFinder(queue.songs[0].title, "");
-      if (!lyrics) lyrics = `<:Resoluteinfo:844971535927083088> Não encontrei letras para essa ${queue.songs[0].title} :(`;
+      if (!lyrics) lyrics = `> Não encontrei letras para essa ${queue.songs[0].title} :(`;
     } catch (error) {
-      lyrics = `<:Resoluteinfo:844971535927083088> Não encontrei letras para essa ${queue.songs[0].title} :(`;
+      lyrics = `> Não encontrei letras para essa ${queue.songs[0].title} :(`;
     }
 
     let lyricsEmbed = new MessageEmbed()

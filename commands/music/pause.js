@@ -28,6 +28,6 @@ module.exports = {
       .setColor("YELLOW")
       return message.channel.send(xd);
     }
-    return sendError("<:Resoluteinfo:844971535927083088> Não ha nada tocando.", message.channel);
+    return sendError("> Não ha nada tocando.", message.channel);
   },
 };
