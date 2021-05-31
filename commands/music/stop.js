@@ -3,7 +3,7 @@ const sendError = require("../../util/error");
 const db = require("quick.db")
 
 module.exports = {
-  name: "stio",
+  name: "stop",
   aliases: ['parar'],
   cooldown: 1000 * 2, 
   description: "parar",

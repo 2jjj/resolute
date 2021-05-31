@@ -108,6 +108,6 @@ module.exports = {
         console.error(`> Eu não consigo entrar nesse canal de voz`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`> Eu não consigo entrar nesse canal de voz ${error}`);
+        return message.channel.send(`> Eu não consigo entrar nesse canal de voz | ${error}`);
     }
 }}
