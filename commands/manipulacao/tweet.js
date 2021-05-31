@@ -6,7 +6,7 @@ module.exports = {
     name: "tweet",
     aliases: [],
     description: 'Escreva um tweet',
-    category: "fun",
+    category: "manipulacao",
     cooldown: 1000 * 2, 
 
 
