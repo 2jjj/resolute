@@ -24,9 +24,9 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setColor("GREEN")
-    .setTitle("<a:money:838087280052535346> > Balanço Monetário")
+    .setTitle("💸Balanço Monetário")
     .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
-    `\n\n<a:money:838087280052535346> > Dinheiro: **R$${money}**` +
+    `\n\n💸 > Dinheiro: **R$${money}**` +
     `\n:bank: > Banco: **R$${bank}**`)
     .setFooter("Informações de sua carteira ~")
     .setTimestamp();
