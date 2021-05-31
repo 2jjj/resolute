@@ -15,9 +15,9 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    if(!args[0]) return message.channel.send('<:Resoluteinfo:844971535927083088> Você deve me informar o nome ou uma url de uma musica!')
+    if(!args[0]) return message.channel.send('> Você deve me informar o nome ou uma url de uma musica!')
     let channel = message.member.voice.channel;
-    if(!channel) return message.channel.send('<:Resoluteinfo:844971535927083088> Você deve estar em um canal de voz para utlizar esse comando!')
+    if(!channel) return message.channel.send('> Você deve estar em um canal de voz para utlizar esse comando!')
 
 
     const server = message.client.queue.get(message.guild.id);
@@ -71,7 +71,7 @@ module.exports = {
         if (!song) {
             queue.voiceChannel.leave();
             message.client.queue.delete(message.guild.id);
-            message.channel.send('<:Resoluteinfo:844971535927083088> Sem músicas na fila, então sai do canal de voz.')
+            message.channel.send('> Sem músicas na fila, então sai do canal de voz.')
             return;
         }
 
@@ -105,9 +105,9 @@ module.exports = {
         queueConstruct.connection = connection;
         play(queueConstruct.songs[0]);
     } catch (error) {
-        console.error(`<:Resoluteinfo:844971535927083088> Eu não consigo entrar nesse canal de voz`);
+        console.error(`> Eu não consigo entrar nesse canal de voz`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`<:Resoluteinfo:844971535927083088> Eu não consigo entrar nesse canal de voz ${error}`);
+        return message.channel.send(`> Eu não consigo entrar nesse canal de voz ${error}`);
     }
 }}
