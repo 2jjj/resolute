@@ -23,6 +23,6 @@ module.exports = {
       .setColor("YELLOW")
       return message.channel.send(xd);
     }
-    return sendError("Não esta tocando nesse servidor", message.channel);
+    return sendError("> Não esta tocando nesse servidor", message.channel);
   },
 };
