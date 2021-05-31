@@ -14,17 +14,17 @@ module.exports = {
     if (prefix === null) prefix = "s."
 
     if (!message.member.hasPermission("ADMINISTRATOR")) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
+        return message.channel.send(`> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
     };
 
     let user = message.mentions.users.first();
 
     if (!user) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você precisa mencionar um usuário para adicionar o Dinheiro!`);
+        return message.channel.send(`> **»** ${message.author}, você precisa mencionar um usuário para adicionar o Dinheiro!`);
     };
 
     if (isNaN(args[1])) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você precisa colocar um numero valido!`);
+        return message.channel.send(`> **»** ${message.author}, você precisa colocar um numero valido!`);
     };
 
     db.add(`money_${message.guild.id}_${user.id}`, args[1]);
@@ -34,6 +34,6 @@ module.exports = {
     .setTitle(":dollar: **|** Alteração Monetária")
     .setColor("#008000")
     .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
-    .setFooter(`Money foi adicionado!`);
+    .setFooter(`O dinheiro foi adicionado!`);
     message.channel.send(moneyEmbed);
 }}
