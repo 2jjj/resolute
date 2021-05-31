@@ -61,7 +61,7 @@ module.exports = {
             let moneyEmbed = new Discord.MessageEmbed()
             .setTitle("👮 **|** Preso por Roubo")
             .setColor("RED")
-            .setDescription(`<a:Roubo:838089029202346014> | Você realizou um roubo e não se saiu muito bem!\nE você perdeu um total de **R$${amount}**!`);
+            .setDescription(`Você realizou um roubo e não se saiu muito bem!\nE você perdeu um total de **R$${amount}**!`);
            
             message.channel.send(`${autor}`, moneyEmbed);
             db.subtract(`money_${message.guild.id}_${autor.id}`, amount);
