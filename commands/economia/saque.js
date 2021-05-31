@@ -17,28 +17,28 @@ module.exports = {
 
     let embed2 = new Discord.MessageEmbed()
     .setColor("#008000")
-    .setDescription(`<:info:835206734225473546> **»** Coloque o valor do saque!`);
+    .setDescription(`> **»** Coloque o valor do saque!`);
   
     if (!args[0]) {
         return message.channel.send(`${message.author}`, embed2);
     };
     let embed4 = new Discord.MessageEmbed()
     .setColor("#008000")
-    .setDescription(`<:info:835206734225473546> **»** Você não Dinheiro no Banco o suficiente para realizar o saque!`);
+    .setDescription(`> **»** Você não Dinheiro no Banco o suficiente para realizar o saque!`);
 
     if (member < args[0]) {
         return message.channel.send(`${message.author}`, embed4);
     };
     let embed5 = new Discord.MessageEmbed()
     .setColor("#008000")
-    .setDescription(`<:info:835206734225473546> **»** Você tem que colocar um valor maior que **0** para realizar o saque!`);
+    .setDescription(`> **»** Você tem que colocar um valor maior que **0** para realizar o saque!`);
 
     if(args[0] < 0) {
         return message.channel.send(`${message.author}`, embed5);
     };
     let embed7 = new Discord.MessageEmbed()
     .setColor("#008000")
-    .setDescription(`<:info:835206734225473546> **»** Você tem que colocar um valor numerico para realizar o saque!`);
+    .setDescription(`> **»** Você tem que colocar um valor numerico para realizar o saque!`);
 
     if (isNaN(args[0])){
         return message.channel.send(`${message.author}`, embed7);
