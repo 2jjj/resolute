@@ -64,14 +64,15 @@ client.on("message", async (message) => {
 })
 
 // Events
-table.setHeading('Event', 'Status');
+//table.setHeading('Event', 'Status');
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     const event = require(__dirname + `/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
-    table.addRow(eventName,'✅')
+    //table.addRow(eventName,'✅')
+    console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
 });
 });
 
