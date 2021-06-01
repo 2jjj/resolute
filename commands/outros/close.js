@@ -8,9 +8,7 @@ module.exports = {
     category: "outros",
 
     async run (client, message, args) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-        
+
         message.delete();
 
         if(message.channel.name !== `${message.author.id}`) return message.channel.send(`<:1icon_x:846184439403118624> | ${message.author} Você pode utilizar este comando apenas para fechar o seu ticket.`).then(msg => msg.delete({timeout:15000}));

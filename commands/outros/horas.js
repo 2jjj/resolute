@@ -11,9 +11,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-    
     moment.locale('pt-br'); 
    let hora = moment().format('h:mm:ss a'); 
    let data = moment().format('dddd'); 

@@ -12,9 +12,6 @@ module.exports = {
     category: "outros",
 
     async run (client, message, args) {
-
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) prefix = "s."
  
 let arg = args.join(' ') 
 if(!arg) return message.channel.send(`> ${message.author}, Você precisa falar um jogo para eu pesquisar.`) 

@@ -9,9 +9,6 @@ module.exports = {
   category: "outros",
 
   async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
     
     let repo = args.join(" ");
 

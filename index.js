@@ -12,16 +12,22 @@ const { readdirSync, read } = require('fs');
 const fs = require("fs")
 const Timeout = new Discord.Collection();
 const ms = require('ms');
+const ascii = require('ascii-table')
+let table = new ascii("Commands");
 
 // Commands
 
+table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
     const commandFiles = readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
         const command = require(`./commands/${folder}/${file}`);
         client.commands.set(command.name, command);
+        table.addRow(file,'✅')
 }}
+console.log(table.toString());
+
 
 client.on("message", async (message) => {
 

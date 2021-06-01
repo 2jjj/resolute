@@ -17,10 +17,11 @@ module.exports = {
         let music = client.commands.filter((cmd) => cmd.category === 'musica');
         let outros = client.commands.filter((cmd) => cmd.category === 'outros');    
         let config = client.commands.filter((cmd) => cmd.category === 'config');    
+        //spray testes '-' console.log(client.commands.size)
 
         const helpEmbed = new Discord.MessageEmbed()
         .setAuthor('Resolute - Ajuda', message.author.displayAvatarURL({dynamic: true}))
-        .setDescription(`**Desenvolvido por Spray#0007**\n**prefixo atual: ${prefix}**`)
+        .setDescription(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007**\n**prefixo atual: ${prefix}**`)
         .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:money1:846828402350489640> **Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:3624personframe:843854352934633542> **Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)

@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ascii-table": "0.0.9",
     "canvacord": "^5.2.0",
     "canvas": "^2.7.0",
     "cluster": "^0.7.7",
