@@ -9,10 +9,7 @@ module.exports = {
     category: "economia",
   
     async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
+        
     if (!message.member.hasPermission("ADMINISTRATOR")) {
         return message.channel.send(`> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
     };
