@@ -6,10 +6,7 @@ module.exports = {
     aliases: ["ajuda"],
     category: "outros",
     run: (client, message, args) => {
-
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
-
+        
         let fun = client.commands.filter((cmd) => cmd.category === 'fun');
         let economia = client.commands.filter((cmd) => cmd.category === 'economia');
         let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
