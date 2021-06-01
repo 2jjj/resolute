@@ -9,10 +9,6 @@ module.exports = {
   category: "fun",
 
 async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
-
   
   const user = message.author;
   let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });

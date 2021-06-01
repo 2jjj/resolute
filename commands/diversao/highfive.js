@@ -10,9 +10,6 @@ module.exports = {
 
 async run (client, message, args) {
 
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
-
   var list = [
     'https://imgur.com/ox15B5R.gif',
     'https://imgur.com/vpv5tE0.gif',

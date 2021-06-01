@@ -10,9 +10,6 @@ module.exports = {
 
 async run (client, message, args) {
 
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) prefix = "s."
-
 var list = [
   'https://media.tenor.com/images/e58039b267965023b1b047d440d6bf24/tenor.gif',
   'https://media.tenor.com/images/afd634e4216d2a75a2a33388657c06b9/tenor.gif',
