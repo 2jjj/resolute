@@ -8,10 +8,7 @@ module.exports = {
   category: "manipulacao",
 
   async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
+    
       const Canvas = require(`canvas`);
       const canvas = Canvas.createCanvas(300, 300);
       const ctx = canvas.getContext(`2d`);

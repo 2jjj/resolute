@@ -11,9 +11,6 @@ module.exports = {
 }
 
 module.exports.run = async (client, message, args) => {
-
-	let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 	
         const comment = args.join('');
         if(!comment) return message.channel.send(`:x: Dê algo para Comentar!`)

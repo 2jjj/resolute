@@ -13,9 +13,6 @@ module.exports = {
   
     async run (client, message, args) {
 
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) prefix = "s."
-
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")
         if (!args[0]) return message.reply("Escreva algo para o cachorro")
         img.then(image => {

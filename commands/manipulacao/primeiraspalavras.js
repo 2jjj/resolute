@@ -11,9 +11,6 @@ module.exports = {
   
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
     if (message.content.split(' ').slice(1).join(' ').length < 1) {
         message.reply('<:info:835206734225473546> | Você não escreveu nada.')
     } else {

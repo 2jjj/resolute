@@ -12,10 +12,6 @@ module.exports = {
 
 async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-  
-
     fetch(`https://nekobot.xyz/api/imagegen?type=tweet&username=${message.author.username}&text=${args.join(' ')}`)
             .then((res) => res.json())
             .then((data) => {
