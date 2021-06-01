@@ -9,8 +9,6 @@ module.exports = {
   category: "mod",
 
   async run (client, message, args) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))

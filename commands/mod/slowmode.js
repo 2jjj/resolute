@@ -11,9 +11,6 @@ module.exports = {
   
     async run (client, message, args) {
 
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
-
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
         if (!args[0]) return message.channel.send('<:Time:844591047719125012> Coloque o tempo para o slowmode!').then(m => m.delete({ timeout: 5000}));

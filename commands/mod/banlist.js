@@ -10,9 +10,6 @@ module.exports = {
   
 async run (client, message, args) {
 
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) prefix = "s." 
-
 if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("Você não possui permissões para usar este comando | Permissão: `BAN_MEMBERS`");
 if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.channel.send('❌ Não tenho permissão para ver a lista de membros banidos!'); 
 

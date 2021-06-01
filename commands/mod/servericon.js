@@ -10,9 +10,6 @@ module.exports = {
   
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
         let icone = new Discord.MessageEmbed()
         .setDescription(`**Clique [aqui](${message.guild.iconURL()}) para baixar o ícone do servidor!**`)
         .setImage(message.guild.iconURL({ dynamic: true, size: 2048 })) 
