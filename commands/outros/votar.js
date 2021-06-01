@@ -22,7 +22,7 @@ module.exports = {
         .setTitle(`<:Time:844591047719125012> Votação aberta por ${message.author.username}`)
         .setDescription(content)
 
-    if (!content) { return message.inlineReply(`<:1icon_x:846184439403118624> | **Maneira correta <:spr4yxyz:837798446584168468> ${prefix}votar <conteudo>**`) }
+    if (!content) { return message.inlineReply(`<:1icon_x:846184439403118624> | **Maneira correta <:spr4yxyz:837798446584168468> ${prefix}votar <conteudo da votação>**`) }
 
     if (content) {
         return message.channel.send(embed).then(msg => {

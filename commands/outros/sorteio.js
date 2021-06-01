@@ -35,22 +35,22 @@ module.exports = {
  let Embed = new MessageEmbed()
  .setTitle(`Sorteio!`)
  .setDescription(
- `<:spr4yxyz:837798446584168468> Sorteio criado por ${message.author} \n Clique Em 💎 Para Participar\nSorteio: **${prize}**`
+ `<:spr4yxyz:837798446584168468> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
  )
  .setTimestamp(Date.now() + ms(args[0]))
  .setColor("#00FFFF");
  
  let m = await channel.send(Embed);
  
- m.react("💎");
+ m.react("🎉");
  
  setTimeout(() => {
- if (m.reactions.cache.get("💎").count <= 1) {
- message.channel.send(`Reações: ${m.reactions.cache.get("💎").count}`);
+ if (m.reactions.cache.get("🎉").count <= 1) {
+ message.channel.send(`Reações: ${m.reactions.cache.get("🎉").count}`);
  return message.channel.send(``);
  }
 
- let ganhador = m.reactions.cache.get("💎").users.cache.filter((u) => !u.bot).random();
+ let ganhador = m.reactions.cache.get("🎉").users.cache.filter((u) => !u.bot).random();
  channel.send(`<:winner:844591002638745600> **Parabéns** ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
  
  }, ms(args[0]));

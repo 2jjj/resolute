@@ -16,7 +16,7 @@ module.exports = {
 
         const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.id}`);
 
-        if (spray) return message.channel.send(`<:check_no:844591218545524788> ${message.author} Seu ticket atual já está aberto em: ${spray}!`).then(msg => msg.delete({timeout: 15000}));
+        if (spray) return message.channel.send(`> ❌ ${message.author} Seu ticket atual já está aberto em: ${spray}!`).then(msg => msg.delete({timeout: 15000}));
 
         message.guild.channels.create(`${message.author.id}`, {
             type : 'text',
@@ -32,8 +32,8 @@ module.exports = {
             ]
         }).then(async channel=> {
             message.channel.send(`🎫 | ${message.author} Seu ticket foi criado com sucesso: ${channel}`).then(msg => msg.delete({timeout: 15000}));
-            channel.send(`<:check_yes:844591174916636712> | Olá ${message.author}, este é o seu ticket! 
-<:check_no:844591218545524788> | Caso queira fechar seu ticket, utilize **${prefix}close**.`)
+            channel.send(`> ☑️ | Olá ${message.author}, este é o seu ticket! 
+            ❌ | Caso queira fechar seu ticket, utilize **${prefix}close**.`)
         })
     }
 }

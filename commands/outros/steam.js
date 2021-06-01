@@ -17,7 +17,7 @@ let prefix = db.get(`prefix_${message.guild.id}`)
 if (prefix === null) prefix = "s."
  
 let arg = args.join(' ') 
-if(!arg) return message.channel.send(`<:y_pontinho:843648515695444019> ${message.author}, Você precisa colocar um jogo!`) 
+if(!arg) return message.channel.send(`> ${message.author}, Você precisa falar um jogo para eu pesquisar.`) 
 provider.search(arg).then(result => { 
     provider.detail(result[0].id, 1, "portuguese", "pt").then(results => { 
         let other = results.otherData 

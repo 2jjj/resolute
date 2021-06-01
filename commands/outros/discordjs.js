@@ -15,12 +15,12 @@ if (prefix === null) prefix = "s."
 
 const query = args.join("") 
 if (!query) {
- message.reply("Diga algo para eu pesquisar nas docs do discord.js!") 
+ message.reply("> Irei pesquisar oque você falar no discord.js(docs).") 
 }
 fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`) 
 .then(res => res.json()) 
 .then(json => {
- message.channel.send({ embed: json }).catch(() => message.reply("Não achei nenhum resultado para sua pesquisa!"))
+ message.channel.send({ embed: json }).catch(() => message.reply("> Não achei nenhum resultado para sua pesquisa!"))
 
 }) 
 }}

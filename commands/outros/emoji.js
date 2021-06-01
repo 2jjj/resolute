@@ -16,9 +16,9 @@ module.exports = {
   message.delete();
   if (!args[0])
     return message.channel.send(
-      `**<:Resoluteinfo:844971535927083088> | ${message.author.username}, A sintaxe correta é:** ` +
+      `**> ${message.author.username}, A sintaxe correta é:** ` +
         "`" +
-        `${prefix}emoji <emoji>`
+        `${prefix}emoji <emoji_name>`
     ); 
   let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 

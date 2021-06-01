@@ -17,8 +17,8 @@ module.exports = {
   var noargs = new Discord.MessageEmbed()
     .setColor('BLUE')
     .setTitle('⛅')
-    .setDescription('<:Resoluteinfo:844971535927083088>» Aqui você pode ver o clima de qualquer lugar do mundo, explore o clima dos paises e cidades.')
-    .addField("Exemplo", '`' + prefix + 'clima SP ou São Paulo`')
+    .setDescription('Explore o clima dos paises e cidades.')
+    .addField("Segue o exemplo:", '`' + prefix + 'clima SP ou São Paulo`')
 
   if (!args[0]) { return message.channel.send(noargs) }
 
@@ -29,11 +29,11 @@ module.exports = {
 
     var noresult = new Discord.MessageEmbed()
       .setColor('#FF0000')
-      .setTitle('<:2754danger:843589030495125514> | Parece que ocorreu um erro no meu sistema de busca')
-      .setDescription('<:Resoluteinfo:844971535927083088> `Nenhuma cidade/estado foi encontrado`')
+      .setTitle('Parece que ocorreu um erro no meu sistema de busca')
+      .setDescription('`Nenhuma cidade/estado foi encontrado`')
 
     if (!city) { return message.inlineReply(':x: Formato incorreto! | `' + prefix + 'clima SP/RJ/MG ou o nome da Cidade/Estado`') }
-    if (err || result === undefined || result.length === 0) { return message.inlineReply('<:Resoluteinfo:844971535927083088> Nenhuma cidade/estado foi encontrado, verifique a ortografia.') }
+    if (err || result === undefined || result.length === 0) { return message.inlineReply('Nenhuma cidade/estado foi encontrado, verifique a ortografia.') }
 
     let current = result[0].current
     let location = result[0].location

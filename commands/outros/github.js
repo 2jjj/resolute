@@ -15,7 +15,7 @@ module.exports = {
     
     let repo = args.join(" ");
 
-    if (!repo) return message.channel.send(`⛔ | ${message.author}, Você deve falar um repositório para eu pesquisar no github!`);
+    if (!repo) return message.channel.send(`> ⛔ | ${message.author}, Você deve falar um repositório para eu pesquisar no github.`);
 
     message.channel.send(`Repositório encontrado -> https://github.com/${repo}`)
   }

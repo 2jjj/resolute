@@ -13,7 +13,7 @@ module.exports = {
     if (prefix === null) prefix = "s."
 
 let numero = Math.ceil(Math.random() * 100) 
-message.channel.send(`<:spr4yxyz:837798446584168468> ` + numero) 
+message.channel.send(`> ` + numero) 
 //⇝
 }
 }

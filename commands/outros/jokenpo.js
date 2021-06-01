@@ -15,15 +15,15 @@ module.exports = {
         .setDescription("Reaja para jogar!")
         .setTimestamp()
         let msg = await message.channel.send(embed)
-        await msg.react("🗻")
+        await msg.react("<:Stone:849087811188686968>")
         await msg.react("✂")
         await msg.react("📰")
 
         const filter = (reaction, user) => {
-            return ['🗻', '✂', '📰'].includes(reaction.emoji.name) && user.id === message.author.id;
+            return ['<:Stone:849087811188686968>', '✂', '📰'].includes(reaction.emoji.name) && user.id === message.author.id;
         }
 
-        const choices = ['🗻', '✂', '📰']
+        const choices = ['<:Stone:849087811188686968>', '✂', '📰']
         const me = choices[Math.floor(Math.random() * choices.length)]
         msg.awaitReactions(filter, {max: 1, time: 60000, error: ["time"]}).then(
             async(collected) => {
@@ -34,9 +34,9 @@ module.exports = {
                 .addField("Escolha de bot", `${me}`)
                 await msg.edit(result)
 
-                if((me === "🗻" && reaction.emoji.name === "✂") ||
+                if((me === "<:Stone:849087811188686968>" && reaction.emoji.name === "✂") ||
                 (me === "✂" && reaction.emoji.name === "📰") ||
-                (me === "📰" && reaction.emoji.name === "🗻")) {
+                (me === "📰" && reaction.emoji.name === "<:Stone:849087811188686968>🗻")) {
                     message.reply("Você perdeu!");
                 } else if (me === reaction.emoji.name) {
                     return message.reply("É um empate!");
@@ -45,7 +45,7 @@ module.exports = {
                 }
             })
             .catch(collected => {
-                message.reply('O processo foi cancelado, você não respondeu a tempo!');
+                message.reply('> ⛔ | O processo foi cancelado, você não respondeu a tempo.');
             }) 
 
     }

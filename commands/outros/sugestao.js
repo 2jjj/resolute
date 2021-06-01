@@ -17,9 +17,9 @@ module.exports = {
   const content = args.join(" ");
 
   if (!args[0]) {
-    return message.channel.send(`${message.author.username}, escreva a sugestão após o comando`)
+    return message.channel.send(`> ${message.author.username}, escreva a sugestão após o comando.`)
   } else if (content.length > 1000) {
-    return message.channel.send(`${message.author.username}, forneça uma sugestão de no máximo 1000 caracteres.`);
+    return message.channel.send(`> ${message.author.username}, forneça uma sugestão de no máximo 1000 caracteres!`);
   } else {
     var canal = message.guild.channels.cache.find(ch => ch.id === "841334310773850112");
     const msg = await canal.send(

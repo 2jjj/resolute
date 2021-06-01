@@ -4,7 +4,6 @@ const cpuStat = require("cpu-stat");
 const moment = require("moment") 
 const db = require("quick.db");
 
-
 module.exports = {
   name: "status",
   aliases: ['cpu', 'info'],
