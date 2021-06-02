@@ -42,7 +42,7 @@ async run (client, message, args) {
 
   if (!user) {
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "-"
+    if (prefix === null) prefix = "s."
 
     var nouser = new Discord.MessageEmbed()
       .setColor('#FF0000')
