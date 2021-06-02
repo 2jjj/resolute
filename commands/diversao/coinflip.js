@@ -21,10 +21,10 @@ module.exports = {
     message.reply(`Insira **cara** ou **coroa**. **| ${prefix}coinflip cara**`);
   } 
 else if (args[0].toLowerCase() == array1[rand]) {
-    message.channel.send("Deu **" + array1[rand] + "**, <:info:835206734225473546> | Você ganhou dessa vez!");
+    message.channel.send("Deu **" + array1[rand] + "** Você ganhou dessa vez!");
   } 
 else if (args[0].toLowerCase() != array1[rand]) {
-    message.channel.send("Deu **" + array1[rand] + "**, <:info:835206734225473546> | Você perdeu dessa vez!"
+    message.channel.send("Deu **" + array1[rand] + "** Você perdeu dessa vez!"
     );
   }
 }
