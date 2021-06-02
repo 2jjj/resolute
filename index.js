@@ -15,8 +15,6 @@ const ms = require('ms');
 const ascii = require('ascii-table')
 let table = new ascii("Commands");
 
-// Commands
-
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
@@ -28,12 +26,6 @@ for (const folder of commandFolders) {
 }}
 console.log(table.toString());
 
-client.on('ready', () => {
-    if (client.shard.id == 0)
-        console.log(`-- ${moment().utc().format('MMMM Do')}, ${moment().utc().format('hh:mm a')} --`);
-
-    console.log(`Shard ${client.shard.id} ready!`);
-});
 
 client.on("message", async (message) => {
 
@@ -69,8 +61,7 @@ client.on("message", async (message) => {
     }
 })
 
-// Events
-//table.setHeading('Event', 'Status');
+
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
