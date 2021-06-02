@@ -10,6 +10,8 @@ module.exports = {
     category: "mod",
   
     async run (client, message, args) {
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
 
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 

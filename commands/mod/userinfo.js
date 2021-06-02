@@ -10,6 +10,9 @@ module.exports = {
 
   async run (client, message, args) {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
+
     let inline = true
     let resence = true
     const status = {

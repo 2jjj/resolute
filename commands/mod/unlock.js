@@ -9,6 +9,8 @@ module.exports = {
     category: "mod",
   
     async run (client, message, args) {
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
 
     const embed1 = new Discord.MessageEmbed()
     .setTitle("Sem permissão.")
