@@ -8,6 +8,10 @@ module.exports = {
     category: "musica",
   
     async run (client, message, args) {
+        
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
+
         message.client.queue.get(message.guild.id)
         const tatakae = message.guild.me.voice.channel;
           const channel = message.member.voice.channel;
