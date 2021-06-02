@@ -75,7 +75,7 @@ fs.readdir(__dirname + "/events/", (err, files) => {
     console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
 });
 });
-
+console.log(client.shard.size)
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c

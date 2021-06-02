@@ -9,7 +9,9 @@ module.exports = {
   category: "outros",
 
   async run (client, message, args) {
-
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
+    
   message.delete();
   if (!args[0])
     return message.channel.send(

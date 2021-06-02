@@ -10,6 +10,9 @@ module.exports = {
 
     async run (client, message, args) {
 
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
+        
         message.delete()
 
         const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.id}`);
