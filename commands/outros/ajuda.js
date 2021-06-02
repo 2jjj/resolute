@@ -31,7 +31,6 @@ module.exports = {
         .addField(`<:2637settings:843854352867262504> **Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .setColor("RANDOM")
         .setTimestamp()
-
         message.channel.send(helpEmbed);
-    }
-}
+
+}}
