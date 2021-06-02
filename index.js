@@ -26,7 +26,6 @@ for (const folder of commandFolders) {
 }}
 console.log(table.toString());
 
-client.shard.fetchClientValues('guilds.cache.size').then(console.log);
 
 client.on('message', message => {
     
@@ -103,4 +102,4 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c
-client.login("NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ")
+client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
