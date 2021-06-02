@@ -28,6 +28,12 @@ for (const folder of commandFolders) {
 }}
 console.log(table.toString());
 
+client.on('ready', () => {
+    if (client.shard.id == 0)
+        console.log(`-- ${moment().utc().format('MMMM Do')}, ${moment().utc().format('hh:mm a')} --`);
+
+    console.log(`Shard ${client.shard.id} ready!`);
+});
 
 client.on("message", async (message) => {
 
@@ -75,8 +81,7 @@ fs.readdir(__dirname + "/events/", (err, files) => {
     console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
 });
 });
-console.log(client.shard.size)
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c
-client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c");
+client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c")
