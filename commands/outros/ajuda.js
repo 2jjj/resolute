@@ -98,13 +98,13 @@ module.exports = {
           command.name ? `\`${command.name}\`` : "Sem nome para esse comando."
         )
         .addField(
-          "ALIASES:",
+          "Aliases/apelidos:",
           command.aliases
             ? `\`${command.aliases.join("` `")}\``
             : "Sem aliases para esse comando."
         )
         .addField(
-          "USAGE:",
+          "Forma de uso:",
           command.usage
             ? `\`${prefix}${command.name} ${command.usage}\``
             : `\`${prefix}${command.name}\``
