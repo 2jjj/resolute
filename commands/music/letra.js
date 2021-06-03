@@ -5,8 +5,9 @@ module.exports = {
   name: "letra",
   aliases: ['lyrics'],
   cooldown: 1000 * 2, 
-  description: "letra",
+  description: "Obter a letra de uma música",
   category: "musica",
+  usage: "<nome>",
 
   async run (client, message, args) {
 

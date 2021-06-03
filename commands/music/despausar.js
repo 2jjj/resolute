@@ -6,8 +6,9 @@ module.exports = {
   name: "despausar",
   aliases: ['resume'],
   cooldown: 1000 * 2, 
-  description: "despausar",
+  description: "Despausar a música.",
   category: "musica",
+  usage: "",
 
   async run (client, message, args) {
 

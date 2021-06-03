@@ -6,9 +6,10 @@ module.exports = {
     name: "fila",
     aliases: ['queue'],
     cooldown: 1000 * 2, 
-    description: "fila",
+    description: "Obter a fila.",
     category: "musica",
-  
+    usage: "",
+
     async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)

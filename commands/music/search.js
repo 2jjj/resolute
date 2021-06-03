@@ -11,8 +11,9 @@ module.exports = {
   name: "search",
   aliases: ['procurar'],
   cooldown: 1000 * 2, 
-  description: "procurar",
+  description: "Procurar uma música ou video.",
   category: "musica",
+  usage: "<nome>",
 
   async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)

@@ -6,8 +6,10 @@ module.exports = {
   name: "volume",
   aliases: ['volumenivel'],
   cooldown: 1000 * 2, 
-  description: "volume",
+  description: "Aumente o volume da música!",
   category: "musica",
+  usage: "",
+  usage: "<0/100>",
 
   async run (client, message, args) {
 

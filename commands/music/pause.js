@@ -6,8 +6,9 @@ module.exports = {
   name: "pause",
   aliases: ['pausar'],
   cooldown: 1000 * 2, 
-  description: "pause",
+  description: "Pausar a música que está tocando.",
   category: "musica",
+  usage: "",
 
   async run (client, message, args) {
 
