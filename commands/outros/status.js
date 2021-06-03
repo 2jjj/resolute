@@ -10,8 +10,8 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "Status/Info da máquina do resolute.",
   category: "outros",
-  usage: "s.status",
-  
+  usage: "",
+
   async run (client, message, args) {
     
     let prefix = db.get(`prefix_${message.guild.id}`)

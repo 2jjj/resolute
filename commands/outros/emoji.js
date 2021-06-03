@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "emoji",
   category: "outros",
+  usage: "<emoji_name>",
 
   async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)

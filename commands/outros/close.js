@@ -6,6 +6,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "close ticket",
     category: "outros",
+    usage: "",
 
     async run (client, message, args) {
         let prefix = db.get(`prefix_${message.guild.id}`)

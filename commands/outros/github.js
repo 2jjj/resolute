@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "github repo",
   category: "outros",
+  usage: "<repo>",
 
   async run (client, message, args) {
     

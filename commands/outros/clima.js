@@ -8,6 +8,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "clima",
   category: "outros",
+  usage: "<cidade>",
 
   async run (client, message, args) {
     

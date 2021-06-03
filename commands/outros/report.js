@@ -7,6 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "reportar",
     category: "outros",
+    usage: "<Bug encontrado>",
 
     async run (client, message, args) {
 

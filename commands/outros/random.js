@@ -7,6 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "random",
     category: "outros",
+    usage: "",
 
     async run (client, message, args) {
 
