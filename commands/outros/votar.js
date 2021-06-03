@@ -11,7 +11,7 @@ module.exports = {
 
     async run (client, message, args) {
         
-    var prefix = db.get(`prefix_${message.guild.id}`)
+    let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
 
     var content = args.join(' ')
