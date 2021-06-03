@@ -5,9 +5,10 @@ module.exports = {
     name: "saque",
     aliases: ['sacar'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Saque dinheiro do banco!",
     category: "economia",
-  
+    usage: "<quantidade>",
+
     async run (client, message, args) {
 
     let member = db.fetch(`bank_${message.guild.id}_${message.author.id}`);

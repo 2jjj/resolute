@@ -6,9 +6,10 @@ module.exports = {
     name: "roubar",
     aliases: ['roubo'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Roube alguém!",
     category: "economia",
-  
+    usage: "@user",
+
     async run (client, message, args) {
 
     let autor = message.author;

@@ -5,9 +5,10 @@ module.exports = {
     name: "pay",
     aliases: ['pagar'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Pague para alguém (agiota...)",
     category: "economia",
-  
+    usage: "@user <quantidade>",
+
     async run (client, message, args) {
     
     let user = message.mentions.members.first() 

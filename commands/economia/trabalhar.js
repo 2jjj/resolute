@@ -5,9 +5,10 @@ module.exports = {
     name: "trabalhar",
     aliases: ['trabalho'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Trabalhe para ganhar dinheiro!",
     category: "economia",
-  
+    usage: "",
+
     async run (client, message, args) {
 
     let user = message.author;

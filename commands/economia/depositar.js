@@ -5,9 +5,10 @@ module.exports = {
     name: "depositar",
     aliases: ['dep'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Deposite seu dinheiro no banco.",
     category: "economia",
-  
+    usage: "<quantidade>",
+
     async run (client, message, args) {
     
     let member = db.fetch(`money_${message.guild.id}_${message.author.id}`);

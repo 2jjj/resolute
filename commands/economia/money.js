@@ -5,9 +5,10 @@ module.exports = {
     name: "dinheiro",
     aliases: ['money'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Informações do seu dinheiro.",
     category: "economia",
-  
+    usage: "",
+
     async run (client, message, args) {
     
     let user = client.users.cache.get(args[0]) || message.mentions.users.first() ||  message.author;

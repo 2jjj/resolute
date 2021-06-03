@@ -6,9 +6,10 @@ module.exports = {
     name: "daily",
     aliases: ['diaria'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Resgate seu daily.",
     category: "economia",
-  
+    usage: "",
+
     async run (client, message, args) {
 
     let user = message.author;

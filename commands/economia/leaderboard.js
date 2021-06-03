@@ -6,9 +6,10 @@ module.exports = {
     name: "lideres",
     aliases: ['leaderboard'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Lideres de dinheiro.",
     category: "economia",
-  
+    usage: "",
+
     async run (client, message, args) {
 
     let money = db.all().filter(data => data.ID.startsWith(`money_${message.guild.id}`)).sort((a, b) => b.data - a.data);
