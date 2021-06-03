@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Abra uma votação",
     category: "outros",
-    usage: `s.votar <conteudo>`,
+    usage: `<conteudo>`,
 
     async run (client, message, args) {
         

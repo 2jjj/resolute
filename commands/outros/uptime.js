@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 3000 * 5, 
   description: "Uptime do bot",
   category: "outros",
-  usage: "s.uptime",
+  usage: "",
 
   async run (client, message, args) {
   let prefix = db.get(`prefix_${message.guild.id}`)
