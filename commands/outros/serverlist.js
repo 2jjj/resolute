@@ -5,8 +5,8 @@ module.exports = {
     name: "serverlist",
     aliases: ["slt"],
     category: "owner",
-    description: "Displays the list of Servers!",
-    usage: " ",
+    description: "Apenas para devs.",
+    usage: "só para devs.",
     
     async run (client, message, args) {
     if (message.author.id == ownerid) {
