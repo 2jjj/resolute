@@ -5,7 +5,7 @@ module.exports = {
   name: "botinfo",
   aliases: ['sobre', 'bot', 'aboutbot'],
   cooldown: 1000 * 2, 
-  description: "botinfo",
+  description: "Minhas informações.",
   category: "outros",
   usage: "",
 

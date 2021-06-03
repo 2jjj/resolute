@@ -7,7 +7,7 @@ module.exports = {
   name: "ping",
   aliases: ['pp', 'latencia'],
   cooldown: 1000 * 2, 
-  description: "ping",
+  description: "Pong! Minha latência!",
   category: "outros",
   usage: "",
 

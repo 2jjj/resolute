@@ -6,7 +6,7 @@ module.exports = {
   name: "clima",
   aliases: ['graus'],
   cooldown: 1000 * 2, 
-  description: "clima",
+  description: "Mostra o clima de uma cidade.",
   category: "outros",
   usage: "<cidade>",
 

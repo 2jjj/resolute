@@ -6,7 +6,7 @@ module.exports = {
     name: "discordjs",
     aliases: ['docs', 'discord.js'],
     cooldown: 1000 * 2, 
-    description: "close ticket",
+    description: "Pesquisar algo nas docs do discord.js",
     category: "outros",
     usage: "<docs_name>",
 

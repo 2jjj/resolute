@@ -6,7 +6,7 @@ module.exports = {
     name: "jokenpo",
     aliases: ['pedrapapeltesoura'],
     cooldown: 1000 * 2, 
-    description: "horas",
+    description: "Jogue pedra papel e tesoura por ai!",
     category: "outros",
     usage: "",
 

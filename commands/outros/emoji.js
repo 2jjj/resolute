@@ -5,7 +5,7 @@ module.exports = {
   name: "emoji",
   aliases: ['emojiinfo'],
   cooldown: 1000 * 2, 
-  description: "emoji",
+  description: "Pegar a imagem de um emoji pelo nome.",
   category: "outros",
   usage: "<emoji_name>",
 

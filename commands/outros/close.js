@@ -4,7 +4,7 @@ module.exports = {
     name: "close",
     aliases: ['fechar'],
     cooldown: 1000 * 2, 
-    description: "close ticket",
+    description: "Fechar um ticket.",
     category: "outros",
     usage: "",
 

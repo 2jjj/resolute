@@ -5,7 +5,7 @@ module.exports = {
     name: "random",
     aliases: ['sorteador', 'numero'],
     cooldown: 1000 * 2, 
-    description: "random",
+    description: "Um número aleatório, que doidera né spray? ta sem ideia heim!kkk",
     category: "outros",
     usage: "",
 

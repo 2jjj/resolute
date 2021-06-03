@@ -6,7 +6,7 @@ module.exports = {
     name: "horas",
     aliases: ['dia'],
     cooldown: 1000 * 2, 
-    description: "horas",
+    description: "Que horas são?",
     category: "outros",
     usage: "",
 

@@ -5,7 +5,7 @@ module.exports = {
   name: "github",
   aliases: ['repo'],
   cooldown: 1000 * 2, 
-  description: "github repo",
+  description: "Pesquisar um repositório no github.",
   category: "outros",
   usage: "<repo>",
 
