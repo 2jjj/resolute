@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Abra um ticket!",
     category: "outros",
-    usage: "s.ticket",
+    usage: "",
 
     async run (client, message, args) {
 

@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "Faça uma sugestão.",
   category: "outros",
-  usage: "s.sugestao <#canal> [conteudo]",
+  usage: "<#canal> [conteudo]",
 
   async run (client, message, args) {
     
