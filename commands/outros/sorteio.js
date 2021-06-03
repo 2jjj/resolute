@@ -3,10 +3,11 @@ const ms = require("ms");
 
 module.exports = {
     name: "votar",
-    aliases: ['votacao', 'vote'],
+    aliases: [],
     cooldown: 1000 * 2, 
-    description: "sorteio",
+    description: "Faça um sorteio.",
     category: "outros",
+    usage: "s.sorteio <#canal> [Premio]",
 
  async run (client, message, args) {
      

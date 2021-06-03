@@ -8,9 +8,10 @@ module.exports = {
   name: "status",
   aliases: ['cpu', 'info'],
   cooldown: 1000 * 2, 
-  description: "status",
+  description: "Status/Info da máquina do resolute.",
   category: "outros",
-
+  usage: "s.status",
+  
   async run (client, message, args) {
     
     let prefix = db.get(`prefix_${message.guild.id}`)

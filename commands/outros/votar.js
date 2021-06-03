@@ -1,17 +1,18 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
-
+        
 module.exports = {
     name: "votar",
     aliases: ['votacao', 'vote'],
     cooldown: 1000 * 2, 
-    description: "Votação",
+    description: "Abra uma votação",
     category: "outros",
+    usage: `s.votar <conteudo>`,
 
     async run (client, message, args) {
         
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
+    var prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
 
     var content = args.join(' ')
 

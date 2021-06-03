@@ -5,8 +5,9 @@ module.exports = {
     name: "ticket",
     aliases: ['mail'],
     cooldown: 1000 * 2, 
-    description: "ticket",
+    description: "Abra um ticket!",
     category: "outros",
+    usage: "s.ticket",
 
     async run (client, message, args) {
 

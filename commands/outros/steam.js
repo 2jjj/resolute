@@ -8,8 +8,9 @@ module.exports = {
     name: "steam",
     aliases: ['game', 'steamgame'],
     cooldown: 1000 * 2, 
-    description: "game",
+    description: "Pesquise um jogo da steam.",
     category: "outros",
+    usage: "s.steam <jogo>",
 
     async run (client, message, args) {
         
