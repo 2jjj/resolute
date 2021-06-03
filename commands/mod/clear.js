@@ -5,8 +5,9 @@ module.exports = {
   name: "clear",
   aliases: ['limpar'],
   cooldown: 1000 * 2, 
-  description: "limpar chat",
+  description: "Limpar o site.",
   category: "mod",
+  usage: "",
 
   async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)

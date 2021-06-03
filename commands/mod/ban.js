@@ -5,8 +5,9 @@ module.exports = {
   name: "ban",
   aliases: ['banir'],
   cooldown: 1000 * 2, 
-  description: "ban",
+  description: "Banir uma pessoa.",
   category: "mod",
+  usage: "",
 
 async run (client, message, args) {
   let prefix = db.get(`prefix_${message.guild.id}`)

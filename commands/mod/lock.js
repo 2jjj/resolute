@@ -5,9 +5,10 @@ module.exports = {
     name: "lock",
     aliases: ['bloquear'],
     cooldown: 1000 * 2, 
-    description: "bloquear",
+    description: "Bloquear um canal.",
     category: "mod",
-  
+    usage: "",
+
     async run (client, message, args) {
 
     const embed1 = new Discord.MessageEmbed()
@@ -15,14 +16,14 @@ module.exports = {
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
     .addField(`Você não possui a permissão de`, `GERENCIAR CANAIS`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
     const embed2 = new Discord.MessageEmbed()
     .setTitle("Este canal já está bloqueado.")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
     const embed3 = new Discord.MessageEmbed()
@@ -30,7 +31,7 @@ module.exports = {
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
     .addField(`<:bloqueado:844640110203895829> » Este canal foi bloqueado.`, `Bloqueado por ${message.author}`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
 

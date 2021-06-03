@@ -5,9 +5,10 @@ module.exports = {
     name: "servericon",
     aliases: ['serveravatar'],
     cooldown: 1000 * 2, 
-    description: "servericon",
+    description: "icone do servidor.",
     category: "mod",
-  
+    usage: "",
+
     async run (client, message, args) {
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) { prefix = "s." }

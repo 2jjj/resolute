@@ -5,8 +5,9 @@ module.exports = {
   name: "userinfo",
   aliases: ['ui'],
   cooldown: 1000 * 2, 
-  description: "userinfo",
+  description: "Obtenha informações de um usuário.",
   category: "mod",
+  usage: "<id/@user>",
 
   async run (client, message, args) {
 

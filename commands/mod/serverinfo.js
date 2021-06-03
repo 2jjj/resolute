@@ -5,8 +5,9 @@ module.exports = {
   name: "serverinfo",
   aliases: ['serverinformation'],
   cooldown: 1000 * 2, 
-  description: "serverinfo",
+  description: "Informações do servidor.",
   category: "mod",
+  usage: "",
 
   async run (client, message, args) {
  
