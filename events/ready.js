@@ -4,8 +4,7 @@ var numWorkers = require('os').cpus().length;
 module.exports = async (client) => {
 
     const status = [  
-        {name: `• Dev: Spray#0007 | resolutebot.xyz `, type: 'LISTENING'}, 
-        {name: `• ${client.guilds.cache.size} guilds | Versão 0.0.6 `, type: 'LISTENING'}
+        {name: `s.help • ${client.guilds.cache.size} guilds.`, type: 'PLAYING'}, 
       ] 
       function Presence() { 
               const base = status[Math.floor(Math.random() * status.length)] 
