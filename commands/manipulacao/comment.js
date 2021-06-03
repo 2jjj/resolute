@@ -8,6 +8,7 @@ module.exports = {
     description: 'Ultiliza seu texto para um comentario do youtube!',
     category: "manipulacao",
     cooldown: 1000 * 2, 
+    usage: "<texto>",
 }
 
 module.exports.run = async (client, message, args) => {

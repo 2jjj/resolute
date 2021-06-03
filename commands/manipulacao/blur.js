@@ -6,8 +6,9 @@ module.exports = {
   name: "blur",
   aliases: ["blurmeme"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Blur",
   category: "manipulacao",
+	usage: "@user",
 
   async run (client, message, args) {
 

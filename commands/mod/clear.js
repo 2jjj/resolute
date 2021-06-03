@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "Limpar o site.",
   category: "mod",
-  usage: "",
+  usage: "<0/100>",
 
   async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)

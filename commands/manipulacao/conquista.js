@@ -4,9 +4,10 @@ module.exports = {
     name: "conquista",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Conquista do minecraft.",
     category: "manipulacao",
-  
+    usage: "@user",
+    
 async run (client, message, args) {
 
 const a = args.join("+")

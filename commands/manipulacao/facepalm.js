@@ -8,7 +8,8 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "facepalmmeme",
   category: "manipulacao",
-
+  usage: "@user",
+  
   async run (client, message, args) {
 
  //   const m = client.findMember(message, args, true);

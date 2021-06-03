@@ -6,8 +6,9 @@ module.exports = {
   name: "gay",
   aliases: ["gaycommand"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Filtro de foto de arco iris.",
   category: "manipulacao",
+  usage: "@user",
 
   async run (client, message, args) {
 

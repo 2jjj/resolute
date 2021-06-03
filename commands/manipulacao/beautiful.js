@@ -6,8 +6,9 @@ module.exports = {
   name: "beautiful",
   aliases: ["lindo"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Limdo.dá.vò",
   category: "manipulacao",
+	usage: "@user",
 
   async run (client, message, args) {
 

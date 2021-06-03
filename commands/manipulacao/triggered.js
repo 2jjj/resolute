@@ -6,8 +6,9 @@ module.exports = {
   name: "triggered",
   aliases: ["provocado"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Triggered",
   category: "manipulacao",
+  usage: "@user",
 
   async run (client, message, args) {
 

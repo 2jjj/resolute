@@ -6,8 +6,9 @@ module.exports = {
   name: "rip",
   aliases: ["ripmeme"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "R.I.P",
   category: "manipulacao",
+  usage: "@user",
 
   async run (client, message, args) {
 

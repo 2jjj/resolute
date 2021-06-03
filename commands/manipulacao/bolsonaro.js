@@ -8,9 +8,10 @@ module.exports = {
     name: "bolsonaro",
     aliases: ["bolsonarotv"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Faça o bolsonaro falar algo na tv.",
     category: "manipulacao",
-  
+    usage: "<texto>",
+
     async run (client, message, args) {
 
     if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {

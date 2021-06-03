@@ -8,6 +8,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "dev",
   category: "manipulacao",
+  usage: "@user",
 
   async run (client, message, args) {
 

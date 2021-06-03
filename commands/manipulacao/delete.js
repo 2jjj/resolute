@@ -6,8 +6,9 @@ module.exports = {
   name: "delete",
   aliases: ["deletememe"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Delete algo!",
   category: "manipulacao",
+  usage: "@user",
 
   async run (client, message, args) {
 

@@ -4,8 +4,9 @@ module.exports = {
   name: "ata",
   aliases: ["atameme"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Ata monica",
   category: "manipulacao",
+	usage: "@user",
 
   async run (client, message, args) {
     

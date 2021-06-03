@@ -6,8 +6,10 @@ module.exports = {
     name: "wanted",
     aliases: ["procurado"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Faça uma pessoa ser procurada.",
     category: "manipulacao",
+    usage: "@user",
+
   
     async run (client, message, args) {
     

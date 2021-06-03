@@ -6,9 +6,10 @@ module.exports = {
     name: "trump",
     aliases: ["trumpmeme"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Trump meme",
     category: "manipulacao",
-  
+    usage: "@user",
+
     async run (client, message, args) {
         
     let text = args.join(" ");

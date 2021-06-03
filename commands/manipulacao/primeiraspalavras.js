@@ -6,9 +6,10 @@ module.exports = {
     name: "primeiraspalavras",
     aliases: ["firstwords"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Faça o bebe falar as primeiras palavras!",
     category: "manipulacao",
-  
+    usage: "<texto>",
+
     async run (client, message, args) {
 
     if (message.content.split(' ').slice(1).join(' ').length < 1) {

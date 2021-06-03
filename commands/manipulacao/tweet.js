@@ -8,6 +8,7 @@ module.exports = {
     description: 'Escreva um tweet',
     category: "manipulacao",
     cooldown: 1000 * 2, 
+    usage: "<texto>",
 
 
 async run (client, message, args) {
