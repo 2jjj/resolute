@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@iamtraction/google-translate": "^1.1.2",
     "ascii-table": "0.0.9",
     "canvacord": "^5.2.0",
     "canvas": "^2.7.0",
