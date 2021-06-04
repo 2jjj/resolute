@@ -57,8 +57,7 @@ module.exports = {
  
       const embed = new MessageEmbed()
     
-        .setTitle("📬 Precisa de ajuda? \nSem problemas, aqui estão meus comandos:")
-        .setDescription(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007**\n**prefixo atual: ${prefix}**`)
+        .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007**`, `**prefixo atual: ${prefix}\nMeus comandos:\n**`)
         .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:money1:846828402350489640> **Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:3624personframe:843854352934633542> **Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
@@ -68,9 +67,7 @@ module.exports = {
         .addField(`<:livro:850192025986138123> **Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:2637settings:843854352867262504> **Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
-        .setDescription(
-          `Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.`
-        )
+        .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
         .setFooter(
           `Requisitado por ${message.author.tag}`,
           message.author.displayAvatarURL({ dynamic: true })
