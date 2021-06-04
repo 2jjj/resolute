@@ -53,7 +53,8 @@ module.exports = {
         let music = client.commands.filter((cmd) => cmd.category === 'musica');
         let outros = client.commands.filter((cmd) => cmd.category === 'outros');    
         let config = client.commands.filter((cmd) => cmd.category === 'config');    
-
+        let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');    
+ 
       const embed = new MessageEmbed()
     
         .setTitle("📬 Precisa de ajuda? \nSem problemas, aqui estão meus comandos:")
@@ -64,6 +65,7 @@ module.exports = {
         .addField(`<:staff:843586666845044736> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:music:843602147051700284> **Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:y_pontinho:843648515695444019> **Outros** [${outros.size}]:`, `\`${outros.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:livro:850192025986138123> **Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:2637settings:843854352867262504> **Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
         .setDescription(

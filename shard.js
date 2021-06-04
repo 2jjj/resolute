@@ -1,10 +1,10 @@
 const { ShardingManager } = require('discord.js')
-const manager = new ShardingManager('./index.js', { token: "NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ" })
+const manager = new ShardingManager('./index.js', { token: "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o" })
 
 manager.on('shardCreate', shard => {
-    console.log(`Launched shard ${shard.id}`)
+    console.log(`[SHARD] - ${shard.id}`)
     shard.on('ready', () => {
-        console.log('Shard ready')
+        console.log('[SHARD] - ready.')
     })
     shard.on('disconnect', (a, b) => {
         console.log('Shard disconnected')
