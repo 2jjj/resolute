@@ -13,7 +13,7 @@ module.exports = {
     async run (client, message, args) {
     
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "-" }
+    if (prefix === null) { prefix = "s." }
 
     let color = await db.get(`color_${message.author.id}`)
     if (color === null) color = '#6F6C6C'
