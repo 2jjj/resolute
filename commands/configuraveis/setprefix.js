@@ -5,9 +5,10 @@ module.exports = {
     name: "setprefix",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "setprefix",
+    description: "Comando de setar o prefixo do bot.",
     category: "config",
-  
+    usage: "<novo_prefixo>",
+
     async run (client, message, args) {
 
     if (!message.member.hasPermission('ADMINISTRATOR')) {

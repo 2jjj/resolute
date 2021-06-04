@@ -5,8 +5,9 @@ module.exports = {
   name: "drip",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Drip!",
   category: "fun",
+  usage: "",
 
 async run (client, message, args) {
 

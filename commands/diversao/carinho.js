@@ -7,8 +7,9 @@ module.exports = {
   name: "carinho",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "carinho em alguém.",
   category: "fun",
+  usage: "@user",
 
   async run (client, message, args) {
   

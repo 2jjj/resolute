@@ -5,9 +5,10 @@ module.exports = {
     name: "snake",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "snake",
+    description: "Jogo da cobrinha",
     category: "fun",
-  
+    usage: "",
+
   async run (client, message, args) {
   
         const snakeGame = new SnakeGame({

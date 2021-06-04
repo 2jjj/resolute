@@ -5,8 +5,9 @@ module.exports = {
   name: "coinflip",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Cara ou coroa!",
   category: "fun",
+  usage: "<cara/coroa>",
 
   async run (client, message, args) {
 

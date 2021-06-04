@@ -5,8 +5,9 @@ module.exports = {
   name: "kiss",
   aliases: ["beijar"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Beije alguém :flushed:",
   category: "fun",
+  usage: "@user",
 
 async run (client, message, args) {
 
