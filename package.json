@@ -18,6 +18,7 @@
     "cluster": "^0.7.7",
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
+    "discord-hybrid-sharding": "^1.0.9",
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.1",
     "express": "^4.17.1",

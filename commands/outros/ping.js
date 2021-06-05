@@ -11,7 +11,7 @@ module.exports = {
   async run (client, message, args) {
 
     let svPing = Date.now() - message.createdTimestamp
-            
+    
     let shardPing = await client.shard.fetchClientValues('ws.ping', 0)
     
         message.inlineReply('Ping?').then(msg => {
