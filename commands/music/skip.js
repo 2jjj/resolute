@@ -18,7 +18,7 @@ module.exports = {
     let queue = message.client.queue.get(message.guild.id)
     if(!queue){ return message.channel.send({
         embed: {
-            description: '<:music:843602147051700284> Nada está tocando no momento para eu poder pular!',
+            description: '> Nada está tocando no momento para eu poder pular!',
             color: 'BLACK'
         }
     })
@@ -26,6 +26,6 @@ module.exports = {
 
     if(queue.songs.length !== 0) {
         message.react('<a:check_ravena:843602746543439902>')
-        queue.connection.dispatcher.end('A música foi pulada.')
+        queue.connection.dispatcher.end('Pulei para a próxima música da fila!')
     }
 }}
