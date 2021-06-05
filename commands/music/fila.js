@@ -36,7 +36,7 @@ module.exports = {
     .setTitle('Lista de músicas')
     .setImage(thumbnail)
     .setColor('#000001')
-    .addField('<:Resoluteinfo:844971535927083088> Tocando agora:', np, true)
+    .addField('Tocando agora:', np, true)
     .setDescription(status)
     message.channel.send(embed)
 }}
