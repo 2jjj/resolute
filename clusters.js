@@ -20,11 +20,4 @@ if(cluster.isMaster) {
         console.log('[LOGS] - [CLUSTER] Starting a new worker'.rainbow);
         cluster.fork();
     });
-} else {
-    var app = require('express')();
-    app.all('/*', function(req, res) {res.send('process ' + process.pid + ' Diga Olá!').end();})
-
-    var server = app.listen(8000, function() {
-        console.log(`[LOGS] - [CLUSTER] Process ${process.pid} está ouvindo todas as solicitações recebidas`.rainbow);
-    });
 }
