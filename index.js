@@ -14,6 +14,7 @@ const Timeout = new Discord.Collection();
 const ms = require('ms');
 const ascii = require('ascii-table')
 let table = new ascii("Commands");
+const config = require("./config.json")
 
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
@@ -74,4 +75,4 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o
-client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o")
+client.login(config.token)
