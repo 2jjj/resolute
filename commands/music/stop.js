@@ -20,7 +20,7 @@ module.exports = {
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!serverQueue)return sendError("> Não há nada que eu possa pular para você.", message.channel);
    if(!serverQueue.connection)return
-if(!serverQueue.connection.dispatcher)return
+    if(!serverQueue.connection.dispatcher)return
      try{
       serverQueue.connection.dispatcher.end();
       } catch (error) {

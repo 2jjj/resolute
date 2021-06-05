@@ -47,11 +47,11 @@ module.exports = {
         let embed = new discord.MessageEmbed()
         .setTitle('Adcionado a lista')
         .setColor('#000001')
-        .addField('<:music:843602147051700284> Nome', song.title)
-        .setThumbnail(song.thumbnail)
-        .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
-        .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
-        .addField('<:Resoluteinfo:844971535927083088> Duração', timeString)
+        .setImage(song.thumbnail)
+        .addField('Nome', `> ${song.title}`)
+        .addField('Requerido por', `> ${song.requester}`)
+        .addField('Visualizações', `> ${song.views}`)
+        .addField('Duração', `> ${timeString}`)
         return message.channel.send(embed)
     }
 
@@ -89,13 +89,13 @@ module.exports = {
             .on('error', error => console.error(error));
         dispatcher.setVolumeLogarithmic(queue.volume / 5);
         let noiceEmbed = new discord.MessageEmbed()
-        .setTitle('Começei a tocar')
+        //.setTitle('Estou tocando:')
         .setColor("#000001")
         .setImage(song.thumbnail)
-        .addField('<:music:843602147051700284> Nome', song.title)
-        .addField('<:Resoluteinfo:844971535927083088> Requerido por', song.requester)
-        .addField('<:Resoluteinfo:844971535927083088> Visualizações', song.views)
-        .addField('<:Resoluteinfo:844971535927083088> Duração', timeString)
+        .addField('Nome', `> ${song.title}`)
+        .addField('Requerido por', `> ${song.requester}`)
+        .addField('Visualizações', `> ${song.views}`)
+        .addField('Duração', `> ${timeString}`)
         queue.textChannel.send(noiceEmbed);
         message.react("<:check:843604256455000075>")
     };
