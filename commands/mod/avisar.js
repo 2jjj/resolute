@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
   name: "avisar",
-  aliases: ['warn'],
+  aliases: ['warn', 'aviso'],
   cooldown: 1000 * 2, 
   description: "Avisar uma pessoa com mensagem na DM",
   category: "mod",
