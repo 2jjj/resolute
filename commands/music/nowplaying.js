@@ -4,20 +4,20 @@ module.exports = {
     name: "nowplaying",
     aliases: ['np'],
     cooldown: 1000 * 2, 
-    description: "Obter a letra de uma música",
+    description: "",
     category: "musica",
     usage: "<nome>",
 
   run: async (client, message, args) => {
     const Channel = message.member.voice.channel;
 
-    if (!Channel) return message.channel.send("join voice channel after try COMMAND");
+    if (!Channel) return message.channel.send("Você precisa estar no canal de voz antes de usar esse comando!");
 
     const Queue = await client.queue.get(message.guild.id);
 
     if (!Queue)
       return message.channel.send(
-        "Nothing Is Playing Right Now, Add Some Songs To Queue"
+        "Nada está tocando agora, adicione algumas músicas à fila!"
       );
 
     const Song = await Queue.Songs[0],
@@ -57,19 +57,19 @@ module.exports = {
       ShowBar = "🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
     };
 
-    const Data = `Song - **[${Song.Title}](${Song.Link})**\nCreator - **[${
+    const Data = `Música - **[${Song.Title}](${Song.Link})**\nCreator - **[${
       Song.Author
     }](${Song.AuthorLink})**\nUpload - **${
       Song.Upload
     }**\nViews - **${Song.Views ||
-      0}**\nDuration - **${Total}**\nRemaining - **${Remaining}**\n\n`;
+      0}**\nDuração - **${Total}**\nTempo restante - **${Remaining}**\n\n`;
 
     const Embed = new Discord.MessageEmbed()
       .setColor("RANDOM")
       .setImage(Song.Thumbnail)
-      .setTitle("Now Playing!")
+      .setTitle("Agora está tocando")
       .setDescription(Data + `${ShowBar}\n${Adder}/${Total}`)
-      .setFooter(`Added By ${Song.Owner}`)
+      .setFooter(`Adicionada por ${Song.Owner}`)
       .setTimestamp();
 
     return message.channel.send(Embed);
