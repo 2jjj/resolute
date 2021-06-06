@@ -18,7 +18,7 @@ module.exports = {
     const channel = message.member.voice.channel
     if (!channel)return sendError("> Sinto muito, mas você precisa estar em um canal de voz para tocar música!", message.channel);
     const serverQueue = message.client.queue.get(message.guild.id);
-    if (!serverQueue)return sendError("> Não há nada que eu possa pular para você.", message.channel);
+    if (!serverQueue)return sendError("> Não há nada que eu possa parar para você.", message.channel);
    if(!serverQueue.connection)return
     if(!serverQueue.connection.dispatcher)return
      try{
