@@ -25,14 +25,14 @@ module.exports = {
         offline: "👾 Invisivel"
       }
         
-const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-let target = message.mentions.users.first() || message.author
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+    let target = message.mentions.users.first() || message.author
 
-if (member.user.bot === true) {
-    bot = "✅ Sim";
-  } else {
-    bot = "❌ Não";
-  }
+    if (member.user.bot === true) {
+        bot = "✅ Sim";
+      } else {
+        bot = "❌ Não";
+      }
 
             let embed = new Discord.MessageEmbed()
                 //.setAuthor(member.user.username)
