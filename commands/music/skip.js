@@ -8,12 +8,12 @@ module.exports = {
     
     run: async (client, message, args) => {
     const { channel } = message.member.voice;
-    if (!channel) return message.channel.send("JOIN VOICE CHANNEL BEFORE USING THIS COMMAND!");
+    if (!channel) return message.channel.send("Entre no canal de voz antes de usar esse comando.");
     if (message.guild.me.voice.channel !== message.member.voice.channel) {
-        return message.channel.send("JOIN MY VOICE CHANNEL IF YOU WANT USE ME!");
+        return message.channel.send("Entre no meu canal de voz para usar esse comando.");
       }
     const serverQueue = client.queue.get(message.guild.id);
-    if (!serverQueue) return message.channel.send("❌ **Nothing playing in this server");
+    if (!serverQueue) return message.channel.send("❌ **Não a nada tocando nesse servidor.**");
   try {
     serverQueue.connection.dispatcher.end();
     return message.channel.send({
@@ -24,7 +24,7 @@ module.exports = {
   } catch {
       serverQueue.connection.dispatcher.end();
       await channel.leave();
-      return message.channel.send("TRY AGAIN TO SKIP")
+      return message.channel.send("Tente novamente.")
   }
 }
 };
