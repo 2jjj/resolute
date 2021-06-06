@@ -13,10 +13,12 @@ module.exports = {
     usage: "s.steam <jogo>",
 
     async run (client, message, args) {
-        
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) { prefix = "s." }
-        
+
+        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
+                
 let arg = args.join(' ') 
 if(!arg) return message.channel.send(`> ${message.author}, Você precisa falar um jogo para eu pesquisar.`) 
 provider.search(arg).then(result => { 

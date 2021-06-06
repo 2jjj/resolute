@@ -9,6 +9,9 @@ module.exports = {
   category: "outros",
 
   async run (client, message, args) {
+
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
     var prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
 
@@ -51,12 +54,12 @@ module.exports = {
         let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
         let mod = client.commands.filter((cmd) => cmd.category === 'mod');
         let music = client.commands.filter((cmd) => cmd.category === 'musica');
-        let outros = client.commands.filter((cmd) => cmd.category === 'outros');    
-        let config = client.commands.filter((cmd) => cmd.category === 'config');    
-        let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');    
- 
+        let outros = client.commands.filter((cmd) => cmd.category === 'outros');
+        let config = client.commands.filter((cmd) => cmd.category === 'config');
+        let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+
       const embed = new MessageEmbed()
-    
+
         .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007**`, `**prefixo atual: ${prefix}\nMeus comandos:\n**`)
         .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:money1:846828402350489640> **Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)

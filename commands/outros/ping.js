@@ -10,6 +10,9 @@ module.exports = {
 
   async run (client, message, args) {
 
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
+
     let svPing = Date.now() - message.createdTimestamp
     
     let shardPing = await client.shard.fetchClientValues('ws.ping', 0)
