@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 require("./util/inlineReply")
 require("./util/quote")
-const mongoose = require('mongoose');
-const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 const cor = require("colors");
 const client = new Discord.Client();

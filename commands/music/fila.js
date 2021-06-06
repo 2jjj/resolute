@@ -85,14 +85,14 @@ function generateQueueEmbed(message, queue) {
     let j = i;
     k += 10;
     const info = current
-      .map(track => `${++j} :- [${track.title}](${track.url})`)
+      .map(track => `${++j} - [${track.title}](${track.url})`)
       .join("\n");
     const embed = new MessageEmbed()
       .setTitle("Fila de músicas\n")
       .setThumbnail(message.guild.iconURL())
       .setColor("GREEN")
       .setDescription(
-        `**Som atual ⤵️ [${queue[0].title}](${queue[0].url})**\n\n${info}`
+        `**Som atual ⤵️\n [${queue[0].title}](${queue[0].url})**\n\n${info}`
       )
      .setFooter(`${message.guild}`) 
     .setTimestamp();
