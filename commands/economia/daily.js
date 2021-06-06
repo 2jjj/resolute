@@ -25,7 +25,7 @@ module.exports = {
     
             let timeEmbed = new Discord.MessageEmbed()
             .setColor("#008000")
-            .setDescription(`<:info:835206734225473546> **»** Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
+            .setDescription(`Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
                 
             message.channel.send(`${user}`, timeEmbed);
 
