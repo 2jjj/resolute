@@ -9,6 +9,8 @@ module.exports = {
     usage: "<nickname>",
 
     run: async(client, message, args) => {
+        
+        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`Skin de: ${args[0]}`)
