@@ -11,9 +11,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
-
     const embed1 = new Discord.MessageEmbed()
     .setTitle("Sem permissão.")
     .setColor("#ff0000")

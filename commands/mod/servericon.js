@@ -11,8 +11,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) { prefix = "s." }
 
