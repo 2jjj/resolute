@@ -1,114 +1,149 @@
-const ytdl = require('ytdl-core-discord');
-var scrapeYt = require("scrape-yt");
-const discord = require('discord.js')
-const db = require("quick.db")
+const { MessageEmbed } = require("discord.js")
+const { Util } = require("discord.js");
+const { QUEUE_LIMIT, COLOR } = require("../config.json");
+const ytsr = require('ytsr');
+const { play } = require("../system/music.js");
 
 module.exports = {
-    name: "play",
-    aliases: ['tocar'],
-    cooldown: 1000 * 2, 
-    description: "Tocar uma música do youtube.",
-    category: "musica",
-    usage: "<nome/url>",
-
-    async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
-    if(!args[0]) return message.channel.send('> Você deve me informar o **nome** ou um **link** de uma música ou video!')
-    let channel = message.member.voice.channel;
-    if(!channel) return message.channel.send('> Você deve estar em um canal de voz para utlizar esse comando!')
+  name: "play",
+  description: "Play the song and feel the music",
+  async execute(client, message, args) {
+    let embed = new MessageEmbed()
+      .setColor(COLOR);
 
 
-    const server = message.client.queue.get(message.guild.id);
-    let video = await scrapeYt.search(args.join(' '))
-    let result = video[0]
-
-    const song = {
-        id: result.id,
-        title: result.title,
-        duration: result.duration,
-        thumbnail: result.thumbnail,
-        upload: result.uploadDate,
-        views: result.viewCount,
-        requester: message.author,
-        channel: result.channel.name,
-        channelurl: result.channel.url
-      };
-
-    var date = new Date(0);
-    date.setSeconds(song.duration);
-    var timeString = date.toISOString().substr(11, 8);
-
-      if (server) {
-        server.songs.push(song);
-        console.log(server.songs);
-        let embed = new discord.MessageEmbed()
-        .setTitle('Adcionado a lista')
-        .setColor('#000001')
-        .setImage(song.thumbnail)
-        .addField('Nome', `> ${song.title}`)
-        .addField('Requerido por', `> ${song.requester}`)
-        .addField('Visualizações', `> ${song.views}`)
-        .addField('Duração', `> ${timeString}`)
-        return message.channel.send(embed)
+    //FIRST OF ALL WE WILL ADD ERROR MESSAGE AND PERMISSION MESSSAGE
+    if (!args.length) {
+      //IF AUTHOR DIDENT GIVE URL OR NAME
+      embed.setAuthor("WRONG SYNTAX : Type `play <URL> or text`")
+      return message.channel.send(embed);
     }
+
+    const { channel } = message.member.voice;
+
+    if (!channel) {
+      //IF AUTHOR IS NOT IN VOICE CHANNEL
+      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/")
+      return message.channel.send(embed);
+    }
+
+    //WE WILL ADD PERMS ERROR LATER :(
+
+    const targetsong = args.join(" ");
+    const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
+    const playlistPattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
+    const urlcheck = videoPattern.test(args[0]);
+
+    if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
+      embed.setAuthor("I am Unable To Play Playlist for now")
+      return message.channel.send(embed);
+    }
+
+    const serverQueue = message.client.queue.get(message.guild.id);
 
     const queueConstruct = {
-        textChannel: message.channel,
-        voiceChannel: channel,
-        connection: null,
-        songs: [],
-        volume: 2,
-        playing: true
+      textChannel: message.channel,
+      channel,
+      connection: null,
+      songs: [],
+      loop: false,
+      volume: 100,
+      playing: true
     };
-    message.client.queue.set(message.guild.id, queueConstruct);
-    queueConstruct.songs.push(song);
 
+    const voteConstruct = {
+      vote: 0,
+      voters: []
+    }
 
-    const play = async song => {
-        const queue = message.client.queue.get(message.guild.id);
-        if (!song) {
-            queue.voiceChannel.leave();
-            message.client.queue.delete(message.guild.id);
-            message.channel.send('> Sem músicas na fila, então sai do canal de voz.')
-            return;
+    let songData = null;
+    let song = null;
+
+    if (urlcheck) {
+      try {
+           const result = await ytsr(args[0], {page: 1})
+        songData = result.items[0]
+
+        song = {
+          title: songData.title,
+          url: songData.url,
+          duration: songData.duration,
+          thumbnail: songData.bestThumbnail.url,
+          avatar: songData.author.bestAvatar.url,
+          description: songData.description,
+          author: songData.author.name,
+          date: songData.uploadedAt
+        };
+      } catch (error) {
+        if (message.include === "copyright") {
+          return message
+            .reply("THERE IS COPYRIGHT CONTENT IN VIDEO -_-")
+            .catch(console.error);
+        } else {
+          console.error(error);
         }
+      }
+    } else {
 
-        const dispatcher = queue.connection.play(await ytdl(`https://youtube.com/watch?v=${song.id}`, {
-            filter: format => ['251'],
-            highWaterMark: 1 << 25
-        }), {
-            type: 'opus'
-        })
-            .on('finish', () => {
-                queue.songs.shift();
-                play(queue.songs[0]);
-            })
-            .on('error', error => console.error(error));
-        dispatcher.setVolumeLogarithmic(queue.volume / 5);
-        let noiceEmbed = new discord.MessageEmbed()
-        //.setTitle('Estou tocando:')
-        .setColor("#000001")
-        .setImage(song.thumbnail)
-        .addField('Nome', `> ${song.title}`)
-        .addField('Requerido por', `> ${song.requester}`)
-        .addField('Visualizações', `> ${song.views}`)
-        .addField('Duração', `> ${timeString}`)
-        queue.textChannel.send(noiceEmbed);
-        message.react("<:check:843604256455000075>")
-    };
+      try {
+        const result = await ytsr(targetsong, { pages: 1 })
+        songData = result.items[0]
+
+        song = {
+          title: songData.title,
+          url: songData.url,
+          duration: songData.duration,
+          thumbnail: songData.bestThumbnail.url,
+          avatar: songData.author.bestAvatar.url,
+          description: songData.description,
+          author: songData.author.name,
+          date: songData.uploadedAt
+        };
+
+      } catch (error) {
+        console.log(error)
+        return message.channel.send("Something went wrong!!")
+      }
+    }
+
+    if (serverQueue) {
+      if (serverQueue.songs.length > Math.floor(QUEUE_LIMIT - 1) && QUEUE_LIMIT !== 0) {
+        return message.channel.send(`You can not add songs more than ${QUEUE_LIMIT} in queue`)
+      }
 
 
-    try {
-        const connection = await channel.join();
-        queueConstruct.connection = connection;
-        play(queueConstruct.songs[0]);
-    } catch (error) {
-        console.error(`> Eu não consigo entrar nesse canal de voz`);
+      serverQueue.songs.push(song);
+      embed.setAuthor("Added New Song To Queue", client.user.displayAvatarURL())
+      embed.setDescription(`**[${song.title}](${song.url})**`)
+      embed.setThumbnail(song.thumbnail);
+
+      return serverQueue.textChannel
+        .send(embed)
+        .catch(console.error);
+    } else {
+      queueConstruct.songs.push(song);
+    }
+
+    if (!serverQueue)
+      message.client.queue.set(message.guild.id, queueConstruct);
+    message.client.vote.set(message.guild.id, voteConstruct);
+    if (!serverQueue) {
+      try {
+        queueConstruct.connection = await channel.join();
+        play(queueConstruct.songs[0], message);
+      } catch (error) {
+        console.error(`Could not join voice channel: ${error}`);
         message.client.queue.delete(message.guild.id);
         await channel.leave();
-        return message.channel.send(`> Eu não consigo entrar nesse canal de voz | ${error}`);
+        return message.channel
+          .send({
+            embed: {
+              description: `😭 | Could not join the channel: ${error}`,
+              color: "#ff2050"
+            }
+          })
+          .catch(console.error);
+      }
     }
-}}
+  }
+};
