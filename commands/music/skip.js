@@ -7,6 +7,9 @@ module.exports = {
     cooldown: 1000 * 2, 
     
     run: async (client, message, args) => {
+      
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
     const { channel } = message.member.voice;
     if (!channel) return message.channel.send("Entre no canal de voz antes de usar esse comando.");
     if (message.guild.me.voice.channel !== message.member.voice.channel) {

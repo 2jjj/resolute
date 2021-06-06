@@ -7,6 +7,9 @@ module.exports = {
   usage: "",
 
   run: async (client, message, args) => {
+
+  console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
   const { channel } = message.member.voice;
   if (!channel) { message.channel.send("Você precisa estar no canal de voz para usar esse comando")
   }

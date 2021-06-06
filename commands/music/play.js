@@ -11,6 +11,9 @@ module.exports = {
   cooldown: 1000 * 2, 
 
   run: async function(client, message, args) {
+
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
     const channel = message.member.voice.channel;
     if (!channel) {
       message.channel.send("> Você precisa estar em um canal de voz para usar esse comando.");

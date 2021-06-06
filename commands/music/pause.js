@@ -7,6 +7,9 @@ module.exports = {
   cooldown: 1000 * 2, 
   
   run: async (client, message, args) => {
+
+  console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
   const serverQueue = client.queue.get(message.guild.id);
   const { channel } = message.member.voice;
   try {

@@ -9,6 +9,8 @@ module.exports = {
 
   run: async function(client, message, args) {
 
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+ 
    const channel = message.member.voice.channel;
     if (!channel) return message.channel.send('Você precisa estar em um canal de voz para utilizar o comando!');
     let queue = message.client.queue.get(message.guild.id)
