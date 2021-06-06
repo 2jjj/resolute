@@ -5,14 +5,15 @@ module.exports = {
   name: "serverinfo",
   aliases: ['serverinformation'],
   cooldown: 1000 * 2, 
-  description: "serverinfo",
+  description: "Informações do servidor.",
   category: "mod",
+  usage: "",
 
   async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
  
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
+
     let serverembed = new Discord.MessageEmbed() 
     .setColor("#6400b6")
     .setTitle(message.guild.name + ` Server Info`)

@@ -5,13 +5,14 @@ module.exports = {
   name: "userinfo",
   aliases: ['ui'],
   cooldown: 1000 * 2, 
-  description: "userinfo",
+  description: "Obtenha informações de um usuário.",
   category: "mod",
+  usage: "<id/@user>",
 
   async run (client, message, args) {
 
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
 
     let inline = true
     let resence = true
@@ -22,14 +23,14 @@ module.exports = {
         offline: "👾 Invisivel"
       }
         
-const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-let target = message.mentions.users.first() || message.author
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+    let target = message.mentions.users.first() || message.author
 
-if (member.user.bot === true) {
-    bot = "✅ Sim";
-  } else {
-    bot = "❌ Não";
-  }
+    if (member.user.bot === true) {
+        bot = "✅ Sim";
+      } else {
+        bot = "❌ Não";
+      }
 
             let embed = new Discord.MessageEmbed()
                 //.setAuthor(member.user.username)

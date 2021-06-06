@@ -4,17 +4,21 @@ module.exports = {
     name: "kick",
     aliases: ['expulsar'],
     cooldown: 1000 * 2, 
-    description: "kick",
+    description: "Kickar uma pessoa.",
     category: "mod",
-  
+    usage: "@user",
+
     async run (client, message, args) {
+
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
 
     const embed = new Discord.MessageEmbed()
         .setTitle("Sem permissão.")
         .setColor("#ff0000")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .addField(`Você não possui a permissão de`, `KICK_MEMBERS`)
-        .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+        .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
         .setTimestamp();
 
 

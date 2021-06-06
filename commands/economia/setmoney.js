@@ -5,35 +5,33 @@ module.exports = {
     name: "setmoney",
     aliases: ['setdinheiro'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Só para admin.",
     category: "economia",
-  
+    usage: "@user <quantidade>",
+
     async run (client, message, args) {
+                
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            return message.channel.send(`> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
+        };
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+        let user = message.mentions.users.first();
 
-    if (!message.member.hasPermission("ADMINISTRATOR")) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
-    };
+        if (!user) {
+            return message.channel.send(`> **»** ${message.author}, você precisa mencionar um usuário para adicionar o Dinheiro!`);
+        };
 
-    let user = message.mentions.users.first();
+        if (isNaN(args[1])) {
+            return message.channel.send(`> **»** ${message.author}, você precisa colocar um numero valido!`);
+        };
 
-    if (!user) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você precisa mencionar um usuário para adicionar o Dinheiro!`);
-    };
+        db.add(`money_${message.guild.id}_${user.id}`, args[1]);
+        let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
 
-    if (isNaN(args[1])) {
-        return message.channel.send(`<:info:835206734225473546> **»** ${message.author}, você precisa colocar um numero valido!`);
-    };
-
-    db.add(`money_${message.guild.id}_${user.id}`, args[1]);
-    let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
-
-    let moneyEmbed = new Discord.MessageEmbed()
-    .setTitle(":dollar: **|** Alteração Monetária")
-    .setColor("#008000")
-    .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
-    .setFooter(`Money foi adicionado!`);
-    message.channel.send(moneyEmbed);
+        let moneyEmbed = new Discord.MessageEmbed()
+        .setTitle(":dollar: **|** Alteração Monetária")
+        .setColor("#008000")
+        .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
+        .setFooter(`O dinheiro foi adicionado!`);
+        message.channel.send(moneyEmbed);
 }}

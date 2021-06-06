@@ -1,15 +1,11 @@
-const {ShardingManager} = require('discord.js');
-var numWorkers = require('os').cpus().length;
-const cor = require("colors");
+const { ShardingManager } = require('discord.js');
+const config = require("./config.json")
 
-const manager = new ShardingManager('./index.js', { 
-    totalShards: 'auto', //numWorkers, //'auto',
-    token: "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c", 
-    respawn: true
+const manager = new ShardingManager('./index.js', {
+    totalShards: 'auto', 
+    token: config.token
 });
 
-manager.on('shardCreate', shard => {
-    console.log(cor.red(`[LOGS] - [SHARD] Iniciando shard ${shard.id}`))
-    console.log(cor.red(`[LOGS] - [SHARD] Shard ID ${shard.id}`))
-});
 manager.spawn();
+
+manager.on('shardCreate', (shard) => console.log(`Shard ${shard.id} launched`));

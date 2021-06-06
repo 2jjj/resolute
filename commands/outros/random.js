@@ -5,15 +5,14 @@ module.exports = {
     name: "random",
     aliases: ['sorteador', 'numero'],
     cooldown: 1000 * 2, 
-    description: "random",
+    description: "Um número aleatório, que doidera né spray? ta sem ideia heim!kkk",
     category: "outros",
+    usage: "",
 
     async run (client, message, args) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 
-let numero = Math.ceil(Math.random() * 100) 
-message.channel.send(`<:spr4yxyz:837798446584168468> ` + numero) 
+    let numero = Math.ceil(Math.random() * 100) 
+    message.channel.send(`> ` + numero) 
 //⇝
 }
 }

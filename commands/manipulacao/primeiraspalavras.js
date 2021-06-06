@@ -6,13 +6,11 @@ module.exports = {
     name: "primeiraspalavras",
     aliases: ["firstwords"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Faça o bebe falar as primeiras palavras!",
     category: "manipulacao",
-  
-    async run (client, message, args) {
+    usage: "<texto>",
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+    async run (client, message, args) {
 
     if (message.content.split(' ').slice(1).join(' ').length < 1) {
         message.reply('<:info:835206734225473546> | Você não escreveu nada.')

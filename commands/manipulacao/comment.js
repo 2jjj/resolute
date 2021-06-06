@@ -8,13 +8,11 @@ module.exports = {
     description: 'Ultiliza seu texto para um comentario do youtube!',
     category: "manipulacao",
     cooldown: 1000 * 2, 
-}
+    usage: "<texto>",
 
-module.exports.run = async (client, message, args) => {
 
-	let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-	
+    async run (client, message, args) {
+    
         const comment = args.join('');
         if(!comment) return message.channel.send(`:x: Dê algo para Comentar!`)
         try {    
@@ -27,5 +25,4 @@ module.exports.run = async (client, message, args) => {
     .setColor("RED")
     message.channel.send(embed2)
     }
-
-}
+    }}

@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 require("./util/inlineReply")
 require("./util/quote")
-const mongoose = require('mongoose');
-const mongodb = 'mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/test'
 const db = require("quick.db")
 const cor = require("colors");
 const client = new Discord.Client();
@@ -12,16 +10,20 @@ const { readdirSync, read } = require('fs');
 const fs = require("fs")
 const Timeout = new Discord.Collection();
 const ms = require('ms');
+const ascii = require('ascii-table')
+let table = new ascii("Commands");
+const config = require("./config.json")
 
-// Commands
-
+table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
     const commandFiles = readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
         const command = require(`./commands/${folder}/${file}`);
         client.commands.set(command.name, command);
+        table.addRow(file,'✅')
 }}
+console.log(table.toString());
 
 client.on("message", async (message) => {
 
@@ -45,6 +47,7 @@ client.on("message", async (message) => {
         if(!command) return;
 
         if (command) {
+            console.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}`)
             if(command.cooldown) {
                 if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[COOLDOWN] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
@@ -57,17 +60,18 @@ client.on("message", async (message) => {
     }
 })
 
-// Events
+
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     const event = require(__dirname + `/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
+    //table.addRow(eventName,'✅')
     console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
-  });
+});
 });
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
-//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c
-client.login("ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.LpzQDDrLrq6NWFwFBArs-t3zs_c");
+//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o
+client.login(config.token)

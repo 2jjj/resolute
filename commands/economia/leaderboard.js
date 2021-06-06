@@ -6,39 +6,36 @@ module.exports = {
     name: "lideres",
     aliases: ['leaderboard'],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Lideres de dinheiro.",
     category: "economia",
-  
+    usage: "",
+
     async run (client, message, args) {
+            
+        let money = db.all().filter(data => data.ID.startsWith(`money_${message.guild.id}`)).sort((a, b) => b.data - a.data);
+        
+        let money1;
+        
+        if(money.length > 10){
+            money1 = 10
+        }else{
+            money1 = money.length
+        
+        }
+        let content = "";
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+        for (let i = 0; i < money1; i++) {
+            let user = client.users.cache.get(money[i].ID.split('_')[2]).tag;
 
-    
-    let money = db.all().filter(data => data.ID.startsWith(`money_${message.guild.id}`)).sort((a, b) => b.data - a.data);
-    
-    let money1;
-    
-    if(money.length > 10){
-        money1 = 10
-    }else{
-        money1 = money.length
-    
-    }
-    let content = "";
+            content += `${i+1}º **\`${user}\`** - **R$${money[i].data}**\n`
+        }
 
-    for (let i = 0; i < money1; i++) {
-        let user = client.users.cache.get(money[i].ID.split('_')[2]).tag;
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`💸 > Rank Monetário - ${message.guild.name}`)
+        .setDescription(content)
+        .setColor(2686950)
+        .setFooter(`Rank monetário ~`)
+        .setTimestamp();
 
-        content += `${i+1}º **\`${user}\`** - **R$${money[i].data}**\n`
-    }
-
-    const embed = new Discord.MessageEmbed()
-    .setTitle(`<a:money:838087280052535346> > Rank Monetário - ${message.guild.name}`)
-    .setDescription(content)
-    .setColor(2686950)
-    .setFooter(`Rank monetário ~`)
-    .setTimestamp();
-
-    message.channel.send(`${message.author}`, embed);
+        message.channel.send(`${message.author}`, embed);
 }}

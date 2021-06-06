@@ -5,13 +5,11 @@ module.exports = {
   name: "drip",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Drip!",
   category: "fun",
+  usage: "",
 
 async run (client, message, args) {
-
-let prefix = db.get(`prefix_${message.guild.id}`)
-if (prefix === null) prefix = "s."
 
 var list = [
   'https://media.tenor.com/images/e58039b267965023b1b047d440d6bf24/tenor.gif',

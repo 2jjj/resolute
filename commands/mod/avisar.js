@@ -5,13 +5,15 @@ module.exports = {
   name: "avisar",
   aliases: ['warn'],
   cooldown: 1000 * 2, 
-  description: "warn",
+  description: "Avisar uma pessoa com mensagem na DM",
   category: "mod",
+  usage: "@user <motivo>",
 
 async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) { prefix = "s." }
+  
     var list = [
         'https://imgur.com/ZNuAcum.gif',
         'https://imgur.com/xlD7P3N.gif',

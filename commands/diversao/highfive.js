@@ -5,13 +5,11 @@ module.exports = {
   name: "highfive",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "HighFive!",
   category: "fun",
+  usage: "@user",
 
 async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
 
   var list = [
     'https://imgur.com/ox15B5R.gif',
@@ -45,7 +43,7 @@ async run (client, message, args) {
 
   if (!user) {
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "-"
+    if (prefix === null) prefix = "s."
 
     var nouser = new Discord.MessageEmbed()
       .setColor('#FF0000')

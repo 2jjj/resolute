@@ -5,13 +5,11 @@ module.exports = {
   name: "ship",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "Shipe alguem!",
+  description: "Shipe alguém",
   category: "fun",
+  usage: "@user1 @user2",
 
 async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
 
   let user = message.mentions.members.first()
   if (!user || message.author.id === user.id)

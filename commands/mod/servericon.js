@@ -5,13 +5,14 @@ module.exports = {
     name: "servericon",
     aliases: ['serveravatar'],
     cooldown: 1000 * 2, 
-    description: "servericon",
+    description: "icone do servidor.",
     category: "mod",
-  
+    usage: "",
+
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
 
         let icone = new Discord.MessageEmbed()
         .setDescription(`**Clique [aqui](${message.guild.iconURL()}) para baixar o ícone do servidor!**`)

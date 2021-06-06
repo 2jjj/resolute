@@ -8,13 +8,11 @@ module.exports = {
     name: "bolsonaro",
     aliases: ["bolsonarotv"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Faça o bolsonaro falar algo na tv.",
     category: "manipulacao",
-  
-    async run (client, message, args) {
+    usage: "<texto>",
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+    async run (client, message, args) {
 
     if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
         lastCmd: null

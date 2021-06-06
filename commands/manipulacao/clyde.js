@@ -8,9 +8,11 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Faça nosso querido bot Clyde falar algo!",
     category: "manipulacao",
+	usage: "<texto>",
   
     async run (client, message, args) {
-        const text = args.slice().join(' ');
+		
+		const text = args.slice().join(' ');
 		if (!text) {
 			return message.channel.send(
 				' :x: Favor fornecer texto válido.',

@@ -5,13 +5,11 @@ module.exports = {
   name: "kiss",
   aliases: ["beijar"],
   cooldown: 1000 * 2, 
-  description: "dev",
+  description: "Beije alguém :flushed:",
   category: "fun",
+  usage: "@user",
 
 async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
 
 var list = [
   'https://imgur.com/iclUiUN.gif',

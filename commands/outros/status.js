@@ -4,18 +4,18 @@ const cpuStat = require("cpu-stat");
 const moment = require("moment") 
 const db = require("quick.db");
 
-
 module.exports = {
   name: "status",
   aliases: ['cpu', 'info'],
   cooldown: 1000 * 2, 
-  description: "status",
+  description: "Status/Info da máquina do resolute.",
   category: "outros",
+  usage: "",
 
   async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
+          
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) { prefix = "s." }
 
            let { version } = require("discord.js");
     

@@ -6,6 +6,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Converte teu texto em acii!",
     category: "fun",
+    usage: "<texto>",
 
     async run (client, message, args) {
         figlet.text(args.join(" "), (err, text) => {

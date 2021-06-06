@@ -5,27 +5,28 @@ module.exports = {
     name: "unlock",
     aliases: ['desbloquear'],
     cooldown: 1000 * 2, 
-    description: "desbloquear",
+    description: "Desbloquear um canal.",
     category: "mod",
+    usage: "",
   
     async run (client, message, args) {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+    if (prefix === null) { prefix = "s." }
 
     const embed1 = new Discord.MessageEmbed()
     .setTitle("Sem permissão.")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
     .addField(`Você não possui a permissão de`, `GERENCIAR CANAIS`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
     const embed2 = new Discord.MessageEmbed()
     .setTitle("Este canal não está bloqueado.")
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
     const embed3 = new Discord.MessageEmbed()
@@ -33,7 +34,7 @@ module.exports = {
     .setColor("#ff0000")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
     .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Desbloqueado por ${message.author}`)
-    .setFooter("Resolute - By MrSprayX#0012", message.author.displayAvatarURL())
+    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
 

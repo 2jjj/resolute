@@ -6,15 +6,12 @@ module.exports = {
     name: "trump",
     aliases: ["trumpmeme"],
     cooldown: 1000 * 2, 
-    description: "dev",
+    description: "Trump meme",
     category: "manipulacao",
-  
-    async run (client, message, args) {
-    
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+    usage: "@user",
 
-  
+    async run (client, message, args) {
+        
     let text = args.join(" ");
 
         if (!text) {

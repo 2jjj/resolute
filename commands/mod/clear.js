@@ -5,13 +5,15 @@ module.exports = {
   name: "clear",
   aliases: ['limpar'],
   cooldown: 1000 * 2, 
-  description: "limpar chat",
+  description: "Limpar o site.",
   category: "mod",
+  usage: "<0/100>",
 
   async run (client, message, args) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) { prefix = "s." }
+    
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(

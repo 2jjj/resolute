@@ -5,14 +5,15 @@ module.exports = {
   name: "ban",
   aliases: ['banir'],
   cooldown: 1000 * 2, 
-  description: "ban",
+  description: "Banir uma pessoa.",
   category: "mod",
+  usage: "@user motivo",
 
 async run (client, message, args) {
-
+  
   let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
-
+  if (prefix === null) { prefix = "s." }
+  
       var list = [
         'https://imgur.com/ZNuAcum.gif',
         'https://imgur.com/xlD7P3N.gif',
