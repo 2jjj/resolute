@@ -7,10 +7,13 @@ module.exports = {
   usage: "<nome>",  
 
 run: async (client, message, args) => {
+  
+  console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
   const { channel } = message.member.voice;
-  if (!channel){ message.channel.send("JOIN VOICE CHANNEL BEFORE USING THIS COMMANDS!")}
+  if (!channel){ message.channel.send("Entre em um canal de voz antes de usar esse comando.")}
   if (message.guild.me.voice.channel !== message.member.voice.channel) {
-      return message.channel.send("BE IN SAME VOICE CHANNEL");
+      return message.channel.send("Você precisa estar no mesmo canal de voz que eu!");
     }
   const serverQueue = client.queue.get(message.guild.id);
 try {
@@ -22,11 +25,11 @@ try {
   channel.leave();
   }
   return message.channel.send({embed: {
-    description:'↪ Disconnected'}})
+    description:'↪ Desconectado'}})
 } catch {
     serverQueue.connection.dispatcher.end();
     await channel.leave();
-    return message.channel.send("TRY AGAIN");
+    return message.channel.send("Tente novamente.");
 }
 }
 };
