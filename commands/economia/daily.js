@@ -11,7 +11,9 @@ module.exports = {
     usage: "",
 
     async run (client, message, args) {
-
+    
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+   
     let user = message.author;
 
     let timeout = 86400000;
