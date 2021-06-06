@@ -11,8 +11,6 @@ module.exports = {
 
     async run (client, message, args) {
         
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() ||  message.author;
 
         let money = db.fetch(`money_${message.guild.id}_${user.id}`)

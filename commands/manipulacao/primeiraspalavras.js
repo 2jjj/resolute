@@ -12,8 +12,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
     if (message.content.split(' ').slice(1).join(' ').length < 1) {
         message.reply('<:info:835206734225473546> | Você não escreveu nada.')
     } else {

@@ -10,9 +10,7 @@ module.exports = {
     usage: "@user <quantidade>",
 
     async run (client, message, args) {
-    
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-            
+                
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             return message.channel.send(`> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
         };

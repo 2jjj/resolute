@@ -12,7 +12,6 @@ module.exports = {
 
     async run (client, message, args) {
             
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
         let money = db.all().filter(data => data.ID.startsWith(`money_${message.guild.id}`)).sort((a, b) => b.data - a.data);
         
         let money1;

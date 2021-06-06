@@ -12,8 +12,6 @@ module.exports = {
 
 
 async run (client, message, args) {
-
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
     
     fetch(`https://nekobot.xyz/api/imagegen?type=tweet&username=${message.author.username}&text=${args.join(' ')}`)
             .then((res) => res.json())

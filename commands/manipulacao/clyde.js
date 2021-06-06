@@ -11,8 +11,6 @@ module.exports = {
 	usage: "<texto>",
   
     async run (client, message, args) {
-
-		console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`) 
 		
 		const text = args.slice().join(' ');
 		if (!text) {

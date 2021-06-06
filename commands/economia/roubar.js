@@ -12,8 +12,6 @@ module.exports = {
 
     async run (client, message, args) {
         
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
         let autor = message.author;
         
         let user = message.mentions.users.first();

@@ -9,8 +9,6 @@ module.exports = {
 	usage: "@user",
 
   async run (client, message, args) {
-
-      console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
     
       const Canvas = require(`canvas`);
       const canvas = Canvas.createCanvas(300, 300);

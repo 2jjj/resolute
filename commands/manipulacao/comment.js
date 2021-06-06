@@ -13,8 +13,6 @@ module.exports = {
 
     async run (client, message, args) {
     
-	console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
         const comment = args.join('');
         if(!comment) return message.channel.send(`:x: Dê algo para Comentar!`)
         try {    

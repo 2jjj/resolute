@@ -10,8 +10,6 @@ module.exports = {
     
 async run (client, message, args) {
 
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
     const a = args.join("+")
     if(!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
     if(args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);

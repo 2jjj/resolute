@@ -11,8 +11,6 @@ module.exports = {
 
     async run (client, message, args) {
         
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
         let member = db.fetch(`money_${message.guild.id}_${message.author.id}`);
         if(member == null) member = 0;
 

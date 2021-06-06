@@ -14,8 +14,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
     if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
         lastCmd: null
       }
