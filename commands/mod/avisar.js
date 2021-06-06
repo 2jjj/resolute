@@ -30,10 +30,10 @@ async run (client, message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:staff:835643948151996446> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
 
     let membro = message.mentions.users.first() 
-    if (!membro) return message.reply("<:4693_pink_hair_popcorn:843542215708114994> oh ixpertinho você tem que **mencionar** o usuário para dar o aviso!")
+    if (!membro) return message.reply("> Você precisa mencionar o usuário que quer dar aviso!")
 
     let motivo = args.slice(1).join(" "); 
-    if (!motivo) return message.reply("<:staff:835643948151996446> **|** Escreva um motivo do aviso do usuário!") 
+    if (!motivo) return message.reply("> Escreva um motivo do aviso do usuário!") 
 
     let embed = new Discord.MessageEmbed() 
     .setTitle(`Você foi avisado! - ${membro.username}`)
@@ -44,5 +44,6 @@ async run (client, message, args) {
 
     membro.send(embed) 
     message.channel.send(`<:bravinha:841126251741970452> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
+    await db.add(`warnsCount_${message.guild.id}-${user.id}`, 1)
 }
 }
