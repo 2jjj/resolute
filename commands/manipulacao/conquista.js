@@ -10,15 +10,17 @@ module.exports = {
     
 async run (client, message, args) {
 
-const a = args.join("+")
-if(!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
-if(args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
-const embed_conqu = new Discord.MessageEmbed()
-.setColor("RANDOM")
-.setImage(`https://minecraftskinstealer.com/achievement/${Math.floor(Math.random() * 39) + 1}/Achievement+Get%21/${a}`);
+    const a = args.join("+")
+    if(!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
+    if(args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);
 
-message.channel.send(`${message.author}`,embed_conqu)
+    const embed_conquista = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setImage(`https://minecraftskinstealer.com/achievement/${Math.floor(Math.random() * 39) + 1}/Achievement+Get%21/${a}`);
+
+    message.channel.send(`${message.author}`,embed_conquista)
 }
 
 }
