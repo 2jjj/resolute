@@ -11,8 +11,10 @@ module.exports = {
 
   async run (client, message, args) {
     
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
+      console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
 
         let channelID = message.mentions.channels.first()
         let theDescription = args.slice(1).join(" ")

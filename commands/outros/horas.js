@@ -16,8 +16,8 @@ module.exports = {
 
 
     moment.locale('pt-br'); 
-   let hora = moment().format('h:mm:ss a'); 
-   let data = moment().format('dddd'); 
+    let hora = moment().format('h:mm:ss a'); 
+    let data = moment().format('dddd'); 
     const embed = new Discord.MessageEmbed() 
     .setTitle("Hora")
     .addField("» Data ", `${data}`)

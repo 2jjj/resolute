@@ -15,14 +15,14 @@ async run (client, message, args) {
     console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
 
-const query = args.join("") 
-if (!query) {
- message.reply("> Irei pesquisar oque você falar no discord.js(docs).") 
-}
-fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`) 
-.then(res => res.json()) 
-.then(json => {
- message.channel.send({ embed: json }).catch(() => message.reply("> Não achei nenhum resultado para sua pesquisa!"))
+    const query = args.join("") 
+    if (!query) {
+    message.reply("> Irei pesquisar oque você falar no discord.js(docs).") 
+    }
+    fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`) 
+    .then(res => res.json()) 
+    .then(json => {
+    message.channel.send({ embed: json }).catch(() => message.reply("> Não achei nenhum resultado para sua pesquisa!"))
 
 }) 
 }}

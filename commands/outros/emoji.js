@@ -16,23 +16,23 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
     
-  message.delete();
-  if (!args[0])
-    return message.channel.send(
-      `**> ${message.author.username}, A sintaxe correta é:** ` +
-        "`" +
-        `${prefix}emoji <emoji_name>`
-    ); 
-  let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
+    message.delete();
+    if (!args[0])
+      return message.channel.send(
+        `**> ${message.author.username}, A sintaxe correta é:** ` +
+          "`" +
+          `${prefix}emoji <emoji_name>`
+      ); 
+    let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
-  if (!emoji) {
-    message.channel.send(
-      "`" + args[0] + "` **Não é um emoji deste servidor!**"
-    );
-  } else if (emoji.animated === true) {
-    message.channel.send(`<a:${args[0]}:${emoji.id}>`);
-  } else {
-    message.channel.send(`<:${args[0]}:${emoji.id}>`);
-  }
+    if (!emoji) {
+      message.channel.send(
+        "`" + args[0] + "` **Não é um emoji deste servidor!**"
+      );
+    } else if (emoji.animated === true) {
+      message.channel.send(`<a:${args[0]}:${emoji.id}>`);
+    } else {
+      message.channel.send(`<:${args[0]}:${emoji.id}>`);
+    }
 }
 }
