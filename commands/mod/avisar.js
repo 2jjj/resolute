@@ -44,6 +44,6 @@ async run (client, message, args) {
 
     membro.send(embed) 
     message.channel.send(`<:bravinha:841126251741970452> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
-    await db.add(`warnsCount_${message.guild.id}-${user.id}`, 1)
+    await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 }
 }
