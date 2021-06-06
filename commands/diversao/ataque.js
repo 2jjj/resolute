@@ -1,7 +1,16 @@
 const Discord = require("discord.js");
 
-exports.run = async(client, message, args) => {
-  var list = [
+module.exports = {
+    name: "ataque",
+    aliases: [],
+    cooldown: 1000 * 2, 
+    description: "Ataque alguém!!!",
+    category: "fun",
+    usage: "@user",
+  
+    async run (client, message, args) {
+    
+    var list = [
     'http://27.media.tumblr.com/tumblr_lj7iubw5fn1qgq4hio1_500.gif',
     'https://64.media.tumblr.com/2fdab5ad7bd92c0c38881d00c6686a45/tumblr_inline_pbpzd9xckk1rrd628_500.gif',
     'https://i.pinimg.com/originals/c1/3c/42/c13c429ad79aeac088b8d6e0ba9aadeb.gif',
@@ -27,3 +36,4 @@ exports.run = async(client, message, args) => {
   message.channel.send(ataque)
   
   }
+}
