@@ -9,7 +9,6 @@ module.exports = {
     usage: "só para devs.",
     
     async run (client, message, args) {
-      console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
     if (message.author.id == ownerid) {
       if (!message.guild.me.hasPermission("ADMINISTRATOR"))

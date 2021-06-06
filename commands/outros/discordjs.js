@@ -12,9 +12,6 @@ module.exports = {
 
 async run (client, message, args) {
 
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
-
-
     const query = args.join("") 
     if (!query) {
     message.reply("> Irei pesquisar oque você falar no discord.js(docs).") 
