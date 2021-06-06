@@ -11,10 +11,10 @@ module.exports = {
 
   async run (client, message, args) {
 
-    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+  console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if (prefix === null) { prefix = "s." }
     
   let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 
