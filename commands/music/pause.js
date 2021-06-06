@@ -12,11 +12,11 @@ module.exports = {
   try {
     if (!channel)
       return message.channel.send(
-        "I'm sorry but you need to be in a voice channel to pause music!"
+        "Sinto muito, mas você precisa estar em um canal de voz para pausar a música!"
       );
     if (message.guild.me.voice.channel !== message.member.voice.channel) {
       return message.channel.send(
-        "YOU HAVE TO BE IN SAME VOICE CHANNEL IF YOU WANT PAUSE MUSIC"
+        "Você precisa estar no mesmo canal de voz para pausar a música"
       );
     }
     if (serverQueue && serverQueue.playing) {
@@ -25,11 +25,11 @@ module.exports = {
       return message.channel.send({
         embed: {
           color: "BLUE",
-          description: "**⏸ PAUSED**"
+          description: "**⏸ Música pausada**"
         }
       });
     }
-    return message.channel.send("**There is Nothing Playing!**");
+    return message.channel.send("**Não a nada tocando!**");
   } catch {
     serverQueue.connection.dispatcher.end();
     await channel.leave();
