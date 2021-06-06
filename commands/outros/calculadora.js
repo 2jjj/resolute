@@ -12,7 +12,7 @@ module.exports = {
 
     async run (client, message, args) {
 
-        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+    console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
     let color = await db.get(`color_${message.author.id}`)
     if (color === null) color = 'RANDOM'
