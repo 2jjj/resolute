@@ -13,7 +13,7 @@ module.exports = {
   run: async function(client, message, args) {
     const channel = message.member.voice.channel;
     if (!channel) {
-      message.channel.send("I am sorry but you need to be in a voice channel before using this commamd");
+      message.channel.send("> Você precisa estar em um canal de voz para usar esse comando.");
     }
 
     if (!message.guild.me.hasPermission("CONNECT")) {
@@ -21,7 +21,7 @@ module.exports = {
         embed: {
           color: "FF0000",
           description:
-            "<:emoji_17:763367241327706118> I don't have permission to connect your vc!"
+            "Eu não tenho permissão para entrar no canal de voz."
         }
       });
     }
@@ -30,20 +30,20 @@ module.exports = {
         embed: {
           color: "FF0000",
           description:
-            "<:emoji_17:763367241327706118>I need speak permission for playing music!"
+            "Eu preciso de permissões para **falar** no canal de voz."
         }
       });
     }
     var searchString = args.join(" ");
     if (!searchString) {
-      message.channel.send("<:emoji_17:763367241327706118>provide us song' name or song's link");
+      message.channel.send("Por favor, insira apenas links e nomes de músicas.");
     }
 
     var serverQueue = message.client.queue.get(message.guild.id);
 
     var searched = await yts.search(searchString);
     if (searched.videos.length === 0) {
-      message.channel.send("I can't find that song");
+      message.channel.send("Eu não consegui achar a música.");
     }
     var songInfo = searched.videos[0];
 
@@ -61,21 +61,19 @@ module.exports = {
     if (serverQueue) {
       serverQueue.songs.push(song);
       let thing = new MessageEmbed()
-        .setTitle("SONG HAS BEEN ADDED TO QUEUE")
+        .setTitle("Nova música adicionada na fila.")
         .setImage(song.img)
         .setColor("ORANGE")
         .setDescription(
-          `**SONG NAME**   
-[${song.title}](${song.url})     
-**DURACTION**
-${song.duration}
-**REQUEST BY**
-[${message.author}]
-        
-        
-        `
+          `**Nome**   
+          [${song.title}](${song.url})     
+          **Duração**
+          ${song.duration}
+          **Requisitada por**
+          [${message.author}]
+          `
         )
-        .setFooter(`PARAS GAMING 🇮🇳`);
+        .setFooter(`Resolute`);
       return message.channel.send(thing);
     }
 
@@ -106,21 +104,20 @@ ${song.duration}
         .on("error", error => console.error(error));
       dispatcher.setVolumeLogarithmic(queue.volume / 5);
       let thing = new MessageEmbed()
-        .setTitle("START PLAYING")
+        .setTitle("Estou tocando")
         .setDescription(
+          `**Nome**   
+          [${song.title}](${song.url})     
+          **Duração**
+          ${song.duration}
+          **Requisitada por**
+          [${message.author}]
           `
-        **SONG NAME**   
-        [${song.title}](${song.url})     
-        **DURACTION**
-        ${song.duration}
-        **REQUEST BY**
-        [${message.author}]
-        `
         )
 
         .setImage(song.img)
         .setColor("GREEN")
-        .setFooter(`PARAS GAMING🇮🇳`);
+        .setFooter(`Resolute`);
       queue.textChannel.send(thing);
     };
 
@@ -130,11 +127,11 @@ ${song.duration}
       channel.guild.voice.setSelfDeaf(true);
       play(queueConstruct.songs[0]);
     } catch (error) {
-      console.error(`I could not join the voice channel: ${error}`);
+      console.error(`Eu não consegui entrar no canal de voz: ${error}`);
       message.client.queue.delete(message.guild.id);
       //await channel.leave();
       return console.log(
-        `I could not join the voice channel: ${error}`,
+        `Eu não consegui entrar no canal de voz: ${error}`,
         message.channel
       );
     }
