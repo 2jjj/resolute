@@ -1,149 +1,142 @@
-const { MessageEmbed } = require("discord.js")
-const { Util } = require("discord.js");
-const { QUEUE_LIMIT, COLOR } = require("../config.json");
-const ytsr = require('ytsr');
-const { play } = require("../system/music.js");
+const { Util, MessageEmbed } = require("discord.js");
+const ytdl = require("ytdl-core");
+const yts = require("yt-search");
 
 module.exports = {
   name: "play",
-  description: "Play the song and feel the music",
-  async execute(client, message, args) {
-    let embed = new MessageEmbed()
-      .setColor(COLOR);
+  description: "To play songs :D",
+  category: "musica",
+  usage: "<song_name>",
+  aliases: ["p"],
+  cooldown: 1000 * 2, 
 
-
-    //FIRST OF ALL WE WILL ADD ERROR MESSAGE AND PERMISSION MESSSAGE
-    if (!args.length) {
-      //IF AUTHOR DIDENT GIVE URL OR NAME
-      embed.setAuthor("WRONG SYNTAX : Type `play <URL> or text`")
-      return message.channel.send(embed);
-    }
-
-    const { channel } = message.member.voice;
-
+  run: async function(client, message, args) {
+    const channel = message.member.voice.channel;
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/")
-      return message.channel.send(embed);
+      message.channel.send("I am sorry but you need to be in a voice channel before using this commamd");
     }
 
-    //WE WILL ADD PERMS ERROR LATER :(
-
-    const targetsong = args.join(" ");
-    const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
-    const playlistPattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
-    const urlcheck = videoPattern.test(args[0]);
-
-    if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
-      embed.setAuthor("I am Unable To Play Playlist for now")
-      return message.channel.send(embed);
+    if (!message.guild.me.hasPermission("CONNECT")) {
+      message.channel.send({
+        embed: {
+          color: "FF0000",
+          description:
+            "<:emoji_17:763367241327706118> I don't have permission to connect your vc!"
+        }
+      });
+    }
+    if (!message.guild.me.hasPermission("SPEAK")) {
+      message.channel.send({
+        embed: {
+          color: "FF0000",
+          description:
+            "<:emoji_17:763367241327706118>I need speak permission for playing music!"
+        }
+      });
+    }
+    var searchString = args.join(" ");
+    if (!searchString) {
+      message.channel.send("<:emoji_17:763367241327706118>provide us song' name or song's link");
     }
 
-    const serverQueue = message.client.queue.get(message.guild.id);
+    var serverQueue = message.client.queue.get(message.guild.id);
+
+    var searched = await yts.search(searchString);
+    if (searched.videos.length === 0) {
+      message.channel.send("I can't find that song");
+    }
+    var songInfo = searched.videos[0];
+
+    const song = {
+      id: songInfo.videoId,
+      title: Util.escapeMarkdown(songInfo.title),
+      views: String(songInfo.views).padStart(10, " "),
+      url: songInfo.url,
+      ago: songInfo.ago,
+      duration: songInfo.duration.toString(),
+      img: songInfo.image,
+      req: message.author
+    };
+
+    if (serverQueue) {
+      serverQueue.songs.push(song);
+      let thing = new MessageEmbed()
+        .setTitle("SONG HAS BEEN ADDED TO QUEUE")
+        .setImage(song.img)
+        .setColor("ORANGE")
+        .setDescription(
+          `**SONG NAME**   
+[${song.title}](${song.url})     
+**DURACTION**
+${song.duration}
+**REQUEST BY**
+[${message.author}]
+        
+        
+        `
+        )
+        .setFooter(`PARAS GAMING 🇮🇳`);
+      return message.channel.send(thing);
+    }
 
     const queueConstruct = {
       textChannel: message.channel,
-      channel,
+      voiceChannel: channel,
       connection: null,
       songs: [],
-      loop: false,
-      volume: 100,
+      volume: 3.5,
       playing: true
     };
+    message.client.queue.set(message.guild.id, queueConstruct);
+    queueConstruct.songs.push(song);
 
-    const voteConstruct = {
-      vote: 0,
-      voters: []
-    }
-
-    let songData = null;
-    let song = null;
-
-    if (urlcheck) {
-      try {
-           const result = await ytsr(args[0], {page: 1})
-        songData = result.items[0]
-
-        song = {
-          title: songData.title,
-          url: songData.url,
-          duration: songData.duration,
-          thumbnail: songData.bestThumbnail.url,
-          avatar: songData.author.bestAvatar.url,
-          description: songData.description,
-          author: songData.author.name,
-          date: songData.uploadedAt
-        };
-      } catch (error) {
-        if (message.include === "copyright") {
-          return message
-            .reply("THERE IS COPYRIGHT CONTENT IN VIDEO -_-")
-            .catch(console.error);
-        } else {
-          console.error(error);
-        }
-      }
-    } else {
-
-      try {
-        const result = await ytsr(targetsong, { pages: 1 })
-        songData = result.items[0]
-
-        song = {
-          title: songData.title,
-          url: songData.url,
-          duration: songData.duration,
-          thumbnail: songData.bestThumbnail.url,
-          avatar: songData.author.bestAvatar.url,
-          description: songData.description,
-          author: songData.author.name,
-          date: songData.uploadedAt
-        };
-
-      } catch (error) {
-        console.log(error)
-        return message.channel.send("Something went wrong!!")
-      }
-    }
-
-    if (serverQueue) {
-      if (serverQueue.songs.length > Math.floor(QUEUE_LIMIT - 1) && QUEUE_LIMIT !== 0) {
-        return message.channel.send(`You can not add songs more than ${QUEUE_LIMIT} in queue`)
+    const play = async song => {
+      const queue = message.client.queue.get(message.guild.id);
+      if (!song) {
+         message.client.queue.delete(message.guild.id);
+        return;
       }
 
+      const dispatcher = queue.connection
+        .play(ytdl(song.url))
+        .on("finish", () => {
+          queue.songs.shift();
+          play(queue.songs[0]);
+        })
+        .on("error", error => console.error(error));
+      dispatcher.setVolumeLogarithmic(queue.volume / 5);
+      let thing = new MessageEmbed()
+        .setTitle("START PLAYING")
+        .setDescription(
+          `
+        **SONG NAME**   
+        [${song.title}](${song.url})     
+        **DURACTION**
+        ${song.duration}
+        **REQUEST BY**
+        [${message.author}]
+        `
+        )
 
-      serverQueue.songs.push(song);
-      embed.setAuthor("Added New Song To Queue", client.user.displayAvatarURL())
-      embed.setDescription(`**[${song.title}](${song.url})**`)
-      embed.setThumbnail(song.thumbnail);
+        .setImage(song.img)
+        .setColor("GREEN")
+        .setFooter(`PARAS GAMING🇮🇳`);
+      queue.textChannel.send(thing);
+    };
 
-      return serverQueue.textChannel
-        .send(embed)
-        .catch(console.error);
-    } else {
-      queueConstruct.songs.push(song);
-    }
-
-    if (!serverQueue)
-      message.client.queue.set(message.guild.id, queueConstruct);
-    message.client.vote.set(message.guild.id, voteConstruct);
-    if (!serverQueue) {
-      try {
-        queueConstruct.connection = await channel.join();
-        play(queueConstruct.songs[0], message);
-      } catch (error) {
-        console.error(`Could not join voice channel: ${error}`);
-        message.client.queue.delete(message.guild.id);
-        await channel.leave();
-        return message.channel
-          .send({
-            embed: {
-              description: `😭 | Could not join the channel: ${error}`,
-              color: "#ff2050"
-            }
-          })
-          .catch(console.error);
-      }
+    try {
+      const connection = await channel.join();
+      queueConstruct.connection = connection;
+      channel.guild.voice.setSelfDeaf(true);
+      play(queueConstruct.songs[0]);
+    } catch (error) {
+      console.error(`I could not join the voice channel: ${error}`);
+      message.client.queue.delete(message.guild.id);
+      //await channel.leave();
+      return console.log(
+        `I could not join the voice channel: ${error}`,
+        message.channel
+      );
     }
   }
 };

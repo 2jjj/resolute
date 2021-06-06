@@ -1,35 +1,32 @@
-const { MessageEmbed } = require("discord.js");
-const sendError = require("../../util/error");
-const db = require("quick.db")
-
 module.exports = {
   name: "stop",
   aliases: ['parar'],
   cooldown: 1000 * 2, 
-  description: "Parar a música que está tocando.",
+  description: "parar",
   category: "musica",
-  usage: "",
+  usage: "<nome>",  
 
-  async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
-    const channel = message.member.voice.channel
-    if (!channel)return sendError("> Sinto muito, mas você precisa estar em um canal de voz para tocar música!", message.channel);
-    const serverQueue = message.client.queue.get(message.guild.id);
-    if (!serverQueue)return sendError("> Não há nada que eu possa parar para você.", message.channel);
-   if(!serverQueue.connection)return
-    if(!serverQueue.connection.dispatcher)return
-     try{
-      serverQueue.connection.dispatcher.end();
-      } catch (error) {
-        message.guild.me.voice.channel.leave();
-        message.client.queue.delete(message.guild.id);
-        return sendError(`> A fila foi liberada. ${error}`, message.channel);
-      }
-    message.client.queue.delete(message.guild.id);
-    serverQueue.songs = [];
-    message.react(`<:check:843604256455000075>`)
-  },
+run: async (client, message, args) => {
+  const { channel } = message.member.voice;
+  if (!channel){ message.channel.send("JOIN VOICE CHANNEL BEFORE USING THIS COMMANDS!")}
+  if (message.guild.me.voice.channel !== message.member.voice.channel) {
+      return message.channel.send("BE IN SAME VOICE CHANNEL");
+    }
+  const serverQueue = client.queue.get(message.guild.id);
+try {
+  if (serverQueue) {
+  serverQueue.songs = [];
+  serverQueue.connection.dispatcher.end()
+  message.guild.me.voice.channel.leave();
+  } else {
+  channel.leave();
+  }
+  return message.channel.send({embed: {
+    description:'↪ Disconnected'}})
+} catch {
+    serverQueue.connection.dispatcher.end();
+    await channel.leave();
+    return message.channel.send("TRY AGAIN");
+}
+}
 };

@@ -1,34 +1,38 @@
-const { MessageEmbed } = require("discord.js");
-const sendError = require("../../util/error");
-const db = require("quick.db")
-
 module.exports = {
   name: "pause",
-  aliases: ['pausar'],
-  cooldown: 1000 * 2, 
-  description: "Pausar a música que está tocando.",
+  description: "pausar a música :D",
   category: "musica",
   usage: "",
-
-  async run (client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
-    const serverQueue = message.client.queue.get(message.guild.id);
+  aliases: ["p"],
+  cooldown: 1000 * 2, 
+  
+  run: async (client, message, args) => {
+  const serverQueue = client.queue.get(message.guild.id);
+  const { channel } = message.member.voice;
+  try {
+    if (!channel)
+      return message.channel.send(
+        "I'm sorry but you need to be in a voice channel to pause music!"
+      );
+    if (message.guild.me.voice.channel !== message.member.voice.channel) {
+      return message.channel.send(
+        "YOU HAVE TO BE IN SAME VOICE CHANNEL IF YOU WANT PAUSE MUSIC"
+      );
+    }
     if (serverQueue && serverQueue.playing) {
       serverQueue.playing = false;
-	    try{
-      serverQueue.connection.dispatcher.pause()
-	  } catch (error) {
-        message.client.queue.delete(message.guild.id);
-        return sendError(` ${error}`, message.channel);
-      }	    
-      let xd = new MessageEmbed()
-      .setDescription("Música pausada.")
-      .setColor("YELLOW")
-      return message.channel.send(xd);
+      serverQueue.connection.dispatcher.pause(true);
+      return message.channel.send({
+        embed: {
+          color: "BLUE",
+          description: "**⏸ PAUSED**"
+        }
+      });
     }
-    return sendError("> Não a nada tocando.", message.channel);
-  },
+    return message.channel.send("**There is Nothing Playing!**");
+  } catch {
+    serverQueue.connection.dispatcher.end();
+    await channel.leave();
+  }
+}
 };
