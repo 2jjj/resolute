@@ -11,7 +11,10 @@ module.exports = {
 	usage: "<texto>",
   
     async run (client, message, args) {
-        const text = args.slice().join(' ');
+
+		console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`) 
+		
+		const text = args.slice().join(' ');
 		if (!text) {
 			return message.channel.send(
 				' :x: Favor fornecer texto válido.',

@@ -9,10 +9,12 @@ module.exports = {
     category: "manipulacao",
     cooldown: 1000 * 2, 
     usage: "<texto>",
-}
 
-module.exports.run = async (client, message, args) => {
-	
+
+    async run (client, message, args) {
+    
+	console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
         const comment = args.join('');
         if(!comment) return message.channel.send(`:x: Dê algo para Comentar!`)
         try {    
@@ -25,5 +27,4 @@ module.exports.run = async (client, message, args) => {
     .setColor("RED")
     message.channel.send(embed2)
     }
-
-}
+    }}

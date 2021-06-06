@@ -13,6 +13,8 @@ module.exports = {
     usage: "<texto>",
 
     async run (client, message, args) {
+        
+        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
 
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")
         if (!args[0]) return message.reply("Escreva algo para o cachorro")
