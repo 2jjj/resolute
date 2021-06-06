@@ -12,16 +12,16 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel)
       return message.channel.send(
-        "I'm sorry but you need to be in a voice channel to see queue!"
+        "Sinto muito, mas você precisa estar em um canal de voz para ver a fila!"
       );
     if (message.guild.me.voice.channel !== message.member.voice.channel) {
       return message.channel.send(
-        "**You Have To Be In The Same Channel With The Bot!**"
+        "**Você tem que estar no mesmo canal de voz com o bot.**"
       );
     }
     const serverQueue = client.queue.get(message.guild.id);
     if (!serverQueue)
-      return message.channel.send("Nothing playing in this server");
+      return message.channel.send("Não a nada tocando nesse servidor.");
     try {
       let currentPage = 0;
       const embeds = generateQueueEmbed(message, serverQueue.songs);
@@ -44,7 +44,7 @@ module.exports = {
             if (currentPage < embeds.length - 1) {
               currentPage++;
               queueEmbed.edit(
-                `**Current Page - ${currentPage + 1}/${embeds.length}**`,
+                `**Pagina atual - ${currentPage + 1}/${embeds.length}**`,
                 embeds[currentPage]
               );
             }
@@ -52,7 +52,7 @@ module.exports = {
             if (currentPage !== 0) {
               --currentPage;
               queueEmbed.edit(
-                `**Current Page - ${currentPage + 1}/${embeds.length}**`,
+                `**Pagina atual - ${currentPage + 1}/${embeds.length}**`,
                 embeds[currentPage]
               );
             }
@@ -64,14 +64,14 @@ module.exports = {
         } catch {
           serverQueue.connection.dispatcher.end();
           return message.channel.send(
-            "**Missing Permissions - [ADD_REACTIONS, MANAGE_MESSAGES]!**"
+            "**Permissões necessárias - [ADD_REACTIONS, MANAGE_MESSAGES]!**"
           );
         }
       });
     } catch {
       serverQueue.connection.dispatcher.end();
       return message.channel.send(
-        "**Missing Permissions - [ADD_REACTIONS, MANAGE_MESSAGES]!**"
+        "**Permissões necessárias - [ADD_REACTIONS, MANAGE_MESSAGES]!**"
       );
     }
   }
@@ -88,11 +88,11 @@ function generateQueueEmbed(message, queue) {
       .map(track => `${++j} :- [${track.title}](${track.url})`)
       .join("\n");
     const embed = new MessageEmbed()
-      .setTitle("Song Queue\n")
+      .setTitle("Fila de músicas\n")
       .setThumbnail(message.guild.iconURL())
       .setColor("GREEN")
       .setDescription(
-        `**Current Song ⤵️ [${queue[0].title}](${queue[0].url})**\n\n${info}`
+        `**Som atual ⤵️ [${queue[0].title}](${queue[0].url})**\n\n${info}`
       )
      .setFooter(`${message.guild}`) 
     .setTimestamp();
