@@ -10,23 +10,25 @@ module.exports = {
     usage: "",
 
     async run (client, message, args) {
+        
+        console.log(`[LOGS] - Comando ${module.exports.name} usado por ${message.author.tag}.`)
+
+        let user = client.users.cache.get(args[0]) || message.mentions.users.first() ||  message.author;
+
+        let money = db.fetch(`money_${message.guild.id}_${user.id}`)
+        if(money === null) money = 0;
     
-    let user = client.users.cache.get(args[0]) || message.mentions.users.first() ||  message.author;
+        let bank = db.fetch(`bank_${message.guild.id}_${user.id}`)
+        if(bank === null) bank = 0;
 
-    let money = db.fetch(`money_${message.guild.id}_${user.id}`)
-    if(money === null) money = 0;
-  
-    let bank = db.fetch(`bank_${message.guild.id}_${user.id}`)
-    if(bank === null) bank = 0;
+        const embed = new Discord.MessageEmbed()
+        .setColor("GREEN")
+        .setTitle("💸Balanço Monetário")
+        .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
+        `\n\n💸 > Dinheiro: **R$${money}**` +
+        `\n:bank: > Banco: **R$${bank}**`)
+        .setFooter("Informações de sua carteira ~")
+        .setTimestamp();
 
-    const embed = new Discord.MessageEmbed()
-    .setColor("GREEN")
-    .setTitle("💸Balanço Monetário")
-    .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
-    `\n\n💸 > Dinheiro: **R$${money}**` +
-    `\n:bank: > Banco: **R$${bank}**`)
-    .setFooter("Informações de sua carteira ~")
-    .setTimestamp();
-
-    message.channel.send(`${user}`, embed);
+        message.channel.send(`${user}`, embed);
 }}
