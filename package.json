@@ -17,6 +17,7 @@
     "canvas": "^2.7.0",
     "cluster": "^0.7.7",
     "colors": "^1.4.0",
+    "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
     "discord-hybrid-sharding": "^1.0.9",
     "discord-image-generation": "^1.4.9",
