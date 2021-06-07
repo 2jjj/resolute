@@ -17,24 +17,19 @@ module.exports = {
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
-      "<:bravinha:841126251741970452> | Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
+      "Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
     );
     
   const deleteCount = parseInt(args[0], 10);
   if (!deleteCount || deleteCount < 1 || deleteCount > 99)
     return message.reply(
-        "<:Aviso:843862131720192001> | Forneça um número de até **99 mensagens** a serem excluídas."
+        "Forneça um número de até **99 mensagens** a serem excluídas."
       );
  
   const fetched = await message.channel.messages.fetch({
     limit: deleteCount + 1
   });
   message.channel.bulkDelete(fetched); {
-      let embed = new Discord.MessageEmbed()
-      .setDescription(`**<:2637settings:843854352867262504> O chat foi Limpo por ${message.author}**`)
-      .setColor('BLUE')
-      .setTitle('`Resolute - Clear`')
-      .setFooter(`• Autor: ${message.author.username}`, message.author.displayAvatarURL({format: "png"}));
-      await message.channel.send(embed); 
+      await message.channel.send(`O chat teve ${deleteCount} mensagens deletadas por ${message.author}.`); 
   }
 }};
