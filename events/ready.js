@@ -12,5 +12,5 @@ module.exports = async (client) => {
               client.user.setActivity(base)
           } 
           Presence(); 
-          setInterval(() => Presence(), 6100)          
+          setInterval(() => Presence(), 5000)          
 }
