@@ -16,7 +16,7 @@ module.exports = {
     let fun = client.commands.filter((cmd) => cmd.category === 'fun');
     let economia = client.commands.filter((cmd) => cmd.category === 'economia');
     let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-    let mod = client.commands.filter((cmd) => cmd.category === 'mod');
+    var mod = client.commands.filter((cmd) => cmd.category === 'mod');
     //let music = client.commands.filter((cmd) => cmd.category === 'musica');
     let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
     let config = client.commands.filter((cmd) => cmd.category === 'config');
@@ -37,8 +37,7 @@ module.exports = {
       \n » **Links:**
       > [Me adicione](https://invite.resolutebot.xyz)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
-      \n » \`Use ${prefix}report para reportar bugs.\`
+      \n » \`Desenvolvido por Spray#0007 | Versão 1.7.0B\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
   //
@@ -52,7 +51,6 @@ module.exports = {
       msg.react(`<a:6_:836268649790439464>`);
     })
     
-    //Emojis
     const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 150000 })
     const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268679263027230` && user.id == message.author.id, { time: 150000 })
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 150000 })
@@ -62,20 +60,16 @@ module.exports = {
     const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 150000 })
     const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 150000 })
 
-    ////////////
     moderacao.on(`collect`, r => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Moderação:**\n
-
-      `)
+      .addField(`<:staff:843586666845044736> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
       msg.edit(embed_1)
       //r.users.remove(message.author.id)
     })
 
-    ////////////
     fun.on(`collect`, r => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
@@ -87,7 +81,6 @@ module.exports = {
       //r.users.remove(message.author.id)
     })
   
-    /////////////
     outros.on(`collect`, r => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
