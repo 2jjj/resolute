@@ -5,7 +5,7 @@ module.exports = {
   aliases: ['pp', 'latencia'],
   cooldown: 1000 * 2, 
   description: "Pong! Minha latência!",
-  category: "outros",
+  category: "info",
   usage: "",
 
   async run (client, message, args) {

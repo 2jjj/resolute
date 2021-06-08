@@ -9,7 +9,7 @@ module.exports = {
   aliases: ['cpu', 'info'],
   cooldown: 1000 * 2, 
   description: "Status/Info da máquina do resolute.",
-  category: "outros",
+  category: "info",
   usage: "",
 
   async run (client, message, args) {
