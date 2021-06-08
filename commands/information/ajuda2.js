@@ -10,9 +10,20 @@ module.exports = {
   usage: "",
 
   async run (client, message, args) {
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
   
+    let fun = client.commands.filter((cmd) => cmd.category === 'fun');
+    let economia = client.commands.filter((cmd) => cmd.category === 'economia');
+    let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+    let mod = client.commands.filter((cmd) => cmd.category === 'mod');
+    //let music = client.commands.filter((cmd) => cmd.category === 'musica');
+    let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
+    let config = client.commands.filter((cmd) => cmd.category === 'config');
+    let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+    let info = client.commands.filter((cmd) => cmd.category === 'info');
+
+
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
@@ -59,16 +70,7 @@ module.exports = {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Moderação:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}slowmode\` <tempo(ms)>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ban\` @usuário <motivo>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}banlist\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}clear\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}kick\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}lock\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}servericon\` id do servidor
-      > <:spr4yxyz:837798446584168468> | \`${prefix}serverinfo\` id do servidor
-      > <:spr4yxyz:837798446584168468> | \`${prefix}userinfo\` id do usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}unlock\`
+
       `)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -81,16 +83,6 @@ module.exports = {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Diversão:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}carinho\` @usuário
-      > <:spr4yxyz:837798446584168468> |  \`${prefix}coinflip\` <cara ou coroa>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}highfive\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}hug\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}kiss\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}morder\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}pisar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}say\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ship\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}snake\`
       `)
       .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -103,22 +95,6 @@ module.exports = {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Outros comandos:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ticket\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}close\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteio\` <tempo> <canal> <premio>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}botinfo\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}report\` <bug> 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}avatar\` @usuário
-      > <:spr4yxyz:837798446584168468> | \`${prefix}clima\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}emoji\` <emoji>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}horas\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ping\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sorteador\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}status\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}sugestao\` <sugestão>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}uptime\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}votar\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}steam\` <jogo>
       `)
       .setImage("https://i.imgur.com/VhLyg2r.gif")
       .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
@@ -130,15 +106,7 @@ module.exports = {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Economia:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}daily\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}depositar\` <quantidade>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}leaderboard\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}money\`
-      > <:spr4yxyz:837798446584168468> | \`${prefix}pay\` <@usuário>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}roubar\` <@usuário>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}saque\` <dinheiro>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}setmoney\` | Admin+
-      > <:spr4yxyz:837798446584168468> | \`${prefix}trabalhar\`
+
       `)
       .setImage("https://i.pinimg.com/originals/24/5f/33/245f33d5b2bbc7de141c8f54bfeab550.gif")
       //o ngc q vai em cima
@@ -160,29 +128,7 @@ module.exports = {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Manipulação de imagens:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}laranjo\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}trump\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}wanted\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}primeiraspalavras\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}bolsonaro\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}cachorro\` <frase>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ad\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}arte\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}ata\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}beautiful\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}blur\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}confusedstonks\` <avatar> 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}delete\` <avatar> 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}facepalm\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}gay\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}hitler\` <avatar> 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}mm\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}notstonks\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}preso\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}rip\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}stonks\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}trash\` <avatar>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}triggered\` <avatar>
+  
       `)
       .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
@@ -192,15 +138,7 @@ module.exports = {
       let embed_7 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`**» Categoria de Música:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}play\` <música>
-      > <:spr4yxyz:837798446584168468> | \`${prefix}volume\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}letra\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}search\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}fila\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}skip\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}stop\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}pause\` 
-      > <:spr4yxyz:837798446584168468> | \`${prefix}despausar\` 
+
       `)
       .setImage("https://i.pinimg.com/originals/d9/d4/40/d9d4406eda8b13a30a6a0de486f93402.gif")
       msg.edit(embed_7)    
