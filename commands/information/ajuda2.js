@@ -23,7 +23,6 @@ module.exports = {
     let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
     let info = client.commands.filter((cmd) => cmd.category === 'info');
 
-
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
@@ -34,10 +33,9 @@ module.exports = {
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
       <a:6_:836268649790439464> | Manipulação de imagens
-      <:music:843602147051700284> | Música
       <:Voltar:836330128073687092> | Voltar
       \n » **Links:**
-      > [Me adicione](https://resolutebot.xyz)
+      > [Me adicione](https://invite.resolutebot.xyz)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
       \n » \`Desenvolvido por MrSprayX#0012 | Versão 0.0.5\`
       \n » \`Use ${prefix}report para reportar bugs.\`
@@ -52,7 +50,6 @@ module.exports = {
       msg.react(`<a:4_:836268669516251136>`);
       msg.react(`<a:5___:836268658795347990>`);
       msg.react(`<a:6_:836268649790439464>`);
-      msg.react(`<:music:843602147051700284>`);
     })
     
     //Emojis
@@ -132,16 +129,6 @@ module.exports = {
       `)
       .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
       msg.edit(embed_6)    
-    })
-
-    music.on(`collect`, r => {
-      let embed_7 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Música:**\n
-
-      `)
-      .setImage("https://i.pinimg.com/originals/d9/d4/40/d9d4406eda8b13a30a6a0de486f93402.gif")
-      msg.edit(embed_7)    
     })
 
     voltar.on(`collect`, r => {
