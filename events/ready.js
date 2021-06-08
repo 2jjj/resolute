@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports = async (client) => {
-    var numWorkers = require('os').cpus().length;
+    //var numWorkers = require('os').cpus().length;
 
     const status = [  
         {name: `s.help • ${client.guilds.cache.size} guilds.`, type: 'COMPETING'}, 
