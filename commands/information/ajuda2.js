@@ -81,12 +81,10 @@ module.exports = {
     outros.on(`collect`, r => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Outros comandos:**\n
-      `)
-      .setImage("https://i.imgur.com/VhLyg2r.gif")
-      .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
+      .setDescription(`<:y_pontinho:843648515695444019> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_3)
-      //r.users.remove(message.author.id)
+      r.users.remove(message.author.id)
     })
 
     economia.on(`collect`, r => {
