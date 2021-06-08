@@ -14,7 +14,7 @@ module.exports = {
     if (prefix === null) prefix = "s."
   
     var funn = client.commands.filter((cmd) => cmd.category === 'fun');
-    var economia = client.commands.filter((cmd) => cmd.category === 'economia');
+    var economia2 = client.commands.filter((cmd) => cmd.category === 'economia');
     var manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
     var mod = client.commands.filter((cmd) => cmd.category === 'mod');
     //let music = client.commands.filter((cmd) => cmd.category === 'musica');
@@ -56,7 +56,7 @@ module.exports = {
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 150000 })
     const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 150000 })
     const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 150000 })
-    const ticket = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 150000 })
+    const manipulacao2 = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 150000 })
     const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 150000 })
     const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 150000 })
 
@@ -90,33 +90,28 @@ module.exports = {
     economia.on(`collect`, r => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Economia:**\n
-
-      `)
-      .setImage("https://i.pinimg.com/originals/24/5f/33/245f33d5b2bbc7de141c8f54bfeab550.gif")
-      //o ngc q vai em cima
-      .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
+      .setDescription(`<:money1:846828402350489640> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_4)
+      r.users.remove(message.author.id)
     })
 
     configuraveis.on(`collect`, r => {
       let embed_5 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Configuraveis:**\n
-      > <:spr4yxyz:837798446584168468> | \`${prefix}setprefix\` <prefixo>
-      `)
-      .setImage("http://pa1.narvii.com/5763/85377e06886cbaa577b87952dd985919f3ad0e38_00.gif")
-      msg.edit(embed_5)    
+      .setDescription(`<:money1:846828402350489640> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
+      msg.edit(embed_5)
+      r.users.remove(message.author.id)   
     })
 
-    ticket.on(`collect`, r => {
+    manipulacao2.on(`collect`, r => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Manipulação de imagens:**\n
-  
-      `)
-      .setImage("http://38.media.tumblr.com/4f09c72a6141a021d65d002b13287231/tumblr_nme0vyx2BI1qdpo2no1_500.gif")
-      msg.edit(embed_6)    
+      .setDescription(`<:3624personframe:843854352934633542> Manipulação de imagens *[${manipulacao.size}]*:\n\n\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
+      msg.edit(embed_6)
+      r.users.remove(message.author.id)   
     })
 
     voltar.on(`collect`, r => {
