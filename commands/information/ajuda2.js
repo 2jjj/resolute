@@ -29,7 +29,7 @@ module.exports = {
       \n » **Categorias:**\n
       <a:1__:836268679263027230> | Moderação
       <a:2_:836268689484546088> | Diversão
-      <a:3___:836268637257990184> | Outros
+      <a:3___:836268637257990184> | Miscelânia
       <a:4_:836268669516251136> | Economia
       <a:5___:836268658795347990> | Configuráveis 
       <a:6_:836268649790439464> | Manipulação de imagens
