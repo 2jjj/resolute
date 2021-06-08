@@ -72,7 +72,7 @@ module.exports = {
     fun.on(`collect`, r => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${funn.size}]:`, `\`${funn.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:4693_pink_hair_popcorn:843542215708114994> Diversão *[${funn.size}]*:\n\n\`${funn.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_2)
       r.users.remove(message.author.id)
