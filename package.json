@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "0.0.6",
+  "version": "1.7.0",
   "description": "Resolute é um bot com múltiplos comandos de moderação, diversão, manipulações de imagens, etc!",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "colors": "^1.4.0",
     "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
+    "crystolnetwork-log": "^1.2.4",
     "discord-hybrid-sharding": "^1.0.9",
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.1",

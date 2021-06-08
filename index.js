@@ -13,6 +13,7 @@ const ms = require('ms');
 const ascii = require('ascii-table')
 let table = new ascii("Commands");
 const config = require("./config.json")
+const crystol = require("crystolnetwork-log");
 
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
@@ -47,7 +48,7 @@ client.on("message", async (message) => {
         if(!command) return;
 
         if (command) {
-            console.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}`)
+            crystol.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}`, "comandos.log", "America/Sao_Paulo")
             if(command.cooldown) {
                 if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[COOLDOWN] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
