@@ -13,15 +13,15 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
   
-    let fun = client.commands.filter((cmd) => cmd.category === 'fun');
-    let economia = client.commands.filter((cmd) => cmd.category === 'economia');
-    let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+    var funn = client.commands.filter((cmd) => cmd.category === 'fun');
+    var economia = client.commands.filter((cmd) => cmd.category === 'economia');
+    var manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
     var mod = client.commands.filter((cmd) => cmd.category === 'mod');
     //let music = client.commands.filter((cmd) => cmd.category === 'musica');
-    let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
-    let config = client.commands.filter((cmd) => cmd.category === 'config');
-    let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-    let info = client.commands.filter((cmd) => cmd.category === 'info');
+    var miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
+    var config = client.commands.filter((cmd) => cmd.category === 'config');
+    var minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+    var info = client.commands.filter((cmd) => cmd.category === 'info');
 
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
@@ -72,12 +72,10 @@ module.exports = {
     fun.on(`collect`, r => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`**» Categoria de Diversão:**\n
-      `)
-      .setImage("https://i.pinimg.com/originals/58/58/97/58589775e6dfe9aad63363e06a38a3ea.gif")
-      .setThumbnail("https://media0.giphy.com/media/l2SpN0gAfO6yfw4A8/source.gif")
+      .addField(`<:4693_pink_hair_popcorn:843542215708114994> **Diversão** [${funn.size}]:`, `\`${funn.map(cmd => cmd.name).join(' | ')}\``)
+      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_2)
-      //r.users.remove(message.author.id)
+      r.users.remove(message.author.id)
     })
   
     outros.on(`collect`, r => {
