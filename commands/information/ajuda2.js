@@ -61,7 +61,7 @@ module.exports = {
     const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 150000 })
 
     moderacao.on(`collect`, r => {
-       let embed_1 = new Discord.MessageEmbed()
+      let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`<:staff:843586666845044736> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
