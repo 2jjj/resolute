@@ -63,7 +63,7 @@ module.exports = {
     moderacao.on(`collect`, r => {
        let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .addField(`<:staff:843586666845044736> Moderação *[${mod.size}]*:\n`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:staff:843586666845044736> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_1)
       r.users.remove(message.author.id)
