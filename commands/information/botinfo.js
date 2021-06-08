@@ -6,7 +6,7 @@ module.exports = {
   aliases: ['sobre', 'bot', 'aboutbot'],
   cooldown: 1000 * 2, 
   description: "Minhas informações.",
-  category: "oinfoutros",
+  category: "info",
   usage: "",
 
   async run (client, message, args) {

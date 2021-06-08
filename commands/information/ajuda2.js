@@ -1,7 +1,15 @@
 const db = require("quick.db");
 const Discord = require("discord.js")
 
-exports.run = async (client, message, args) => {
+module.exports = {
+  name: "ajuda2",
+  aliases: ['help2'],
+  cooldown: 1000 * 2, 
+  description: "Minhas informações.",
+  category: "oinfoutros",
+  usage: "",
+
+  async run (client, message, args) {
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
   
@@ -221,4 +229,4 @@ exports.run = async (client, message, args) => {
       msg.edit(embed)
   });
 })
-}
+}}
