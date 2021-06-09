@@ -63,7 +63,7 @@ module.exports = {
     moderacao.on(`collect`, r => {
       let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:staff:843586666845044736> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:Mod:848281446837387295> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_1)
       r.users.remove(message.author.id)
@@ -72,7 +72,7 @@ module.exports = {
     fun.on(`collect`, r => {
       let embed_2 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:4693_pink_hair_popcorn:843542215708114994> Diversão *[${funn.size}]*:\n\n\`${funn.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`😂 Diversão *[${funn.size}]*:\n\n\`${funn.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_2)
       r.users.remove(message.author.id)
@@ -81,7 +81,7 @@ module.exports = {
     outros.on(`collect`, r => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:y_pontinho:843648515695444019> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:pontin:852197383974551582> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_3)
       r.users.remove(message.author.id)
@@ -90,7 +90,7 @@ module.exports = {
     economia.on(`collect`, r => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:money1:846828402350489640> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:dinheiro:852197651184091216> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_4)
       r.users.remove(message.author.id)
@@ -99,7 +99,7 @@ module.exports = {
     configuraveis.on(`collect`, r => {
       let embed_5 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:money1:846828402350489640> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:ybs_config:851954339735666729> Configuráveis. *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_5)
       r.users.remove(message.author.id)   
@@ -108,7 +108,7 @@ module.exports = {
     manipulacao2.on(`collect`, r => {
       let embed_6 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:3624personframe:843854352934633542> Manipulação de imagens *[${manipulacao.size}]*:\n\n\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:ybs_usuarios:843619560316993567> Manipulação de imagens *[${manipulacao.size}]*:\n\n\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_6)
       r.users.remove(message.author.id)   
