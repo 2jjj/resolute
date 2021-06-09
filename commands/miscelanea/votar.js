@@ -16,7 +16,7 @@ module.exports = {
 
     var content = args.join(' ')
 
-    if (content.length > 600) { return message.inlineReply('<:Resoluteinfo:844971535927083088> O conteúdo a ser votado não pode passar de **600 caracteres.**') }
+    if (content.length > 600) { return message.inlineReply('<a:SETA:852194614927818812> O conteúdo a ser votado não pode passar de **600 caracteres.**') }
 
     var embed = new Discord.MessageEmbed()
         .setColor('BLUE')
