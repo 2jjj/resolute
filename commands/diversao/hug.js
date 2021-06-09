@@ -20,7 +20,7 @@ var list = [
 var rand = list[Math.floor(Math.random() * list.length)];
 let user = message.mentions.users.first() || client.users.cache.get(args[0]);
 if (!user) {
-return message.reply('<:info:835206734225473546> | lembre-se de mencionar um usuário válido para abraçar!');
+return message.reply('<:ybs_fixado2:851955202374107157> **|** lembre-se de mencionar um usuário válido para abraçar!');
 }
 /*
 message.channel.send(`${message.author.username} **acaba de abraçar** ${user.username}! :heart:`, {files: [rand]});
@@ -29,7 +29,7 @@ let avatar = message.author.displayAvatarURL({format: 'png'});
   const embed = new Discord.MessageEmbed()
         .setTitle('Hug')
         .setColor('#000000')
-        .setDescription(`${message.author} acaba de abraçar ${user}`)
+        .setDescription(`${message.author} acaba de abraçar o ${user}`)
         .setImage(rand)
         .setTimestamp()
         .setThumbnail(avatar)
