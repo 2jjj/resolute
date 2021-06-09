@@ -1,10 +1,10 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "servericon",
-    aliases: ['serveravatar'],
+    name: "resetnick",
+    aliases: [],
     cooldown: 1000 * 2, 
-    description: "icone do servidor.",
+    description: "Resetar o nick de um usuário.",
     category: "mod",
     usage: "",
 
