@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Mutar alguém!",
     category: "mod",
-    usage: "@user <tempo>",
+    usage: "@user",
 
     async run (client, message, args) {
 
