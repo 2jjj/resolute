@@ -48,7 +48,7 @@ client.on("message", async (message) => {
         if(!command) return;
 
         if (command) {
-            crystol.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${commandName} usado por ${message.author.tag}`)))
+            crystol.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${commandName} usado por ${message.author.tag}(${message.author.id})`)))
             if(command.cooldown) {
                 if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`[COOLDOWN] Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
