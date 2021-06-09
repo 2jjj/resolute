@@ -10,7 +10,7 @@ module.exports = {
 
     async run (client, message, args) {
 
-        if(!args.length) return message.reply('Please specify a text to translate.')
+        if(!args.length) return message.reply('Especifique o texto.')
         const specialCodes = {
             '0': ':zero:',
             '1': ':one:',
