@@ -1,11 +1,9 @@
-const { ShardingManager } = require('discord.js');
-const config = require("./config.json")
-
-const manager = new ShardingManager('./index.js', {
-    totalShards: 'auto', 
-    token: config.token
-});
+const config = require("./config.json");
+const { ShardingManager } = require("discord.js"),
+  manager = new ShardingManager(`./index.js`, {
+    token: config.token,
+    totalShards: 'auto',
+    respawn: true,
+  });
 
 manager.spawn();
-
-manager.on('shardCreate', (shard) => console.log(`Shard ${shard.id} pronta.`));

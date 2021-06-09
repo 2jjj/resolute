@@ -5,7 +5,7 @@ module.exports = async (client) => {
 
     const status = [  
         {name: `s.help • ${client.guilds.cache.size} guilds & ${client.users.cache.size} users.`, type: 'PLAYING'}, 
-        {name: `Dev: Spray#0007 [${client.guilds.cache.size}] [${client.users.cache.size}]`, type: 'PLAYING'}, 
+        {name: `Shard ${message.guild.shard.id} [${client.shard.count}]`, type: 'PLAYING'}, 
       ] 
       function Presence() { 
               const base = status[Math.floor(Math.random() * status.length)] 
