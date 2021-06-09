@@ -12,18 +12,13 @@ module.exports = {
 
     const member = message.mentions.members.first();
 
-    if (!member) return message.reply("Especifique o usuário.");
-
-    const arguments = args.slice(1).join(" ");
-
-    if (!arguments) return message.reply("Especifique o nickname!");
+    if (!member) return message.reply("Especifique o membro.");
 
     try {
-      member.setNickname(arguments);
+      member.setNickname(null);
     } catch (err) {
-      console.log(err);
       message.reply(
-        "eu não tenho permissão de setar " + member.toString() + " nickname!"
+        "Eu não tenho permissão para resetar " + member.toString() + " nickname!"
       );
     }
   },
