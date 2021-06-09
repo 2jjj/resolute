@@ -31,7 +31,7 @@ let avatar = message.author.displayAvatarURL({format: 'png'});
         .setImage(rand)
         .setTimestamp()
         .setThumbnail(avatar)
-        .setFooter('vai encarar?')
+        .setFooter('Vai encarar?')
         .setAuthor(message.author.tag, avatar);
       message.channel.send(embed);
 }}
