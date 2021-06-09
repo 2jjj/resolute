@@ -30,6 +30,6 @@ module.exports = {
     limit: deleteCount + 1
   });
   message.channel.bulkDelete(fetched); {
-      await message.channel.send(`🔨 | O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`); 
+      await message.channel.send(`🔨 **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`); 
   }
 }};
