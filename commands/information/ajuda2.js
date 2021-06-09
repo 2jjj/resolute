@@ -63,7 +63,7 @@ module.exports = {
     moderacao.on(`collect`, r => {
       let embed_1 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:Mod:848281446837387295> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:ybs_defesa:852215040110362675> Moderação *[${mod.size}]*:\n\n\`${mod.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_1)
       r.users.remove(message.author.id)
@@ -81,7 +81,7 @@ module.exports = {
     outros.on(`collect`, r => {
       let embed_3 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:pontin:852197383974551582> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:ybs_status:851954702840627200> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_3)
       r.users.remove(message.author.id)
@@ -90,7 +90,7 @@ module.exports = {
     economia.on(`collect`, r => {
       let embed_4 = new Discord.MessageEmbed()
       .setColor('#e1ff00')
-      .setDescription(`<:dinheiro:852197651184091216> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
+      .setDescription(`<:ybs_dinheiro:852213985356939314> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_4)
       r.users.remove(message.author.id)
