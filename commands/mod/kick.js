@@ -25,15 +25,15 @@ module.exports = {
       if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
         let target = message.mentions.members.first()
 
-        if(!target) return message.reply("<:setaazul:843588568605523969> Por favor, mencione alguém para kickar!")
+        if(!target) return message.reply("<:ybs_mencao:851954512540991490> **|** Por favor, mencione alguém para kickar!")
 
         if(target.id === message.author.id) {
-            return message.reply("<:setaazul:843588568605523969> Você não pode se kickar!")
+            return message.reply("<:ybs_duvida:851954411348820018> **|** Você não pode se kickar!")
         }
 
         let reason = args.slice(1).join(' ')
 
-        if(!reason) return message.reply("<:setaazul:843588568605523969> Por favor, dê um motivo!")
+        if(!reason) return message.reply("<:ybs_duvida:851954411348820018> **|** Por favor, dê um motivo!")
 
         let embed2 = new discord.MessageEmbed()
         .setTitle("Resolute - Membro Kickado")
