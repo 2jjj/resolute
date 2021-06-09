@@ -21,7 +21,7 @@ module.exports = {
             if (getEmoji.id) {
                 const emojiExt = getEmoji.animated ? '.gif' : '.png';
                 const emojiURL = `https://cdn.discordapp.com/emojis/${getEmoji.id + emojiExt}`;
-                message.guild.emojis.create(emojiURL, getEmoji.name).then(emoji => message.channel.send(`Sucesso, o emoji \`${emoji.name}\` foi adicionado ao servidor.`))
+                message.guild.emojis.create(emojiURL, getEmoji.name).then(emoji => message.channel.send(`<:${emoji.name}:${emoji.id}> **|** ${message.author} Emoji adicionado com sucesso!`))
             }
         }
     }

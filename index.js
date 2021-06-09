@@ -73,6 +73,6 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 });
 });
 
-//NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.N3984ZANzCzCFoD74n8EIEJbqRQ
+//NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.SpT8bBRR4P7A3P45nmg7sAT3myQ
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o
 client.login(config.token)
