@@ -31,7 +31,7 @@ let avatar = message.author.displayAvatarURL({format: 'png'});
   const embed = new Discord.MessageEmbed()
         .setTitle('Kiss')
         .setColor('#000000')
-        .setDescription(`${message.author} acaba de beijar ${user}`)
+        .setDescription(`${message.author} acaba de beijar o ${user}`)
         .setImage(rand)
         .setTimestamp()
         .setThumbnail(avatar)
