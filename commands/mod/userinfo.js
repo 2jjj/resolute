@@ -36,14 +36,14 @@ module.exports = {
                 //.setAuthor(member.user.username)
                 .setThumbnail((target.displayAvatarURL))
                 .setColor("#00ff00")
-                .addField("<:ybs_canal:851954875343962183> | User", `${member.user.tag}`, inline)
-                .addField("<:ybs_usuarios:851954718724980757> | ID", member.user.id, inline)
-                .addField("<:Resoluteinfo:844971535927083088> | Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
-                .addField("<:ybs_bot:851955104345227294> | Bot", `${bot}`,inline, true)
-                .addField("<:ybs_fixado2:851955202374107157>| Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("<:ybs_fixado2:851955202374107157> | Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
-                .addField("<:ybs_duvida:851954411348820018> | Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
-                .addField("<:ybs_duvida:851954411348820018> | Entrou no discord em", member.user.createdAt)
+                .addField("<a:SETA:852194614927818812> **|** User", `${member.user.tag}`, inline)
+                .addField("<a:SETA:852194614927818812> **|** ID", member.user.id, inline)
+                .addField("<a:SETA:852194614927818812> **|** Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
+                .addField("<a:SETA:852194614927818812> **|** Bot", `${bot}`,inline, true)
+                .addField("<a:SETA:852194614927818812> **|** Status", `${status[member.user.presence.status]}`, inline, true)
+                .addField("<a:SETA:852194614927818812> **|** Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
+                .addField("<a:SETA:852194614927818812> **|** Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
+                .addField("<a:SETA:852194614927818812> **|** Entrou no discord em", member.user.createdAt)
                 .setFooter(`Informação sobre ${member.user.username}`)
                 .setTimestamp()
     
@@ -51,4 +51,4 @@ module.exports = {
 
             message.delete();
     }
-  }
+  }   
