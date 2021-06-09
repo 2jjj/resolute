@@ -4,7 +4,7 @@ module.exports = async (client) => {
     //var numWorkers = require('os').cpus().length;
 
     const status = [  
-        {name: `s.help • ${client.guilds.cache.size} guilds & ${client.users.cache.size} users • Shards [${client.shard.count}]`, type: 'PLAYING'}, 
+        {name: `s.help • ${client.guilds.cache.size} guilds & ${client.users.cache.size} users • Shards: ${client.shard.count}`, type: 'PLAYING'}, 
         {name: `Shards [${client.shard.count}]`, type: 'PLAYING'}, 
       ] 
       function Presence() { 
