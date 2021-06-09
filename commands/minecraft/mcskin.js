@@ -5,7 +5,7 @@ module.exports = {
     description: "O bot vai mandar a skin de algum player de minecraft.",
     aliases: [],
     cooldown: 1000 * 2, 
-    category: "games",
+    category: "minecraft",
     usage: "<nickname>",
 
     run: async(client, message, args) => { 
