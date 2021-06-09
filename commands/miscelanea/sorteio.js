@@ -16,30 +16,30 @@ module.exports = {
     
     message.delete().catch(() => null);
     
-    if (!args[0]) return message.channel.send(`<:spr4yxyz:837798446584168468> Você não específicou tempo.`);
+    if (!args[0]) return message.channel.send(`<a:SETA:852194614927818812> Você não específicou tempo.`);
     
     if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
-    `<:spr4yxyz:837798446584168468> Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
+    `<a:SETA:852194614927818812> Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
     );
     
-    if (isNaN(args[0][0])) return message.channel.send(`<:spr4yxyz:837798446584168468> Isto não é um número!`);
+    if (isNaN(args[0][0])) return message.channel.send(`<a:SETA:852194614927818812> Isto não é um número!`);
     
     let channel = message.mentions.channels.first();
     
     if (!channel) return message.channel.send(
-    `<:spr4yxyz:837798446584168468> Você precisa marcar o canal para o sorteio!`
+    `<a:SETA:852194614927818812> Você precisa marcar o canal para o sorteio!`
     );
     
     let prize = args.slice(2).join(" ");
     
-    if (!prize) return message.channel.send(`<:spr4yxyz:837798446584168468> Você precisa escrever o prêmio!`);
+    if (!prize) return message.channel.send(`<a:SETA:852194614927818812> Você precisa escrever o prêmio!`);
     
-    message.channel.send(`*<:setaazul:843588568605523969> Sorteio criado em ${channel}*`);
+    message.channel.send(`*<a:SETA:852194614927818812> Sorteio criado em ${channel}*`);
     
     let Embed = new MessageEmbed()
     .setTitle(`Sorteio!`)
     .setDescription(
-    `<:spr4yxyz:837798446584168468> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
+    `<a:SETA:852194614927818812> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
     )
     .setTimestamp(Date.now() + ms(args[0]))
     .setColor("#00FFFF");
@@ -55,7 +55,7 @@ module.exports = {
     }
 
     let ganhador = m.reactions.cache.get("🎉").users.cache.filter((u) => !u.bot).random();
-    channel.send(`<:winner:844591002638745600> **Parabéns** ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
+    channel.send(`**Parabéns** ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
     
     }, ms(args[0]));
     },
