@@ -37,6 +37,6 @@ module.exports = {
             .setColor("#6959CD")
         message.inlineReply(translateEmbed)
     }).catch(err => {
-        message.inlineReply("Eu tive um problema com a tradução.\nTente novamente com outro idioma.")
+        message.inlineReply("<a:SETA:852194614927818812> Eu tive um problema com a tradução.\nTente novamente com outro idioma.")
     })
 }}
