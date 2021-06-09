@@ -8,6 +8,7 @@ module.exports = {
     name: "instagram",
     aliases: ["insta"],
     category: "outros",
+    cooldown: 1000 * 2, 
     description: "insta",
     usage: "<name>",
     run: async (client, message, args) => {

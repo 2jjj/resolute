@@ -1,7 +1,5 @@
 const Discord = require('discord.js')
 
-
-
 module.exports = {
     name: "jokenpo",
     aliases: ['pedrapapeltesoura'],
