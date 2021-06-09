@@ -1,10 +1,10 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "servericon",
-    aliases: ['serveravatar'],
+    name: "nick",
+    aliases: [],
     cooldown: 1000 * 2, 
-    description: "icone do servidor.",
+    description: "Nick",
     category: "mod",
     usage: "",
 
