@@ -25,7 +25,7 @@ module.exports = {
         let format = new Discord.MessageEmbed()
             .setColor('#8B0000')
             .setTitle('Siga o formato correto')
-            .setDescription('`' + prefix + 'setprefix NovoPrefixo`\n \nExemplo: `' + prefix + 'setprefix !`')
+            .setDescription('`' + prefix + 'setprefix <prefixo_novo>`\n \nExemplo: `' + prefix + 'setprefix !`')
         return message.inlineReply(format)
     }
 
