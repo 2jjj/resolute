@@ -25,13 +25,13 @@ module.exports = {
     .setColor("RANDOM")
     .setThumbnail(avatar)
     .addFields(
-      { name: 'ﾠ', value: '<:ybs_dev:851954427572912149> | **Desenvolvedor:** <@836345581424738354>, <@798574984582791208>' },
-      { name: 'ﾠ', value: `<:ybs_config:851954339735666729> | **Bot criado no dia:** **11/10/2020**`, inline: false },
-      { name: 'ﾠ', value: `<:ybs_duvida:851954411348820018> | **Estou em ${client.guilds.cache.size} servidores!**, **com ${client.users.cache.size} pessoas!**`, inline: false },
-      { name: 'ﾠ', value: `<:3434_Discord_js_logo:845779460899733553> | **Versão discord.js:** **${version}**`, inline: false },
-      { name: 'ﾠ', value: `<:node:845780252940959744> | **Versão Node.JS:** **${process.version}**`, inline: false },
-      { name: 'ﾠ', value: `<:ybs_status:851954702840627200> | **Estou na versão** **1.7.0B**`, inline: false },
-      { name: 'ﾠ', value: `<:ybs_bot:851955104345227294> | [Me adicione!](https://resolutebot.xyz)`, inline: false },
+      { name: 'ﾠ', value: '<a:SETA:852194614927818812> **Desenvolvedor:** <@836345581424738354>, <@798574984582791208>' },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Bot criado no dia:** **11/10/2020**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Estou em ${client.guilds.cache.size} servidores!**, **com ${client.users.cache.size} pessoas!**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Versão discord.js:** **${version}**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Versão Node.JS:** **${process.version}**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Estou na versão** **1.7.0B**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> [Me adicione!](https://resolutebot.xyz)`, inline: false },
     )
     await message.channel.send(embed);
 }
