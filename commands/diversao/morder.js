@@ -67,7 +67,7 @@ async run (client, message, args) {
   let avatar1 = user.displayAvatarURL({ format: 'png' })
   var embed = new Discord.MessageEmbed()
     .setColor('BLUE')
-    .setAuthor(message.author.username + ` está mordendo ${user.username}`, avatar)
+    .setAuthor(message.author.username + ` está mordendo o ${user.username}`, avatar)
     .setImage(rand)
     .setFooter('Clique em 🔁 para retribuir')
 
