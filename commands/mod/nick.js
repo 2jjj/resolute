@@ -4,7 +4,7 @@ module.exports = {
     name: "nick",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Nick",
+    description: "Setar Nickname",
     category: "mod",
     usage: "",
 
