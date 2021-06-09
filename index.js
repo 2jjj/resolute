@@ -14,6 +14,8 @@ const ascii = require('ascii-table')
 let table = new ascii("Commands");
 const config = require("./config.json")
 const crystol = require("crystolnetwork-log");
+require('discord-buttons')(client); // Starting the discord-buttons class
+
 
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');

@@ -20,6 +20,7 @@
     "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
     "crystolnetwork-log": "^1.2.4",
+    "discord-buttons": "^3.2.1",
     "discord-hybrid-sharding": "^1.0.9",
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.1",
