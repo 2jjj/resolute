@@ -46,7 +46,7 @@ module.exports = {
                 } else if (me === reaction.emoji.name) {
                     return message.reply("É um empate!");
                 } else {
-                    return message.reply("você ganhou!");
+                    return message.reply("Você ganhou!");
                 }
             })
             .catch(collected => {
