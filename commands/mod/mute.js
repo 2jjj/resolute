@@ -17,7 +17,7 @@ module.exports = {
         const role = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted')
         if(!role) {
             try {
-                message.channel.send('Muted role is not found, attempting to create muted role.')
+                message.channel.send('O cargo de mute não está criado, irei criá-lo.')
 
                 let muterole = await message.guild.roles.create({
                     data : {
@@ -31,14 +31,14 @@ module.exports = {
                         ADD_REACTIONS: false
                     })
                 });
-                message.channel.send('Muted role has sucessfully been created.')
+                message.channel.send('Cargo de mute foi criado.')
             } catch (error) {
                 console.log(error)
             }
         };
         let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted')
-        if(Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} has already been muted.`)
+        if(Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} já está mutado.`)
         await Member.roles.add(role2)
-        message.channel.send(`${Member.displayName} is now muted.`)
+        message.channel.send(`${Member.displayName} está mutado.`)
     }
 }
