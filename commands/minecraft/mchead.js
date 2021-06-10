@@ -6,7 +6,7 @@ module.exports = {
     category: "minecraft",
     usage: "<nickname>",
 
-  async run({ message, args, prefix, author }, t) {
+  async run({ message, args }, t) {
     const nick = args[0];
 
     if (!nick)
@@ -14,8 +14,7 @@ module.exports = {
         `${message.author}, você deve inserir um nick de uma skin de minecraft.`
       );
 
-    const EMBED = new ClientEmbed(author)
-
+    const EMBED = new Discord.MessageEmbed()
       .setTitle(`${Emojis.Minecraft} - Nick: ${nick}`)
       .setImage(`https://mc-heads.net/head/${nick}/200`);
 
