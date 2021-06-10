@@ -18,7 +18,7 @@ module.exports = {
     .setColor(`#4cd8b2`) 
     .setTitle(`Avatar de ${user.username}`) 
     .setImage(avatar) 
-    .setFooter(`» Autor: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}));
+    .setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}));
  await message.channel.send(embed); 
 
 }
