@@ -10,9 +10,6 @@ module.exports = {
   usage: "<@user>",
 
   async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) { prefix = "s." }
     
   let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 
