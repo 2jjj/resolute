@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Calculadora",
     category: "outros",
-    usage: "<emoji_name>",
+    usage: "",
   
     async run (client, message, args) {
         await Calculator(message)
