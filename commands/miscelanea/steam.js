@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 var steam = require('steam-provider') 
-const db = require("quick.db");
 
 var provider = new steam.SteamProvider();
 
@@ -13,9 +12,6 @@ module.exports = {
     usage: "s.steam <jogo>",
 
     async run (client, message, args) {
-
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
                         
         let arg = args.join(' ') 
         if(!arg) return message.channel.send(`> ${message.author}, Você precisa falar um jogo para eu pesquisar.`) 

@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 const math = require('mathjs')
-const db = require("quick.db")
 
 module.exports = {
     name: "calculadora",
@@ -11,9 +10,6 @@ module.exports = {
     usage: "/|+|-",
 
     async run (client, message, args) {
-
-    let color = await db.get(`color_${message.author.id}`)
-    if (color === null) color = 'RANDOM'
 
     const noargs = new Discord.MessageEmbed()
         .setColor('BLUE')

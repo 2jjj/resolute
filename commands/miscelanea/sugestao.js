@@ -1,5 +1,4 @@
 const { MessageEmbed } = require('discord.js')
-const db = require("quick.db")
 
 module.exports = {
   name: "sugestao",
@@ -10,9 +9,6 @@ module.exports = {
   usage: "<#canal> [conteudo]",
 
   async run (client, message, args) {
-    
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
 
         let channelID = message.mentions.channels.first()
         let theDescription = args.slice(1).join(" ")
