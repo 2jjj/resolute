@@ -9,7 +9,6 @@ module.exports = {
 
   async run (client, message, args) {
 
-    
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
