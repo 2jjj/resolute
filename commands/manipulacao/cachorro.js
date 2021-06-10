@@ -1,8 +1,4 @@
 const jimp = require("jimp")
-const Discord = require('discord.js')
-const cooldowns = {}
-const ms = require("ms")
-const db = require("quick.db")
 
 module.exports = {
     name: "cachorro",

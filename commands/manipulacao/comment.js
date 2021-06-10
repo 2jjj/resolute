@@ -1,6 +1,5 @@
 const canvacord = require('canvacord')
 const Discord = require('discord.js');
-const db = require("quick.db");
 
 module.exports = {
     name: "comment",
