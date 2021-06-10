@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const db = require("quick.db");
 
 module.exports = {
   name: "uptime",
@@ -10,9 +9,7 @@ module.exports = {
   usage: "",
 
   async run (client, message, args) {
-    
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
+
     let totalSeconds = client.uptime / 1000;
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);

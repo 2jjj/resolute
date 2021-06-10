@@ -1,4 +1,3 @@
-const db = require("quick.db");
 const Discord = require("discord.js")
 
 module.exports = {
@@ -10,8 +9,6 @@ module.exports = {
   usage: "",
 
   async run (client, message, args) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
   
     var funn = client.commands.filter((cmd) => cmd.category === 'fun');
     var economia2 = client.commands.filter((cmd) => cmd.category === 'economia');
