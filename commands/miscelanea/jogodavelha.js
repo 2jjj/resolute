@@ -1,5 +1,3 @@
-const { tictactoe } = require('reconlx')
-
 module.exports = {
     name: "jogodavelha",
     aliases: ["tictactoe"],
@@ -8,12 +6,17 @@ module.exports = {
     usage: "<name>",
 
     run : async(client, message, args) => {
-        const member = message.mentions.members.first() 
-            if(!member)  return  message.channel.send('Por favor mencione o usuário que deseja jogar!')
-        
-        new tictactoe({
-            player_two: member, 
-            message: message
+        const opponent = message.mentions.users.first();
+        if (!opponent) return message.channel.send(`Mencione a pessao que deseja jogar.`);
+        const { TicTacToe } = require('weky')
+        const game = new TicTacToe({
+            message: message,
+            opponent: opponent, //opponent
+            xColor: 'red', //x's color
+            oColor: 'blurple', //zero's color
+            xEmoji: '❌',  //the x emoji
+            oEmoji: '0️⃣' ,//the zero emoji
         })
+        game.start()
     }
 }
