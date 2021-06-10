@@ -15,7 +15,7 @@ module.exports = {
             .setStyle('gray')
             .setID('amogus');
 
-        let msg = await message.channel.send(`Sussy bruh`, {
+        let msg = await message.channel.send(`Sus`, {
             button: butn,
         });
 
