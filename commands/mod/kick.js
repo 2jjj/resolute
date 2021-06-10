@@ -1,4 +1,4 @@
-const discord = require('discord.js')
+const Discord = require('discord.js')
 
 module.exports = {
     name: "kick",
@@ -35,7 +35,7 @@ module.exports = {
 
         if(!reason) return message.reply("<:ybs_duvida:851954411348820018> **|** Por favor, dê um motivo!")
 
-        let embed2 = new discord.MessageEmbed()
+        let embed2 = new Discord.MessageEmbed()
         .setTitle("Resolute - Membro Kickado")
         .setColor('RED')
         .addField("Usuário", `${target.user}`)
