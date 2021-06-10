@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: 'Informações de um cargo.',
     category: "mod",
-    usage: "",
+    usage: "@cargo",
 
     async run (client, message, args) {
 
@@ -53,7 +53,7 @@ module.exports = {
         }
 
         if(!role)
-        return message.reply(`Provide a role!`)
+        return message.reply(`Mencione o cargo!`)
 
         const rolePermissions = role.permissions.toArray();
         const finalPermissions = [];
