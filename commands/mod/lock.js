@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-const db = require("quick.db")
 
 module.exports = {
     name: "lock",
@@ -33,10 +32,6 @@ module.exports = {
     .addField(`<:bloqueado:844640110203895829> » Este canal foi bloqueado.`, `Bloqueado por ${message.author}`)
     .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
-
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
 
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(embed1);
 
