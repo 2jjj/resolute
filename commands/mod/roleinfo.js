@@ -1,9 +1,15 @@
 const moment = require('moment');
 const { MessageEmbed } = require("discord.js")
+
 module.exports = {
     name: "roleinfo",
-    aliases: ["role"],
-run: async(client, message, args) => {
+    aliases: ['ri'],
+    cooldown: 1000 * 2, 
+    description: 'Informações de um cargo.',
+    category: "mod",
+    usage: "",
+
+    async run (client, message, args) {
 
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
