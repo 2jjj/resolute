@@ -1,24 +1,22 @@
+const Discord = require ("discord.js")
+
 module.exports = {
     name: "mcplayer",
-    description: "Comando para pegar o Player de uma Skin de Minecraft.",
+    description: "player de minecraft.",
     aliases: [],
     cooldown: 1000 * 2, 
     category: "minecraft",
     usage: "<nickname>",
 
-  async run({ message, args, prefix, author }, t) {
-    const nick = args[0];
+    run: async(client, message, args) => { 
 
-    if (!nick)
-      return message.channel.send(
-        `${message.author}, você deve inserir um nick de uma skin de minecraft.`
-      );
+        let embed = new Discord.MessageEmbed()
+        .setTitle(`Skin de: ${args[0]}`)
+        .setImage(`https://mc-heads.net/player/${args[0]}`)
+        .setColor("RANDOM")
+        .setTimestamp()
 
-    const EMBED = new ClientEmbed(author)
-
-      .setTitle(`${Emojis.Minecraft} - Nick: ${nick}`)
-      .setImage(`https://mc-heads.net/player/${nick}`);
-
-    message.channel.send(EMBED);
-  }
-};
+        message.channel.send(embed)
+  
+    }
+}
