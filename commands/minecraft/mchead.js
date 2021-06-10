@@ -1,3 +1,5 @@
+const Discord = require("discord.js")
+
 module.exports = {
     name: "mcbust",
     description: "Comando para pegar o Head de uma Skin de Minecraft.",
