@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Faça um sorteio.",
     category: "outros",
-    usage: "<#canal> [Premio]",
+    usage: "<tempo> <#canal> [Premio]",
 
  async run (client, message, args) {
      
