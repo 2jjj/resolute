@@ -10,21 +10,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-    const embed1 = new Discord.MessageEmbed()
-    .setTitle("Sem permissão.")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`Você não possui a permissão de`, `GERENCIAR CANAIS`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
-
-    const embed2 = new Discord.MessageEmbed()
-    .setTitle("Este canal já está bloqueado.")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
-
     const embed3 = new Discord.MessageEmbed()
     .setTitle("Resolute")
     .setColor("#ff0000")
@@ -33,9 +18,9 @@ module.exports = {
     .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
     .setTimestamp();
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(embed1);
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Você não possui a permissão de \`GERENCIAR CANAIS\``);
 
-    if(db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
+    if(db.fetch(`lock.${message.channel.id}`)) return message.reply("<a:SETA:852194614927818812> Este canal já está bloqueado.")
 
     let msg = await message.channel.send("Sucesso!")
 
@@ -45,7 +30,7 @@ module.exports = {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit(embed3)
+        msg.edit(`:tada: **|** @MrSprayX Canal bloqueado com sucesso! Use +unlock para destravar!`)
 
     }catch(e){
         message.channel.send(e)
