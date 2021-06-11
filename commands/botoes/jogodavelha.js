@@ -7,7 +7,7 @@ module.exports = {
 
     run : async(client, message, args) => {
         const opponent = message.mentions.users.first();
-        if (!opponent) return message.channel.send(`Mencione a pessao que deseja jogar.`);
+        if (!opponent) return message.channel.send(`Mencione a pessoa que deseja jogar.`);
         const { TicTacToe } = require('weky')
         const game = new TicTacToe({
             message: message,
