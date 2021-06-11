@@ -18,7 +18,7 @@ module.exports = {
         .setColor("#ff0000")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .addField(`Você não possui a permissão de`, `KICK_MEMBERS`)
-        .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
+        .setFooter("Resolute", message.author.displayAvatarURL())
         .setTimestamp();
 
 
