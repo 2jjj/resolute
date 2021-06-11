@@ -3,7 +3,7 @@ const ms = require("ms");
 const db = require("quick.db");
 
 module.exports = {
-    name: "votar",
+    name: "sorteio",
     aliases: [],
     cooldown: 1000 * 2, 
     description: "Faça um sorteio.",
