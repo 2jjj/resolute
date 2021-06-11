@@ -13,7 +13,6 @@
 - Manipulações de imagens
 - Sistema de ticket
 - Sistema de moderação avançado
-- Sistema de música
 - Sistema de SetPrefix
 - SetPrefix
 - Sorteios
