@@ -1,3 +1,4 @@
+/*
 const Discord = require("discord.js")
 
 module.exports = async (client, guild) => {
@@ -12,3 +13,4 @@ const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNb
     .setColor('#FFC4E7')
     webhook.send(embed);
 }
+*/
