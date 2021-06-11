@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['calc'],
     cooldown: 1000 * 2, 
     description: "Calculadora",
-    category: "outros",
+    category: "botoes",
     usage: "",
   
     async run (client, message, args) {

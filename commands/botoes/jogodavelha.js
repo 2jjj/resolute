@@ -1,7 +1,8 @@
 module.exports = {
     name: "jogodavelha",
     aliases: ["tictactoe"],
-    category: "outros",
+    category: "botoes",
+    cooldown: 1000 * 2, 
     description: "Jogo da velha!",
     usage: "<name>",
 
