@@ -14,7 +14,7 @@ async run (client, message, args) {
     const bans = await message.guild.fetchBans(); 
 
     if (!bans.first()) 
-        return message.channel.send('<:4693_pink_hair_popcorn:843542215708114994> Este servidor não tem membros banidos!');
+        return message.channel.send('> Este servidor não tem membros banidos!');
     
     let msg = '';
 
@@ -23,5 +23,5 @@ async run (client, message, args) {
         msg += `\`${user.user.tag}\`, `;
     });
 
-    message.channel.send('<:ban:843861447522910230> Lista de membros banidos:\n' + msg, { split: true });
+    message.channel.send('> Lista de membros banidos:\n' + msg, { split: true });
 }}
