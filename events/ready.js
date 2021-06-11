@@ -1,5 +1,3 @@
-const Discord = require("discord.js")
-
 module.exports = async (client) => {
     //var numWorkers = require('os').cpus().length;
 

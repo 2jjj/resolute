@@ -1,4 +1,5 @@
 const db = require("quick.db");
+const crystol = require("crystolnetwork-log");
 
 module.exports = async (client, member) => {
 
@@ -7,5 +8,5 @@ module.exports = async (client, member) => {
 	db.delete(`work_${member.guild.id}_${member.id}`); 
 	db.delete(`daily_${member.guild.id}_${member.id}`); 
 	db.delete(`rob_${member.guild.id}_${member.id}`); 
-	//console.log(`[LOGS] - [ECONOMIA] O ${member.tag} saiu do servidor ${member.guild.name}, e teve todos os status de economia removidos!`);
+	cystol.log(`[LOGS] - [ECONOMIA] O ${member.tag} saiu do servidor ${member.guild.name}, e teve todos os status de economia removidos!`, "economia_member_remove.log", "America/Sao_Paulo");
 }
