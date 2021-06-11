@@ -34,29 +34,29 @@ async run (client, message, args) {
             .setTitle("Comando de ban")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription("Execute um ban em algum usuário específico utilizando este comando!")
-            .addField(`<:information:843590035848429579> Forma de Utilização:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @usuario <motivo>\``)
-            .addField(`<:information:843590035848429579> Exemplo:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @Spray#0007 Ofensa a staff\``)
+            .addField(`Forma de Utilização:`, ` \`${prefix}ban @usuario <motivo>\``)
+            .addField(`Exemplo:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @Spray#0007 Ofensa a staff\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setImage(rand)
             .setTimestamp();
             return message.channel.send(help);
         }
 
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({embed: {color: "#ff0000", description: "<:information:843542771814236170> Você não tem permissão para utilizar este comando! | Permissão necessária: BAN_MEMBERS"}}) 
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({embed: {color: "#ff0000", description: "Você não tem permissão para utilizar este comando! | Permissão necessária: BAN_MEMBERS"}}) 
 
         const usuario = message.mentions.members.first()
     
         const motivo = args.slice(1).join(" ");
 
-        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "<:information:843542771814236170> Eu não tenho permissão para banir este usuário! | Permissão necessária: BAN_MEMBERS"}})
+        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "Eu não tenho permissão para banir este usuário! | Permissão necessária: BAN_MEMBERS"}})
 
         const embed = new Discord.MessageEmbed()
         .setTitle("Novo Banimento!")
         .setColor("#ff0000")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .addField(`<:information:843590035848429579> Usuário:`, `${usuario} (${usuario.id})`)
-        .addField(`<:y_pontinho:843648515695444019> Autor:`, `${message.author} (${message.author.id})`)
-        .addField(`<:poker_bang:843648860651913268> Motivo:`, `${motivo}`)
+        .addField(`Usuário:`, `${usuario} (${usuario.id})`)
+        .addField(`Autor:`, `${message.author} (${message.author.id})`)
+        .addField(`Motivo:`, `${motivo}`)
         .setFooter("Resolute - Punições", message.author.displayAvatarURL())
         .setTimestamp();
         message.channel.send(embed);
