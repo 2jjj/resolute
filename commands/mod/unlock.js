@@ -10,35 +10,11 @@ module.exports = {
   
     async run (client, message, args) {
 
-    const embed1 = new Discord.MessageEmbed()
-    .setTitle("Sem permissão.")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`Você não possui a permissão de`, `GERENCIAR CANAIS`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Você não possui a permissão de \`GERENCIAR CANAIS\``);
 
-    const embed2 = new Discord.MessageEmbed()
-    .setTitle("Este canal não está bloqueado.")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
+    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(`<a:SETA:852194614927818812> Este canal não está bloqueado.`)
 
-    const embed3 = new Discord.MessageEmbed()
-    .setTitle("Resolute")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`<:spr4y:844590851769499708> » Este canal foi desbloqueado.`, `Desbloqueado por ${message.author}`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
-
-
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(embed1);
-
-    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(embed2)
-
-    let msg = await message.channel.send('Sucesso!')
+    let msg = await message.channel.send(`:tada: | ${message.author} Canal desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
     try {
         db.delete(`lock.${message.channel.id}`)
@@ -46,7 +22,7 @@ module.exports = {
             SEND_MESSAGES:true,
             ADD_REACTIONS:true
         })
-        msg.edit(embed3)
+        msg.edit("» Este canal foi desbloqueado")
 
     }catch(e){
         message.channel.send(e)
