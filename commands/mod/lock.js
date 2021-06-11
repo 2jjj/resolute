@@ -10,14 +10,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-    const embed3 = new Discord.MessageEmbed()
-    .setTitle("Resolute")
-    .setColor("#ff0000")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .addField(`<:bloqueado:844640110203895829> » Este canal foi bloqueado.`, `Bloqueado por ${message.author}`)
-    .setFooter("Resolute - By Spray#0007", message.author.displayAvatarURL())
-    .setTimestamp();
-
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Você não possui a permissão de \`GERENCIAR CANAIS\``);
 
     if(db.fetch(`lock.${message.channel.id}`)) return message.reply("<a:SETA:852194614927818812> Este canal já está bloqueado.")
@@ -30,7 +22,7 @@ module.exports = {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit(`:tada: **|** @MrSprayX Canal bloqueado com sucesso! Use +unlock para destravar!`)
+        msg.edit(`:tada: **|** ${message.author} Canal bloqueado com sucesso! Use +unlock para destravar!`)
 
     }catch(e){
         message.channel.send(e)
