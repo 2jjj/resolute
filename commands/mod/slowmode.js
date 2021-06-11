@@ -5,7 +5,7 @@ module.exports = {
     name: "slowmode",
     aliases: ['slow'],
     cooldown: 1000 * 2, 
-    description: "Slowmode em um canal.",
+    description: "Colocar Slowmode em um canal.",
     category: "mod",
     usage: "<tempo>",
 
