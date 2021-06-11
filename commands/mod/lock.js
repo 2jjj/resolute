@@ -22,7 +22,7 @@ module.exports = {
             SEND_MESSAGES:false,
             ADD_REACTIONS:false
         })
-        msg.edit(`:tada: **|** ${message.author} Canal bloqueado com sucesso! Use +unlock para destravar!`)
+        msg.edit(`:tada: **|** ${message.author} Canal bloqueado com sucesso! Use ${prefix}unlock para destravar!`)
 
     }catch(e){
         message.channel.send(e)
