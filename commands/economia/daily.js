@@ -35,8 +35,8 @@ module.exports = {
             let moneyEmbed = new Discord.MessageEmbed()
             .setTitle("Você recebeu sua recompensa diária!")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription(`Você recebeu **\`R$${amount}\`** RCoins`)
-            .addField(`Aviso`, `<:ybs_fixado2:851955202374107157> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
+            .setDescription(`Você recebeu **\`R$${amount}\`** Coins!`)
+            //.addField(`Aviso`, `<:ybs_fixado2:851955202374107157> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();        
             message.channel.send(`${user}`, moneyEmbed);
