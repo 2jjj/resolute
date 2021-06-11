@@ -1,4 +1,3 @@
-// OR
 const { MessageButton, MessageActionRow } = require('discord-buttons'); // To require only certain extensions that actually do the work!
 
 module.exports = {
@@ -6,7 +5,7 @@ module.exports = {
     aliases: ['convidar'],
     cooldown: 1000 * 2, 
     description: "Convidar o bot Resolute para o seu servidor, (Com botões)",
-    category: "info",
+    category: "botoes",
     usage: "",
   
     async run (client, message, args) {
