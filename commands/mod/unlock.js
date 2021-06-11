@@ -14,7 +14,7 @@ module.exports = {
 
     if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(`<a:SETA:852194614927818812> Este canal não está bloqueado.`)
 
-    let msg = await message.channel.send(`:tada: | ${message.author} Canal desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
+    let msg = await message.channel.send(`:tada: **|** ${message.author} Canal desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
     try {
         db.delete(`lock.${message.channel.id}`)
