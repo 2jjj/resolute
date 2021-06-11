@@ -3,7 +3,7 @@ require("./util/inlineReply")
 require("./util/quote")
 const db = require("quick.db")
 const cor = require("colors");
-const client = new Discord.Client();
+const client = new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
 client.queue = new Map();
 client.commands = new Discord.Collection();
 const { readdirSync, read } = require('fs');
