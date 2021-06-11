@@ -23,7 +23,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
       message.reply(
-        "eu não tenho permissão de setar " + member.toString() + " nickname!"
+        "Eu não tenho permissão de setar " + member.toString() + " nickname!"
       );
     }
   },
