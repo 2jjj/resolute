@@ -16,8 +16,6 @@ client.commands = new Discord.Collection();
 require("./util/inlineReply")
 require("./util/quote")
 require('discord-buttons')(client);
-module.exports = client;
-
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', { useNewUrlParser: true, useUnifiedTopology: true }).then(
     console.log("MongoDB conectado com sucesso.")
