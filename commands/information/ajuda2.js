@@ -24,7 +24,7 @@ module.exports = {
 
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
-    .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
+    .setDescription(`ESTE COMANDO ESTÁ SENDO DESENVOLVIDO.\n\n> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <:1_:852540115599228978> | Moderação
       <:2_:852540115595034704> | Informação
@@ -43,7 +43,7 @@ module.exports = {
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
   //
-  message.channel.send(message.author, embed).then(msg => {
+  await message.channel.send(message.author, embed).then(msg => {
     msg.react(`<:back:852540115388596254>`).then(() => {
       msg.react(`<:1_:852540115599228978>`);
       msg.react(`<:2_:852540115595034704>`);
