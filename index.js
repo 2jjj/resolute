@@ -1,11 +1,9 @@
-const Discord = require('discord.js');
 require("./util/inlineReply")
 require("./util/quote")
+require('discord-buttons')(client);
+const Discord = require('discord.js');
 const db = require("quick.db")
 const cor = require("colors");
-const client = new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
-client.queue = new Map();
-client.commands = new Discord.Collection();
 const { readdirSync, read } = require('fs');
 const fs = require("fs")
 const Timeout = new Discord.Collection();
@@ -14,8 +12,9 @@ const ascii = require('ascii-table')
 let table = new ascii("Commands");
 const config = require("./config.json")
 const crystol = require("crystolnetwork-log");
-require('discord-buttons')(client); // Starting the discord-buttons class
-
+const client = new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
+client.queue = new Map();
+client.commands = new Discord.Collection();
 
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
