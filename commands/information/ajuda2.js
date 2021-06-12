@@ -26,10 +26,10 @@ module.exports = {
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <:1_:852540115599228978> | Moderação
-      <:2_:852540115595034704> | Diversão
-      <:3_:852540115527925771> | Miscelânia
-      <:4_:852540115582844978> | Economia
-      <:5_:852540115468288001> | Configuráveis 
+      <:2_:852540115595034704> | Informação
+      <:3_:852540115527925771> | Botões
+      <:4_:852540115582844978> | Miscelânea
+      <:5_:852540115468288001> | Economia 
       <:6_:852540115476676608> | Manipulação de imagens
       <:7_:852540115451510794> | Botões
       <:back~1:852540115388596254> | Voltar
@@ -59,7 +59,7 @@ module.exports = {
     const info = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115527925771` && user.id == message.author.id, { time: 150000 })
     const botoes = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582844978` && user.id == message.author.id, { time: 150000 })
     const miscelanea = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115468288001` && user.id == message.author.id, { time: 150000 })
-    const esconomia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115476676608` && user.id == message.author.id, { time: 150000 })
+    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115476676608` && user.id == message.author.id, { time: 150000 })
     const manipulacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115451510794` && user.id == message.author.id, { time: 150000 })
     const config = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115485065216` && user.id == message.author.id, { time: 150000 })
     const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582320650` && user.id == message.author.id, { time: 150000 })
