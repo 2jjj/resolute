@@ -1,6 +1,3 @@
-require("./util/inlineReply")
-require("./util/quote")
-require('discord-buttons')(client);
 const Discord = require('discord.js');
 const db = require("quick.db")
 const cor = require("colors");
@@ -9,13 +6,25 @@ const fs = require("fs")
 const Timeout = new Discord.Collection();
 const ms = require('ms');
 const ascii = require('ascii-table')
-let table = new ascii("Commands");
 const config = require("./config.json")
 const crystol = require("crystolnetwork-log");
 const client = new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
+const mongoose = require("mongoose");
+let table = new ascii("Commands");
 client.queue = new Map();
 client.commands = new Discord.Collection();
+require("./util/inlineReply")
+require("./util/quote")
+require('discord-buttons')(client);
+//require('./database/reconDB')
 
+
+mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', { useNewUrlParser: true, useUnifiedTopology: true }).then(
+    console.log("MongoDB conectado com sucesso.")
+)
+
+
+//*************//
 table.setHeading('Command', 'Status');
 const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
