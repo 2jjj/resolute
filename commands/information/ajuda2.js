@@ -37,7 +37,7 @@ module.exports = {
       <:back~1:852540115388596254> | Voltar
       \n » **Links:**
       > [Me adicione](https://invite.resolutebot.xyz)
-      > [Suporte](https://discord.gg/VE9WeKZhPY)
+      > [Suporte](https://discord.gg/resolute)
       \n » \`Desenvolvido por Spray#0007 | Versão 1.7.0B\`
     `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
@@ -93,7 +93,7 @@ module.exports = {
         <:back~1:852540115388596254> | Voltar
         \n » **Links:**
         > [Me adicione](https://invite.resolutebot.xyz)
-        > [Suporte](https://discord.gg/VE9WeKZhPY)
+        > [Suporte](https://discord.gg/resolute)
         \n » \`Desenvolvido por Spray#0007 | Versão 1.7.0B\`
       `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
