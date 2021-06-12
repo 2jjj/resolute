@@ -15,7 +15,7 @@ const manager = new ShardingManager('./index.js', {
     totalShards: 'auto', 
 
     // your bot token
-    token: 'NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.pkl0V44wfk_FAGTx0QcKZbtmdRU '
+    token: 'NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.ACmB_7hwECCMfCrO-2TyX9k_UZY'
 });
 
 // Spawn your shards
