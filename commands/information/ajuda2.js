@@ -80,19 +80,22 @@ module.exports = {
       let embed = new Discord.MessageEmbed()
       .setColor('#e1ff00')
       .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
-      \n » **Categorias:**\n
-      <a:1__:836268679263027230> | Moderação
-      <a:2_:836268689484546088> | Diversão
-      <a:3___:836268637257990184> | Miscelânia
-      <a:4_:836268669516251136> | Economia
-      <a:5___:836268658795347990> | Configuráveis 
-      <a:6_:836268649790439464> | Manipulação de imagens
-      <:Voltar:836330128073687092> | Voltar
-      \n » **Links:**
-      > [Me adicione](https://invite.resolutebot.xyz)
-      > [Suporte](https://discord.gg/VE9WeKZhPY)
-      \n » \`Desenvolvido por Spray#0007 | Versão 1.7.0B\`
-    `)
+        \n » **Categorias:**\n
+        <:1_:852540115599228978> | Moderação
+        <:2_:852540115595034704> | Informação
+        <:3_:852540115527925771> | Botões
+        <:4_:852540115582844978> | Miscelânea
+        <:5_:852540115468288001> | Economia 
+        <:6_:852540115476676608> | Manipulação de imagens
+        <:7_:852540115451510794> | Configuráveis
+        <:8_:852540115485065216> | Diversão
+        <:9_:852540115582320650> | Minecraft
+        <:back~1:852540115388596254> | Voltar
+        \n » **Links:**
+        > [Me adicione](https://invite.resolutebot.xyz)
+        > [Suporte](https://discord.gg/VE9WeKZhPY)
+        \n » \`Desenvolvido por Spray#0007 | Versão 1.7.0B\`
+      `)
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
       msg.edit(embed)
   });
