@@ -4,7 +4,7 @@
   "description": "Resolute é um bot com múltiplos comandos de moderação, diversão, manipulações de imagens, etc!",
   "main": "index.js",
   "scripts": {
-    "start": "node shard.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
