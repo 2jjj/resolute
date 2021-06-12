@@ -21,6 +21,19 @@ module.exports = {
     let info2 = client.commands.filter((cmd) => cmd.category === 'info');
     let botoes2 = client.commands.filter((cmd) => cmd.category === 'botoes');
 
+        
+    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115388596254` && user.id == message.author.id, { time: 150000 })
+
+    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115599228978` && user.id == message.author.id, { time: 150000 })
+    const info = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115595034704` && user.id == message.author.id, { time: 150000 })
+    const botoes = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115527925771` && user.id == message.author.id, { time: 150000 })
+    const miscelanea = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582844978` && user.id == message.author.id, { time: 150000 })
+    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115468288001` && user.id == message.author.id, { time: 150000 })
+    const manipulacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115476676608` && user.id == message.author.id, { time: 150000 })
+    const config = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115451510794` && user.id == message.author.id, { time: 150000 })
+    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115485065216` && user.id == message.author.id, { time: 150000 })
+    const minecraft = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582320650` && user.id == message.author.id, { time: 150000 })
+    
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
@@ -54,18 +67,6 @@ module.exports = {
       msg.react(`<:8_:852540115485065216>`);
       msg.react(`<:9_:852540115582320650>`);
     })
-    
-    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115388596254` && user.id == message.author.id, { time: 150000 })
-
-    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115599228978` && user.id == message.author.id, { time: 150000 })
-    const info = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115595034704` && user.id == message.author.id, { time: 150000 })
-    const botoes = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115527925771` && user.id == message.author.id, { time: 150000 })
-    const miscelanea = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582844978` && user.id == message.author.id, { time: 150000 })
-    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115468288001` && user.id == message.author.id, { time: 150000 })
-    const manipulacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115476676608` && user.id == message.author.id, { time: 150000 })
-    const config = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115451510794` && user.id == message.author.id, { time: 150000 })
-    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115485065216` && user.id == message.author.id, { time: 150000 })
-    const minecraft = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582320650` && user.id == message.author.id, { time: 150000 })
 
     moderacao.on(`collect`, r => {
       let embed_1 = new Discord.MessageEmbed()
