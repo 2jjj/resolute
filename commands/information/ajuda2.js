@@ -19,18 +19,20 @@ module.exports = {
     var config = client.commands.filter((cmd) => cmd.category === 'config');
     var minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
     var info = client.commands.filter((cmd) => cmd.category === 'info');
+    var botoes2 = client.commands.filter((cmd) => cmd.category === 'info');
 
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
-      <a:1__:836268679263027230> | Moderação
-      <a:2_:836268689484546088> | Diversão
-      <a:3___:836268637257990184> | Miscelânia
-      <a:4_:836268669516251136> | Economia
-      <a:5___:836268658795347990> | Configuráveis 
-      <a:6_:836268649790439464> | Manipulação de imagens
-      <:Voltar:836330128073687092> | Voltar
+      <:1_:852540115599228978> | Moderação
+      <:2_:852540115595034704> | Diversão
+      <:3_:852540115527925771> | Miscelânia
+      <:4_:852540115582844978> | Economia
+      <:5_:852540115468288001> | Configuráveis 
+      <:6_:852540115476676608> | Manipulação de imagens
+      <:7_:852540115451510794> | Botões
+      <:back~1:852540115388596254> | Voltar
       \n » **Links:**
       > [Me adicione](https://invite.resolutebot.xyz)
       > [Suporte](https://discord.gg/VE9WeKZhPY)
@@ -39,13 +41,14 @@ module.exports = {
     .setImage("https://i.pinimg.com/originals/45/0f/b6/450fb615bd2b9a587d5a9b553341da87.gif")
   //
   message.channel.send(message.author, embed).then(msg => {
-    msg.react(`<:Voltar:836330128073687092>`).then(() => {
-      msg.react(`<a:1__:836268679263027230>`);
-      msg.react(`<a:2_:836268689484546088>`);
-      msg.react(`<a:3___:836268637257990184>`);
-      msg.react(`<a:4_:836268669516251136>`);
-      msg.react(`<a:5___:836268658795347990>`);
-      msg.react(`<a:6_:836268649790439464>`);
+    msg.react(`<:back~1:852540115388596254>`).then(() => {
+      msg.react(`<:1_:852540115599228978>`);
+      msg.react(`<:2_:852540115595034704>`);
+      msg.react(`<:3_:852540115527925771>`);
+      msg.react(`<:4_:852540115582844978>`);
+      msg.react(`<:5_:852540115468288001>`);
+      msg.react(`<:6_:852540115476676608>`);
+      msg.react(`<:7_:852540115451510794>`);
     })
     
     const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 150000 })
@@ -64,51 +67,6 @@ module.exports = {
       .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
       msg.edit(embed_1)
       r.users.remove(message.author.id)
-    })
-
-    fun.on(`collect`, r => {
-      let embed_2 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`😂 Diversão *[${funn.size}]*:\n\n\`${funn.map(cmd => cmd.name).join(' | ')}\``)
-      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
-      msg.edit(embed_2)
-      r.users.remove(message.author.id)
-    })
-  
-    outros.on(`collect`, r => {
-      let embed_3 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`<:ybs_status:851954702840627200> Miscelânea *[${miscelanea.size}]*:\n\n\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
-      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
-      msg.edit(embed_3)
-      r.users.remove(message.author.id)
-    })
-
-    economia.on(`collect`, r => {
-      let embed_4 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`<:ybs_dinheiro:852213985356939314> Economia *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
-      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
-      msg.edit(embed_4)
-      r.users.remove(message.author.id)
-    })
-
-    configuraveis.on(`collect`, r => {
-      let embed_5 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`<:ybs_config:851954339735666729> Configuráveis. *[${economia2.size}]*:\n\n\`${economia2.map(cmd => cmd.name).join(' | ')}\``)
-      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
-      msg.edit(embed_5)
-      r.users.remove(message.author.id)   
-    })
-
-    manipulacao2.on(`collect`, r => {
-      let embed_6 = new Discord.MessageEmbed()
-      .setColor('#e1ff00')
-      .setDescription(`<:ybs_usuarios:843619560316993567> Manipulação de imagens *[${manipulacao.size}]*:\n\n\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
-      .setImage("https://i.pinimg.com/originals/dd/16/ab/dd16ab8cb777b7ea951dec7092006fce.gif")
-      msg.edit(embed_6)
-      r.users.remove(message.author.id)   
     })
 
     voltar.on(`collect`, r => {
