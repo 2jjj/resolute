@@ -10,16 +10,16 @@ module.exports = {
 
   async run (client, message, args) {
   
-    var funn = client.commands.filter((cmd) => cmd.category === 'fun');
-    var economia2 = client.commands.filter((cmd) => cmd.category === 'economia');
-    var manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-    var mod = client.commands.filter((cmd) => cmd.category === 'mod');
+    let fun2 = client.commands.filter((cmd) => cmd.category === 'fun');
+    let economia2 = client.commands.filter((cmd) => cmd.category === 'economia');
+    let manipulacao2 = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+    let mod = client.commands.filter((cmd) => cmd.category === 'mod');
     //let music = client.commands.filter((cmd) => cmd.category === 'musica');
-    var miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
-    var config = client.commands.filter((cmd) => cmd.category === 'config');
-    var minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-    var info = client.commands.filter((cmd) => cmd.category === 'info');
-    var botoes2 = client.commands.filter((cmd) => cmd.category === 'info');
+    let miscelanea2 = client.commands.filter((cmd) => cmd.category === 'outros');
+    let config2 = client.commands.filter((cmd) => cmd.category === 'config');
+    let minecraft2 = client.commands.filter((cmd) => cmd.category === 'minecraft');
+    let info2 = client.commands.filter((cmd) => cmd.category === 'info');
+    let botoes2 = client.commands.filter((cmd) => cmd.category === 'botoes');
 
     let embed = new Discord.MessageEmbed()
     .setColor('#e1ff00')
@@ -49,16 +49,21 @@ module.exports = {
       msg.react(`<:5_:852540115468288001>`);
       msg.react(`<:6_:852540115476676608>`);
       msg.react(`<:7_:852540115451510794>`);
+      msg.react(`<:8_:852540115485065216>`);
+      msg.react(`<:9_:852540115582320650>`);
+      msg.react(`<:10:852540115468288000>`)
     })
     
-    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836330128073687092` && user.id == message.author.id, { time: 150000 })
-    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268679263027230` && user.id == message.author.id, { time: 150000 })
-    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268689484546088` && user.id == message.author.id, { time: 150000 })
-    const outros = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268637257990184` && user.id == message.author.id, { time: 150000 })
-    const economia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268669516251136` && user.id == message.author.id, { time: 150000 })
-    const manipulacao2 = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268649790439464` && user.id == message.author.id, { time: 150000 })
-    const configuraveis = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `836268658795347990` && user.id == message.author.id, { time: 150000 })
-    const music = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `843602147051700284` && user.id == message.author.id, { time: 150000 })
+    const voltar = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115388596254` && user.id == message.author.id, { time: 150000 })
+    const moderacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115595034704` && user.id == message.author.id, { time: 150000 })
+    const info = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115527925771` && user.id == message.author.id, { time: 150000 })
+    const botoes = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582844978` && user.id == message.author.id, { time: 150000 })
+    const miscelanea = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115468288001` && user.id == message.author.id, { time: 150000 })
+    const esconomia = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115476676608` && user.id == message.author.id, { time: 150000 })
+    const manipulacao = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115451510794` && user.id == message.author.id, { time: 150000 })
+    const config = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115485065216` && user.id == message.author.id, { time: 150000 })
+    const fun = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115582320650` && user.id == message.author.id, { time: 150000 })
+    const minecraft = msg.createReactionCollector((reaction, user) => reaction.emoji.id == `852540115468288000` && user.id == message.author.id, { time: 150000 })
 
     moderacao.on(`collect`, r => {
       let embed_1 = new Discord.MessageEmbed()
