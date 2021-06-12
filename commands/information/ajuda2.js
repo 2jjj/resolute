@@ -26,14 +26,14 @@ module.exports = {
     .setDescription(`> **Olá ${message.author}, aqui estão minhas categorias com comandos!**
       \n » **Categorias:**\n
       <:1_:852540115599228978> | Moderação
-      <:2_:852540115595034704> | Moderação
-      <:3_:852540115527925771> | Informação
-      <:4_:852540115582844978> | Botões
-      <:5_:852540115468288001> | Miscelânea 
-      <:6_:852540115476676608> | Economia
-      <:7_:852540115451510794> | Manipulação de imagens
-      <:8_:852540115485065216> | Configuráveis
-      <:9_:852540115582320650> | Diversão
+      <:2_:852540115595034704> | Informação
+      <:3_:852540115527925771> | Botões
+      <:4_:852540115582844978> | Miscelânea
+      <:5_:852540115468288001> | Economia 
+      <:6_:852540115476676608> | Manipulação de imagens
+      <:7_:852540115451510794> | Configuráveis
+      <:8_:852540115485065216> | Diversão
+      <:9_:852540115582320650> | Minecraft
       <:back~1:852540115388596254> | Voltar
       \n » **Links:**
       > [Me adicione](https://invite.resolutebot.xyz)
