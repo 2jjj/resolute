@@ -2,10 +2,11 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'globalban',
-    description: 'Globally ban a user from your server.',
-    timeout: 5000,
+    description: 'Global ban',
+    cooldown: 1000 * 2, 
     usage: '<user.id> <reason>',
     aliases: ['globalban'],
+    category: 'mod',
     /** 
      * @param {Client} client 
      * @param {Message} message 
