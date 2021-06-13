@@ -60,7 +60,7 @@ module.exports = {
 
       const embed = new MessageEmbed()
 
-        .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007**`, `**prefixo atual: ${prefix}\nMeus comandos:\n**`)
+        .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007\nBanner por k0ndzz7'WTD#2077 <3**`, `**prefixo atual: ${prefix}\nMeus comandos:\n**`)
         .addField(`<:ybs_fixado2:851955202374107157> **Informação** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_status:851954702840627200> **Botões** [${botoes.size}]:`, `\`${botoes.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_defesa:852215040110362675> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
@@ -77,6 +77,7 @@ module.exports = {
           `Requisitado por ${message.author.tag}`,
           message.author.displayAvatarURL({ dynamic: true })
         )
+        .setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
         .setColor(roleColor);
       return message.channel.send(embed);
