@@ -9,6 +9,8 @@ module.exports = {
   usage: "",
 
   async run (client, message, args) {
+    
+    var numWorkers = require('os').cpus().length;
 
     let svPing = Date.now() - message.createdTimestamp
     

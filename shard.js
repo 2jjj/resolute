@@ -1,4 +1,5 @@
 const { ShardingManager } = require('discord.js');
+var numWorkers = require('os').cpus().length;
 
 const manager = new ShardingManager('./index.js', {
     totalShards: numWorkers, 
