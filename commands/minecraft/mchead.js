@@ -9,16 +9,17 @@ module.exports = {
     usage: "<nickname>",
 
   async run({ message, args }, t) {
-    const nick = args[0];
 
+    /*
     if (!nick)
       return message.channel.send(
         `${message.author}, você deve inserir um nick de uma skin de minecraft.`
       );
+    */
 
     const EMBED = new Discord.MessageEmbed()
-      .setTitle(`${Emojis.Minecraft} - Nick: ${nick}`)
-      .setImage(`https://mc-heads.net/head/${nick}/200`);
+      .setTitle(`${Emojis.Minecraft} - Nick: ${args[0]}`)
+      .setImage(`https://mc-heads.net/head/${args[0]}/200`);
 
     message.channel.send(EMBED);
   }
