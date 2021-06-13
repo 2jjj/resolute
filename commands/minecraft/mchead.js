@@ -18,7 +18,7 @@ module.exports = {
     */
 
     const EMBED = new Discord.MessageEmbed()
-      .setTitle(`$Nick: ${args[0]}`)
+      .setTitle(`Nick: ${args[0]}`)
       .setImage(`https://mc-heads.net/head/${args[0]}/200`);
 
     message.channel.send(EMBED);
