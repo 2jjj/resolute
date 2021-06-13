@@ -8,8 +8,8 @@ module.exports = {
     category: "minecraft",
     usage: "<nickname>",
 
-  async run({ message, args }, t) {
-
+    run: async(client, message, args) => { 
+      
     /*
     if (!nick)
       return message.channel.send(
@@ -18,7 +18,7 @@ module.exports = {
     */
 
     const EMBED = new Discord.MessageEmbed()
-      .setTitle(`${Emojis.Minecraft} - Nick: ${args[0]}`)
+      .setTitle(`$Nick: ${args[0]}`)
       .setImage(`https://mc-heads.net/head/${args[0]}/200`);
 
     message.channel.send(EMBED);
