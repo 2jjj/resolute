@@ -35,7 +35,7 @@ async run (client, message, args) {
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription("Execute um ban em algum usuário específico utilizando este comando!")
             .addField(`Forma de Utilização:`, ` \`${prefix}ban @usuario <motivo>\``)
-            .addField(`Exemplo:`, `<:y_pontinho:843648515695444019> \`${prefix}ban @Spray#0007 Ofensa a staff\``)
+            .addField(`Exemplo:`, `  \`${prefix}ban @Spray#0007 Ofensa a staff\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setImage(rand)
             .setTimestamp();
