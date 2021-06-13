@@ -9,7 +9,7 @@ module.exports = {
     usage: "<nickname>",
 
 
-  async run({ message, args }, t) {
+    run: async(client, message, args) => { 
 
     const EMBED = new Discord.MessageEmbed()
       .setTitle(`Nick: ${args[0]}`)
