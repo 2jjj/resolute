@@ -13,7 +13,6 @@ module.exports = {
     const EMBED = new Discord.MessageEmbed()
       .setTitle(`Nick: ${args[0]}`)
       .setImage(`https://minotar.net/helm/${args[0]}/200.png`);
-
-    message.channel.send(EMBED);
+    await message.channel.send(EMBED);
   }
 };
