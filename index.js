@@ -83,6 +83,10 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 });
 });
 
+client.shard.fetchClientValues('guilds.cache.size')
+  .then(count => console.log(`${count} guilds in shard ${client.shard.count}`))
+  .catch(console.error);
+
 /*
 client.translate = async(text, message) => {
     const lang = await database.has(`lang-${message.guild.id}`) ? await database.get(`lang-${message.guild.id}`) : `pt-br`;
