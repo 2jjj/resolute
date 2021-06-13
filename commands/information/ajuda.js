@@ -60,7 +60,7 @@ module.exports = {
 
       const embed = new MessageEmbed()
 
-        .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007\nBanner por k0ndzz7'WTD#2077 <3**`, `**prefixo atual: ${prefix}\nMeus comandos:\n**`)
+        .addField(`**Estou com ${client.commands.size} comandos!\nDesenvolvido por Spray#0007\nBanner por k0ndzz7'WTD#2077 <3**`, `**Prefixo atual: ${prefix}\nMeus comandos:\n**`)
         .addField(`<:ybs_fixado2:851955202374107157> **Informação** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_status:851954702840627200> **Botões** [${botoes.size}]:`, `\`${botoes.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_defesa:852215040110362675> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
