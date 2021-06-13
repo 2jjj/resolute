@@ -11,11 +11,15 @@ const crystol = require("crystolnetwork-log");
 const client = new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
 const mongoose = require("mongoose");
 let table = new ascii("Commands");
+const translate = require("@k3rn31p4nic/google-translate-api");
+const database = require('./database/reconDB');
 client.queue = new Map();
 client.commands = new Discord.Collection();
 require("./util/inlineReply")
 require("./util/quote")
 require('discord-buttons')(client);
+module.exports = client;
+
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', { useNewUrlParser: true, useUnifiedTopology: true }).then(
     console.log("MongoDB conectado com sucesso.")
@@ -80,6 +84,10 @@ fs.readdir(__dirname + "/events/", (err, files) => {
     console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
 });
 });
+
+client.translate = async(text, message) => {
+    const lang = await database.has(`lang-${message.guild.id}`) ? await database.get(`lang-${message.guild.id}`) : `pt-br`;
+}
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.ACmB_7hwECCMfCrO-2TyX9k_UZY
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o
