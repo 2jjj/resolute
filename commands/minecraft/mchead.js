@@ -21,6 +21,6 @@ module.exports = {
       .setTitle(`Nick: ${args[0]}`)
       .setImage(`https://mc-heads.net/head/${args[0]}/200`);
 
-    message.channel.send(EMBED);
+    await message.channel.send(EMBED);
   }
 };

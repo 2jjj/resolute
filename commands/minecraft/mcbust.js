@@ -15,6 +15,6 @@ module.exports = {
       .setTitle(`Nick: ${args[0]}`)
       .setImage(`https://minotar.net/bust/${args[0]}/200.png`);
 
-    message.channel.send(EMBED);
+    await message.channel.send(EMBED);
   }
 };
