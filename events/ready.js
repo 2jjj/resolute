@@ -4,6 +4,8 @@ const config = require("../config.json");
 module.exports = async (client) => {
     //var numWorkers = require('os').cpus().length;
 
+    //console.log(`Fui iniciado com ${}`)
+
     const status = [  
         {name: `s.help | Desenvolvido pelo Spray#0007 || Shards Online: ${config.shards}`, type: 'PLAYING'}, 
         {name: `Shards Online: ${config.shards} || Memória ultilizada ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`}, 
