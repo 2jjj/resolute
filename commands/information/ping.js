@@ -19,7 +19,7 @@ module.exports = {
     
         message.inlineReply('Ping?').then(msg => {
         
-        msg.edit(`🏓 **|** Pong!\n:satellite: **|** Shard: ${message.guild.shard.id}/${config.shards}\n:stopwatch: **|** Latência da API: ${svPing}\n:zap: **|** Ping: ${client.ws.ping}\n🌏 **|** Ping da shard: ${shardPing}ms`) 
+        msg.edit(`🏓 **|** Pong!\n:satellite: **|** Shard: ${message.guild.shard.id}/37\n:stopwatch: **|** Latência da API: ${svPing}\n:zap: **|** Ping: ${client.ws.ping}\n🌏 **|** Ping da shard: ${shardPing}ms`) 
     });
   }
 }
