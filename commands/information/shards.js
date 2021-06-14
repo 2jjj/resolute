@@ -70,7 +70,6 @@ module.exports = {
     );
 
     message.channel.send(`\`\`\`prolog\n${table.toString()}\`\`\``);
-
     table.clearRows();
   }
 }
