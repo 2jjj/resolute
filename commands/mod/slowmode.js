@@ -26,7 +26,7 @@ module.exports = {
 
             if (currentCooldown === 0) return message.channel.send('> Slowmode do canal está desativado.').then(m => m.delete({ timeout: 5000 }));
 
-            embed.setTitle('> Slowmode Desativado.')
+            embed.setTitle('Slowmode Desativado.')
                 .setColor('#00ff00')
             return message.channel.setRateLimitPerUser(0, reason)
 
