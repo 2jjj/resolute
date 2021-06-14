@@ -25,7 +25,7 @@ module.exports = {
     .addField(`<:ybs_duvida:851954411348820018> Suporte`, `https://discord.gg/resolute`)
     .addField(`🕸️ Website`, `https://resolutebot.xyz`)
     .addField(`<:topggSunglasses:854052917056503808> Top.gg`, `https://top.gg/764919941538775050`)
-    .addField(`<:github:854052764015394826> Spray`, `https://github.com/sprayx`)
+    .addField(`<:github:854134655199739944> Spray`, `https://github.com/sprayx`)
 
     await message.channel.send(embed);
 }
