@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['bug', 'reportar'],
     cooldown: 1000 * 2, 
     description: "Reportar um bug para minha equipe de desenvolvedores.",
-    category: "outros",
+    category: "info",
     usage: "<Bug encontrado>",
 
     async run (client, message, args) {
