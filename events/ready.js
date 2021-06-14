@@ -1,5 +1,4 @@
 const os = require('os');
-const { shardid } = require('../commands/information/ping')
 
 module.exports = async (client) => {
     var numWorkers = require('os').cpus().length;
