@@ -3,8 +3,9 @@ const config = require("../config.json");
 
 module.exports = async (client) => {
     //var numWorkers = require('os').cpus().length;
+    const guilds = await client.shard.broadcastEval("this.guilds.cache.size")
 
-    console.log(`Fui iniciado com ${client.guilds.cache.size}`)
+    console.log(`Fui iniciado com ${guilds}`)
 
     const status = [  
         {name: `s.help | Desenvolvido pelo Spray#0007 || Shards Online: ${config.shards}`, type: 'PLAYING'}, 
