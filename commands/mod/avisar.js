@@ -30,10 +30,10 @@ async run (client, message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:staff:835643948151996446> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
 
     let membro = message.mentions.users.first() 
-    if (!membro) return message.reply("> Você precisa mencionar o usuário que quer dar aviso!")
+    if (!membro) return message.reply("Você precisa mencionar o usuário que quer dar aviso!")
 
     let motivo = args.slice(1).join(" "); 
-    if (!motivo) return message.reply("> Escreva um motivo do aviso do usuário!") 
+    if (!motivo) return message.reply("Escreva um motivo do aviso do usuário!") 
 
     let embed = new Discord.MessageEmbed() 
     .setTitle(`Você foi avisado! - ${membro.username}`)
