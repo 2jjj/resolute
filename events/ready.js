@@ -23,7 +23,7 @@ module.exports = async (client) => {
    setInterval(() => {
        if(index === arrayOfStatus.length) index = 0;
        const status = arrayOfStatus[index];
-       console.log(`Streaming ${status}`);
+       //console.log(`Streaming ${status}`);
        client.user.setActivity(`${status}`, {
         type: "PLAYING",
         url: "https://www.twitch.tv/blue666opislive"
