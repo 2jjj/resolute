@@ -10,17 +10,24 @@ module.exports = async (client) => {
 
     //console.log(botUsers)
    //console.log(botGuilds)
+   console.log(`${client.user.username} ✅`)
 
-    const status = [  
-        {name: `s.help | ${botGuilds} guilds | Shards: ${config.shards}`, type: 'PLAYING'}, 
-        {name: `Memória ultilizada ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB || Shards Online: ${config.shards}`},
-        {name: `Dev: Spray#0007 | [${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)}] | [${config.shards}]`},
-        {name: `Vamos transformar está plataforma! | [${config.shards}]`},
-    ] 
-      function Presence() { 
-              const base = status[Math.floor(Math.random() * status.length)] 
-              client.user.setActivity(base)
-          } 
-          Presence(); 
-          setInterval(() => Presence(), 5000)          
+   const arrayOfStatus = [
+       `${client.guilds.cache.size} guilds. | Shards: ${config.shards}`,
+       `${client.users.cache.size} users. | Shards: ${config.shards}`,
+       `Developer: Spray#0007`,
+       `s.help`
+   ];
+
+   let index= 0;
+   setInterval(() => {
+       if(index === arrayOfStatus.length) index = 0;
+       const status = arrayOfStatus[index];
+       console.log(`Streaming ${status}`);
+       client.user.setActivity(`${status}`, {
+        type: "PLAYING",
+        url: "https://www.twitch.tv/blue666opislive"
+    })
+    index++;
+   }, 10000);
 }
