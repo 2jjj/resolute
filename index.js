@@ -70,7 +70,6 @@ client.on("message", async (message) => {
         }
     }
 })
-
 fs.readdir(__dirname + "/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
