@@ -21,9 +21,9 @@ module.exports = {
     .setColor("RANDOM")
     .setThumbnail(avatar)
     .addFields(
-      { name: 'ﾠ', value: '<a:SETA:852194614927818812> **Desenvolvedor:** <@836345581424738354>, <@798574984582791208>' },
+      { name: 'ﾠ', value: '<a:SETA:852194614927818812> **Desenvolvedor:** <@836345581424738354>' },
       { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Bot criado no dia:** **11/10/2020**`, inline: false },
-      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Estou em ${client.guilds.cache.size} servidores!**, **com ${client.users.cache.size} pessoas!**`, inline: false },
+      { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Estou em ${client.guilds.cache.size} servidores!**`, inline: false },
       { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Versão discord.js:** **${version}**`, inline: false },
       { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Versão Node.JS:** **${process.version}**`, inline: false },
       { name: 'ﾠ', value: `<a:SETA:852194614927818812> **Estou na versão** **1.7.0B**`, inline: false },
