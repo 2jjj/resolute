@@ -25,8 +25,7 @@ module.exports = async (client) => {
        const status = arrayOfStatus[index];
        //console.log(`Streaming ${status}`);
        client.user.setActivity(`${status}`, {
-        type: "PLAYING",
-        url: "https://www.twitch.tv/blue666opislive"
+        type: "LISTENING",
     })
     index++;
    }, 10000);
