@@ -60,7 +60,7 @@ client.on("message", async (message) => {
         if (command) {
             crystol.log(`[LOGS] - Comando ${commandName} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${commandName} usado por ${message.author.tag}(${message.author.id})`)))
             if(command.cooldown) {
-                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`Ei, espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+                if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:SmugAnimeSip:853799948511084616> **|** Ei, espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
                 command.run(client, message, args)
                 Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
                 setTimeout(() => {
