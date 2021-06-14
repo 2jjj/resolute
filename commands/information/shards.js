@@ -71,5 +71,7 @@ module.exports = {
 
     message.channel.send(`\`\`\`prolog\n${table.toString()}\`\`\``);
     table.clearRows();
+    console.log(table.toString())
+    console.log(botGuilds)
   }
 }
