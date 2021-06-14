@@ -5,7 +5,7 @@ module.exports = {
   aliases: ['help2'],
   cooldown: 1000 * 2, 
   description: "Minhas informações.",
-  category: "info",
+  //category: "info",
   usage: "",
 
   async run (client, message, args) {
