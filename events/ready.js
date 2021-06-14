@@ -4,7 +4,7 @@ const config = require("../config.json");
 module.exports = async (client) => {
     //var numWorkers = require('os').cpus().length;
 
-    //console.log(`Fui iniciado com ${}`)
+    console.log(`Fui iniciado com ${client.guilds.cache.size}`)
 
     const status = [  
         {name: `s.help | Desenvolvido pelo Spray#0007 || Shards Online: ${config.shards}`, type: 'PLAYING'}, 
