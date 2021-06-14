@@ -23,7 +23,7 @@ module.exports = {
       .setTitle(`Tempo de atividade`)
       //.setThumbnail("https://imgur.com/WZMylbw.gif")
       .setColor("#FF0000")
-      .setDescription(`<:information:843542771814236170> Uptime \n${uptime}`)
+      .setDescription(`${uptime}`)
     message.channel.send(embed);
 }
 }
