@@ -3,8 +3,8 @@ var numWorkers = require('os').cpus().length;
 const config = require("./config.json")
 
 const manager = new ShardingManager('./index.js', {
-    totalShards: 2, 
-    token: 'NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.ACmB_7hwECCMfCrO-2TyX9k_UZY'
+    totalShards: 'auto', 
+    token: 'ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o'
 });
 
 
