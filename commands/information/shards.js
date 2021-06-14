@@ -24,7 +24,7 @@ module.exports = {
           "B"
         );
       };
-    table.setHeading("SID", "UpTime", "Ping", "Usage", "Guilds", "Users");
+    table.setHeading("SID", "Uptime", "Ping", "Usage", "Guilds", "Users");
 
     table.setAlign(0, AsciiTable.CENTER);
     table.setAlign(1, AsciiTable.CENTER);
