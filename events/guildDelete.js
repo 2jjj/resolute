@@ -2,14 +2,11 @@ const Discord = require("discord.js")
 
 module.exports = async (client, guild) => {
     //https://discord.com/api/webhooks/841393653155102740/vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ
-
-const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ")
-    client.channels.cache.get("841353285381914624").setName(`📝│Servidores: ${client.guilds.cache.size}`).catch((e) => console.log((e)))
-    client.channels.cache.get("841733238165995570").setName(`📝│Users: ${client.users.cache.size}`).catch((e) => console.log((e)))
-    console.log(`Fui removido de uma guild! | ${client.guilds.cache.size} | ${client.users.cache.size}`)
+    let canal = client.channels.cache.get("841393455694872597")
     let embed = new Discord.MessageEmbed()
-    .setTitle(`<:Resoluteinfo:844971535927083088> | Fui removido de uma guild.`)
-    .setTimestamp()
-    .setColor('#FFC4E7')
-    webhook.send(embed);
+    .setTitle("Events - Resolute")
+    //.setThumbnail(client.user.displayAvatarURL())
+    .addField("Fui removido de uma guild #depressão", `Spray tristezas`)
+    .setColor([255,182,193])
+    canal.send(embed)
 }
