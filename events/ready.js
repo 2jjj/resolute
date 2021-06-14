@@ -13,8 +13,8 @@ module.exports = async (client) => {
    console.log(`${client.user.username} ✅`)
 
    const arrayOfStatus = [
-       `${client.guilds.cache.size} guilds. | Shards: ${config.shards}`,
-       `${client.users.cache.size} users. | Shards: ${config.shards}`,
+       `${botGuilds} guilds. | Shards: ${config.shards}`,
+       `70K+ users. | Shards: ${config.shards}`,
        `Developer: Spray#0007`,
        `s.help`
    ];
