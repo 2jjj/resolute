@@ -48,7 +48,7 @@
     "snakecord": "^1.0.7",
     "steam-provider": "^0.3.2",
     "weather-js": "^2.0.0",
-    "weky": "^2.0.1",
+    "weky": "^2.0.7",
     "ws": "^7.4.6"
   }
 }
