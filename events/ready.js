@@ -1,14 +1,11 @@
 const os = require('os');
 const config = require("../config.json");
+require("../commands/information/shards")
 
-module.exports = async (client) => {
+module.exports = async (client, botGuilds) => {
     //var numWorkers = require('os').cpus().length;
-    const guilds = await client.shard.broadcastEval("this.guilds.cache.size")
-
-    console.log(`Fui iniciado com ${guilds}`)
-
     const status = [  
-        {name: `s.help | ${guilds} guilds | Shards: ${config.shards}`, type: 'PLAYING'}, 
+        {name: `s.help | 98 guilds | Shards: ${config.shards}`, type: 'PLAYING'}, 
         {name: `Memória ultilizada ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB || Shards Online: ${config.shards}`},
         {name: `Dev: Spray#0007 | [${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)}] | [${config.shards}]`},
         {name: `Vamos transformar está plataforma! | [${config.shards}]`},
