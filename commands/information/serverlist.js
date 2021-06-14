@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["slt"],
     category: "owner",
     description: "Apenas para devs.",
-    usage: "só para devs.",
+    usage: "Este comando só pode ser ultilizado por desenvolvedores do Resolute.",
     
     async run (client, message, args) {
 
