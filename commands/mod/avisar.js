@@ -35,12 +35,12 @@ async run (client, message, args) {
     let motivo = args.slice(1).join(" "); 
     if (!motivo) return message.reply("Escreva um motivo do aviso do usuário!") 
 
-    let embed = new Discord.MessageEmbed() 
-    .setTitle(`Você foi avisado! - ${membro.username}`)
+    let embed = new Discord.MessageEmbed()//${membro.username}
+    .setTitle(`Você foi avisado!`)
     .setColor('RANDOM')
     .setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
     .setImage(rand)
-    .setDescription(`**${motivo}**`)
+    .setDescription(`**Motivo: ${motivo}**`)
 
     membro.send(embed) 
     message.channel.send(`<a:SETA:852194614927818812> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
