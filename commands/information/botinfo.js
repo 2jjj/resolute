@@ -17,10 +17,11 @@ module.exports = {
     const botGuilds = guilds.reduce((prev, val) => prev + val)
 
     let embed = new Discord.MessageEmbed()
-    .setTitle("**Resolute - Botinfo**")
+    .setTitle("**Minhas informações!**")
     .setColor("RANDOM")
     .setThumbnail(avatar)
-
+    .setDescription(`Me chamo Resolute, fui criado no dia **11 de outubro de 2020** pelo **Spray#0007** na linguagem **Javascript** com o discord.js!\n**Alguns links:**`)
+    .addField(`Me adicione!`, `https://invite.resolutebot.xyz`)
     await message.channel.send(embed);
 }
 }
