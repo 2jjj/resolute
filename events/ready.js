@@ -1,7 +1,7 @@
 const os = require('os');
 const config = require("../config.json");
 
-module.exports = async (client, guilds) => {
+module.exports = async (client) => {
 
     const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 
     client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')];
