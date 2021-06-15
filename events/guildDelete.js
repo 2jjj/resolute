@@ -1,3 +1,10 @@
+/*
+    {
+    name: \`Dono:\`,
+    value: \`(\\\`EM DEV\\\`)\`,
+    },
+*/
+
 module.exports = async (client, guild) => {
     const guildSchema = require('../mongoDB/guild.js');
         
@@ -27,10 +34,6 @@ module.exports = async (client, guild) => {
     {
     name: \`Nome:\`,
     value: \`(\\\`${guild.name}/${guild.id}\\\`)\`,
-    },
-    {
-    name: \`Dono:\`,
-    value: \`(\\\`EM DEV\\\`)\`,
     },
     {
     name: \`Total de membros\`,
