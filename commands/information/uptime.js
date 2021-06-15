@@ -25,5 +25,4 @@ module.exports = {
       .setColor("#FF0000")
       .setDescription(`${uptime}`)
     message.channel.send(embed);
-}
-}
+}}
