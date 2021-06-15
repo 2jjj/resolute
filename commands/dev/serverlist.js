@@ -4,7 +4,7 @@ const ownerid = "836345581424738354";
 module.exports = {
     name: "serverlist",
     aliases: ["slt"],
-    category: "owner",
+    category: "dev",
     description: "Apenas para devs.",
     usage: "Este comando só pode ser ultilizado por desenvolvedores do Resolute.",
     
