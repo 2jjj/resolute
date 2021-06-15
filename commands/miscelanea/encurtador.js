@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Encurtar urls por ai!",
     category: "outros",
-    usage: "<texto>",
+    usage: "<url>",
 
     async run (client, message, args) {
 
