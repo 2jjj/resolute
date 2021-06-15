@@ -4,7 +4,7 @@ module.exports = {
     name: "badges",
     aliases: ['insigneas'],
     cooldown: 1000 * 2, 
-    description: "Badges",
+    description: "Veja suas insigneas.",
     category: "outros",
     usage: "<emoji_name>",
   

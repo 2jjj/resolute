@@ -4,7 +4,7 @@ module.exports = {
   name: "avatar",
   aliases: ['av', 'icon'],
   cooldown: 1000 * 2, 
-  description: "Avatar de alguém!",
+  description: "Pegue um avatar de alguém!",
   category: "info",
   usage: "<@user>",
 

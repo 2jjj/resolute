@@ -4,7 +4,7 @@ module.exports = {
     name: "emojify",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Emojify command.",
+    description: "Emojify, fale por emojis!",
     category: "outros",
     usage: "<texto>",
 

@@ -4,7 +4,7 @@ module.exports = {
     name: "addemoji",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Adicione um emoji!",
+    description: "Adicione um emoji de outro servidor!",
     category: "outros",
     usage: "<emoji>",
 

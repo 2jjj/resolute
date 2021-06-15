@@ -9,8 +9,8 @@ module.exports = {
     aliases: ["insta"],
     category: "outros",
     cooldown: 1000 * 2, 
-    description: "insta",
-    usage: "<name>",
+    description: "Pegue informações do insta de alguém!",
+    usage: "<@user>",
     run: async (client, message, args) => {
         const name = args.join(" ");
 
