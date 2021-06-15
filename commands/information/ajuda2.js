@@ -4,7 +4,7 @@ module.exports = {
   name: "ajuda2",
   aliases: ['help2'],
   cooldown: 1000 * 2, 
-  description: "Minhas informações.",
+  description: "Mostrar os comandos disponiveis.",
   //category: "info",
   usage: "",
 
