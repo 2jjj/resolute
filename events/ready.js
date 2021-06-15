@@ -9,11 +9,10 @@ module.exports = async (client) => {
     .then(async results => { 	
         const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
         const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-        const botGuilds = guilds.reduce((prev, val) => prev + val)
-
+        
         const arrayOfStatus = [
-        `s.help | ${totalMembers} users`,
-        `${botGuilds} guilds & ${totalMembers} users`,
+        `s.help | Shards: ${config.shards} | ${totalMembers} users`,
+        `${totalGuilds} guilds & ${totalMembers} users`,
         ];
 
         let index= 0;
