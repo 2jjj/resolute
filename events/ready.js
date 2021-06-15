@@ -11,7 +11,7 @@ module.exports = async (client) => {
         const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
         
         const arrayOfStatus = [
-        `s.help | Shards: ${config.shards} | ${totalMembers} users`,
+        `s.help | ${totalMembers} users`,
         `${totalGuilds} guilds & ${totalMembers} users`,
         ];
 
