@@ -3,7 +3,7 @@ module.exports = {
   name: "clear",
   aliases: ['limpar'],
   cooldown: 1000 * 2, 
-  description: "Limpar o site.",
+  description: "Limpar mensagens.",
   category: "mod",
   usage: "<0/100>",
 

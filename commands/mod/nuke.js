@@ -2,7 +2,7 @@ module.exports = {
     name: "nuke",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Nukar um canal!",
+    description: "Nukar um canal e criar outro com o mesmo nome.",
     category: "mod",
     usage: "",
 

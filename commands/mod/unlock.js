@@ -5,7 +5,7 @@ module.exports = {
     name: "unlock",
     aliases: ['desbloquear'],
     cooldown: 1000 * 2, 
-    description: "Desbloquear um canal.",
+    description: "Desbloquear o canal bloqueado anteriormente.",
     category: "mod",
     usage: "",
   

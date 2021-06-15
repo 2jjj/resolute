@@ -2,7 +2,7 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'globalban',
-    description: 'Global ban',
+    description: 'Banir um usuário por ID do seu servidor.',
     cooldown: 1000 * 2, 
     usage: '<user.id> <reason>',
     aliases: ['globalban'],
@@ -20,7 +20,7 @@ module.exports = {
         let reason = args.slice(1).join(' ') || 'Sem razão especificada.'
 
         if(!userID) return message.reply('Coloque o ID do membro que quer banir.')
-        if(isNaN(userID)) return message.reply('O id é um número kkk.')
+        if(isNaN(userID)) return message.reply('Isto não é um id.')
 
         if(userID === message.author.id) return message.reply('Você não pode se banir.')
         if(userID == client.user.id) return message.reply('Você não pode me banir com o **meu própio** comando.')
