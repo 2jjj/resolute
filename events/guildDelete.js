@@ -6,7 +6,7 @@ module.exports = async (client, guild) => {
     if(err) return console.log(err)
     })
         
-    let icon = (!guild.iconURL()?'https://cdn.discordapp.com/attachments/795130563916595270/838503065836584960/PSX_20210502_165304.jpg':guild.iconURL())
+    let icon = (!guild.iconURL()?'https://cdn.discordapp.com/avatars/764919941538775050/672afa4f2a4ac5fee624580229a2efbd.png?size=1024':guild.iconURL())
         
     client.shard.broadcastEval(`
     (async () => {
