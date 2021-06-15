@@ -2,14 +2,15 @@ const os = require('os');
 const config = require("../config.json");
 
 module.exports = async (client) => {
-    //var numWorkers = require('os').cpus().length;
-    const guilds = await client.shard.broadcastEval("this.guilds.cache.size")
-    const botGuilds = guilds.reduce((prev, val) => prev + val)
-    //const users = await client.shard.broadcastEval("this.users.cache.size");
-    //const botUsers = users.reduce((prev, val) => prev + val)
 
-    //console.log(botUsers)
-   //console.log(botGuilds)
+    const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 
+    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')];
+    Promise.all(promises) 	
+    .then(async results => { 	
+        const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
+        const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
+    })
+
    console.log(`${client.user.username} ✅`)
 
    const arrayOfStatus = [
