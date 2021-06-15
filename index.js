@@ -84,6 +84,8 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 
 client.translate = async(text, message) => {
     const lang = await database.has(`lang-${message.guild.id}`) ? await database.get(`lang-${message.guild.id}`) : `pt-br`;
+    const translated = await translate(text, {from: 'pt-br', to: lang});
+    return translated.text;
 }
 
 
