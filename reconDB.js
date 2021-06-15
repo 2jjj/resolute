@@ -1,4 +1,4 @@
-const client = require('../index');
+const client = require('./index');
 const { reconDB} = require('reconlx');
 
 const database = new reconDB(client, {
