@@ -1,6 +1,3 @@
-const os = require('os');
-const config = require("../config.json");
-
 module.exports = async (client) => {
 
     const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 
