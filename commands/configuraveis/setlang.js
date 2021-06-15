@@ -1,4 +1,4 @@
-const  db = require('../../reconDB');
+const database = require('../../reconDB');
 
 module.exports = {
     name: "setlang",
@@ -12,7 +12,7 @@ module.exports = {
         if(!message.member.hasPermission('ADMINISTRATOR')) return;
         const lang = args[0];
         if(!lang) message.reply('Please specify a lang.');
-        await db.set(`lang-${message.guild.id}`, lang);
+        await database.set(`lang-${message.guild.id}`, lang);
         message.channel.send('Language has been set to ' + lang);
     }
 }
