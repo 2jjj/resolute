@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const db = require("quick.db")
+require("../../util/inlineReply")
 
 module.exports = {
     name: "setprefix",
@@ -9,7 +10,7 @@ module.exports = {
     category: "config",
     usage: "<novo_prefixo>",
 
-    async run (client, message, args) {
+    async run (client, message, args, msg) {
 
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         let permss = new Discord.MessageEmbed()
@@ -45,35 +46,16 @@ module.exports = {
         return message.inlineReply(space)
     }
 
-    if (args[0].length > 2) {
+    if (args[0].length > 3) {
         let caracter = new Discord.MessageEmbed()
             .setColor('#8B0000')
-            .setTitle('O prefixo não pode ter mais de 2 caracteres.')
+            .setTitle('O prefixo não pode ter mais de 3 caracteres.')
         return message.inlineReply(caracter)
     }
 
-    let newprefix = new Discord.MessageEmbed()
-        .setColor('BLUE')
-        .setTitle('Deseja alterar meu prefixo para: `' + args[0] + '` ?')
-    await message.inlineReply(newprefix).then(msg => {
-        msg.react('✅') // Check
-        msg.react('❌') // X
-
-        msg.awaitReactions((reaction, user) => {
-            if (message.author.id !== user.id) return
-
-            if (reaction.emoji.name === '✅') { // Sim
-                msg.delete().catch(err => { return })
                 db.set(`prefix_${message.guild.id}`, args[0])
                 let alterado = new Discord.MessageEmbed()
                     .setColor('GREEN')
                     .setDescription(`${message.author}` + ' alterou meu prefixo para: `' + args[0] + '`')
                 return message.inlineReply(alterado)
-            }
-            if (reaction.emoji.name === '❌') { // Não
-                msg.delete().catch(err => { return })
-                message.inlineReply("Comando cancelado.")
-            }
-        })
-    }) // aqui
 }}
