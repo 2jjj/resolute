@@ -12,7 +12,6 @@ client.shard.broadcastEval(`
 let channel = this.channels.cache.get("841393455694872597")
 const webhooks = await channel.fetchWebhooks(); 		
 const webhook = webhooks.first();
-
 let embed = {
 color: "#5B00FF",
 author: {
