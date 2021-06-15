@@ -1,12 +1,47 @@
 const Discord = require("discord.js")
+const guildSchema = require('../mongoDB/guild');
+
 
 module.exports = async (client, guild) => {
-    //https://discord.com/api/webhooks/841393653155102740/vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ
-    let canal = client.channels.cache.get("841393455694872597")
-    let embed = new Discord.MessageEmbed()
-    .setTitle("Events - Resolute")
-    //.setThumbnail(client.user.displayAvatarURL())
-    .addField("Fui removido de uma guild #depressão", `Spray tristezas`)
-    .setColor([255,182,193])
-    canal.send(embed)
+
+
+let icon = (!guild.iconURL()?'https://cdn.discordapp.com/attachments/795130563916595270/838503065836584960/PSX_20210502_165304.jpg':guild.iconURL())
+
+client.shard.broadcastEval(`
+(async () => {
+let channel = this.channels.cache.get("841393455694872597")
+const webhooks = await channel.fetchWebhooks(); 		
+const webhook = webhooks.first();
+
+let embed = {
+color: "#5B00FF",
+author: {
+name: \`Sai de um servidor | (${guild.name}/${guild.id})\`,
+icon_url: \`${icon}\`,
+},
+thumbnail: {
+url: \`${icon}\`,
+},
+fields: [
+{
+name: \`Nome:\`,
+value: \`(\\\`${guild.name}/${guild.id}\\\`)\`,
+},
+{
+name: \`Dono:\`,
+value: \`(\\\`${guild.owner.user.tag}/${guild.owner.id}\\\`)\`,
+},
+{
+name: \`Total de membros\`,
+value: \`${guild.memberCount}\`,
+},
+],
+timestamp: new Date(),
+footer: {
+text: \`${guild.id}\`, 
+icon_url: \`${icon}\`, 	
+},
+}
+webhook.send({embeds: [embed] })
+})()`, 0)
 }
