@@ -13,10 +13,7 @@ module.exports = async (client) => {
    console.log(`${client.user.username} ✅`)
 
    const arrayOfStatus = [
-       `${botGuilds} guilds. | Shards: ${config.shards}`,
-       `70K+ users. | Shards: ${config.shards}`,
-       `Developer: Spray#0007`,
-       `s.help`
+       `resolute.help | s.help | ${botGuilds} guilds | Shards: ${config.shards}`,
    ];
 
    let index= 0;
