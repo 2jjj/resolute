@@ -9,22 +9,23 @@ module.exports = async (client) => {
     .then(async results => { 	
         const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
         const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-    })
+        
+        const arrayOfStatus = [
+        `s.help | Shards: ${config.shards} | ${totalMembers} users`,
+        `${totalGuilds} guilds & ${totalMembers} users`,
+        ];
 
-   console.log(`${client.user.username} ✅`)
+        let index= 0;
+        setInterval(() => {
+            if(index === arrayOfStatus.length) index = 0;
+            const status = arrayOfStatus[index];
+            //console.log(`Streaming ${status}`);
+            client.user.setActivity(`${status}`, {
+            type: "LISTENING",
+        })
+        index++;
+        }, 10000);
+        })
 
-   const arrayOfStatus = [
-       `resolute.help | s.help | ${botGuilds} guilds | Shards: ${config.shards}`,
-   ];
-
-   let index= 0;
-   setInterval(() => {
-       if(index === arrayOfStatus.length) index = 0;
-       const status = arrayOfStatus[index];
-       //console.log(`Streaming ${status}`);
-       client.user.setActivity(`${status}`, {
-        type: "LISTENING",
-    })
-    index++;
-   }, 10000);
+        console.log(`${client.user.username} ✅`)
 }
