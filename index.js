@@ -92,5 +92,5 @@ client.translate = async(text, message) => {
 */
 
 //NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.ACmB_7hwECCMfCrO-2TyX9k_UZY
-//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.fUm4cDC90dHY-_tQQ4GsXgD2w0o
+//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.uVtruAQrFVWePFjAmS9cgQUHDgM
 client.login(config.token)
