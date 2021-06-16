@@ -21,8 +21,8 @@ module.exports = {
         },
         emojis: {
           empty: '⬛', //zone emoji
-          snakeBody: '♿', //snake
-          food: '💩', //food emoji
+          snakeBody: '🐍', //snake
+          food: '🥩', //food emoji
           //control
           up: '⬆️', 
           right: '⬅️',
