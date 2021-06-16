@@ -5,7 +5,7 @@ module.exports = {
     aliases: [],
     cooldown: 1000 * 2, 
     description: "Emojify, fale por emojis!",
-    category: "outros",
+    category: "fun",
     usage: "<texto>",
 
     async run (client, message, args) {
