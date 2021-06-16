@@ -5,7 +5,7 @@ module.exports = {
     name: "snake",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Jogo da cobrinha",
+    description: "Jogo da cobrinha.",
     category: "fun",
     usage: "",
 
