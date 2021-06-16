@@ -26,7 +26,7 @@ module.exports = {
 
   let ataque = new Discord.MessageEmbed()
   .setTitle(`😤 Ataque! 😭`)
-  .setDescription(`💔 ${message.author} atacou o ${pessoa}!`)
+  .setDescription(`💔${pessoa} o ${message.author} te atacou!`)
   .setImage(rand)
   .setTimestamp()
   .setColor("YELLOW")
