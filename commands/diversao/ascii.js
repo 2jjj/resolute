@@ -4,7 +4,7 @@ module.exports = {
     name: "ascii",
     aliases: ["asciitext"],
     cooldown: 1000 * 2, 
-    description: "Converte teu texto em acii!",
+    description: "Converte o seu texto em para ascii!",
     category: "fun",
     usage: "<texto>",
 
