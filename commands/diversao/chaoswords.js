@@ -4,7 +4,7 @@ module.exports = {
     name: "chaoswords",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "",
+    description: "Ache as palavras!",
     category: "fun",
     usage: "",
   
