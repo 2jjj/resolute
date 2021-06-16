@@ -4,7 +4,7 @@ const config = require("./config.json")
 
 const manager = new ShardingManager('./index.js', {
     totalShards: 'auto', 
-    token: 'ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.uVtruAQrFVWePFjAmS9cgQUHDgM'
+    token: 'NzY0OTE5OTQxNTM4Nzc1MDUw.X4NRNQ.8jOaWGn4Ai1Ql5y1HRsPNTb80Dw'
 });
 
 
