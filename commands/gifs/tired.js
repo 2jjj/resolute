@@ -8,7 +8,7 @@ module.exports = {
     category: "fun",
     usage: "@user",
   
-    async run (client, message, args) {
+  async run (client, message, args) {
 
   let list = [
     'https://imgur.com/Gkel36E.gif',

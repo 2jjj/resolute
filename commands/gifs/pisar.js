@@ -41,7 +41,7 @@ async run (client, message, args) {
 
     var nouser = new Discord.MessageEmbed()
       .setColor('#FF0000')
-      .setTitle('Erroooou')
+      .setTitle('Erro! Forma de ultilização:')
       .setDescription('`' + prefix + 'pisar @user`')
     return message.reply(nouser)
   }
