@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["correr"],
     cooldown: 1000 * 2, 
     description: "Corra!",
-    category: "fun",
+    category: "gifs",
     usage: "@user",
   
   async run (client, message, args) {
