@@ -6,7 +6,7 @@ const db = require("quick.db");
 
 module.exports = {
   name: "status",
-  aliases: ['cpu', 'info'],
+  aliases: ['cpu', 'info', 'stats'],
   cooldown: 1000 * 2, 
   description: "Status/Info da máquina do resolute.",
   category: "info",
