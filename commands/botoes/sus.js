@@ -4,7 +4,7 @@ module.exports = {
     name: "sus",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "SUSKKK",
+    description: "Sus!! AmongUS",
     category: "botoes",
     usage: "",
 
