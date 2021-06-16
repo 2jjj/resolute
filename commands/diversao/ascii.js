@@ -1,5 +1,6 @@
 const Discord = require ('discord.js')
 const figlet = require ("figlet")
+
 module.exports = {
     name: "ascii",
     aliases: ["asciitext"],

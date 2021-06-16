@@ -1,5 +1,6 @@
 const { ChaosWords } = require("weky")
 var randomWords = require('random-words');
+
 module.exports = {
     name: "chaoswords",
     aliases: [],
