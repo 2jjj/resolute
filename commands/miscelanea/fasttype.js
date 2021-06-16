@@ -3,7 +3,7 @@ module.exports = {
     aliases: [],
     cooldown: 1000 * 2, 
     description: " ",
-    category: "fun",
+    category: "outros",
     usage: "",
   
   async run (client, message, args) {
