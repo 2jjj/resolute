@@ -25,7 +25,7 @@ let resta = [time.seconds, 'segundos']
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
 const aguarde = new Discord.MessageEmbed()
-  .setTitle('Muita Calma nessa hora amigão !!!')
+  .setTitle('Espere.')
   .setColor('#F500FF')
     .setImage('https://cdn.discordapp.com/attachments/755506991019065425/765688678801604659/purple_load.gif')
   .setDescription(`**Por favor ${message.author}, espere **\`${time}\`** para executar outro comando**`)
