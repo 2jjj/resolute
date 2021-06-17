@@ -5,7 +5,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   description: "Limpar mensagens.",
   category: "mod",
-  usage: "<0/100>",
+  usage: "<0/99>",
 
   async run (client, message, args) {
 
