@@ -25,7 +25,6 @@ module.exports = {
     .setFooter(` • Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
  
     message.channel.send(serverembed);
- 
-   message.delete();
+
  }
 }
