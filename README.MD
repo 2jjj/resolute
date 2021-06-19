@@ -20,6 +20,6 @@
 - Shards
 
 ## ℹ️ Precisa de ajuda?
-[Entre no meu servidor de suporte!](https://discord.gg/VE9WeKZhPY)
+[Entre no meu servidor de suporte!](https://discord.gg/resolute)
 ## 😄 Me adicione!
-[Clique aqui!](https://discord.com/oauth2/authorize?client_id=764919941538775050&permissions=8&scope=bot)
+[Clique aqui!](https://discord.com/oauth2/authorize?client_id=854817597706338304&permissions=8&scope=bot)
