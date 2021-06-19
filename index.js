@@ -2,7 +2,8 @@ const { Client, Collection } = require("discord.js");
 const fs = require("fs");
 const crystol = require("crystolnetwork-log");
 const cor = require("colors");
-const db = require("quick.db")
+const db = require("quick.db");
+const config = require("./config.json");
 
 const client = new Client({
     disableEveryone: true
@@ -58,4 +59,4 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 });
   
 
-client.login('ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.lb1yyFECRPq42M--GFZCE1UQmCs');
+client.login(config.token);
