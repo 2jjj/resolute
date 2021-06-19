@@ -17,7 +17,7 @@ module.exports = {
           .then(msg => msg.delete({ timeout: 5000 }));
 
       let i0 = 0;
-      let i1 = 10;
+      let i1 = 100;
       let page = 1;
 
       let description =
@@ -26,8 +26,10 @@ module.exports = {
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
           .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
-          .slice(0, 10)
+          .slice(0, 100)
           .join("\n\n");
+      
+      console.log(description)
 
       let embed = new Discord.MessageEmbed()
         .setAuthor(client.user.tag, client.user.displayAvatarURL({dynamic : true}))
