@@ -6,7 +6,7 @@ module.exports = {
     aliases: [],
     cooldown: 1000 * 2, 
     description: "Jogo da cobrinha.",
-    category: "fun",
+    category: "botoes",
     usage: "",
 
   async run (client, message, args) {

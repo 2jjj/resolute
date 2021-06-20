@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['pedrapapeltesoura'],
     cooldown: 1000 * 2, 
     description: "Jogue pedra papel e tesoura por ai!",
-    category: "outros",
+    category: "botoes",
     usage: "",
 
     async run (bot, message, args) {
