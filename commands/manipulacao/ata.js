@@ -21,7 +21,6 @@ module.exports = {
       let raw = canvas.toBuffer()
       const attachment = new (require("discord.js")).MessageAttachment(raw, `ata-${message.author.id}.png`);
       message.quote(message.author, attachment).then(a => {
-          message.delete()
           message.channel.stopTyping()
       })
     }}
