@@ -26,12 +26,14 @@ module.exports = {
         .setTitle("**Minhas informações!**")
         .setColor("RANDOM")
         .setThumbnail(avatar)
-        .setDescription(`Me chamo Resolute, fui criado no dia **11 de outubro de 2020** pelo **Spray#0007** na linguagem **Javascript** com o discord.js\n\n\n**Algumas informações:\n
+        .setDescription(`Me chamo Resolute, fui criado no dia **11 de outubro de 2020** pelo **Spray#0007** na linguagem **Javascript** com o discord.js\n\n\n**Algumas informações:
         <:early_developer_badge:854716150076538901> **|** Developer: ${config.spray}
         <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         <:pontin:852197383974551582> **|** ${totalMembers} de usuários.
         <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
+        <:cpu:854137097521987624> **|** Shards: ${config.shards}
         <:memoryram:854135087037153280> **|** Memória ultilizada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB
+        <:ybs_bot:851955104345227294> **|** [Me adicione!](https://invite.resolutebot.xyz)
         **`)
         await message.channel.send(embed);
     })
