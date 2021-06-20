@@ -12,7 +12,7 @@ module.exports = {
         let button = new MessageButton()
         .setLabel("Me adicione!")
         .setStyle("url")
-        .setURL("https://discord.com/oauth2/authorize?client_id=764919941538775050&permissions=8&scope=bot")
+        .setURL("https://discord.com/oauth2/authorize?client_id=854817597706338304&permissions=8&scope=bot")
         message.channel.send("Está querendo me adicionar? clique no botão abaixo!", button)
     }
 }
