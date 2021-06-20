@@ -15,15 +15,15 @@ module.exports = {
     new Snake({
         message: message,
         embed: {
-        title: 'Snake', //embed title
-        color: "#gt4668", //embed color
-        gameOverTitle: "Game Over", //game over embed title
+        title: 'Snake',
+        color: "#gt4668", 
+        gameOverTitle: "Game Over", 
         },
         emojis: {
-          empty: '⬛', //zone emoji
-          snakeBody: '🐍', //snake
-          food: '🥩', //food emoji
-          //control
+          empty: '⬛',
+          snakeBody: '🐍', 
+          food: '🥩', 
+          //controles
           up: '⬆️', 
           right: '⬅️',
           down: '⬇️',
