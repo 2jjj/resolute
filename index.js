@@ -4,6 +4,7 @@ const crystol = require("crystolnetwork-log");
 const cor = require("colors");
 const db = require("quick.db");
 const config = require("./config.json");
+const ms = require('ms');
 
 const client = new Client({
     disableEveryone: true
@@ -18,6 +19,7 @@ require('discord-buttons')(client);
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = fs.readdirSync("./commands/");
+const Timeout = new Collection();
 
 
 ["command"].forEach(handler => {
@@ -33,7 +35,7 @@ client.on("message", async message => {
     } 
 
     let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+    if (prefix === null) prefix = "%"
 
     if (message.author.bot) return;
     if (!message.guild) return;
@@ -48,8 +50,17 @@ client.on("message", async message => {
     let command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-    if (command) 
-        command.run(client, message, args);
+    if (command) {
+        crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
+        if(command.cooldown) {
+            if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+            command.run(client, message, args)
+            Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
+            setTimeout(() => {
+                Timeout.delete(`${command.name}${message.author.id}`)
+            }, command.cooldown)
+        } else command.run(client, message, args);
+    }
 });
 
 fs.readdir(__dirname + "/events/", (err, files) => {
