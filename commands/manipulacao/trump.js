@@ -22,7 +22,6 @@ module.exports = {
 
             message.quote(message.author, attachment).then(m2 => {
               message.channel.stopTyping()
-              message.delete()
             })
         } catch (e) {
             console.log(e.message)
