@@ -29,13 +29,13 @@ const Timeout = new Collection();
 
 client.on("message", async message => {
 
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "%"
+
     if (message.content.startsWith('<')) {
         if (message.content.endsWith('>'))
             if (message.mentions.has(client.user.id)) { return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!') }
     } 
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "%"
 
     if (message.author.bot) return;
     if (!message.guild) return;

@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 module.exports = {
     name: "wikipedia",
-    aliases: [],
+    aliases: ['wiki'],
     cooldown: 1000 * 2, 
     description: "Pesquisar uma wiki na wikipedia.",
     category: "outros",
@@ -21,13 +21,8 @@ module.exports = {
       return message.channel.send("Erro! Página não encontrada ... :x:");
 
     const embed = new Discord.MessageEmbed()
-      .setTitle(`🌐 ${body.title}`)
-      .addField(
-        "Íntegra:",
-        `**[Click aqui!](${body.content_urls.desktop.page})**`,
-        true
-      )
-      .setDescription(`** ${body.extract} **`)
+      //.setTitle(`[${body.title}](${body.content_urls.desktop.page})`)
+      .setDescription(`**[${body.title}](${body.content_urls.desktop.page})**\n\n${body.extract}`)
       .setColor("GREEN");
     if (body.thumbnail) embed.setThumbnail(body.thumbnail.source);
     message.channel.send(embed);
