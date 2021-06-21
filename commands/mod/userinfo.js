@@ -28,21 +28,22 @@ module.exports = {
         bot = "❌ Não";
       }
 
-            let embed = new Discord.MessageEmbed()
-                //.setAuthor(member.user.username)
-                .setThumbnail((target.displayAvatarURL))
-                .setColor("#00ff00")
-                .addField("<a:SETA:852194614927818812> **|** User", `${member.user.tag}`, inline)
-                .addField("<a:SETA:852194614927818812> **|** ID", member.user.id, inline)
-                .addField("<a:SETA:852194614927818812> **|** Nickname", `${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}`, true)
-                .addField("<a:SETA:852194614927818812> **|** Bot", `${bot}`,inline, true)
-                .addField("<a:SETA:852194614927818812> **|** Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("<a:SETA:852194614927818812> **|** Jogando", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "❌ Sem atividade de jogo."}`,inline, true)
-                .addField("<a:SETA:852194614927818812> **|** Cargos", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}`, true)
-                .addField("<a:SETA:852194614927818812> **|** Entrou no discord em", member.user.createdAt)
-                .setFooter(`Informação sobre ${member.user.username}`)
-                .setTimestamp()
+      let embed = new Discord.MessageEmbed()
+      //.setAuthor(member.user.username)
+        .setThumbnail((target.displayAvatarURL))
+        .setColor("#00ff00")
+        .setDescription(`
+        **| User:** \`${member.user.tag}\`
+        **| ID:** \`${member.user.id}\`
+        **| Apelido:** \`${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}\`
+        **| Bot? ->** \`${bot}\`
+        **| Status:** \`${status[member.user.presence.status]}\`
+        **| Cargos:** ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}
+        **| Dia em que entrou no discord:** \`${member.user.createdAt}\`
+        `)
+        .setFooter(`Informação sobre ${member.user.username}`)
+        .setTimestamp()
     
-            message.channel.send(embed);
+      message.channel.send(embed);
     }
   }   
