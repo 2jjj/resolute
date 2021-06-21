@@ -33,13 +33,13 @@ module.exports = {
         .setThumbnail((target.displayAvatarURL))
         .setColor("#00ff00")
         .setDescription(`
-        **| User:** \`${member.user.tag}\`
-        **| ID:** \`${member.user.id}\`
-        **| Apelido:** \`${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}\`
-        **| Bot? ->** \`${bot}\`
-        **| Status:** \`${status[member.user.presence.status]}\`
-        **| Cargos:** ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}
-        **| Dia em que entrou no discord:** \`${member.user.createdAt}\`
+        <:user_StarLab:855629091344744448> **| User:** \`${member.user.tag}\`
+        <:information:843542771814236170> **| ID:** \`${member.user.id}\`
+        <:ybs_usuarios:851954718724980757> **| Apelido:** \`${member.nickname !== null ? `✅ Apelido: ${member.nickname}` : "❌ Sem Apelidos"}\`
+        <:ybs_bot:851955104345227294> **| Bot? ->** \`${bot}\`
+        <:info:856340439203053812> **| Status:** \`${status[member.user.presence.status]}\`
+        <:ybs_status:851954702840627200> **| Cargos:** ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "❌ Sem cargos"}
+        <:ybs_lupa:851954489988743198> **| Dia em que entrou no discord:** \`${member.user.createdAt}\`
         `)
         .setFooter(`Informação sobre ${member.user.username}`)
         .setTimestamp()
