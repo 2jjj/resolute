@@ -5,7 +5,6 @@
     },
 */
 
-/*
 module.exports = async (client, guild) => {
     const guildSchema = require('../mongoDB/guild.js');
         
@@ -25,7 +24,7 @@ module.exports = async (client, guild) => {
     let embed = {
     color: "#5B00FF",
     author: {
-     name: \`Sai de um servidor | (${guild.name}/${guild.id})\`,
+     name: \`Fui removido de um servidor | (${guild.name}/${guild.id})\`,
     icon_url: \`${icon}\`,
     },
     thumbnail: {
@@ -49,5 +48,4 @@ module.exports = async (client, guild) => {
     }
     webhook.send({embeds: [embed] })
     })()`, 0)
-    };
-    */
+};

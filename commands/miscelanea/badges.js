@@ -16,6 +16,6 @@ module.exports = {
 
         console.log(flags);
         
-        message.channel.send(`${user}'s badges: ${flags.join(', ')}`)
+        message.channel.send(`Insigneas de ${user}: ${flags.join(', ')}`)
     }
 }

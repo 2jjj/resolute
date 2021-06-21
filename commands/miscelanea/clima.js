@@ -20,7 +20,7 @@ module.exports = {
   var noargs = new Discord.MessageEmbed()
     .setColor('BLUE')
     .setTitle('⛅')
-    .setDescription('Explore o clima dos paises e cidades.')
+    .setDescription('Explore o clima de paises ou cidades.')
     .addField("Segue o exemplo:", '`' + prefix + 'clima SP ou São Paulo`')
 
   if (!args[0]) { return message.channel.send(noargs) }

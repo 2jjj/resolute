@@ -14,7 +14,7 @@ async run (client, message, args) {
     const bans = await message.guild.fetchBans(); 
 
     if (!bans.first()) 
-        return message.channel.send('> Este servidor não tem membros banidos!');
+        return message.channel.send('<:1926blurplecross:856520144872407060> **|** Este servidor não tem membros banidos!');
     
     let msg = '';
 
@@ -23,5 +23,5 @@ async run (client, message, args) {
         msg += `\`${user.user.tag}\`, `;
     });
 
-    message.channel.send('> Lista de membros banidos:\n' + msg, { split: true });
+    message.channel.send('<:9023blurpleemployee:856520144860086272> **|** Lista de membros banidos:\n' + msg, { split: true });
 }}

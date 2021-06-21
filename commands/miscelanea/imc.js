@@ -16,13 +16,13 @@ module.exports = {
     if (prefix === null) { prefix = "s." }
 
     let color = await db.get(`color_${message.author.id}`)
-    if (color === null) color = '#6F6C6C'
+    if (color === null) color = 'RANDOM'
 
     let weight = args[0]
     let height = args[1]
 
     const imcError = new Discord.MessageEmbed()
-        .setColor("BLUE")
+        .setColor("RANDOM")
         .setTitle('📝 Indice de Massa Corporal')
         .setDescription('`' + prefix + 'imc Peso Altura`' + '\n \n**Atenção**\nPeso em **Kilogramas** e Altura em **Centimentros**\n \n')
         .addFields(

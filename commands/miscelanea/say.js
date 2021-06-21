@@ -9,18 +9,18 @@ module.exports = {
   category: "fun",
   usage: "<texto>",
 
-async run (client, message, args) {
+  async run (client, message, args) {
   
-  const user = message.author;
-  let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
-  const sayMessage = args.join(' ') 
-  if(!sayMessage) {
-    message.reply('> Falta o que você vai falar!') 
-  } else {
-  const say = new Discord.MessageEmbed()
-  .setAuthor(user.tag, avatar)
-  .setDescription(sayMessage)
-  message.delete()
-  message.channel.send(say)
-  }
+    const user = message.author;
+    let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
+    const sayMessage = args.join(' ') 
+    if(!sayMessage) {
+      message.reply('Você não especificou a mensagem para eu falar!') 
+    } else {
+    const say = new Discord.MessageEmbed()
+    .setAuthor(user.tag, avatar)
+    .setDescription(sayMessage)
+    message.delete()
+    message.channel.send(say)
+    }
 }}

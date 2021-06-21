@@ -66,13 +66,13 @@ module.exports = {
         
         const embed = new MessageEmbed()
         
-        .setTitle(`Role Info !!`)
+        .setTitle(`Cargo: ${role}`)
         .setThumbnail(message.guild.iconURL({dynamic: true, size: 1024}))
         .addField('Nome', role, true)
         .addField('ID', `\`${role.id}\``, true)
         .addField('Posição', position, true)
         .addField('Mencionável?', yesno[role.mentionable], true)
-        .addField('Bot Role', yesno[role.managed], true)
+        //.addField('Bot Role', yesno[role.managed], true)
         .addField('Visivel', yesno[role.hoist], true)
         .addField('Cor', `\`${role.hexColor.toUpperCase()}\``, true)
         .addField('Data de criação', `\`${moment(role.createdAt).format('DD/MMM/YYYY')}\``, true)

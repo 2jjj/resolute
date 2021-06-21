@@ -14,7 +14,7 @@ module.exports = {
         if (!channel) return message.channel.send("**Canal não encontrado.**");
 
         let channelembed = new MessageEmbed()
-            .setTitle(`Channel Information for ${channel.name}`)
+            .setTitle(`${channel.name}`)
             .setThumbnail(message.guild.iconURL())
             .addField("**NSFW**", channel.nsfw, true)
             .addField("**ID**", channel.id, true)

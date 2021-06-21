@@ -13,8 +13,8 @@ module.exports = {
         let channelID = message.mentions.channels.first()
         let theDescription = args.slice(1).join(" ")
 
-        if(!channelID) return message.reply("<a:SETA:852194614927818812> Por favor, especifique um canal em que você deseja que a sugestão esteja! | `s.sugestao <canal>`")
-        if(!theDescription) return message.reply("<a:SETA:852194614927818812> Por favor, especifique uma descrição / pergunta para a sugestão!")
+        if(!channelID) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique um canal em que você deseja que a sugestão esteja! **|** `s.sugestao <#canal>`")
+        if(!theDescription) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique uma descrição / pergunta para a sugestão!")
 
         const embed = new MessageEmbed()
         .setColor("BLUE")

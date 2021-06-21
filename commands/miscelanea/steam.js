@@ -21,7 +21,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed() 
                             .setTitle(results.name)
                             .setColor('RANDOM')
-                            .setDescription(`\n\n<:spr4yxyz:837798446584168468> Gênero: ${results.genres.join(', ')} \n<:spr4yxyz:837798446584168468> Plataforma: ${other.platforms.join(', ')}\n<:spr4yxyz:837798446584168468> Características: ${other.features.join(', ')}\n\n<:spr4yxyz:837798446584168468> Desenvolvedor: ${other.developer.join(', ')}`)
+                            .setDescription(`\n\n<:spr4yxyz:837798446584168468> Gênero: ${results.genres.join(', ')} \n<:spr4yxyz:837798446584168468> Plataforma: ${other.platforms.join(', ')}\n<:spr4yxyz:837798446584168468> Características: ${other.features.join(', ')}\n<:spr4yxyz:837798446584168468> Desenvolvedor: ${other.developer.join(', ')}`)
                             .setThumbnail(other.imageUrl)
                             .setFooter(message.author.tag, message.author.displayAvatarURL(),message.author.displayAvatarURL)
                 return message.channel.send(embed)

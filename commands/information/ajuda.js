@@ -4,7 +4,7 @@ const db = require("quick.db")
 
 module.exports = {
   name: "help",
-  aliases : ['h', 'ajuda'],
+  aliases : ['h', 'ajuda', 'comandos', 'commands'],
   description: "Mostrar os comandos disponiveis.",
   category: "outros",
 

@@ -12,8 +12,8 @@ module.exports = {
     
     let repo = args.join(" ");
 
-    if (!repo) return message.channel.send(`> ⛔ | ${message.author}, Você deve falar um repositório para eu pesquisar no github.`);
+    if (!repo) return message.channel.send(`\<:1926blurplecross:856520144872407060> **|** ${message.author}, Você deve falar um repositório para eu pesquisar no github.`);
 
-    message.channel.send(`Repositório encontrado -> https://github.com/${repo}`)
+    message.channel.send(`<:5864blurplesearch:856520144817881118> **|** Repositório encontrado -> https://github.com/${repo}`)
   }
 }

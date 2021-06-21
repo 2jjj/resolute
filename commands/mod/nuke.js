@@ -10,7 +10,7 @@ module.exports = {
 
 		let filter = (m) => m.author.id === message.author.id
 		message.channel.send(
-			'Você tem certeza? | Responda com s / n '
+			'<:1598blurplesupport:856520144599777291> **|** Você tem certeza? | Responda com s / n '
 		)
 		message.channel
 			.awaitMessages(filter, {

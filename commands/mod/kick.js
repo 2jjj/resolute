@@ -36,7 +36,7 @@ module.exports = {
         if(!reason) return message.reply("<:ybs_duvida:851954411348820018> **|** Por favor, dê um motivo!")
 
         let embed2 = new Discord.MessageEmbed()
-        .setTitle("Resolute - Membro Kickado")
+        .setTitle(`O membro ${target.user} foi expulso!`)
         .setColor('RED')
         .addField("Usuário", `${target.user}`)
         .addField("Moderador", `${message.author}`)

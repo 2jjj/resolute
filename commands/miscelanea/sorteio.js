@@ -17,28 +17,28 @@ module.exports = {
     
     message.delete().catch(() => null);
     
-    if (!args[0]) return message.channel.send(`<a:SETA:852194614927818812> Você não específicou tempo.`);
+    if (!args[0]) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** Você não específicou tempo.`);
     
     if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
-    `<a:SETA:852194614927818812> Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
+    `<:1926blurplecross:856520144872407060> **|** Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
     );
     
-    if (isNaN(args[0][0])) return message.channel.send(`<a:SETA:852194614927818812> Isto não é um número!`);
+    if (isNaN(args[0][0])) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** Isto não é um número!`);
     
     let channel = message.mentions.channels.first();
     
     if (!channel) return message.channel.send(
-    `<a:SETA:852194614927818812> Você precisa marcar o canal para o sorteio!`
+    `<:1926blurplecross:856520144872407060> **|**ocê precisa marcar o canal para o sorteio **|** s.sorteio <#canal>`
     );
     
     let prize = args.slice(2).join(" ");
     
-    if (!prize) return message.channel.send(`<a:SETA:852194614927818812> Você precisa escrever o prêmio!`);
+    if (!prize) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** Você precisa colocar o prêmio!`);
     
-    message.channel.send(`*<a:SETA:852194614927818812> Sorteio criado em ${channel}*`);
+    message.channel.send(`*<:3169blurpleverified:856520145254088714> **|** Sorteio criado em ${channel}*`);
     
     let Embed = new MessageEmbed()
-    .setTitle(`Sorteio!`)
+    .setTitle(`Sorteio`)
     .setDescription(
     `<a:SETA:852194614927818812> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
     )
@@ -56,7 +56,7 @@ module.exports = {
     }
 
     let ganhador = m.reactions.cache.get("🎉").users.cache.filter((u) => !u.bot).random();
-    channel.send(`**Parabéns** ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
+    channel.send(`**🎉 **|** Parabéns** ${ganhador}!! \nVocê acabou de ganhar o sorteio De **${prize}!**`);
     
     }, ms(args[0]));
     },

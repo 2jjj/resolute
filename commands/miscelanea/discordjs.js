@@ -14,7 +14,7 @@ async run (client, message, args) {
 
     const query = args.join("") 
     if (!query) {
-    message.reply("Irei pesquisar oque você falar no discord.js(docs).") 
+    message.reply("<:1598blurplesupport:856520144599777291> **|** Você precisa colocar oque é para eu pesquisar nas docs do discord.js!") 
     }
     fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`) 
     .then(res => res.json()) 

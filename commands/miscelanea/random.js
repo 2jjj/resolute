@@ -2,7 +2,7 @@ module.exports = {
     name: "random",
     aliases: ['sorteador', 'numero'],
     cooldown: 1000 * 2, 
-    description: "Um número aleatório, que doidera né spray? ta sem ideia heim!kkk",
+    description: "Um número aleatório",
     category: "outros",
     usage: "",
 
@@ -11,5 +11,4 @@ module.exports = {
     let numero = Math.ceil(Math.random() * 100) 
     message.channel.send(`> ` + numero) 
 //⇝
-}
-}
+}}

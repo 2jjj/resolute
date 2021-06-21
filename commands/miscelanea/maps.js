@@ -12,7 +12,7 @@ module.exports = {
     async run (client, message, args) {
    
    const sit = args.join("_")
-    if (!args.length) return message.reply("Coloque uma localização certa!")
+    if (!args.length) return message.reply("<:1926blurplecross:856520144872407060> **|** Coloque uma localização certa!")
     const site = `https://maps.google.com/?q=${args.join("+")}`
     try {
       const msg = await message.channel.send('**Aguarde...** Isso pode demorar 10 segundos...')
@@ -26,7 +26,7 @@ module.exports = {
     } catch (err) {
       
       return message
-        .reply(`Erro: \`${err.message}\`. Tente novamente mais tarde!`)
+        .reply(`<:1926blurplecross:856520144872407060> **|** Erro: \`${err.message}\`. Tente novamente mais tarde!`)
         
     };
     }

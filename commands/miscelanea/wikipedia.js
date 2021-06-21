@@ -16,9 +16,9 @@ module.exports = {
         args.join(" ")
       )}`
     ).then(res => res.json().catch(() => {}));
-    if (!body) return message.channel.send("Página não encontrada :x:");
+    if (!body) return message.channel.send("Página não encontrada.");
     if (body.title && body.title === "Não encontrado.")
-      return message.channel.send("Erro! Página não encontrada ... :x:");
+      return message.channel.send("Erro! Página não encontrada.");
 
     const embed = new Discord.MessageEmbed()
       //.setTitle(`[${body.title}](${body.content_urls.desktop.page})`)

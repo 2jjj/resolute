@@ -12,13 +12,13 @@ module.exports = {
 
     const member = message.mentions.members.first();
 
-    if (!member) return message.reply("Especifique o membro.");
+    if (!member) return message.reply("<:ybs_mencao:851954512540991490> **|** Especifique o membro.");
 
     try {
       member.setNickname(null);
     } catch (err) {
       message.reply(
-        "Eu não tenho permissão para resetar " + member.toString() + " nickname!"
+        "<:1926blurplecross:856520144872407060> **|** Eu não tenho permissão para resetar " + member.toString() + " nickname!"
       );
     }
   },

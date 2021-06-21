@@ -16,14 +16,14 @@ module.exports = {
 
     var content = args.join(' ')
 
-    if (content.length > 600) { return message.inlineReply('<a:SETA:852194614927818812> O conteúdo a ser votado não pode passar de **600 caracteres.**') }
+    if (content.length > 600) { return message.inlineReply('<:1926blurplecross:856520144872407060> **|** O conteúdo a ser votado não pode passar de **600 caracteres.**') }
 
     var embed = new Discord.MessageEmbed()
         .setColor('BLUE')
         .setTitle(`Votação aberta por ${message.author.username}`)
         .setDescription(content)
 
-    if (!content) { return message.inlineReply(`<:1icon_x:846184439403118624> | **Maneira correta <a:SETA:852194614927818812> ${prefix}votar <conteudo da votação>**`) }
+    if (!content) { return message.inlineReply(`<:1926blurplecross:856520144872407060> **|** Maneira correta:\n <a:SETA:852194614927818812> ${prefix}votar <conteudo da votação>`) }
 
     if (content) {
         return message.channel.send(embed).then(msg => {

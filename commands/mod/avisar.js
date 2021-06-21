@@ -30,7 +30,7 @@ async run (client, message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:staff:835643948151996446> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
 
     let membro = message.mentions.users.first() 
-    if (!membro) return message.reply("Você precisa mencionar o usuário que quer dar aviso!")
+    if (!membro) return message.reply("<:ybs_mencao:851954512540991490> **|** Você precisa mencionar o usuário que quer dar aviso!")
 
     let motivo = args.slice(1).join(" "); 
     if (!motivo) return message.reply("Escreva um motivo do aviso do usuário!") 
@@ -43,7 +43,7 @@ async run (client, message, args) {
     .setDescription(`**Motivo: ${motivo}**`)
 
     membro.send(embed) 
-    message.channel.send(`<a:SETA:852194614927818812> **${message.author}** | Aviso enviado com sucesso!, ninguém mandou quebrar as regras!!`)
+    message.channel.send(`<:9023blurpleemployee:856520144860086272> **${message.author}** | Aviso enviado com sucesso!`)
     await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 }
 }

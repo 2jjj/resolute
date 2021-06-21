@@ -11,20 +11,20 @@ module.exports = {
 
     async run (client, message, args) {
 
-        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
+        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("<:1598blurplesupport:856520144599777291> **|** Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
-        if (!args[0]) return message.channel.send('> Coloque o tempo para o slowmode!').then(m => m.delete({ timeout: 5000}));
+        if (!args[0]) return message.channel.send('<:1598blurplesupport:856520144599777291> **|** Você precisa colocar o tempo que deseja no slowmode.').then(m => m.delete({ timeout: 5000}));
 
         const currentCooldown = message.channel.rateLimitPerUser;
 
-        const reason = args[1] ? args.slice(1).join(' ') : 'Nenhum motivo!';
+        const reason = args[1] ? args.slice(1).join(' ') : 'Sem motivos.';
 
         const embed = new MessageEmbed()
             .setFooter(`${message.author.tag} | ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }));
 
         if (args[0] === 'off') {
 
-            if (currentCooldown === 0) return message.channel.send('> Slowmode do canal está desativado.').then(m => m.delete({ timeout: 5000 }));
+            if (currentCooldown === 0) return message.channel.send(`<:3169blurpleverified:856520145254088714> **|** O slowmode foi desativado com sucesso por ${message.author}`)
 
             embed.setTitle('Slowmode Desativado.')
                 .setColor('#00ff00')
@@ -34,14 +34,15 @@ module.exports = {
 
         const time = ms(args[0]) / 1000;
 
-        if (isNaN(time)) return message.channel.send('Tempo invalido!').then(m => m.delete({ timeout: 5000 }));
+        if (isNaN(time)) return message.channel.send('<:1598blurplesupport:856520144599777291> **|** O tempo que você colocou é inválido!').then(m => m.delete({ timeout: 5000 }));
 
-        if (time >= 21600) return message.channel.send('> Esse limite de modo lento é muito alto, digite qualquer coisa menor que 6 horas.').then(m => m.delete({ timeout: 5000 }));
+        if (time >= 21600) return message.channel.send('<:1598blurplesupport:856520144599777291> **|** Esse limite de modo lento é muito alto, digite qualquer coisa menor que 6 horas.').then(m => m.delete({ timeout: 5000 }));
 
         if (currentCooldown === time) return message.channel.send(`> Slowmode já está definido para ${args[0]}`);
 
-        embed.setTitle('Slowmode Ativado')
+        embed.setTitle('Slowmode Ativado com sucesso!')
             .addField('Slowmode: ', args[0])
+            .addField('Ativado por: ', message.author)
             .addField('Razão: ', reason)
             .setColor('#ff0000');
 

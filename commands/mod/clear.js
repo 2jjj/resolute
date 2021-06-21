@@ -12,7 +12,7 @@ module.exports = {
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
-      "Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
+      "<:1926blurplecross:856520144872407060> **|** Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
     );
     
   const deleteCount = parseInt(args[0], 10);

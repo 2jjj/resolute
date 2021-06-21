@@ -12,7 +12,7 @@ module.exports = {
 
     const member = message.mentions.members.first();
 
-    if (!member) return message.reply("Especifique o usuário.");
+    if (!member) return message.reply("<:ybs_mencao:851954512540991490> **|** Especifique o usuário.");
 
     const arguments = args.slice(1).join(" ");
 
@@ -23,7 +23,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
       message.reply(
-        "Eu não tenho permissão de setar " + member.toString() + " nickname!"
+        "<:ybs_mencao:851954512540991490> **|** Eu não tenho permissão de setar " + member.toString() + " nickname!"
       );
     }
   },

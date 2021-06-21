@@ -14,10 +14,10 @@ module.exports = {
     let url = args[0]
     // ----- Shorter ----- \\
     if (!url) {
-      return message.reply('Coloque alguma URL para que eu possa encurtar')
+      return message.reply('<:1598blurplesupport:856520144599777291> **|** Você precisa colocar uma URL para que eu possa encurtar!')
     } else {
       tiny.shorten(url, function(res, err) {
-        message.channel.send("Sua URL foi encurtada com sucesso! **|** " + res)
+        message.channel.send(`<:8512blurplelink:856520144843046922> **|** Sua URL foi encurtada com sucesso! **|** ${res}`)
       })
     }
   }
