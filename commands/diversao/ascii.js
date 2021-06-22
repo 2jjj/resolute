@@ -17,7 +17,7 @@ module.exports = {
             }
             
             const embed = new Discord.MessageEmbed()
-            .setTitle(`Seu texto em Ascii`)
+            .setTitle(`Ascii`)
             .setColor('#36393f')
             .setDescription(`\`\`\`${text.trimRight()}\`\`\``) 
             
