@@ -26,7 +26,7 @@ module.exports = {
         .setTitle("**Minhas informações!**")
         .setColor("RANDOM")
         .setThumbnail(avatar)
-        .setDescription(`Me chamo Resolute, fui criado no dia **11 de outubro de 2020** pelo **Spray#0007** na linguagem **Javascript** com o discord.js\n\n\n**Algumas informações:
+        .setDescription(`Me chamo Resolute, fui criado no dia **11 de outubro de 2020** pelo **Spray#0007** na linguagem **Javascript** com o discord.js\n\n**Algumas informações:
         <:early_developer_badge:854716150076538901> **|** Developer: ${config.spray}
         <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         <:pontin:852197383974551582> **|** ${totalMembers} de usuários.
