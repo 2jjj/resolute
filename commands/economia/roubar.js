@@ -61,7 +61,7 @@ module.exports = {
                 let moneyEmbed = new Discord.MessageEmbed()
                 .setTitle("👮 **|** Preso por Roubo")
                 .setColor("RED")
-                .setDescription(`Você realizou um roubo e não se saiu muito bem!\nE você perdeu um total de **R$${amount}**!`)
+                .setDescription(`Você realizou um roubo e não se saiu muito bem!\nE você perdeu um total de **${amount}** coins!`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();  
 
@@ -78,7 +78,7 @@ module.exports = {
                 .setTitle("🔫 **|** Roubo Realizado")
                 .setColor("GREEN")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-                .setDescription(`Você roubou o ${user} e você conseguiu **R$${amount}**!`)
+                .setDescription(`Você roubou o ${user} e conseguiu **${amount}** Coins!`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();  
 

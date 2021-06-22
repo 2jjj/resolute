@@ -35,7 +35,7 @@ module.exports = {
             let embed1 = new Discord.MessageEmbed()
             .setTitle("💸 **|** Trabalho")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou: \n\n💸 Dinheiro: **R$${amount}**`)
+            .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou **\`${amount}\` Coins!**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();  
             message.channel.send(`${user}`, embed1);

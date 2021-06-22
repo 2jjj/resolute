@@ -29,10 +29,10 @@ module.exports = {
         let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
 
         let moneyEmbed = new Discord.MessageEmbed()
-        .setTitle(":dollar: | Dinheiro adicionado!")
+        .setTitle("Coins adicionadas!")
         .setColor("RANDOM")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
+        .setDescription(`Foi adicionado **\`${args[1]}\`** Coins para ${user}!\n\nCoins Atuais: **\`${bal}\`**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();
         message.channel.send(moneyEmbed);

@@ -15,7 +15,7 @@ module.exports = {
 
     let embed2 = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`Coloque o valor do saque!`)
+    .setDescription(`Coloque o valor de Coins para sacar.`)
     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
     .setTimestamp();  
 
@@ -25,7 +25,7 @@ module.exports = {
     
     let embed4 = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`Você não Dinheiro no Banco o suficiente para realizar o saque!`)
+    .setDescription(`Você não tem Coins no banco o suficiente para realizar o saque!`)
     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
     .setTimestamp(); 
     
@@ -57,7 +57,7 @@ module.exports = {
     .setTitle("🏦 **|** Saque")
     .setColor("RANDOM")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setDescription(`💵 Você sacou **R$${args[0]}**!`)
+    .setDescription(`💵 Você sacou **\`R$${args[0]}\`** Coins!`)
     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
     .setTimestamp();   
 
