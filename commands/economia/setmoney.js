@@ -34,6 +34,6 @@ module.exports = {
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();  
+        .setTimestamp();
         message.channel.send(moneyEmbed);
 }}

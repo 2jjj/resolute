@@ -13,7 +13,6 @@ module.exports = {
     async run (client, message, args) {
         
         let autor = message.author;
-        
         let user = message.mentions.users.first();
         
         if(!user) {
@@ -26,7 +25,7 @@ module.exports = {
 
         let user_money = await db.fetch(`money_${message.guild.id}_${user.id}`)
         if(user_money == null) user_money = 0;
-
+        
         let autor_money = await db.fetch(`money_${message.guild.id}_${autor.id}`)
         if(autor_money == null) autor_money = 0;
             
@@ -50,6 +49,7 @@ module.exports = {
             .setTimestamp();  
 
             message.channel.send(`${autor}`, timeEmbed);
+
         } else {
             
             let sorte = Math.floor(Math.random() * 4) + 1;
@@ -66,9 +66,11 @@ module.exports = {
                 .setTimestamp();  
 
                 message.channel.send(`${autor}`, moneyEmbed);
+                
                 db.subtract(`money_${message.guild.id}_${autor.id}`, amount);
                 db.set(`rob_${message.guild.id}_${autor.id}`, Date.now());
-            }else{
+
+            } else{
                 
                 let amount = Math.floor(Math.random() * user_money) + 1;
                 
@@ -81,6 +83,7 @@ module.exports = {
                 .setTimestamp();  
 
                 message.channel.send(`${autor}`, moneyEmbed);
+  
                 db.subtract(`money_${message.guild.id}_${user.id}`, amount);
                 db.add(`money_${message.guild.id}_${autor.id}`, amount);
                 db.set(`rob_${message.guild.id}_${autor.id}`, Date.now());

@@ -12,9 +12,7 @@ module.exports = {
     async run (client, message, args) {
         
         let user = message.author;
-        
         let author = await db.fetch(`work_${message.guild.id}_${user.id}`)
-
         let timeout = 600000;
         
         if (author !== null && timeout - (Date.now() - author) > 0) {
@@ -30,11 +28,8 @@ module.exports = {
             message.channel.send(`${user}`, timeEmbed);
         } else {
 
-            let replies = ['Programador','Construtor','Agricultor','Garoto(a) de Programa','Garçom','Mecanico','Cozinheiro',
-                        'Vendedor','Barqueiro','Youtuber','Padeiro']
-    
+            let replies = ['Programador','Construtor','Agricultor','Garoto(a) de Programa','Garçom','Mecanico','Cozinheiro','Vendedor','Barqueiro','Youtuber','Padeiro']
             let result = Math.floor((Math.random() * replies.length));
-
             let amount = Math.floor(Math.random() * 5000) + 1;
 
             let embed1 = new Discord.MessageEmbed()

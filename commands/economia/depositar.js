@@ -26,6 +26,7 @@ module.exports = {
         if (!args[0]) {
             return message.channel.send(`${message.author}`, embed2);
         };
+        
         let embed4 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`<:x_:856894534071746600> **|** Você não dinheiro suficiente para realizar o deposito!`)

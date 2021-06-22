@@ -12,7 +12,6 @@ module.exports = {
     async run (client, message, args) {
         
         let user = message.mentions.members.first() 
-
         let member = db.fetch(`money_${message.guild.id}_${message.author.id}`)
 
         let embed1 = new Discord.MessageEmbed()
@@ -24,6 +23,7 @@ module.exports = {
         if (!user) {
             return message.channel.send(`${message.author}`, embed1)
         }
+
         let embed2 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Coloque o valor do pagamento!`)
@@ -33,6 +33,7 @@ module.exports = {
         if (!args[1]) {
             return message.channel.send(`${message.author}`, embed2)
         }
+
         let embed4 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você não Dinheiro suficiente para realizar o pagamento!`)
@@ -42,6 +43,7 @@ module.exports = {
         if (member < args[1]) {
             return message.channel.send(`${message.author}`, embed4)
         }
+
         let embed5 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você tem que colocar um valor maior que **0** para realizar o pagamento!`)
@@ -51,6 +53,7 @@ module.exports = {
         if(args[1] < 0) {
             return message.channel.send(`${message.author}`, embed5)
         }
+        
         let embed7 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você tem que colocar um valor numerico para realizar o pagamento!`)
@@ -60,6 +63,7 @@ module.exports = {
         if (isNaN(args[1])){
             return message.channel.send(`${message.author}`, embed7)
         }
+
         let embed6 = new Discord.MessageEmbed()
         .setTitle("Pagamento")
         .setColor("RANDOM")
@@ -69,6 +73,7 @@ module.exports = {
         .setTimestamp();  
 
         message.channel.send(`${message.author}`, embed6)
+        //Adicionando o dinheiro
         db.add(`money_${message.guild.id}_${user.id}`, args[1])
         db.subtract(`money_${message.guild.id}_${message.author.id}`, args[1])
 }}
