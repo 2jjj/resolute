@@ -14,9 +14,9 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."    
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`<:x_:856894534071746600> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
 
-    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
+    if(!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
 
     let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
@@ -26,7 +26,7 @@ module.exports = {
             SEND_MESSAGES:true,
             ADD_REACTIONS:true
         })
-        msg.edit("<:v_:856894534184468480> **|** Este canal foi desbloqueado")
+        msg.edit(":tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!")
 
     }catch(e){
         message.channel.send(e)

@@ -24,7 +24,7 @@ module.exports = {
     <:5702blurpletextchannel:856520145042931722> **| Canais:** \`${message.guild.channels.cache.filter(chan => chan.type === 'voice').size} Chats de Voz | ${message.guild.channels.cache.filter(chan => chan.type === 'text').size} Canais de Texto | ${message.guild.channels.cache.filter(chan => chan.type === 'category').size} Categorias | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'voice').size / message.guild.channels.cache.size) * 100)}% Chats de Voz | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'text').size / message.guild.channels.cache.size) * 100)}% Canais de Texto | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'category').size / message.guild.channels.cache.size) * 100)}% Categorias\`
     📆 **| Você Entrou:** \`${message.member.joinedAt}\`
     **-- Shard --**
-    <:cpu:854137097521987624> **ShardID: ${message.guild.shard.id}/${config.shards}**
+    <:cpu:854137097521987624> **Shard: ${message.guild.shard.id}/${config.shards}**
     `)
     .setFooter(` • Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     message.channel.send(serverembed);

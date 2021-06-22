@@ -12,12 +12,12 @@ module.exports = {
 
     const member = message.mentions.members.first();
 
-    if (!member) return message.reply("<:ybs_mencao:851954512540991490> **|** Especifique o membro que deseja resetar o nick.");
+    if (!member) return message.channel.send("<:ybs_mencao:851954512540991490> **|** Especifique o membro que deseja resetar o nick.");
 
     try {
       member.setNickname(null);
     } catch (err) {
-      message.reply(
+      message.channel.send(
         "<:x_:856894534071746600> **|** Eu não tenho permissão para resetar " + member.toString() + " nickname!"
       );
     }

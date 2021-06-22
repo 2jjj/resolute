@@ -13,14 +13,14 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, message, args) => {
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('Você não tem a permissão de  \`BAN_MEMBERS\`')
-        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('Eu não tenho a permissão de \`BAN_MEMBERS\`')
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Você não tem a permissão de  \`BAN_MEMBERS\`')
+        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Eu não tenho a permissão de \`BAN_MEMBERS\`')
 
         let userID = args[0]
         let reason = args.slice(1).join(' ') || 'Sem razão especificada.'
 
-        if(!userID) return message.reply('Coloque o ID do membro que quer banir.')
-        if(isNaN(userID)) return message.reply('Isto não é um id.')
+        if(!userID) return message.channel.send('<:x_:856894534071746600> **|** Coloque o ID do membro que quer banir.')
+        if(isNaN(userID)) return message.channel.send('<:x_:856894534071746600> **|** Isto não é um ID.')
 
         if(userID === message.author.id) return message.reply('<:x_:856894534071746600> **|** Você não pode se banir.')
         if(userID == client.user.id) return message.reply('<:x_:856894534071746600> **|** Você não pode me banir com o **meu própio** comando.')
