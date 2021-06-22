@@ -78,7 +78,7 @@ module.exports = {
                 .setTitle("🔫 **|** Roubo Realizado")
                 .setColor("GREEN")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-                .setDescription(`Você roubou o ${user}!\nE você conseguiu **R$${amount}**!`)
+                .setDescription(`Você roubou o ${user} e você conseguiu **R$${amount}**!`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();  
 

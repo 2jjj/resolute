@@ -20,18 +20,14 @@ module.exports = {
         let embed2 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você precisa colocar o valor do depósito!`)
-        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp(); 
 
         if (!args[0]) {
             return message.channel.send(`${message.author}`, embed2);
         };
-        
+
         let embed4 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`<:x_:856894534071746600> **|** Você não dinheiro suficiente para realizar o deposito!`)
-        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp(); 
 
         if (member < args[0]) {
             return message.channel.send(`${message.author}`, embed4);
@@ -40,8 +36,6 @@ module.exports = {
         let embed5 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você tem que colocar um valor maior que 0 para realizar o deposito!`)
-        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();  
 
         if(args[0] < 0) {
             return message.channel.send(`${message.author}`, embed5);
@@ -50,8 +44,6 @@ module.exports = {
         let embed6 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você precisa colocar um valor numérico para realizar o deposito!`)
-        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();  
         
         if (isNaN(args[0])){
             return message.channel.send(`${message.author}`, embed6);

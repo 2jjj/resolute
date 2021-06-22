@@ -31,7 +31,7 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed()
-        .setTitle(`Rank ${message.guild.name}`)
+        .setTitle(`Rank - ${message.guild.name}`)
         .setDescription(content)
         .setColor('RANDOM')
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
