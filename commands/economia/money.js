@@ -23,8 +23,8 @@ module.exports = {
         .setColor("GREEN")
         .setTitle("💵 Balanço Monetário")
         .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
-        `\n\n:dollar: Dinheiro: **R$${money}**` +
-        `\n:bank: Banco: **R$${bank}**`)
+        `\n\n:dollar: Coins: **\`${money}\`**` +
+        `\n:bank: Banco: **\`${bank}\`**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))        
         .setTimestamp();
 
