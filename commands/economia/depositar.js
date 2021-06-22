@@ -35,6 +35,7 @@ module.exports = {
         if (member < args[0]) {
             return message.channel.send(`${message.author}`, embed4);
         };
+
         let embed5 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você tem que colocar um valor maior que 0 para realizar o deposito!`)
@@ -44,6 +45,7 @@ module.exports = {
         if(args[0] < 0) {
             return message.channel.send(`${message.author}`, embed5);
         };
+
         let embed6 = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setDescription(`Você precisa colocar um valor numérico para realizar o deposito!`)
@@ -53,6 +55,7 @@ module.exports = {
         if (isNaN(args[0])){
             return message.channel.send(`${message.author}`, embed6);
         };
+
         let embed7 = new Discord.MessageEmbed()
         .setTitle("🏦 | Depósito")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
@@ -60,6 +63,8 @@ module.exports = {
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();       
         message.channel.send(`${message.author}`, embed7);
+        
+        //Adicionando o dinheiro no banco.
         db.add(`bank_${message.guild.id}_${message.author.id}`, args[0]);
         db.subtract(`money_${message.guild.id}_${message.author.id}`, args[0]);
 }}
