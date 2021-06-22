@@ -11,9 +11,9 @@ module.exports = {
 
     async run (client, message, args) {
 
-        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You do not have permissions to use this command')
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Você não possui permissões para usar esse comando!')
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-        if(!Member) return message.channel.send('Member is not found.')
+        if(!Member) return message.channel.send('Eu não achei o membro.')
         const role = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted')
         if(!role) {
             try {

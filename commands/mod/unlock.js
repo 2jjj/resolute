@@ -14,11 +14,11 @@ module.exports = {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."    
 
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`<:1926blurplecross:856520144872407060> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
 
-    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(`<:1926blurplecross:856520144872407060> **|** Este canal não está bloqueado.`)
+    if(!db.fetch(`lock.${message.channel.id}`)) return message.reply(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
 
-    let msg = await message.channel.send(`:tada: **|** ${message.author} Canal desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
+    let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
     try {
         db.delete(`lock.${message.channel.id}`)
@@ -26,7 +26,7 @@ module.exports = {
             SEND_MESSAGES:true,
             ADD_REACTIONS:true
         })
-        msg.edit("<:3169blurpleverified:856520145254088714> **|** Este canal foi desbloqueado")
+        msg.edit("<:v_:856894534184468480> **|** Este canal foi desbloqueado")
 
     }catch(e){
         message.channel.send(e)

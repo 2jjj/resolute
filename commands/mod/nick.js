@@ -16,14 +16,14 @@ module.exports = {
 
     const arguments = args.slice(1).join(" ");
 
-    if (!arguments) return message.reply("Especifique o nickname!");
+    if (!arguments) return message.reply("Especifique o nickname que deseja colocar!");
 
     try {
       member.setNickname(arguments);
     } catch (err) {
       console.log(err);
       message.reply(
-        "<:ybs_mencao:851954512540991490> **|** Eu não tenho permissão de setar " + member.toString() + " nickname!"
+        "<:x_:856894534071746600> **|** Eu não tenho permissão de setar " + member.toString() + " nickname!"
       );
     }
   },

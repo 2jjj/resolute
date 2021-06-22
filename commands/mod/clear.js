@@ -12,7 +12,7 @@ module.exports = {
     let user = message.author.username
     if (!message.member.permissions.has("MANAGE_MESSAGES"))
     return message.reply(
-      "<:1926blurplecross:856520144872407060> **|** Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
+      "<:x_:856894534071746600> **|** Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
     );
     
   const deleteCount = parseInt(args[0], 10);
@@ -25,6 +25,6 @@ module.exports = {
     limit: deleteCount + 1
   });
   message.channel.bulkDelete(fetched); {
-      await message.channel.send(`🔨 **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`); 
+      await message.channel.send(`<:v_:856894534184468480> **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`); 
   }
 }};

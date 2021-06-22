@@ -65,8 +65,8 @@ async run (client, message, args) {
         .setTitle("Você foi banido!")
         .setColor("#ff0000")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .addField("<:9023blurpleemployee:856520144860086272> Autor:", `${message.author} (${message.author.id})`)
-        .addField("<:Mod:848281446837387295> Motivo:", `${motivo}`)
+        .addField("<:mod:856894534088523776> Autor:", `${message.author} (${message.author.id})`)
+        .addField("<:mod:856894534088523776> Motivo:", `${motivo}`)
         .setImage(rand)
         .setFooter("Resolute - Punições", message.guild.iconURL({dynamic: true}))
         .setTimestamp();

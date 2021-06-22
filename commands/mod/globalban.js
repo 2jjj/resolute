@@ -22,8 +22,8 @@ module.exports = {
         if(!userID) return message.reply('Coloque o ID do membro que quer banir.')
         if(isNaN(userID)) return message.reply('Isto não é um id.')
 
-        if(userID === message.author.id) return message.reply('<:1926blurplecross:856520144872407060> **|** Você não pode se banir.')
-        if(userID == client.user.id) return message.reply('<:1926blurplecross:856520144872407060> **|** Você não pode me banir com o **meu própio** comando.')
+        if(userID === message.author.id) return message.reply('<:x_:856894534071746600> **|** Você não pode se banir.')
+        if(userID == client.user.id) return message.reply('<:x_:856894534071746600> **|** Você não pode me banir com o **meu própio** comando.')
 
         client.users.fetch(userID).then(async(user) => {
             await message.guild.members.ban(user.id, {reason: reason})

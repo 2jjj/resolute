@@ -11,7 +11,7 @@ module.exports = {
     async run (client, message, args) {
 
         let channel = message.mentions.channels.first() || bot.guilds.cache.get(message.guild.id).channels.cache.get(args[0]) || message.guild.channels.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.channel;
-        if (!channel) return message.channel.send("**Canal não encontrado.**");
+        if (!channel) return message.channel.send("**<:x_:856894534071746600> **|** Canal não encontrado.**");
 
         let channelembed = new MessageEmbed()
             .setTitle(`${channel.name}`)

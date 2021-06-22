@@ -28,12 +28,12 @@ module.exports = {
         if(!target) return message.reply("<:ybs_mencao:851954512540991490> **|** Por favor, mencione alguém para kickar!")
 
         if(target.id === message.author.id) {
-            return message.reply("<:ybs_duvida:851954411348820018> **|** Você não pode se kickar!")
+            return message.reply("<:x_:856894534071746600> **|** Você não pode se expulsar!")
         }
 
         let reason = args.slice(1).join(' ')
 
-        if(!reason) return message.reply("<:ybs_duvida:851954411348820018> **|** Por favor, dê um motivo!")
+        if(!reason) return message.reply("<:x_:856894534071746600> **|** Você precisa escrever o motivo!")
 
         let embed2 = new Discord.MessageEmbed()
         .setTitle(`O membro ${target.user} foi expulso!`)

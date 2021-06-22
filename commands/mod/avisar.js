@@ -27,7 +27,7 @@ async run (client, message, args) {
     
     var rand = list[Math.floor(Math.random() * list.length)]
 
-    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:staff:835643948151996446> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
 
     let membro = message.mentions.users.first() 
     if (!membro) return message.reply("<:ybs_mencao:851954512540991490> **|** Você precisa mencionar o usuário que quer dar aviso!")
@@ -43,7 +43,7 @@ async run (client, message, args) {
     .setDescription(`**Motivo: ${motivo}**`)
 
     membro.send(embed) 
-    message.channel.send(`<:9023blurpleemployee:856520144860086272> **${message.author}** | Aviso enviado com sucesso!`)
+    message.channel.send(`<:v_:856894534184468480> **${message.author}** | Aviso enviado com sucesso!`)
     await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 }
 }

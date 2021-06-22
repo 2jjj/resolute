@@ -13,7 +13,7 @@ async run (client, message, args) {
 
     let user = message.mentions.members.first() || message.author;
     if(!user) {
-    return message.channel.send("<a:SETA:852194614927818812> Mencione um user para ver os warn's dele.")
+    return message.channel.send("<:ybs_mencao:851954512540991490> **|** Você tem que mencionar um usuário para poder ver os warns dele!")
     }
 
     let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;
