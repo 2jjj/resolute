@@ -14,37 +14,47 @@ module.exports = {
     let member = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
 
     let embed2 = new Discord.MessageEmbed()
-    .setColor("#008000")
-    .setDescription(`> **»** Coloque o valor do saque!`);
-  
+    .setColor("RANDOM")
+    .setDescription(`Coloque o valor do saque!`)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setTimestamp();  
+
     if (!args[0]) {
         return message.channel.send(`${message.author}`, embed2);
     };
     let embed4 = new Discord.MessageEmbed()
-    .setColor("#008000")
-    .setDescription(`> **»** Você não Dinheiro no Banco o suficiente para realizar o saque!`);
-
+    .setColor("RANDOM")
+    .setDescription(`Você não Dinheiro no Banco o suficiente para realizar o saque!`)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setTimestamp(); 
+    
     if (member < args[0]) {
         return message.channel.send(`${message.author}`, embed4);
     };
     let embed5 = new Discord.MessageEmbed()
-    .setColor("#008000")
-    .setDescription(`> **»** Você tem que colocar um valor maior que **0** para realizar o saque!`);
+    .setColor("RANDOM")
+    .setDescription(`Você tem que colocar um valor maior que **0** para realizar o saque!`)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setTimestamp();  
 
     if(args[0] < 0) {
         return message.channel.send(`${message.author}`, embed5);
     };
     let embed7 = new Discord.MessageEmbed()
-    .setColor("#008000")
-    .setDescription(`> **»** Você tem que colocar um valor numerico para realizar o saque!`);
+    .setColor("RANDOM")
+    .setDescription(`Você tem que colocar um valor numerico para realizar o saque!`)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setTimestamp();  
 
     if (isNaN(args[0])){
         return message.channel.send(`${message.author}`, embed7);
     };
     let embed6 = new Discord.MessageEmbed()
     .setTitle("🏦 **|** Saque")
-    .setColor("#008000")
-    .setDescription(`💵 Você sacou no **Banco** um valor de **R$${args[0]}**!`);
+    .setColor("RANDOM")
+    .setDescription(`💵 Você sacou **R$${args[0]}**!`)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setTimestamp();   
 
     message.channel.send(`${message.author}`, embed6);
     db.add(`money_${message.guild.id}_${message.author.id}`, args[0]);

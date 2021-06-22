@@ -24,7 +24,7 @@ module.exports = {
             let time = ms(timeout - (Date.now() - daily));
     
             let timeEmbed = new Discord.MessageEmbed()
-            .setColor("#008000")
+            .setColor("RANDOM")
             .setDescription(`Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
                 
             message.channel.send(`${user}`, timeEmbed);
@@ -36,7 +36,7 @@ module.exports = {
             .setTitle("Você recebeu sua recompensa diária!")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Você recebeu **\`R$${amount}\`** Coins!`)
-            //.addField(`Aviso`, `<:ybs_fixado2:851955202374107157> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
+            .addField(`Aviso`, `<:pontin:852197383974551582> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();        
             message.channel.send(`${user}`, moneyEmbed);

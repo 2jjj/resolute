@@ -31,11 +31,11 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed()
-        .setTitle(`💸 Rank Monetário - ${message.guild.name}`)
+        .setTitle(`Rank ${message.guild.name}`)
         .setDescription(content)
-        .setColor(2686950)
-        .setFooter(`Rank monetário |`)
-        .setTimestamp();
+        .setColor('RANDOM')
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();  
 
         message.channel.send(`${message.author}`, embed);
 }}

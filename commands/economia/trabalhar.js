@@ -22,9 +22,11 @@ module.exports = {
             let time = ms(timeout - (Date.now() - author));
         
             let timeEmbed = new Discord.MessageEmbed()
-            .setColor("#008000")
-            .setDescription(`> **»** Você já trabalhou recentemente!\n\nTente novamente em **${time.minutes}m ${time.seconds}s**`);
-            
+            .setColor("RANDOM")
+            .setDescription(`Você já trabalhou recentemente!\n\nTente novamente em **${time.minutes}m ${time.seconds}s**`)
+            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setTimestamp();  
+
             message.channel.send(`${user}`, timeEmbed);
         } else {
 
@@ -37,11 +39,10 @@ module.exports = {
 
             let embed1 = new Discord.MessageEmbed()
             .setTitle("💸 **|** Trabalho")
-            .setColor("#008000")
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou: \n\n💸 Dinheiro: **R$${amount}**`)
-            .setFooter("Que homem trabalhador, tenho orgulho de você!")
-            .setTimestamp();
-
+            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setTimestamp();  
             message.channel.send(`${user}`, embed1);
             
             db.add(`money_${message.guild.id}_${user.id}`, amount);

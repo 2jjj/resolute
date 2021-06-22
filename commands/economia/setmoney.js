@@ -12,26 +12,27 @@ module.exports = {
     async run (client, message, args) {
                 
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.channel.send(`> **»** ${message.author}, você tem que ter a permissão de **Administrador** para usar esse comando!`);
+            return message.channel.send(`Você tem que ter a permissão de **ADMINISTRADOR** para usar esse comando!`);
         };
 
         let user = message.mentions.users.first();
 
         if (!user) {
-            return message.channel.send(`> **»** ${message.author}, você precisa mencionar um usuário para adicionar o Dinheiro!`);
+            return message.channel.send(`Você precisa mencionar um usuário para adicionar o Dinheiro!`);
         };
 
         if (isNaN(args[1])) {
-            return message.channel.send(`> **»** ${message.author}, você precisa colocar um numero valido!`);
+            return message.channel.send(`Você precisa colocar um numero valido!`);
         };
 
         db.add(`money_${message.guild.id}_${user.id}`, args[1]);
         let bal = await db.fetch(`money_${message.guild.id}_${user.id}`);
 
         let moneyEmbed = new Discord.MessageEmbed()
-        .setTitle(":dollar: **|** Alteração Monetária")
-        .setColor("#008000")
+        .setTitle(":dollar: | Dinheiro adicionado!")
+        .setColor("RANDOM")
         .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
-        .setFooter(`O dinheiro foi adicionado!`);
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();  
         message.channel.send(moneyEmbed);
 }}

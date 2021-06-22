@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
     name: "dinheiro",
-    aliases: ['money'],
+    aliases: ['money', 'atm'],
     cooldown: 1000 * 2, 
     description: "Informações do seu dinheiro.",
     category: "economia",
