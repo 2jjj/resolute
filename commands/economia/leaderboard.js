@@ -27,7 +27,7 @@ module.exports = {
         for (let i = 0; i < money1; i++) {
             let user = client.users.cache.get(money[i].ID.split('_')[2]).tag;
 
-            content += `${i+1}º **\`${user}\`** - **R$${money[i].data}**\n`
+            content += `${i+1}º **\`${user}\`** - **\`${money[i].data}\` Coins**\n`
         }
 
         const embed = new Discord.MessageEmbed()
