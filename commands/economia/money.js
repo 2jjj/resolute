@@ -25,7 +25,7 @@ module.exports = {
         .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
         `\n\n:dollar: Dinheiro: **R$${money}**` +
         `\n:bank: Banco: **R$${bank}**`)
-        .setFooter("Informações de sua carteira ~")
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))        
         .setTimestamp();
 
         message.channel.send(`${user}`, embed);

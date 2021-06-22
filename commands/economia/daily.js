@@ -25,8 +25,11 @@ module.exports = {
     
             let timeEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`);
-                
+            .setDescription(`Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
+            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))        
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+            .setTimestamp();
+            
             message.channel.send(`${user}`, timeEmbed);
 
         } else {

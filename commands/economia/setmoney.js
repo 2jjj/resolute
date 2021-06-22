@@ -31,6 +31,7 @@ module.exports = {
         let moneyEmbed = new Discord.MessageEmbed()
         .setTitle(":dollar: | Dinheiro adicionado!")
         .setColor("RANDOM")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`Foi adicionado **$${args[1]}** para ${user}!\n\n:dollar: Dinheiro Atual: **R$${bal}**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();  

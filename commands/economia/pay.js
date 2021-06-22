@@ -64,6 +64,7 @@ module.exports = {
         .setTitle("Pagamento")
         .setColor("RANDOM")
         .setDescription(`💸 Você pagou R$${args[1]} para o ${user}!`)
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();  
 

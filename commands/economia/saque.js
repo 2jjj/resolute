@@ -52,6 +52,7 @@ module.exports = {
     let embed6 = new Discord.MessageEmbed()
     .setTitle("🏦 **|** Saque")
     .setColor("RANDOM")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
     .setDescription(`💵 Você sacou **R$${args[0]}**!`)
     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
     .setTimestamp();   

@@ -44,6 +44,7 @@ module.exports = {
     
             let timeEmbed = new Discord.MessageEmbed()
             .setColor("#008000")
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Você já realizou um roubo hoje!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();  
@@ -74,6 +75,7 @@ module.exports = {
                 let moneyEmbed = new Discord.MessageEmbed()
                 .setTitle("🔫 **|** Roubo Realizado")
                 .setColor("GREEN")
+                .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .setDescription(`Você roubou o ${user}!\nE você conseguiu **R$${amount}**!`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();  
