@@ -45,7 +45,6 @@ async run (client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({embed: {color: "#ff0000", description: "Você não tem permissão para utilizar este comando! | Permissão necessária: BAN_MEMBERS"}}) 
 
         const usuario = message.mentions.members.first()
-    
         const motivo = args.slice(1).join(" ");
 
         if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "Eu não tenho permissão para banir este usuário! | Permissão necessária: BAN_MEMBERS"}})

@@ -9,11 +9,18 @@ module.exports = {
     category: "mod",
     usage: "",
   
-async run (client, message, args) {
+    async run (client, message, args) {
 
     let user = message.mentions.members.first() || message.author;
     if(!user) {
-    return message.channel.send("<:ybs_mencao:851954512540991490> **|** Você tem que mencionar um usuário para poder ver os warns dele!")
+        const help = new Discord.MessageEmbed()
+        .setTitle("Comando de Warnlist")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription("Veja os warns de um usuário!")
+        .addField(`Forma de Utilização:`, ` \`${prefix}warnlist @usuario\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();
+        return message.channel.send(help);    
     }
 
     let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;

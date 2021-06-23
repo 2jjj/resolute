@@ -1,4 +1,6 @@
 const { Message } = require('discord.js')
+const Discord = require("discord.js");
+const db = require("quick.db")
 
 module.exports = {
     name: "unmute",
@@ -9,9 +11,22 @@ module.exports = {
     usage: "@user",
   
     async run (client, message, args) {
+
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) prefix = "s."
+
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 
-        if(!Member) return message.channel.send('<:x_:856894534071746600> **|** O usuário que você mencionou não foi encontrado.')
+        if(!Member) {
+            const help = new Discord.MessageEmbed()
+            .setTitle("Comando de unmute")
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+            .setDescription("Desmute alguém com este comando!")
+            .addField(`Forma de Utilização:`, ` \`${prefix}unmute @usuario\``)
+            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setTimestamp();
+            return message.channel.send(help);
+        }
 
         const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
 
