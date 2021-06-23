@@ -9,7 +9,7 @@ module.exports = {
   category: "mod",
   usage: "@user <motivo>",
 
-async run (client, message, args) {
+  async run (client, message, args) {
 
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) { prefix = "s." }
@@ -30,7 +30,18 @@ async run (client, message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão! | Permissão necessária:ADMINISTRATOR ") 
 
     let membro = message.mentions.users.first() 
-    if (!membro) return message.reply("<:ybs_mencao:851954512540991490> **|** Você precisa mencionar o usuário que quer dar aviso!")
+    if (!membro) {
+      const help = new Discord.MessageEmbed()
+      .setTitle("Comando de warn")
+      .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+      .setDescription("Avisar um usuário de seu servidor")
+      .addField(`Forma de Utilização:`, ` \`${prefix}warn @usuario <motivo>\``)
+      .addField(`Exemplo:`, `  \`${prefix}warn @Spray#0007 É lindo demais\``)
+      .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+      .setImage(rand)
+      .setTimestamp();
+      return message.channel.send(help);
+    }
 
     let motivo = args.slice(1).join(" "); 
     if (!motivo) return message.reply("Escreva um motivo do aviso do usuário!") 

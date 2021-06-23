@@ -17,7 +17,7 @@ module.exports = {
   const deleteCount = parseInt(args[0], 10);
   if (!deleteCount || deleteCount < 1 || deleteCount > 99)
     return message.reply(
-        "Forneça um número de até **99 mensagens** a serem excluídas."
+      "Forneça um número de até **99 mensagens** a serem excluídas."
   );
  
   const fetched = await message.channel.messages.fetch({
