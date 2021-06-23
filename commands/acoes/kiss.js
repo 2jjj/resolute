@@ -26,6 +26,9 @@ async run (client, message, args) {
   let user = message.mentions.users.first() || client.users.cache.get(args[0]);
 
   if (!user) {
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+    
     const help = new Discord.MessageEmbed()
     .setTitle("Comando de kiss")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
