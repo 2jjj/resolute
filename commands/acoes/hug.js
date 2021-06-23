@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
   name: "hug",
-  aliases: ["abraçar"],
+  aliases: ['abraçar'],
   cooldown: 1000 * 2, 
   description: "Abraçe alguém",
   category: "gifs",

@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
   name: "kiss",
-  aliases: ["beijar"],
+  aliases: ['beijar', 'beijo'],
   cooldown: 1000 * 2, 
   description: "Beije alguém :flushed:",
   category: "gifs",
@@ -28,7 +28,7 @@ async run (client, message, args) {
   if (!user) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
-    
+
     const help = new Discord.MessageEmbed()
     .setTitle("Comando de kiss")
     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

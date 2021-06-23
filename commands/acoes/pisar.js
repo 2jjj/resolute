@@ -39,11 +39,15 @@ async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    var nouser = new Discord.MessageEmbed()
-      .setColor('#FF0000')
-      .setTitle('Erro! Forma de ultilização:')
-      .setDescription('`' + prefix + 'pisar @user`')
-    return message.reply(nouser)
+    const help = new Discord.MessageEmbed()
+    .setTitle("Comando de pisar")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setDescription("Pise em alguém!!")
+    .addField(`Forma de Utilização:`, ` \`${prefix}pisar @usuario\``)
+    .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setImage(rand)
+    .setTimestamp();
+    return message.channel.send(help);
   }
 
   if (user.id === message.author.id) {
