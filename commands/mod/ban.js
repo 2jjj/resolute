@@ -27,8 +27,6 @@ async run (client, message, args) {
     
       var rand = list[Math.floor(Math.random() * list.length)]
 
-        message.delete();
-
         if(!args.length) {
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de ban")

@@ -1,5 +1,7 @@
 const {Message, MessageEmbed}= require('discord.js')
 const ms = require('ms')
+const Discord = require("discord.js");
+const db = require("quick.db");
 
 module.exports = {
     name: "tempmute",
@@ -11,10 +13,24 @@ module.exports = {
 
     async run (client, message, args) {
 
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) prefix = "s."
+
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<:x_:856894534071746600> **|** Você não possui permissões para usar esse comando.')
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         const time = args[1]
-        if(!Member) return message.channel.send('<:x_:856894534071746600> **|** Eu não encontrei o usuário!')
+
+        if(!Member) {
+            const help = new Discord.MessageEmbed()
+            .setTitle("Comando de tempmute")
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+            .setDescription("Silencie um usuário temporariamente")
+            .addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}tempmute @usuario <tempo(ms)>\``)
+            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setTimestamp();
+            return message.channel.send(help);
+        }
+
         if(!time) return message.channel.send('<:x_:856894534071746600> **|** Por favor especifique o tempo.')
         const role = message.guild.roles.cache.find(role => role.name.toLowerCase() === 'muted')
         if(!role) {
