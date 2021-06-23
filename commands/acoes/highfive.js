@@ -45,20 +45,15 @@ async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    var nouser = new Discord.MessageEmbed()
-      .setColor('#FF0000')
-      .setTitle('Erroooou')
-      .setDescription('`' + prefix + 'highfive @user`')
-    return message.inlineReply(nouser)
-  }
-
-  if (user.id === '764919941538775050') {
-
-    var embed1 = new Discord.MessageEmbed()
-      .setColor('BLUE')
-      .setDescription(`${message.author.username} & ${user.username} mandaram um HIGHFIVE!`)
-      .setImage(rand)
-    return message.inlineReply(embed1)
+    const help = new Discord.MessageEmbed()
+    .setTitle("Comando de highfive")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setDescription("Faça o highfive com alguém!!")
+    .addField(`Forma de Utilização:`, ` \`${prefix}highfive @usuario\``)
+    .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setImage(rand)
+    .setTimestamp();
+    return message.channel.send(help);
   }
 
   if (user.id === message.author.id) {
