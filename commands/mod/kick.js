@@ -23,7 +23,6 @@ module.exports = {
         
     var rand = list[Math.floor(Math.random() * list.length)]
         
-
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
 
