@@ -1,5 +1,3 @@
-//Resolute 0.0.5
-
 const Discord = require('discord.js')
 const db = require('quick.db')
 
