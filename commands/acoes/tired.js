@@ -26,7 +26,20 @@ module.exports = {
 
   let rand = list[Math.floor(Math.random() * list.length)]
   let texto = args.join(" ")
-  if (!texto) texto = `${message.author}`
+  if (!texto) {
+    let prefix = db.get(`prefix_${message.guild.id}`)
+    if (prefix === null) prefix = "s."
+
+    const help = new Discord.MessageEmbed()
+    .setTitle("Comando de tired")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setDescription("Ai que cansaço!!")
+    .addField(`Forma de Utilização:`, ` \`${prefix}tired @usuario\``)
+    .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setImage(rand)
+    .setTimestamp();
+    return message.channel.send(help);  
+  }
 
   const embed = new Discord.MessageEmbed()
     .setColor('BLUE')
