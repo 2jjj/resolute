@@ -53,7 +53,7 @@ module.exports = {
             }
         };
         let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted')
-        if(Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} já está mutado.`)
+        if(Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} já está silenciado.`)
         await Member.roles.add(role2)
         message.channel.send(`${Member.displayName} foi silenciado.`)
     }

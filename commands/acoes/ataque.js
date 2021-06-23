@@ -22,7 +22,7 @@ module.exports = {
   var rand = list[Math.floor(Math.random() * list.length)];
   let pessoa = message.mentions.users.first() || client.users.cache.get(args[0]);
   
-  if (!pessoa) return message.channel.send(`:no: | ${message.author} Mencione alguém para um atacar!`);
+  if (!pessoa) return message.channel.send(`<:ybs_mencao:851954512540991490> **|** ${message.author} Mencione alguém para um atacar!`);
 
   let ataque = new Discord.MessageEmbed()
   .setTitle(`😤 Ataque! 😭`)

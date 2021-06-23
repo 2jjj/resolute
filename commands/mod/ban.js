@@ -31,7 +31,7 @@ async run (client, message, args) {
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de ban")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription("Execute um ban em algum usuário específico utilizando este comando!")
+            .setDescription("Banir um usuário permanentemente de seu servidor")
             .addField(`Forma de Utilização:`, ` \`${prefix}ban @usuario <motivo>\``)
             .addField(`Exemplo:`, `  \`${prefix}ban @Spray#0007 Ofensa a staff\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
