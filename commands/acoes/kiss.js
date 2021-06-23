@@ -12,11 +12,14 @@ module.exports = {
 async run (client, message, args) {
 
 var list = [
-  'https://imgur.com/iclUiUN.gif',
-  'https://imgur.com/lYQt9rx.gif',
-  'https://imgur.com/S06xR53.gif',
-  'https://imgur.com/Z9c28zI.gif',
-  'https://imgur.com/w1TU5mR.gif'
+  'https://imgur.com/qALwmUW.gif',
+  'https://imgur.com/Su2mFPY.gif',
+  'https://imgur.com/ZzF0olN.gif',
+  'https://imgur.com/cuMVXHS.gif',
+  'https://imgur.com/3i2RdCa.gif',
+  'https://imgur.com/Yjk1OQF.gif',
+  'https://imgur.com/x9ex9O3.gif',
+  'https://imgur.com/Me1o6YB.gif'
 ];
 
 var rand = list[Math.floor(Math.random() * list.length)];
