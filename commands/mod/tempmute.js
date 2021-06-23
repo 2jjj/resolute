@@ -27,6 +27,7 @@ module.exports = {
             .setDescription("Silencie um usuário temporariamente")
             .addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}tempmute @usuario <tempo(ms)>\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setColor("RANDOM")
             .setTimestamp();
             return message.channel.send(help);
         }

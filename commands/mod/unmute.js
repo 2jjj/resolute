@@ -24,6 +24,7 @@ module.exports = {
             .setDescription("Desmute alguém com este comando!")
             .addField(`Forma de Utilização:`, ` \`${prefix}unmute @usuario\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setColor("RANDOM")
             .setTimestamp();
             return message.channel.send(help);
         }

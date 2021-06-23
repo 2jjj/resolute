@@ -1,5 +1,7 @@
 const moment = require('moment');
 const { MessageEmbed } = require("discord.js")
+const Discord = require("discord.js");
+const db = require("quick.db");
 
 module.exports = {
     name: "roleinfo",
@@ -10,6 +12,9 @@ module.exports = {
     usage: "@cargo",
 
     async run (client, message, args) {
+
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) prefix = "s."
 
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
@@ -52,8 +57,16 @@ module.exports = {
             false: '`Não`'
         }
 
-        if(!role)
-        return message.reply(`Mencione o cargo!`)
+        if(!role){
+            const help = new Discord.MessageEmbed()
+            .setTitle("Comando de roleinfo")
+            .setDescription("Consiga informações de um determinado cargo!")
+            .addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}roleinfo @cargo\``)
+            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setColor("RANDOM")
+            .setTimestamp();
+            return message.channel.send(help);
+        }
 
         const rolePermissions = role.permissions.toArray();
         const finalPermissions = [];

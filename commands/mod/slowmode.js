@@ -26,6 +26,7 @@ module.exports = {
             .addField(`Como desligar:`, `<:pontin:852197383974551582> \`${prefix}slowmode off\``)
             .addField(`Exemplo:`, `<:pontin:852197383974551582> \`${prefix}slowmode 5000\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setColor("RANDOM")
             .setTimestamp();
             return message.channel.send(help);
         }

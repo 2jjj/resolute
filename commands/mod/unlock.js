@@ -15,9 +15,7 @@ module.exports = {
     if (prefix === null) prefix = "s."    
 
     if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`<:x_:856894534071746600> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
-
     if(!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
-
     let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
     try {

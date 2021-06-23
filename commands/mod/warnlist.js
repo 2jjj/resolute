@@ -22,6 +22,7 @@ module.exports = {
             .setDescription("Veja os warns de um usuário!")
             .addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}warnlist @usuario\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setColor("RANDOM")
             .setTimestamp();
             return message.channel.send(help);    
         }
