@@ -49,19 +49,20 @@ async run (client, message, args) {
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
 
-    var nouser = new Discord.MessageEmbed()
-      .setColor('#FF0000')
-      .setTitle('Erroooou')
-      .setDescription('`' + prefix + 'morder @user`')
-    return message.reply(nouser)
+    const help = new Discord.MessageEmbed()
+    .setTitle("Comando de morder")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setDescription("Morda alguém!!")
+    .addField(`Forma de Utilização:`, ` \`${prefix}hug @usuario\``)
+    .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+    .setImage(rand)
+    .setTimestamp();
+    return message.channel.send(help);
   }
 
-  if (user.id === '821471191578574888')
-    return message.inlineReply('Paaara, não me morde não :cry:')
-
-    if (user.id === message.author.id) {
-      return message.inlineReply('Você não pode usar este comando com você mesmo.')
-    }
+  if (user.id === message.author.id) {
+    return message.inlineReply('Você não pode usar este comando com você mesmo.')
+  }
 
   let avatar = message.author.displayAvatarURL({ format: 'png' })
   let avatar1 = user.displayAvatarURL({ format: 'png' })
