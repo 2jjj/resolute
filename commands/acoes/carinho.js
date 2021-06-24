@@ -2,89 +2,96 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 
 module.exports = {
-  name: "carinho",
-  aliases: [],
-  cooldown: 1000 * 2, 
-  description: "carinho em alguém.",
-  category: "gifs",
-  usage: "@user",
+	name: "carinho",
+	aliases: [],
+	cooldown: 1000 * 2,
+	description: "carinho em alguém.",
+	category: "gifs",
+	usage: "@user",
 
-  async run (client, message, args) {
-  
-  var list = [
-    'https://imgur.com/2lacG7l.gif',
-    'https://imgur.com/UWbKpx8.gif',
-    'https://imgur.com/4ssddEQ.gif',
-    'https://imgur.com/2k0MFIr.gif',
-    'https://imgur.com/nPr3s5D.gif',
-    'https://imgur.com/LUypjw3.gif',
-    'https://imgur.com/F3cjr3n.gif',
-    'https://imgur.com/NNOz81F.gif',
-    'https://imgur.com/cqIJIh4.gif',
-    'https://imgur.com/5OQMI1m.gif',
-    'https://imgur.com/48c0jVX.gif',
-    'https://imgur.com/Iq9eZ5o.gif'
-  ]
+	async run(client, message, args) {
 
-  var list1 = [
-    'https://imgur.com/2lacG7l.gif',
-    'https://imgur.com/UWbKpx8.gif',
-    'https://imgur.com/4ssddEQ.gif',
-    'https://imgur.com/2k0MFIr.gif',
-    'https://imgur.com/nPr3s5D.gif',
-    'https://imgur.com/LUypjw3.gif',
-    'https://imgur.com/F3cjr3n.gif',
-    'https://imgur.com/NNOz81F.gif',
-    'https://imgur.com/cqIJIh4.gif',
-    'https://imgur.com/5OQMI1m.gif',
-    'https://imgur.com/48c0jVX.gif',
-    'https://imgur.com/Iq9eZ5o.gif'
-  ]
+		var list = [
+			'https://imgur.com/2lacG7l.gif',
+			'https://imgur.com/UWbKpx8.gif',
+			'https://imgur.com/4ssddEQ.gif',
+			'https://imgur.com/2k0MFIr.gif',
+			'https://imgur.com/nPr3s5D.gif',
+			'https://imgur.com/LUypjw3.gif',
+			'https://imgur.com/F3cjr3n.gif',
+			'https://imgur.com/NNOz81F.gif',
+			'https://imgur.com/cqIJIh4.gif',
+			'https://imgur.com/5OQMI1m.gif',
+			'https://imgur.com/48c0jVX.gif',
+			'https://imgur.com/Iq9eZ5o.gif'
+		]
 
-  var rand = list[Math.floor(Math.random() * list.length)]
-  var rand1 = list1[Math.floor(Math.random() * list1.length)]
-  let user = message.mentions.users.first()
+		var list1 = [
+			'https://imgur.com/2lacG7l.gif',
+			'https://imgur.com/UWbKpx8.gif',
+			'https://imgur.com/4ssddEQ.gif',
+			'https://imgur.com/2k0MFIr.gif',
+			'https://imgur.com/nPr3s5D.gif',
+			'https://imgur.com/LUypjw3.gif',
+			'https://imgur.com/F3cjr3n.gif',
+			'https://imgur.com/NNOz81F.gif',
+			'https://imgur.com/cqIJIh4.gif',
+			'https://imgur.com/5OQMI1m.gif',
+			'https://imgur.com/48c0jVX.gif',
+			'https://imgur.com/Iq9eZ5o.gif'
+		]
 
-  if (!user) {
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
+		var rand = list[Math.floor(Math.random() * list.length)]
+		var rand1 = list1[Math.floor(Math.random() * list1.length)]
+		let user = message.mentions.users.first()
 
-    const help = new Discord.MessageEmbed()
-    .setTitle("Comando de carinho")
-    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-    .setDescription("Faça carinho em alguém!!")
-    .addField(`Forma de Utilização:`, ` \`${prefix}carinho @usuario\``)
-    .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-    .setImage(rand)
-    .setTimestamp();
-    return message.channel.send(help);
-  }
+		if (!user) {
+			let prefix = db.get(`prefix_${message.guild.id}`)
+			if (prefix === null) prefix = "s."
 
-  if (user.id === message.author.id) {
-    return message.inlineReply('Você não pode usar este comando com você mesmo.')
-  }
+			const help = new Discord.MessageEmbed()
+				.setTitle("Comando de carinho")
+				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+				.setDescription("Faça carinho em alguém!!")
+				.addField(`Forma de Utilização:`, ` \`${prefix}carinho @usuario\``)
+				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
+					dynamic: true
+				}))
+				.setImage(rand)
+				.setTimestamp();
+			return message.channel.send(help);
+		}
 
-  let avatar = message.author.displayAvatarURL({ format: 'png' })
-  let avatar1 = user.displayAvatarURL({ format: 'png' })
-  var embed = new Discord.MessageEmbed()
-    .setColor('BLUE')
-    .setDescription(`${message.author} está te dando carinho ${user}`, avatar)
-    .setImage(rand)
-    .setFooter('Clique em 🔁 para retribuir')
+		if (user.id === message.author.id) {
+			return message.inlineReply('Você não pode usar este comando com você mesmo.')
+		}
 
-  var embed2 = new Discord.MessageEmbed()
-    .setColor('BLUE')
-    .setDescription(`${user} também acariciou você ${message.author} `, avatar1)
-    .setImage(rand1)
+		let avatar = message.author.displayAvatarURL({
+			format: 'png'
+		})
+		let avatar1 = user.displayAvatarURL({
+			format: 'png'
+		})
+		var embed = new Discord.MessageEmbed()
+			.setColor('BLUE')
+			.setDescription(`${message.author} está te dando carinho ${user}`, avatar)
+			.setImage(rand)
+			.setFooter('Clique em 🔁 para retribuir')
 
-  await message.inlineReply(embed).then(msg => {
-    msg.react('🔁')
-    msg.awaitReactions((reaction, user) => {
-      if (message.mentions.users.first().id !== user.id) return
+		var embed2 = new Discord.MessageEmbed()
+			.setColor('BLUE')
+			.setDescription(`${user} também acariciou você ${message.author} `, avatar1)
+			.setImage(rand1)
 
-      if (reaction.emoji.name === '🔁') {
-        return message.inlineReply(embed2)
-      }
-    })
-  })
-}}
+		await message.inlineReply(embed).then(msg => {
+			msg.react('🔁')
+			msg.awaitReactions((reaction, user) => {
+				if (message.mentions.users.first().id !== user.id) return
+
+				if (reaction.emoji.name === '🔁') {
+					return message.inlineReply(embed2)
+				}
+			})
+		})
+	}
+}
