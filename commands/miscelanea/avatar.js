@@ -19,7 +19,7 @@ module.exports = {
     .setTitle(`Avatar de ${user.username}`) 
     .setImage(avatar) 
     .setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({format: "png"}));
- await message.channel.send(embed); 
+  await message.channel.send(embed); 
 
 }
 }
