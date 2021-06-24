@@ -53,9 +53,9 @@ module.exports = {
         return message.inlineReply(caracter)
     }
 
-                db.set(`prefix_${message.guild.id}`, args[0])
-                let alterado = new Discord.MessageEmbed()
-                    .setColor('GREEN')
-                    .setDescription(`${message.author}` + ' alterou meu prefixo para: `' + args[0] + '`')
-                return message.inlineReply(alterado)
+    db.set(`prefix_${message.guild.id}`, args[0])
+    let alterado = new Discord.MessageEmbed()
+        .setColor('GREEN')
+        .setDescription(`${message.author}` + ' alterou meu prefixo para: `' + args[0] + '`')
+    return message.inlineReply(alterado)
 }}
