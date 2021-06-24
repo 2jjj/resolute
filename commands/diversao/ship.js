@@ -1,12 +1,14 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+const block = "⬛";
+const heart = ":red_square:";
 
 module.exports = {
   name: "ship",
   aliases: [],
   cooldown: 1000 * 2,
   description: "Shipe alguém",
-  category: "gifs",
+  category: "fun",
   usage: "@user1 @user2",
 
 
@@ -17,21 +19,21 @@ module.exports = {
       return message.reply("Bruh you want to ship yourself xd")
     }
     if (message.mentions.users.size < 2) {
-      let loveEmbed = new MessageEmbed()
-        .setColor('dd2e44')
-        .setTitle('Shipping...')
-        .setDescription(`Shipped ${message.author} and ${user}!`)
+      let loveEmbed = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Shipando...')
+        .setDescription(`${message.author} e ${user}!`)
         .setImage(`https://api.popcatdev.repl.co/ship?user1=${message.author.displayAvatarURL({ dynamic: false, format: "png" })}&user2=${user.displayAvatarURL({ dynamic: false, format: "png" })}`)
-        .addField(`**Ship Meter**`, ship())
+        .addField(`**Porcentagem de amor**`, ship())
 
       return message.channel.send(loveEmbed)
     } else if (message.mentions.users.size > 1) {
-      let luv = new MessageEmbed()
-        .setColor('dd2e44')
-        .setTitle('Shipping...')
-        .setDescription(`Shipped ${message.mentions.users.first()} and ${message.mentions.users.last()}!`)
+      let luv = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Shipando...')
+        .setDescription(`${message.mentions.users.first()} e ${message.mentions.users.last()}!`)
         .setImage(`https://api.popcatdev.repl.co/ship?user1=${message.mentions.users.first().displayAvatarURL({ dynamic: false, format: "png" })}&user2=${message.mentions.users.last().displayAvatarURL({ dynamic: false, format: "png" })}`)
-        .addField(`**Ship Meter**`, ship())
+        .addField(`**Porcentagem de amor**`, ship())
       message.channel.send(luv)
     }
   }
