@@ -6,7 +6,7 @@ module.exports = {
     name: "8ball",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "8ball",
+    description: "Faça um pergunta ao 8ball",
     category: "fun",
     usage: "<Pegunta>",
 
@@ -18,13 +18,17 @@ module.exports = {
     let respostas = Respostas8Ball[Math.floor(Math.random() * Respostas8Ball.length)]
     let pergunta = args.join(" ")
 
-    const NoArgsEmbed = new Discord.MessageEmbed()
-        .setColor('BLUE')
-        .setTitle('🎱 Sabedoria Infinita!')
-        .setDescription('Pergunte ao 8Ball sobre qualquer coisa e você terá a resposta procurada.')
-        .addField('Comando', '`' + prefix + '8ball <Sua Pergunta>`')
-
-    if (!pergunta) { return message.inlineReply(NoArgsEmbed) }
+    if (!pergunta) {
+        const help = new Discord.MessageEmbed()
+        .setTitle("Comando de 8ball")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription("Faça um pergunta ao 8ball.")
+        .addField(`Forma de Utilização:`, ` \`${prefix}8ball <pergunta>\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setImage(rand)
+        .setTimestamp();
+        return message.channel.send(help);
+    }
 
     setTimeout(function () {
         message.inlineReply(respostas)
