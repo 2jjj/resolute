@@ -1,24 +1,24 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "conquista",
-    aliases: [],
-    cooldown: 1000 * 2, 
-    description: "Conquista do minecraft.",
-    category: "manipulacao",
-    usage: "@user",
-    
-async run (client, message, args) {
+	name: "conquista",
+	aliases: [],
+	cooldown: 1000 * 2,
+	description: "Conquista do minecraft.",
+	category: "manipulacao",
+	usage: "@user",
 
-    const a = args.join("+")
-    if(!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
-    if(args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);
+	async run(client, message, args) {
 
-    const embed_conquista = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setImage(`https://minecraftskinstealer.com/achievement/${Math.floor(Math.random() * 39) + 1}/Achievement+Get%21/${a}`);
+		const a = args.join("+")
+		if (!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
+		if (args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);
 
-    message.channel.send(`${message.author}`,embed_conquista)
-}
+		const embed_conquista = new Discord.MessageEmbed()
+			.setColor("RANDOM")
+			.setImage(`https://minecraftskinstealer.com/achievement/${Math.floor(Math.random() * 39) + 1}/Achievement+Get%21/${a}`);
+
+		message.channel.send(`${message.author}`, embed_conquista)
+	}
 
 }
