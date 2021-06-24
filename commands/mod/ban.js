@@ -45,7 +45,7 @@ async run (client, message, args) {
         const usuario = message.mentions.members.first()
         const motivo = args.slice(1).join(" ");
 
-        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "Eu não tenho permissão para banir este usuário! | Permissão necessária: BAN_MEMBERS"}})
+        if(!usuario.bannable) return message.channel.send({embed: {color: "#ff0000", description: "Eu não tenho permissão para banir este usuário! | **Permissão necessária: BAN_MEMBERS**"}})
 
         const embed = new Discord.MessageEmbed()
         .setTitle("Novo Banimento!")
