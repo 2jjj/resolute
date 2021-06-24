@@ -12,20 +12,19 @@ module.exports = {
 
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "-" }
-
     let respostas = Respostas8Ball[Math.floor(Math.random() * Respostas8Ball.length)]
     let pergunta = args.join(" ")
 
     if (!pergunta) {
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) prefix = "s."
+        
         const help = new Discord.MessageEmbed()
         .setTitle("Comando de 8ball")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription("Faça um pergunta ao 8ball.")
         .addField(`Forma de Utilização:`, ` \`${prefix}8ball <pergunta>\``)
         .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setImage(rand)
         .setTimestamp();
         return message.channel.send(help);
     }

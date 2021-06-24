@@ -13,7 +13,8 @@ module.exports = {
         figlet.text(args.join(" "), (err, text) => {
 
             if (err) {
-                return message.channel.send(err) 
+                console.log(err) 
+                return message.channel.send(`Um erro ocorreu! -> \`${err}\` **|** Mande este erro no servidor de suporte! -> https://discord.gg/9rwuhF6CJz`)
             }
             
             const embed = new Discord.MessageEmbed()
