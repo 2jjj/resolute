@@ -1,4 +1,3 @@
-  
 const Discord = require("discord.js");
 const db = require("quick.db");
 
@@ -15,11 +14,10 @@ module.exports = {
         let money = db.all().filter(data => data.ID.startsWith(`money_${message.guild.id}`)).sort((a, b) => b.data - a.data);
         let money1;
         
-        if(money.length > 10){
+        if(money.length > 10) {
             money1 = 10
-        } else{
+        } else {
             money1 = money.length
-        
         }
 
         let content = "";

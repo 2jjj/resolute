@@ -21,23 +21,18 @@ module.exports = {
 
             let timeEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`Você já recebeu sua recompensa diária!\n\nColete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
+            .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você já recebeu sua recompensa diária!\n<:interrogacao:856894534029541376> **|** Colete novamente daqui a **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))        
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setTimestamp();
             message.channel.send(`${user}`, timeEmbed);
         } else {
             let time = ms(timeout - (Date.now() - daily));
 
             let moneyEmbed = new Discord.MessageEmbed()
-            .setTitle("Você recebeu sua recompensa diária!")
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription(`Você recebeu **\`${amount}\`** Coins!`)
-            //.addField(`Aviso`, `<:pontin:852197383974551582> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
-            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-            .setTimestamp();        
+            .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!`)
             message.channel.send(`${user}`, moneyEmbed);
             //Adicionando o dinheiro
+            //.addField(`Aviso`, `<:pontin:852197383974551582> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
             db.add(`money_${message.guild.id}_${user.id}`, amount);
             db.set(`daily_${message.guild.id}_${user.id}`, Date.now());
         }
