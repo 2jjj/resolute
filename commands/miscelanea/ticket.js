@@ -16,11 +16,11 @@ module.exports = {
         
         message.delete()
         
-        const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.name}`);
+        const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.id}`);
 
         if (spray) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** ${message.author} Seu ticket atual já está aberto em: ${spray}!`).then(msg => msg.delete({timeout: 15000}));
 
-        message.guild.channels.create(`${message.author.name}-${message.author.discriminator}`, {
+        message.guild.channels.create(`${message.author.id}`, {
             type : 'text',
             permissionOverwrites : [
                 {
