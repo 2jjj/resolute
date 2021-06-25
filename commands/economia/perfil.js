@@ -43,31 +43,23 @@ module.exports = {
           const ctx = canvas.getContext('2d');
           const background = await Canvas.loadImage(perfil1);
       
-        
           ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
       
           ctx.strokeStyle = '#ff58c3';
           ctx.strokeRect(0, 0, canvas.width, canvas.height);
       
-      
-      
           //texto
           ctx.font = '30px Arial';
           ctx.fillStyle = 'WHITE';
           ctx.fillText(`${user.user.tag}`, 537, 300);
-          ctx.fillText(`________________`, 520, 320)
-          ctx.fillText(`Carteira: ${money}`, 520, 360)
-          ctx.fillText(`________________`, 520, 380)
+          ctx.fillText(`________________`, 537, 320)
+          ctx.fillText(`Carteira: ${money}`, 537, 360)
+          ctx.fillText(`________________`, 537, 380)
           
           ctx.font = '25px Arial';
           ctx.fillStyle = 'WHITE';
-          ctx.fillText(`Ienes: ${bank}¥`, 520, 410)
-          ctx.fillText(`Coins: ${money}`, 520, 440)
-
-          ctx.font = '22px Arial';
-          ctx.fillStyle = 'WHITE';
-          ctx.fillText(`Itens Sagrados: ${asas} Waifus, ${harpa} Animes, ${mana} Mangás`, 300, 25)
-      
+          ctx.fillText(`Ienes: ${bank}¥`, 537, 410)
+          ctx.fillText(`Coins: ${money}`, 537, 440)      
       
           //Arc
           ctx.beginPath();
