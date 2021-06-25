@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['serveravatar'],
 	cooldown: 1000 * 2,
 	description: "Icone do servidor.",
-	category: "mod",
+	category: "outros",
 	usage: "",
 
 	async run(client, message, args) {

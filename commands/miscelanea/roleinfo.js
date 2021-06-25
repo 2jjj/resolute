@@ -10,7 +10,7 @@ module.exports = {
 	aliases: ['ri'],
 	cooldown: 1000 * 2,
 	description: 'Informações de um cargo.',
-	category: "mod",
+	category: "outros",
 	usage: "@cargo",
 
 	async run(client, message, args) {
