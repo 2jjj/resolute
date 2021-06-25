@@ -19,12 +19,16 @@ module.exports = {
         let bank = db.fetch(`bank_${message.guild.id}_${user.id}`)
         if(bank === null) bank = 0;
 
+        let ienes = await db.fetch(`ienes_${message.guild.id}_${user.id}`)
+        if (ienes === null) ienes = 0;  
+
         const embed = new Discord.MessageEmbed()
         .setColor("GREEN")
-        .setTitle("💵 Balanço Monetário")
+        .setTitle("Balanço Monetário")
         .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
-        `\n\n:dollar: Coins: **\`${money}\`**` +
-        `\n:bank: Banco: **\`${bank}\`**`)
+        `\n\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
+        `\n<:ybs_dinheiro:856961057204600833> **| ¥ ienes:** **\`${bank}\`**` +
+        `\n:bank: **| Banco:** **\`${bank}\`**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))        
         .setTimestamp();
 
