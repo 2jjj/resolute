@@ -19,6 +19,15 @@ module.exports = {
     if (!language || language.length !== 2 || !text) {
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) { prefix = "s." }
+
+        const help = new Discord.MessageEmbed()
+        .setTitle("Comando de translate")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription("Tradução")
+        .addField(`Forma de Utilização:`, ` \`${prefix}translate <en/pt/fr/lt> <texto\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();
+        return message.channel.send(help);
     }
 
     let colors = ['RED', 'YELLOW', 'GREEN', 'BLUE']
