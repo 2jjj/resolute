@@ -24,17 +24,17 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		let prefix = db.get(`prefix_${message.guild.id}`)
-		if (prefix === null) {
-			prefix = "s."
-		}
-
 		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Você não tem a permissão de  \`BAN_MEMBERS\`')
 		if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Eu não tenho a permissão de \`BAN_MEMBERS\`')
 		let userID = args[0]
 		let reason = args.slice(1).join(' ') || 'Sem razão especificada.'
 
 		if (!userID) {
+			
+		let prefix = db.get(`prefix_${message.guild.id}`)
+		if (prefix === null) {
+			prefix = "s."
+		}
 			const help = new Discord.MessageEmbed()
 				.setTitle("Comando de globalban")
 				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

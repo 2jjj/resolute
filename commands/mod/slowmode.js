@@ -12,12 +12,12 @@ module.exports = {
     usage: "<tempo(MS)> || Exemplo: slowmode 1000",
 
     async run (client, message, args) {
-    
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
 
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("<:1598blurplesupport:856520144599777291> **|** Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
         if (!args[0]) {
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) prefix = "s."
+
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de slowmode")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

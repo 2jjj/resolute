@@ -10,12 +10,12 @@ module.exports = {
     usage: "",
   
     async run (client, message, args) {
-            
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
 
         let user = message.mentions.members.first() || message.author;
         if(!user) {
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) prefix = "s."
+
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de Warnlist")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
@@ -28,9 +28,8 @@ module.exports = {
         }
 
         let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;
-
+        
         const embed = new Discord.MessageEmbed()
-
         .setTitle(':scales:  **|** Warnlist')
         .setColor("RANDOM")
         .setDescription (`<a:SETA:852194614927818812> **${user} Tem ${warns} Warns \n<a:SETA:852194614927818812> ** Siga as regras para não sofrer advertencia!`)

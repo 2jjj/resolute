@@ -13,9 +13,6 @@ module.exports = {
 
     async run (client, message, args) {
 
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
-
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
         const permissions = {
@@ -58,6 +55,9 @@ module.exports = {
         }
 
         if(!role){
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) prefix = "s."
+            
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de roleinfo")
             .setDescription("Consiga informações de um determinado cargo!")

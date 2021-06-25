@@ -11,13 +11,13 @@ module.exports = {
 
     async run (client, message, args) {
 
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
-
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Você não possui permissões para usar esse comando!')
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         
         if(!Member) {
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) prefix = "s."
+            
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de mute")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

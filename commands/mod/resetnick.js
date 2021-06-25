@@ -13,12 +13,12 @@ module.exports = {
 
     async run (client, message, args) {
 
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) prefix = "s."
-
     const member = message.mentions.members.first();
 
     if (!member) {
+      let prefix = db.get(`prefix_${message.guild.id}`)
+      if (prefix === null) prefix = "s."
+      
       const help = new Discord.MessageEmbed()
       .setTitle("Comando de resetnick")
       .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

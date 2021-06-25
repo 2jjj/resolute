@@ -11,20 +11,15 @@ module.exports = {
     usage: "en/pt/fr/lt <texto>",
 
     async run (client, message, args) {
-   
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
         
     let googlepng = 'https://i.imgur.com/oZA4FaQ.png'
     let language = args[0]
     let text = args.slice(1).join(" ")
 
-    const lan = new Discord.MessageEmbed()
-        .setColor('RANDOM') // Red
-        .setTitle('Siga o formato correto')
-        .setDescription('`' + prefix + 'translate en/pt/fr/lt <texto>`')
-
-    if (!language || language.length !== 2 || !text) { return message.inlineReply(lan) }
+    if (!language || language.length !== 2 || !text) {
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
+    }
 
     let colors = ['RED', 'YELLOW', 'GREEN', 'BLUE']
     let result = colors[Math.floor(Math.random() * colors.length)]

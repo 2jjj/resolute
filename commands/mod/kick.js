@@ -23,15 +23,12 @@ module.exports = {
     ]
         
     var rand = list[Math.floor(Math.random() * list.length)]
-        
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
 
     const embed = new Discord.MessageEmbed()
         .setTitle("Sem permissão.")
         .setColor("#ff0000")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .addField(`Você não possui a permissão de`, `KICK_MEMBERS`)
+        .addField(`Você não possui a permissão de`, `**KICK_MEMBERS**`)
         .setFooter("Resolute", message.author.displayAvatarURL())
         .setTimestamp();
 
@@ -40,6 +37,9 @@ module.exports = {
         let target = message.mentions.members.first()
 
         if(!target) {
+            let prefix = db.get(`prefix_${message.guild.id}`)
+            if (prefix === null) { prefix = "s." }
+            
             const help = new Discord.MessageEmbed()
             .setTitle("Comando de kick")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

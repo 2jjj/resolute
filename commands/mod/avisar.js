@@ -10,9 +10,6 @@ module.exports = {
   usage: "@user <motivo>",
 
   async run (client, message, args) {
-
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) { prefix = "s." }
   
     var list = [
         'https://imgur.com/ZNuAcum.gif',
@@ -31,6 +28,9 @@ module.exports = {
 
     let membro = message.mentions.users.first() 
     if (!membro) {
+      let prefix = db.get(`prefix_${message.guild.id}`)
+      if (prefix === null) { prefix = "s." }
+
       const help = new Discord.MessageEmbed()
       .setTitle("Comando de warn")
       .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
