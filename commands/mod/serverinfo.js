@@ -1,20 +1,20 @@
-const Discord = require("discord.js"); 
+const Discord = require("discord.js");
 const config = require("../../config.json")
 
 module.exports = {
-  name: "serverinfo",
-  aliases: ['serverinformation'],
-  cooldown: 1000 * 2, 
-  description: "Informações do servidor.",
-  category: "mod",
-  usage: "",
+	name: "serverinfo",
+	aliases: ['serverinformation'],
+	cooldown: 1000 * 2,
+	description: "Informações do servidor.",
+	category: "mod",
+	usage: "",
 
-  async run (client, message, args) {
+	async run(client, message, args) {
 
-    let serverembed = new Discord.MessageEmbed() 
-    .setColor("#6400b6")//»
-    .setTitle(`<:5864blurplesearch:856520144817881118> ${message.guild.name}`)
-    .setDescription(`
+		let serverembed = new Discord.MessageEmbed()
+			.setColor("#6400b6") //»
+			.setTitle(`<:5864blurplesearch:856520144817881118> ${message.guild.name}`)
+			.setDescription(`
     🧭 **| Nome:** \`${message.guild.name}\`
     🧭 **| ID do servidor:** \`${message.guild.id}\`
     📆 **| Servidor Criado em:** \`${message.guild.createdAt}\`
@@ -26,8 +26,10 @@ module.exports = {
     **-- Shard --**
     <:cpu:854137097521987624> **Shard: ${message.guild.shard.id}/${config.shards}**
     `)
-    .setFooter(` • Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
-    message.channel.send(serverembed);
- }
+			.setFooter(` • Autor ${message.author.tag}`, message.author.displayAvatarURL({
+				dynamic: true
+			}))
+		message.channel.send(serverembed);
+	}
 }
 //    **| Proteção de verificação:** ${message.guild.verificationLevel}

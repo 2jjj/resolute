@@ -1,38 +1,39 @@
-const { Message } = require('discord.js')
 const Discord = require("discord.js");
 const db = require("quick.db")
 
 module.exports = {
-    name: "unmute",
-    aliases: [],
-    cooldown: 1000 * 2, 
-    description: "Desmutar alguém",
-    category: "mod",
-    usage: "@user",
-  
-    async run (client, message, args) {
+	name: "unmute",
+	aliases: [],
+	cooldown: 1000 * 2,
+	description: "Desmutar alguém",
+	category: "mod",
+	usage: "@user",
 
-        const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+	async run(client, message, args) {
 
-        if(!Member) {
-            let prefix = db.get(`prefix_${message.guild.id}`)
-            if (prefix === null) prefix = "s."
+		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 
-            const help = new Discord.MessageEmbed()
-            .setTitle("Comando de unmute")
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription("Desmute alguém com este comando!")
-            .addField(`Forma de Utilização:`, ` \`${prefix}unmute @usuario\``)
-            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-            .setColor("RANDOM")
-            .setTimestamp();
-            return message.channel.send(help);
-        }
+		if (!Member) {
+			let prefix = db.get(`prefix_${message.guild.id}`)
+			if (prefix === null) prefix = "s."
 
-        const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
+			const help = new Discord.MessageEmbed()
+				.setTitle("Comando de unmute")
+				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+				.setDescription("Desmute alguém com este comando!")
+				.addField(`Forma de Utilização:`, ` \`${prefix}unmute @usuario\``)
+				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
+					dynamic: true
+				}))
+				.setColor("RANDOM")
+				.setTimestamp();
+			return message.channel.send(help);
+		}
 
-        await Member.roles.remove(role)
+		const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
 
-        message.channel.send(`<:v_:856894534184468480> **|** ${Member.displayName} foi desmutado com sucesso!`)
-    }
+		await Member.roles.remove(role)
+
+		message.channel.send(`<:v_:856894534184468480> **|** ${Member.displayName} foi desmutado com sucesso!`)
+	}
 }

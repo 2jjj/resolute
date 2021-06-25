@@ -1,12 +1,12 @@
 module.exports = {
-    name: "nuke",
-    aliases: [],
-    cooldown: 1000 * 2, 
-    description: "Nukar um canal e criar outro com o mesmo nome.",
-    category: "mod",
-    usage: "",
+	name: "nuke",
+	aliases: [],
+	cooldown: 1000 * 2,
+	description: "Nukar um canal e criar outro com o mesmo nome.",
+	category: "mod",
+	usage: "",
 
-    async run (client, message, args) {
+	async run(client, message, args) {
 
 		let filter = (m) => m.author.id === message.author.id
 		message.channel.send(
@@ -22,7 +22,7 @@ module.exports = {
 				message = message.first()
 				if (
 					message.content.toLowerCase() == 'Sim' ||
-					message.content.toLowerCase() == 's' 
+					message.content.toLowerCase() == 's'
 				) {
 					let channel = client.channels.cache.get(message.channel.id)
 					let posisi = channel.position
