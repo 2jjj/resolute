@@ -38,9 +38,7 @@ module.exports = {
 
 		if (!target) {
 			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) {
-				prefix = "s."
-			}
+			if (prefix === null) prefix = "s."
 
 			const help = new Discord.MessageEmbed()
 				.setTitle("Comando de kick")

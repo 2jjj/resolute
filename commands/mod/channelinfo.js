@@ -16,9 +16,8 @@ module.exports = {
         
         if (!channel) {
 			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) {
-				prefix = "s."
-			}
+			if (prefix === null) prefix = "s."
+
 			const help = new Discord.MessageEmbed()
 				.setTitle("Comando de channelinfo")
 				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
