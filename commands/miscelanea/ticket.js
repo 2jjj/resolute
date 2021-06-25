@@ -15,12 +15,12 @@ module.exports = {
         if (prefix === null) { prefix = "s." }
         
         message.delete()
-
-        const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.id}`);
+        
+        const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.name}`);
 
         if (spray) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** ${message.author} Seu ticket atual já está aberto em: ${spray}!`).then(msg => msg.delete({timeout: 15000}));
 
-        message.guild.channels.create(`${message.author.id}`, {
+        message.guild.channels.create(`${message.author.name}-${message.author.discriminator}`, {
             type : 'text',
             permissionOverwrites : [
                 {
@@ -34,8 +34,7 @@ module.exports = {
             ]
         }).then(async channel=> {
             message.channel.send(`🎫 | ${message.author} Seu ticket foi criado com sucesso: ${channel}`).then(msg => msg.delete({timeout: 15000}));
-            channel.send(`☑️ | Olá ${message.author}, este é o seu ticket! 
-            ❌ | Caso queira fechar seu ticket, utilize **${prefix}close**.`)
+            channel.send(`<:v_:856894534184468480> **|** Olá ${message.author}, este é o seu ticket!\n<:x_:856894534071746600> **|** Caso queira fechar seu ticket, utilize **${prefix}close**.`)
         })
     }
 }
