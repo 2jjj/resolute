@@ -37,8 +37,7 @@ module.exports = {
         if(mana === null) mana = '0'
        
         let perfil1 = await db.fetch(`perfil_${message.guild.id}_${user.id}`);
-        if (perfil1 === null) perfil1 = 'https://i.imgur.com/2EtNqRM.png'
-      
+        if (perfil1 === null) perfil1 = 'https://i.imgur.com/eWIkXnP.png'
       
           const canvas = Canvas.createCanvas(850, 500);
           const ctx = canvas.getContext('2d');
@@ -55,7 +54,7 @@ module.exports = {
           //texto
           ctx.font = '30px Arial';
           ctx.fillStyle = 'WHITE';
-          ctx.fillText(`${user.user.tag}`, 550, 300);
+          ctx.fillText(`${user.user.tag}`, 537, 300);
           ctx.fillText(`________________`, 520, 320)
           ctx.fillText(`Carteira: ${money}`, 520, 360)
           ctx.fillText(`________________`, 520, 380)
