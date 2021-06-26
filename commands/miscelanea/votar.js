@@ -24,7 +24,7 @@ module.exports = {
         if (prefix === null) { prefix = "s." }
   
         const help = new Discord.MessageEmbed()
-        .setTitle("Comando de warn")
+        .setTitle("Comando de votar")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription("Faça uma votação!")
         .addField(`Forma de Utilização:`, ` \`${prefix}votar <conteudo>\``)

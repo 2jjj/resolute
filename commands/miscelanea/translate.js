@@ -24,7 +24,7 @@ module.exports = {
         .setTitle("Comando de translate")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription("Tradução")
-        .addField(`Forma de Utilização:`, ` \`${prefix}translate <en/pt/fr/lt> <texto\``)
+        .addField(`Forma de Utilização:`, ` \`${prefix}translate <en/pt/fr/lt> <texto>\``)
         .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();
         return message.channel.send(help);
