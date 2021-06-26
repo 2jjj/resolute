@@ -19,7 +19,7 @@ module.exports = {
     
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
     ctx.drawImage(avatar, 270, 10, 300, 320);
-    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ARCHIE.jpg');
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'resolute.jpg');
     message.channel.send(attachment);
    }
 }
