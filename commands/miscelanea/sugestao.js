@@ -20,15 +20,16 @@ module.exports = {
           if (prefix === null) { prefix = "s." }
 
           const help = new Discord.MessageEmbed()
-          .setTitle("Comando de translate")
+          .setTitle("Comando de sugestão")
           .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-          .setDescription("Tradução")
-          .addField(`Forma de Utilização:`, ` \`${prefix}translate <en/pt/fr/lt> <texto>\``)
+          .setDescription("Faça uma sugestão para o seu servidor!")
+          .addField(`Forma de Utilização:`, ` \`${prefix}sugestao <#canal> <conteudo>\``)
+          .addField(`Exemplo:`, ` \`${prefix}sugestao #sugestoes devo criar um novo canal?\``)
           .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
           .setTimestamp();
           return message.channel.send(help);
         }
-        
+
         if(!theDescription) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique uma descrição / pergunta para a sugestão!")
 
         const embed = new MessageEmbed()
