@@ -1,0 +1,17 @@
+const { MessageAttachment } = require("discord.js")
+module.exports = {
+    name: "pikachu",
+    aliases: [],
+    cooldown: 1000 * 2, 
+    description: "",
+    category: "manipulacao",
+    usage: "@user",
+  
+    async run (client, message, args) {
+
+    const text = args.join(" ")
+    if(!text) return message.reply("Por favor coloque um texto!")
+    let image = `https://api.popcatdev.repl.co/pikachu?text=${encodeURIComponent(text)}`
+    let imgae = new MessageAttachment(image, "pika.png")
+    message.channel.send(imgae)
+}}
