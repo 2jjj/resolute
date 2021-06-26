@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "",
     category: "manipulacao",
-    usage: "@user",
+    usage: "<texto>",
   
     async run (client, message, args) {
 
