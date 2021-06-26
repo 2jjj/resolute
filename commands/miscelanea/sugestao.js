@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js')
+const Discord = require("discord.js");
+const db = require("quick.db");
 
 module.exports = {
   name: "sugestao",
@@ -13,7 +15,20 @@ module.exports = {
         let channelID = message.mentions.channels.first()
         let theDescription = args.slice(1).join(" ")
 
-        if(!channelID) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique um canal em que você deseja que a sugestão esteja! **|** `s.sugestao <#canal>`")
+        if(!channelID) {
+          let prefix = db.get(`prefix_${message.guild.id}`)
+          if (prefix === null) { prefix = "s." }
+
+          const help = new Discord.MessageEmbed()
+          .setTitle("Comando de translate")
+          .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+          .setDescription("Tradução")
+          .addField(`Forma de Utilização:`, ` \`${prefix}translate <en/pt/fr/lt> <texto>\``)
+          .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+          .setTimestamp();
+          return message.channel.send(help);
+        }
+        
         if(!theDescription) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique uma descrição / pergunta para a sugestão!")
 
         const embed = new MessageEmbed()

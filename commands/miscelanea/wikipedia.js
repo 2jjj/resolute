@@ -14,7 +14,7 @@ module.exports = {
 		const body = await fetch(
 			`https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
         args.join(" ")
-      )}`
+     	 )}`
 		).then(res => res.json().catch(() => {}));
 		if (!body) return message.channel.send("<:x_:856894534071746600> **|** Página não encontrada.");
 		if (body.title && body.title === "<:x_:856894534071746600> **|** Não encontrado.")
