@@ -19,11 +19,11 @@ module.exports = {
             provider.detail(result[0].id, 1, "portuguese", "pt").then(results => { 
                 let other = results.otherData 
                 const embed = new Discord.MessageEmbed() 
-                            .setTitle(results.name)
-                            .setColor('RANDOM')
-                            .setDescription(`\n\n<:spr4yxyz:837798446584168468> Gênero: ${results.genres.join(', ')} \n<:spr4yxyz:837798446584168468> Plataforma: ${other.platforms.join(', ')}\n<:spr4yxyz:837798446584168468> Características: ${other.features.join(', ')}\n<:spr4yxyz:837798446584168468> Desenvolvedor: ${other.developer.join(', ')}`)
-                            .setThumbnail(other.imageUrl)
-                            .setFooter(message.author.tag, message.author.displayAvatarURL(),message.author.displayAvatarURL)
+                    .setTitle(results.name)
+                    .setColor('RANDOM')
+                    .setDescription(`\n\n<:spr4yxyz:837798446584168468> Gênero: ${results.genres.join(', ')} \n<:spr4yxyz:837798446584168468> Plataforma: ${other.platforms.join(', ')}\n<:spr4yxyz:837798446584168468> Características: ${other.features.join(', ')}\n<:spr4yxyz:837798446584168468> Desenvolvedor: ${other.developer.join(', ')}`)
+                    .setThumbnail(other.imageUrl)
+                    .setFooter(message.author.tag, message.author.displayAvatarURL(),message.author.displayAvatarURL)
                 return message.channel.send(embed)
         })
     })
