@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Pesquise um jogo da steam.",
     category: "outros",
-    usage: "s.steam <jogo>",
+    usage: "<jogo>",
 
     async run (client, message, args) {
                         

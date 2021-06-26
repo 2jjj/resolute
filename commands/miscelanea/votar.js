@@ -5,7 +5,7 @@ module.exports = {
     name: "votar",
     aliases: ['votacao', 'vote'],
     cooldown: 1000 * 2, 
-    description: "Abra uma votação",
+    description: "Abra uma votação no seu servidor!",
     category: "outros",
     usage: `<conteudo>`,
 

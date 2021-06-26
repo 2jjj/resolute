@@ -5,7 +5,7 @@ module.exports = {
     name: "ticket",
     aliases: ['mail'],
     cooldown: 1000 * 2, 
-    description: "Abra um ticket!",
+    description: "Abra um ticket em um canal com seu ID.",
     category: "outros",
     usage: "",
 
