@@ -43,7 +43,7 @@ module.exports = {
 		}
 
 		let ataque = new Discord.MessageEmbed()
-			.setTitle(`😤 Ataque! 😭`)
+			.setTitle(`Ataque!`)
 			.setDescription(`💔${pessoa} o ${message.author} te atacou!`)
 			.setImage(rand)
 			.setTimestamp()

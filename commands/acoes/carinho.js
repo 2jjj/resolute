@@ -74,7 +74,7 @@ module.exports = {
 		})
 		var embed = new Discord.MessageEmbed()
 			.setColor('BLUE')
-			.setDescription(`${message.author} está te dando carinho ${user}`, avatar)
+			.setDescription(`${message.author} está dando carinho nx ${user}`, avatar)
 			.setImage(rand)
 			.setFooter('Clique em 🔁 para retribuir')
 
