@@ -14,23 +14,6 @@ module.exports = {
 
 		const member = message.mentions.members.first();
 
-		if (!member) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de resetnick")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Resete o nick de um usuário")
-				.addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}resetnick @user\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setColor("RANDOM")
-				.setTimestamp();
-			return message.channel.send(help);
-		}
-
 		try {
 			member.setNickname(null);
 		} catch (err) {

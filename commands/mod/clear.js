@@ -9,6 +9,7 @@ module.exports = {
 	async run(client, message, args) {
 
 		let user = message.author.username
+		
 		if (!message.member.permissions.has("MANAGE_MESSAGES"))
 			return message.reply(
 				"<:x_:856894534071746600> **|** Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"

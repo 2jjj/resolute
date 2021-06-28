@@ -14,24 +14,6 @@ module.exports = {
 	async run(client, message, args) {
 
 		if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("<:1598blurplesupport:856520144599777291> **|** Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
-		if (!args[0]) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de slowmode")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Coloque o modo lento no chat!")
-				.addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}slowmode <tempo(ms)>\``)
-				.addField(`Como desligar:`, `<:pontin:852197383974551582> \`${prefix}slowmode off\``)
-				.addField(`Exemplo:`, `<:pontin:852197383974551582> \`${prefix}slowmode 5000\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setColor("RANDOM")
-				.setTimestamp();
-			return message.channel.send(help);
-		}
 
 		const currentCooldown = message.channel.rateLimitPerUser;
 		const reason = args[1] ? args.slice(1).join(' ') : 'Sem motivos.';

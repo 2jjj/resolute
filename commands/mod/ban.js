@@ -5,9 +5,10 @@ module.exports = {
 	name: "ban",
 	aliases: ['banir'],
 	cooldown: 1000 * 2,
-	description: "Banir uma pessoa.",
+	description: "Banir um usuário permanentemente de seu servidor",
 	category: "mod",
-	usage: "@user motivo",
+	usage: "@usuario <motivo>",
+	example: "ban @Spray#0007 Ofensa a staff",
 
 	async run(client, message, args) {
 
@@ -23,24 +24,6 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-
-		if (!args.length) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-      
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de ban")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Banir um usuário permanentemente de seu servidor")
-				.addField(`Forma de Utilização:`, ` \`${prefix}ban @usuario <motivo>\``)
-				.addField(`Exemplo:`, `  \`${prefix}ban @Spray#0007 Ofensa a staff\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setImage(rand)
-				.setTimestamp();
-			return message.channel.send(help);
-		}
 
 		if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({
 			embed: {

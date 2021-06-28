@@ -29,24 +29,6 @@ module.exports = {
 		let userID = args[0]
 		let reason = args.slice(1).join(' ') || 'Sem razão especificada.'
 
-		if (!userID) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de globalban")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Banir um usuário permanentemente de seu servidor por ID")
-				.addField(`Forma de Utilização:`, ` \`${prefix}globalban <ID> <motivo>\``)
-				.addField(`Exemplo:`, `  \`${prefix}globalban 836345581424738354 Ofensa a staff\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setImage(rand)
-				.setTimestamp();
-			return message.channel.send(help);
-		}
-
 		if (isNaN(userID)) return message.channel.send('<:x_:856894534071746600> **|** Isto não é um ID.')
 
 		if (userID === message.author.id) return message.reply('<:x_:856894534071746600> **|** Você não pode se banir.')

@@ -12,24 +12,6 @@ module.exports = {
 	async run(client, message, args) {
 
 		const member = message.mentions.members.first();
-
-		if (!member) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de nick")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Adicione um apelido a um usuário")
-				.addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}nick @user <apelido>\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setColor("RANDOM")
-				.setTimestamp();
-			return message.channel.send(help);
-		}
-
 		const arguments = args.slice(1).join(" ");
 
 		if (!arguments) return message.reply("Especifique o nickname que deseja colocar!");

@@ -36,24 +36,6 @@ module.exports = {
 		if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
 		let target = message.mentions.members.first()
 
-		if (!target) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de kick")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Expulse algum usuário de seu servidor!")
-				.addField(`Forma de Utilização:`, ` \`${prefix}kick @usuario <motivo>\``)
-				.addField(`Exemplo:`, `  \`${prefix}kick @Spray#0007 Ofensa a staff\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setImage(rand)
-				.setTimestamp();
-			return message.channel.send(help);
-		}
-
 		if (target.id === message.author.id) {
 			return message.reply("<:x_:856894534071746600> **|** Você não pode se expulsar!")
 		}
