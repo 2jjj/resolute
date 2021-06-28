@@ -5,9 +5,10 @@ module.exports = {
     name: "steam",
     aliases: ['game', 'steamgame'],
     cooldown: 1000 * 2, 
-    description: "Pesquise um jogo da steam.",
+    description: "Busque por informações do seu jogo favorito da steam!",
     category: "outros",
     usage: "<jogo>",
+    example: "s.steam csgo",
 
     async run (client, message, args) {
                         
@@ -16,20 +17,19 @@ module.exports = {
         if(!arg) {
             const db = require("quick.db");
             const Discord = require("discord.js");
-
+    
             let prefix = db.get(`prefix_${message.guild.id}`)
             if (prefix === null) { prefix = "s." }
-  
+    
             const help = new Discord.MessageEmbed()
-            .setTitle("Comando da steam")
+            .setTitle(`Comando de \`${module.exports.name}\``)
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription("Busque por informações do seu jogo favorito da steam!")
-            .addField(`Forma de Utilização:`, ` \`${prefix}steam <game>\``)
-            .addField(`Exemplo:`, ` \`${prefix}steam csgo\``)
+            .setDescription(`${module.exports.description}`)
+            .addField(`Forma de Utilização:`, ` \`${prefix}${module.exports.usage}\``)
+            .addField(`Exemplo:`, ` \`${prefix}${module.exports.example}\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();
             return message.channel.send(help);
-
         }
 
         provider.search(arg).then(result => { 

@@ -2,7 +2,7 @@ module.exports = {
   name: "sugestao",
   aliases: ['sugestion', 'sugerir'],
   cooldown: 1000 * 2, 
-  description: "Faça uma sugestão em um determinado canal.",
+  description: "Faça uma sugestão para o seu servidor!",
   category: "outros",
   usage: "<#canal> <conteudo>",
 
