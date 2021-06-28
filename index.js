@@ -68,7 +68,7 @@ client.on("message", async message => {
         .setTitle(`Comando de \`${command.name}\``)
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`${command.description}`)
-        .addField(`Forma de Utilização:`, ` \`${prefix}${command.usage}\``)
+        .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
         .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp();
         return message.channel.send(help);    
