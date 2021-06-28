@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-const db = require('quick.db')
 
 module.exports = {
 	name: "morder",
@@ -44,23 +43,6 @@ module.exports = {
 		var rand = list[Math.floor(Math.random() * list.length)]
 		var rand1 = list1[Math.floor(Math.random() * list1.length)]
 		let user = message.mentions.users.first()
-
-		if (!user) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de morder")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Morda alguém!!")
-				.addField(`Forma de Utilização:`, ` \`${prefix}hug @usuario\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setImage(rand)
-				.setTimestamp();
-			return message.channel.send(help);
-		}
 
 		if (user.id === message.author.id) {
 			return message.inlineReply('Você não pode usar este comando com você mesmo.')

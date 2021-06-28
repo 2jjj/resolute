@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const db = require("quick.db");
 
 module.exports = {
 	name: "ataque",
@@ -10,11 +9,6 @@ module.exports = {
 	usage: "@user",
 
 	async run(client, message, args) {
-
-		let prefix = db.get(`prefix_${message.guild.id}`)
-		if (prefix === null) {
-			prefix = "s."
-		}
 
 		var list = [
 			'http://27.media.tumblr.com/tumblr_lj7iubw5fn1qgq4hio1_500.gif',
@@ -27,20 +21,6 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)];
 		let pessoa = message.mentions.users.first() || client.users.cache.get(args[0]);
-
-		if (!pessoa) {
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de ataque")
-				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.setDescription("Ataque alguém!!")
-				.addField(`Forma de Utilização:`, ` \`${prefix}ataque @usuario\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setImage(rand)
-				.setTimestamp();
-			return message.channel.send(help);
-		}
 
 		let ataque = new Discord.MessageEmbed()
 			.setTitle(`Ataque!`)
