@@ -7,7 +7,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Expulsar uma pessoa de seu servidor",
 	category: "mod",
-	usage: "@user",
+	usage: "@user <motivo>",
+	example: "kick @Spray#0007 É lindo demais",
 
 	async run(client, message, args) {
 

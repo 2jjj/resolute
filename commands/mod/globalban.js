@@ -5,9 +5,10 @@ module.exports = {
 	name: 'globalban',
 	description: 'Banir um usuário por ID permanentemente de seu servidor.',
 	cooldown: 1000 * 2,
-	usage: '<user.id> <reason>',
 	aliases: ['globalban'],
 	category: 'mod',
+	usage: "<id> <motivo>",
+	example: "globalban 836345581424738354 BANIDO!!",
 
 	async run(client, message, args) {
 

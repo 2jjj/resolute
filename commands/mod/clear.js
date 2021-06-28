@@ -5,6 +5,7 @@ module.exports = {
 	description: "Limpar uma determinada quantidade de mensagens",
 	category: "mod",
 	usage: "<0/99>",
+	example: "clear 77",
 
 	async run(client, message, args) {
 
