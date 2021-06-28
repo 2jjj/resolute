@@ -8,6 +8,7 @@ module.exports = {
 	description: "Setar um apelido para um determinado usuário",
 	category: "mod",
 	usage: "@user <apelido>",
+	example: "nick @Spray#0007 Apelido novo",
 
 	async run(client, message, args) {
 

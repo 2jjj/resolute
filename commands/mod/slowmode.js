@@ -10,6 +10,7 @@ module.exports = {
 	description: "Colocar o modo slowmode em um canal.",
 	category: "mod",
 	usage: "<tempo>",
+	example: "slowmode 1000",
 
 	async run(client, message, args) {
 

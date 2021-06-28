@@ -7,6 +7,7 @@ module.exports = {
 	description: "Mutar alguém temporariamente.",
 	category: "mod",
 	usage: "@user <tempo>",
+	example: "tempmute @Spray#0007 4000",
 
 	async run(client, message, args) {
 

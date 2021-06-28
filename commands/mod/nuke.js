@@ -4,7 +4,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Nukar um canal e criar outro com o mesmo nome.",
 	category: "mod",
-	usage: "",
+	usage: "nuke",
+	example: "nuke",
 
 	async run(client, message, args) {
 
