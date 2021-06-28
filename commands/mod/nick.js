@@ -13,10 +13,7 @@ module.exports = {
 	async run(client, message, args) {
 
 		const member = message.mentions.members.first();
-
 		const arguments = args.slice(1).join(" ");
-
-		if (!arguments) return message.reply("Especifique o nickname que deseja colocar!");
 
 		try {
 			member.setNickname(arguments);
