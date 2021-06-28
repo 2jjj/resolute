@@ -7,6 +7,7 @@ module.exports = {
     description: "Traduzir algo que deseja!",
     category: "outros",
     usage: "en/pt/fr/lt <texto>",
+    example: "translate en Hello",
 
     async run (client, message, args) {
         

@@ -48,7 +48,7 @@ client.on("message", async message => {
     
     if (cmd.length === 0) return;
     
-    let command = client.commands.get(cmd);
+    var command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
 
     if (command) {
@@ -65,8 +65,8 @@ client.on("message", async message => {
 
     let x = command.name;
 
-    if( x == "ping" || x == "lock" || x == "unlock" || "warnlist" /*Misc*/ || "userinfo" || "ticket") {
-        console.log("Este comando não possui argumentos.")
+    if(x == "ping" || x == "userinfo" || x == "ticket" || x == "serverinfo" || x == "servericon" || x == "random" || x == "horas" || x == "avatar" || x == "badges" || x == "close" || x == "dispositivo") {
+        console.log(9)
     } else {
         if (!args[0]) {
             const help = new Discord.MessageEmbed()
@@ -76,8 +76,8 @@ client.on("message", async message => {
             .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp();
-            return message.channel.send(help);    
-        }
+        return message.channel.send(help);
+    }   
     }
 
 });

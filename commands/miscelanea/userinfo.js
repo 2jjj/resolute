@@ -7,6 +7,7 @@ module.exports = {
 	description: "Obtenha informações de um usuário.",
 	category: "outros",
 	usage: "<id/@user>",
+    example: "userinfo",
 
 	async run(client, message, args) {
 

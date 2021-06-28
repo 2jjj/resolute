@@ -12,6 +12,10 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]) {
+
+		}
+
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
 			'https://imgur.com/xlD7P3N.gif',
@@ -37,7 +41,8 @@ module.exports = {
 		if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
 		let target = message.mentions.members.first()
 
-		if (target.id === message.author.id) {
+		if (target.
+			id === message.author.id) {
 			return message.reply("<:x_:856894534071746600> **|** Você não pode se expulsar!")
 		}
 
