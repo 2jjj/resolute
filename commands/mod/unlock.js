@@ -24,7 +24,7 @@ module.exports = {
 				SEND_MESSAGES: true,
 				ADD_REACTIONS: true
 			})
-			msg.edit(":tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!")
+			msg.edit(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}unlock para travar o canal!`)
 
 		} catch (e) {
 			message.channel.send(e)
