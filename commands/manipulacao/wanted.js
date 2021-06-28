@@ -9,11 +9,10 @@ module.exports = {
     category: "manipulacao",
     usage: "@user",
 
-  
     async run (client, message, args) {
     
     let GuildMember = message.mentions.members.first();
-
+    
     if(!GuildMember)
     {
         return message.reply("Mencione um usuário válido.");
