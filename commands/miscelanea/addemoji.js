@@ -12,9 +12,6 @@ module.exports = {
 
         if (!message.member.hasPermission("MANAGE_EMOJIS")) return message.channel.send(`Você não tem permissão de \`Gerenciar Emojis\`.`)
 
-        if (!args.length)
-            return message.channel.send(`Especifique o emoji.`)
-
         for (const emojis of args) {
             const getEmoji = Discord.Util.parseEmoji(emojis);
 

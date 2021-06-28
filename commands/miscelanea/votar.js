@@ -5,6 +5,7 @@ module.exports = {
     description: "Abra uma votação no seu servidor!",
     category: "outros",
     usage: `<conteudo>`,
+    example: "votar devo banir o spray?",
 
     async run (client, message, args) {
 
@@ -15,23 +16,6 @@ module.exports = {
         .setColor('BLUE')
         .setTitle(`Votação aberta por ${message.author.username}`)
         .setDescription(content)
-
-    if (!content) {
-        const Discord = require('discord.js');
-        const db = require('quick.db');
-
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
-  
-        const help = new Discord.MessageEmbed()
-        .setTitle("Comando de votar")
-        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .setDescription("Faça uma votação!")
-        .addField(`Forma de Utilização:`, ` \`${prefix}votar <conteudo>\``)
-        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();
-        return message.channel.send(help);
-    }
 
     if (content) {
         return message.channel.send(embed).then(msg => {

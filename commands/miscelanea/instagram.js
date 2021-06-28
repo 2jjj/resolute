@@ -11,14 +11,10 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Pegue informações do insta de alguém!",
     usage: "<@user>",
-    run: async (client, message, args) => {
+    
+    async run (client, message, args) {
+
         const name = args.join(" ");
-
-        if (!name) {
-            return message.reply("Talvez seja útil realmente procurar por alguém ...!")
-                .then(m => m.delete(5000));
-        }
-
         const url = `https://instagram.com/${name}/?__a=1`;
         
         let res; 

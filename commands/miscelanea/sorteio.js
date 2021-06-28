@@ -11,23 +11,6 @@ module.exports = {
     usage: "<tempo> <#canal> [Premio]",
 
  async run (client, message, args) {
-    
-    if (!args[0]) {
-        const db = require("quick.db");
-        const Discord = require("discord.js");
-
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
-
-        const help = new Discord.MessageEmbed()
-        .setTitle(`Comando de \`${module.exports.name}\``)
-        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .setDescription(`${module.exports.description}`)
-        .addField(`Forma de Utilização:`, ` \`${prefix}${module.exports.usage}\``)
-        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();
-        return message.channel.send(help);
-    }   
 
     if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
     `<:1926blurplecross:856520144872407060> **|** Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`

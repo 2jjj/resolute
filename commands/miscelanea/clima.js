@@ -11,24 +11,14 @@ module.exports = {
   usage: "<cidade>",
 
   async run (client, message, args) {
-
     
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
 
+    let city = args.join(" ")
+    let degreetype = "C"
 
-  var noargs = new Discord.MessageEmbed()
-    .setColor('BLUE')
-    .setTitle('⛅')
-    .setDescription('Explore o clima de paises ou cidades.')
-    .addField("Segue o exemplo:", '`' + prefix + 'clima SP ou São Paulo`')
-
-  if (!args[0]) { return message.channel.send(noargs) }
-
-  let city = args.join(" ")
-  let degreetype = "C"
-
-  await weather.find({ search: city, degreeType: degreetype }, function (err, result) {
+    await weather.find({ search: city, degreeType: degreetype }, function (err, result) {
 
     var noresult = new Discord.MessageEmbed()
       .setColor('#FF0000')

@@ -21,25 +21,6 @@ module.exports = {
     let weight = args[0]
     let height = args[1]
 
-    const imcError = new Discord.MessageEmbed()
-        .setColor("RANDOM")
-        .setTitle('📝 Indice de Massa Corporal')
-        .setDescription('`' + prefix + 'imc Peso Altura`' + '\n \n**Atenção**\nPeso em **Kilogramas** e Altura em **Centimentros**\n \n')
-        .addFields(
-            {
-                name: 'Exemplo',
-                value: `${prefix}imc 70 65`
-            },
-            {
-                name: 'Exemplo 2',
-                value: `${prefix}imc 78.8 185`
-            }
-        )
-        .setFooter('Alguns resultados podem dar errado por não levar em consideração a idade.')
-
-    if (!args[0] || !args[1]) { return message.inlineReply(imcError) }
-    if (isNaN(args[0]) || isNaN(args[1])) { return message.inlineReply(imcError) }
-
     let imc = (weight / ((height * height) / 10000)).toFixed(2)
 
     if (args[0] && args[1]) {

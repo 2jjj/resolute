@@ -5,6 +5,7 @@ const cor = require("colors");
 const db = require("quick.db");
 const config = require("./config.json");
 const ms = require('ms');
+const Discord = require("discord.js")
 
 const client = new Client({
     disableEveryone: true
@@ -61,6 +62,17 @@ client.on("message", async message => {
             }, command.cooldown)
         } else command.run(client, message, args);
     }
+
+    if (!args[0]) {
+        const help = new Discord.MessageEmbed()
+        .setTitle(`Comando de \`${command.name}\``)
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription(`${command.description}`)
+        .addField(`Forma de Utilização:`, ` \`${prefix}${command.usage}\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();
+        return message.channel.send(help);    
+    }   
 });
 
 fs.readdir(__dirname + "/events/", (err, files) => {

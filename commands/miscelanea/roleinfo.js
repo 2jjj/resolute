@@ -56,22 +56,6 @@ module.exports = {
 			false: '`Não`'
 		}
 
-		if (!role) {
-			let prefix = db.get(`prefix_${message.guild.id}`)
-			if (prefix === null) prefix = "s."
-
-			const help = new Discord.MessageEmbed()
-				.setTitle("Comando de roleinfo")
-				.setDescription("Consiga informações de um determinado cargo!")
-				.addField(`Forma de Utilização:`, `<:pontin:852197383974551582> \`${prefix}roleinfo @cargo\``)
-				.setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
-					dynamic: true
-				}))
-				.setColor("RANDOM")
-				.setTimestamp();
-			return message.channel.send(help);
-		}
-
 		const rolePermissions = role.permissions.toArray();
 		const finalPermissions = [];
 		for (const permission in permissions) {
