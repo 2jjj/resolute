@@ -5,11 +5,12 @@ module.exports = {
 	name: "lock",
 	aliases: ['bloquear'],
 	cooldown: 1000 * 2,
-	description: "Bloquear o canal",
+	description: "Bloquear um canal",
 	category: "mod",
 	usage: "",
 
 	async run(client, message, args) {
+
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
 

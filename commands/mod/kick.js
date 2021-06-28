@@ -5,7 +5,7 @@ module.exports = {
 	name: "kick",
 	aliases: ['expulsar'],
 	cooldown: 1000 * 2,
-	description: "Expulsar uma pessoa do seu servidor",
+	description: "Expulsar uma pessoa de seu servidor",
 	category: "mod",
 	usage: "@user",
 

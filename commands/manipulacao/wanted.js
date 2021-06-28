@@ -16,7 +16,7 @@ module.exports = {
 
     if(!GuildMember)
     {
-        return message.reply("<:check_no:844591218545524788> Mencione um usuário válido.");
+        return message.reply("Mencione um usuário válido.");
     }
 
     message.channel.startTyping();

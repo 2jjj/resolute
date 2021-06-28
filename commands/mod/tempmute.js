@@ -6,11 +6,12 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Mutar alguém temporariamente.",
 	category: "mod",
-	usage: "@user <temp>",
+	usage: "@user <tempo>",
 
 	async run(client, message, args) {
 
 		if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<:x_:856894534071746600> **|** Você não possui permissões para usar esse comando.')
+		
 		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 		const time = args[1]
 

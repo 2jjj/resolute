@@ -11,10 +11,7 @@ module.exports = {
     async run (client, message, args) {
         
     let text = args.join(" ");
-
-        if (!text) {
-            return message.quote(`${image.args.replace("%u", message.author)}`);
-        }
+    
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${text}`));
             let json = await res.json();

@@ -5,11 +5,12 @@ module.exports = {
 	name: "warnlist",
 	aliases: ['userwarns'],
 	cooldown: 1000 * 2,
-	description: "Warns de um usuário.",
+	description: "Veja os warns de um determinado usuário!",
 	category: "mod",
-	usage: "",
+	usage: "@user",
 
 	async run(client, message, args) {
+
 		let user = message.mentions.members.first() || message.author;
 		let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;
 
@@ -23,7 +24,6 @@ module.exports = {
 					dynamic: true
 				})
 			)
-
 		message.channel.send(embed);
 	}
 }

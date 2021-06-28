@@ -5,9 +5,9 @@ module.exports = {
 	name: "nick",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Setar Nickname",
+	description: "Setar um apelido para um determinado usuário",
 	category: "mod",
-	usage: "",
+	usage: "@user <apelido>",
 
 	async run(client, message, args) {
 

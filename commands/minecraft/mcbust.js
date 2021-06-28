@@ -8,7 +8,6 @@ module.exports = {
     category: "minecraft",
     usage: "<nickname>",
 
-
     run: async(client, message, args) => { 
 
     const EMBED = new Discord.MessageEmbed()

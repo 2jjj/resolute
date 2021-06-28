@@ -2,7 +2,7 @@ module.exports = {
 	name: "unmute",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Desmutar alguém",
+	description: "Desmutar um usuário",
 	category: "mod",
 	usage: "@user",
 

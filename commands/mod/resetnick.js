@@ -8,7 +8,7 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Resetar o nick de um usuário.",
 	category: "mod",
-	usage: "",
+	usage: "@user",
 
 	async run(client, message, args) {
 

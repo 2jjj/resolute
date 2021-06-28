@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports = {
 	name: 'globalban',
-	description: 'Banir um usuário por ID do seu servidor.',
+	description: 'Banir um usuário por ID permanentemente de seu servidor.',
 	cooldown: 1000 * 2,
 	usage: '<user.id> <reason>',
 	aliases: ['globalban'],

@@ -12,13 +12,6 @@ module.exports = {
   
     async run (client, message, args) {
 		
-		const text = args.slice().join(' ');
-		if (!text) {
-			return message.channel.send(
-				' :x: Favor fornecer texto válido.',
-			);
-		}
-
 		const url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`;
 
 		let response;

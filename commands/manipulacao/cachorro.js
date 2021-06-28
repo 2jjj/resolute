@@ -11,7 +11,6 @@ module.exports = {
     async run (client, message, args) {
         
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")
-        if (!args[0]) return message.reply("Escreva algo para o cachorro")
         img.then(image => {
             jimp.loadFont(jimp.FONT_SANS_32_WHITE).then(font => {
                 image.resize(685, 494)

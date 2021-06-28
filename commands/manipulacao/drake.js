@@ -4,8 +4,8 @@ const fetch = require('node-fetch')
 module.exports = {
     name: 'drake',
     aliases: [],
-    description: 'drake meme maker',
-    usage: '$drake <texto1>, <texto2>',
+    description: 'drake meme',
+    usage: '<texto1>, <texto2>',
     category: "manipulacao",
     cooldown: 1000 * 2, 
 
