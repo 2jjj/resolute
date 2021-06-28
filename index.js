@@ -63,16 +63,21 @@ client.on("message", async message => {
         } else command.run(client, message, args);
     }
 
-    if (!args[0]) {
-        const help = new Discord.MessageEmbed()
-        .setTitle(`Comando de \`${command.name}\``)
-        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .setDescription(`${command.description}`)
-        .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
-        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-        .setTimestamp();
-        return message.channel.send(help);    
-    }   
+    if(command.name == "ping" || command.name == "lock" || command.name == "unlock") {
+        console.log("Este comando não possui argumentos.")
+    } else {
+        if (!args[0]) {
+            const help = new Discord.MessageEmbed()
+            .setTitle(`Comando de \`${command.name}\``)
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+            .setDescription(`${command.description}`)
+            .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
+            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setTimestamp();
+            return message.channel.send(help);    
+        }
+    }
+
 });
 
 fs.readdir(__dirname + "/events/", (err, files) => {
