@@ -65,7 +65,7 @@ client.on("message", async message => {
 
     let x = command.name;
 
-    if( x == "ping" || x == "lock" || x == "unlock" || "warnlist") {
+    if( x == "ping" || x == "lock" || x == "unlock" || "warnlist" /*Misc*/ || "userinfo" || "ticket") {
         console.log("Este comando não possui argumentos.")
     } else {
         if (!args[0]) {
