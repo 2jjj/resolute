@@ -1,4 +1,3 @@
-const { Client, Message } = require("discord.js")
 const db = require("quick.db")
 
 module.exports = {
@@ -15,9 +14,7 @@ module.exports = {
         if (prefix === null) { prefix = "s." }
         
         message.delete()
-        
         const spray = message.guild.channels.cache.find(ch => ch.name === `${message.author.id}`);
-
         if (spray) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** ${message.author} Seu ticket atual já está aberto em: ${spray}!`).then(msg => msg.delete({timeout: 15000}));
 
         message.guild.channels.create(`${message.author.id}`, {

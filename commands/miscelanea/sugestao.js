@@ -1,7 +1,3 @@
-const { MessageEmbed } = require('discord.js')
-const Discord = require("discord.js");
-const db = require("quick.db");
-
 module.exports = {
   name: "sugestao",
   aliases: ['sugestion', 'sugerir'],
@@ -16,6 +12,9 @@ module.exports = {
         let theDescription = args.slice(1).join(" ")
 
         if(!channelID) {
+          const Discord = require("discord.js");
+          const db = require("quick.db");
+
           let prefix = db.get(`prefix_${message.guild.id}`)
           if (prefix === null) { prefix = "s." }
 
@@ -32,7 +31,7 @@ module.exports = {
 
         if(!theDescription) return message.reply("<:1926blurplecross:856520144872407060> **|** Por favor, especifique uma descrição / pergunta para a sugestão!")
 
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setColor("BLUE")
         .setTitle(`Nova sugestão por \`${message.author.username}#${message.author.discriminator}\``)
         .setDescription(`**${theDescription}**`)

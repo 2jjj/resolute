@@ -1,6 +1,4 @@
-const Discord = require("discord.js")
 const translate = require('@iamtraction/google-translate')
-const db = require("quick.db")
 
 module.exports = {
     name: "translate",
@@ -17,6 +15,9 @@ module.exports = {
     let text = args.slice(1).join(" ")
 
     if (!language || language.length !== 2 || !text) {
+        const Discord = require('discord.js');
+        const db = require('quick.db');
+
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) { prefix = "s." }
 

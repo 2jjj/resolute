@@ -1,6 +1,3 @@
-const Discord = require('discord.js');
-const db = require('quick.db');
-        
 module.exports = {
     name: "votar",
     aliases: ['votacao', 'vote'],
@@ -20,6 +17,9 @@ module.exports = {
         .setDescription(content)
 
     if (!content) {
+        const Discord = require('discord.js');
+        const db = require('quick.db');
+
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) { prefix = "s." }
   
