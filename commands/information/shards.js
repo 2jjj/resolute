@@ -7,23 +7,23 @@ const moment = require("moment");
 module.exports = {
   name: "shards",
   aliases: ['shard'],
-  cooldown: 1000 * 2, 
+  cooldown: 1000 * 2,
   description: "Shards informations.",
   category: "info",
   usage: "",
 
-  async run (client, message, args) {
+  async run(client, message, args) {
 
     bytesToSize = (input, precision) => {
-        let index = Math.floor(Math.log(input) / Math.log(1024));
-        if (unit >= unit.length) return input + "B";
-        return (
-          (input / Math.pow(1024, index)).toFixed(precision) +
-          " " +
-          unit[index] +
-          "B"
-        );
-      };
+      let index = Math.floor(Math.log(input) / Math.log(1024));
+      if (unit >= unit.length) return input + "B";
+      return (
+        (input / Math.pow(1024, index)).toFixed(precision) +
+        " " +
+        unit[index] +
+        "B"
+      );
+    };
     table.setHeading("SID", "Uptime", "Ping", "Usage", "Guilds", "Users");
 
     table.setAlign(0, AsciiTable.CENTER);
