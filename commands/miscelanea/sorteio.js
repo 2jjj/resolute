@@ -8,7 +8,8 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Faça um sorteio.",
     category: "outros",
-    usage: "<tempo> <#canal> [Premio]",
+    usage: "<tempo> <#canal> <premio>",
+    example: "sorteio 1000 #sorteios Discord nitro classic",
 
  async run (client, message, args) {
 
