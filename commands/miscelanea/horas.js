@@ -8,7 +8,6 @@ module.exports = {
     description: "Comando para mostrar as horas e o dia",
     category: "outros",
     usage: "",
-    example: "",
 
     async run (client, message, args) {
 
