@@ -2,7 +2,7 @@ const tiny = require('tinyurl')
 
 module.exports = {
     name: "encurtar",
-    aliases: ['shorturl'],
+    aliases: ['shorturl', 'encurtador'],
     cooldown: 1000 * 2, 
     description: "Com este comando você pode encurtar qualquer url por ai!",
     category: "outros",
