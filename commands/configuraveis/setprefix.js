@@ -19,19 +19,11 @@ module.exports = {
             return message.inlineReply(permss)
         }
 
-        if (!args[0]) {
-            let prefix = db.get(`prefix_${message.guild.id}`)
-            if (prefix === null) prefix = "s."
-
-            let format = new Discord.MessageEmbed()
-                .setColor('#8B0000')
-                .setTitle('Siga o formato correto')
-                .setDescription('`' + prefix + 'setprefix <prefixo_novo>`\n \nExemplo: `' + prefix + 'setprefix !`')
-            return message.inlineReply(format)
-        }
+        if (!args[0]) return;
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
+        
         if (args[0] === prefix) {
             let atual = new Discord.MessageEmbed()
                 .setColor('#8B0000')
