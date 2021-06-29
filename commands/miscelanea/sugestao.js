@@ -5,6 +5,7 @@ module.exports = {
   description: "Faça uma sugestão para o seu servidor!",
   category: "outros",
   usage: "<#canal> <conteudo>",
+  example: "sugestao #sugestoes devo criar um novo chat?",
 
   async run (client, message, args) {
 

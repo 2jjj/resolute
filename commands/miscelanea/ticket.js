@@ -6,7 +6,8 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Abra um ticket em um canal com seu ID.",
     category: "outros",
-    usage: "",
+    usage: "ticket",
+    example: "ticket",
 
     async run (client, message, args) {
     

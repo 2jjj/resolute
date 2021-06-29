@@ -8,7 +8,7 @@ module.exports = {
     description: "Busque por informações do seu jogo favorito da steam!",
     category: "outros",
     usage: "<jogo>",
-    example: "s.steam csgo",
+    example: "steam csgo",
 
     async run (client, message, args) {            
         let arg = args.join(' ') 
