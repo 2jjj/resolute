@@ -1,4 +1,5 @@
 const config = require("../config.json")
+const os = require("os")
 
 module.exports = async (client) => {
 
@@ -10,8 +11,7 @@ module.exports = async (client) => {
         const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
 
         const status = [  
-            {name: `s.help • ${totalGuilds} guilds & ${totalMembers} users.`, type: 'PLAYING'}, 
-            {name: `Atualização diariamente.`, type: 'PLAYING'}, 
+            {name: `resolutebot.xyz | Memória ultilizada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)}`, type: 'PLAYING'}, 
           ] 
           function Presence() { 
                   const base = status[Math.floor(Math.random() * status.length)] 
