@@ -65,22 +65,23 @@ client.on("message", async message => {
 
     let x = command.name;
 
+    
     if(x == "ping" || x == "help" || x == "userinfo" || x == "ticket" || x == "serverinfo" || x == "servericon" || x == "random" || x == "horas" || x == "avatar" || x == "badges" || x == "close" || x == "help" || x == "botinfo" || x == "shards" || x == "status" || x == "uptime" || x == "daily" || x == "mendigar" || x == "money" || x == "perfil" || x == "trabalhar" || x == "warnlist") {
-        console.log(9)
-    } else {
-        if (!args[0]) {
-            const help = new Discord.MessageEmbed()
-            .setTitle(`Comando de \`${command.name}\``)
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription(`${command.description}`)
-            .addField(`Aliases:`, ` \`${command.aliases !== undefined ? `${prefix}${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-            .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
-            .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.example}` : `Sem exemplos para este comando.` }\``)
-            .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
-            .setTimestamp();
-        return message.channel.send(help);
-    }   
+        return;
     }
+
+    if (!args[0]) {
+        const help = new Discord.MessageEmbed()
+        .setTitle(`Comando de \`${command.name}\``)
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription(`${command.description}`)
+        .addField(`Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
+        .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
+        .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.example}` : `Sem exemplos para este comando.` }\``)
+        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+        .setTimestamp();
+    return message.channel.send(help);
+}   
 
 });
 
