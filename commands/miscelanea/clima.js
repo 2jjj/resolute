@@ -9,6 +9,7 @@ module.exports = {
   description: "Mostra o clima de uma cidade.",
   category: "outros",
   usage: "<cidade>",
+  example: "clima sp",
 
   async run (client, message, args) {
     
