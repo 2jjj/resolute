@@ -7,7 +7,7 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Pesquisar uma wiki na wikipedia.",
 	category: "outros",
-	usage: "<repo>",
+	usage: "<wiki>",
     example: "wikipedia Nirvana_(banda)",
 
 	async run(client, message, args) {
