@@ -10,6 +10,8 @@ module.exports = {
 
     async run(client, message, args) {
 
+        if(!args[0]) return;
+
         let canal = client.channels.cache.get("842984263392428032")
         let bug = args.join(' ');
 
