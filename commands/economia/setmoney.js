@@ -17,9 +17,7 @@ module.exports = {
 
         let user = message.mentions.users.first();
 
-        if (!user) {
-            return message.channel.send(`Você precisa mencionar um usuário para adicionar o Dinheiro!`);
-        };
+        if (!user) return;
 
         if (isNaN(args[1])) {
             return message.channel.send(`Você precisa colocar um numero valido!`);
