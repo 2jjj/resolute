@@ -12,11 +12,10 @@ module.exports = {
 
     async run(client, message, args) {
 
-
         let user = message.author;
 
         let timeout = 180000;
-        let amount = 400;
+        let amount = Math.floor(Math.random() * 10000) + 1000;
 
         let beg = await db.fetch(`pedir_${message.guild.id}_${user.id}`);
 
@@ -35,12 +34,12 @@ module.exports = {
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("#ff58c3")
                 .setTitle(`${message.author.username} está mendigando!`)
-                .setDescription(`**<:ybs_dinheiro:856961057204600833> **|** Você mendigou e consegui ${amount}¥ ienes.**`)
+                .setDescription(`**<:ybs_dinheiro:856961057204600833> **|** Você mendigou e consegui ${amount} Coins.**`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
             message.channel.send(moneyEmbed)
-            db.add(`ienes_${message.guild.id}_${user.id}`, amount)
+            db.add(`money_${message.guild.id}_${user.id}`, amount)
             db.set(`pedir_${message.guild.id}_${user.id}`, Date.now())
         }
     }
