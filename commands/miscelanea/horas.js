@@ -5,9 +5,10 @@ module.exports = {
     name: "horas",
     aliases: ['dia'],
     cooldown: 1000 * 2, 
-    description: "Que horas são?",
+    description: "Comando para mostrar as horas e o dia",
     category: "outros",
     usage: "",
+    example: "",
 
     async run (client, message, args) {
 
