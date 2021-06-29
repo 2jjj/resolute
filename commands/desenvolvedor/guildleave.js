@@ -7,8 +7,8 @@ module.exports = {
     
     async run (client, message, args) {
         var targetGuild = message.content.split(" ")[1];
-        if (!targetGuild) 
-            return message.reply("Você precisa colocar o id da guild");
+        
+        if (!targetGuild) return;
         
         if (!message.author.id == "836345581424738354") 
             return;

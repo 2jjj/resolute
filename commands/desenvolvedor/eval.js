@@ -17,13 +17,7 @@ module.exports = {
             message.delete()
             const code = args.join(' ')
 
-            const Embed = new Discord.MessageEmbed()
-                .setColor('RED')
-                .setDescription(`***\`\`\`\n ❎ • Please Specify A Code To Eval \`\`\`***`)
-
-            if (!code) return message.channel.send(Embed).then(msg => {
-                setTimeout(() => msg.delete(), 5000)
-            })
+            if (!code) return;
 
             try {
                 const evaled = eval(code)
