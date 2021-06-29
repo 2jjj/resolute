@@ -40,7 +40,7 @@ module.exports = {
 			msg.react('❌').catch(err => {
 				return
 			})
-			setTimeout(function() {
+			setTimeout(function () {
 				msg.reactions.removeAll().catch(err => {
 					return
 				})

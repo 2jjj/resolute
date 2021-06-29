@@ -1,14 +1,16 @@
-const { Client, Message, MessageEmbed } = require('discord.js');
-const { MessageButton } = require('discord-buttons');
+const {
+    MessageButton
+} = require('discord-buttons');
+
 module.exports = {
     name: "sus",
     aliases: [],
-    cooldown: 1000 * 2, 
+    cooldown: 1000 * 2,
     description: "Sus!! AmongUS",
     category: "botoes",
     usage: "",
 
-    async run (client, message, args) {
+    async run(client, message, args) {
 
         const butn = new MessageButton()
             .setLabel(`SUS!?`)

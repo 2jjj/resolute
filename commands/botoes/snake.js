@@ -1,6 +1,3 @@
-const { Bot, Message } = require('discord.js');
-const SnakeGame = require('snakecord')
-
 module.exports = {
     name: "snake",
     aliases: [],
