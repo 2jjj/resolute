@@ -4,9 +4,10 @@ module.exports = {
     name: "encurtar",
     aliases: ['shorturl'],
     cooldown: 1000 * 2, 
-    description: "Encurtar urls por ai!",
+    description: "Com este comando você pode encurtar qualquer url por ai!",
     category: "outros",
     usage: "<url>",
+    example: "encurtar youtube.com",
 
     async run (client, message, args) {
 
