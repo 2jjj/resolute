@@ -11,6 +11,10 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]){
+			return;
+		}
+
 		if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<:x_:856894534071746600> **|** Você não possui permissões para usar esse comando.')
 		
 		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])

@@ -8,6 +8,10 @@ module.exports = {
 	example: "clear 77",
 
 	async run(client, message, args) {
+		
+		if(!args[0]){
+			return;
+		}
 
 		let user = message.author.username
 

@@ -11,11 +11,11 @@ module.exports = {
 	example: "kick @Spray#0007 É lindo demais",
 
 	async run(client, message, args) {
-
-		if(!args[0]) {
-
+		
+		if(!args[0]){
+			return;
 		}
-
+		
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
 			'https://imgur.com/xlD7P3N.gif',

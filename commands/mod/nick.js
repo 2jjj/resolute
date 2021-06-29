@@ -12,6 +12,10 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]){
+			return;
+		}
+
 		const member = message.mentions.members.first();
 		const arguments = args.slice(1).join(" ");
 

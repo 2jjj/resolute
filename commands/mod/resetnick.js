@@ -13,6 +13,10 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]){
+			return;
+		}
+
 		const member = message.mentions.members.first();
 
 		try {
