@@ -5,21 +5,13 @@ module.exports = {
   name: "emoji",
   aliases: ['emojiinfo'],
   cooldown: 1000 * 2, 
-  description: "Pegar a imagem de um emoji pelo nome.",
+  description: "Escreva o nome do emoji como argumentos e eu irei enviar o emoji!",
   category: "outros",
   usage: "<emoji_name>",
+  example: "emoji SETA",
 
   async run (client, message, args) {
     
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
-    
-    message.delete();
-    if (!args[0])
-      return message.channel.send(
-        `**> ${message.author.username}, A sintaxe correta é:** ` +
-          `${prefix}emoji <emoji_name>`
-      ); 
     let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
     if (!emoji) {
