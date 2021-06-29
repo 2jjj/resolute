@@ -17,7 +17,7 @@ module.exports = {
 			.then(json => {
 				message.channel.send({
 					embed: json
-				}).catch(() => message.reply("Não achei nenhum resultado para sua pesquisa!"))
+				}).catch(() => message.reply("Não achei nenhum resultado para a sua pesquisa!"))
 
 			})
 	}
