@@ -15,7 +15,6 @@ module.exports = {
 
 		if (!args[0]) return;
 
-
 		let prefix = db.get(`prefix_${message.guild.id}`)
 		if (prefix === null) {
 			prefix = "s."
