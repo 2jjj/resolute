@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const db = require("quick.db");
 const block = "⬛";
 const heart = ":red_square:";
 
