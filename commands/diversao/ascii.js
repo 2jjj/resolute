@@ -10,6 +10,9 @@ module.exports = {
     usage: "<texto>",
 
     async run(client, message, args) {
+
+        if(!args[0]) return;
+
         figlet.text(args.join(" "), (err, text) => {
 
             if (err) {
