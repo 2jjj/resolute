@@ -13,9 +13,9 @@ module.exports = {
 
   async run(client, message, args) {
     const user = message.mentions.users.first();
-    if (!user) return message.channel.send(`Please specify a user to ship with!`)
+    if (!user) return;
     if (user && user.id === message.author.id) {
-      return message.reply("Bruh you want to ship yourself xd")
+      return message.reply("Você não pode se shipar.")
     }
     if (message.mentions.users.size < 2) {
       let loveEmbed = new Discord.MessageEmbed()
