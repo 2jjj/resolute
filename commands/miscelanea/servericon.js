@@ -7,7 +7,6 @@ module.exports = {
 	description: "Comando para ver o icone do servidor",
 	category: "outros",
 	usage: "",
-	example: "servericon",
 
 	async run(client, message, args) {
 

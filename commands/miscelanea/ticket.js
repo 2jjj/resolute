@@ -7,7 +7,6 @@ module.exports = {
     description: "Abra um ticket em um canal com seu ID.",
     category: "outros",
     usage: "",
-    example: "ticket",
 
     async run (client, message, args) {
     

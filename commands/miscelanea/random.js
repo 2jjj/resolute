@@ -5,7 +5,6 @@ module.exports = {
     description: "Obtenha um número aleatório de 0 a 100.",
     category: "outros",
     usage: "",
-    example: "random",
 
     async run (client, message, args) {
 
