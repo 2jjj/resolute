@@ -6,9 +6,10 @@ module.exports = {
     name: "channelinfo",
     aliases: ['canalinfo'],
     cooldown: 1000 * 2, 
-    description: "Ver informações do canal",
+    description: "Obtenha informações de um canal",
     category: "outros",
-    usage: "",
+    usage: "<canal>",
+    example: "channelinfo #geral",
 
     async run (client, message, args) {
 
