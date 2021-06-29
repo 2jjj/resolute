@@ -7,6 +7,7 @@ module.exports = {
     description: "Fechar o ticket.",
     category: "outros",
     usage: "",
+    example: "",
 
     async run (client, message, args) {
 
