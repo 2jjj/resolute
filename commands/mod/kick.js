@@ -5,7 +5,7 @@ module.exports = {
 	name: "kick",
 	aliases: ['expulsar'],
 	cooldown: 1000 * 2,
-	description: "Expulsar uma pessoa de seu servidor",
+	description: "Expulsar uma pessoa de seu servidor.",
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "kick @Spray#0007 É lindo demais",
@@ -15,7 +15,7 @@ module.exports = {
 		if(!args[0]){
 			return;
 		}
-		
+
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
 			'https://imgur.com/xlD7P3N.gif',

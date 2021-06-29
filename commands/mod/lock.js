@@ -5,7 +5,7 @@ module.exports = {
 	name: "lock",
 	aliases: ['bloquear'],
 	cooldown: 1000 * 2,
-	description: "Bloquear um canal",
+	description: "Bloquear o canal que você usou este comando.",
 	category: "mod",
 	usage: "lock",
 	example: "lock",

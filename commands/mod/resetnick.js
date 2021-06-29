@@ -6,7 +6,7 @@ module.exports = {
 	name: "resetnick",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Resetar o nick de um usuário.",
+	description: "Resetar o apelido de um usuário para o nick dele padrão",
 	category: "mod",
 	usage: "@user",
 	example: "@Spray#0007",

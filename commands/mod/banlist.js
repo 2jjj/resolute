@@ -2,7 +2,7 @@ module.exports = {
 	name: "banlist",
 	aliases: ['listabans'],
 	cooldown: 1000 * 2,
-	description: "Lista de bans",
+	description: "Veja a lista de membros banidos em seu servidor!",
 	category: "mod",
 	usage: "banlist",
 	example: "banlist",

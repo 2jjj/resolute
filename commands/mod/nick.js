@@ -5,7 +5,7 @@ module.exports = {
 	name: "nick",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Setar um apelido para um determinado usuário",
+	description: "Alterar o apelido para um determinado usuário",
 	category: "mod",
 	usage: "@user <apelido>",
 	example: "nick @Spray#0007 Apelido novo",

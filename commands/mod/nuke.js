@@ -2,7 +2,7 @@ module.exports = {
 	name: "nuke",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Nukar um canal e criar outro com o mesmo nome.",
+	description: "Apagar o canal de texto em que você usou o coamando e depois eu criarei um identico.",
 	category: "mod",
 	usage: "nuke",
 	example: "nuke",
@@ -31,7 +31,7 @@ module.exports = {
 						channel2.setPosition(posisi)
 						channel.delete()
 						channel2.send(
-							' **O canal foi nukado!** | https://i.pinimg.com/originals/06/c3/92/06c392b847166a9a671bfcd590d8fff7.gif'
+							' **O canal foi nukado com sucesso!** | https://i.pinimg.com/originals/06/c3/92/06c392b847166a9a671bfcd590d8fff7.gif'
 						)
 					})
 				} else if (

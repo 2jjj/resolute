@@ -4,7 +4,7 @@ module.exports = {
 	name: "tempmute",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Mutar alguém temporariamente.",
+	description: "Silenciar alguém temporariamente.",
 	category: "mod",
 	usage: "@user <tempo>",
 	example: "tempmute @Spray#0007 4000",

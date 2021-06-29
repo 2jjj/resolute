@@ -2,7 +2,7 @@ module.exports = {
 	name: "clear",
 	aliases: ['limpar'],
 	cooldown: 1000 * 2,
-	description: "Limpar uma determinada quantidade de mensagens",
+	description: "Limpar uma determinada quantidade de mensagens no chat.",
 	category: "mod",
 	usage: "<0/99>",
 	example: "clear 77",
