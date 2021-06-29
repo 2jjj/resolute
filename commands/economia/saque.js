@@ -13,17 +13,7 @@ module.exports = {
 
         let member = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
 
-        let embed2 = new Discord.MessageEmbed()
-            .setColor("RANDOM")
-            .setDescription(`Coloque o valor de Coins para sacar.`)
-            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-                dynamic: true
-            }))
-            .setTimestamp();
-
-        if (!args[0]) {
-            return message.channel.send(`${message.author}`, embed2);
-        };
+        if (!args[0]) return;
 
         let embed4 = new Discord.MessageEmbed()
             .setColor("RANDOM")
