@@ -5,7 +5,7 @@ module.exports = {
     name: "maps",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Comando para ver a foto de uma determinada localização.",
+    description: "Comando para ver a foto de uma determinada localização pelo google maps.",
     category: "outros",
     usage: "<cidade>",
     example: "maps Los Angeles",
