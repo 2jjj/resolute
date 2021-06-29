@@ -10,7 +10,9 @@ module.exports = {
     example: "mchelm TheSpr4y",
 
     run: async(client, message, args) => { 
-      
+    
+    if(!args[0]) return console.log(0)
+
     const EMBED = new Discord.MessageEmbed()
       .setTitle(`Nick: ${args[0]}`)
       .setImage(`https://minotar.net/helm/${args[0]}/200.png`);

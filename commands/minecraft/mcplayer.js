@@ -10,6 +10,8 @@ module.exports = {
     example: "mcplayer TheSpr4y",
 
     run: async(client, message, args) => { 
+        
+        if(!args[0]) return console.log(0)
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`Skin de: ${args[0]}`)

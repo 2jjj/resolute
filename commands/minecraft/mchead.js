@@ -11,12 +11,7 @@ module.exports = {
 
     run: async(client, message, args) => { 
       
-    /*
-    if (!nick)
-      return message.channel.send(
-        `${message.author}, você deve inserir um nick de uma skin de minecraft.`
-      );
-    */
+    if(!args[0]) return console.log(0)
 
     const EMBED = new Discord.MessageEmbed()
       .setTitle(`Nick: ${args[0]}`)
