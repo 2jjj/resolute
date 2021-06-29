@@ -9,8 +9,9 @@ module.exports = {
     aliases: ["insta"],
     category: "outros",
     cooldown: 1000 * 2, 
-    description: "Pegue informações do insta de alguém!",
-    usage: "<@user>",
+    description: "Consiga informações do insta de alguém!",
+    usage: "<usuário_instagram>",
+    example: "instagram neymar",
     
     async run (client, message, args) {
 
