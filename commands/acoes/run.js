@@ -9,6 +9,8 @@ module.exports = {
 	usage: "@user",
 
 	async run(client, message, args) {
+		
+		if(!args[0]) return;
 
 		let list = [
 			'https://imgur.com/jrO1GMM.gif',

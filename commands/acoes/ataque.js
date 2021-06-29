@@ -10,6 +10,8 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]) return;
+
 		var list = [
 			'http://27.media.tumblr.com/tumblr_lj7iubw5fn1qgq4hio1_500.gif',
 			'https://64.media.tumblr.com/2fdab5ad7bd92c0c38881d00c6686a45/tumblr_inline_pbpzd9xckk1rrd628_500.gif',
@@ -24,7 +26,7 @@ module.exports = {
 
 		let ataque = new Discord.MessageEmbed()
 			.setTitle(`Ataque!`)
-			.setDescription(`💔${pessoa} o ${message.author} te atacou!`)
+			.setDescription(`💔 ${pessoa} o ${message.author} te atacou!`)
 			.setImage(rand)
 			.setTimestamp()
 			.setColor("YELLOW")

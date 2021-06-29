@@ -11,6 +11,8 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]) return;
+
 		var list = [
 			'https://imgur.com/qALwmUW.gif',
 			'https://imgur.com/Su2mFPY.gif',
