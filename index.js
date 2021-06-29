@@ -73,6 +73,7 @@ client.on("message", async message => {
             .setTitle(`Comando de \`${command.name}\``)
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`${command.description}`)
+            .addField(`Aliases:`, ` \`${command.aliases}\``)
             .addField(`Forma de Utilização:`, ` \`${prefix}${command.name} ${command.usage}\``)
             .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.example}` : `Sem exemplos para este comando.` }\``)
             .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
