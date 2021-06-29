@@ -5,9 +5,10 @@ module.exports = {
     name: "maps",
     aliases: [],
     cooldown: 1000 * 2, 
-    description: "Google maps!",
+    description: "Comando para ver a foto de uma determinada localização.",
     category: "outros",
-    usage: "<cidade/pais>",
+    usage: "<cidade>",
+    example: "maps Los Angeles",
   
     async run (client, message, args) {
    
