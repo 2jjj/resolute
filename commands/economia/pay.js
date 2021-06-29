@@ -14,17 +14,7 @@ module.exports = {
         let user = message.mentions.members.first()
         let member = db.fetch(`money_${message.guild.id}_${message.author.id}`)
 
-        let embed1 = new Discord.MessageEmbed()
-            .setColor("RANDOM")
-            .setDescription(`Mencione alguem para pagar!`)
-            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-                dynamic: true
-            }))
-            .setTimestamp();
-
-        if (!user) {
-            return message.channel.send(`${message.author}`, embed1)
-        }
+        if (!user) return;
 
         let embed2 = new Discord.MessageEmbed()
             .setColor("RANDOM")
