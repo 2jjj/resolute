@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+//AQUI
 module.exports = {
   name: "uptime",
   aliases: ['up', 'uptime'],
