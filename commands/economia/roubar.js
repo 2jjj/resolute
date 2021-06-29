@@ -16,7 +16,7 @@ module.exports = {
         let user = message.mentions.users.first();
 
         if (!user) {
-            return message.channel.send(`<:x_:856894534071746600> **|** Você precisa mencionar um membro para realizar seu roubo!`);
+            return;
         };
 
         if (user.id == autor.id) {
