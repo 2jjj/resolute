@@ -7,8 +7,9 @@ module.exports = {
     description: "Adicione um emoji de outro servidor!",
     category: "outros",
     usage: "<emoji>",
+    example: "addemoji <:linux:817057043470221362>",
 
-    run: async (client, message, args) => {
+    async run (client, message, args) {
 
         if (!message.member.hasPermission("MANAGE_EMOJIS")) return message.channel.send(`Você não tem permissão de \`Gerenciar Emojis\`.`)
 

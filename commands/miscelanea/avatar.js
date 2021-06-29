@@ -7,7 +7,7 @@ module.exports = {
   description: "Pegue um avatar de alguém!",
   category: "outros",
   usage: "<@user>",
-  example: "@MrSprayX#0001",
+  example: "avatar @MrSprayX#0001",
 
   async run (client, message, args) {
     

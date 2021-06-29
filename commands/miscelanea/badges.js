@@ -5,7 +5,7 @@ module.exports = {
     description: "Veja suas insigneas do discord",
     category: "outros",
     usage: "<@user>",
-    example: "@MrSprayX#0001",
+    example: "badges @MrSprayX#0001",
 
   
     async run (client, message, args) {
