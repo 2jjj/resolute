@@ -6,7 +6,7 @@ module.exports = {
     description: "Jogo da velha!",
     usage: "<name>",
 
-    run : async(client, message, args) => {
+    async run (client, message, args) {
         const opponent = message.mentions.users.first();
         if (!opponent) return message.channel.send(`Mencione a pessoa que deseja jogar.`);
         const { TicTacToe } = require('weky')
