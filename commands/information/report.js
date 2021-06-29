@@ -12,13 +12,7 @@ module.exports = {
 
         let canal = client.channels.cache.get("842984263392428032")
         let bug = args.join(' ');
-        if(!bug) {
-        return message.channel.send({embed: {
-        description: "Descreva o bug encontrado!",
-        color: "RED"
-        }
-        });
-        }
+        
         let embed = new Discord.MessageEmbed()
         .setTitle("Novo Bug/Report")
         .setThumbnail(client.user.displayAvatarURL())
