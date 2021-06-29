@@ -11,7 +11,7 @@ module.exports = {
 
     run: async(client, message, args) => { 
     
-    if(!args[0]) return console.log(0)
+      if(!args[0]) return;
 
     const EMBED = new Discord.MessageEmbed()
       .setTitle(`Nick: ${args[0]}`)
