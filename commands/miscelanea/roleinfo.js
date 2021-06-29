@@ -9,9 +9,10 @@ module.exports = {
 	name: "roleinfo",
 	aliases: ['ri'],
 	cooldown: 1000 * 2,
-	description: 'Informações de um cargo.',
+	description: 'Obtenha informações de um determinado cargo que você mencionar.',
 	category: "outros",
 	usage: "@cargo",
+	example: "roleinfo @owner",
 
 	async run(client, message, args) {
 
