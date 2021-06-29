@@ -7,9 +7,9 @@ module.exports = {
     description: 'drake meme',
     usage: '<texto1>, <texto2>',
     category: "manipulacao",
-    cooldown: 1000 * 2, 
+    cooldown: 1000 * 2,
 
-    run: async (client, message, args) => {
+    async run(client, message, args) {
 
         const split = args.join(" ").split(",")
         const user = split[0];

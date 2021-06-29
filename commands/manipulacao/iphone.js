@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
-const fetch = require('node-fetch')//npm i node-fetch if you have it then dont do it :\
-                 
+const fetch = require('node-fetch') //npm i node-fetch if you have it then dont do it :\
+
 module.exports = {
     name: 'iphonex',
     aliases: [],
     category: 'manipulacao',
     description: 'Iphone X User Profile',
     usage: 'iphonex <user>',
-    cooldown: 1000 * 2, 
+    cooldown: 1000 * 2,
     run: async (client, message, args) => {
         message.channel.startTyping();
         let mention = message.mentions.members.first();
@@ -18,7 +18,7 @@ module.exports = {
             m.edit("⚠ Mencione alguém.");
             return message.channel.stopTyping();
         }
-        
+
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=iphonex&url=${mention.user.displayAvatarURL({ size: 1024 })}`));
             let json = await res.json();

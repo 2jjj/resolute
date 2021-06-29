@@ -4,15 +4,15 @@ const Discord = require("discord.js");
 module.exports = {
   name: "confusedstonks",
   aliases: ["confusedstonksmeme"],
-  cooldown: 1000 * 2, 
+  cooldown: 1000 * 2,
   description: "dev",
   category: "manipulacao",
   usage: "@user",
-  
-  async run (client, message, args) {
-  
- //   const m = client.findMember(message, args, true);
-   
+
+  async run(client, message, args) {
+
+    //   const m = client.findMember(message, args, true);
+
     let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
     let avatar = user.user.displayAvatarURL({
       dynamic: false,
