@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 module.exports = {
-    name: "dinheiro",
-    aliases: ['money', 'atm'],
+    name: "money",
+    aliases: ['dinheiro', 'atm'],
     cooldown: 1000 * 2, 
     description: "Informações do seu dinheiro.",
     category: "economia",

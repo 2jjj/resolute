@@ -4,7 +4,7 @@ require("../../util/inlineReply")
 
 module.exports = {
     name: "setprefix",
-    aliases: ["prefix"],
+    aliases: ["prefix", "aa"],
     cooldown: 1000 * 2, 
     description: "Comando de setar o prefixo do bot.",
     category: "config",
