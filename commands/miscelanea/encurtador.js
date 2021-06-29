@@ -10,6 +10,8 @@ module.exports = {
     example: "encurtar youtube.com",
 
     async run (client, message, args) {
+    
+    if (!args[0]) return;
 
     let url = args[0]
      if(url) {

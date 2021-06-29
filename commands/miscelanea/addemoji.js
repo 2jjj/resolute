@@ -11,6 +11,9 @@ module.exports = {
 
     async run (client, message, args) {
 
+        if (!args[0]) return;
+
+
         if (!message.member.hasPermission("MANAGE_EMOJIS")) return message.channel.send(`Você não tem permissão de \`Gerenciar Emojis\`.`)
 
         for (const emojis of args) {

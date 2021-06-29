@@ -12,6 +12,10 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if(!args[0]) {
+			return;
+		}
+
 		const body = await fetch(
 			`https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
         args.join(" ")

@@ -15,6 +15,10 @@ module.exports = {
 	example: "roleinfo @owner",
 
 	async run(client, message, args) {
+  
+		if(!args[0]) {
+			return;
+	    }
 
 		const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 

@@ -12,6 +12,9 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if (!args[0]) return;
+
+
 		let color = args[0]
 		if (color.includes("#")) {
 			color = args[0].split("#")[1]

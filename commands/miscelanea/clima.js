@@ -12,6 +12,9 @@ module.exports = {
   example: "clima sp",
 
   async run (client, message, args) {
+
+    if (!args[0]) return;
+
     
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }

@@ -11,6 +11,10 @@ module.exports = {
 
     async run (client, message, args) {
 
+		if(!args[0]) {
+			return;
+		}
+        
     var content = args.join(' ')
     if (content.length > 600) { return message.inlineReply('<:1926blurplecross:856520144872407060> **|** O conteúdo a ser votado não pode passar de **600 caracteres.**') }
 

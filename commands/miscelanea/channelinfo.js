@@ -13,6 +13,9 @@ module.exports = {
 
     async run (client, message, args) {
 
+        if (!args[0]) return;
+
+
         let channel = message.mentions.channels.first() || bot.guilds.cache.get(message.guild.id).channels.cache.get(args[0]) || message.guild.channels.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.channel;
 
         let channelembed = new MessageEmbed()

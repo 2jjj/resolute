@@ -10,7 +10,12 @@ module.exports = {
     example: "translate en Hello",
 
     async run (client, message, args) {
-        
+    
+    
+		if(!args[0]) {
+			return;
+		}
+
     let googlepng = 'https://i.imgur.com/oZA4FaQ.png'
     let language = args[0]
     let text = args.slice(1).join(" ")

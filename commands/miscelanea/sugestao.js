@@ -9,6 +9,10 @@ module.exports = {
 
   async run (client, message, args) {
 
+		if(!args[0]) {
+			return;
+		}
+
         let channelID = message.mentions.channels.first()
         let theDescription = args.slice(1).join(" ")
 

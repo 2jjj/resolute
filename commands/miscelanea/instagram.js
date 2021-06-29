@@ -15,6 +15,10 @@ module.exports = {
     
     async run (client, message, args) {
 
+        if(!args[0]) {
+			return;
+	    }
+
         const name = args.join(" ");
         const url = `https://instagram.com/${name}/?__a=1`;
         

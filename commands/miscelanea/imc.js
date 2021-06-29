@@ -11,6 +11,10 @@ module.exports = {
     example: "60 170",
   
     async run (client, message, args) {
+
+        if(!args[0]) {
+			return;
+	    }
     
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }

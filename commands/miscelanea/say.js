@@ -12,16 +12,19 @@ module.exports = {
 
   async run (client, message, args) {
   
+    if(!args[0]) {
+      return;
+    }
+
+
     const user = message.author;
     let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
     const sayMessage = args.join(' ') 
-    if(!sayMessage) {
-      message.reply('Você não especificou a mensagem para eu falar!') 
-    } else {
+
     const say = new Discord.MessageEmbed()
     .setAuthor(user.tag, avatar)
     .setDescription(sayMessage)
     message.delete()
     message.channel.send(say)
     }
-}}
+}

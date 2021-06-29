@@ -11,7 +11,11 @@ module.exports = {
     example: "maps Los Angeles",
   
     async run (client, message, args) {
-   
+      
+      if(!args[0]) {
+        return;
+        }
+
    const sit = args.join("_")
     const site = `https://maps.google.com/?q=${args.join("+")}`
     try {

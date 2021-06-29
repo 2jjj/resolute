@@ -11,6 +11,9 @@ module.exports = {
   example: "emoji SETA",
 
   async run (client, message, args) {
+
+    if (!args[0]) return;
+
     
     let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 

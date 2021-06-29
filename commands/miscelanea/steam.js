@@ -10,7 +10,13 @@ module.exports = {
     usage: "<jogo>",
     example: "steam csgo",
 
-    async run (client, message, args) {            
+    async run (client, message, args) {      
+        
+        
+		if(!args[0]) {
+			return;
+		}
+        
         let arg = args.join(' ') 
 
         provider.search(arg).then(result => { 
