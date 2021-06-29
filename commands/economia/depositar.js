@@ -8,6 +8,7 @@ module.exports = {
     description: "Deposite seu dinheiro no banco.",
     category: "economia",
     usage: "<quantidade>",
+    example: "depositar 1000",
 
     async run(client, message, args) {
 
@@ -17,12 +18,8 @@ module.exports = {
         let bank = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
         if (bank == null) bank = 0;
 
-        let embed2 = new Discord.MessageEmbed()
-            .setColor("RANDOM")
-            .setDescription(`Você precisa colocar o valor do depósito!`)
-
         if (!args[0]) {
-            return message.channel.send(`${message.author}`, embed2);
+            return;
         };
 
         let embed4 = new Discord.MessageEmbed()
