@@ -27,7 +27,7 @@ module.exports = {
             .setTitle("Balanço Monetário")
             .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
                 `\n\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
-                `\n<:ybs_dinheiro:856961057204600833> **| ¥ ienes:** **\`${ienes}\`**` +
+                `\n<:ybs_dinheiro:856961057204600833> **| ¥ Ienes:** **\`${ienes}\`**` +
                 `\n:bank: **| Banco:** **\`${bank}\`**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
