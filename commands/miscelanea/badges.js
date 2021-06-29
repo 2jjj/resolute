@@ -1,12 +1,12 @@
-const { Client, Message, MessageEmbed } = require('discord.js');
-
 module.exports = {
     name: "badges",
     aliases: ['insigneas'],
     cooldown: 1000 * 2, 
-    description: "Veja suas insigneas.",
+    description: "Veja suas insigneas do discord",
     category: "outros",
-    usage: "<emoji_name>",
+    usage: "<@user>",
+    example: "@MrSprayX#0001",
+
   
     async run (client, message, args) {
 
