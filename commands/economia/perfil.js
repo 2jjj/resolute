@@ -19,7 +19,7 @@ module.exports = {
 
     const user = message.mentions.members.last() || message.member;
 
-    let money = await db.fetch(`ienes_${message.guild.id}_${user.id}`)
+    let money = await db.fetch(`money_${message.guild.id}_${user.id}`)
     if (money === null) money = 0;
 
     let bank = await db.fetch(`cofre_${message.guild.id}_${user.id}`)
