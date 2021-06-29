@@ -16,10 +16,8 @@ module.exports = {
 			return;
 		}
 
-		let prefix = db.get(`prefix_${message.guild.id}`)
-		if (prefix === null) {
-			prefix = "s."
-		}
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) { prefix = "s." }
 
 		let color = await db.get(`color_${message.author.id}`)
 		if (color === null) color = 'RANDOM'
