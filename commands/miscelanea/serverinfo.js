@@ -5,7 +5,7 @@ module.exports = {
 	name: "serverinfo",
 	aliases: ['serverinformation'],
 	cooldown: 1000 * 2,
-	description: "Informações do servidor.",
+	description: "Obtenha informações de seu servidor",
 	category: "outros",
 	usage: "",
 
