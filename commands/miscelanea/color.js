@@ -3,12 +3,12 @@ const fetch = require("node-fetch")
 
 module.exports = {
 	name: "color",
-	aliases: ['docs'],
+	aliases: [],
 	cooldown: 1000 * 2,
 	description: "Color HEX",
 	category: "outros",
 	usage: "<Cor>",
-    example: "color #000",
+	example: "color #000",
 
 	async run(client, message, args) {
 

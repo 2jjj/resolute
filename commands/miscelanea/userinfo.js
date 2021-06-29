@@ -7,7 +7,7 @@ module.exports = {
 	description: "Obtenha informações de um usuário.",
 	category: "outros",
 	usage: "<id/@user>",
-    example: "userinfo @Spray#0007",
+	example: "userinfo @Spray#0007",
 
 	async run(client, message, args) {
 
