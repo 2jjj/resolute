@@ -8,7 +8,8 @@ module.exports = {
     cooldown: 1000 * 2, 
     description: "Pegar a imagem de um emoji pelo nome.",
     category: "outros",
-    usage: "70 65",
+    usage: "<kg> <metros>",
+    example: "60 170",
   
     async run (client, message, args) {
     
