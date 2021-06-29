@@ -5,9 +5,10 @@ module.exports = {
   name: "say",
   aliases: [],
   cooldown: 1000 * 2, 
-  description: "Faça eu falar algo!",
+  description: "Com esse comando eu posso falar oque você deseja por embed!",
   category: "fun",
   usage: "<texto>",
+  example: "say Olá",
 
   async run (client, message, args) {
   

@@ -4,9 +4,10 @@ module.exports = {
 	name: "servericon",
 	aliases: ['serveravatar'],
 	cooldown: 1000 * 2,
-	description: "Icone do servidor.",
+	description: "Comando para ver o icone do servidor",
 	category: "outros",
 	usage: "",
+	example: "servericon",
 
 	async run(client, message, args) {
 
