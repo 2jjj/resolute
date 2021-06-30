@@ -1,5 +1,6 @@
-var steam = require('steam-provider')
+var steam = require('steam-provider');
 var provider = new steam.SteamProvider();
+const Discord = require("discord.js");
 
 module.exports = {
 	name: "steam",
