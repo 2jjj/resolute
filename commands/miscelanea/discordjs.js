@@ -13,7 +13,6 @@ module.exports = {
 
 		if (!args[0]) return;
 
-
 		const query = args.join("")
 
 		fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`)
