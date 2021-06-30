@@ -43,7 +43,6 @@ module.exports = {
 		if (!args[0]) return message.reply("Escreva algo para o bolsonaro falar.")
 		img.then(image => {
 			jimp.loadFont(jimp.FONT_SANS_32_BLACK).then(font => {
-				message.delete().catch(O_o => {});
 				image.resize(885, 494)
 				image.print(font, 450, 180, args.join(" "), 7000)
 				image.getBuffer(jimp.MIME_PNG, (err, i) => {
