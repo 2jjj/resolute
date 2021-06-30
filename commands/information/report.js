@@ -7,6 +7,7 @@ module.exports = {
     description: "Reportar um bug para minha equipe de desenvolvedores.",
     category: "info",
     usage: "<Bug encontrado>",
+    example: "report O bot ta com bug no help mano...",
 
     async run(client, message, args) {
 

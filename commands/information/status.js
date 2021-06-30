@@ -11,6 +11,7 @@ module.exports = {
   description: "Status/Info da máquina do resolute.",
   category: "info",
   usage: "",
+  example: "status",
 
   async run (client, message, args) {
           

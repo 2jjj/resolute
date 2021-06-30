@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-//AQUI
+
 module.exports = {
   name: "uptime",
   aliases: ['up', 'uptime'],
@@ -7,6 +7,7 @@ module.exports = {
   description: "Uptime do bot",
   category: "info",
   usage: "",
+  example: "uptime",
 
   async run (client, message, args) {
 

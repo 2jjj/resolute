@@ -8,13 +8,12 @@ module.exports = {
   description: "Pong! Minha latência!",
   category: "info",
   usage: "",
+  example: "ping",
 
   async run(client, message, args) {
 
     var numWorkers = require('os').cpus().length;
-
     let svPing = Date.now() - message.createdTimestamp
-
     let shardPing = await client.shard.fetchClientValues('ws.ping', 0)
 
     message.inlineReply('Ping?').then(msg => {

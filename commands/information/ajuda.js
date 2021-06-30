@@ -7,6 +7,9 @@ module.exports = {
   aliases : ['h', 'ajuda', 'comandos', 'commands'],
   description: "Mostrar os comandos disponiveis.",
   category: "info",
+  cooldown: 1000 * 2, 
+  usage: "",
+  example: "ajuda",
 
   async run (client, message, args) {
 
