@@ -11,7 +11,7 @@ module.exports = {
     const sentence = args.join(" ")
     if (!sentence) return;
     let embed = new Discord.MessageEmbed()
-      .setTitle('Joe Biden')
+      .setTitle('Biden')
       .setImage(`https://api.popcatdev.repl.co/biden?text=${encodeURIComponent(sentence)}`)
       .setColor('ORANGE')
       .setFooter(' ');
