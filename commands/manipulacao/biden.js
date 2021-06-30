@@ -5,11 +5,11 @@ module.exports = {
   cooldown: 1000 * 2,
   description: "",
   category: "manipulacao",
-  usage: "@user",
+  usage: "<texto>",
 
   async run(client, message, args) {
     const sentence = args.join(" ")
-    if (!sentence) return message.channel.send('Please specify a query.')
+    if (!sentence) return;
     let embed = new Discord.MessageEmbed()
       .setTitle('Joe Biden')
       .setImage(`https://api.popcatdev.repl.co/biden?text=${encodeURIComponent(sentence)}`)
