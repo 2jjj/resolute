@@ -13,10 +13,8 @@ module.exports = {
 
         let GuildMember = message.mentions.members.first();
 
-        if (!GuildMember) {
-            return message.reply("Mencione um usuário válido.");
-        }
-
+        if (!GuildMember) return;
+        
         message.channel.startTyping();
 
         let i1 = Jimp.read(GuildMember.user.displayAvatarURL({

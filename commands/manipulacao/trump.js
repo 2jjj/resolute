@@ -6,9 +6,11 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Trump meme",
     category: "manipulacao",
-    usage: "@user",
+    usage: "<texto>",
 
     async run(client, message, args) {
+
+        if(!args[0]) return;
 
         let text = args.join(" ");
 

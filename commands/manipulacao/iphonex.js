@@ -14,10 +14,7 @@ module.exports = {
 
         let m = await message.channel.send("**Aguarde...**");
 
-        if (!mention) {
-            m.edit("⚠ Mencione alguém.");
-            return message.channel.stopTyping();
-        }
+        if (!mention) return;
 
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=iphonex&url=${mention.user.displayAvatarURL({ size: 1024 })}`));
