@@ -18,7 +18,6 @@ module.exports = {
 			.setTitle("Hora")
 			.addField("» Dia ", `${data}`)
 			.addField("» Horário", `${hora}`)
-
 		message.channel.send(embed)
 
 	}
