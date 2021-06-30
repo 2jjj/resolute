@@ -19,7 +19,7 @@ module.exports = {
 
 		if (!emoji) {
 			message.channel.send(
-				"`" + args[0] + "` **Não é um emoji deste servidor!**"
+				"`" + args[0] + "` **Não é emoji deste servidor!**"
 			);
 		} else if (emoji.animated === true) {
 			message.channel.send(`<a:${args[0]}:${emoji.id}>`);
