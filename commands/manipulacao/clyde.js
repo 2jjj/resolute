@@ -14,7 +14,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		const url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`;
+		const url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${args[0]}`;
 
 		let response;
 		try {

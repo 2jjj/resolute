@@ -9,7 +9,6 @@ module.exports = {
     cooldown: 1000 * 2,
     usage: "<texto>",
 
-
     async run(client, message, args) {
 
         const comment = args.join('');

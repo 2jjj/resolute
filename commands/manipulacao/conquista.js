@@ -11,7 +11,9 @@ module.exports = {
 	async run(client, message, args) {
 
 		const a = args.join("+")
-		if (!a) return message.channel.send(`**Por favor diga algo para colocar na conquista!**`);
+		
+		if (!a) return;
+
 		if (args.join("+").length > 20) return message.channel.send(`**Use no maximo 20 caracteres!**`);
 
 		const embed_conquista = new Discord.MessageEmbed()
