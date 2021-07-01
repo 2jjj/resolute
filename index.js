@@ -101,5 +101,4 @@ fs.readdir(__dirname + "/events/", (err, files) => {
 //ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.RU_XMocb9mhb_POH0VH8RMGkteA
 //canary
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.lb1yyFECRPq42M--GFZCE1UQmCs
-
 client.login(config.token);
