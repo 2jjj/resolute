@@ -9,6 +9,7 @@ module.exports = {
     description: "Calculadora",
     category: "botoes",
     usage: "",
+    example: "",
 
     async run(client, message, args) {
         await Calculator(message)

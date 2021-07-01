@@ -8,6 +8,7 @@ module.exports = {
 	description: "Jogue pedra papel e tesoura por ai!",
 	category: "botoes",
 	usage: "",
+    example: "",
 
 	async run(bot, message, args) {
 

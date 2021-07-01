@@ -5,6 +5,7 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Jogo da velha!",
     usage: "<name>",
+    example: "",
 
     async run(client, message, args) {
         const opponent = message.mentions.users.first();

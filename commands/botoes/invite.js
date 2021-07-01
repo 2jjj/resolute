@@ -7,7 +7,8 @@ module.exports = {
     description: "Convidar o bot Resolute para o seu servidor, (Com botões)",
     category: "botoes",
     usage: "",
-  
+    example: "",
+
     async run (client, message, args) {
         let button = new MessageButton()
         .setLabel("Me adicione!")

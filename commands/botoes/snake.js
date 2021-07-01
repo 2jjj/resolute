@@ -5,6 +5,7 @@ module.exports = {
     description: "Jogo da cobrinha.",
     category: "botoes",
     usage: "",
+    example: "",
 
   async run (client, message, args) {
   
