@@ -11,7 +11,7 @@ module.exports = {
   name: "perfil",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "",
+  description: "Seu perfil com informações em canvas.",
   category: "economia",
   usage: "",
   example: "perfil",
