@@ -4,7 +4,7 @@ module.exports = {
     name: "invite",
     aliases: ['convidar'],
     cooldown: 1000 * 2, 
-    description: "Convidar o bot Resolute para o seu servidor, (Com botões)",
+    description: "Convidar o bot Resolute para o seu servidor!",
     category: "botoes",
     usage: "",
     example: "",
