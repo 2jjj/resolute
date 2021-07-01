@@ -5,7 +5,7 @@ module.exports = {
     name: "pay",
     aliases: ['pagar'],
     cooldown: 1000 * 2,
-    description: "Pague para alguém (agiota...)",
+    description: "Pague para alguém que está devendo!",
     category: "economia",
     usage: "@user <quantidade>",
     example: "@Spray#0007 1000",
