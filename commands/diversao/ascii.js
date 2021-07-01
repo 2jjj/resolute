@@ -8,6 +8,7 @@ module.exports = {
     description: "Converte o seu texto em para ascii!",
     category: "fun",
     usage: "<texto>",
+    example: "ascii oi tudo bom?",
 
     async run(client, message, args) {
 

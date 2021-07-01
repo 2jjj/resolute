@@ -9,6 +9,7 @@ module.exports = {
     description: "Faça um pergunta ao 8ball",
     category: "fun",
     usage: "<Pegunta>",
+    example: "8ball eu vou namorar?",
 
     async run(client, message, args) {
 

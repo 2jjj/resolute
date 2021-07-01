@@ -1,6 +1,3 @@
-const Discord = require("discord.js")
-const db = require("quick.db");
-
 module.exports = {
   name: "coinflip",
   aliases: [],
@@ -8,13 +5,9 @@ module.exports = {
   description: "Cara ou coroa?",
   category: "fun",
   usage: "<cara/coroa>",
+  example: "coinflip cara",
 
   async run(client, message, args) {
-
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) {
-      prefix = "s."
-    }
 
     var array1 = ["cara", "coroa"];
 

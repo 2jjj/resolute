@@ -9,7 +9,7 @@ module.exports = {
   description: "Shipe alguém",
   category: "fun",
   usage: "@user1 @user2",
-
+  usage: "@Spray#0007 @px0#0001",
 
   async run(client, message, args) {
     const user = message.mentions.users.first();
