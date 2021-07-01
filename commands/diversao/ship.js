@@ -6,7 +6,7 @@ module.exports = {
   name: "ship",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "Shipe alguém",
+  description: "Veja se um casal daria certo com este comando!",
   category: "fun",
   usage: "@user1 @user2",
   usage: "@Spray#0007 @px0#0001",
