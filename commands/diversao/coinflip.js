@@ -2,7 +2,7 @@ module.exports = {
   name: "coinflip",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "Cara ou coroa?",
+  description: "Jogue cara ou coroa com seus amigos!",
   category: "fun",
   usage: "<cara/coroa>",
   example: "coinflip cara",
