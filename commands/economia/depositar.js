@@ -5,7 +5,7 @@ module.exports = {
     name: "depositar",
     aliases: ['dep'],
     cooldown: 1000 * 2,
-    description: "Deposite seu dinheiro no banco.",
+    description: "Deposite suas coins no banco!",
     category: "economia",
     usage: "<quantidade>",
     example: "depositar 1000",
