@@ -6,7 +6,7 @@ module.exports = {
     name: "daily",
     aliases: ['diaria'],
     cooldown: 1000 * 2,
-    description: "Resgate seu daily.",
+    description: "Resgate seu daily e ganhe uma quantidade determinada de coins!",
     category: "economia",
     usage: "",
     example: "daily",
