@@ -4,7 +4,7 @@ module.exports = {
     category: "botoes",
     cooldown: 1000 * 2,
     description: "Jogo da velha!",
-    usage: "<name>",
+    usage: "",
     example: "",
 
     async run(client, message, args) {
