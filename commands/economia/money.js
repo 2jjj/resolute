@@ -5,7 +5,7 @@ module.exports = {
     name: "money",
     aliases: ['dinheiro', 'atm'],
     cooldown: 1000 * 2,
-    description: "Informações do seu dinheiro.",
+    description: "ATM o comando que mostra seu dinheiro(e o dos outros também)!",
     category: "economia",
     usage: "",
     example: "money",
