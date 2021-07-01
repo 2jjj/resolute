@@ -6,7 +6,7 @@ module.exports = {
   name: "doublestruck",
   aliases: ["ds"],
   cooldown: 1000 * 2,
-  description: "Fale por uma fonte dahora!",
+  description: "Com este comando você vai conseguir falar por 𝕖𝕤𝕤𝕒 𝕗𝕠𝕟𝕥𝕖!",
   category: "fun",
   usage: "<texto>",
   example: "doublestruck teste de texto",
