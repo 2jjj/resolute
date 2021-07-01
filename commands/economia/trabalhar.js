@@ -5,7 +5,7 @@ module.exports = {
     name: "trabalhar",
     aliases: ['trabalho', 'work'],
     cooldown: 1000 * 2,
-    description: "Trabalhe para ganhar dinheiro!",
+    description: "Trabalhe para ganhar coins!",
     category: "economia",
     usage: "",
     example: "trabalhar",
