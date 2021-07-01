@@ -8,6 +8,7 @@ module.exports = {
     description: "Pague para alguém (agiota...)",
     category: "economia",
     usage: "@user <quantidade>",
+    example: "@Spray#0007 1000",
 
     async run(client, message, args) {
 

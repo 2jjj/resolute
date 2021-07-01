@@ -8,6 +8,7 @@ module.exports = {
     description: "Só para admin.",
     //category: "economia",
     usage: "@user <quantidade>",
+    example: "setmoney @Spray#0007 1500",
 
     async run(client, message, args) {
 

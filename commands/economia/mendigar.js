@@ -9,6 +9,7 @@ module.exports = {
     description: "Mendigar",
     category: "economia",
     usage: "",
+    example: "mendigar",
 
     async run(client, message, args) {
 

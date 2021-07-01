@@ -8,6 +8,7 @@ module.exports = {
     description: "Informações do seu dinheiro.",
     category: "economia",
     usage: "",
+    example: "money",
 
     async run(client, message, args) {
 

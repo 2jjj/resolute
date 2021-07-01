@@ -14,6 +14,7 @@ module.exports = {
   description: "",
   category: "economia",
   usage: "",
+  example: "perfil",
 
   async run(client, message, args) {
 
