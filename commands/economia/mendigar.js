@@ -6,7 +6,7 @@ module.exports = {
     name: "mendigar",
     aliases: [],
     cooldown: 1000 * 2,
-    description: "Mendigar",
+    description: "Mendigue para conseguir coins!",
     category: "economia",
     usage: "",
     example: "mendigar",

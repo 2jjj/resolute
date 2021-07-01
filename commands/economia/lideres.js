@@ -5,7 +5,7 @@ module.exports = {
     name: "lideres",
     aliases: ['leaderboard'],
     cooldown: 1000 * 2,
-    description: "Lideres de dinheiro.",
+    description: "Lideres localmente(por guild).",
     category: "economia",
     usage: "",
     example: "lideres",
