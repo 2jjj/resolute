@@ -3,7 +3,7 @@ module.exports = {
     aliases: ["tictactoe"],
     category: "botoes",
     cooldown: 1000 * 2,
-    description: "Jogo da velha!",
+    description: "O famoso jogo da velha e com botões, nada melhor doque você se divertir com seus amigos!",
     usage: "@user",
     example: "@Spray#0007",
 
