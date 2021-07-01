@@ -6,7 +6,7 @@ module.exports = {
     name: "calculadora",
     aliases: ['calc'],
     cooldown: 1000 * 2,
-    description: "Calculadora",
+    description: "Com este comando você pode usufruir de uma calculadora(com botões)!",
     category: "botoes",
     usage: "",
     example: "",
