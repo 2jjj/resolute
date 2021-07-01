@@ -9,6 +9,7 @@ module.exports = {
     description: "Comando de setar o prefixo do bot.",
     category: "config",
     usage: "<novo_prefixo>",
+    example:"setprefix !",
 
     async run(client, message, args, msg) {
 
