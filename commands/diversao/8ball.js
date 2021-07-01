@@ -1,5 +1,3 @@
-const Discord = require("discord.js")
-const db = require("quick.db")
 const Respostas8Ball = require("./8ball.json")
 
 module.exports = {
