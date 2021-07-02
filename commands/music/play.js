@@ -37,7 +37,7 @@ module.exports = {
             server.songs.push(song);
             console.log(server.songs);
             let embed = new discord.MessageEmbed()
-                .setTitle('🎵 **|** Adicionado a lista')
+                .setTitle('🎵 **|** Adicionado na fila!')
                 .setColor('#000001')
                 .addField('Nome', song.title)
                 .setThumbnail(song.thumbnail)
@@ -81,7 +81,7 @@ module.exports = {
                 .on('error', error => console.error(error));
             dispatcher.setVolumeLogarithmic(queue.volume / 5);
             let noiceEmbed = new discord.MessageEmbed()
-                .setTitle('🎵 **|** Nova música na fila!')
+                .setTitle('🎵 **|** Estou tocando:')
                 .setColor("#000001")
                 .setImage(song.thumbnail)
                 .addField('Nome', song.title)
