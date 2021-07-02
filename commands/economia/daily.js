@@ -9,7 +9,7 @@ module.exports = {
     description: "Resgate seu daily e ganhe uma quantidade determinada de coins!",
     category: "economia",
     usage: "",
-    example: "daily",
+    example: "",
 
     async run(client, message, args) {
 

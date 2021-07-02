@@ -14,7 +14,7 @@ module.exports = {
   description: "Seu perfil com informações em canvas.",
   category: "economia",
   usage: "",
-  example: "perfil",
+  example: "",
 
   async run(client, message, args) {
 

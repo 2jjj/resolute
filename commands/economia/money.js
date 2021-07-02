@@ -8,7 +8,7 @@ module.exports = {
     description: "ATM o comando que mostra seu dinheiro(e o dos outros também)!",
     category: "economia",
     usage: "",
-    example: "money",
+    example: "",
 
     async run(client, message, args) {
 

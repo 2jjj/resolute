@@ -8,7 +8,7 @@ module.exports = {
     description: "Lideres localmente(por guild).",
     category: "economia",
     usage: "",
-    example: "lideres",
+    example: "",
 
     async run(client, message, args) {
 

@@ -9,7 +9,7 @@ module.exports = {
     description: "Mendigue para conseguir coins!",
     category: "economia",
     usage: "",
-    example: "mendigar",
+    example: "",
 
     async run(client, message, args) {
 

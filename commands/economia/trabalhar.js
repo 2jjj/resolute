@@ -8,7 +8,7 @@ module.exports = {
     description: "Trabalhe para ganhar coins!",
     category: "economia",
     usage: "",
-    example: "trabalhar",
+    example: "",
 
     async run(client, message, args) {
 

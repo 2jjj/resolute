@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['setdinheiro'],
     cooldown: 1000 * 2,
     description: "Só para admin.",
-    //category: "economia",
+    category: "economia",
     usage: "@user <quantidade>",
     example: "setmoney @Spray#0007 1500",
 
