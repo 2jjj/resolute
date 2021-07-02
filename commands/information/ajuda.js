@@ -54,7 +54,7 @@ module.exports = {
         let economia = client.commands.filter((cmd) => cmd.category === 'economia');
         let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
         let mod = client.commands.filter((cmd) => cmd.category === 'mod');
-        //let music = client.commands.filter((cmd) => cmd.category === 'musica');
+        let music = client.commands.filter((cmd) => cmd.category === 'music');
         let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
         let config = client.commands.filter((cmd) => cmd.category === 'config');
         let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
@@ -64,9 +64,9 @@ module.exports = {
 
       const embed = new MessageEmbed()
         .addField(`Desenvolvido por Spray#0007`, `**Prefixo atual: ${prefix}\nMeus Comandos[${client.commands.size}]:\n**`)
-        .addField(`<:interrogacao:856894534029541376> **Informação** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`<:ybs_status:856961057083621377> **Botões** [${botoes.size}]:`, `\`${botoes.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:interrogacao:856894534029541376> **Info** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mod:856894534088523776> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:music:843602147051700284> **Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_status:856961057083621377> **Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_dinheiro:856961057204600833> **Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_user:856961057314701342> **Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
@@ -74,8 +74,8 @@ module.exports = {
         .addField(`<:ybs_users:856961057486667806> **Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:funS:856961469680713768> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> **Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:ybs_status:856961057083621377> **Botões** [${botoes.size}]:`, `\`${botoes.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
-        //.addField(`<:music:843602147051700284> **Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
         .setFooter(
           `Requisitado por ${message.author.tag}`,
