@@ -4,6 +4,12 @@ const discord = require('discord.js')
 
 module.exports = {
     name: "play",
+    aliases: ['tocar', 'p'],
+	cooldown: 1000 * 2,
+	description: "Irei começar a tocar uma música em seu canal de voz!",
+	category: "music",
+	usage: "Nome/URL",
+	example: "play Stan - Eminem",
 
     async run(client, message, args) {
 
