@@ -70,7 +70,7 @@ module.exports = {
             if (!song) {
                 queue.voiceChannel.leave();
                 message.client.queue.delete(message.guild.id);
-                message.channel.send('Sem músicas na fila, então eu sai do canal de voz...')
+                message.channel.send('<:interrogacao:856894534029541376> **|** Sem músicas na fila, então eu sai do canal de voz...')
                 return;
             }
 
@@ -103,10 +103,10 @@ module.exports = {
             queueConstruct.connection = connection;
             play(queueConstruct.songs[0]);
         } catch (error) {
-            console.error(`Eu não consigo entrar nesse canal de voz!`);
+            console.error(`**|** Eu não consigo entrar nesse canal de voz!`);
             message.client.queue.delete(message.guild.id);
             await channel.leave();
-            return message.channel.send(`Eu não consigo entrar nesse canal de voz **|** ${error}`);
+            return message.channel.send(`<:x_:856894534071746600> **|** Eu não consigo entrar nesse canal de voz **|** ${error}`);
         }
     }
 }
