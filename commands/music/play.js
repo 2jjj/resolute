@@ -37,7 +37,7 @@ module.exports = {
         server.songs.push(song);
         console.log(server.songs);
         let embed = new discord.MessageEmbed()
-        .setTitle('Adcionado a lista')
+        .setTitle('🎵 **|** Adcionado a lista')
         .setColor('#000001')
         .addField('Nome', song.title)
         .setThumbnail(song.thumbnail)
@@ -64,7 +64,7 @@ module.exports = {
         if (!song) {
             queue.voiceChannel.leave();
             message.client.queue.delete(message.guild.id);
-            message.channel.send('As músicas acabaram entao eu sai da chamada...')
+            message.channel.send('Sem músicas na fila, então eu sai da call...')
             return;
         }
 
@@ -81,7 +81,7 @@ module.exports = {
             .on('error', error => console.error(error));
         dispatcher.setVolumeLogarithmic(queue.volume / 5);
         let noiceEmbed = new discord.MessageEmbed()
-        .setTitle('Começei a tocar')
+        .setTitle('🎵 **|** Nova música na fila!')
         .setColor("#000001")
         .setImage(song.thumbnail)
         .addField('Nome', song.title)
