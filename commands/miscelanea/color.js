@@ -5,7 +5,7 @@ module.exports = {
 	name: "color",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "Color HEX",
+	description: "Veja informações de uma cor!",
 	category: "outros",
 	usage: "<Cor>",
 	example: "color #000",
