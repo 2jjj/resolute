@@ -12,6 +12,6 @@ module.exports = {
 
 		if (!args[0]) return;
 
-		message.channel.send(`<:5864blurplesearch:856520144817881118> **|** Repositório encontrado -> https://github.com/${repo}`)
+		message.channel.send(`<:5864blurplesearch:856520144817881118> **|** Repositório encontrado -> htps://github.com/${repo}`)
 	}
 }
