@@ -1,7 +1,7 @@
 module.exports = {
     name: "jogodavelha",
     aliases: ["tictactoe"],
-    category: "botoes",
+    category: "fun",
     cooldown: 1000 * 2,
     description: "O famoso jogo da velha e com botões, nada melhor doque você se divertir com seus amigos!",
     usage: "@user",

@@ -3,7 +3,7 @@ module.exports = {
     aliases: [],
     cooldown: 1000 * 2, 
     description: "Jogo da cobrinha.",
-    category: "botoes",
+    category: "outros",
     usage: "",
     example: "",
 
