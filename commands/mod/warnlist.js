@@ -18,7 +18,7 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			.setTitle(':scales: | Warnlist')
 			.setColor("RANDOM")
-			.setDescription(`<a:SETA:852194614927818812> **${user} Tem ${warns} Warns \n<a:SETA:852194614927818812> ** Siga as regras para não sofrer advertencia!`)
+			.setDescription(`🔹 **${user} Tem ${warns} Warns \n🔹 ** Siga as regras para não sofrer advertencia!`)
 			.setFooter(
 				`Requisitado por ${message.author.tag}`,
 				message.author.displayAvatarURL({
