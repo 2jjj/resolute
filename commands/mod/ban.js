@@ -58,8 +58,8 @@ module.exports = {
 			.setTitle("Você foi banido!")
 			.setColor("#ff0000")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField("<:mod:856894534088523776> Autor:", `${message.author} (${message.author.id})`)
-			.addField("<:mod:856894534088523776> Motivo:", `${motivo}`)
+			.addField("Autor:", `${message.author} (${message.author.id})`)
+			.addField("Motivo:", `${motivo}`)
 			.setImage(rand)
 			.setFooter("Resolute - Punições", message.guild.iconURL({
 				dynamic: true
