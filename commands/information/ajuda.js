@@ -59,7 +59,6 @@ module.exports = {
         let config = client.commands.filter((cmd) => cmd.category === 'config');
         let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
         let info = client.commands.filter((cmd) => cmd.category === 'info');
-        let botoes = client.commands.filter((cmd) => cmd.category === 'botoes');
         let acao = client.commands.filter((cmd) => cmd.category === 'gifs');
 
       const embed = new MessageEmbed()
