@@ -20,6 +20,7 @@ require('discord-buttons')(client);
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = fs.readdirSync("./commands/");
+client.queue = new Map();
 const Timeout = new Collection();
 
 
