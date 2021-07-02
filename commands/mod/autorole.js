@@ -14,7 +14,7 @@ module.exports = {
 
         let user = message.author;
         let error = "Lembre-se de mencionar um cargo";
-        let error_completo = `:x: ${user} ${error}.`;
+        let error_completo = `:x: ${user} | ${error}.`;
 
         if (!args[0]) return message.channel.send(error_completo)
 		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão para executar este comando! | Permissão necessária:ADMINISTRATOR ")
