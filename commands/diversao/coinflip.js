@@ -16,9 +16,9 @@ module.exports = {
     if (!args[0] || (args[0].toLowerCase() !== "cara" && args[0].toLowerCase() !== "coroa")) {
       return;
     } else if (args[0].toLowerCase() == array1[rand]) {
-      message.channel.send("Deu **" + array1[rand] + "** Você ganhou dessa vez!");
+      message.channel.send("Deu **" + array1[rand] + "** \nVocê ganhou dessa vez!");
     } else if (args[0].toLowerCase() != array1[rand]) {
-      message.channel.send("Deu **" + array1[rand] + "** Você perdeu dessa vez!");
+      message.channel.send("Deu **" + array1[rand] + "** \nVocê perdeu dessa vez!");
     }
   }
 }
