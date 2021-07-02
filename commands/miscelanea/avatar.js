@@ -20,7 +20,7 @@ module.exports = {
 		});
 
 		let embed = new Discord.MessageEmbed()
-			.setColor(`#4cd8b2`)
+			.setColor(`RANDOM`)
 			.setTitle(`Avatar de ${user.username}`)
 			.setImage(avatar)
 			.setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
