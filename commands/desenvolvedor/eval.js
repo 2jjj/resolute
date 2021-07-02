@@ -3,7 +3,6 @@ const ownerid = "836345581424738354";
 
 module.exports = {
     name: "eval",
-    description: "Owner Only Command",
     aliases: [],
     category: "dev",
     description: "Apenas para devs.",
