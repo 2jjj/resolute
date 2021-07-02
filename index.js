@@ -95,7 +95,13 @@ fs.readdir(__dirname + "/events/", (err, files) => {
       console.log(cor.red("[LOGS] - [EVENTO] - "+eventName))
   });
 });
-  
+
+
+client.on("guildMemberAdd",  async (member) => {
+    let autorole_resolute = db.get(`autorole_${member.guild.id}`);
+    if (!autorole_resolute === null) return;
+    member.roles.add(autorole_resolute)
+});
 
 //v2
 //ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.RU_XMocb9mhb_POH0VH8RMGkteA
