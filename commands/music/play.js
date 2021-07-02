@@ -37,7 +37,7 @@ module.exports = {
             server.songs.push(song);
             console.log(server.songs);
             let embed = new discord.MessageEmbed()
-                .setTitle('🎵 **|** Adcionado a lista')
+                .setTitle('🎵 **|** Adicionado a lista')
                 .setColor('#000001')
                 .addField('Nome', song.title)
                 .setThumbnail(song.thumbnail)
@@ -97,10 +97,10 @@ module.exports = {
             queueConstruct.connection = connection;
             play(queueConstruct.songs[0]);
         } catch (error) {
-            console.error(`Eu não consigo entrar nesse canal de voz`);
+            console.error(`Eu não consigo entrar nesse canal de voz!`);
             message.client.queue.delete(message.guild.id);
             await channel.leave();
-            return message.channel.send(`Eu não consigo entrar nesse canal de voz ${error}`);
+            return message.channel.send(`Eu não consigo entrar nesse canal de voz **|** ${error}`);
         }
     }
 }
