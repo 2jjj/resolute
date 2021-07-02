@@ -6,7 +6,9 @@ module.exports = {
 	name: "play",
 
 	async run(client, message, args) {
-    if(!args[0]) return message.channel.send('Você deve me informar o nome ou uma url de uma musica!')
+
+    if(!args[0]) return;
+
     let channel = message.member.voice.channel;
     if(!channel) return message.channel.send('Você deve estar em um canal de voz para utlizar esse comando!')
 
