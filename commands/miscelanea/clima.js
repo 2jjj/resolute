@@ -36,6 +36,7 @@ module.exports = {
 			if (!city) {
 				return message.inlineReply(':x: Formato incorreto! | `' + prefix + 'clima SP/RJ/MG ou o nome da Cidade/Estado`')
 			}
+			
 			if (err || result === undefined || result.length === 0) {
 				return message.inlineReply('Nenhuma cidade/estado foi encontrado, verifique a ortografia.')
 			}
