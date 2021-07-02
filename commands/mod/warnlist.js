@@ -16,7 +16,7 @@ module.exports = {
 		let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle(':scales:  **|** Warnlist')
+			.setTitle(':scales: | Warnlist')
 			.setColor("RANDOM")
 			.setDescription(`<a:SETA:852194614927818812> **${user} Tem ${warns} Warns \n<a:SETA:852194614927818812> ** Siga as regras para não sofrer advertencia!`)
 			.setFooter(
