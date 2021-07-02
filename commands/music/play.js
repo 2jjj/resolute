@@ -70,7 +70,7 @@ module.exports = {
             if (!song) {
                 queue.voiceChannel.leave();
                 message.client.queue.delete(message.guild.id);
-                message.channel.send('Sem músicas na fila, então eu sai da call...')
+                message.channel.send('Sem músicas na fila, então eu sai do canal de voz...')
                 return;
             }
 
