@@ -43,7 +43,7 @@ module.exports = {
 			.setDescription(`**Motivo: ${motivo}**`)
 
 		membro.send(embed)
-		message.channel.send(`<:v_:856894534184468480> **${message.author}** | Aviso enviado com sucesso!`)
+		message.channel.send(`✅ **|x** O ${membro.username} foi silenciado com sucesso!\nEvite punições seguindo as regras do servidor!`)
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 	}
 }
