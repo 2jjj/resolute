@@ -1,7 +1,5 @@
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms');
-const Discord = require("discord.js");
-const db = require("quick.db");
 
 module.exports = {
 	name: "slowmode",
