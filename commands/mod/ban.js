@@ -44,12 +44,12 @@ module.exports = {
 		})
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle("Novo Banimento!")
-			.setColor("#ff0000")
+			.setTitle("Resolute")
+			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário:`, `${usuario} (${usuario.id})`)
-			.addField(`Autor:`, `${message.author} (${message.author.id})`)
-			.addField(`Motivo:`, `${motivo}`)
+			.addField(`Usuário banido:`, `<:setaaa:860626769089265665> ${usuario} | \`${usuario.id}\``)
+			.addField(`Autor:`, `<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `<:setaaa:860626769089265665> \`${motivo}\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setTimestamp();
 		message.channel.send(embed);
