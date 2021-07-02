@@ -9,7 +9,7 @@ module.exports = {
   description: "Minhas informações.",
   category: "info",
   usage: "",
-  example: "botinfo",
+  example: "",
 
   async run (client, message, args) {
     const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 

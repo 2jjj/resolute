@@ -9,7 +9,7 @@ module.exports = {
   category: "info",
   cooldown: 1000 * 2, 
   usage: "",
-  example: "ajuda",
+  example: "",
 
   async run (client, message, args) {
 

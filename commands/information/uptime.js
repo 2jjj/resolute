@@ -7,7 +7,7 @@ module.exports = {
   description: "Uptime do bot",
   category: "info",
   usage: "",
-  example: "uptime",
+  example: "",
 
   async run (client, message, args) {
 

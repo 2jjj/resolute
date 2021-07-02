@@ -11,7 +11,7 @@ module.exports = {
   description: "Shards informations.",
   category: "info",
   usage: "",
-  example: "shards",
+  example: "",
 
   async run(client, message, args) {
 

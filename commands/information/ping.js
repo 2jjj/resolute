@@ -8,7 +8,7 @@ module.exports = {
   description: "Pong! Minha latência!",
   category: "info",
   usage: "",
-  example: "ping",
+  example: "",
 
   async run(client, message, args) {
 
