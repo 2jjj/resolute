@@ -7,7 +7,7 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Veja informações de uma cor!",
 	category: "outros",
-	usage: "<Cor>",
+	usage: "<#cor>",
 	example: "color #000",
 
 	async run(client, message, args) {

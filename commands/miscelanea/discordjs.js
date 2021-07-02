@@ -6,7 +6,7 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Comando para pesquisar algo nas docs do discord.js",
 	category: "outros",
-	usage: "<docs_name>",
+	usage: "<conteudo>",
 	example: "discordjs message",
 
 	async run(client, message, args) {
