@@ -4,8 +4,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Apagar o canal de texto em que você usou o coamando e depois eu criarei um identico.",
 	category: "mod",
-	usage: "nuke",
-	example: "nuke",
+	usage: "",
+	example: "",
 
 	async run(client, message, args) {
 
