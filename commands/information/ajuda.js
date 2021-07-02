@@ -74,7 +74,6 @@ module.exports = {
         .addField(`🎵 **Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:funS:856961469680713768> **Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> **Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`<:ybs_status:856961057083621377> **Botões** [${botoes.size}]:`, `\`${botoes.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
         .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
         .setFooter(
