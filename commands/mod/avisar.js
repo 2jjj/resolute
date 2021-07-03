@@ -12,7 +12,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]) return;
+		if (!args[0]) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -30,18 +30,26 @@ module.exports = {
 		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão! | Permissão necessária: **ADMINISTRADOR**")
 		let membro = message.mentions.users.first()
 
-		let motivo = args.slice(1).join(" ");
-		if (!motivo) return message.channel.send(`${message.author} **|** Escreva o motivo para o aviso!`)
+		let embed1 = new Discord.MessageEmbed()
+			.setTitle("Resolute")
+			.setColor("RANDOM")
+			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+			.addField(`Usuário avisado:`, `ﾠ<:setaaa:860626769089265665> ${membro} | \`${membro.id}\``)
+			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
+			.setTimestamp();
+		message.channel.send(embed);
 
 		let embed = new Discord.MessageEmbed() //${membro.username}
 			.setTitle(`Você foi avisado!`)
 			.setColor('RANDOM')
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
-			.setDescription(`\`Motivo: ${motivo}\``)
+			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 
 		membro.send(embed)
-		message.channel.send(`✅ **|** O ${membro.username} foi avisado com sucesso!\nEvite punições seguindo as regras do servidor!`)
+		message.channel.send(embed1)
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 	}
 }
