@@ -31,7 +31,7 @@ module.exports = {
 		let membro = message.mentions.users.first()
 
 		let motivo = args.slice(1).join(" ");
-		if (!motivo) return message.reply("Escreva um motivo do aviso do usuário!")
+		if (!motivo) return message.channel.send(`${message.author} **|** Escreva o motivo para o aviso!`)
 
 		let embed = new Discord.MessageEmbed() //${membro.username}
 			.setTitle(`Você foi avisado!`)
@@ -41,7 +41,7 @@ module.exports = {
 			.setDescription(`\`Motivo: ${motivo}\``)
 
 		membro.send(embed)
-		message.channel.send(`✅ **|x** O ${membro.username} foi silenciado com sucesso!\nEvite punições seguindo as regras do servidor!`)
+		message.channel.send(`✅ **|** O ${membro.username} foi silenciado com sucesso!\nEvite punições seguindo as regras do servidor!`)
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 	}
 }
