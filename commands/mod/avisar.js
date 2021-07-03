@@ -12,9 +12,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]) {
-			return;
-		}
+		if(!args[0]) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -40,7 +38,7 @@ module.exports = {
 			.setColor('RANDOM')
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
-			.setDescription(`**Motivo: ${motivo}**`)
+			.setDescription(`\`Motivo: ${motivo}\``)
 
 		membro.send(embed)
 		message.channel.send(`✅ **|x** O ${membro.username} foi silenciado com sucesso!\nEvite punições seguindo as regras do servidor!`)
