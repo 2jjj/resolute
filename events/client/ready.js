@@ -1,4 +1,4 @@
-const config = require("../config.json")
+const config = require("../../config.json")
 const os = require("os")
 
 module.exports = async (client) => {
