@@ -47,9 +47,9 @@ module.exports = {
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário banido:`, `<:setaaa:860626769089265665> ${usuario} | \`${usuario.id}\``)
-			.addField(`Autor:`, `<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-			.addField(`Motivo:`, `<:setaaa:860626769089265665> \`${motivo}\``)
+			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${usuario} | \`${usuario.id}\``)
+			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setTimestamp();
 		message.channel.send(embed);
