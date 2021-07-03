@@ -30,6 +30,8 @@ module.exports = {
 		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão! | Permissão necessária: **ADMINISTRADOR**")
 		let membro = message.mentions.users.first()
 
+		let motivo = args.slice(1).join(" ");
+
 		let embed1 = new Discord.MessageEmbed()
 			.setTitle("Resolute")
 			.setColor("RANDOM")
@@ -39,8 +41,7 @@ module.exports = {
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setTimestamp();
-		message.channel.send(embed);
-
+			
 		let embed = new Discord.MessageEmbed() //${membro.username}
 			.setTitle(`Você foi avisado!`)
 			.setColor('RANDOM')
