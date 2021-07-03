@@ -7,14 +7,16 @@
 
 module.exports = async (client, guild) => {
     const guildSchema = require('../../mongoDB/guild.js');
-        
-    guildSchema.findOneAndDelete({ Guild: guild.id }, async (err, data) => {
-        
-    if(err) return console.log(err)
+
+    guildSchema.findOneAndDelete({
+        Guild: guild.id
+    }, async (err, data) => {
+
+        if (err) return console.log(err)
     })
-        
-    let icon = (!guild.iconURL()?'https://cdn.discordapp.com/avatars/764919941538775050/672afa4f2a4ac5fee624580229a2efbd.png?size=1024':guild.iconURL())
-        
+
+    let icon = (!guild.iconURL() ? 'https://cdn.discordapp.com/avatars/764919941538775050/672afa4f2a4ac5fee624580229a2efbd.png?size=1024' : guild.iconURL())
+
     client.shard.broadcastEval(`
     (async () => {
     let channel = this.channels.cache.get("841393455694872597")
