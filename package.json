@@ -2,9 +2,9 @@
   "name": "resolute",
   "version": "2.0.0",
   "description": "Resolute é um bot com múltiplos comandos de moderação, diversão, manipulações de imagens, minecraft, economia, autorole e música!",
-  "main": "index.js",
+  "main": "shard.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node shard.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
