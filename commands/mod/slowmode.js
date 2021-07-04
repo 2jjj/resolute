@@ -12,9 +12,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]){
-			return;
-		}
+		if(!args[0]) return;
 
 		if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("<:1598blurplesupport:856520144599777291> **|** Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
 
