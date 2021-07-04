@@ -9,9 +9,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]){
-			return;
-		}
+		if(!args[0]) return;
 
 		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 		const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
