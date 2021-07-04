@@ -51,7 +51,6 @@ module.exports = {
 			.addField('Ativado por: ', message.author)
 			.addField('Razão: ', reason)
 			.setColor('#ff0000');
-
 		message.channel.setRateLimitPerUser(time, reason).then(m => m.send(embed));
 
 	}

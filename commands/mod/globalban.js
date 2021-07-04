@@ -43,13 +43,6 @@ module.exports = {
 				.setDescription(`<@${user.id}> foi banido por ${message.author} razão: \`${reason}\``)
 			message.channel.send(bannedEmbed)
 
-			client.modlogs({
-				Member: user,
-				Color: 'RED',
-				Reason: reason,
-				Action: 'Global ban'
-			}, message)
-
 		}).catch(err => {
 			console.log(err)
 		})
