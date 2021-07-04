@@ -39,7 +39,6 @@ client.on("message", async message => {
 
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) prefix = "s."
-    console.log(prefix)
 
     if (message.content.startsWith('<')) {
         if (message.content.endsWith('>'))
