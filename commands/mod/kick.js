@@ -45,7 +45,7 @@ module.exports = {
 		let motivo = args.slice(1).join(' ')
 
 		let embed2 = new Discord.MessageEmbed()
-			.setTitle(`O membro ${target.username} foi expulso!`)
+			.setDescription(`**O membro ${target.user} foi expulso do servidor!**`)
 			.setColor('RED')
 			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target.user}`)
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
