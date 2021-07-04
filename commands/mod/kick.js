@@ -10,10 +10,8 @@ module.exports = {
 	example: "kick @Spray#0007 É lindo demais",
 
 	async run(client, message, args) {
-		
-		if(!args[0]){
-			return;
-		}
+
+		if (!args[0]) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -40,22 +38,19 @@ module.exports = {
 		if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
 		let target = message.mentions.members.first()
 
-		if (target.
-			id === message.author.id) {
+		if (target.id === message.author.id) {
 			return message.reply("<:x_:856894534071746600> **|** Você não pode se expulsar!")
 		}
 
-		let reason = args.slice(1).join(' ')
-
-		if (!reason) return message.reply("<:x_:856894534071746600> **|** Você precisa escrever o motivo!")
+		let motivo = args.slice(1).join(' ')
 
 		let embed2 = new Discord.MessageEmbed()
-			.setTitle(`O membro ${target.user} foi expulso!`)
+			.setTitle(`O membro ${target.username} foi expulso!`)
 			.setColor('RED')
-			.addField("Usuário", `${target.user}`)
-			.addField("Moderador", `${message.author}`)
-			.addField("Motivo", `${reason}`)
+			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target.user}`)
+			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
+			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
 		await message.channel.send(embed2)
-		await target.kick(reason)
+		await target.kick(motivo)
 	}
 }

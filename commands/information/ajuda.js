@@ -62,7 +62,7 @@ module.exports = {
         let acao = client.commands.filter((cmd) => cmd.category === 'gifs');
 
       const embed = new MessageEmbed()
-        .addField(`Desenvolvido por Spray#0007`, `**Prefixo atual: ${prefix}\nMeus Comandos[${client.commands.size}]:\n**`)
+        .addField(`Prefixo atual: ${prefix}\n`, `**Meus Comandos[${client.commands.size}]:**\nﾠ`)
         .addField(`<:interrogacao:856894534029541376> **Info** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mod:856894534088523776> **Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_status:856961057083621377> **Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
