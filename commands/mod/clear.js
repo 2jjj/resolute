@@ -8,10 +8,8 @@ module.exports = {
 	example: "clear 77",
 
 	async run(client, message, args) {
-		
-		if(!args[0]){
-			return;
-		}
+
+		if (!args[0]) return;
 
 		let user = message.author.username
 
@@ -25,6 +23,7 @@ module.exports = {
 		const fetched = await message.channel.messages.fetch({
 			limit: deleteCount + 1
 		});
+
 		message.channel.bulkDelete(fetched); {
 			await message.channel.send(`<:v_:856894534184468480> **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`);
 		}
