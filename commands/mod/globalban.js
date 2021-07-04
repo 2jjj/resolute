@@ -29,18 +29,25 @@ module.exports = {
 		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Você não tem a permissão de  \`BAN_MEMBERS\`')
 		if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Eu não tenho a permissão de \`BAN_MEMBERS\`')
 		let userID = args[0]
-		let reason = args.slice(1).join(' ') || 'Sem razão especificada.'
+		let motivo = args.slice(1).join(' ')
 
 		if (userID === message.author.id) return message.reply('<:x_:856894534071746600> **|** Você não pode se banir.')
 		if (userID == client.user.id) return message.reply('<:x_:856894534071746600> **|** Você não pode me banir com o **meu própio** comando.')
 
 		client.users.fetch(userID).then(async (user) => {
+
 			await message.guild.members.ban(user.id, {
-				reason: reason
+				reason: motivo
 			})
 			const bannedEmbed = new Discord.MessageEmbed()
-				.setColor('RED')
-				.setDescription(`<@${user.id}> foi banido por ${message.author} razão: \`${reason}\``)
+				.setTitle("Resolute")
+				.setColor("RANDOM")
+				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+				.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> \`${userID}\``)
+				.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+				.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+				.setFooter("Resolute - Punições", message.author.displayAvatarURL())
+				.setTimestamp();
 			message.channel.send(bannedEmbed)
 
 		}).catch(err => {
