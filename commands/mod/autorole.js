@@ -23,7 +23,7 @@ module.exports = {
 
 		const confirma = new Discord.MessageEmbed()
 			.setTitle("Autorole ativado!")
-			.setColor("#ff0000")
+			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.addField(`Autor:`, `${user}`)
 			.addField(`Cargo:`, `${cargo_autorole}`)

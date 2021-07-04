@@ -48,7 +48,7 @@ module.exports = {
 			.setColor('RANDOM')
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
-			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o warn.` }\``)
 
 		membro.send(embed)
 		message.channel.send(embed1)
