@@ -26,13 +26,13 @@ module.exports = {
       message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else if (message.content.includes("spotify")) {
-      message.channel.send(`<:spotify:818555971873013761>**Procurando** :mag_right: \`${args.join(" ")}\``)
+      message.channel.send(`<:spotify:861682475809505310> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else if (message.content.includes("soundcloud")) {
-      message.channel.send(`<:soundcloud:818555972079321128> **Procurando** :mag_right: \`${args.join(" ")}\``)
+      message.channel.send(`<:spr4y:861682475393482764> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:soundcloud`);
     } else if (message.content.includes("http")) {
-      message.channel.send(`<:rythm:826519647347539990> **Procurando** :mag_right: \`${args.join(" ")}\``)
+      message.channel.send(`🎵 **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else {
       message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
