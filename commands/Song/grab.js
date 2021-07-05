@@ -22,9 +22,10 @@ module.exports = {
     if(!player || !botchannel) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
 
     if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
-    if(player && channel.id !== player.voiceChannel)
+    if(player && channel.id !== player.voiceChannel) {
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
-
+    }
+    
     let date = `${new Date().getFullYear()}-${String(new Date().getMonth()).length ==1 ? "0" + new Date().getMonth() : new Date().getMonth()}-${String(new Date().getDate()).length ==1 ? "0" + new Date().getDate() : new Date().getDate()}`;
     message.author.send(new MessageEmbed()
       .setThumbnail(`https://img.youtube.com/vi/${player.queue.current.identifier}/mqdefault.jpg`)
