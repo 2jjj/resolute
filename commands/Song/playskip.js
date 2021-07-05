@@ -23,7 +23,7 @@ module.exports = {
       player.destroy();
     }
     if (message.content.includes("youtu")) {
-      message.channel.send(`<:youtube:826100274095194132> **Procurando** :mag_right: \`${args.join(" ")}\``)
+      message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else if (message.content.includes("spotify")) {
       message.channel.send(`<:spotify:818555971873013761>**Procurando** :mag_right: \`${args.join(" ")}\``)
@@ -35,7 +35,7 @@ module.exports = {
       message.channel.send(`<:rythm:826519647347539990> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else {
-      message.channel.send(`<:youtube:826100274095194132> **Procurando** :mag_right: \`${args.join(" ")}\``)
+      message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     }
   }
