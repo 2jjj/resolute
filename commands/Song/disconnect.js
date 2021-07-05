@@ -18,10 +18,10 @@ module.exports = {
 
       if(!player || !botchannel) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
       if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
-      if(player && channel.id !== player.voiceChannel)
+      if(player && channel.id !== player.voiceChannel){
         return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para poder ultilizar este comando**`);
+      }
       
-
       return message.channel.send(`**:mailbox_with_no_mail: Desconectado com sucesso!"**`);
   }
 };
