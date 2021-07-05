@@ -7,8 +7,8 @@
   "clientsettings": {
     "nodes": [
       {
-         "host": "localhost",
-         "port": 2333,
+         "host": "https://lavalink-repl.spray777.repl.co",
+         "port": 443,
          "password": "spray"
        }
      ]
