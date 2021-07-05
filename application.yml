@@ -1,5 +1,5 @@
 server: # REST and WS server
-  port: 443
+  port: 2333
   address: 0.0.0.0
 lavalink:
   server:
@@ -13,10 +13,8 @@ lavalink:
       mixer: true
       http: true
       local: false
-    bufferDurationMs: 400 # The duration of the NAS buffer. Higher values fare better against longer GC pauses
-    frameBufferDurationMs: 5000 # How many milliseconds of audio to keep buffered
-    youtubePlaylistLoadLimit: 6 # Number of pages at 100 each
-    playerUpdateInterval: 5 # How frequently to send player updates to clients, in seconds
+    bufferDurationMs: 100
+    youtubePlaylistLoadLimit: 1 # Number of pages at 100 each
     youtubeSearchEnabled: true
     soundcloudSearchEnabled: true
     gc-warnings: true
@@ -34,7 +32,6 @@ metrics:
 
 sentry:
   dsn: ""
-  environment: ""
 #  tags:
 #    some_key: some_value
 #    another_key: another_value
