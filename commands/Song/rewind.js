@@ -32,18 +32,6 @@ module.exports = {
       if(player && channel.id !== player.voiceChannel)
         return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
       //if invalid usage
-      if (!args[0]) {
-        let string = `${prefix}rewind <Time in seconds>`
-        let embed = new MessageEmbed()
-        .setTitle("**:x: Invalid usage**")
-        .setDescription(string)
-        if(message.guild.me.hasPermission("EMBED_LINKS")){
-          message.channel.send(embed)
-        }else{
-          message.channel.send("**:x: Invalid usage**\n"+string)
-        }
-        return;
-      }
       //get the seektime variable of the user input
       let seektime = player.position - Number(args[0]) * 1000;
       //if userinput is wrong correct it 
