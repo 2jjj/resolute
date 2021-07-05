@@ -1,10 +1,14 @@
 module.exports = {
   name: `loop`,
-  category: `Queue`,
-  aliases: ["repeat"],
-  description: `Toggles looping for the current playing song.`,
-  usage: `loop`,
-  run: async (client, message, args, cmduser, text, prefix) => {
+  aliases: [],
+  cooldown: 2000 * 2,
+  description: "",
+  category: "music",
+  usage: "",
+  example: "",
+
+  async run(client, message, args) {
+
       const { channel } = message.member.voice;
       if (!channel)  return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
       if(message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
