@@ -5,26 +5,28 @@ const config = require(`../../botconfig/config.json`);
 const {
     KSoftClient
 } = require(`@ksoft/api`);
-const ee = require(`../../botconfig/embed.json`);
-const {
-    format,
-    delay
-} = require(`../../handlers/functions`);
+
 module.exports = {
     name: `lyrics`,
-    category: `Song`,
-    aliases: [`l`, `ly`],
-    description: `Shows The Lyrics of the current track`,
-    usage: `lyrics [Songtitle]`,
-    cooldown: 15,
-    run: async (client, message, args, cmduser, text, prefix) => {
+    aliases: [],
+    cooldown: 2000 * 2,
+    description: "",
+    category: "music",
+    usage: "",
+    example: "",
+  
+    async run(client, message, args) {
+  
             const { channel } = message.member.voice;
-            if (!args[0] && !channel)  return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
-            if(!args[0] && message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
+
+            if (!args[0] && !channel)  return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
+            if(!args[0] && message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
+            
             const botchannel = message.guild.me.voice.channel;
             const player = client.manager.players.get(message.guild.id);
-            if(!args[0] && (!player || !botchannel)) return message.channel.send(`**:x: Nothing playing in this server**`);
-            if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: Nothing playing in this server**`);
+            
+            if(!args[0] && (!player || !botchannel)) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
+            if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: NNão há nada tocando neste servidor**`);
             if(!args[0] && (player && channel.id !== player.voiceChannel))
                 return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
             if(!args[0] && (player && botchannel && channel.id !== botchannel.id)){
