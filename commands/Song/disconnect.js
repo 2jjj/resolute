@@ -1,6 +1,6 @@
 module.exports = {
   name: "disconnect",
-  aliases: [],
+  aliases: ['leave'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",
