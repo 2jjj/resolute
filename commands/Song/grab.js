@@ -13,9 +13,9 @@ module.exports = {
   async run(client, message, args) {
 
     const { channel } = message.member.voice;
-    if (!channel)  return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
+    if (!channel)  return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
 
-    if(message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
+    if(message.member.voice.selfDeaf) return message.channel.send(`:x: ***Você não pode executar este comando enquanto estiver silenciado**`);
     const botchannel = message.guild.me.voice.channel;
 
     const player = client.manager.players.get(message.guild.id);
