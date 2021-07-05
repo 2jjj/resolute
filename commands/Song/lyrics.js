@@ -26,7 +26,7 @@ module.exports = {
             const player = client.manager.players.get(message.guild.id);
             
             if(!args[0] && (!player || !botchannel)) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
-            if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: NNão há nada tocando neste servidor**`);
+            if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
             if(!args[0] && (player && channel.id !== player.voiceChannel))
                 return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
             if(!args[0] && (player && botchannel && channel.id !== botchannel.id)){
