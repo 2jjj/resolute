@@ -1,6 +1,6 @@
 const { ShardingManager } = require('discord.js');
 var numWorkers = require('os').cpus().length;
-const config = require("./config.json")
+const config = require("./botconfig/config.json")
 
 const manager = new ShardingManager('./index.js', {
     totalShards: 'auto', 

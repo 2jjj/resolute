@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const config = require('../../config.json');
 const fetch = require('node-fetch')
 module.exports = {
     name: 'drake',
