@@ -1,15 +1,18 @@
 const playermanager = require(`../../handlers/lavalink/playermanager`);
 
 module.exports = {
-  name: `playskip`,
-  category: `Song`,
-  aliases: [`ps`, `pskip`, `playnow`, `pn`],
-  description: `Skips the current song and plays the song you requested.`,
-  usage: `playskip <link/query>`,
-  run: async (client, message, args, cmduser, text, prefix) => {
-    const {
-      channel
-    } = message.member.voice;
+  name: "playskip",
+  aliases: [],
+  cooldown: 2000 * 2,
+  description: "",
+  category: "music",
+  usage: "",
+  example: "",
+
+  async run(client, message, args) {
+    
+    const { channel } = message.member.voice;
+
     if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
     if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
     const botchannel = message.guild.me.voice.channel;
