@@ -1,14 +1,16 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
 const playermanager = require(`../../handlers/lavalink/playermanager`);
+
 module.exports = {
-  name: `playtop`,
-  category: `Song`,
-  aliases: [`ptop`, `pt`],
-  description: `Adds a song with the given name/url on the top of the queue`,
-  usage: `playtop <link/query>`,
-  run: async (client, message, args, cmduser, text, prefix) => {
+  name: "playtop",
+  aliases: [],
+  cooldown: 2000 * 2,
+  description: "",
+  category: "music",
+  usage: "",
+  example: "",
+
+  async run(client, message, args) {
+
     const { channel } = message.member.voice;
 
     if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
