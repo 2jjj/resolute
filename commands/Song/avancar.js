@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 2000 * 2,
   description: "",
   category: "music",
-  usage: "",
+  usage: "<tempo>",
   example: "",
 
   async run(client, message, args) {
