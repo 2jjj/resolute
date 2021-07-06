@@ -1,12 +1,3 @@
-const {
-  MessageEmbed
-} = require(`discord.js`)
-const config = require(`../../botconfig/config.json`)
-const ee = require(`../../botconfig/embed.json`);
-const {
-  createBar,
-  format
-} = require(`../../handlers/functions`);
 module.exports = {
   name: `replay`,
   category: `Song`,
