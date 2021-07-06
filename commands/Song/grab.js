@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 const { format } = require(`../../handlers/functions`);
 
 module.exports = {
-  name: `salvar`,
+  name: `grab`,
   aliases: [],
   cooldown: 2000 * 2,
   description: "",
