@@ -91,7 +91,7 @@ module.exports = (client) => {
             player.stop();
             client.channels.cache
                 .get(player.textChannel)
-                .send(`:x: **\`${track.title}\`** got Stuck\n:thumbsup: Skipping it!`);
+                .send(`:x: **\`${track.title}\` **:thumbsup: Pulando!`);
 
         })
         .on("trackError", async (player, track, payload) => {
@@ -99,7 +99,7 @@ module.exports = (client) => {
             player.stop();
             client.channels.cache
                 .get(player.textChannel)
-                .send(`:x: **\`${track.title}\`** Errorred\n:thumbsup: Skipping it!`);
+                .send(`:x: **\`${track.title}\`** :thumbsup: Pulando!`);
 
 
         })
@@ -126,10 +126,8 @@ module.exports = (client) => {
 
     })
     client.on("guildRemove", guild => {
-
         var player = client.manager.players.get(guild.id);
         if (!player) return;
         if (guild.id == player.guild) player.destroy();
-
     })
 };
