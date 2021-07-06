@@ -42,7 +42,7 @@ module.exports = (client) => {
     client.manager
         .on("playerCreate", async (player) => {
             player.setVolume(50);
-            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Joined \`${client.channels.cache.get(player.voiceChannel).name}\` and bound to:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
+            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}\` comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
         })
         .on("playerMove", async (player, oldChannel, newChannel) => {
             if (!newChannel) {
@@ -54,7 +54,7 @@ module.exports = (client) => {
                 client.channels.cache.get(player.textChannel).messages.fetch(player.get("playermessage")).then(msg => {
                     msg.delete({
                         timeout: 500
-                    }).catch(e => console.log("Couldn't delete message this is a catch to prevent a crash".grey));
+                    }).catch(e => console.log("Não foi possivel excluir a mensagem.".grey));
                 });
                 player.destroy();
             } else {
@@ -76,10 +76,10 @@ module.exports = (client) => {
                 player.set("previoustrack", track);
 
             if (client.settings.get(player.guild, `pruning`))
-                client.channels.cache.get(player.textChannel).send(`**Playing** :notes: \`${track.title}\` - Now!`).then(msg => {
+                client.channels.cache.get(player.textChannel).send(`**Tocando** :notes: \`${track.title}\`!`).then(msg => {
                     try {
                         if (player.get(`playingsongmsg`) && msg.id !== player.get(`playingsongmsg`).id)
-                            player.get(`playingsongmsg`).delete().catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
+                            player.get(`playingsongmsg`).delete().catch(e => console.log("Não foi possivel excluir a mensagem.".grey));
                     } catch {
                         /* */
                     }
@@ -132,6 +132,4 @@ module.exports = (client) => {
         if (guild.id == player.guild) player.destroy();
 
     })
-
-
 };
