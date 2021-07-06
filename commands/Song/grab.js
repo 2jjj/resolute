@@ -3,7 +3,7 @@ const { format } = require(`../../handlers/functions`);
 
 module.exports = {
   name: `grab`,
-  aliases: [],
+  aliases: ['salvar'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",
