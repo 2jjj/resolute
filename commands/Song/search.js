@@ -9,10 +9,10 @@ module.exports = {
     run: async (client, message, args, cmduser, text, prefix) => {
       const { channel } = message.member.voice;
       if (!channel)  return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
-      //send error if member is Deafed
+
       if(message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
       const botchannel = message.guild.me.voice.channel;
-      //if no args added return error message if allowed to send an embed
+
       if (!args[0]) {
         let string = `${prefix}play <link/query>`
         let embed = new MessageEmbed()
@@ -26,17 +26,14 @@ module.exports = {
         }
         return;
       }
-      ///get the player
       const player = client.manager.players.get(message.guild.id);
-      //if user is not in the right channel as bot, then return error
       if(player && channel.id !== player.voiceChannel)
         return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
-      //if bot connected bot not with the lavalink player then try to delete the player
+
       if(player && botchannel && channel.id !== botchannel.id){
         player.destroy();
       }
 
-      //play the song from our playermanager
       playermanager(client, message, args, `search:youtube`);
   }
 };
