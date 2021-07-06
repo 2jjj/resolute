@@ -1,6 +1,6 @@
 module.exports = {
-  name: "clearqueue",
-  aliases: ['limparfila'],
+  name: "limparfila",
+  aliases: ['clearqueue'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",

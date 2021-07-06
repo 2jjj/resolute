@@ -1,6 +1,6 @@
 module.exports = {
-  name: "loopqueue",
-  aliases: [],
+  name: "loopfila",
+  aliases: ['loopqueue'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",
