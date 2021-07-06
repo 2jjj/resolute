@@ -12,23 +12,23 @@ module.exports = {
   async run(client, message, args) {
 
       const { channel } = message.member.voice;
-      if (!channel)  return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
-      if(message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
+      if (!channel)  return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
+      if(message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
 
       const botchannel = message.guild.me.voice.channel;
       const player = client.manager.players.get(message.guild.id);
 
-      if(!player || !botchannel) return message.channel.send(`**:x: Nothing playing in this server**`);
-      if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Nothing playing in this server**`);
+      if(!player || !botchannel) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
+      if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
 
       if(player && channel.id !== player.voiceChannel)
-        return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
+        return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
 
       let seektime = player.position - Number(args[0]) * 1000;
       if (seektime >= player.queue.current.duration - player.position || seektime < 0) 
-      return message.channel.send("**:x: Cannot rewind that far back in the song**")
+      return message.channel.send("**:x: Não consigo retroceder tanto na música**")
 
       player.seek(Number(seektime));
-      return message.channel.send(`**:musical_note: Set position to \`${format(player.position)}\` :fast_forward:**`);
+      return message.channel.send(`**:musical_note: Defini a posição para \`${format(player.position)}\` :fast_forward:**`);
   }
 };
