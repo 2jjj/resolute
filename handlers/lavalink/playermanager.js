@@ -36,12 +36,12 @@ module.exports = async (client, message, args, type, channel, guild) => {
 async function search(client, message, args, type) {
 const search = args.join(" ");
   let res;
-  // Search for tracks using a query or url, using a query searches youtube automatically and the track requester object
+
   res = await client.manager.search({
     query: search,
     source: type.split(":")[1]
   }, message.author);
-  // Check the load type as this command is not that advanced for basics
+
   if (res.loadType === "LOAD_FAILED") throw res.exception;
 
   var max = 10;
@@ -54,7 +54,7 @@ const search = args.join(" ");
     results = res.tracks.slice(0, max).map((track, index) => `\`${++index}.\` [${String(track.title).split("[").join("\[").split("]").join("\]")}](${track.uri}) **[${format(track.duration).split(" | ")[0]}]**`).join('\n\n');
     results += "\n\n\n**Type a number to make a choice. Type \`cancel\` to exit**";
     results = new Discord.MessageEmbed()
-    .setAuthor(message.author.username, message.author.displayAvatarURL({dynamic: true}), "https://milrato.eu")
+    .setAuthor(message.author.username, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
     .setColor(ee.color)
     .setDescription(results)
   }else {
@@ -110,7 +110,7 @@ const search = args.join(" ");
         var time = 0;
         //create info msg embed
         let playembed = new Discord.MessageEmbed()
-          .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://milrato.eu")
+          .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
           .setURL(track.uri)
           .setTitle("**" + track.title + "**").setColor(ee.color)
           .setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
@@ -183,7 +183,7 @@ async function play(client, message, args, type) {
           var time = 0;
           //create info msg embed
           let playembed = new Discord.MessageEmbed()
-            .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://milrato.eu")
+            .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
             .setURL(res.tracks[0].uri)
             .setTitle("**" + res.tracks[0].title + "**").setColor(ee.color)
             .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -230,7 +230,7 @@ async function play(client, message, args, type) {
       var time = 0;
         let playlistembed = new Discord.MessageEmbed()
 
-          .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://milrato.eu" )
+          .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
           .setColor(ee.color)
           .setTitle("**"+res.playlist.name+"**")
           .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -347,7 +347,7 @@ async function playskip(client, message, args, type) {
     var time = 0;
       let playlistembed = new Discord.MessageEmbed()
 
-        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://milrato.eu" )
+        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
         .setColor(ee.color)
         .setTitle("**"+res.playlist.name+"**")
         .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -422,7 +422,7 @@ async function playtop(client, message, args, type) {
       for (const track of oldQueue)
         player.queue.add(track);
       let playembed = new Discord.MessageEmbed()
-      .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://milrato.eu")
+      .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
       .setURL(res.tracks[0].uri)
       .setTitle("**" + res.tracks[0].title + "**").setColor(ee.color)
       .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -479,7 +479,7 @@ async function playtop(client, message, args, type) {
     var time = 0;
       let playlistembed = new Discord.MessageEmbed()
 
-        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://milrato.eu" )
+        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
         .setColor(ee.color)
         .setTitle("**"+res.playlist.name+"**")
         .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
