@@ -1,8 +1,5 @@
 const Discord = require("discord.js")
-const {
-MessageEmbed
-} = require("discord.js")
-const config = require("../../botconfig/config.json")
+const { MessageEmbed } = require("discord.js")
 const ee = require("../../botconfig/embed.json")
 const {
 format,
@@ -11,11 +8,11 @@ isrequestchannel,
 edit_request_message_queue_info,
 arrayMove
 } = require("../../handlers/functions")
+
 module.exports = async (client, message, args, type, channel, guild) => {
+  
   let method = type.includes(":") ? type.split(":") : Array(type)
   if (!message.guild && !guild) return;
-
-  
 
   if (method[0] === "play")
     play(client, message, args, type);
