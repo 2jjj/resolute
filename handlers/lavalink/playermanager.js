@@ -10,7 +10,7 @@ arrayMove
 } = require("../../handlers/functions")
 
 module.exports = async (client, message, args, type, channel, guild) => {
-  
+
   let method = type.includes(":") ? type.split(":") : Array(type)
   if (!message.guild && !guild) return;
 
@@ -26,7 +26,7 @@ module.exports = async (client, message, args, type, channel, guild) => {
     return message.channel.send(new MessageEmbed()
       .setColor(ee.wrongcolor)
       .setFooter(ee.footertext, ee.footericon)
-      .setTitle("❌ Error | No valid search Term? ...")
+      .setTitle("❌ Erro |Nenhum termo de pesquisa válido? ...")
     );
 }
 //function for searching songs
@@ -49,14 +49,14 @@ const search = args.join(" ");
   var results = "";
   if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS")){
     results = res.tracks.slice(0, max).map((track, index) => `\`${++index}.\` [${String(track.title).split("[").join("\[").split("]").join("\]")}](${track.uri}) **[${format(track.duration).split(" | ")[0]}]**`).join('\n\n');
-    results += "\n\n\n**Type a number to make a choice. Type \`cancel\` to exit**";
+    results += "\n\n\n**Digite um número para fazer uma escolha. Type \`cancel\` to exit**";
     results = new Discord.MessageEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
     .setColor(ee.color)
     .setDescription(results)
   }else {
     results = res.tracks.slice(0, max).map((track, index) => `\`${++index}.\` \`${String(track.title).split("[").join("\[").split("]").join("\]")}\` **[${format(track.duration).split(" | ")[0]}]**`).join('\n\n');
-    results += "\n\n\n**Type a number to make a choice. Type \`cancel\` to exit**";
+    results += "\n\n\n**Digite um número para fazer uma escolha. Type \`cancel\` to exit**";
   }
   
   let searchmsg = await message.channel.send(results)
@@ -68,7 +68,7 @@ const search = args.join(" ");
       time: 30000,
       errors: ['time']
     }).then(collected => {
-      searchmsg.delete().catch(e=>console.log("could not delete msg"))
+      searchmsg.delete().catch(e=>console.log("Não foi possível excluir MSG"))
   
       const first = collected.first().content;
       if (first.toLowerCase() === 'cancel') {
@@ -84,8 +84,8 @@ const search = args.join(" ");
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(String("❌ Error | Found nothing for: **`" + search).substr(0, 256 - 3) + "`**")
-            .setDescription(`Please retry!`)
+            .setTitle(String("❌ Erro |Não encontrou nada para: **`" + search).substr(0, 256 - 3) + "`**")
+            .setDescription(`Por favor tente novamente!`)
           );
         // Create the player
         let player = client.manager.create({
@@ -107,27 +107,27 @@ const search = args.join(" ");
         var time = 0;
         //create info msg embed
         let playembed = new Discord.MessageEmbed()
-          .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
+          .setAuthor(`Adicionado à fila`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
           .setURL(track.uri)
           .setTitle("**" + track.title + "**").setColor(ee.color)
           .setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
-          .addField("Channel", track.author, true)
-          .addField("Song Duration: ", track.isStream ? "LIVE STREAM" : format(track.duration).split(" | ")[0], true)
+          .addField("Canal", track.author, true)
+          .addField("Duração da música: ", track.isStream ? "LIVE STREAM" : format(track.duration).split(" | ")[0], true)
           //timing for estimated time creation
           if(player.queue.size > 0) player.queue.map((track) => time += track.duration)
           time += player.queue.current.duration - player.position;
           time -= track.duration;
-          playembed.addField("Estimated time until playing", format(time).split(" | ")[0], true)
+          playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
           
           playembed.addField("Position in queue", `${player.queue.length}`, true)
         //if bot allowed to send embed, do it otherwise pure txt msg
         if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           return message.channel.send(playembed);
         else
-          return message.channel.send(`Added: \`${track.title}\` - to the Queue\n**Channel:** ${track.author}\n**Song Duration:** ${track.isStream ? "LIVE STREAM" : format(track.duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${track.uri}`);
+          return message.channel.send(`Adicionada: \`${track.title}\` - para a fila\n**Canal:** ${track.author}\n**Duração da música:** ${track.isStream ? "LIVE STREAM" : format(track.duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${track.uri}`);
         }
       }).catch(e=>{
-        searchmsg.edit({content: "**:x: Timeout!**", embed: null}) 
+        searchmsg.edit({content: "**:x: Tempo esgotado!**", embed: null}) 
       })
   }
 }
@@ -150,11 +150,11 @@ async function play(client, message, args, type) {
     function song_() {
       //if no tracks found return info msg
       if (!res.tracks[0]){
-        return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+        return message.channel.send(`**:x: Não encontrei nada para: \`${search}\`**`);
       }
       //if track is too long return info msg
       if(res.tracks[0].duration > 3 * 60 * 60 * 1000){
-        return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours**`)
+        return message.channel.send(`**:x: Não é possível tocar uma música que tem mais de 3 horas**`)
       }
       //create a player if not created
       let player;
@@ -180,34 +180,34 @@ async function play(client, message, args, type) {
           var time = 0;
           //create info msg embed
           let playembed = new Discord.MessageEmbed()
-            .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
+            .setAuthor(`Adicionado à fila`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
             .setURL(res.tracks[0].uri)
             .setTitle("**" + res.tracks[0].title + "**").setColor(ee.color)
             .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
-            .addField("Channel", res.tracks[0].author, true)
-            .addField("Song Duration: ", res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0], true)
+            .addField("Canal", res.tracks[0].author, true)
+            .addField("Duração da música: ", res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0], true)
             //timing for estimated time creation
             if(player.queue.size > 0) player.queue.map((track) => time += track.duration)
             time += player.queue.current.duration - player.position;
             time -= res.tracks[0].duration;
-            playembed.addField("Estimated time until playing", format(time).split(" | ")[0], true)
+            playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
             
-            playembed.addField("Position in queue", `${player.queue.length}`, true)
+            playembed.addField("Posição na fila", `${player.queue.length}`, true)
           //if bot allowed to send embed, do it otherwise pure txt msg
           if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
             return message.channel.send(playembed);
           else
-            return message.channel.send(`Added: \`${res.tracks[0].title}\` - to the Queue\n**Channel:** ${res.tracks[0].author}\n**Song Duration:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${res.tracks[0].uri}`);
+            return message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até tocar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
       }
     }
     //function for playist
     function playlist_() {
       if (!res.tracks[0]){
-        return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+        return message.channel.send(`**:x: Não encontrou nada para: \`${search}\`**`);
       }
       for(const track of res.tracks)
         if(track.duration > 3 * 60 * 60 * 1000){
-          return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours --> playlist skipped!**`)
+          return message.channel.send(`**:x: Não é possível reproduzir uma música que tem mais de 3 horas -> lista de reprodução ignorada!**`)
         }
       let player;
       player = client.manager.create({
@@ -227,7 +227,7 @@ async function play(client, message, args, type) {
       var time = 0;
         let playlistembed = new Discord.MessageEmbed()
 
-          .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
+          .setAuthor(`Playlist adicionada à fila`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
           .setColor(ee.color)
           .setTitle("**"+res.playlist.name+"**")
           .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -237,14 +237,14 @@ async function play(client, message, args, type) {
             for(const track of res.tracks)
               time -= track.duration;
     
-            playlistembed.addField("Estimated time until playing", time > 10 ? format(time).split(" | ")[0] : "NOW")
-            .addField("Position in queue", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
-            .addField("Enqueued", `\`${res.tracks.length}\``, true)
+            playlistembed.addField("Tempo estimado até jogar", time > 10 ? format(time).split(" | ")[0] : "NOW")
+            .addField("Posição na fila", `${player.queue.length - res.tracks.length + 1 === 0 ? "Agora" : player.queue.length - res.tracks.length + 1}`, true)
+            .addField("Enqueiu", `\`${res.tracks.length}\``, true)
           //if bot allowed to send embed, do it otherwise pure txt msg
           if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
             message.channel.send(playlistembed);
           else
-            message.channel.send(`Added: \`${res.tracks[0].title}\` - to the Queue\n**Channel:** ${res.tracks[0].author}\n**Song Duration:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${res.tracks[0].uri}`);
+            message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
     }
 }
 //function for playling song + skipping
@@ -265,11 +265,11 @@ async function playskip(client, message, args, type) {
   function song_() {
     //if no tracks found return info msg
     if (!res.tracks[0]){
-      return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+      return message.channel.send(`**:x: Não encontrou nada para: \`${search}\`**`);
     }
     //if track is too long return info msg
     if(res.tracks[0].duration > 3 * 60 * 60 * 1000){
-      return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours**`)
+      return message.channel.send(`**:x: Não é possível tocar uma música que tem mais de 3 horas**`)
     }
     //create a player if not created
     let player;
@@ -308,11 +308,11 @@ async function playskip(client, message, args, type) {
   //function ffor playist
   function playlist_() {
     if (!res.tracks[0]){
-      return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+      return message.channel.send(`**:x: Não encontrou nada para: \`${search}\`**`);
     }
     for(const track of res.tracks)
       if(track.duration > 3 * 60 * 60 * 1000){
-        return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours --> playlist skipped!**`)
+        return message.channel.send(`**:x: Não é possível reproduzir uma música que tem mais de 3 horas -> lista de reprodução ignorada!**`)
       }
     let player;
     player = client.manager.create({
@@ -344,7 +344,7 @@ async function playskip(client, message, args, type) {
     var time = 0;
       let playlistembed = new Discord.MessageEmbed()
 
-        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
+        .setAuthor(`Playlist adicionada à fila`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
         .setColor(ee.color)
         .setTitle("**"+res.playlist.name+"**")
         .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -354,14 +354,14 @@ async function playskip(client, message, args, type) {
           for(const track of res.tracks)
             time -= track.duration;
   
-          playlistembed.addField("Estimated time until playing", time > 10 ? format(time).split(" | ")[0] : "NOW")
-          .addField("Position in queue", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
-          .addField("Enqueued", `\`${res.tracks.length}\``, true)
+          playlistembed.addField("Tempo estimado até jogar", time > 10 ? format(time).split(" | ")[0] : "NOW")
+          .addField("Posição na fila", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
+          .addField("Na fila", `\`${res.tracks.length}\``, true)
         //if bot allowed to send embed, do it otherwise pure txt msg
         if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           message.channel.send(playlistembed);
         else
-          message.channel.send(`Added: \`${res.tracks[0].title}\` - to the Queue\n**Channel:** ${res.tracks[0].author}\n**Song Duration:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${res.tracks[0].uri}`);
+          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
   }
 }
 //function for playling song + skipping
@@ -382,11 +382,11 @@ async function playtop(client, message, args, type) {
   function song_() {
     //if no tracks found return info msg
     if (!res.tracks[0]){
-      return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+      return message.channel.send(`**:x: Não encontrou nada para: \`${search}\`**`);
     }
     //if track is too long return info msg
     if(res.tracks[0].duration > 3 * 60 * 60 * 1000){
-      return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours**`)
+      return message.channel.send(`**:x: Não é possível tocar uma música que tem mais de 3 horas**`)
     }
     //create a player if not created
     let player;
@@ -419,34 +419,34 @@ async function playtop(client, message, args, type) {
       for (const track of oldQueue)
         player.queue.add(track);
       let playembed = new Discord.MessageEmbed()
-      .setAuthor(`Added to queue`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
+      .setAuthor(`Adicionado à fila`, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
       .setURL(res.tracks[0].uri)
       .setTitle("**" + res.tracks[0].title + "**").setColor(ee.color)
       .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
-      .addField("Channel", res.tracks[0].author, true)
-      .addField("Song Duration: ", res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0], true)
+      .addField("Canal", res.tracks[0].author, true)
+      .addField("Duração da música: ", res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0], true)
       //timing for estimated time creation
       if(player.queue.size > 0) player.queue.map((track) => time += track.duration)
       time += player.queue.current.duration - player.position;
       time -= res.tracks[0].duration;
-      playembed.addField("Estimated time until playing", format(time).split(" | ")[0], true)
+      playembed.addField("Tempo estimado até jogar", format(time).split(" | ")[0], true)
       
-      playembed.addField("Position in queue", `${player.queue.length}`, true)
+      playembed.addField("Posição na fila", `${player.queue.length}`, true)
     //if bot allowed to send embed, do it otherwise pure txt msg
     if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
       return message.channel.send(playembed);
     else
-      return message.channel.send(`Added: \`${res.tracks[0].title}\` - to the Queue\n**Channel:** ${res.tracks[0].author}\n**Song Duration:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${res.tracks[0].uri}`);
+      return message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
   }
   }
   //function ffor playist
   function playlist_() {
     if (!res.tracks[0]){
-      return message.channel.send(`**:x: Found nothing for: \`${search}\`**`);
+      return message.channel.send(`**:x: Não encontrou nada para: \`${search}\`**`);
     }
     for(const track of res.tracks)
       if(track.duration > 3 * 60 * 60 * 1000){
-        return message.channel.send(`**:x: Cannot play a song that's longer than 3 hours --> playlist skipped!**`)
+        return message.channel.send(`**:x: Não é possível reproduzir uma música que é mais de 3 horas -> lista de reprodução ignorada!**`)
       }
     let player;
     player = client.manager.create({
@@ -476,7 +476,7 @@ async function playtop(client, message, args, type) {
     var time = 0;
       let playlistembed = new Discord.MessageEmbed()
 
-        .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
+        .setAuthor(`Playlist adicionada à fila`, message.author.displayAvatarURL({dynamic:true}), "https://www.resolutebot.xyz" )
         .setColor(ee.color)
         .setTitle("**"+res.playlist.name+"**")
         .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)
@@ -486,13 +486,13 @@ async function playtop(client, message, args, type) {
           for(const track of res.tracks)
             time -= track.duration;
   
-          playlistembed.addField("Estimated time until playing", time > 10 ? format(time).split(" | ")[0] : "NOW")
-          .addField("Position in queue", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
-          .addField("Enqueued", `\`${res.tracks.length}\``, true)
+          playlistembed.addField("Tempo estimado até jogar", time > 10 ? format(time).split(" | ")[0] : "NOW")
+          .addField("Posição na fila", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
+          .addField("Lista de fila", `\`${res.tracks.length}\``, true)
         //if bot allowed to send embed, do it otherwise pure txt msg
         if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           message.channel.send(playlistembed);
         else
-          message.channel.send(`Added: \`${res.tracks[0].title}\` - to the Queue\n**Channel:** ${res.tracks[0].author}\n**Song Duration:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Estimated time until playing:** ${time}\n**Position in queue:** ${player.queue.length}\n${res.tracks[0].uri}`);
+          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
   }
 }
