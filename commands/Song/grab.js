@@ -32,7 +32,7 @@ module.exports = {
       .setURL("https://resolutebot.xyz")
       .setColor("GREEN")
       .setTitle("Música salva :musical_note:")
-      .setDescription(`[${player.queue.current.title.split("[").join("\[").split("]").join("\]")}](${player.queue.current.uri})\n\n\`Length:\` ${format(player.queue.current.duration).split(" | ")[0]}\n\n\`Requested by:\` ${player.queue.current.requester.username} (${player.queue.current.requester.tag})`)
+      .setDescription(`[${player.queue.current.title.split("[").join("\[").split("]").join("\]")}](${player.queue.current.uri})\n\n\`Duração:\` ${format(player.queue.current.duration).split(" | ")[0]}\n\n\`Requisitado por:\` ${player.queue.current.requester.username} (${player.queue.current.requester.tag})`)
       .setFooter(`${date} - ${message.guild.name}`)
     ).catch(e=>{
       return message.channel.send("**:x: Sua DM está desabilitada**")
