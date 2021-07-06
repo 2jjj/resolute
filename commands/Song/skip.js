@@ -6,9 +6,8 @@ module.exports = {
   usage: `skip`,
   run: async (client, message, args, cmduser, text, prefix) => {
     //get the voice channel of the member
-    const {
-      channel
-    } = message.member.voice;
+    const { channel } = message.member.voice;
+
     //if he is not connected to a vc return error
     if (!channel) return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
     //send error if member is Deafed

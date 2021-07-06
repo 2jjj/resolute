@@ -10,9 +10,8 @@ module.exports = {
   description: `Plays a song from SounCloud with the given name/url`,
   usage: `soundcloud <link/query>`,
   run: async (client, message, args, cmduser, text, prefix) => {
-    const {
-      channel
-    } = message.member.voice;
+    const { channel } = message.member.voice;
+
     if (!channel) return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
     //send error if member is Deafed
     if (message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
