@@ -1,26 +1,36 @@
 module.exports = client => {
-  try{
-    const stringlength = 69;
-    console.log("\n")
-    console.log(`     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓`.bold.brightGreen)
-    console.log(`     ┃ `.bold.brightGreen + " ".repeat(-1+stringlength-` ┃ `.length)+ "┃".bold.brightGreen)
-    console.log(`     ┃ `.bold.brightGreen + `Resolute está online!`.bold.brightGreen + " ".repeat(-1+stringlength-` ┃ `.length-`Resolute está online!`.length)+ "┃".bold.brightGreen)
-    console.log(`     ┃ `.bold.brightGreen + ` /--/ ${client.user.tag} /--/ `.bold.brightGreen+ " ".repeat(-1+stringlength-` ┃ `.length-` /--/ ${client.user.tag} /--/ `.length)+ "┃".bold.brightGreen)
-    console.log(`     ┃ `.bold.brightGreen + " ".repeat(-1+stringlength-` ┃ `.length)+ "┃".bold.brightGreen)
-    console.log(`     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`.bold.brightGreen)
-  }catch{ /* */ }
+  
+  const promises = [client.shard.fetchClientValues('guilds.cache.size'),
+    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')
+  ];
+  Promise.all(promises)
+    .then(async results => {
+      const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+      const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
 
-  try{
-    client.user.setActivity(client.user.username, { type: "PLAYING" });
-  }catch (e) {
-      console.log(String(e.stack).red);
-  }
-  //Change status each 10 minutes
-  setInterval(()=>{
-    try{
-      client.user.setActivity("s.help | resolutebot.xyz", { type: "PLAYING" });
-    }catch (e) {
-        console.log(String(e.stack).red);
-    }
-  }, 10*60*1000)
+      const status = [{
+          name: `resolutebot.xyz | s.help`,
+          type: 'PLAYING'
+        },
+        {
+          name: `${totalGuilds} guilds | ${totalMembers} users.`,
+          type: 'PLAYING'
+        },
+      ]
+
+      function Presence() {
+        const base = status[Math.floor(Math.random() * status.length)]
+        client.user.setActivity(base)
+      }
+      Presence();
+      setInterval(() => Presence(), 5000)
+    })
+  const stringlength = 69;
+  console.log("\n")
+  console.log(`     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓`.bold.brightGreen)
+  console.log(`     ┃ `.bold.brightGreen + " ".repeat(-1 + stringlength - ` ┃ `.length) + "┃".bold.brightGreen)
+  console.log(`     ┃ `.bold.brightGreen + `Resolute está online!`.bold.brightGreen + " ".repeat(-1 + stringlength - ` ┃ `.length - `Resolute está online!`.length) + "┃".bold.brightGreen)
+  console.log(`     ┃ `.bold.brightGreen + ` /--/ ${client.user.tag} /--/ `.bold.brightGreen + " ".repeat(-1 + stringlength - ` ┃ `.length - ` /--/ ${client.user.tag} /--/ `.length) + "┃".bold.brightGreen)
+  console.log(`     ┃ `.bold.brightGreen + " ".repeat(-1 + stringlength - ` ┃ `.length) + "┃".bold.brightGreen)
+  console.log(`     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`.bold.brightGreen)
 }
