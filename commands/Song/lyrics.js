@@ -28,8 +28,8 @@ module.exports = {
         const botchannel = message.guild.me.voice.channel;
         const player = client.manager.players.get(message.guild.id);
 
-        if (!args[0] && (!player || !botchannel)) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
-        if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: Não há nada tocando neste servidor**`);
+        if (!args[0] && (!player || !botchannel)) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
+        if (!args[0] && (!player.queue || !player.queue.current)) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
         if (!args[0] && (player && channel.id !== player.voiceChannel))
             return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
         if (!args[0] && (player && botchannel && channel.id !== botchannel.id)) {
