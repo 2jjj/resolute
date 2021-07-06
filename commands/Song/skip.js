@@ -1,10 +1,13 @@
 module.exports = {
-  name: `skip`,
-  category: `Song`,
-  aliases: [`next`, "s"],
-  description: `Votes to skip the current playing song`,
-  usage: `skip`,
-  run: async (client, message, args, cmduser, text, prefix) => {
+  name: "skip",
+  aliases: [],
+  cooldown: 2000 * 2,
+  description: "",
+  category: "music",
+  usage: "",
+  example: "",
+
+  async run(client, message, args) {
     const { channel } = message.member.voice;
     if (!channel) return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
     if (message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
