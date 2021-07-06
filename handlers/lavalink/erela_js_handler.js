@@ -67,25 +67,22 @@ module.exports = (client) => {
             }
         })
         .on("trackStart", async (player, track) => {
-            //votes for skip --> 0
+
             player.set("votes", "0");
-            //set the vote of every user to FALSE so if they voteskip it will vote skip and not remove voteskip if they have voted before bruh
+
             for (const userid of client.guilds.cache.get(player.guild).members.cache.map(member => member.user.id))
                 player.set(`vote-${userid}`, false);
-            //set the previous track just have idk where its used ^-^
-            player.set("previoustrack", track);
-            //increasing the stats of the BOT
-            //if pruning is enabled --> send the msg
+
+                player.set("previoustrack", track);
+
             if (client.settings.get(player.guild, `pruning`))
                 client.channels.cache.get(player.textChannel).send(`**Playing** :notes: \`${track.title}\` - Now!`).then(msg => {
-                    //try to delete the old playingsongmsg informational track if not available / get able --> catch and dont crash
                     try {
                         if (player.get(`playingsongmsg`) && msg.id !== player.get(`playingsongmsg`).id)
                             player.get(`playingsongmsg`).delete().catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
                     } catch {
                         /* */
                     }
-                    //set the old message information to a variable
                     player.set(`playingsongmsg`, msg)
                 })
         })
