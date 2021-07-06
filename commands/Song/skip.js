@@ -19,6 +19,5 @@ module.exports = {
     }
     player.stop();
     return message.channel.send(`**:fast_forward: Skipped :thumbsup:**`);
-
   }
 };
