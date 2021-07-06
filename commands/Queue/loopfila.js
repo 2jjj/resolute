@@ -16,8 +16,8 @@ module.exports = {
       const botchannel = message.guild.me.voice.channel;
       const player = client.manager.players.get(message.guild.id);
 
-      if(!player || !botchannel) return message.channel.send(`**:x: Não há nada reproduzindo neste servidor**`);
-      if(!player.current < 1) return message.channel.send(`**:x: Não há nada reproduzindo neste servidor**`);
+      if(!player || !botchannel) return message.channel.send(`**:x: Não a nada reproduzindo neste servidor**`);
+      if(!player.current < 1) return message.channel.send(`**:x: Não a nada reproduzindo neste servidor**`);
 
       if(player && channel.id !== player.voiceChannel)
         return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
