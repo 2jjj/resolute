@@ -24,6 +24,6 @@ module.exports = {
         return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para poder ultilizar este comando**`);
       }
 
-      return message.channel.send(`**:mailbox_with_no_mail: Desconectado com sucesso!**`);
+      return message.channel.send(`**:mailbox_with_no_mail: Desconectado com sucesso!**`).catch(e=>console.log(e))
   }
 };
