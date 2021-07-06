@@ -10,19 +10,22 @@ module.exports = {
   example: "",
 
   async run(client, message, args) {
-    
+
     const { channel } = message.member.voice;
-    if (!channel) return message.channel.send(`:x: **You have to be in a voice channel to use this command.**`);
-    if (message.member.voice.selfDeaf) return message.channel.send(`:x: **You cannot run this command while deafened**`);
+    if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
+
+    if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
 
     const botchannel = message.guild.me.voice.channel;
     const player = client.manager.players.get(message.guild.id);
 
     if (player && channel.id !== player.voiceChannel)
-      return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
+      return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
+
     if (player && botchannel && channel.id !== botchannel.id) {
       player.destroy();
     }
+
     if (message.content.includes("youtu")) {
       message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
