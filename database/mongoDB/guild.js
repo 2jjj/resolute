@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 let guildSchema = new Schema({
     Guild: String,
@@ -14,4 +14,5 @@ let guildSchema = new Schema({
     Vip: String,
     Time: Number
 })
+
 module.exports = model("guild", guildSchema)

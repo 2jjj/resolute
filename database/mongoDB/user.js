@@ -1,4 +1,5 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
+
 let userSchema = new Schema({
     User: String,
     Tag: String,
@@ -11,4 +12,5 @@ let userSchema = new Schema({
     LinkBackground: String,
     AboutMe: String
 })
+
 module.exports = model("user", userSchema)
