@@ -45,6 +45,7 @@ module.exports = {
             if (!track.lyrics) return lyricsmsg.edit(`**:x: Nenhuma letra foi encontrada de:** \`${title}\``).catch(e => console.log("error"))
             lyrics = track.lyrics;
         });
+
         var embeds = [];
 
         let lyembed = new MessageEmbed().setColor("#00ff00").setTitle(title.substr(0, 256)).setDescription(lyrics);
@@ -57,7 +58,6 @@ module.exports = {
                 embeds.push(lyembed.setDescription(splitDescription[i]));
             }
         }
-
 
         lyricsmsg.edit({
             content: `**:mag: Procurando letra de \`${title}\`**`,
