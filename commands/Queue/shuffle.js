@@ -1,5 +1,5 @@
 module.exports = {
-  name: "loopqueue",
+  name: "shuffle",
   aliases: [],
   cooldown: 2000 * 2,
   description: "",
@@ -16,13 +16,13 @@ module.exports = {
       if(!player || !botchannel) return message.channel.send(`**:x: Nothing playing in this server**`);
       if(!player.current < 1) return message.channel.send(`**:x: Nothing playing in this server**`);
       if(player && channel.id !== player.voiceChannel)
-        return message.channel.send(`**:x: You need to be in the same voice channel as Milrato x Rythm to use this command**`);
+        return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
       if(player && botchannel && channel.id !== botchannel.id){
         player.destroy();
       }
       player.set(`beforeshuffle`, player.queue.map(track => track));
       player.queue.shuffle();
-     return message.channel.send(`**:boom: Cleared... :stop_button:**`);
+     return message.channel.send(`**:boom: Liberado... :stop_button:**`);
 
   }
 };

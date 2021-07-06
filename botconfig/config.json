@@ -1,14 +1,14 @@
 {
   "token": "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.mb2_OlpUqIvf05xIAjt2l4gdixg",
   "shards": 2,
-  "spray": "Spray#0007",
   "ksoftapi": "",
+  "spray": "Spray#0007",
 
   "clientsettings": {
     "nodes": [
       {
-         "host": "https://lavalink-repl.spray777.repl.co",
-         "port": 433,
+         "host": "localhost",
+         "port": 2333,
          "password": "spray"
        }
      ]
