@@ -1,12 +1,6 @@
-/*
-    {
-    name: \`Dono:\`,
-    value: \`(\\\`EM DEV\\\`)\`,
-    },
-*/
-
 module.exports = async (client, guild) => {
-    const guildSchema = require('../../mongoDB/guild.js');
+
+    const guildSchema = require('../../database/mongoDB/guild.js');
 
     guildSchema.findOneAndDelete({
         Guild: guild.id
