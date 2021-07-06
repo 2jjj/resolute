@@ -27,13 +27,13 @@ module.exports = {
     if (player && botchannel && channel.id !== botchannel.id) {
       player.destroy();
     }
-    
+
     if (message.content.includes("youtu")) {
       message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:youtube`);
     } else if (message.content.includes("spotify")) {
       message.channel.send(`<:spotify:861682475809505310> **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:youtube`);
+      playermanager(client, message, args, `play:spotify`);
     } else if (message.content.includes("soundcloud")) {
       message.channel.send(`<:spr4y:861682475393482764> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:soundcloud`);
