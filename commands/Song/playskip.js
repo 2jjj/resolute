@@ -1,7 +1,5 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
 const playermanager = require(`../../handlers/lavalink/playermanager`);
+
 module.exports = {
   name: `playskip`,
   category: `Song`,
