@@ -11,9 +11,11 @@ module.exports = {
 
   async run(client, message, args) {
 
-    if(!args[0]) return;
+    if (!args[0]) return;
 
-    const { channel } = message.member.voice;
+    const {
+      channel
+    } = message.member.voice;
 
     if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
 
@@ -25,7 +27,7 @@ module.exports = {
     if (player && channel.id !== player.voiceChannel)
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
 
-      if (player && botchannel && channel.id !== botchannel.id) {
+    if (player && botchannel && channel.id !== botchannel.id) {
       player.destroy();
     }
 

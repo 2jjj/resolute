@@ -11,9 +11,11 @@ module.exports = {
 
   async run(client, message, args) {
 
-    if(!args[0]) return;
+    if (!args[0]) return;
 
-    const { channel } = message.member.voice;
+    const {
+      channel
+    } = message.member.voice;
     if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
 
     if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
@@ -43,5 +45,6 @@ module.exports = {
     } else {
       message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
       playermanager(client, message, args, `play:soundcloud`);
-    }}
+    }
+  }
 };
