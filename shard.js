@@ -3,7 +3,7 @@ var numWorkers = require('os').cpus().length;
 const config = require("./botconfig/config.json")
 
 const manager = new ShardingManager('./index.js', {
-    totalShards: 'auto', 
+    totalShards: config.shards, 
     token: config.token
 });
 
