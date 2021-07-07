@@ -4,10 +4,10 @@ module.exports = {
 	name: "tired",
 	aliases: [],
 	cooldown: 1000 * 2,
-	description: "to cansado ~ spray",
+	description: "to cansado",
 	category: "gifs",
 	usage: "@user",
-	example: "tired @Spray#0007",
+	example: "tired estou cansado",
 
 	async run(client, message, args) {
 		

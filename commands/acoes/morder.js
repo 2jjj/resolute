@@ -7,7 +7,7 @@ module.exports = {
 	description: "Morda alguém",
 	category: "gifs",
 	usage: "@user",
-	example: "morder @Spray#0007",
+	example: "morder @Spray#7725",
 
 	async run(client, message, args) {
 		
