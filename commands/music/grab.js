@@ -1,9 +1,5 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
-const {
-  format
-} = require(`../../handlers/functions`);
+const {  MessageEmbed } = require(`discord.js`);
+const { format } = require(`../../handlers/functions`);
 
 module.exports = {
   name: `grab`,
