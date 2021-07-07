@@ -27,6 +27,7 @@ module.exports = {
     if (player && botchannel && channel.id !== botchannel.id) {
       player.destroy();
     }
+    
     if (player.playing)
       return message.channel.send(`**:x: O Player não está pausado**`);
     player.pause(false);
