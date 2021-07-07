@@ -1,27 +1,20 @@
 ﻿const { Client, Collection } = require("discord.js");
 const fs = require("fs");
-const crystol = require("crystolnetwork-log");
 const cor = require("colors");
 const db = require("quick.db");
-const ms = require('ms');
-const Discord = require("discord.js")
+const config = require("./botconfig/config.json")
 
 const client = new Client({
   disableEveryone: true
 });
 
-/** || **/
 require("./util/inlineReply")
 require("./util/quote")
 require('discord-buttons')(client);
-
-/** || **/
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = fs.readdirSync("./commands/");
 client.queue = new Map();
-
-/** || **/
 
 ["command", "events"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
@@ -40,6 +33,10 @@ client.on("guildMemberAdd", async (member) => {
   } catch (e) {
   }
 });
+
+client.on('shardReady', (shardid) => {
+  client.user.setActivity( `Shard ${shardid}/${config.shards} | resolutebot.xyz`, { shardID: shardid });
+})
 
 client.login(require("./botconfig/config.json").token);
 

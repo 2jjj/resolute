@@ -1,5 +1,5 @@
 module.exports = client => {
-  
+  /*
   const promises = [client.shard.fetchClientValues('guilds.cache.size'),
     client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')
   ];
@@ -13,7 +13,7 @@ module.exports = client => {
           type: 'PLAYING'
         },
         {
-          name: `${totalGuilds} guilds | ${totalMembers} users.`,
+          name: `resolutebot.xyz | Lavalink Online | s.play`,
           type: 'PLAYING'
         },
       ]
@@ -24,7 +24,7 @@ module.exports = client => {
       }
       Presence();
       setInterval(() => Presence(), 5000)
-    })
+    })*/
   const stringlength = 69;
   console.log("\n")
   console.log(`     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓`.bold.brightGreen)
