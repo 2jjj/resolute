@@ -24,7 +24,7 @@ module.exports = {
     if (!player || !botchannel) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
     if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
 
-    if (player && channel.id !== player.voiceChannel){
+    if (player && channel.id !== player.voiceChannel) {
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
     }
 
@@ -33,7 +33,6 @@ module.exports = {
     if (Number(args[0]) <= 0) seektime = Number(player.position);
     if (Number(seektime) >= player.queue.current.duration)
       return message.channel.send(`**:x: O tempo não pode ser maior que a música**`);
-
     player.seek(Number(seektime));
     return message.channel.send(`**:musical_note: Defini a posição para \`${format(player.position)}\` :fast_forward:**`);
   }
