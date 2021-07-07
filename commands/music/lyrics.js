@@ -5,7 +5,9 @@ const {
 } = require(`discord.js`);
 
 const config = require(`../../botconfig/config.json`);
-const { KSoftClient } = require(`@ksoft/api`);
+const {
+    KSoftClient
+} = require(`@ksoft/api`);
 
 module.exports = {
     name: `lyrics`,
@@ -18,9 +20,11 @@ module.exports = {
 
     async run(client, message, args) {
 
-        if(!args[0]) return;
+        if (!args[0]) return;
 
-        const { channel } = message.member.voice;
+        const {
+            channel
+        } = message.member.voice;
 
         if (!args[0] && !channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
         if (!args[0] && message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
