@@ -14,21 +14,21 @@ module.exports = {
   example: "",
 
   async run(client, message, args) {
-    
+
     if (!args[0]) return;
 
     const { channel } = message.member.voice;
-    if (!channel)  return message.channel.send(`:x: *Você precisa estar em um canal de voz para usar este comando.**`);
 
-    if(message.member.voice.selfDeaf) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
+    if (!channel) return message.channel.send(`:x: *Você precisa estar em um canal de voz para usar este comando.**`);
+    if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
 
     const botchannel = message.guild.me.voice.channel;
     const player = client.manager.players.get(message.guild.id);
 
-    if(!player || !botchannel) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
+    if (!player || !botchannel) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
     if (!player.queue || !player.queue.current) return message.channel.send(`**:x: Não a nada tocando neste servidor**`);
 
-    if(player && channel.id !== player.voiceChannel)
+    if (player && channel.id !== player.voiceChannel)
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
     message.channel.send(new MessageEmbed()
       .setAuthor("Agora está tocando ♪", client.user.displayAvatarURL(), "https://resolutebot.xyz")
@@ -36,7 +36,7 @@ module.exports = {
       .setURL("https://resolutebot.xyz")
       .setColor("0056bf")
       .setDescription(`[${player.queue.current.title.split("[").join("\[").split("]").join("\]")}](${player.queue.current.uri})\n\n\`${createBar(player)}\`\n\n\`${format(player.position).split(" | ")[0]} / ${format(player.queue.current.duration).split(" | ")[0]}\`\n\n\`Requested by:\` ${player.queue.current.requester.username} (${player.queue.current.requester.tag})`)
-    ).catch(e=>{
+    ).catch(e => {
       return message.channel.send("**:x: Sua DM está desabilitada.**")
     })
   }
