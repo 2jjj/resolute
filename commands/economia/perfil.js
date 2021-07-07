@@ -1,11 +1,6 @@
 const Canvas = require('canvas');
 const Discord = require("discord.js");
 const db = require("quick.db");
-const {
-  MessageAttachment
-} = require("discord.js");
-const canvacord = require("canvacord");
-const ms = require("parse-ms");
 
 module.exports = {
   name: "perfil",
