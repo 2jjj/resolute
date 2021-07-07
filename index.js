@@ -35,7 +35,7 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 client.on('shardReady', (shardid) => {
-  client.user.setActivity( `Online | Shard: ${shardid}`, { shardID: shardid });
+  client.user.setActivity(`Online | Shard: ${shardid}`, { shardID: shardid });
 })
 
 client.login(require("./botconfig/config.json").token);
