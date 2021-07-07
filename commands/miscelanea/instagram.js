@@ -1,8 +1,5 @@
-const {
-	stripIndents
-} = require("common-tags");
+const { stripIndents } = require("common-tags");
 const Discord = require("discord.js");
-
 const fetch = require("node-fetch");
 
 module.exports = {

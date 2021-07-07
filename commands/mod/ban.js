@@ -7,7 +7,7 @@ module.exports = {
 	description: "Banir um usuário permanentemente de seu servidor com aviso na dm.	",
 	category: "mod",
 	usage: "@usuario <motivo>",
-	example: "ban @Spray#0007 Ofensa a staff",
+	example: "ban @Spray#7725 Ofensa a staff",
 
 	async run(client, message, args) {
 

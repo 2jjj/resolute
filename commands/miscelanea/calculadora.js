@@ -1,6 +1,4 @@
-const {
-    Calculator
-} = require('weky')
+const { Calculator } = require('weky')
 
 module.exports = {
     name: "calculadora",

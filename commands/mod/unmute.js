@@ -5,7 +5,7 @@ module.exports = {
 	description: "Desmutar um usuário que foi mutado anteriormente.",
 	category: "mod",
 	usage: "@user",
-	example: "unmute @Spray#0007",
+	example: "unmute @Spray#7725",
 
 	async run(client, message, args) {
 

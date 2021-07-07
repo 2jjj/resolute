@@ -6,8 +6,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Bloquear o canal que você usou este comando.",
 	category: "mod",
-	usage: "lock",
-	example: "lock",
+	usage: "",
+	example: "",
 
 	async run(client, message, args) {
 

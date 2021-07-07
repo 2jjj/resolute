@@ -4,8 +4,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Veja a lista de membros banidos em seu servidor!",
 	category: "mod",
-	usage: "banlist",
-	example: "banlist",
+	usage: "",
+	example: "",
 
 	async run(client, message, args) {
 

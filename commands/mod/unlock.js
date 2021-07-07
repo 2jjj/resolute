@@ -6,8 +6,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Desbloquear o canal bloqueado anteriormente",
 	category: "mod",
-	usage: "lock",
-	example: "lock",
+	usage: "",
+	example: "",
 
 	async run(client, message, args) {
 

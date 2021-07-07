@@ -9,7 +9,7 @@ module.exports = {
 	description: "Resetar o apelido de um usuário para o nick dele padrão",
 	category: "outros",
 	usage: "@user",
-	example: "@Spray#0007",
+	example: "@Spray#7725",
 
 	async run(client, message, args) {
 
