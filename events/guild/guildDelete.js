@@ -1,5 +1,10 @@
 module.exports = async (client, guild) => {
 
+    const guilds = await client.shard.broadcastEval("this.guilds.cache.size")
+    const botGuilds = guilds.reduce((prev, val) => prev + val)
+    client.channels.cache.get("841353285381914624").setName(`📝│Servidores: ${botGuilds}`).catch((e) => console.log((e)))
+    client.channels.cache.get("855968171855839242").setName(`💻│Shards: ${config.shards}`).catch((e) => console.log((e)))
+
     const guildSchema = require('../../database/mongoDB/guild.js');
 
     guildSchema.findOneAndDelete({
