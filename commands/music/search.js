@@ -13,15 +13,14 @@ module.exports = {
 
     if (!args[0]) return;
 
-    const {
-      channel
-    } = message.member.voice;
+    const { channel } = message.member.voice;
+
     if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
-
     if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
-    const botchannel = message.guild.me.voice.channel;
 
+    const botchannel = message.guild.me.voice.channel;
     const player = client.manager.players.get(message.guild.id);
+    
     if (player && channel.id !== player.voiceChannel)
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
 
