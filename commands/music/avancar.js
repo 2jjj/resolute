@@ -13,8 +13,6 @@ module.exports = {
 
     if (!args[0]) return;
 
-    if(!args[0]) return;
-
     const { channel } = message.member.voice;
 
     if (!channel) return message.channel.send(`:x: **Você deve estar em um canal de voz para usar este comando.**`);
