@@ -10,8 +10,8 @@ module.exports = {
   example: "",
 
   async run(client, message, args) {
-
-    if (!args[0]) return;
+  
+    if(!args[0]) return;
 
     const { channel } = message.member.voice;
 

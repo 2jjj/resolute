@@ -2,8 +2,8 @@ const {  MessageEmbed } = require(`discord.js`);
 const { format } = require(`../../handlers/functions`);
 
 module.exports = {
-  name: `grab`,
-  aliases: ['salvar'],
+  name: `salvar`,
+  aliases: ['grab'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",
@@ -11,8 +11,6 @@ module.exports = {
   example: "",
 
   async run(client, message, args) {
-
-    if (!args[0]) return;
 
     const { channel } = message.member.voice;
 
