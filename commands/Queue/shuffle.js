@@ -2,7 +2,7 @@ module.exports = {
   name: "shuffle",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Ordem aleatória de toda a fila.",
   category: "music",
   usage: "",
   example: "",
@@ -26,7 +26,7 @@ module.exports = {
     }
     player.set(`beforeshuffle`, player.queue.map(track => track));
     player.queue.shuffle();
-    return message.channel.send(`**:boom: Liberado... :stop_button:**`);
+    return message.channel.send(`**:boom: Pronto! agora o shuffle está ativado :stop_button:**`);
 
   }
 };

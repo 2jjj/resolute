@@ -2,12 +2,13 @@ module.exports = {
   name: "loopfila",
   aliases: ['loopqueue'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Alterna o loop para toda a fila.",
   category: "music",
   usage: "",
   example: "",
 
   async run(client, message, args) {
+
     const { channel } = message.member.voice;
 
     if (!channel) return message.channel.send(`:x: ** Você precisa estar em um canal de voz para usar este comando. **`);
