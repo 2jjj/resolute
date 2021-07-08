@@ -2,9 +2,9 @@ const playermanager = require(`../../handlers/lavalink/playermanager`);
 
 module.exports = {
   name: "play",
-  aliases: [],
+  aliases: ['p'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Toca uma música com o nome ou url fornecido.",
   category: "music",
   usage: "",
   example: "",

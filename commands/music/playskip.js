@@ -4,7 +4,7 @@ module.exports = {
   name: "playskip",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Pula a música atual e reproduz a música que você solicitou.",
   category: "music",
   usage: "",
   example: "",

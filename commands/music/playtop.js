@@ -4,7 +4,7 @@ module.exports = {
   name: "playtop",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Adiciona uma música com o nome / url fornecido no topo da fila",
   category: "music",
   usage: "",
   example: "",

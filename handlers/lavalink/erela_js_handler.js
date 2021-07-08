@@ -42,7 +42,7 @@ module.exports = (client) => {
     client.manager
         .on("playerCreate", async (player) => {
             player.setVolume(50);
-            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}\` comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
+            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}*\`**\n🔹 **Comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
         })
         .on("playerMove", async (player, oldChannel, newChannel) => {
             if (!newChannel) {
@@ -76,7 +76,7 @@ module.exports = (client) => {
                 player.set("previoustrack", track);
 
             if (client.settings.get(player.guild, `pruning`))
-                client.channels.cache.get(player.textChannel).send(`**Tocando** :notes: \`${track.title}\`!`).then(msg => {
+                client.channels.cache.get(player.textChannel).send(`**Tocando agora:** :notes: \`${track.title}\``).then(msg => {
                     try {
                         if (player.get(`playingsongmsg`) && msg.id !== player.get(`playingsongmsg`).id)
                             player.get(`playingsongmsg`).delete().catch(e => console.log("Não foi possivel excluir a mensagem.".grey));
@@ -87,21 +87,16 @@ module.exports = (client) => {
                 })
         })
         .on("trackStuck", async (player, track, payload) => {
-
             player.stop();
             client.channels.cache
                 .get(player.textChannel)
                 .send(`:x: **\`${track.title}\` **:thumbsup: Pulando!`);
-
         })
         .on("trackError", async (player, track, payload) => {
-
             player.stop();
             client.channels.cache
                 .get(player.textChannel)
                 .send(`:x: **\`${track.title}\`** :thumbsup: Pulando!`);
-
-
         })
         .on("queueEnd", async (player) => {
 
