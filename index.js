@@ -3,6 +3,9 @@ const { Client, Collection } = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
 const mongoose = require("mongoose");
+const ascii = require("ascii-table");
+let table = new ascii("MongoDB");
+table.setHeading("Mongo", "Load status");
 
 const client = new Client({
   disableEveryone: true
@@ -11,7 +14,8 @@ const client = new Client({
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
   useNewUrlParser: true
-}).then(console.log("MongoDB conectado."))
+}).then(table.addRow("Database", '✅'))
+console.log(table.toString().cyan);
 
 require("./util/inlineReply")
 require("./util/quote")
