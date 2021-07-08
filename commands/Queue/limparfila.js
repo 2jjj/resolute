@@ -2,7 +2,7 @@ module.exports = {
   name: "limparfila",
   aliases: ['clearqueue'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Limpa toda a fila.",
   category: "music",
   usage: "",
   example: "",
