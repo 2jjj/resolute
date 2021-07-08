@@ -4,7 +4,7 @@ module.exports = {
   name: "soundcloud",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Toca uma música do SoundCloud com o nome / url fornecido",
   category: "music",
   usage: "",
   example: "",

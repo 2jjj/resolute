@@ -8,7 +8,7 @@ module.exports = {
   name: "nowplaying",
   aliases: ['np'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Mostra qual música que o Resolute está tocando no momento.",
   category: "music",
   usage: "",
   example: "",
