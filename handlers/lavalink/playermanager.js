@@ -115,7 +115,6 @@ const search = args.join(" ");
           time += player.queue.current.duration - player.position;
           time -= track.duration;
           playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
-          
           playembed.addField("Posição na fila", `${player.queue.length}`, true)
           
           if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
@@ -183,7 +182,6 @@ async function play(client, message, args, type) {
             time += player.queue.current.duration - player.position;
             time -= res.tracks[0].duration;
             playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
-            
             playembed.addField("Posição na fila", `${player.queue.length}`, true)
           
           if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
