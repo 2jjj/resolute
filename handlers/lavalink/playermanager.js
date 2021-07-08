@@ -48,14 +48,14 @@ const search = args.join(" ");
   var results = "";
   if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS")){
     results = res.tracks.slice(0, max).map((track, index) => `\`${++index}.\` [${String(track.title).split("[").join("\[").split("]").join("\]")}](${track.uri}) **[${format(track.duration).split(" | ")[0]}]**`).join('\n\n');
-    results += "\n\n\n**Digite um número para fazer uma escolha. Type \`cancel\` to exit**";
+    results += "\n\n\n**Digite um número para fazer uma escolha. Escreva \`cancel\` para sair**";
     results = new Discord.MessageEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL({dynamic: true}), "https://www.resolutebot.xyz")
     .setColor(ee.color)
     .setDescription(results)
   }else {
     results = res.tracks.slice(0, max).map((track, index) => `\`${++index}.\` \`${String(track.title).split("[").join("\[").split("]").join("\]")}\` **[${format(track.duration).split(" | ")[0]}]**`).join('\n\n');
-    results += "\n\n\n**Digite um número para fazer uma escolha. Type \`cancel\` to exit**";
+    results += "\n\n\n**Digite um número para fazer uma escolha. Escreva \`cancel\` para sair**";
   }
   
   let searchmsg = await message.channel.send(results)
@@ -67,7 +67,7 @@ const search = args.join(" ");
       time: 30000,
       errors: ['time']
     }).then(collected => {
-      searchmsg.delete().catch(e=>console.log("Não foi possível excluir MSG"))
+      searchmsg.delete().catch(e=>console.log("Não foi possível excluir a mensagem."))
   
       const first = collected.first().content;
       if (first.toLowerCase() === 'cancel') {
@@ -116,7 +116,7 @@ const search = args.join(" ");
           time -= track.duration;
           playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
           
-          playembed.addField("Position in queue", `${player.queue.length}`, true)
+          playembed.addField("Posição na fila", `${player.queue.length}`, true)
           
           if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           return message.channel.send(playembed);
