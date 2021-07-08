@@ -2,9 +2,9 @@ const playermanager = require(`../../handlers/lavalink/playermanager`);
 
 module.exports = {
   name: "search",
-  aliases: [],
+  aliases: ['pesquisar'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Pesquisa uma música no Youtube por meio de sua consulta e retorna os 10 principais resultados",
   category: "music",
   usage: "",
   example: "",
