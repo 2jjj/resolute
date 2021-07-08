@@ -2,7 +2,7 @@ module.exports = {
   name: "resetar",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Redefine o progresso da música atual.",
   category: "music",
   usage: "",
   example: "",
@@ -24,6 +24,6 @@ module.exports = {
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
 
     player.seek(0);
-    return message.channel.send(`**:musical_note: O tempo do som foi resetado :track_previous:**`);
+    return message.channel.send(`**:musical_note: O tempo do som foi redefinido :track_previous:**`);
   }
 };
