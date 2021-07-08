@@ -2,7 +2,7 @@ module.exports = {
   name: "skip",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Pula a música que está tocando no momento para a próxima da fila.",
   category: "music",
   usage: "",
   example: "",
@@ -27,6 +27,6 @@ module.exports = {
       player.destroy();
     }
     player.stop();
-    return message.channel.send(`**:fast_forward: Skipped :thumbsup:**`);
+    return message.channel.send(`**:fast_forward: A música foi pulada... :thumbsup:**`);
   }
 };
