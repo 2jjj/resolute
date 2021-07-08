@@ -44,7 +44,7 @@ module.exports = {
 		let texto = args.join(" ")
 
 		const embed = new Discord.MessageEmbed()
-			.setColor('BLUE')
+			.setColor("RANDOM")
 			.setDescription(`${texto}`)
 			.setImage(rand)
 

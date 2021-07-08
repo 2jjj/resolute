@@ -31,6 +31,7 @@ module.exports = {
             '!': ':grey_exclamation:',
             ' ': '   '
         }
+        
         const text = args.join(" ").toLowerCase().split('').map(letter => {
             if (/[a-z]/g.test(letter)) {
                 return `:regional_indicator_${letter}:`

@@ -48,12 +48,12 @@ module.exports = {
 		}
 
 		var embed = new Discord.MessageEmbed()
-			.setColor('BLUE')
+			.setColor("RANDOM")
 			.setDescription(`Highfive ${user}?`)
 			.setFooter('Clique em 🔁 para aceitar o highfive')
 
 		var embed2 = new Discord.MessageEmbed()
-			.setColor('BLUE')
+			.setColor("RANDOM")
 			.setDescription(`${message.author.username} & ${user.username} mandaram um HIGHFIVE!`)
 			.setImage(rand1)
 

@@ -8,7 +8,7 @@ module.exports = {
     description: "Converte o seu texto em para ascii!",
     category: "fun",
     usage: "<texto>",
-    example: "ascii oi tudo bom?",
+    example: "ascii ola!",
 
     async run(client, message, args) {
 
@@ -18,12 +18,12 @@ module.exports = {
 
             if (err) {
                 console.log(err)
-                return message.channel.send(`Um erro ocorreu! -> \`${err}\` **|** Mande este erro no servidor de suporte! -> https://discord.gg/9rwuhF6CJz`)
+                return message.channel.send(`Ocorreu um erro!`)
             }
 
             const embed = new Discord.MessageEmbed()
                 .setTitle(`Ascii`)
-                .setColor('#36393f')
+                .setColor("RANDOM")
                 .setDescription(`\`\`\`${text.trimRight()}\`\`\``)
 
             message.channel.send(embed)

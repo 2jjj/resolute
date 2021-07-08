@@ -26,8 +26,8 @@ module.exports = {
 			format: 'png'
 		});
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Hug')
-			.setColor('#000000')
+			.setTitle('Abraço!')
+			.setColor("RANDOM")
 			.setDescription(`${message.author} acaba de abraçar o ${user}`)
 			.setImage(rand)
 			.setTimestamp()

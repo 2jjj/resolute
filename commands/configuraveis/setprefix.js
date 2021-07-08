@@ -15,7 +15,7 @@ module.exports = {
 
         if (!message.member.hasPermission('ADMINISTRATOR')) {
             let permss = new Discord.MessageEmbed()
-                .setColor('#8B0000')
+                .setColor("RANDOM")
                 .setTitle('Permissão Necessária: ADMINISTRADOR')
             return message.inlineReply(permss)
         }
@@ -27,28 +27,28 @@ module.exports = {
         
         if (args[0] === prefix) {
             let atual = new Discord.MessageEmbed()
-                .setColor('#8B0000')
+                .setColor("RANDOM")
                 .setTitle('Este já é meu prefixo atual.')
             return message.inlineReply(atual)
         }
 
         if (args[1]) {
             let space = new Discord.MessageEmbed()
-                .setColor('#8B0000')
+                .setColor("RANDOM")
                 .setTitle('O prefixo não pode ter espaços.')
             return message.inlineReply(space)
         }
 
         if (args[0].length > 3) {
             let caracter = new Discord.MessageEmbed()
-                .setColor('#8B0000')
+                .setColor("RANDOM")
                 .setTitle('O prefixo não pode ter mais de 3 caracteres.')
             return message.inlineReply(caracter)
         }
 
         db.set(`prefix_${message.guild.id}`, args[0])
         let alterado = new Discord.MessageEmbed()
-            .setColor('GREEN')
+            .setColor("RANDOM")
             .setDescription(`${message.author}` + ' alterou meu prefixo para: `' + args[0] + '`')
         return message.inlineReply(alterado)
     }

@@ -19,7 +19,7 @@ module.exports = {
     }
     if (message.mentions.users.size < 2) {
       let loveEmbed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
+        .setColor("RANDOM")
         .setTitle('Shipando...')
         .setDescription(`${message.author} e ${user}!`)
         .setImage(`https://api.popcatdev.repl.co/ship?user1=${message.author.displayAvatarURL({ dynamic: false, format: "png" })}&user2=${user.displayAvatarURL({ dynamic: false, format: "png" })}`)
@@ -28,7 +28,7 @@ module.exports = {
       return message.channel.send(loveEmbed)
     } else if (message.mentions.users.size > 1) {
       let luv = new Discord.MessageEmbed()
-        .setColor('RANDOM')
+        .setColor("RANDOM")
         .setTitle('Shipando...')
         .setDescription(`${message.mentions.users.first()} e ${message.mentions.users.last()}!`)
         .setImage(`https://api.popcatdev.repl.co/ship?user1=${message.mentions.users.first().displayAvatarURL({ dynamic: false, format: "png" })}&user2=${message.mentions.users.last().displayAvatarURL({ dynamic: false, format: "png" })}`)

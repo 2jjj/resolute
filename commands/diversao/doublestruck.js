@@ -14,7 +14,6 @@ module.exports = {
   async run(client, message, args) {
 
     let text = args.join("+")
-
     if (!text) return;
 
     let res = await fetch('https://api.popcatdev.repl.co/doublestruck?text=' + text);

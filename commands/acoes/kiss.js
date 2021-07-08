@@ -33,7 +33,7 @@ module.exports = {
 		});
 		const embed = new Discord.MessageEmbed()
 			.setTitle('Kiss')
-			.setColor('#000000')
+			.setColor("RANDOM")
 			.setDescription(`${message.author} acaba de beijar o ${user}`)
 			.setImage(rand)
 			.setTimestamp()

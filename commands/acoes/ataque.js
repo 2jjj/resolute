@@ -30,7 +30,7 @@ module.exports = {
 			.setDescription(`${message.author} atacou o ${pessoa}`)
 			.setImage(rand)
 			.setTimestamp()
-			.setColor("YELLOW")
+			.setColor("RANDOM")
 			.setThumbnail(message.author.displayAvatarURL({
 				format: "png"
 			}))
