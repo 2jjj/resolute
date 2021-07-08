@@ -4,7 +4,7 @@ module.exports = {
   name: "rewind",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Retrocede um certo tempo na faixa atual",
   category: "music",
   usage: "",
   example: "",
