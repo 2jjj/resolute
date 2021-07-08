@@ -4,7 +4,7 @@ module.exports = {
   name: "avancar",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Avança um determinado tempo na música.",
   category: "music",
   usage: "<tempo>",
   example: "",
