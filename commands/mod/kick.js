@@ -28,7 +28,7 @@ module.exports = {
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Sem permissão.")
-			.setColor("#ff0000")
+			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.addField(`Você não possui a permissão de`, `**KICK_MEMBERS**`)
 			.setFooter("Resolute", message.author.displayAvatarURL())
@@ -46,7 +46,7 @@ module.exports = {
 
 		let embed2 = new Discord.MessageEmbed()
 			.setDescription(`**O membro ${target.user} foi expulso do servidor!**`)
-			.setColor('RED')
+			.setColor("RANDOM")
 			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target.user}`)
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)

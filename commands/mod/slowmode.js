@@ -50,7 +50,7 @@ module.exports = {
 			.addField('Slowmode: ', args[0])
 			.addField('Ativado por: ', message.author)
 			.addField('Razão: ', reason)
-			.setColor('#ff0000');
+			.setColor("RANDOM");
 		message.channel.setRateLimitPerUser(time, reason).then(m => m.send(embed));
 
 	}

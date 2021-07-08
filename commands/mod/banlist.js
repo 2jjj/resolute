@@ -14,11 +14,9 @@ module.exports = {
 
 		const bans = await message.guild.fetchBans();
 
-		if (!bans.first())
-			return message.channel.send('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
+		if (!bans.first()) return message.channel.send('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
 
 		let msg = '';
-
 
 		bans.map(user => {
 			msg += `\`${user.user.tag}\`, `;

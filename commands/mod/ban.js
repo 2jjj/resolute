@@ -38,8 +38,8 @@ module.exports = {
 
 		if (!usuario.bannable) return message.channel.send({
 			embed: {
-				color: "#ff0000",
-				description: "Eu não tenho permissão para banir este usuário! | **Permissão necessária: BAN_MEMBERS**"
+				color: "RANDOM",
+				description: "Eu não tenho permissão para banir este usuário! | **Permissão necessária: Banir membros**"
 			}
 		})
 
@@ -57,7 +57,7 @@ module.exports = {
 
 		const pv = new Discord.MessageEmbed()
 			.setTitle("Você foi banido!")
-			.setColor("#ff0000")
+			.setColor("#RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.addField("Autor:", `${message.author} (${message.author.id})`)
 			.addField("Motivo:", `${motivo}`)

@@ -45,7 +45,7 @@ module.exports = {
 			
 		let embed = new Discord.MessageEmbed() //${membro.username}
 			.setTitle(`Você foi avisado!`)
-			.setColor('RANDOM')
+			.setColor("RANDOM")
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
 			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o warn.` }\``)

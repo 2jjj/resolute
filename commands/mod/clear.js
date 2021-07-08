@@ -13,10 +13,7 @@ module.exports = {
 
 		let user = message.author.username
 
-		if (!message.member.permissions.has("MANAGE_MESSAGES"))
-			return message.reply(
-				"<:x_:856894534071746600> **|** Você não tem permissão para limpar mensagens, Permissão necessária: MANAGE_MESSAGES"
-			);
+		if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send(`${message.author} **|** Você não possui a permissão necessária para executar a limpeza **|** Permissão necessária: Gerenciar Mensagens`)
 
 		const deleteCount = parseInt(args[0], 10);
 
