@@ -12,7 +12,7 @@ module.exports = {
 	async run(client, message, args) {
 
 		let serverembed = new Discord.MessageEmbed()
-			.setColor("#6400b6") //»
+			.setColor("#RANDOM") //»
 			.setTitle(`<:5864blurplesearch:856520144817881118> ${message.guild.name}`)
 			.setDescription(`
     🧭 **| Nome:** \`${message.guild.name}\`

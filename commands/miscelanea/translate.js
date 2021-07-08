@@ -29,7 +29,7 @@ module.exports = {
 				.setColor(result)
 				.setAuthor(`Google Tradutor`, googlepng)
 				.setDescription("```css\n" + `${res.text}` + "\n```", false)
-				.setColor("#6959CD")
+				.setColor("#RANDOM")
 			message.inlineReply(translateEmbed)
 		}).catch(err => {
 			message.inlineReply("<:1926blurplecross:856520144872407060> **|** Eu tive um problema com a tradução.\n:1926blurplecross: **|** Tente novamente com outro idioma.")

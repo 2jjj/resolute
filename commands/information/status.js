@@ -31,7 +31,7 @@ module.exports = {
       //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
       let embedStats = new Discord.MessageEmbed()
       .setTitle("*** Status ***")
-      .setColor("#00ff00")
+      .setColor("#RANDOM")
       .addField("<:memoryram:854135087037153280> Memória ultilizada", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
       .addField("<a:SETA:852194614927818812> Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
       .addField("<:3434_Discord_js_logo:845779460899733553> Discord.js", `v${version}`, true)

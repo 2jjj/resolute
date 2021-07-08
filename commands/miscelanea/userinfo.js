@@ -32,7 +32,7 @@ module.exports = {
 		let embed = new Discord.MessageEmbed()
 			//.setAuthor(member.user.username)
 			.setThumbnail((target.displayAvatarURL))
-			.setColor("#00ff00")
+			.setColor("#RANDOM")
 			.setDescription(`
         <:user_StarLab:855629091344744448> **| User:** \`${member.user.tag}\`
         <:information:843542771814236170> **| ID:** \`${member.user.id}\`

@@ -24,7 +24,7 @@ module.exports = {
 				let other = results.otherData
 				const embed = new Discord.MessageEmbed()
 					.setTitle(results.name)
-					.setColor('RANDOM')
+					.setColor("RANDOM")
 					.setDescription(`\n
                     <:spr4yxyz:837798446584168468> **Gênero:** \`${results.genres.join(', ')} \`
                     <:spr4yxyz:837798446584168468> **Plataforma:** \`${other.platforms.join(', ')}\`

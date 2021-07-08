@@ -23,7 +23,7 @@ module.exports = {
 			.addField("**Tipo**", channel.type)
 			.addField("**Descrição**", `${channel.topic || "Sem descrição"}`)
 			.addField("**Canal criado em**", channel.createdAt)
-			.setColor("GREEN")
+			.setColor("RANDOM")
 		message.channel.send(channelembed);
 	}
 }

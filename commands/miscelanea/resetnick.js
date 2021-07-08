@@ -23,7 +23,7 @@ module.exports = {
 			member.setNickname(null);
 		} catch (err) {
 			message.channel.send(
-				"<:x_:856894534071746600> **|** Eu não tenho permissão para resetar " + member.toString() + " nickname!"
+				"Eu não tenho permissão para resetar o nickname!"
 			);
 		}
 	},

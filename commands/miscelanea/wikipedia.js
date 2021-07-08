@@ -12,9 +12,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]) {
-			return;
-		}
+		if (!args[0]) return;
 
 		const body = await fetch(
 			`https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
@@ -28,7 +26,7 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			//.setTitle(`[${body.title}](${body.content_urls.desktop.page})`)
 			.setDescription(`**[${body.title}](${body.content_urls.desktop.page})**\n\n${body.extract}`)
-			.setColor("GREEN");
+			.setColor("RANDOM");
 		if (body.thumbnail) embed.setThumbnail(body.thumbnail.source);
 		message.channel.send(embed);
 	}

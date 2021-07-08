@@ -43,7 +43,7 @@ module.exports = {
 				`<a:SETA:852194614927818812> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
 			)
 			.setTimestamp(Date.now() + ms(args[0]))
-			.setColor("#00FFFF");
+			.setColor("#RANDOM");
 
 		let m = await channel.send(Embed);
 

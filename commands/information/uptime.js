@@ -23,7 +23,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setTitle(`Tempo de atividade`)
       //.setThumbnail("https://imgur.com/WZMylbw.gif")
-      .setColor("#FF0000")
+      .setColor("RANDOM")
       .setDescription(`${uptime}`)
     message.channel.send(embed);
 }}

@@ -11,9 +11,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if (!args[0]) {
-			return;
-		}
+		if (!args[0]) return;
 
 		var content = args.join(' ')
 		if (content.length > 600) {

@@ -24,12 +24,12 @@ module.exports = {
             .addField("<a:SETA:852194614927818812> Menção", `${message.author}`)
             .addField("<a:SETA:852194614927818812> ID de quem reportou", `${message.author.id}`)
             .addField("<a:SETA:852194614927818812> Bug", `\`${bug}\``)
-            .setColor([255, 182, 193])
+            .setColor("RANDOM")
         canal.send(embed)
 
         message.channel.send({
             embed: {
-                description: "<a:check:835206263075242029> Seu bug/report foi computado e enviado para minha equipe, muito obrigado por me ajudar a melhorar!\n Contato com o desenvolvedor: Spray#2885",
+                description: "<a:check:835206263075242029> Seu bug/report foi computado e enviado para minha equipe, muito obrigado por me ajudar a melhorar!\n Contato com o desenvolvedor: Spray#7725",
                 color: "RED"
             }
         });

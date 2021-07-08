@@ -29,7 +29,7 @@ module.exports = {
 		}, function(err, result) {
 
 			var noresult = new Discord.MessageEmbed()
-				.setColor('#FF0000')
+				.setColor('#RANDOM')
 				.setTitle('Parece que ocorreu um erro no meu sistema de busca')
 				.setDescription('`Nenhuma cidade/estado foi encontrado`')
 

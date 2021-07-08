@@ -24,7 +24,7 @@ module.exports = {
 		} catch (err) {
 			console.log(err);
 			message.reply(
-				"<:x_:856894534071746600> **|** Eu não tenho permissão de setar " + member.toString() + " nickname!"
+				"Eu não tenho permissão de setar o nickname!"
 			);
 		}
 	},

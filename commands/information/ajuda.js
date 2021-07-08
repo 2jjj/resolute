@@ -81,7 +81,7 @@ module.exports = {
         )
         //.setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
-        .setColor(roleColor);
+        .setColor("RANDOM");
       return message.channel.send(embed);
     } else {
       const command =
@@ -93,7 +93,7 @@ module.exports = {
       if (!command) {
         const embed = new MessageEmbed()
           .setTitle(`Comando inválido, use \`${prefix}help\` para todos os meus comandos.`)
-          .setColor("FF0000");
+          .setColor("RANDOM");
         return message.channel.send(embed);
       }
 
@@ -127,7 +127,7 @@ module.exports = {
           message.author.displayAvatarURL({ dynamic: true })
         )
         .setTimestamp()
-        .setColor(roleColor);
+        .setColor("RANDOM");
       return message.channel.send(embed);
     }
   },
