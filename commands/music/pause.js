@@ -2,7 +2,7 @@ module.exports = {
   name: "pause",
   aliases: ['pausar', 'stop'],
   cooldown: 2000 * 2,
-  description: "Pausa a faixa em reprodução atual",
+  description: "Pausa a faixa em reprodução atual.",
   category: "music",
   usage: "",
   example: "",

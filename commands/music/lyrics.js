@@ -10,7 +10,7 @@ module.exports = {
     name: `lyrics`,
     aliases: [],
     cooldown: 2000 * 2,
-    description: "Obtém a letra da música que está tocando no momento",
+    description: "Obtém a letra da música que está tocando no momento.",
     category: "music",
     usage: "",
     example: "",
