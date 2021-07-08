@@ -25,6 +25,7 @@ module.exports = {
             m.delete();
         } catch (e) {
             m.edit("⚠ Erro!");
+            //return message.channel.stopTyping();
         }
     }
 };
