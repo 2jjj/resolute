@@ -83,7 +83,7 @@ const search = args.join(" ");
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(String("❌ Erro |Não encontrou nada para: **`" + search).substr(0, 256 - 3) + "`**")
+            .setTitle(String("❌ Erro | Não encontrei nada para: **`" + search).substr(0, 256 - 3) + "`**")
             .setDescription(`Por favor tente novamente!`)
           );
 
