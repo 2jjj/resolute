@@ -5,7 +5,7 @@ module.exports = {
   name: `salvar`,
   aliases: ['grab'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Salva a música que está tocando no momento em suas mensagens diretas.",
   category: "music",
   usage: "",
   example: "",
