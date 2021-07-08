@@ -334,14 +334,14 @@ async function playskip(client, message, args, type) {
           for(const track of res.tracks)
             time -= track.duration;
   
-          playlistembed.addField("Tempo estimado até jogar", time > 10 ? format(time).split(" | ")[0] : "NOW")
+          playlistembed.addField("Tempo estimado até tocar", time > 10 ? format(time).split(" | ")[0] : "NOW")
           .addField("Posição na fila", `${player.queue.length - res.tracks.length + 1 === 0 ? "NOW" : player.queue.length - res.tracks.length + 1}`, true)
           .addField("Na fila", `\`${res.tracks.length}\``, true)
         
         if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           message.channel.send(playlistembed);
         else
-          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até jogar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
+          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até tocr:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
   }
 }
 
@@ -401,7 +401,7 @@ async function playtop(client, message, args, type) {
       if(player.queue.size > 0) player.queue.map((track) => time += track.duration)
       time += player.queue.current.duration - player.position;
       time -= res.tracks[0].duration;
-      playembed.addField("Tempo estimado até jogar", format(time).split(" | ")[0], true)
+      playembed.addField("Tempo estimado até tocar", format(time).split(" | ")[0], true)
       
       playembed.addField("Posição na fila", `${player.queue.length}`, true)
 
