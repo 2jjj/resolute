@@ -40,7 +40,7 @@ module.exports = (client) => {
     client.manager
         .on("playerCreate", async (player) => {
             player.setVolume(50);
-            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}*\`**\n🔹 **Comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
+            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}\`**\n🔹 **Comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>`).catch(e => console.log("this prevents a crash"))
         })
         .on("playerMove", async (player, oldChannel, newChannel) => {
             if (!newChannel) {
