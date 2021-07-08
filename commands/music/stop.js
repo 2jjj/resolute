@@ -1,6 +1,6 @@
 module.exports = {
-  name: "pausar",
-  aliases: ['stop'],
+  name: "stop",
+  aliases: ['pausar'],
   cooldown: 2000 * 2,
   description: "",
   category: "music",

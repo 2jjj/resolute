@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Tomato#6966",
+  "author": "Spray#7725",
   "license": "ISC",
   "dependencies": {
     "@iamtraction/google-translate": "^1.1.2",

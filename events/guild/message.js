@@ -2,6 +2,7 @@ const db = require("quick.db")
 const Discord = require("discord.js");
 const crystol = require("crystolnetwork-log");
 const Timeout = new Discord.Collection();
+const ms = require("ms")
 
 module.exports = async (client, message) => {
 
@@ -43,7 +44,7 @@ module.exports = async (client, message) => {
   let x = command.name;
 
 
-  if (x == "skip" || x == "seek" || x == "rewind" || x == "despausar" || x == "pausar" || x == "replay" || x == "shuffle" || x == "loopfila" || x == "limparfila" || x == "nowplaying" || x == "loop" || x == "grab" || x == "disconnect" || x == "unlock" || x == "lock" || x == "nuke" || x == "queue" || x == "skip" || x == "triggered" || x == "trash" || x == "stonks" || x == "rip" || x == "rickroll" || x == "preso" || x == "pikachu" || x == "palhaco" || x == "notstonks" || x == "mm" || x == "gay" || x == "drip" || x == "facepalm" || x == "delete" || x == "dababy" || x == "confusedstonks" || x == "blur" || x == "beautiful" || x == "ata" || x == "arte" || x == "ad" || x == "serverlist" || x == "sus" || x == "snake" || x == "jokenpo" || x == "jogodavelha" || x == "invite" || x == "calculadora" || x == "lideres" || x == "banlist" || x == "ping" || x == "help" || x == "userinfo" || x == "ticket" || x == "serverinfo" || x == "servericon" || x == "random" || x == "horas" || x == "avatar" || x == "badges" || x == "close" || x == "help" || x == "botinfo" || x == "shards" || x == "status" || x == "uptime" || x == "daily" || x == "mendigar" || x == "money" || x == "perfil" || x == "trabalhar" || x == "warnlist") {
+  if (x == "resume" || x == "skip" || x == "seek" || x == "rewind" || x == "resume" || x == "stop" || x == "replay" || x == "shuffle" || x == "loopfila" || x == "limparfila" || x == "nowplaying" || x == "loop" || x == "grab" || x == "disconnect" || x == "unlock" || x == "lock" || x == "nuke" || x == "queue" || x == "skip" || x == "triggered" || x == "trash" || x == "stonks" || x == "rip" || x == "rickroll" || x == "preso" || x == "pikachu" || x == "palhaco" || x == "notstonks" || x == "mm" || x == "gay" || x == "drip" || x == "facepalm" || x == "delete" || x == "dababy" || x == "confusedstonks" || x == "blur" || x == "beautiful" || x == "ata" || x == "arte" || x == "ad" || x == "serverlist" || x == "sus" || x == "snake" || x == "jokenpo" || x == "jogodavelha" || x == "invite" || x == "calculadora" || x == "lideres" || x == "banlist" || x == "ping" || x == "help" || x == "userinfo" || x == "ticket" || x == "serverinfo" || x == "servericon" || x == "random" || x == "horas" || x == "avatar" || x == "badges" || x == "close" || x == "help" || x == "botinfo" || x == "shards" || x == "status" || x == "uptime" || x == "daily" || x == "mendigar" || x == "money" || x == "perfil" || x == "trabalhar" || x == "warnlist") {
     return;
   }
 
