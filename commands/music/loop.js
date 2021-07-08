@@ -2,7 +2,7 @@ module.exports = {
   name: `loop`,
   aliases: [],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Alterna o loop para a música que está tocando",
   category: "music",
   usage: "",
   example: "",
