@@ -1,13 +1,11 @@
-const {
-    Manager
-} = require("erela.js");
+const {  Manager } = require("erela.js");
 const Spotify = require("erela.js-spotify");
 const Deezer = require("erela.js-deezer");
 const config = require("../../botconfig/config.json");
 const clientID = config.spotify.clientID;
 const clientSecret = config.spotify.clientSecret;
-module.exports = (client) => {
 
+module.exports = (client) => {
 
     if (!clientID || !clientSecret) {
         client.manager = new Manager({
