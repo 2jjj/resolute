@@ -9,7 +9,7 @@ module.exports = {
     usage: 'iphonex <user>',
     cooldown: 1000 * 2,
     run: async (client, message, args) => {
-        message.channel.startTyping();
+    
         let mention = message.mentions.members.first();
 
         let m = await message.channel.send("**Aguarde...**");
@@ -25,7 +25,6 @@ module.exports = {
             m.delete();
         } catch (e) {
             m.edit("⚠ Erro!");
-            return message.channel.stopTyping();
         }
     }
 };
