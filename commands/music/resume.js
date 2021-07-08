@@ -2,7 +2,7 @@ module.exports = {
   name: "resume",
   aliases: ['despausar'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Retoma a música pausada",
   category: "music",
   usage: "",
   example: "",
@@ -29,6 +29,6 @@ module.exports = {
     if (player.playing)
       return message.channel.send(`**:x: O Player não está pausado**`);
     player.pause(false);
-    return message.channel.send(`**:play_pause: Despausando... :thumbsup:**`);
+    return message.channel.send(`**:play_pause: Música retomada... :thumbsup:**`);
   }
 };

@@ -10,14 +10,12 @@ module.exports = {
     name: `lyrics`,
     aliases: [],
     cooldown: 2000 * 2,
-    description: "",
+    description: "Obtém a letra da música que está tocando no momento",
     category: "music",
     usage: "",
     example: "",
 
     async run(client, message, args) {
-
-        if (!args[0]) return;
 
         const { channel } = message.member.voice;
 
