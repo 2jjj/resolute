@@ -5,12 +5,9 @@ module.exports = {
     name: "eval",
     aliases: [],
     category: "dev",
-    description: "Apenas para devs.",
-    usage: "Este comando só pode ser ultilizado por desenvolvedores do Resolute.",
-    example: "eval",
-
+    description: "",
+    
     async run (client, message, args) {
-
     
         if (message.author.id == ownerid) {
 

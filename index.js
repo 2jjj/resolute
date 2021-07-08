@@ -1,12 +1,17 @@
-﻿const { Client, Collection } = require("discord.js");
+﻿const cor = require("colors");
+const { Client, Collection } = require("discord.js");
 const fs = require("fs");
-const cor = require("colors");
 const db = require("quick.db");
-const config = require("./botconfig/config.json")
+const mongoose = require("mongoose");
 
 const client = new Client({
   disableEveryone: true
 });
+
+mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}).then(console.log("MongoDB conectado."))
 
 require("./util/inlineReply")
 require("./util/quote")

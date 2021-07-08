@@ -2,9 +2,7 @@ module.exports = {
     name: "guildleave",
     aliases: [],
     category: "dev",
-    description: "Apenas para devs.",
-    usage: "Este comando só pode ser ultilizado por desenvolvedores do Resolute.",
-    example: "guildleave 628795854496595968",
+    description: "",
 
     async run (client, message, args) {
         var targetGuild = message.content.split(" ")[1];

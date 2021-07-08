@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const crystol = require("crystolnetwork-log");
 const Timeout = new Discord.Collection();
 const ms = require("ms")
+const blacklist = require("../../database/mongoDB/blacklist")
 
 module.exports = async (client, message) => {
 
@@ -28,19 +29,25 @@ module.exports = async (client, message) => {
 
   var command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
+  if (!message.content.startsWith(prefix)) return;
 
-  if (command) {
-    crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
-    if (command.cooldown) {
-      if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
-      command.run(client, message, args)
-      Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
-      setTimeout(() => {
-        Timeout.delete(`${command.name}${message.author.id}`)
-      }, command.cooldown)
-    } else command.run(client, message, args);
-  }
-
+  blacklist.findOne({ id : message.author.id }, async(err, data) => {
+      if(err) throw err;
+      if(!data) {
+        crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
+        if (command.cooldown) {
+          if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+          command.run(client, message, args)
+          Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
+          setTimeout(() => {
+            Timeout.delete(`${command.name}${message.author.id}`)
+          }, command.cooldown)
+        } else command.run(client, message, args);
+      } else {
+          message.channel.send('You are blacklisted!')
+      }
+  })
+  
   let x = command.name || command.aliases;
 
 

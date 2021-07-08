@@ -5,9 +5,7 @@ module.exports = {
     name: "serverlist",
     aliases: ["slt"],
     category: "dev",
-    description: "Apenas para devs.",
-    usage: "Este comando só pode ser ultilizado por desenvolvedores do Resolute.",
-    example: "serverlist",
+    description: "",
 
     async run (client, message, args) {
 
