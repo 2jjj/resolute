@@ -4,7 +4,7 @@ module.exports = {
   name: "seek",
   aliases: [],
   cooldown: 2000 * 2,
-  description: "Busca um certo ponto na faixa atual",
+  description: "Busca um certo ponto na faixa atual.",
   category: "music",
   usage: "",
   example: "",

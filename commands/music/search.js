@@ -4,7 +4,7 @@ module.exports = {
   name: "search",
   aliases: ['pesquisar'],
   cooldown: 2000 * 2,
-  description: "Pesquisa uma música no Youtube por meio de sua consulta e retorna os 10 principais resultados",
+  description: "Pesquisa uma música no Youtube por meio de sua consulta e retorna os 10 principais resultados.",
   category: "music",
   usage: "",
   example: "",

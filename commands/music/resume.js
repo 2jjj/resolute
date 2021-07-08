@@ -2,7 +2,7 @@ module.exports = {
   name: "resume",
   aliases: ['despausar'],
   cooldown: 2000 * 2,
-  description: "Retoma a música pausada",
+  description: "Retoma a música pausada.",
   category: "music",
   usage: "",
   example: "",
