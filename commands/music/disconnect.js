@@ -2,7 +2,7 @@ module.exports = {
   name: "disconnect",
   aliases: ['leave'],
   cooldown: 2000 * 2,
-  description: "",
+  description: "Desconecta o bot do canal de voz em que ele está.",
   category: "music",
   usage: "",
   example: "",
