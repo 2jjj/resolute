@@ -40,7 +40,7 @@ module.exports = (client) => {
     client.manager
         .on("playerCreate", async (player) => {
             player.setVolume(50);//**\n🔹 **Comando executado no chat:** <#${client.channels.cache.get(player.textChannel).id}>
-            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}\``).catch(e => console.log("Ocorreu um erro!"))
+            client.channels.cache.get(player.textChannel).send(`:thumbsup: **Entrei em \`${client.channels.cache.get(player.voiceChannel).name}\`**`).catch(e => console.log("Ocorreu um erro!"))
         })
         .on("playerMove", async (player, oldChannel, newChannel) => {
             if (!newChannel) {
