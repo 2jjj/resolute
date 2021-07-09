@@ -3,7 +3,7 @@ const { Message } = require('discord.js')
 
 module.exports = {
     name: "blacklist",
-    aliases: [],
+    aliases: ['blacklist-add'],
     category: "dev",
     description: "",
 
