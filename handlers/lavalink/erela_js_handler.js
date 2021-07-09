@@ -101,7 +101,7 @@ module.exports = (client) => {
             let channel = await client.channels.fetch(player.voiceChannel)
             client.channels.cache
                 .get(player.textChannel)
-                .send(`:x: A fila acabou!\n:thumbsup: Sai do canal: **${channel.name}**`);
+                .send(`:x: **A fila acabou!**\n👋 **Sai do canal de voz:** **${channel.name}**`);
             player.destroy();
 
         });
