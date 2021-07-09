@@ -25,7 +25,7 @@ module.exports = {
 			.setTitle("Autorole ativado!")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Autor:`, `${user}`)
+			.addField(`Requisitado por:`, `${user}`)
 			.addField(`Cargo:`, `${cargo_autorole}`)
 			.setFooter("Resolute", message.author.displayAvatarURL())
 			.setTimestamp();
