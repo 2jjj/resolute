@@ -98,10 +98,10 @@ module.exports = (client) => {
         })
         .on("queueEnd", async (player) => {
 
-            /*let channel = await client.channels.fetch(player.voiceChannel)
+            let channel = await client.channels.fetch(player.voiceChannel)
             client.channels.cache
                 .get(player.textChannel)
-                .send(`:x: Queue ended!\n:thumbsup: Left: **${channel.name}**`);*/
+                .send(`:x: A fila acabou!\n:thumbsup: Sai do canal: **${channel.name}**`);
             player.destroy();
 
         });
