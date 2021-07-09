@@ -23,6 +23,9 @@ module.exports = {
     if (player && channel.id !== player.voiceChannel) {
       return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para poder ultilizar este comando**`);
     }
+    
+    player.destroy()
+    message.guild.me.voice.channel.leave()
     return message.channel.send(`**:mailbox_with_no_mail: Desconectado com sucesso!**`).catch(e => console.log(e))
   }
 };
