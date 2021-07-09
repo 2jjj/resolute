@@ -15,9 +15,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if (!args[0]) {
-			return;
-		}
+		if (!args[0]) return;
 
 		if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m") && !args[0].endsWith("s")) return message.channel.send(
 			`<:1926blurplecross:856520144872407060> **|** Use a forma correta para definir o tempo, Use Apenas Letras Minusculas Exemplo: 1m, 1h, 1d`
@@ -28,7 +26,7 @@ module.exports = {
 		let channel = message.mentions.channels.first();
 
 		if (!channel) return message.channel.send(
-			`<:1926blurplecross:856520144872407060> **|**ocê precisa marcar o canal para o sorteio **|** s.sorteio <#canal>`
+			`<:1926blurplecross:856520144872407060> **|** Você precisa marcar o canal para o sorteio **|** s.sorteio <#canal>`
 		);
 
 		let prize = args.slice(2).join(" ");
