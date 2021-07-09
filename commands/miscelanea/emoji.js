@@ -1,6 +1,3 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
-
 module.exports = {
 	name: "emoji",
 	aliases: ['emojiinfo'],
@@ -13,7 +10,6 @@ module.exports = {
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-
 
 		let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
