@@ -13,7 +13,7 @@ module.exports = {
 	async run(bot, message, args) {
 		
 		let embed = new Discord.MessageEmbed()
-			.setTitle("Pedra, Papel, Tesoura!")
+			.setTitle("Pedra, Papel e Tesoura!")
 			.setDescription("Reaja para jogar!")
 			.setTimestamp()
 		let msg = await message.channel.send(embed)
