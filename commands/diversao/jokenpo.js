@@ -37,7 +37,7 @@ module.exports = {
 					let result = new Discord.MessageEmbed()
 						.setTitle("Resultado")
 						.addField("Sua escolha", `${reaction.emoji.name}`)
-						.addField("Escolha de bot", `${me}`)
+						.addField("Escolha do bot", `${me}`)
 					await msg.edit(result)
 
 					if ((me === "<:Stone:849087811188686968>" && reaction.emoji.name === "✂") ||
