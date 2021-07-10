@@ -2,10 +2,10 @@ const Discord = require("discord.js")
 const guildSchema = require('../../database/mongoDB/guild.js');
 
 module.exports = async (client, guild) => {
-    
-    client.channels.cache.get("841353285381914624").setName(`📝│Servidores: ${botGuilds}`).catch((e) => console.log((e)))
-    client.channels.cache.get("855968171855839242").setName(`💻│Shards: ${config.shards}`).catch((e) => console.log((e)))
-    client.channels.cache.get("841733238165995570").setName(`📝│Users: ${client.users.cache.size}`).catch((e) => console.log((e)))
+
+    //client.channels.cache.get("841353285381914624").setName(`📝│Servidores: ${botGuilds}`).catch((e) => console.log((e)))
+    //client.channels.cache.get("855968171855839242").setName(`💻│Shards: ${config.shards}`).catch((e) => console.log((e)))
+    //client.channels.cache.get("841733238165995570").setName(`📝│Users: ${client.users.cache.size}`).catch((e) => console.log((e)))
 
     guildSchema.findOneAndDelete({
         Guild: guild.id
