@@ -7,7 +7,7 @@ module.exports = {
 	description: "Comando para pesquisar algo nas docs do discord.js",
 	category: "outros",
 	usage: "<conteudo>",
-	example: "discordjs message",
+	example: "message",
 
 	async run(client, message, args) {
 

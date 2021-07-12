@@ -5,6 +5,7 @@ module.exports = {
 	description: "Pesquisar um repositório no github.",
 	category: "outros",
 	usage: "<repo>",
+	example: "sprayx",
 
 	async run(client, message, args) {
 

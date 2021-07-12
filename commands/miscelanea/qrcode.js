@@ -7,7 +7,7 @@ module.exports = {
 	description: "Consiga um qrcode para seu link.",
 	category: "outros",
 	usage: "<link>",
-	example: "qrcode https://resolutebot.xyz",
+	example: "https://resolutebot.xyz",
 
 
 	async run(client, message, args) {
@@ -19,7 +19,6 @@ module.exports = {
         if (require('is-url')(args[0])) {
             const attachment = new Discord.MessageAttachment(qrlink, 'qrcode.png');
             const embed = new Discord.MessageEmbed()
-            .setTitle('Aqui está!')
             .attachFiles(attachment)
             .setImage('attachment://qrcode.png')
             .setFooter(`Requisitado por ${message.author.username}`,  message.author.displayAvatarURL({ dynamic: true }))

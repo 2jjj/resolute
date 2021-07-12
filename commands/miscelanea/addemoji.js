@@ -7,7 +7,7 @@ module.exports = {
 	description: "Adicione um emoji de outro servidor!",
 	category: "outros",
 	usage: "<emoji>",
-	example: "addemoji <:linux:817057043470221362>",
+	example: "<:linux:817057043470221362>",
 
 	async run(client, message, args) {
 

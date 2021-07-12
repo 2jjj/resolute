@@ -7,7 +7,7 @@ module.exports = {
 	description: "Com este comando você pode encurtar qualquer url por ai!",
 	category: "outros",
 	usage: "<url>",
-	example: "encurtar youtube.com",
+	example: "youtube.com",
 
 	async run(client, message, args) {
 

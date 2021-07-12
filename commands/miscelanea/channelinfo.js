@@ -7,7 +7,7 @@ module.exports = {
 	description: "Obtenha informações de um canal",
 	category: "outros",
 	usage: "<canal>",
-	example: "channelinfo #geral",
+	example: "#geral",
 
 	async run(client, message, args) {
 

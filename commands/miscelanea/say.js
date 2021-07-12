@@ -7,7 +7,7 @@ module.exports = {
 	description: "Com esse comando eu posso falar oque você deseja por embed!",
 	category: "fun",
 	usage: "<texto>",
-	example: "say Olá",
+	example: "Olá",
 
 	async run(client, message, args) {
 

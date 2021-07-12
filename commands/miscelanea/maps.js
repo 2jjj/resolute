@@ -8,7 +8,7 @@ module.exports = {
 	description: "Comando para ver a foto de uma determinada localização pelo google maps.",
 	category: "outros",
 	usage: "<cidade>",
-	example: "maps Los Angeles",
+	example: "Los Angeles",
 
 	async run(client, message, args) {
 

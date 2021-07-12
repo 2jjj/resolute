@@ -8,7 +8,7 @@ module.exports = {
 	description: "Veja informações de uma cor!",
 	category: "outros",
 	usage: "<#cor>",
-	example: "color #000",
+	example: "#000",
 
 	async run(client, message, args) {
 

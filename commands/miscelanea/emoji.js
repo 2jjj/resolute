@@ -5,7 +5,7 @@ module.exports = {
 	description: "Escreva o nome do emoji como argumentos e eu irei enviar o emoji!",
 	category: "outros",
 	usage: "<emoji_name>",
-	example: "emoji SETA",
+	example: "SETA",
 
 	async run(client, message, args) {
 
