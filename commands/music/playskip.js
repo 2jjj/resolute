@@ -6,8 +6,8 @@ module.exports = {
   cooldown: 2000 * 2,
   description: "Pula a música atual e reproduz a música que você solicitou.",
   category: "music",
-  usage: "",
-  example: "",
+  usage: "<URL/NOME>",
+  example: "AJR - Come hang out",
 
   async run(client, message, args) {
 
