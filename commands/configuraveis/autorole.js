@@ -9,6 +9,7 @@ module.exports = {
 	category: "config",
 	usage: "@cargo",
 	example: "@Membros",
+	args: true,
 
 	async run(client, message, args) {
 

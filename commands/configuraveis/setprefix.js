@@ -10,6 +10,7 @@ module.exports = {
     category: "config",
     usage: "<novo_prefixo>",
     example:"!",
+	args: true,
 
     async run(client, message, args, msg) {
 
