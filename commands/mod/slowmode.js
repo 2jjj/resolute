@@ -9,13 +9,15 @@ module.exports = {
 	category: "mod",
 	usage: "<tempo> [motivo]",
 	example: "5000 tem gente spamando.",
+	permissoes: "MANAGE_CHANNELS",
+	args: true,
 
 	async run(client, message, args) {
 
 		if(!args[0]) return;
-
-		if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("<:1598blurplesupport:856520144599777291> **|** Você não possui permissões para usar este comando | `MANAGE_CHANNELS`");
-
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+		
 		const currentCooldown = message.channel.rateLimitPerUser;
 		const reason = args[1] ? args.slice(1).join(' ') : 'Sem motivos.';
 

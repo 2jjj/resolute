@@ -8,13 +8,15 @@ module.exports = {
 	category: "mod",
 	usage: "@user <tempo>",
 	example: "@Spray#0007 4000",
+	permissoes: "MANAGE_MESSAGES",
+	args: true,
 
 	async run(client, message, args) {
 
 		if(!args[0]) return;
-
-		if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('<:x_:856894534071746600> **|** Você não possui permissões para usar esse comando.')
-		
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;	
+			
 		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 		const time = args[1]
 
