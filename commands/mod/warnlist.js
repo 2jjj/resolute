@@ -8,7 +8,7 @@ module.exports = {
 	description: "Veja os warns de um determinado usuário!",
 	category: "mod",
 	usage: "@user",
-	example: "@Spray#7725",
+	example: "",
 
 	async run(client, message, args) {
 
