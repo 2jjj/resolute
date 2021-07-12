@@ -9,10 +9,12 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
+	permissoes: "ADMINISTRATOR",
 
 	async run(client, message, args) {
 
 		if (!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -26,11 +28,8 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-
-		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Administrador`")
 		
 		let membro = message.mentions.users.first()
-
 		let motivo = args.slice(1).join(" ");
 
 		let embed1 = new Discord.MessageEmbed()

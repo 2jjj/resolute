@@ -8,10 +8,12 @@ module.exports = {
 	category: "mod",
 	usage: "@usuario <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
-
+	permissoes: "BAN_MEMBERS",
+	
 	async run(client, message, args) {
 
 		if(!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -25,8 +27,6 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-
-		if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Banir membros`")
 
 		const usuario = message.mentions.members.first()
 		const motivo = args.slice(1).join(" ");
