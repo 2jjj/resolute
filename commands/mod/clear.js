@@ -6,15 +6,15 @@ module.exports = {
 	category: "mod",
 	usage: "<0/99>",
 	example: "99",
+	permissoes: "MANAGE_MESSAGES",
 	args: true,
 
 	async run(client, message, args) {
 
 		if (!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
 
 		let user = message.author.username
-
-		if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Gerenciar mensagens`")
 
 		const deleteCount = parseInt(args[0], 10);
 
