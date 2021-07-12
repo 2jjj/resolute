@@ -8,6 +8,8 @@ module.exports = {
   description: "R.I.P",
   category: "manipulacao",
   usage: "@user",
+  example: "",
+  args: false,
 
   async run(client, message, args) {
 

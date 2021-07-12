@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 const {
 	MessageAttachment
 } = require('discord.js')
@@ -11,7 +10,9 @@ module.exports = {
 	description: "Faça nosso querido bot Clyde falar algo!",
 	category: "manipulacao",
 	usage: "<texto>",
-
+	example: "ola spray voce esta banido",
+	args: true,
+	
 	async run(client, message, args) {
 
 		const url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${args[0]}`;

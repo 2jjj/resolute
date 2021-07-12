@@ -7,7 +7,9 @@ module.exports = {
     description: "",
     category: "manipulacao",
     usage: "@user",
-
+    example: "",
+    args: false,
+    
     async run(client, message, args) {
 
         const member = message.mentions.members.first() || message.member;

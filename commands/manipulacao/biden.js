@@ -6,7 +6,9 @@ module.exports = {
   description: "",
   category: "manipulacao",
   usage: "<texto>",
-
+  example: "oi",
+  args: true,
+  
   async run(client, message, args) {
     const sentence = args.join(" ")
     if (!sentence) return;

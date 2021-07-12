@@ -6,8 +6,10 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Conquista do minecraft.",
 	category: "manipulacao",
-	usage: "@user",
-
+	usage: "<texto>",
+	example: "eu matei uma vaca",
+	args: true,
+	
 	async run(client, message, args) {
 
 		const a = args.join("+")

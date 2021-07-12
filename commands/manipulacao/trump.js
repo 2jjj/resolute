@@ -7,6 +7,8 @@ module.exports = {
     description: "Trump meme",
     category: "manipulacao",
     usage: "<texto>",
+    example: "teste de texto",
+    args: true,
 
     async run(client, message, args) {
 

@@ -10,7 +10,9 @@ module.exports = {
 	description: "Faça o bolsonaro falar algo na tv.",
 	category: "manipulacao",
 	usage: "<texto>",
-
+	example: "oi talkey???!!",
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!cooldowns[message.author.id]) cooldowns[message.author.id] = {

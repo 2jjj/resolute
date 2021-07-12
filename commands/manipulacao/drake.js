@@ -4,10 +4,12 @@ module.exports = {
     name: 'drake',
     aliases: [],
     description: 'drake meme',
-    usage: '<texto1>, <texto2>',
     category: "manipulacao",
     cooldown: 1000 * 2,
-
+    usage: '<texto1>, <texto2>',
+    example: "comprar um ps4, comprar um pc",
+    args: true,
+    
     async run(client, message, args) {
 
         const split = args.join(" ").split(",")

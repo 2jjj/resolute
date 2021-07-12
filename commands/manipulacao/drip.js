@@ -6,6 +6,8 @@ module.exports = {
 	description: "",
 	category: "manipulacao",
 	usage: "",
+	example: "",
+    args: false,
 
 	async run(client, message, args) {
 		const user = message.mentions.users.first() || message.author;

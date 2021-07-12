@@ -7,7 +7,9 @@ module.exports = {
     description: "Cachorrin",
     category: "manipulacao",
     usage: "<texto>",
-
+    example: "auau",
+    args: true,
+    
     async run(client, message, args) {
 
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")

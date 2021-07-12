@@ -8,14 +8,16 @@ module.exports = {
 	description: "Faça o bebe falar as primeiras palavras!",
 	category: "manipulacao",
 	usage: "<texto>",
+	example: "resolute e bom",
+    args: true,
 
 	async run(client, message, args) {
 
 		if (message.content.split(' ').slice(1).join(' ').length < 1) {
-			message.reply('<:info:835206734225473546> | Você não escreveu nada.')
+			return;
 		} else {
 			if (message.content.split(' ').slice(1).join(' ').length > 50) {
-				message.reply('<:info:835206734225473546> | Você ultrapassou o limite de 50 caracteres.')
+				message.reply('Você ultrapassou o limite de 50 caracteres.')
 			} else {
 				if (message.member.hasPermission('ATTACH_FILES')) {
 					var authorMessage = message

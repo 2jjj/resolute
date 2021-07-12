@@ -8,6 +8,8 @@ module.exports = {
   description: "MM aquela bala, isso mesmo, você vai virar um mm.",
   category: "manipulacao",
   usage: "@user",
+  example: "",
+  args: false,
 
   async run(client, message, args) {
 

@@ -8,6 +8,8 @@ module.exports = {
     description: "",
     category: "manipulacao",
     usage: "<texto>",
+    example: "pika pika",
+    args: true,
 
     async run(client, message, args) {
 

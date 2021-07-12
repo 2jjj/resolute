@@ -5,7 +5,9 @@ module.exports = {
 	description: "Ata monica",
 	category: "manipulacao",
 	usage: "@user",
-
+	example: "",
+	args: false,
+	
 	async run(client, message, args) {
 
 		const Canvas = require(`canvas`);

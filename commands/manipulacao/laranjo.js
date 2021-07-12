@@ -9,6 +9,8 @@ module.exports = {
 	description: "Faça o laranjo dizer algo!",
 	category: "manipulacao",
 	usage: "<texto>",
+	example: "",
+    args: false,
 
 	async run(client, message, args) {
 

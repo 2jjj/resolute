@@ -8,7 +8,9 @@ module.exports = {
   description: "Delete algo!",
   category: "manipulacao",
   usage: "@user",
-
+  example: "",
+  args: false,
+  
   async run (client, message, args) {
   
  //   const m = client.findMember(message, args, true);

@@ -8,6 +8,9 @@ module.exports = {
     description: 'Iphone X User Profile',
     usage: 'iphonex <user>',
     cooldown: 1000 * 2,
+    example: "",
+    args: false,
+
     run: async (client, message, args) => {
     
         let mention = message.mentions.members.first();

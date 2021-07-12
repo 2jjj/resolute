@@ -8,7 +8,9 @@ module.exports = {
     category: "manipulacao",
     cooldown: 1000 * 2,
     usage: "<texto>",
-
+    example: "oi",
+    args: true,
+    
     async run(client, message, args) {
 
         const comment = args.join('');
