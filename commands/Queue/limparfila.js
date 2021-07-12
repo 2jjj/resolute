@@ -8,6 +8,7 @@ module.exports = {
   example: "",
 
   async run(client, message, args) {
+    
     const { channel } = message.member.voice;
 
     if (!channel) return message.channel.send(`:x: **Você deve estar em um canal de voz para usar este comando.**`);
