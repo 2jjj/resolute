@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 2000 * 2,
   description: "Toca uma música do SoundCloud com o nome / url fornecido.",
   category: "music",
-  usage: "",
+  usage: "URL/NOME",
   example: "",
 
   async run(client, message, args) {
@@ -22,7 +22,7 @@ module.exports = {
     const player = client.manager.players.get(message.guild.id);
 
     if (player && channel.id !== player.voiceChannel)
-      return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
+      return message.channel.send(`**:x: **|** Você precisa estar no mesmo canal de voz que eu para usar este comando!**`);
 
     if (player && botchannel && channel.id !== botchannel.id) {
       player.destroy();

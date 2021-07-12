@@ -64,7 +64,7 @@ module.exports = async (client, message) => {
       .setDescription(`${command.description}`)
       .addField(`Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
       .addField(`Forma de ultilização:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-      .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.example}` : `Sem exemplos para este comando.` }\``)
+      .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
       .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
         dynamic: true
       }))
