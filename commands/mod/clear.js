@@ -13,6 +13,7 @@ module.exports = {
 
 		if (!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
 		let user = message.author.username
 

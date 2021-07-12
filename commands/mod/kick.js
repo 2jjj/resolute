@@ -8,6 +8,8 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Quebrou a tos do discord.",
+	permissoes:
+	args: true,
 
 	async run(client, message, args) {
 

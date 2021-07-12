@@ -8,11 +8,14 @@ module.exports = {
 	category: 'mod',
 	usage: "<id> <motivo>",
 	example: "836345581424738354 Tentou burlar o ban...",
+	permissoes: "BAN_MEMBERS",
 	args: true,
 
 	async run(client, message, args) {
 
 		if (!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -26,10 +29,6 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-
-		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Banir membros`")
-		
-		if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Eu não tenho a permissão de \`BAN_MEMBERS\`')
 		
 		let userID = args[0]
 		let motivo = args.slice(1).join(' ')

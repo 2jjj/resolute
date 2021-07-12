@@ -15,6 +15,7 @@ module.exports = {
 
 		if(!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -31,13 +32,6 @@ module.exports = {
 
 		const usuario = message.mentions.members.first()
 		const motivo = args.slice(1).join(" ");
-
-		if (!usuario.bannable) return message.channel.send({
-			embed: {
-				color: "RANDOM",
-				description: "Eu não tenho permissão para banir este usuário! | **Permissão necessária: Banir membros**"
-			}
-		})
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Resolute")
