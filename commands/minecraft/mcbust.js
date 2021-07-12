@@ -8,7 +8,8 @@ module.exports = {
     category: "minecraft",
     usage: "<nickname>",
     example: "TheSpr4y",
-
+    args: true,
+	
     run: async(client, message, args) => { 
   
     if(!args[0]) return;
