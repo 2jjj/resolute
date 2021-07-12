@@ -6,6 +6,7 @@ module.exports = {
 	category: "mod",
 	usage: "<0/99>",
 	example: "99",
+	args: true,
 
 	async run(client, message, args) {
 

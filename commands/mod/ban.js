@@ -9,7 +9,8 @@ module.exports = {
 	usage: "@usuario <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
 	permissoes: "BAN_MEMBERS",
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if(!args[0]) return;
