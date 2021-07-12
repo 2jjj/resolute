@@ -339,7 +339,7 @@ async function playskip(client, message, args, type) {
         if(message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
           message.channel.send(playlistembed);
         else
-          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até tocr:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
+          message.channel.send(`Adicionada: \`${res.tracks[0].title}\` - para a fila\n**Canal:** ${res.tracks[0].author}\n**Duração da música:** ${res.tracks[0].isStream ? "LIVE STREAM" : format(res.tracks[0].duration).split(" | ")[0]}\n**Tempo estimado até tocar:** ${time}\n**Posição na fila:** ${player.queue.length}\n${res.tracks[0].uri}`);
   }
 }
 
