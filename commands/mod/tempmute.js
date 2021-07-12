@@ -7,7 +7,7 @@ module.exports = {
 	description: "Silenciar alguém temporariamente.",
 	category: "mod",
 	usage: "@user <tempo>",
-	example: "tempmute @Spray#0007 4000",
+	example: "@Spray#0007 4000",
 
 	async run(client, message, args) {
 
