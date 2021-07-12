@@ -26,12 +26,7 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send({
-			embed: {
-				color: "#ff0000",
-				description: "Você não tem permissão para utilizar este comando! | Permissão necessária: BAN_MEMBERS"
-			}
-		})
+		if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Banir membros`")
 
 		const usuario = message.mentions.members.first()
 		const motivo = args.slice(1).join(" ");

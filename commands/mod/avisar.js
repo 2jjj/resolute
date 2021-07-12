@@ -27,7 +27,8 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de  **Administrador**")
+		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Administrador`")
+		
 		let membro = message.mentions.users.first()
 
 		let motivo = args.slice(1).join(" ");
