@@ -9,6 +9,7 @@ module.exports = {
     category: "fun",
     usage: "<texto>",
     example: "meu texto!",
+	args: true,
 
     async run(client, message, args) {
 

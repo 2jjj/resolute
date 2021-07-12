@@ -6,6 +6,7 @@ module.exports = {
   category: "fun",
   usage: "<cara/coroa>",
   example: "cara",
+  args: true,
 
   async run(client, message, args) {
 
