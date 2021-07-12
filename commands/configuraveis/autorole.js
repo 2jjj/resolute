@@ -8,7 +8,7 @@ module.exports = {
 	description: "Setar o cargo automático de quando alguém entrar em seu servidor.",
 	category: "config",
 	usage: "@cargo",
-	example: "autorole @Membros",
+	example: "@Membros",
 
 	async run(client, message, args) {
 

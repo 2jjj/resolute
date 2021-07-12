@@ -7,7 +7,7 @@ module.exports = {
 	description: "carinho em alguém.",
 	category: "gifs",
 	usage: "@user",
-	example: "carinho @Spray#7725",
+	example: "@Spray#7725",
 
 	async run(client, message, args) {
 		
