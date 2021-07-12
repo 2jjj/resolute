@@ -7,7 +7,7 @@ module.exports = {
   description: "Avança um determinado tempo na música.",
   category: "music",
   usage: "<tempo>",
-  example: "",
+  example: "AJR - Come hang out",
 
   async run(client, message, args) {
 
