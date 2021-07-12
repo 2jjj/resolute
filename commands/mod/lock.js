@@ -8,16 +8,18 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
+	permissoes: "MANAGE_CHANNELS",
 
 	async run(client, message, args) {
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
 
-		if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Você não possui a permissão de \`GERENCIAR CANAIS\``);
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
+		
 		if (db.fetch(`lock.${message.channel.id}`)) return message.reply("<a:SETA:852194614927818812> Este canal já está bloqueado.")
-
 		let msg = await message.channel.send("Sucesso!")
 
 		try {
