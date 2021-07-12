@@ -8,6 +8,7 @@ module.exports = {
 	category: "gifs",
 	usage: "@user",
 	example: "@Spray#7725",
+	args: true,
 
 	async run(client, message, args) {
 		
