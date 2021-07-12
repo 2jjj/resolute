@@ -6,10 +6,15 @@ module.exports = {
 	category: "mod",
 	usage: "@user",
 	example: "@Spray#7725",
+	permissoes: "MANAGE_MESSAGES",
+	args: true,
 
 	async run(client, message, args) {
 
 		if(!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;	
+
 		let motivo = args.slice(1).join(' ')
 
 		const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
