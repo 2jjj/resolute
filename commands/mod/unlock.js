@@ -8,13 +8,16 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
+	permissoes: "MANAGE_CHANNELS",
 
 	async run(client, message, args) {
 
 		let prefix = db.get(`prefix_${message.guild.id}`)
 		if (prefix === null) prefix = "s."
 
-		if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`<:x_:856894534071746600> **|** Você não possui a permissão de \`GERENCIAR CANAIS\``);
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;	
+	
 		if (!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
 		let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
