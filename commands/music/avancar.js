@@ -1,3 +1,5 @@
+//parei aqui
+
 const { format } = require(`../../handlers/functions`);
 
 module.exports = {
