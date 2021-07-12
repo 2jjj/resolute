@@ -8,7 +8,7 @@ module.exports = {
     description: "Deposite suas coins no banco!",
     category: "economia",
     usage: "<quantidade>",
-    example: "depositar 1000",
+    example: "1000",
 
     async run(client, message, args) {
 

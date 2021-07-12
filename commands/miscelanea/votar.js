@@ -7,7 +7,7 @@ module.exports = {
 	description: "Abra uma votação no seu servidor!",
 	category: "outros",
 	usage: `<conteudo>`,
-	example: "votar devo banir o spray?",
+	example: "Devo criar um chat de divulgação?",
 
 	async run(client, message, args) {
 

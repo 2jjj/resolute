@@ -9,7 +9,7 @@ module.exports = {
   description: "Com este comando você vai conseguir falar por 𝕖𝕤𝕤𝕒 𝕗𝕠𝕟𝕥𝕖!",
   category: "fun",
   usage: "<texto>",
-  example: "doublestruck teste de texto",
+  example: "teste de texto",
 
   async run(client, message, args) {
 

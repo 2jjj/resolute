@@ -8,7 +8,7 @@ module.exports = {
     description: "Pague para alguém que está devendo!",
     category: "economia",
     usage: "@user <quantidade>",
-    example: "pay Spray#7725 1000",
+    example: "Spray#7725 1000",
 
     async run(client, message, args) {
 

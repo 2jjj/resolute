@@ -5,7 +5,7 @@ module.exports = {
   description: "Jogue cara ou coroa com seus amigos!",
   category: "fun",
   usage: "<cara/coroa>",
-  example: "coinflip cara",
+  example: "cara",
 
   async run(client, message, args) {
 

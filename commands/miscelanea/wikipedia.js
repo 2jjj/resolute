@@ -8,7 +8,7 @@ module.exports = {
 	description: "Pesquisar uma wiki na wikipedia.",
 	category: "outros",
 	usage: "<wiki>",
-	example: "wikipedia Nirvana_(banda)",
+	example: "Nirvana_(banda)",
 
 	async run(client, message, args) {
 

@@ -9,7 +9,7 @@ module.exports = {
     description: "Roube alguém!",
     category: "economia",
     usage: "@user",
-    example: "roubar  Spray#7725",
+    example: "Spray#7725",
 
     async run(client, message, args) {
 

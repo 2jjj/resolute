@@ -9,7 +9,7 @@ module.exports = {
 	description: "Busque por informações do seu jogo favorito da steam!",
 	category: "outros",
 	usage: "<jogo>",
-	example: "steam csgo",
+	example: "csgo",
 
 	async run(client, message, args) {
 

@@ -11,7 +11,7 @@ module.exports = {
 	description: "Faça um sorteio.",
 	category: "outros",
 	usage: "<tempo> <#canal> <premio>",
-	example: "sorteio 1000 #sorteios Discord nitro classic",
+	example: "1m #sorteios Discord nitro classic",
 
 	async run(client, message, args) {
 
@@ -33,12 +33,12 @@ module.exports = {
 
 		if (!prize) return message.channel.send(`<:1926blurplecross:856520144872407060> **|** Você precisa colocar o prêmio!`);
 
-		message.channel.send(`*<:3169blurpleverified:856520145254088714> **|** Sorteio criado em ${channel}*`);
+		message.channel.send(`<:3169blurpleverified:856520145254088714> **|** Sorteio criado em ${channel}`);
 
 		let Embed = new MessageEmbed()
-			.setTitle(`Sorteio`)
+			.setTitle(`Novo sorteio!`)
 			.setDescription(
-				`<a:SETA:852194614927818812> Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
+				`Sorteio criado por ${message.author} \n Clique Em 🎉 Para Participar\nSorteio: **${prize}**`
 			)
 			.setTimestamp(Date.now() + ms(args[0]))
 			.setColor("#RANDOM");
