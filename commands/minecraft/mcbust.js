@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "mcbust",
     description: "Comando para pegar o Bust de uma Skin de Minecraft.",
-    aliases: [],
+    aliases: ['bust'],
     cooldown: 1000 * 2, 
     category: "minecraft",
     usage: "<nickname>",

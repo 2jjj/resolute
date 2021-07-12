@@ -3,7 +3,7 @@ const Discord = require ("discord.js")
 module.exports = {
     name: "mcplayer",
     description: "Pegar uma imagem de um player do minecraft.",
-    aliases: [],
+    aliases: ['player'],
     cooldown: 1000 * 2, 
     category: "minecraft",
     usage: "<nickname>",

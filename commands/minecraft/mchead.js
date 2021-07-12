@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "mchead",
     description: "Comando para pegar o Head de uma Skin de Minecraft.",
-    aliases: [],
+    aliases: ['head'],
     cooldown: 1000 * 2, 
     category: "minecraft",
     usage: "<nickname>",
