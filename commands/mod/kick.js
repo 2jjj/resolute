@@ -8,12 +8,14 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Quebrou a tos do discord.",
-	permissoes:
+	permissoes: "KICK_MEMBERS",
 	args: true,
 
 	async run(client, message, args) {
 
 		if (!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
@@ -28,16 +30,6 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		const embed = new Discord.MessageEmbed()
-			.setTitle("Sem permissão.")
-			.setColor("RANDOM")
-			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Você não possui a permissão de`, `**KICK_MEMBERS**`)
-			.setFooter("Resolute", message.author.displayAvatarURL())
-			.setTimestamp();
-
-
-		if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embed)
 		let target = message.mentions.members.first()
 
 		if (target.id === message.author.id) {
