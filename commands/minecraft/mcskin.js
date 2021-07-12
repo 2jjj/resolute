@@ -3,7 +3,7 @@ const Discord = require ("discord.js")
 module.exports = {
     name: "mcskin",
     description: "O bot vai mandar a skin de algum player de minecraft.",
-    aliases: [],
+    aliases: ['skin'],
     cooldown: 1000 * 2, 
     category: "minecraft",
     usage: "<nickname>",
