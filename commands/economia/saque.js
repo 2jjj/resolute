@@ -9,6 +9,7 @@ module.exports = {
     category: "economia",
     usage: "<quantidade>",
     example: "1000",
+	args: true,
 
     async run(client, message, args) {
 
