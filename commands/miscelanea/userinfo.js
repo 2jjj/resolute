@@ -8,7 +8,8 @@ module.exports = {
 	category: "outros",
 	usage: "<id/@user>",
 	example: "@Spray#7725",
-
+	args: false,
+	
 	async run(client, message, args) {
 
 		let inline = true

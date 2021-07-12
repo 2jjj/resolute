@@ -9,7 +9,8 @@ module.exports = {
 	category: "outros",
 	usage: "",
 	example: "",
-
+	args: false,
+	
 	async run(client, message, args) {
 
 		let serverembed = new Discord.MessageEmbed()

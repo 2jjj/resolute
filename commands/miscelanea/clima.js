@@ -10,6 +10,7 @@ module.exports = {
 	category: "outros",
 	usage: "<cidade>",
 	example: "sp",
+	args: true,
 
 	async run(client, message, args) {
 

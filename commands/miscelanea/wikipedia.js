@@ -9,7 +9,8 @@ module.exports = {
 	category: "outros",
 	usage: "<wiki>",
 	example: "Nirvana_(banda)",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) return;

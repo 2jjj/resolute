@@ -9,7 +9,8 @@ module.exports = {
 	category: "outros",
 	usage: "<cidade>",
 	example: "Los Angeles",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) return;

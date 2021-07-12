@@ -8,12 +8,11 @@ module.exports = {
 	category: "outros",
 	usage: "en/pt/fr/lt <texto>",
 	example: "translate en Hello",
-
+	args: true,
+	
 	async run(client, message, args) {
 
-		if (!args[0]) {
-			return;
-		}
+		if (!args[0]) return;
 
 		let googlepng = 'https://i.imgur.com/oZA4FaQ.png'
 		let language = args[0]

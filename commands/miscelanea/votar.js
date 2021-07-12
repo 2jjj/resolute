@@ -8,7 +8,8 @@ module.exports = {
 	category: "outros",
 	usage: `<conteudo>`,
 	example: "Devo criar um chat de divulgação?",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) return;

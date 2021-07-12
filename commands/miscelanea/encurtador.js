@@ -8,7 +8,8 @@ module.exports = {
 	category: "outros",
 	usage: "<url>",
 	example: "youtube.com",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) return;

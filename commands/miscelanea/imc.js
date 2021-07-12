@@ -9,7 +9,8 @@ module.exports = {
 	category: "outros",
 	usage: "<kg> <metros>",
 	example: "60 170",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) {

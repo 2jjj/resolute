@@ -8,7 +8,8 @@ module.exports = {
 	category: "outros",
 	usage: "",
 	example: "",
-
+	args: false,
+	
 	async run(client, message, args) {
 
 		let icone = new Discord.MessageEmbed()

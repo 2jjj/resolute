@@ -11,7 +11,8 @@ module.exports = {
 	category: "outros",
 	usage: "@cargo",
 	example: "@CEO",
-
+	args: true,
+	
 	async run(client, message, args) {
 
 		if (!args[0]) return;

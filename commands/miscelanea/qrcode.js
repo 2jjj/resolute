@@ -8,8 +8,8 @@ module.exports = {
 	category: "outros",
 	usage: "<link>",
 	example: "https://resolutebot.xyz",
-
-
+	args: true,
+	
 	async run(client, message, args) {
     
         let qrlink = `http://api.qrserver.com/v1/create-qr-code/?data=${args[0]}&size=200x200`

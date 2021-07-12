@@ -7,7 +7,9 @@ module.exports = {
 	description: "Abra um ticket em um canal com seu ID.",
 	category: "outros",
 	usage: "",
-
+	example: "",
+	args: false,
+	
 	async run(client, message, args) {
 
         let prefix = db.get(`prefix_${message.guild.id}`)
