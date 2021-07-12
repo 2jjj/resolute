@@ -26,8 +26,10 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Você não tem a permissão de  \`BAN_MEMBERS\`')
+		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Banir membros`")
+		
 		if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('<:x_:856894534071746600> **|** Eu não tenho a permissão de \`BAN_MEMBERS\`')
+		
 		let userID = args[0]
 		let motivo = args.slice(1).join(' ')
 
