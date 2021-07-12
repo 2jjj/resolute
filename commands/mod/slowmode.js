@@ -7,8 +7,8 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Colocar modo lento no chat.",
 	category: "mod",
-	usage: "<tempo>",
-	example: "slowmode 1000",
+	usage: "<tempo> [motivo]",
+	example: "5000 tem gente spamando.",
 
 	async run(client, message, args) {
 

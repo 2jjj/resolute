@@ -7,7 +7,7 @@ module.exports = {
 	description: "Expulsar uma pessoa de seu servidor.",
 	category: "mod",
 	usage: "@user <motivo>",
-	example: "kick @Spray#7725 É lindo demais",
+	example: "@Spray#7725 Quebrou a tos do discord.",
 
 	async run(client, message, args) {
 

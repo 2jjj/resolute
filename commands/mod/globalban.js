@@ -7,7 +7,7 @@ module.exports = {
 	aliases: ['globalban'],
 	category: 'mod',
 	usage: "<id> <motivo>",
-	example: "globalban 836345581424738354 BANIDO!!",
+	example: "836345581424738354 Tentou burlar o ban...",
 
 	async run(client, message, args) {
 

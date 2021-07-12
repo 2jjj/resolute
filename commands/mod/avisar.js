@@ -8,7 +8,7 @@ module.exports = {
 	description: "Avisar uma pessoa com aviso na dm e acrescentar warns no warnlist.",
 	category: "mod",
 	usage: "@user <motivo>",
-	example: "warn @Spray#7725 Ofensa a staff",
+	example: "@Spray#7725 Ofensa a staff",
 
 	async run(client, message, args) {
 
