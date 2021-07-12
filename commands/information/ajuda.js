@@ -10,7 +10,8 @@ module.exports = {
   cooldown: 1000 * 2, 
   usage: "",
   example: "",
-
+	args: false,
+	
   async run (client, message, args) {
 
     var prefix = db.get(`prefix_${message.guild.id}`)

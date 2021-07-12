@@ -10,6 +10,7 @@ module.exports = {
   category: "info",
   usage: "",
   example: "",
+	args: false,
 
   async run (client, message, args) {
     const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 

@@ -6,8 +6,9 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Reportar um bug para minha equipe de desenvolvedores.",
     category: "info",
-    usage: "<Bug encontrado>",
+    usage: "<bug/report>",
     example: "report O bot ta com bug no help mano...",
+	args: false,
 
     async run(client, message, args) {
 
