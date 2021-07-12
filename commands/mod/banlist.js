@@ -6,10 +6,11 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
+	permissoes: "BAN_MEMBERS",
 
 	async run(client, message, args) {
 
-		if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply("<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de `Banir membros`");
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
 		if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.channel.send('<:x_:856894534071746600> **|** Não tenho permissão para ver a lista de membros banidos!');
 
 		const bans = await message.guild.fetchBans();
