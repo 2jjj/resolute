@@ -25,10 +25,7 @@ module.exports = {
             let attachment = new Discord.MessageAttachment(yt, 'comment.png')
             message.channel.send(attachment)
         } catch (err) {
-            const embed2 = new Discord.MessageEmbed()
-                .setTitle(`${client.emotes.error} Algo correu mal.\n:x: Nota : Não funcionará se o Utilizador contiver caracteres Indesejados no seu nome de utilizador.`)
-                .setColor("RED")
-            message.channel.send(embed2)
+            console.log(err)
         }
     }
 }
