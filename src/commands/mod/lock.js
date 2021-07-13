@@ -8,7 +8,8 @@ module.exports = {
     category: "mod",
     usage: "",
     example: "",
-    permissoes: "MANAGE_CHANNELS",
+	permissoes: "MANAGE_CHANNELS",
+	args: false,
 
 	async run(client, message, args) {
 

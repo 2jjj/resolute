@@ -10,7 +10,7 @@ module.exports = {
 	usage: "<tempo> [motivo]",
 	example: "5000 tem gente spamando.",
 	permissoes: "MANAGE_CHANNELS",
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 

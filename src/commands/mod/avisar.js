@@ -10,7 +10,7 @@ module.exports = {
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
 	permissoes: "ADMINISTRATOR",
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 

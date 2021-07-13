@@ -7,7 +7,7 @@ module.exports = {
 	usage: "",
 	example: "",
 	permissoes: "BAN_MEMBERS",
-    args: false,
+	args: false,
 
 	async run(client, message, args) {
 

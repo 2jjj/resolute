@@ -9,7 +9,7 @@ module.exports = {
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Quebrou a tos do discord.",
 	permissoes: "KICK_MEMBERS",
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 
