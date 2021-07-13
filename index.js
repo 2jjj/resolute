@@ -1,5 +1,8 @@
 ﻿const cor = require("colors");
-const { Client, Collection } = require("discord.js");
+const {
+  Client,
+  Collection
+} = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
 const mongoose = require("mongoose");
@@ -39,7 +42,29 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 client.on('shardReady', (shardid) => {
-  client.user.setActivity(`Online | Shard: ${shardid}`, { shardID: shardid });
+  
+  const status = [{
+      name: `Online | Shard: ${shardid}`,
+      type: 'PLAYING'
+    },
+    {
+      name: `s.play | Shard: ${shardid}`,
+      type: 'PLAYING'
+    },
+  ]
+
+  function Presence() {
+    const base = status[Math.floor(Math.random() * status.length)]
+    client.user.setActivity(base)
+  }
+
+  Presence();
+  setInterval(() => Presence(), 5000)
+
+  /*client.user.setActivity(`Online | Shard: ${shardid}`, {
+    shardID: shardid
+  });*/
+
 })
 
 const Enmap = require("enmap")
