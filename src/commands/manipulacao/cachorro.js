@@ -12,6 +12,8 @@ module.exports = {
     
     async run(client, message, args) {
 
+        if(!args[0]) return;
+
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")
         img.then(image => {
             jimp.loadFont(jimp.FONT_SANS_32_WHITE).then(font => {
