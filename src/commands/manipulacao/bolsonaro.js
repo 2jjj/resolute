@@ -42,7 +42,7 @@ module.exports = {
 		}
 
 		let img = jimp.read("https://cdn.discordapp.com/attachments/814270412422119435/816055040031719424/PicsArt_03-01-06.07.10.png")
-		if (!args[0]) return message.reply("Escreva algo para o bolsonaro falar.")
+		if (!args[0]) return;
 		img.then(image => {
 			jimp.loadFont(jimp.FONT_SANS_32_BLACK).then(font => {
 				image.resize(885, 494)
