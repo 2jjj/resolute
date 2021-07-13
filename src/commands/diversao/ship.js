@@ -10,7 +10,7 @@ module.exports = {
   category: "fun",
   usage: "@user1 @user2",
   example: "@Spray#0007 @px0#0001",
-	args: true,
+  args: true,
 
   async run(client, message, args) {
     const user = message.mentions.users.first();
