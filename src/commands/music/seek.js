@@ -6,8 +6,9 @@ module.exports = {
   cooldown: 2000 * 2,
   description: "Busca um certo ponto na faixa atual.",
   category: "music",
-  usage: "",
-  example: "",
+  usage: "<temp>",
+  example: "40",
+  args: true,
 
   async run(client, message, args) {
 

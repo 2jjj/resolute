@@ -9,6 +9,7 @@ module.exports = {
 	usage: "",
 	example: "",
 	permissoes: "MANAGE_CHANNELS",
+	args: false,
 
 	async run(client, message, args) {
 

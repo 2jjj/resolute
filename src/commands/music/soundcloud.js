@@ -7,7 +7,8 @@ module.exports = {
   description: "Toca uma música do SoundCloud com o nome / url fornecido.",
   category: "music",
   usage: "URL/NOME",
-  example: "",
+  example: "Musics",
+  args: true,
 
   async run(client, message, args) {
 

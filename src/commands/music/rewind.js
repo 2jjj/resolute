@@ -6,8 +6,9 @@ module.exports = {
   cooldown: 2000 * 2,
   description: "Retrocede um certo tempo na faixa atual.",
   category: "music",
-  usage: "",
-  example: "",
+  usage: "<tempo>",
+  example: "50",
+  args: true,
 
   async run(client, message, args) {
   

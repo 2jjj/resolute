@@ -9,6 +9,7 @@ module.exports = {
   category: "music",
   usage: "",
   example: "",
+  args: true,
 
   async run(client, message, args) {
 
