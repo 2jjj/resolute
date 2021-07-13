@@ -48,7 +48,7 @@ client.settings = new Enmap({
   dataDir: "./database/settings"
 })
 
-client.login(require("./botconfig/config.json").token);
+client.login(require("./src/config/config.json").token);
 
 //v2
 //ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.ju8crL6WopqcsbkDEjmAdco22xY
