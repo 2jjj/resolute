@@ -3,7 +3,7 @@ const {
     Message,
     splitMessage
 } = require(`discord.js`);
-const config = require(`../../config/config.json`);
+const config = require(`../../../config/config.json`);
 const { KSoftClient } = require(`@ksoft/api`);
 
 module.exports = {

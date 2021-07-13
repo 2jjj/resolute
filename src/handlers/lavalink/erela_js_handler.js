@@ -1,7 +1,7 @@
 const {  Manager } = require("erela.js");
 const Spotify = require("erela.js-spotify");
 const Deezer = require("erela.js-deezer");
-const config = require("../../config/config.json");
+const config = require("../../../config/config.json");
 const clientID = config.spotify.clientID;
 const clientSecret = config.spotify.clientSecret;
 

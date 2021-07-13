@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const config = require("../config/config.json");
+const config = require("../../config/config.json");
 module.exports = {
   getMember: function (message, toFind = "") {
     try {
