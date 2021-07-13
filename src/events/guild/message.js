@@ -54,13 +54,14 @@ module.exports = async (client, message) => {
   if(command.args == true) {
     if (!args[0]) {
       const help = new Discord.MessageEmbed()
-        .setTitle(`Comando de \`${command.name}\``)
+        .setTitle(`Menu de ajuda - \`${command.name}\``)
+        .setColor("RANDOM")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`${command.description}`)
-        .addField(`Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-        .addField(`Forma de ultilização:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-        .addField(`Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
-        .setFooter(`Comando executado por: ${message.author.username}`, message.author.displayAvatarURL({
+        .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+        .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+        .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
         .setTimestamp();
