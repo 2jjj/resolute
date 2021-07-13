@@ -10,7 +10,7 @@ module.exports = {
     category: "economia",
     usage: "@user",
     example: "Spray#7725",
-	args: true,
+    args: true,
 
     async run(client, message, args) {
 

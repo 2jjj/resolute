@@ -10,8 +10,8 @@ module.exports = {
     category: "economia",
     usage: "",
     example: "",
-	args: false,
-
+    args: true,
+    
     async run(client, message, args) {
 
         let user = message.author;
