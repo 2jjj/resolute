@@ -10,18 +10,13 @@ module.exports = {
     category: "config",
     usage: "<novo_prefixo>",
     example:"!",
+	permissoes: "ADMINISTRATOR",
     args: true,
 
     async run(client, message, args, msg) {
 
-        if (!message.member.hasPermission('ADMINISTRATOR')) {
-            let permss = new Discord.MessageEmbed()
-                .setColor("RANDOM")
-                .setTitle('Permissão Necessária: ADMINISTRADOR')
-            return message.inlineReply(permss)
-        }
-
-        if (!args[0]) return;
+		if (!args[0]) return;
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."

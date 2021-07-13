@@ -8,16 +8,15 @@ module.exports = {
 	description: "Setar o cargo automático de quando alguém entrar em seu servidor.",
 	category: "config",
 	usage: "@cargo",
-	example: "@Membros",
+	permissoes: "ADMINISTRATOR",
     args: true,
 
 	async run(client, message, args) {
 
-        let user = message.author;
-
 		if (!args[0]) return;
-		if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("<:mod:856894534088523776> **|** Sem permissão para executar este comando! | Permissão necessária:ADMINISTRATOR ")
-
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+        
+		let user = message.author;
         let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
         db.set(`autorole_${message.guild.id}`, cargo_autorole.id);
