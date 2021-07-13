@@ -1,11 +1,11 @@
 {
   "name": "resolute",
-  "version": "2.0.0",
-  "description": "Resolute 2.0",
-  "main": "index.js",
+  "version": "2.5.1",
+  "description": "Resolute, o bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
+  "main": "shard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node shard.js"
   },
   "author": "Spray#7725",
   "license": "ISC",
