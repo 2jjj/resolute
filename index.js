@@ -6,16 +6,9 @@ const mongoose = require("mongoose");
 const ascii = require("ascii-table");
 let table = new ascii("MongoDB");
 table.setHeading("Mongo", "Load status");
-
 const client = new Client({
   disableEveryone: true
 });
-
-mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-}).then(table.addRow("Database", '✅'))
-console.log(table.toString().cyan);
 
 require("./util/inlineReply")
 require("./util/quote")
@@ -24,6 +17,12 @@ client.categories = fs.readdirSync("./commands/");
 client.queue = new Map();
 client.commands = new Collection();
 client.aliases = new Collection();
+
+mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}).then(table.addRow("Database", '✅'))
+console.log(table.toString().cyan);
 
 ["command", "events"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
@@ -34,7 +33,6 @@ client.on("guildMemberAdd", async (member) => {
   if (!autorole_resolute === null) return;
   member.roles.add(autorole_resolute)
 });
-
 
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
   try {
@@ -47,36 +45,13 @@ client.on('shardReady', (shardid) => {
   client.user.setActivity(`Online | Shard: ${shardid}`, { shardID: shardid });
 })
 
-client.login(require("./botconfig/config.json").token);
-
 const Enmap = require("enmap")
 client.settings = new Enmap({
   name: "settings",
   dataDir: "./database/settings"
 })
 
-
-process.on("unhandledRejection", (reason, promise) => {
-  console.log("Unhandled Rejection at: " + promise)
-  console.log("Reason: " + reason)
-})
-process.on("uncaughtException", (err, origin) => {
-  console.log("Caught exception: " + err)
-  console.log("Origin: " + origin)
-})
-process.on('uncaughtExceptionMonitor', (err, origin) => {
-  console.log(err);
-  console.log("Origin: " + origin)
-});
-process.on('beforeExit', (code) => {
-  console.log('Process beforeExit event with code: ', code);
-});
-process.on('exit', (code) => {
-  console.log('Process exit event with code: ', code);
-});
-process.on('multipleResolves', (type, promise, reason) => {
-  console.log(type, promise, reason);
-});
+client.login(require("./botconfig/config.json").token);
 
 //v2
 //ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.ju8crL6WopqcsbkDEjmAdco22xY
