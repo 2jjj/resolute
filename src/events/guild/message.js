@@ -68,6 +68,8 @@ module.exports = async (client, message) => {
         .setTimestamp();
       return message.channel.send(help);
     }
+  } else if(command.args == false) {
+    return;
   } else {
     return;
   }
