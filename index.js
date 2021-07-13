@@ -35,10 +35,7 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
-  try {
-    require(`./handlers/lavalink/${handler}`)(client);
-  } catch (e) {
-  }
+  require(`./handlers/lavalink/${handler}`)(client);
 });
 
 client.on('shardReady', (shardid) => {
