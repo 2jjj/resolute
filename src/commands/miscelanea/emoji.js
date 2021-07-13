@@ -6,7 +6,7 @@ module.exports = {
 	category: "outros",
 	usage: "<emoji_name>",
 	example: "emoji",
-	args: true,
+    args: true,
 
 	async run(client, message, args) {
 

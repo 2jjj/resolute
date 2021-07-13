@@ -8,7 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "en/pt/fr/lt <texto>",
 	example: "translate en Hello",
-	args: true,
+    args: true,
 	
 	async run(client, message, args) {
 

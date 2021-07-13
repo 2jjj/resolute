@@ -12,7 +12,7 @@ module.exports = {
   category: "info",
   usage: "",
   example: "",
-	args: false,
+  args: false,
 
   async run(client, message, args) {
 

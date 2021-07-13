@@ -8,7 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<@user>",
 	example: "@Spray#7725",
-	args: false,
+    args: false,
 
 	async run(client, message, args) {
 

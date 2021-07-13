@@ -8,7 +8,7 @@ module.exports = {
 	category: "fun",
 	usage: "<texto>",
 	example: "Olá",
-	args: true,
+    args: true,
 	
 	async run(client, message, args) {
 

@@ -7,7 +7,7 @@ module.exports = {
 	usage: "<0/99>",
 	example: "99",
 	permissoes: "MANAGE_MESSAGES",
-	args: true,
+    args: true,
 
 	async run(client, message, args) {
 

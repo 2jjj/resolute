@@ -9,7 +9,7 @@ module.exports = {
 	usage: "<id> <motivo>",
 	example: "836345581424738354 Tentou burlar o ban...",
 	permissoes: "BAN_MEMBERS",
-	args: true,
+    args: true,
 
 	async run(client, message, args) {
 

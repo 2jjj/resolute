@@ -11,7 +11,7 @@ module.exports = {
 	category: "outros",
 	usage: "@cargo",
 	example: "@CEO",
-	args: true,
+    args: true,
 	
 	async run(client, message, args) {
 

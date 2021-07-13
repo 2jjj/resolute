@@ -9,7 +9,7 @@ module.exports = {
 	category: "outros",
 	usage: "",
 	example: "",
-	args: false,
+    args: false,
 	
 	async run(client, message, args) {
 

@@ -8,7 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<emoji>",
 	example: "<:linux:817057043470221362>",
-	args: true,
+    args: true,
 
 	async run(client, message, args) {
 

@@ -1,14 +1,14 @@
 const db = require("quick.db")
 
 module.exports = {
-	name: "lock",
-	aliases: ['bloquear'],
-	cooldown: 1000 * 2,
-	description: "Bloquear o canal que você usou este comando.",
-	category: "mod",
-	usage: "",
-	example: "",
-	permissoes: "MANAGE_CHANNELS",
+    name: "lock",
+    aliases: ['bloquear'],
+    cooldown: 1000 * 2,
+    description: "Bloquear o canal que você usou este comando.",
+    category: "mod",
+    usage: "",
+    example: "",
+    permissoes: "MANAGE_CHANNELS",
 
 	async run(client, message, args) {
 

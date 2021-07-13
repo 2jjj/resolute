@@ -10,7 +10,7 @@ module.exports = {
   cooldown: 1000 * 2, 
   usage: "",
   example: "",
-	args: false,
+  args: false,
 	
   async run (client, message, args) {
 

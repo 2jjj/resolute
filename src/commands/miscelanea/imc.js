@@ -9,7 +9,7 @@ module.exports = {
 	category: "outros",
 	usage: "<kg> <metros>",
 	example: "60 170",
-	args: true,
+    args: true,
 	
 	async run(client, message, args) {
 
