@@ -1,0 +1,569 @@
+[
+    {
+        "category": "Moderação",
+        "icon": "fa fa-shield",
+        "type": "mod",
+        "commands": [
+            {
+                "name": "ban",
+                "description": "Comando para realizar banimentos."               
+            },
+            {
+                "name": "kick",
+                "description": "Comando para expulsar um membro."
+            },
+            {
+                "name": "warn",
+                "description": "Comando para avisar um usuário"
+            },
+            {
+                "name": "banlist",
+                "description": ""
+            },
+            {
+                "name": "clear ",
+                "description": ""
+            },
+            {
+                "name": "globalban",
+                "description": ""
+            },
+            {
+                "name": "lock",
+                "description": ""
+            },
+            {
+                "name": "unlock",
+                "description": ""
+            },
+            {
+                "name": "nick",
+                "description": ""
+            },
+            {
+                "name": "resetnick",
+                "description": ""
+            },
+            {
+                "name": "nuke",
+                "description": ""
+            },
+            {
+                "name": "slowmode",
+                "description": ""
+            },
+            {
+                "name": "tempmute",
+                "description": ""
+            },
+            {
+                "name": "unmute",
+                "description": ""
+            },
+            {
+                "name": "warnlist",
+                "description": ""
+            }
+        ]
+    },
+    
+    {
+        "category": "Manipulação de imagens",
+        "type": "img",
+        "icon": "fas fa-image",
+        "commands": [
+            {
+                "name": "biden",
+                "description": ""
+            },
+            {
+                "name": "pikachu",
+                "description": ""
+            },
+            {
+                "name": "rickroll",
+                "description": ""
+            },
+            {
+                "name": "dababy",
+                "description": ""
+            },
+            {
+                "name": "drip",
+                "description": ""
+            },
+            {
+                "name": "ad",
+                "description": ""
+            },
+            {
+                "name": "arte",
+                "description": ""
+            },
+            {
+                "name": "ata",
+                "description": ""
+            },
+            {
+                "name": "beautiful",
+                "description": ""
+            },
+            {
+                "name": "blur",
+                "description": ""
+            },
+            {
+                "name": "bolsonaro",
+                "description": ""
+            },
+            {
+                "name": "cachorro",
+                "description": ""
+            },
+            {
+                "name": "clyde",
+                "description": ""
+            },
+            {
+                "name": "comment",
+                "description": ""
+            },
+            {
+                "name": "confusedstonks",
+                "description": ""
+            },
+            {
+                "name": "conquista",
+                "description": ""
+            },
+            {
+                "name": "delete",
+                "description": ""
+            },
+            {
+                "name": "drake",
+                "description": ""
+            },
+            {
+                "name": "rip",
+                "description": ""
+            },
+            {
+                "name": "gay",
+                "description": ""
+            },
+            {
+                "name": "hitler",
+                "description": ""
+            },
+            {
+                "name": "iphonex",
+                "description": ""
+            },
+            {
+                "name": "laranjo",
+                "description": ""
+            },
+            {
+                "name": "mm",
+                "description": ""
+            },
+            {
+                "name": "notstonks",
+                "description": ""
+            },
+            {
+                "name": "palhaco",
+                "description": ""
+            },
+            {
+                "name": "preso",
+                "description": ""
+            },
+            {
+                "name": "primeiraspalavras",
+                "description": ""
+            },
+            {
+                "name": "stonks",
+                "description": ""
+            },
+            {
+                "name": "trash",
+                "description": ""
+            },
+            {
+                "name": "triggered",
+                "description": ""
+            },
+            {
+                "name": "trump",
+                "description": ""
+            },
+            {
+                "name": "tweet",
+                "description": ""
+            },
+            {
+                "name": "wanted",
+                "description": ""
+            }
+        ]
+    },
+    
+    {
+        "category": "Miscelânea",
+        "type": "misc",
+        "icon": "fas fa-list",
+        "commands": [
+            {
+                "name": "addemoji",
+                "description": ""
+            },
+            {
+                "name": "avatar",
+                "description": ""
+            },
+            {
+                "name": "badges",
+                "description": ""
+            },
+            {
+                "name": "channelinfo",
+                "description": ""
+            },
+            {
+                "name": "clima",
+                "description": ""
+            },
+            {
+                "name": "close",
+                "description": ""
+            },
+            {
+                "name": "ticket",
+                "description": ""
+            },
+            {
+                "name": "color",
+                "description": ""
+            },
+            {
+                "name": "discordjs",
+                "description": ""
+            },
+            {
+                "name": "dispositivos",
+                "description": ""
+            },
+            {
+                "name": "emoji",
+                "description": ""
+            },
+            {
+                "name": "encurtar",
+                "description": ""
+            },
+            {
+                "name": "github",
+                "description": ""
+            },
+            {
+                "name": "horas",
+                "description": ""
+            },
+            {
+                "name": "imc",
+                "description": ""
+            },
+            {
+                "name": "instagram",
+                "description": ""
+            },
+            {
+                "name": "maps",
+                "description": ""
+            },
+            {
+                "name": "random",
+                "description": ""
+            },
+            {
+                "name": "roleinfo",
+                "description": ""
+            },
+            {
+                "name": "servericon",
+                "description": ""
+            },
+            {
+                "name": "serverinfo",
+                "description": ""
+            },
+            {
+                "name": "sorteio",
+                "description": ""
+            },
+            {
+                "name": "steam",
+                "description": ""
+            },
+            {
+                "name": "sugestao",
+                "description": ""
+            },
+            {
+                "name": "translate",
+                "description": ""
+            },
+            {
+                "name": "userinfo",
+                "description": ""
+            },
+            {
+                "name": "votar",
+                "description": ""
+            },
+            {
+                "name": "wikipedia",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Diversão",
+        "icon": "fa fa-star",
+        "type": "fun",
+        "commands": [
+            {
+                "name": "8ball",
+                "description": ""
+            },
+            {
+                "name": "ascii",
+                "description": ""
+            },
+            {
+                "name": "coinflip",
+                "description": ""
+            },
+            {
+                "name": "doublestruck",
+                "description": ""
+            },
+            {
+                "name": "emojify",
+                "description": ""
+            },
+            {
+                "name": "ship",
+                "description": ""
+            },
+            {
+                "name": "say",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Ação",
+        "type": "acao",
+        "icon": "fas fa-users",
+        "commands": [
+            {
+                "name": "ataque",
+                "description": ""
+            },
+            {
+                "name": "carinho",
+                "description": ""
+            },
+            {
+                "name": "carinho",
+                "description": ""
+            },
+            {
+                "name": "hug",
+                "description": ""
+            },
+            {
+                "name": "kiss",
+                "description": ""
+            },
+            {
+                "name": "morder",
+                "description": ""
+            },
+            {
+                "name": "pisar",
+                "description": ""
+            },
+            {
+                "name": "run",
+                "description": ""
+            },
+            {
+                "name": "tired",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Configuráveis",
+        "type": "config",
+        "icon": "fas fa-wrench",
+        "commands": [
+            {
+                "name": "setprefix",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Economia",
+        "type": "economia",
+        "icon": "fas fa-dollar-sign",
+        "commands": [
+            {
+                "name": "daily",
+                "description": ""
+            },
+            {
+                "name": "depositar",
+                "description": ""
+            },
+            {
+                "name": "lideres",
+                "description": ""
+            },
+            {
+                "name": "mendigar",
+                "description": ""
+            },
+            {
+                "name": "dinheiro",
+                "description": ""
+            },
+            {
+                "name": "pay",
+                "description": ""
+            },
+            {
+                "name": "perfil",
+                "description": ""
+            },
+            {
+                "name": "roubar",
+                "description": ""
+            },
+            {
+                "name": "saque",
+                "description": ""
+            },
+            {
+                "name": "trabalhar",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Informação",
+        "type": "info",
+        "icon": "fas fa-question",
+        "commands": [
+            {
+                "name": "help",
+                "description": ""
+            },
+            {
+                "name": "botinfo",
+                "description": ""
+            },
+            {
+                "name": "ping",
+                "description": ""
+            },
+            {
+                "name": "report",
+                "description": ""
+            },
+            {
+                "name": "shards",
+                "description": ""
+            },
+            {
+                "name": "status",
+                "description": ""
+            },
+            {
+                "name": "uptime",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Botões",
+        "type": "botoes",
+        "icon": "fas fa-align-justify",
+        "commands": [
+            {
+                "name": "calculadora",
+                "description": ""
+            },
+            {
+                "name": "invite",
+                "description": ""
+            },
+            {
+                "name": "jogodavelha",
+                "description": ""
+            },
+            {
+                "name": "jokenpo",
+                "description": ""
+            },
+            {
+                "name": "snake",
+                "description": ""
+            },
+            {
+                "name": "sus",
+                "description": ""
+            }
+        ]
+    },
+
+    {
+        "category": "Minecraft",
+        "type": "mine",
+        "icon": "fas fa-adjust",
+        "commands": [
+            {
+                "name": "mcbust",
+                "description": ""
+            },
+            {
+                "name": "mchead",
+                "description": ""
+            },
+            {
+                "name": "mchelm",
+                "description": ""
+            },
+            {
+                "name": "mcplayer",
+                "description": ""
+            },
+            {
+                "name": "mcskin",
+                "description": ""
+            }
+        ]
+    }
+]

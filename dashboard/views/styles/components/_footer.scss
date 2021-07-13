@@ -1,0 +1,12 @@
+footer {
+    margin: 5% calc(1% + 10px);
+    padding-top: 10px;
+
+    .content, .by {
+        margin-top: 10px;
+        text-align: center;
+        user-select: none;
+        font-size: 12px;
+        color: gray;
+    }
+}

@@ -1,0 +1,59 @@
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 200%;
+    background-color: #ffffff;
+    clip-path: circle(500px at right 800px);
+}
+
+.option {
+    width: 0vw;
+    height: 100vh;
+    position: fixed;
+    left: -100vh;
+    z-index: 2000;
+    background-color: $headerBackground;
+    transition: 1s;
+
+    &.active {
+        left: 0;
+        width: 100vw;
+        transition: 1s;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        ul {
+            display: block;
+            list-style: none;
+
+            li {
+                margin: 10px 10px;
+                font-weight: 500;
+
+                a {
+                    text-decoration: none;
+                    user-select: none;
+                    cursor: pointer;
+                    color: #ffffff;
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .circle {
+        display: none;
+    }
+}
