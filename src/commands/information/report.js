@@ -8,7 +8,7 @@ module.exports = {
     category: "info",
     usage: "<bug/report>",
     example: "report O bot ta com bug no help mano...",
-    args: false,
+    args: true,
 
     async run(client, message, args) {
 
