@@ -10,10 +10,10 @@ const client = new Client({
   disableEveryone: true
 });
 
-require("./util/inlineReply")
-require("./util/quote")
+require("./src/util/inlineReply")
+require("./src/util/quote")
 require('discord-buttons')(client);
-client.categories = fs.readdirSync("./commands/");
+client.categories = fs.readdirSync("./src/commands/");
 client.queue = new Map();
 client.commands = new Collection();
 client.aliases = new Collection();
@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
 console.log(table.toString().cyan);
 
 ["command", "events"].forEach(handler => {
-  require(`./handlers/${handler}`)(client);
+  require(`./src/handlers/${handler}`)(client);
 });
 
 client.on("guildMemberAdd", async (member) => {
@@ -35,7 +35,7 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
-  require(`./handlers/lavalink/${handler}`)(client);
+  require(`./src/handlers/lavalink/${handler}`)(client);
 });
 
 client.on('shardReady', (shardid) => {
@@ -45,7 +45,7 @@ client.on('shardReady', (shardid) => {
 const Enmap = require("enmap")
 client.settings = new Enmap({
   name: "settings",
-  dataDir: "./database/settings"
+  dataDir: "./src/database/settings"
 })
 
 client.login(require("./src/config/config.json").token);

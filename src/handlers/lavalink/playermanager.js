@@ -1,13 +1,13 @@
 const Discord = require("discord.js")
 const { MessageEmbed } = require("discord.js")
-const ee = require("../../src/config/embed.json")
+const ee = require("../../config/embed.json")
 const {
 format,
 delay,
 isrequestchannel,
 edit_request_message_queue_info,
 arrayMove
-} = require("../../handlers/functions")
+} = require("../functions")
 
 module.exports = async (client, message, args, type, channel, guild) => {
 

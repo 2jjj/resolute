@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const crystol = require("crystolnetwork-log");
 const Timeout = new Discord.Collection();
 const ms = require("ms")
-const blacklist = require("../../database/mongoDB/blacklist")
+const blacklist = require("../../../src/database/mongoDB/blacklist")
 
 module.exports = async (client, message) => {
 
