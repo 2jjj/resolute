@@ -4,8 +4,12 @@ const ownerid = "836345581424738354";
 module.exports = {
     name: "eval",
     aliases: [],
+    cooldown: 1000 * 2,
+    description: "Faça um eval.",
     category: "dev",
-    description: "",
+    usage: "",
+    example: "",
+    args: true,
 
     async run(client, message, args) {
 
@@ -13,7 +17,6 @@ module.exports = {
 
             message.delete()
             const code = args.join(' ')
-
             if (!code) return;
 
             try {
