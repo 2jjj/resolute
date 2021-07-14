@@ -3,8 +3,12 @@ const blacklist = require('../.././database/mongoDB/blacklist')
 module.exports = {
     name: "blacklist-remove",
     aliases: [],
+    cooldown: 1000 * 2,
+    description: "Adicionar um usário na blacklist do Resolute.",
     category: "dev",
-    description: "",
+    usage: "",
+    example: "",
+    args: true,
 
     async run(client, message, args) {
 
