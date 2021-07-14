@@ -3,8 +3,13 @@ const Discord = require('discord.js');
 module.exports = {
     name: "guildlist",
     aliases: [],
+    cooldown: 1000 * 2,
+    description: "Listar as guilds e os nomes.",
     category: "dev",
-    description: "",
+    usage: "",
+    example: "",
+    permissoes: "ADMINISTRATOR",
+    args: true,
 
     async run(client, message, args) {
         let clientGuilds = message.client.guilds.cache;
