@@ -1,6 +1,4 @@
 const fetch = require('node-fetch');
-const Discord = require("discord.js");
-const db = require("quick.db");
 
 module.exports = {
   name: "doublestruck",
