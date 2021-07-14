@@ -2,18 +2,20 @@ const Discord = require("discord.js");
 const ownerid = "836345581424738354";
 
 module.exports = {
-    name: "serverlist",
-    aliases: ["slt"],
-    category: "dev",
-    description: "",
+  name: "serverlist",
+  aliases: ["slt"],
+  category: "dev",
+  description: "",
 
-    async run (client, message, args) {
+  async run(client, message, args) {
 
     if (message.author.id == ownerid) {
       if (!message.guild.me.hasPermission("ADMINISTRATOR"))
         return message.channel
           .send("Eu não tenho permissão de administrador!")
-          .then(msg => msg.delete({ timeout: 5000 }));
+          .then(msg => msg.delete({
+            timeout: 5000
+          }));
 
       let i0 = 0;
       let i1 = 100;
@@ -22,16 +24,18 @@ module.exports = {
       let description =
         `Servidores totais - ${client.guilds.cache.size}\n\n` +
         client.guilds.cache
-          .sort((a, b) => b.memberCount - a.memberCount)
-          .map(r => r)
-          .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
-          .slice(0, 100)
-          .join("\n\n");
-      
+        .sort((a, b) => b.memberCount - a.memberCount)
+        .map(r => r)
+        .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
+        .slice(0, 100)
+        .join("\n\n");
+
       console.log(description)
 
       let embed = new Discord.MessageEmbed()
-        .setAuthor(client.user.tag, client.user.displayAvatarURL({dynamic : true}))
+        .setAuthor(client.user.tag, client.user.displayAvatarURL({
+          dynamic: true
+        }))
         .setColor("YELLOW")
         .setFooter(`Página - ${page}/${Math.ceil(client.guilds.cache.size / 10)}`)
         .setDescription(description);
@@ -65,12 +69,12 @@ module.exports = {
           description =
             `Servidores totais - ${client.guilds.cache.size}\n\n` +
             client.guilds.cache
-              .sort((a, b) => b.memberCount - a.memberCount)
-              .map(r => r)
-              .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Memrosers\nID - ${r.id}`)
-              .slice(i0, i1)
-              .join("\n\n");
+            .sort((a, b) => b.memberCount - a.memberCount)
+            .map(r => r)
+            .map(
+              (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Memrosers\nID - ${r.id}`)
+            .slice(i0, i1)
+            .join("\n\n");
 
           // Update the embed with new informations
           embed
@@ -100,12 +104,12 @@ module.exports = {
           description =
             `Servidores totais - ${client.guilds.cache.size}\n\n` +
             client.guilds.cache
-              .sort((a, b) => b.memberCount - a.memberCount)
-              .map(r => r)
-              .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Membros\nID - ${r.id}`)
-              .slice(i0, i1)
-              .join("\n\n");
+            .sort((a, b) => b.memberCount - a.memberCount)
+            .map(r => r)
+            .map(
+              (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Membros\nID - ${r.id}`)
+            .slice(i0, i1)
+            .join("\n\n");
 
           // Update the embed with new informations
           embed
