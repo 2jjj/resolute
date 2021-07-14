@@ -1,8 +1,12 @@
 module.exports = {
     name: "guildleave",
     aliases: [],
+    cooldown: 1000 * 2,
+    description: "Sair de uma determinada guild pelo ID",
     category: "dev",
-    description: "",
+    usage: "",
+    example: "",
+    args: true,
 
     async run(client, message, args) {
         var targetGuild = message.content.split(" ")[1];

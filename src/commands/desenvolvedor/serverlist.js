@@ -10,7 +10,7 @@ module.exports = {
   usage: "",
   example: "",
   permissoes: "ADMINISTRATOR",
-  args: true,
+  args: false,
 
   async run(client, message, args) {
 
