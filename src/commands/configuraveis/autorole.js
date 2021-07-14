@@ -23,11 +23,10 @@ module.exports = {
 
 		const confirma = new Discord.MessageEmbed()
 			.setTitle("Autorole ativado!")
-			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Requisitado por:`, `${user}`)
-			.addField(`Cargo:`, `${cargo_autorole}`)
-			.setFooter("Resolute", message.author.displayAvatarURL())
+			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.addField(`Cargo:`, `ﾠ<:setaaa:860626769089265665> ${cargo_autorole}`)
+			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setTimestamp();
         message.channel.send(confirma);
 
