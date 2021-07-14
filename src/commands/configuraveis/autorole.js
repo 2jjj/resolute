@@ -15,9 +15,9 @@ module.exports = {
 
 		if (!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes)) return;
-        
-		let user = message.author;
-        let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+
+		let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
         db.set(`autorole_${message.guild.id}`, cargo_autorole.id);
 
