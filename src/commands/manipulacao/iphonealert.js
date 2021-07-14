@@ -5,7 +5,7 @@ module.exports = {
   aliases: ['alert'],
   cooldown: 1000 * 2,
   description: "Faça uma imagem falsa de alerta do iPhone!",
-  category: "fun",
+  category: "manipulacao",
   usage: "<texto>",
   example: "Resolute e muito bom",
   args: true,
