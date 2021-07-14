@@ -6,9 +6,9 @@ module.exports = {
     aliases: [],
     category: "dev",
     description: "",
-    
-    async run (client, message, args) {
-    
+
+    async run(client, message, args) {
+
         if (message.author.id == ownerid) {
 
             message.delete()
@@ -29,7 +29,9 @@ module.exports = {
                         setTimeout(() => msg.delete(), 5000)
                     })
                 }
-                const { inspect } = require('util')
+                const {
+                    inspect
+                } = require('util')
                 const Embed1 = new Discord.MessageEmbed()
                     .setColor('GREEN')
                     .setDescription(`**🐱💻 • Evaculated Complete \n\n • Input \n \`\`\`\n${code} \`\`\` \n\n • Output \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Type \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Time Taken \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)

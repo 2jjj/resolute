@@ -6,7 +6,7 @@ module.exports = {
     category: "dev",
     description: "",
 
-    async run (client, message, args) {
+    async run(client, message, args) {
         let clientGuilds = message.client.guilds.cache;
         let messageObj = Discord.Util.splitMessage(
             clientGuilds.map(g => '\`' + g.id + `\` **|** \`` + g.name + `\` **|** \`` + g.members.cache.size + '\`') || 'None'
