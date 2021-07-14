@@ -4,7 +4,7 @@ module.exports = {
   name: "morse",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "",
+  description: "Converte o texto fornecido em código morse!",
   category: "fun",
   usage: "<texto>",
   example: "oi galera",

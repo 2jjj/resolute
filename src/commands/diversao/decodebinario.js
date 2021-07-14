@@ -4,7 +4,7 @@ module.exports = {
   name: "decodebinario",
   aliases: ['decode'],
   cooldown: 1000 * 2,
-  description: "",
+  description: "Decodifique números binários em texto!",
   category: "fun",
   usage: "<numero_binario>",
   example: "011010010111001101110100011011110010000001100101001000000111010101101101001000000111010001100101011100110111010001100101",

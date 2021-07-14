@@ -4,7 +4,7 @@ module.exports = {
   name: "mock",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "",
+  description: "Manipular texto em um tom sarcástico!",
   category: "fun",
   usage: "<texto>",
   example: "Ola galera",
