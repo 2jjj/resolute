@@ -9,18 +9,18 @@ module.exports = {
     description: "Já tem um outro bot com esse prefixo? sem problemas com este comando você altera meu prefixo!",
     category: "config",
     usage: "<novo_prefixo>",
-    example:"!",
-	permissoes: "ADMINISTRATOR",
+    example: "!",
+    permissoes: "ADMINISTRATOR",
     args: true,
 
     async run(client, message, args, msg) {
 
-		if (!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes)) return;
+        if (!args[0]) return;
+        if (!message.member.hasPermission(module.exports.permissoes)) return;
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
-        
+
         if (args[0] === prefix) {
             let atual = new Discord.MessageEmbed()
                 .setColor("RANDOM")
@@ -45,7 +45,12 @@ module.exports = {
         db.set(`prefix_${message.guild.id}`, args[0])
         let alterado = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`${message.author}` + ' alterou meu prefixo para: `' + args[0] + '`')
+            .setTitle("Prefixo alterado!")
+            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+            .addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+            .addField(`Novo Prefixo:`, `ﾠ<:setaaa:860626769089265665> \`${args[0]}\``)
+            .setFooter("Resolute", message.author.displayAvatarURL())
+            .setTimestamp();
         return message.inlineReply(alterado)
     }
 }
