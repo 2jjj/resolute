@@ -6,7 +6,7 @@ module.exports = {
 	aliases: ['beijar', 'beijo'],
 	cooldown: 1000 * 2,
 	description: "Beije alguém :flushed:",
-	category: "gifs",
+	category: "acoes",
 	usage: "@user",
 	example: "@Spray#7725",
     args: true,

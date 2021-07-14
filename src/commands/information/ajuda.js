@@ -44,7 +44,7 @@ module.exports = {
         let data = new Object();
 
         data = {
-          name: dir.toUpperCase(),
+          name: dir,
           value: cmds.length === 0 ? "Em progresso." : cmds.join(" "),
         };
 
@@ -52,16 +52,17 @@ module.exports = {
       });
 
 
+      let acao = client.commands.filter((cmd) => cmd.category === 'acoes');
+      let config = client.commands.filter((cmd) => cmd.category === 'config');
+      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
       let fun = client.commands.filter((cmd) => cmd.category === 'fun');
       let economia = client.commands.filter((cmd) => cmd.category === 'economia');
+      let info = client.commands.filter((cmd) => cmd.category === 'info');
       let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+      let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === 'music');
-      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
-      let config = client.commands.filter((cmd) => cmd.category === 'config');
-      let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-      let info = client.commands.filter((cmd) => cmd.category === 'info');
-      let acao = client.commands.filter((cmd) => cmd.category === 'gifs');
 
       const embed = new MessageEmbed()
         .addField(`Prefixo atual: ${prefix}\n`, `**Meus Comandos[${client.commands.size}]:**\nﾠ`)
@@ -75,6 +76,7 @@ module.exports = {
         .addField(`<:config:856894534197313536> **Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:ybs_users:856961057486667806> **Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> **Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:early_developer_badge:854716150076538901> **Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
         .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
         .setFooter(

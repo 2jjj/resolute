@@ -5,7 +5,7 @@ module.exports = {
 	aliases: [],
 	cooldown: 1000 * 2,
 	description: "Pise em alguém",
-	category: "gifs",
+	category: "acoes",
 	usage: "@user",
 	example: "@Spray#7725",
     args: true,

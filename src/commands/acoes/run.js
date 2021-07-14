@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ["correr"],
 	cooldown: 1000 * 2,
 	description: "Corra!",
-	category: "gifs",
+	category: "acoes",
 	usage: "@user",
 	example: "@Spray#7725",
     args: true,
