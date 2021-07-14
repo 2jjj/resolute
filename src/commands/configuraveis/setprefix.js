@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Já tem um outro bot com esse prefixo? sem problemas com este comando você altera meu prefixo!",
     category: "config",
-    usage: "<novo_prefixo>",
+    usage: "<prefixo>",
     example: "!",
     permissoes: "ADMINISTRATOR",
     args: true,
