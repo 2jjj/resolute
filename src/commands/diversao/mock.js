@@ -1,13 +1,13 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-  name: "morse",
+  name: "mock",
   aliases: [],
   cooldown: 1000 * 2,
   description: "",
   category: "fun",
   usage: "<texto>",
-  example: "oi galera",
+  example: "Ola galera",
   args: true,
 
   async run(client, message, args) {
@@ -15,8 +15,8 @@ module.exports = {
     let text = args.join("+")
     if (!text) return;
 
-    let res = await fetch('https://api.popcatdev.repl.co/texttomorse?text=' + text);
+    let res = await fetch('https://api.popcatdev.repl.co/mock?text=' + text);
     let json = await res.json();
-    message.channel.send(json.morse)
+    message.channel.send(json.text)
   }
 }
