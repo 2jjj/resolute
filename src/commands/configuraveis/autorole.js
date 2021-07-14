@@ -26,7 +26,7 @@ module.exports = {
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
 			.addField(`Cargo:`, `ﾠ<:setaaa:860626769089265665> ${cargo_autorole}`)
-			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
+			.setFooter("Resolute", message.author.displayAvatarURL())
 			.setTimestamp();
         message.channel.send(confirma);
 
