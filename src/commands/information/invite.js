@@ -1,4 +1,4 @@
-const { MessageButton, MessageActionRow } = require('discord-buttons'); // To require only certain extensions that actually do the work!
+const { MessageButton, MessageActionRow } = require('discord-buttons');
 
 module.exports = {
     name: "invite",
