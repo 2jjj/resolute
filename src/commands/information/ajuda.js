@@ -4,23 +4,25 @@ const db = require("quick.db")
 
 module.exports = {
   name: "help",
-  aliases : ['h', 'ajuda', 'comandos', 'commands'],
+  aliases: ['h', 'ajuda', 'comandos', 'commands'],
   description: "Mostrar os comandos disponiveis.",
   category: "info",
-  cooldown: 1000 * 2, 
+  cooldown: 1000 * 2,
   usage: "",
   example: "",
   args: false,
-	
-  async run (client, message, args) {
+
+  async run(client, message, args) {
 
     var prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
+    if (prefix === null) {
+      prefix = "s."
+    }
 
     const roleColor =
-      message.guild.me.displayHexColor === "#000000"
-        ? "#ffffff"
-        : message.guild.me.displayHexColor;
+      message.guild.me.displayHexColor === "#000000" ?
+      "#ffffff" :
+      message.guild.me.displayHexColor;
 
     if (!args[0]) {
       let categories = [];
@@ -50,16 +52,16 @@ module.exports = {
       });
 
 
-        let fun = client.commands.filter((cmd) => cmd.category === 'fun');
-        let economia = client.commands.filter((cmd) => cmd.category === 'economia');
-        let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-        let mod = client.commands.filter((cmd) => cmd.category === 'mod');
-        let music = client.commands.filter((cmd) => cmd.category === 'music');
-        let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
-        let config = client.commands.filter((cmd) => cmd.category === 'config');
-        let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-        let info = client.commands.filter((cmd) => cmd.category === 'info');
-        let acao = client.commands.filter((cmd) => cmd.category === 'gifs');
+      let fun = client.commands.filter((cmd) => cmd.category === 'fun');
+      let economia = client.commands.filter((cmd) => cmd.category === 'economia');
+      let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+      let mod = client.commands.filter((cmd) => cmd.category === 'mod');
+      let music = client.commands.filter((cmd) => cmd.category === 'music');
+      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
+      let config = client.commands.filter((cmd) => cmd.category === 'config');
+      let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+      let info = client.commands.filter((cmd) => cmd.category === 'info');
+      let acao = client.commands.filter((cmd) => cmd.category === 'gifs');
 
       const embed = new MessageEmbed()
         .addField(`Prefixo atual: ${prefix}\n`, `**Meus Comandos[${client.commands.size}]:**\nﾠ`)
@@ -77,7 +79,9 @@ module.exports = {
         .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
         .setFooter(
           `Requisitado por ${message.author.tag}`,
-          message.author.displayAvatarURL({ dynamic: true })
+          message.author.displayAvatarURL({
+            dynamic: true
+          })
         )
         //.setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
@@ -106,25 +110,27 @@ module.exports = {
         )
         .addField(
           "Aliases/apelidos:",
-          command.aliases
-            ? `\`${command.aliases.join("` `")}\``
-            : "Sem aliases para esse comando."
+          command.aliases ?
+          `\`${command.aliases.join("` `")}\`` :
+          "Sem aliases para esse comando."
         )
         .addField(
           "Forma de uso:",
-          command.usage
-            ? `\`${prefix}${command.name} ${command.usage}\``
-            : `\`${prefix}${command.name}\``
+          command.usage ?
+          `\`${prefix}${command.name} ${command.usage}\`` :
+          `\`${prefix}${command.name}\``
         )
         .addField(
           "Descrição:",
-          command.description
-          ? `\`${command.description}\``
-          : "Sem aliases para esse comando."
+          command.description ?
+          `\`${command.description}\`` :
+          "Sem aliases para esse comando."
         )
         .setFooter(
           `Requerido por: ${message.author.tag}`,
-          message.author.displayAvatarURL({ dynamic: true })
+          message.author.displayAvatarURL({
+            dynamic: true
+          })
         )
         .setTimestamp()
         .setColor("RANDOM");
