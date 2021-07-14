@@ -1,7 +1,4 @@
 const blacklist = require('../.././database/mongoDB/blacklist')
-const {
-    Message
-} = require('discord.js')
 
 module.exports = {
     name: "blacklist",
