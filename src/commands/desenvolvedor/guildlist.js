@@ -8,7 +8,7 @@ module.exports = {
     category: "dev",
     usage: "",
     example: "",
-    args: true,
+    args: false,
 
     async run(client, message, args) {
         let clientGuilds = message.client.guilds.cache;
