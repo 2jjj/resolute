@@ -3,19 +3,21 @@ const ownerid = "836345581424738354";
 
 module.exports = {
   name: "serverlist",
-  aliases: ["slt"],
+  aliases: ['slt', 'guilds'],
+  cooldown: 1000 * 2,
+  description: "Listar as guilds e os nomes.",
   category: "dev",
-  description: "",
+  usage: "",
+  example: "",
+  permissoes: "ADMINISTRATOR",
+  args: true,
 
   async run(client, message, args) {
 
     if (message.author.id == ownerid) {
-      if (!message.guild.me.hasPermission("ADMINISTRATOR"))
-        return message.channel
-          .send("Eu não tenho permissão de administrador!")
-          .then(msg => msg.delete({
-            timeout: 5000
-          }));
+
+      if (!message.member.hasPermission(module.exports.permissoes)) return;
+      if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
       let i0 = 0;
       let i1 = 100;
