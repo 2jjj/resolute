@@ -10,7 +10,7 @@ module.exports = {
 
         if (message.author.id !== '836345581424738354') return message.channel.send('não.')
         const User = message.guild.members.cache.get(args[0])
-        if (!User) return message.channel.send('O ID do usuário está inválido.')
+        if (!User) return;
 
         blacklist.findOne({
             id: User.user.id
