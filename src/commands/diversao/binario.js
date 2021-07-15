@@ -17,6 +17,6 @@ module.exports = {
 
     let res = await fetch('https://api.spr4y.xyz/binario/' + text);
     let json = await res.json();
-    message.channel.send(json.json.binary)
+    message.channel.send(json.binary)
   }
 }
