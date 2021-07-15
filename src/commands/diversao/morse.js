@@ -15,7 +15,7 @@ module.exports = {
     let text = args.join("+")
     if (!text) return;
 
-    let res = await fetch('https://api.popcatdev.repl.co/texttomorse?text=' + text);
+    let res = await fetch('https://api.spr4y.xyz/morse/' + text);
     let json = await res.json();
     message.channel.send(json.morse)
   }

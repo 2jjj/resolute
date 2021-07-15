@@ -4,7 +4,7 @@ module.exports = {
   name: "binario",
   aliases: ['binary'],
   cooldown: 1000 * 2,
-  description: "Codifique o texto em números binários",
+  description: "Converte o texto fornecido em código binário!",
   category: "fun",
   usage: "<texto>",
   example: "Ola galera",
