@@ -8,21 +8,26 @@ module.exports = {
 	category: "outros",
 	usage: `<conteudo>`,
 	example: "Devo criar um chat de divulgação?",
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;
 
 		var content = args.join(' ')
+
 		if (content.length > 600) {
 			return message.inlineReply('<:1926blurplecross:856520144872407060> **|** O conteúdo a ser votado não pode passar de **600 caracteres.**')
 		}
 
 		var embed = new Discord.MessageEmbed()
-			.setColor('BLUE')
-			.setTitle(`Votação aberta por ${message.author.username}`)
-			.setDescription(content)
+			.setTitle("Votação")
+			.setColor("RANDOM")
+			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+			.addField(`Conteúdo:`, `ﾠ<:setaaa:860626769089265665> \`${content}\``)
+			.addField(`Autor da votação:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.setFooter("Resolute - Votação", message.author.displayAvatarURL())
+			.setTimestamp();
 
 		if (content) {
 			return message.channel.send(embed).then(msg => {

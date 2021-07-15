@@ -8,13 +8,14 @@ module.exports = {
 	category: "outros",
 	usage: "<emoji>",
 	example: "<:linux:817057043470221362>",
+	permissoes: "MANAGE_EMOJIS",
     args: true,
 
 	async run(client, message, args) {
-
+		
 		if (!args[0]) return;
-
-		if (!message.member.hasPermission("MANAGE_EMOJIS")) return message.channel.send(`Você não tem permissão de \`Gerenciar Emojis\`.`)
+		if (!message.member.hasPermission(module.exports.permissoes)) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
 		for (const emojis of args) {
 			const getEmoji = Discord.Util.parseEmoji(emojis);
