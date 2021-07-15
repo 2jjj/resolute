@@ -15,8 +15,8 @@ module.exports = {
     let text = args.join("+")
     if (!text) return;
 
-    let res = await fetch('https://api.popcatdev.repl.co/encode?text=' + text);
+    let res = await fetch('https://api.spr4y.xyz/binario/' + text);
     let json = await res.json();
-    message.channel.send(json.binary)
+    message.channel.send(json.json.binary)
   }
 }
