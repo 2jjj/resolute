@@ -13,7 +13,7 @@ module.exports = async (client, message) => {
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>'))
       if (message.mentions.has(client.user.id)) {
-        return message.inlineReply('Olá meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
+        return message.inlineReply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
       }
   }
 
