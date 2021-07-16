@@ -74,7 +74,6 @@ module.exports = async (client, message) => {
     return;
   }
 
-
   //let x = command.name || command.aliases;
 
   /*
