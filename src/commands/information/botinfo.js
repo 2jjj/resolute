@@ -28,13 +28,14 @@ module.exports = {
         .setTitle("**Minhas informações!**")
         .setColor("RANDOM")
         .setThumbnail(avatar)
-        .setDescription(`Informações:
+        .setDescription(`
         <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
         <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         <:pontin:852197383974551582> **|** ${totalMembers} usuários.
         <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
-        <:cpu:854137097521987624> **|** Shards: ${config.shards
         <:memoryram:854135087037153280> **|** Memória ultilizada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB
+        
+        **Links:**
         <:ybs_bot:851955104345227294> **|** [Me adicione!](https://invite.resolutebot.xyz)
         **`)
         await message.channel.send(embed);
