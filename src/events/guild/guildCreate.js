@@ -10,6 +10,6 @@ module.exports = async (client, guild, message) => {
         .setDescription(`<:info:835206734225473546> | Servidor: ${guild.name}\n<:info:835206734225473546> | ID: ${guild.id}\n<:info:835206734225473546> | Membros: ${guild.memberCount} membros\n<:info:835206734225473546> | Dono: ${dono}`)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
-        .setColor('#FFC4E7')
+        .setColor('#00FF00')
     canal.send(embed);
 }
