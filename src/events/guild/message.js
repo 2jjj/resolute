@@ -72,6 +72,7 @@ module.exports = async (client, message) => {
     return;
   } else {
     return;
+  }
 
   if (!message.member.hasPermission(command.permissoes)) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes}\``)
 }
