@@ -36,7 +36,10 @@ module.exports = {
         <:memoryram:854135087037153280> **|** Memória ultilizada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB
         
         **Links:**
-        <:ybs_bot:851955104345227294> **|** [Me adicione!](https://invite.resolutebot.xyz)
+        <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+        <:ybs_bot:851955104345227294> **|** [Website](https://www.resolutebot.xyz)
+        <:ybs_bot:851955104345227294> **|** [BestList](https://bestlist.online/vote/854817597706338304)
+        <:ybs_bot:851955104345227294> **|** [BluePhoenix](https://bluephoenixlist.tk/bot/854817597706338304/vote)
         **`)
         await message.channel.send(embed);
     })
