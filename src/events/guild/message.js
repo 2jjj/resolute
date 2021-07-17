@@ -72,14 +72,6 @@ module.exports = async (client, message) => {
     return;
   } else {
     return;
-  }
-
-  //let x = command.name || command.aliases;
-
-  /*
-  if (x == "hitler" || x == "iphonex" ||x == "resetar" || x == "lyrics" || x == "skip" || x == "resume" || x == "stop" || x == "shuffle" || x == "loopfila" || x == "limparfila" || x == "nowplaying" || x == "loop" || x == "salvar" || x == "disconnect" || x == "unlock" || x == "lock" || x == "nuke" || x == "queue" || x == "skip" || x == "triggered" || x == "trash" || x == "stonks" || x == "rip" || x == "rickroll" || x == "preso" || x == "pikachu" || x == "palhaco" || x == "notstonks" || x == "mm" || x == "gay" || x == "drip" || x == "facepalm" || x == "delete" || x == "dababy" || x == "confusedstonks" || x == "blur" || x == "beautiful" || x == "ata" || x == "arte" || x == "ad" || x == "serverlist" || x == "sus" || x == "snake" || x == "jokenpo" || x == "jogodavelha" || x == "invite" || x == "calculadora" || x == "lideres" || x == "banlist" || x == "ping" || x == "help" || x == "userinfo" || x == "ticket" || x == "serverinfo" || x == "servericon" || x == "random" || x == "horas" || x == "avatar" || x == "badges" || x == "close" || x == "help" || x == "botinfo" || x == "shards" || x == "status" || x == "uptime" || x == "daily" || x == "mendigar" || x == "money" || x == "perfil" || x == "trabalhar" || x == "warnlist") {
-    return;
-  }*/
 
   if (!message.member.hasPermission(command.permissoes)) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes}\``)
 }
