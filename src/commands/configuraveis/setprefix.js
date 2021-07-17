@@ -10,7 +10,7 @@ module.exports = {
     category: "config",
     usage: "<prefixo>",
     example: "!",
-    permissoes: "ADMINISTRATOR",
+    permissoes: "MANAGE_GUILD",
     args: true,
 
     async run(client, message, args, msg) {
