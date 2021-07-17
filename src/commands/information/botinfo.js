@@ -37,9 +37,9 @@ module.exports = {
         
         **Links:**
         <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
-        <:ybs_bot:851955104345227294> **|** [Website](https://www.resolutebot.xyz)
-        <:ybs_bot:851955104345227294> **|** [BestList](https://bestlist.online/vote/854817597706338304)
-        <:ybs_bot:851955104345227294> **|** [BluePhoenix](https://bluephoenixlist.tk/bot/854817597706338304/vote)
+        :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
+        <:aaaa:866076940293373982> **|** [BestList](https://bestlist.online/vote/854817597706338304)
+        <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.tk/bot/854817597706338304/vote)
         **`)
         await message.channel.send(embed);
     })
