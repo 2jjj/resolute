@@ -1,13 +1,14 @@
 const Discord = require("discord.js")
 const config = require("../../../config/config.json")
 
-module.exports = async (client, guild, message) => {    
-    const dono = await client.guilds.fetch(guild.id).then(guilda => client.users.fetch(guilda.ownerID).then(o => `${o.tag} (${o.id})`))
+module.exports = async (client, guild, message) => {
+    const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ")
+    
     let embed = new Discord.MessageEmbed()
         .setTitle(`Novo servidor!`)
-        .setDescription(`<:info:835206734225473546> | Servidor: ${guild.name}\n<:info:835206734225473546> | ID: ${guild.id}\n<:info:835206734225473546> | Membros: ${guild.memberCount} membros\n<:info:835206734225473546> | Dono: ${dono}`)
+        .setDescription(`<:info:835206734225473546> | Servidor: ${guild.name}\n<:info:835206734225473546> | ID: ${guild.id}\n<:info:835206734225473546> | Membros: ${guild.memberCount} membros\n<:info:835206734225473546> | Dono: ${guild.owner.user.tag}/${guild.owner.id}`)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
         .setColor('#00FF00')
-    client.channels.cache.get("841393455694872597").send(embed);
+        webhook.send(embed)
 }
