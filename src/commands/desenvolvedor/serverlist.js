@@ -9,7 +9,7 @@ module.exports = {
   category: "dev",
   usage: "",
   example: "",
-  permissoes: "ADMINISTRATOR",
+	permissoes: ["ADMINISTRATOR", "Administrador"],
   args: false,
 
   async run(client, message, args) {

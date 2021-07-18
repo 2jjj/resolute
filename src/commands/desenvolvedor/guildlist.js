@@ -8,6 +8,7 @@ module.exports = {
     category: "dev",
     usage: "",
     example: "",
+    permissoes: [],
     args: false,
 
     async run(client, message, args) {
