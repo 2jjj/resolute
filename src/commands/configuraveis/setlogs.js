@@ -65,6 +65,26 @@ module.exports = {
             message.channel.send(del)
         }
 
+        if (args[0] === "off" || args[1] == "delete") {
+            let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
+            db.delete(`msg_del_${message.guild.id}`, canal.id)
+            const del = new MessageEmbed()
+                .setTitle(`Modlog desligado com sucesso`)
+                .setDescription("🚫 **O Channel mod log foi desativado nesse Servidor!**")
+                .setColor("RANDOM")
+            message.channel.send(del)
+        }
+
+        if (args[0] === "off" || args[1] == "mod") {
+            let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
+            db.delete(`mod_logs_${message.guild.id}`, canal.id)
+            const del = new MessageEmbed()
+                .setTitle(`Modlog desligado com sucesso`)
+                .setDescription("🚫 **O Channel mod log foi desativado nesse Servidor!**")
+                .setColor("RANDOM")
+            message.channel.send(del)
+        }
+        
         if (!args[0]) {
             let embed = new MessageEmbed()
                 .setTitle(`Menu de ajuda - \`setlogs\``)
