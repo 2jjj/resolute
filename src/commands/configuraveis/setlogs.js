@@ -49,13 +49,16 @@ module.exports = {
             if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${module.exports.permissoes[1]}\`!`)
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             if (!canal) return message.channel.send(`<:x_:856894534071746600> **|** ${author} ${msg_error_canal}`);
-            
+
             db.set(`mod_logs_${message.guild.id}`, canal.id);
             let mod_logs0 = db.get(`mod_logs_${message.guild.id}`, canal.id);
             message.channel.send(`<:v_:856894534184468480> **|** ${author} ${msg_confirmado} para <#${mod_logs0}> com sucesso.`)
         }
 
         if (args[0] === "off" || args[1] == "edit") {
+            if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
+            if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${module.exports.permissoes[1]}\`!`)
+            
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`msg_edit_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
@@ -65,6 +68,9 @@ module.exports = {
         }
 
         if (args[0] === "off" || args[1] == "delete") {
+            if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
+            if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${module.exports.permissoes[1]}\`!`)
+
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`msg_del_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
@@ -74,6 +80,9 @@ module.exports = {
         }
 
         if (args[0] === "off" || args[1] == "mod") {
+            if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
+            if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${module.exports.permissoes[1]}\`!`)
+
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`mod_logs_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
