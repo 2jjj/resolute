@@ -9,6 +9,7 @@ module.exports = {
     cooldown: 1000 * 2,
     usage: "<texto>",
     example: "oi",
+    permissoes: [],
     args: true,
     
     async run(client, message, args) {

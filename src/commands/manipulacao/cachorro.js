@@ -8,6 +8,7 @@ module.exports = {
     category: "manipulacao",
     usage: "<texto>",
     example: "auau",
+    permissoes: [],
     args: true,
     
     async run(client, message, args) {

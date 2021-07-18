@@ -9,10 +9,13 @@ module.exports = {
 	description: "Faça o laranjo dizer algo!",
 	category: "manipulacao",
 	usage: "<texto>",
-	example: "",
-    args: false,
+	example: "ola amigos!",
+	permissoes: [],
+    args: true,
 
 	async run(client, message, args) {
+
+		if(!args[0]) return;
 
 		if (!cooldowns[message.author.id]) cooldowns[message.author.id] = {
 			lastCmd: null
@@ -32,7 +35,6 @@ module.exports = {
 		}
 
 		let img = jimp.read("https://cdn.discordapp.com/attachments/554048737648050179/610011657632219147/laranjo-meme-cke.jpg")
-		if (!args[0]) return message.quote("Escreva algo para o laranjo falar.")
 		img.then(image => {
 			jimp.loadFont(jimp.FONT_SANS_32_BLACK).then(font => {
 				image.resize(685, 494)

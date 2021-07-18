@@ -9,6 +9,7 @@ module.exports = {
   category: "manipulacao",
   usage: "@user",
   example: "",
+  permissoes: [],
   args: false,
   
   async run(client, message, args) {

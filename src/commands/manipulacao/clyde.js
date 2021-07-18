@@ -11,6 +11,7 @@ module.exports = {
 	category: "manipulacao",
 	usage: "<texto>",
 	example: "ola spray voce esta banido",
+	permissoes: [],
 	args: true,
 	
 	async run(client, message, args) {

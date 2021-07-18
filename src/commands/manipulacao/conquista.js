@@ -7,7 +7,8 @@ module.exports = {
 	description: "Conquista do minecraft.",
 	category: "manipulacao",
 	usage: "<texto>",
-	example: "eu matei uma vaca",
+	example: "oi galera",
+	permissoes: [],
 	args: true,
 	
 	async run(client, message, args) {

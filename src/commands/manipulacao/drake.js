@@ -8,6 +8,7 @@ module.exports = {
     cooldown: 1000 * 2,
     usage: '<texto1>, <texto2>',
     example: "comprar um ps4, comprar um pc",
+    permissoes: [],
     args: true,
     
     async run(client, message, args) {

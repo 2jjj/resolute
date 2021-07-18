@@ -6,7 +6,8 @@ module.exports = {
   description: "",
   category: "manipulacao",
   usage: "<texto>",
-  example: "oi",
+  example: "ola amigos!",
+  permissoes: [],
   args: true,
   
   async run(client, message, args) {

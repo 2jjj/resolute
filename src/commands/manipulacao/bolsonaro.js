@@ -10,7 +10,8 @@ module.exports = {
 	description: "Faça o bolsonaro falar algo na tv.",
 	category: "manipulacao",
 	usage: "<texto>",
-	example: "oi talkey???!!",
+	example: "Ola amigos!",
+	permissoes: [],
 	args: true,
 	
 	async run(client, message, args) {

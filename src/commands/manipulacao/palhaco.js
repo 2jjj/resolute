@@ -8,12 +8,12 @@ module.exports = {
   category: "manipulacao",
   usage: "@user",
   example: "",
+  permissoes: [],
   args: false,
 
   async run(client, message, args) {
 
-    const user =
-      message.mentions.members.first() || message.member;
+    const user = message.mentions.members.first() || message.member;
     let msg = await message.channel.send('Carregando...')
     let att = new Discord.MessageAttachment(`https://api.popcatdev.repl.co/clown?image=${user.user.displayAvatarURL({ dynamic: false, format: "png"})}`, `${user.user.username}_clown.png`)
 

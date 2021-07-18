@@ -11,6 +11,7 @@ module.exports = {
     cooldown: 1000 * 2,
     usage: "<texto>",
     example: "teste de texto",
+    permissoes: [],
     args: true,
 
     async run(client, message, args) {

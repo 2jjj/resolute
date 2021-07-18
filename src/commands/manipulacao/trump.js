@@ -8,12 +8,12 @@ module.exports = {
     category: "manipulacao",
     usage: "<texto>",
     example: "teste de texto",
+    permissoes: [],
     args: true,
 
     async run(client, message, args) {
 
         if(!args[0]) return;
-
         let text = args.join(" ");
 
         try {
