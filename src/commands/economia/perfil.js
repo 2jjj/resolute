@@ -72,9 +72,7 @@ module.exports = {
     }));
     ctx.drawImage(avatar, 520, 79, 200, 200);
 
-
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), perfil1);
-
 
     message.channel.send(attachment);
   }

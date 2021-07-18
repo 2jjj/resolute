@@ -66,7 +66,7 @@ module.exports = {
                 let moneyEmbed = new Discord.MessageEmbed()
                     .setTitle("👮 **|** Preso por Roubo")
                     .setColor("RED")
-                    .setDescription(`Você realizou um roubo e não se saiu muito bem!\nE você perdeu um total de **\`${amount}\`** Coins!`)
+                    .setDescription(`Você realizou um roubo e não se saiu muito bem!\nVocê perdeu um total de **\`${amount}\`** Coins!`)
                     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                         dynamic: true
                     }))

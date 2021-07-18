@@ -55,10 +55,10 @@ module.exports = {
         };
 
         let embed6 = new Discord.MessageEmbed()
-            .setTitle("🏦 **|** Saque")
+            .setTitle("🏦 **|** Saque realizado!")
             .setColor("RANDOM")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .setDescription(`💵 Você sacou **\`R$${args[0]}\`** Coins!`)
+            .setDescription(`<:ybs_dinheiro:856961057204600833> Você sacou o total de **\`R$${args[0]}\`** Coins!`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))

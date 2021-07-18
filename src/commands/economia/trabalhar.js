@@ -38,7 +38,7 @@ module.exports = {
             let amount = Math.floor(Math.random() * 5000) + 1;
 
             let embed1 = new Discord.MessageEmbed()
-                .setTitle("💸 **|** Trabalho")
+                .setTitle("💸 **|** Trabalho realizado!")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .setDescription(`${user.username} trabalhou como **${replies[result]}** e ganhou **\`${amount}\` Coins!**`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
