@@ -6,7 +6,7 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
-	permissoes: "BAN_MEMBERS",
+	permissoes: ["BAN_MEMBERS", "Banir Membros"],
 	args: false,
 
 	async run(client, message, args) {

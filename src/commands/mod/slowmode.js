@@ -9,7 +9,7 @@ module.exports = {
 	category: "mod",
 	usage: "<tempo> [motivo]",
 	example: "5000 tem gente spamando.",
-	permissoes: "MANAGE_CHANNELS",
+	permissoes: ["MANAGE_CHANNELS", "Gerenciar Canais"],
 	args: true,
 
 	async run(client, message, args) {

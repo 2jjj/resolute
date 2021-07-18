@@ -8,7 +8,7 @@ module.exports = {
 	category: 'mod',
 	usage: "<id> <motivo>",
 	example: "836345581424738354 Tentou burlar o ban...",
-	permissoes: "BAN_MEMBERS",
+	permissoes: ["BAN_MEMBERS", "Banir Membros"],
 	args: true,
 
 	async run(client, message, args) {

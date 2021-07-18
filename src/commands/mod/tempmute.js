@@ -8,7 +8,7 @@ module.exports = {
 	category: "mod",
 	usage: "@user <tempo>",
 	example: "@Spray#0007 4000",
-	permissoes: "MANAGE_MESSAGES",
+	permissoes: ["MANAGE_MESSAGES", "Gerenciar Mensagens"],
 	args: true,
 
 	async run(client, message, args) {

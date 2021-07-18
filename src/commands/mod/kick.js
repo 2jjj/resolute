@@ -8,7 +8,7 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Quebrou a tos do discord.",
-	permissoes: "KICK_MEMBERS",
+	permissoes: ["KICK_MEMBERS", "Expulsar Membros"],
 	args: true,
 
 	async run(client, message, args) {
