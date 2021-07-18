@@ -9,6 +9,7 @@ module.exports = {
   category: "info",
   usage: "",
   example: "",
+  permissoes: [],
   args: false,
 
   async run(client, message, args) {

@@ -10,6 +10,7 @@ module.exports = {
     category: "economia",
     usage: "",
     example: "",
+    permissoes: [],
     args: true,
     
     async run(client, message, args) {
