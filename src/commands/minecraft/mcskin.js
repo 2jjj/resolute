@@ -7,7 +7,8 @@ module.exports = {
     cooldown: 1000 * 2,
     category: "minecraft",
     usage: "<nickname>",
-    example: "TheSpr4y",
+    example: "spraythebest",
+    permissoes: [],
     args: true,
 
     run: async (client, message, args) => {
