@@ -14,8 +14,8 @@ module.exports = {
 	async run(client, message, args) {
 		
 		if (!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes)) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
 		for (const emojis of args) {
 			const getEmoji = Discord.Util.parseEmoji(emojis);

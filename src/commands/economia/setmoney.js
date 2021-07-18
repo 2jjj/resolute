@@ -9,14 +9,14 @@ module.exports = {
     category: "economia",
     usage: "@user <quantidade>",
     example: "Spray#7725 1500",
-    permissoes: "ADMINISTRATOR",
+    permissoes: ["ADMINISTRATOR", "Administrador"],
     args: true,
 
     async run(client, message, args) {
 
 		if (!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes)) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         let user = message.mentions.users.first();
 
