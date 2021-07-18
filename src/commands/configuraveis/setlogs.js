@@ -25,7 +25,7 @@ module.exports = {
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes)) return;
             if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
-            if (!canal) return message.channel.send(`:x: | ${author} ${err}.`);
+            if (!canal) return message.channel.send(`<:x_:856894534071746600> | ${author} ${err}.`);
             db.set(`msg_edit_${message.guild.id}`, canal.id);
             let confirm_pt1 = "O canal";
             let confirm_pt2 = "foi configurado com sucesso.";
@@ -36,23 +36,23 @@ module.exports = {
 
             if (!message.member.hasPermission(module.exports.permissoes)) return;
             if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
-            if (!canal) return message.channel.send(`:x: | ${author} ${err}.`);
+            if (!canal) return message.channel.send(`<:x_:856894534071746600> **|** ${author} ${err}.`);
 
             db.set(`msg_del_${message.guild.id}`, canal.id);
 
             let confirm_pt1 = "O canal";
             let confirm_pt2 = "foi configurado com sucesso.";
-            message.channel.send(`✅ ${author} ${confirm_pt1} ${canal} ${confirm_pt2}`)
+            message.channel.send(`<:v_:856894534184468480> **|** ${author} ${confirm_pt1} ${canal} ${confirm_pt2}`)
         }
 
         if (args[0] === "mod") {
             if (!message.member.hasPermission(module.exports.permissoes)) return;
             if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
-            if (!canal) return message.channel.send(`:x: | ${author} ${msg_error_canal}`);
+            if (!canal) return message.channel.send(`<:x_:856894534071746600> **|** ${author} ${msg_error_canal}`);
             db.set(`mod_logs_${message.guild.id}`, canal.id);
             let mod_logs0 = db.get(`mod_logs_${message.guild.id}`, canal.id);
-            message.channel.send(`✅ | ${author} ${msg_confirmado} para <#${mod_logs0}> com sucesso.`)
+            message.channel.send(`<:v_:856894534184468480> **|** ${author} ${msg_confirmado} para <#${mod_logs0}> com sucesso.`)
         }
 
         if (args[0] === "off" || args[1] == "edit") {
