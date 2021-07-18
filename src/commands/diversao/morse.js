@@ -7,7 +7,8 @@ module.exports = {
   description: "Converte o texto fornecido em código morse!",
   category: "fun",
   usage: "<texto>",
-  example: "oi galera",
+  example: "Ola galera!",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {

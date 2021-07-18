@@ -8,6 +8,7 @@ module.exports = {
     category: "fun",
     usage: "<Pegunta>",
     example: "Irei ser rico?",
+    permissoes: [],
     args: true,
 
     async run(client, message, args) {

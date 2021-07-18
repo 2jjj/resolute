@@ -10,6 +10,7 @@ module.exports = {
   category: "fun",
   usage: "@user1 @user2",
   example: "@Spray#0007 @px0#0001",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {

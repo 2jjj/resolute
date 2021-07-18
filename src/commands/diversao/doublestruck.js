@@ -7,7 +7,8 @@ module.exports = {
   description: "Com este comando você vai conseguir falar por 𝕖𝕤𝕤𝕒 𝕗𝕠𝕟𝕥𝕖!",
   category: "fun",
   usage: "<texto>",
-  example: "teste de texto",
+  example: "Ola galera!",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {
