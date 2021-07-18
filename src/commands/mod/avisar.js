@@ -15,8 +15,8 @@ module.exports = {
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes)) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 		
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',

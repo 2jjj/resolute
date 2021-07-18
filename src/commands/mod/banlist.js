@@ -11,8 +11,8 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if (!message.member.hasPermission(module.exports.permissoes)) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 		
 		const bans = await message.guild.fetchBans();
 
