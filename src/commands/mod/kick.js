@@ -29,19 +29,14 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-
 		let target = message.mentions.members.first()
-
-		if (target.id === message.author.id) {
-			return message.reply("<:x_:856894534071746600> **|** Você não pode se expulsar!")
-		}
 
 		let motivo = args.slice(1).join(' ')
 
 		let embed2 = new Discord.MessageEmbed()
-			.setDescription(`**O membro ${target.user} foi expulso do servidor!**`)
+			.setDescription(`**O membro ${target} foi expulso do servidor!**`)
 			.setColor("RANDOM")
-			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target.user}`)
+			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target}`)
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
 			.setImage(rand)

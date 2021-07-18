@@ -30,14 +30,14 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		const usuario = message.mentions.members.first()
+		let usuario = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
 		const motivo = args.slice(1).join(" ");
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${usuario} | \`${usuario.id}\``)
+			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${usuario.user} | \`${usuario.id}\``)
 			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
@@ -49,8 +49,8 @@ module.exports = {
 			.setTitle("Você foi banido!")
 			.setColor("#RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField("Autor:", `${message.author} (${message.author.id})`)
-			.addField("Motivo:", `${motivo}`)
+			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setImage(rand)
 			.setFooter("Resolute - Punições", message.guild.iconURL({
 				dynamic: true
