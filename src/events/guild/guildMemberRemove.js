@@ -1,7 +1,7 @@
 const db = require("quick.db");
 //const crystol = require("crystolnetwork-log");
 
-module.exports = async (client, member) => {
+module.exports = async (member) => {
 	db.delete(`money_${member.guild.id}_${member.id}`);
 	db.delete(`bank_${member.guild.id}_${member.id}`);
 	db.delete(`work_${member.guild.id}_${member.id}`);

@@ -1,9 +1,10 @@
-const Discord = require("discord.js")
 const db = require("quick.db")
 
-module.exports = async (client, guild, message) => {
-    
+module.exports = async (client, message) => {
+
     let canal = db.get(`msg_del_${message.guild.id}`);
+    if(canal === null) return;
+
     if (!canal === null) return;
   
     if (message.author.bot) return;

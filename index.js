@@ -31,12 +31,6 @@ console.log(table.toString().cyan);
   require(`./src/handlers/${handler}`)(client);
 });
 
-client.on("guildMemberAdd", async (member) => {
-  let autorole_resolute = db.get(`autorole_${member.guild.id}`);
-  if (!autorole_resolute === null) return;
-  member.roles.add(autorole_resolute)
-});
-
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
   require(`./src/handlers/lavalink/${handler}`)(client);
 });
