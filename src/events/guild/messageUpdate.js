@@ -3,8 +3,11 @@ const db = require("quick.db")
 
 module.exports = async (client, message, oldMessage) => {
 
-    let canal = db.get(`msg_edit_${message.guild.id}`);
-    if (!canal === null) return;
+    try {
+        var canal = db.get(`msg_edit_${message.guild.id}`);
+        if (!canal === null) return;
+    } catch (e){}
+    
   
     if (message.author.bot) return;
   
@@ -42,5 +45,8 @@ module.exports = async (client, message, oldMessage) => {
     .setTimestamp()
     .setFooter(message.guild.name, message.guild.iconURL());
   
-    client.channels.cache.get(canal).send(embed)
+    try {
+        client.channels.cache.get(canal).send(embed)
+    } catch (e){}
+
 }
