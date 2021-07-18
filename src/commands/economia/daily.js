@@ -11,7 +11,7 @@ module.exports = {
     usage: "",
     example: "",
     permissoes: [],
-    args: true,
+    args: false,
     
     async run(client, message, args) {
 

@@ -26,8 +26,7 @@ module.exports = {
             let time = ms(timeout - (Date.now() - beg));
 
             let timeEmbed = new Discord.MessageEmbed()
-                .setColor("#ff58c3")
-                .setTitle(`${message.author.username} está mendigando!`)
+                .setColor("RANDOM")
                 .setDescription(`<:interrogacao:856894534029541376> **|** Você já mendigou recentemente\n<:interrogacao:856894534029541376> **|** Volte em ${time.minutes}m ${time.seconds}s `)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
@@ -35,8 +34,7 @@ module.exports = {
             message.channel.send(timeEmbed)
         } else {
             let moneyEmbed = new Discord.MessageEmbed()
-                .setColor("#ff58c3")
-                .setTitle(`${message.author.username} está mendigando!`)
+                .setColor("RANDOM")
                 .setDescription(`**<:ybs_dinheiro:856961057204600833> **|** Você mendigou e consegui ${amount} Coins.**`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
