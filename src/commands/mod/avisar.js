@@ -9,7 +9,7 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
-	permissoes: "ADMINISTRATOR",
+	permissoes: ["ADMINISTRATOR", "Administrador"],
 	args: true,
 
 	async run(client, message, args) {

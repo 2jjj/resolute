@@ -9,6 +9,7 @@ module.exports = {
 	category: "mod",
 	usage: "@user",
 	example: "",
+	permissoes: [],
 	args: false,
 
 	async run(client, message, args) {
