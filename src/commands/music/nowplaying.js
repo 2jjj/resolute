@@ -12,6 +12,7 @@ module.exports = {
   category: "music",
   usage: "",
   example: "",
+  permissoes: [],
   args: false,
 
   async run(client, message, args) {

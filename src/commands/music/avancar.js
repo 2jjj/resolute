@@ -1,5 +1,3 @@
-//parei aqui
-
 const { format } = require(`../../handlers/functions`);
 
 module.exports = {
@@ -10,6 +8,7 @@ module.exports = {
   category: "music",
   usage: "<tempo>",
   example: "10",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {

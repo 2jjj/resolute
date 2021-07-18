@@ -8,6 +8,7 @@ module.exports = {
   category: "music",
   usage: "URL/NOME",
   example: "Musics",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {

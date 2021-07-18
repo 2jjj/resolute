@@ -8,6 +8,7 @@ module.exports = {
   category: "music",
   usage: "<tempo>",
   example: "50",
+  permissoes: [],
   args: true,
 
   async run(client, message, args) {
