@@ -1,7 +1,5 @@
 const db = require("quick.db");
-const {
-    MessageEmbed
-} = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "setlogs",
@@ -12,7 +10,7 @@ module.exports = {
     usage: "",
     example: "",
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
-    args: true,
+    args: false,
 
 
     run: async (client, message, args) => {
@@ -21,7 +19,8 @@ module.exports = {
         let author = message.author;
         let err = "Mencione um canal!";
         let msg_confirmado = "Canal setado";
-        let prefix = db.get(`prefix_${message.guild.id}`) || 'j.';
+        let prefix = db.get(`prefix_${message.guild.id}`)
+        if (prefix === null) prefix = "s."
 
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes)) return;
@@ -68,11 +67,18 @@ module.exports = {
 
         if (!args[0]) {
             let embed = new MessageEmbed()
-                .setTitle('Set Logs')
-                .addField('Mensagens Editadas', `\`${prefix}setlogs edit <#canal>\` Para setar um canal de  mensagens editadas`)
-                .addField('Mensagens Apagadas', `\`${prefix}setlogs delete <#canal>\` Para setar um canal de mensagens apagadas`)
-                .addField('Mensagens de Moderação', `\`${prefix}setlogs mod <#canal>\` Para setar um canal de mensagens de mute, unmute, banimentos, desbanimentos.`)
-                .setColor('YELLOW')
+                .setTitle(`Menu de ajuda - \`setlogs\``)
+                .setColor("RANDOM")
+                .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+                .setDescription(`${module.exports.description}`)
+                .addField(`:bulb: Modos de Uso:`, ` \`${prefix}setlogs edit <#canal>\n${prefix}setlogs delete <#canal>\`${prefix}setlogs mod <#canal>\``)
+                .addField(`:thinking: Exemplo:`, ` \`${prefix}setlogs edit #logs\n${prefix}setlogs delete #logs\`${prefix}setlogs mod #logs\``)
+                .addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
+                .addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
+                .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+                    dynamic: true
+                }))
+                .setTimestamp();
             message.channel.send(embed)
         }
     }
