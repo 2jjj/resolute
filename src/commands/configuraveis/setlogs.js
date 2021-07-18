@@ -59,8 +59,7 @@ module.exports = {
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`msg_edit_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
-                .setTitle(`Modlog desligado com sucesso`)
-                .setDescription("🚫 **O Channel mod log foi desativado nesse Servidor!**")
+                .setDescription("<:v_:856894534184468480> **|** O log de mensagens editadas foi desativado com sucesso neste servidor!")
                 .setColor("RANDOM")
             message.channel.send(del)
         }
@@ -69,8 +68,7 @@ module.exports = {
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`msg_del_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
-                .setTitle(`Modlog desligado com sucesso`)
-                .setDescription("🚫 **O Channel mod log foi desativado nesse Servidor!**")
+                .setDescription("<:v_:856894534184468480> **|** O log de mensagens deletadas foi desativado com sucesso neste servidor!")
                 .setColor("RANDOM")
             message.channel.send(del)
         }
@@ -79,12 +77,11 @@ module.exports = {
             let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
             db.delete(`mod_logs_${message.guild.id}`, canal.id)
             const del = new MessageEmbed()
-                .setTitle(`Modlog desligado com sucesso`)
-                .setDescription("🚫 **O Channel mod log foi desativado nesse Servidor!**")
+                .setDescription("<:v_:856894534184468480> **|** O modlogs foi desativado com sucesso neste servidor!")
                 .setColor("RANDOM")
             message.channel.send(del)
         }
-        
+
         if (!args[0]) {
             let embed = new MessageEmbed()
                 .setTitle(`Menu de ajuda - \`setlogs\``)
