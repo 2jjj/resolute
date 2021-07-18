@@ -61,7 +61,7 @@ module.exports = async (client, message) => {
         .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
         .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
         .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-        .addField(`🔹 Permissões necessárias:`, ` \`${command.permissoes !== undefined ? `${command.permissoes}` : `Não é necessário nenhuma permissão!` }\``)
+        .addField(`🔹 Permissões necessárias:`, ` \`${command.permissoes !== undefined ? `${command.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
