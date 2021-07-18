@@ -70,11 +70,9 @@ module.exports = async (client, message) => {
     }
   } else if(command.args == false) {
     return;
-  } else {
-    return;
-  }
-
-  if (!message.member.hasPermission(command.permissoes)) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes}\`!`)
-  if (!message.guild.me.hasPermission(command.permissoes)) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes}\`!`)
+  } else return;
+  
+  if (!message.member.hasPermission(command.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes[1]}\`!`)
+  if (!message.guild.me.hasPermission(command.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes[1]}\`!`)
 
 }

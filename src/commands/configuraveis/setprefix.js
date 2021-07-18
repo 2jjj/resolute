@@ -6,11 +6,11 @@ module.exports = {
     name: "setprefix",
     aliases: ['prefix'],
     cooldown: 1000 * 2,
-    description: "Já tem um outro bot com esse prefixo? sem problemas com este comando você altera meu prefixo!",
+    description: "Já tem um outro bot com este prefixo? sem problemas com este comando você altera meu prefixo!",
     category: "config",
     usage: "<prefixo>",
     example: "!",
-    permissoes: "MANAGE_GUILD",
+    permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: true,
 
     async run(client, message, args, msg) {
