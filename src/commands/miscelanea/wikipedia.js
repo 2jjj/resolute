@@ -9,6 +9,7 @@ module.exports = {
 	category: "outros",
 	usage: "<wiki>",
 	example: "Nirvana_(banda)",
+	permissoes: [],
     args: true,
 	
 	async run(client, message, args) {

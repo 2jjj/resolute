@@ -8,6 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<conteudo>",
 	example: "message",
+	permissoes: [],
     args: true,
 
 	async run(client, message, args) {

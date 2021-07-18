@@ -10,6 +10,7 @@ module.exports = {
 	category: "outros",
 	usage: "<jogo>",
 	example: "csgo",
+	permissoes: [],
     args: true,
 	
 	async run(client, message, args) {

@@ -9,6 +9,7 @@ module.exports = {
 	category: "outros",
 	usage: "<#cor>",
 	example: "#000",
+	permissoes: [],
     args: true,
 	
 	async run(client, message, args) {

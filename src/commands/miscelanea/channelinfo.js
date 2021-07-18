@@ -8,6 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<canal>",
 	example: "#geral",
+	permissoes: [],
     args: true,
 
 	async run(client, message, args) {

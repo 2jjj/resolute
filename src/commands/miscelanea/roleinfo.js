@@ -9,8 +9,9 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: 'Obtenha informações de um determinado cargo que você mencionar.',
 	category: "outros",
-	usage: "@cargo",
-	example: "@CEO",
+	usage: "<@Cargo>",
+	example: "@Dono",
+	permissoes: [],
     args: true,
 	
 	async run(client, message, args) {

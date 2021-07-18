@@ -8,6 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<url>",
 	example: "youtube.com",
+	permissoes: [],
     args: true,
 	
 	async run(client, message, args) {

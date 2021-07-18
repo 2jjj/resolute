@@ -8,6 +8,7 @@ module.exports = {
 	category: "outros",
 	usage: "<link>",
 	example: "https://resolutebot.xyz",
+    permissoes: [],
     args: true,
 	
 	async run(client, message, args) {
