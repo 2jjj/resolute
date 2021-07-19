@@ -9,7 +9,7 @@ module.exports = {
 	category: "config",
 	usage: "@cargo",
 	permissoes: ["ADMINISTRATOR", "Administrador"],
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 
@@ -19,7 +19,7 @@ module.exports = {
 
 		let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
-        db.set(`autorole_${message.guild.id}`, cargo_autorole.id);
+		db.set(`autorole_${message.guild.id}`, cargo_autorole.id);
 
 		const confirma = new Discord.MessageEmbed()
 			.setTitle("Autorole ativado!")
@@ -28,7 +28,7 @@ module.exports = {
 			.addField(`Cargo:`, `ﾠ<:setaaa:860626769089265665> ${cargo_autorole}`)
 			.setFooter("Resolute - Autorole", message.author.displayAvatarURL())
 			.setTimestamp();
-        message.channel.send(confirma);
+		message.channel.send(confirma);
 
-    }
+	}
 }
