@@ -17,6 +17,8 @@ module.exports = {
         let modlogs = db.get(`modlogs_config_${message.guild.id}`)
         let delete_logs = db.get(`delete_config_${message.guild.id}`)
         let edit_logs = db.get(`edit_config_${message.guild.id}`)
+		let autorole = db.get(`autorole_${message.guild.id}`);
+        console.log(autorole)
 
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
@@ -27,8 +29,9 @@ module.exports = {
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Olá ${message.author} este é o meu painel de configuração!`)
             .addField(`**Resolute ModLogs:**`, `${modlogs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs mod <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Resolute Delete logs:**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Resolute Edit logs:**:`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Resolute Delete logs**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Resolute Edit logs:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Resolute Autorole:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))
