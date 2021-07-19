@@ -41,7 +41,7 @@ module.exports = {
         <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
         :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
         <:aaaa:866076940293373982> **|** [BestList](https://bestlist.online/vote/854817597706338304)
-        <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.tk/bot/854817597706338304/vote)
+        <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.xyz/bot/854817597706338304/vote)
         <:8512blurplelink:856520144843046922> **|** [Suporte & BotList](https://discord.gg/pjy5YuNvsS)
         **
         `)
