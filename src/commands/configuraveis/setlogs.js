@@ -101,8 +101,8 @@ module.exports = {
                 .setColor("RANDOM")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .setDescription(`${module.exports.description}`)
-                .addField(`:bulb: Modos de Uso:`, ` \`${prefix}setlogs edit <#canal>\n${prefix}setlogs delete <#canal>\n${prefix}setlogs mod <#canal>\n\n${prefix}setlogs off <mod/delete/edit> <#canal>\``)
-                .addField(`:thinking: Exemplo:`, ` \`${prefix}setlogs edit #logs\n${prefix}setlogs delete #logs\n${prefix}setlogs mod #logs\n\n${prefix}setlogs off delete #logs\``)
+                .addField(`:bulb: Modos de Uso:`, ` \`${prefix}setlogs edit <#canal>\n${prefix}setlogs delete <#canal>\n${prefix}setlogs mod <#canal>\n\n${prefix}setlogs off_<mod/delete/edit> <#canal>\``)
+                .addField(`:thinking: Exemplo:`, ` \`${prefix}setlogs edit #logs\n${prefix}setlogs delete #logs\n${prefix}setlogs mod #logs\n\n${prefix}setlogs off_delete #logs\n${prefix}setlogs off_edit #logs\n${prefix}setlogs off_mod #logs\``)
                 .addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
                 .addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
