@@ -20,6 +20,7 @@ module.exports = {
 		let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
 		db.set(`autorole_${message.guild.id}`, cargo_autorole.id);
+		db.set(`autorole_config_${message.guild.id}`, true)
 
 		const confirma = new Discord.MessageEmbed()
 			.setTitle("Autorole ativado!")
