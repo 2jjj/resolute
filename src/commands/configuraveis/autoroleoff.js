@@ -7,7 +7,8 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Setar o cargo automático de quando alguém entrar em seu servidor.",
     category: "config",
-    usage: "@cargo",
+    usage: "<@cargo>",
+    example: "@Membros",
     permissoes: ["ADMINISTRATOR", "Administrador"],
     args: true,
 
