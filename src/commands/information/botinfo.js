@@ -42,6 +42,8 @@ module.exports = {
         :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
         <:aaaa:866076940293373982> **|** [BestList](https://bestlist.online/vote/854817597706338304)
         <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.xyz/bot/854817597706338304/vote)
+        <:Infinity:867128525102514186> **|** [InfinityBotList](https://infinitybotlist.com/bots/854817597706338304/vote)
+        🔷 **|** [discordbotlist.com](https://discordbotlist.com/bots/resolute-8579/upvote)
         <:8512blurplelink:856520144843046922> **|** [Suporte & BotList](https://discord.gg/pjy5YuNvsS)
         **
         `)

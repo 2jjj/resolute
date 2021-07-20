@@ -32,7 +32,6 @@ module.exports = {
             .addField(`**Delete logs**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
             .addField(`**Edit logs:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
             .addField(`**Autorole:**`, `${autorole == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}autorole <@cargo>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Prefixo atual:**`, `${prefix}`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))

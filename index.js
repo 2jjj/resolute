@@ -36,13 +36,12 @@ console.log(table.toString().cyan);
 });
 
 client.on('shardReady', (shardid) => {
-
   const status = [{
       name: `Online | Shard: ${shardid}`,
       type: 'PLAYING'
     },
     {
-      name: `www.resolutebot.xyz | Shard: ${shardid}`,
+      name: `Olhe meu sobre mim! | Shard: ${shardid}`,
       type: 'PLAYING'
     },
   ]
@@ -58,8 +57,13 @@ client.on('shardReady', (shardid) => {
   /*client.user.setActivity(`Online | Shard: ${shardid}`, {
     shardID: shardid
   });*/
-
 })
+
+client.on("guildMemberAdd", async (member) => {
+  let autorole_resolute = db.get(`autorole_${member.guild.id}`);
+  if (!autorole_resolute === null) return;
+  member.roles.add(autorole_resolute)
+});
 
 const Enmap = require("enmap")
 client.settings = new Enmap({
