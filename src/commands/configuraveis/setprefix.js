@@ -16,9 +16,9 @@ module.exports = {
     async run(client, message, args, msg) {
 
         if (!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
-        
+        if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+
         let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
 
