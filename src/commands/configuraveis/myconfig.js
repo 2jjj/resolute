@@ -28,10 +28,11 @@ module.exports = {
             .setColor("RANDOM")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Olá ${message.author} este é o meu painel de configuração!`)
-            .addField(`**Resolute ModLogs:**`, `${modlogs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs mod <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Resolute Delete logs**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Resolute Edit logs:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
-            .addField(`**Resolute Autorole:**`, `${autorole == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}autorole <@cargo>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**ModLogs:**`, `${modlogs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs mod <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Delete logs**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Edit logs:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Autorole:**`, `${autorole == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}autorole <@cargo>` : `<:ON:866476228469719090> Habilitado` }`)
+            .addField(`**Prefixo atual:**`, `${prefix}`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))
