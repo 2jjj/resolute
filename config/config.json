@@ -5,13 +5,11 @@
   "spray": "Spray#7725",
 
   "clientsettings": {
-    "nodes": [
-      {
-         "host": "us1.lexy.host",
-         "port": 25730,
-         "password": "spray"
-       }
-     ]
+    "nodes": [{
+      "host": "us1.lexy.host",
+      "port": 25730,
+      "password": "spray"
+    }]
   },
 
   "spotify": {

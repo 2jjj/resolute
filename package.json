@@ -1,7 +1,7 @@
 {
   "name": "resolute",
   "version": "2.5.6",
-  "description": "Resolute, o bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
+  "description": "Resolute, é um bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
   "main": "shard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
