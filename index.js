@@ -35,25 +35,33 @@ console.log(table.toString().cyan);
   require(`./src/handlers/lavalink/${handler}`)(client);
 });
 
-client.on('shardReady', (shardid) => {
-  const status = [{
-      name: `Online | Shard: ${shardid}`,
-      type: 'PLAYING'
-    },
-    {
-      name: `Olhe meu sobre mim! | Shard: ${shardid}`,
-      type: 'PLAYING'
-    },
-  ]
+client.on('shardReady', async (shardid) => {
+  const promises = [client.shard.fetchClientValues('guilds.cache.size'),
+    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')
+  ];
+  Promise.all(promises)
+    .then(async results => {
+      const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
+      const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0); 
 
-  function Presence() {
-    const base = status[Math.floor(Math.random() * status.length)]
-    client.user.setActivity(base)
-  }
+      const status = [{
+          name: `${totalGuilds} guilds & ${totalMembers} users. | Shard: ${shardid}`,
+          type: 'PLAYING'
+        },
+        {
+          name: `${totalMembers} users & ${totalGuilds} guilds. | Shard: ${shardid}`,
+          type: 'PLAYING'
+        },
+      ]
 
-  Presence();
-  setInterval(() => Presence(), 5000)
+      function Presence() {
+        const base = status[Math.floor(Math.random() * status.length)]
+        client.user.setActivity(base)
+      }
 
+      Presence();
+      setInterval(() => Presence(), 5000)
+    })
   /*client.user.setActivity(`Online | Shard: ${shardid}`, {
     shardID: shardid
   });*/
@@ -72,8 +80,3 @@ client.settings = new Enmap({
 })
 
 client.login(require("./config/config.json").token);
-
-//v2
-//ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.ju8crL6WopqcsbkDEjmAdco22xY
-//canary
-//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.mb2_OlpUqIvf05xIAjt2l4gdixg
