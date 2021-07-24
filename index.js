@@ -1,4 +1,5 @@
 ﻿const cor = require("colors");
+const crystol = require("crystolnetwork-log");
 const {
   Client,
   Collection
@@ -41,8 +42,8 @@ client.on('shardReady', async (shardid) => {
   ];
   Promise.all(promises)
     .then(async results => {
-      const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
-      const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0); 
+      const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+      const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
 
       const status = [{
           name: `${totalGuilds} guilds & ${totalMembers} users. | Shard: ${shardid}`,
@@ -67,17 +68,26 @@ client.on('shardReady', async (shardid) => {
   });*/
 })
 
-client.on("guildMemberAdd", async (member) => {
-  let autorole_resolute = db.get(`autorole_${member.guild.id}`);
-  if (!autorole_resolute === null) return;
-  member.roles.add(autorole_resolute)
-});
+try {
+  client.on("guildMemberAdd", async (member) => {
+    let autorole_resolute = db.get(`autorole_${member.guild.id}`);
+    if (!autorole_resolute === null) return;
+    member.roles.add(autorole_resolute)
+  });
+} catch (e) {
+  crystol.log(e, "erros.log", "America/Sao_Paulo")
+}
+
 
 const Enmap = require("enmap")
-client.settings = new Enmap({
-  name: "settings",
-  dataDir: "./src/database/settings"
-})
+try {
+  client.settings = new Enmap({
+    name: "settings",
+    dataDir: "./src/database/settings"
+  })
+} catch (e) {
+  crystol.log(e, "erros.log", "America/Sao_Paulo")
+}
 
 client.login(require("./config/config.json").token);
 
@@ -85,6 +95,3 @@ client.login(require("./config/config.json").token);
 //ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.ju8crL6WopqcsbkDEjmAdco22xY
 //canary
 //ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.mb2_OlpUqIvf05xIAjt2l4gdixg
-
-//novo
-//ODY4MTQxMzA1MzQyMDk1Mzgw.YPrVmA.B9K11dfpKIYpOERUfuG_azuLZ5U
