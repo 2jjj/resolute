@@ -26,25 +26,28 @@ module.exports = {
         let { version } = require("discord.js");
 
         let embed = new Discord.MessageEmbed()
-        .setTitle("**Minhas informações!**")
+        .setTitle("**Prazer, meu nome é Resolute!**")
         .setColor("RANDOM")
         .setThumbnail(avatar)
-        .setDescription(`**
-        <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
-        <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
-        <:pontin:852197383974551582> **|** ${totalMembers} usuários.
-        <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
-        <:memoryram:854135087037153280> **|** Memória ultilizada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB
-        <:config:856894534197313536> **|** Versão 2.5.3
-        **
-        **Links:
-        <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
-        :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
-        <:aaaa:866076940293373982> **|** [BestList](https://bestlist.online/vote/854817597706338304)
-        <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.xyz/bot/854817597706338304/vote)
-        <:Infinity:867128525102514186> **|** [InfinityBotList](https://infinitybotlist.com/bots/854817597706338304/vote)
-        <:8512blurplelink:856520144843046922> **|** [Suporte & BotList](https://discord.gg/pjy5YuNvsS)
-        **
+        .setDescription(`
+        **Informações**
+        > 👑 **|** Criador: ${config.spray}
+        > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
+        > <:config:856894534197313536> **|** Versão: 2.5.6
+        
+        **Estatísticas**
+        > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
+        > <:pontin:852197383974551582> **|** ${totalMembers} usuários.
+        > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
+
+        **Links úteis :**
+        > <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+        > :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
+        > <:aaaa:866076940293373982> **|** [BestList](https://bestlist.online/vote/854817597706338304)
+        > <:bbbbb:866076940234391592> **|** [BluePhoenix](https://bluephoenixlist.xyz/bot/854817597706338304/vote)
+        > <:Infinity:867128525102514186> **|** [InfinityBotList](https://infinitybotlist.com/bots/854817597706338304/vote)
+        > <:8512blurplelink:856520144843046922> **|** [Suporte & BotList](https://discord.gg/pjy5YuNvsS)
+        
         `)
         await message.channel.send(embed);
     })
