@@ -34,6 +34,7 @@ module.exports = {
         > 👑 **|** Criador: ${config.spray}
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
         > <:config:856894534197313536> **|** Versão: 2.5.6
+        > <:djs:868314375751102484> **|** Versão Discord.js: ${version}
         
         **Estatísticas**
         > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
