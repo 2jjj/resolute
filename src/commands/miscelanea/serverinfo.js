@@ -18,6 +18,7 @@ module.exports = {
 			.setColor("#RANDOM") //»
 			.setTitle(`<:5864blurplesearch:856520144817881118> ${message.guild.name}`)
 			.setDescription(`
+			
 			🧭 **| Nome:** \`${message.guild.name}\`
 
 			🧭 **| ID do servidor:** \`${message.guild.id}\`
