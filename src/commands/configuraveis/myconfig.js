@@ -27,9 +27,7 @@ module.exports = {
             .setColor("RANDOM")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Olá ${message.author} este é o meu painel de configuração!`)
-            .addField(`**ModLogs:**`, `${modlogs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs mod <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff mod <#canal>` }`)
-            .addField(`**Delete logs**:`, `${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff delete <#canal>` }`)
-            .addField(`**Edit logs:**`, `${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff edit <#canal>` }`)
+            .addField(`**Logs do servidor:**`, `\`ModLogs\` **->** ${modlogs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs mod <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff mod <#canal>`}\n\`DeleteLogs\` **->** ${delete_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs delete <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff delete <#canal>` }\n\`EditLogs\` **->** ${edit_logs == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}logs edit <#canal>` : `<:ON:866476228469719090> Habilitado | ${prefix}logsoff edit <#canal>`}`)
             .addField(`**Autorole:**`, `${autorole == null ? `<:OFF:866476228440621057> Desabilitado | ${prefix}autorole <@cargo>` : `<:ON:866476228469719090> Habilitado | ${prefix}autoroleoff <@cargo>` }`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
