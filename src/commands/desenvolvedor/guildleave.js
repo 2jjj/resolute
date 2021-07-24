@@ -17,7 +17,7 @@ module.exports = {
 
         client.guilds.cache.get(targetGuild)
             .leave()
-            .then(g => console.log(`eu sai da ${g}`))
+            .then(g => console.log(`[GUILDLEAVE] - ${g}`))
             .catch(console.error);
     }
 }

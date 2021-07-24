@@ -80,3 +80,11 @@ client.settings = new Enmap({
 })
 
 client.login(require("./config/config.json").token);
+
+//normal
+//ODU0ODE3NTk3NzA2MzM4MzA0.YMpc7Q.ju8crL6WopqcsbkDEjmAdco22xY
+//canary
+//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.mb2_OlpUqIvf05xIAjt2l4gdixg
+
+//novo
+//ODY4MTQxMzA1MzQyMDk1Mzgw.YPrVmA.B9K11dfpKIYpOERUfuG_azuLZ5U
