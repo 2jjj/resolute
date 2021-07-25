@@ -4,7 +4,18 @@ const jimp = require("jimp");
 const ms = require('parse-ms');
 const Canvas = require('canvas');
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "criarembed",
+    aliases: [],
+    cooldown: 1000 * 2,
+    description: "Criar uma embed com suas configurações!",
+    category: "config",
+    usage: "<@cargo>",
+    example: "",
+    permissoes: ["ADMINISTRATOR", "Administrador"],
+    args: true,
+
+    async run(client, message, args) {
 
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply(`Apenas administradores podem utilizar esse comando!`)
     let canalsetado = db.get(`setlogadm_${message.guild.id}`);
@@ -119,4 +130,4 @@ exports.run = async (client, message, args) => {
                 })
             })
     })
-}
+}}
