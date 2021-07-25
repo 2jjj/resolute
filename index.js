@@ -19,37 +19,6 @@ client.categories = fs.readdirSync("./src/commands/");
 client.queue = new Map();
 client.commands = new Collection();
 client.aliases = new Collection();
-const { SlashCommandHandler } = require("djs-slash-commands");
-client.SlashCommands = new SlashCommandHandler(client);
-
-client.on("slashCreate", async (interaction) => {
-  if (interaction.commandName === "somecommand")
-    return interaction.reply("Some reply...");
-  if (interaction.commandName === "someothercommand")
-    return interaction.reply("This is an ephemeral.", { ephemeral: true });
-
-  if (interaction.commandName === "ping") {
-    interaction.reply("Ping?!");
-    interaction.followUp("Pong!");
-  }
-
-  // Editing & deleting reply.
-  if (interaction.commandName === "thatonecommand") {
-    await interaction.reply("REPLIED?!");
-    await interaction.editReply("EDITED?!");
-    // DELETED?!
-    interaction.deleteReply();
-  }
-
-  // Deferring an interaction. Makes it say "{Name} is thinking..." and gives you 15 minutes to reply.
-  if (interaction.commandName === "defer") {
-    interaction.defer();
-    setTimeout(
-      async () => await interaction.reply("I have stopped thinking."),
-      9000
-    );
-  }
-});
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
@@ -65,6 +34,7 @@ console.log(table.toString().cyan);
 });
 
 try {
+  //autorole
   client.on("guildMemberAdd", async (member) => {
     var autorole_resolute = db.get(`autorole_${member.guild.id}`);
     if (!autorole_resolute === null) {
@@ -72,16 +42,13 @@ try {
     } else {
       member.roles.add(autorole_resolute)
     }
-  });
-} catch (e) {
-  crystol.log(e, "erros.log", "America/Sao_Paulo")
-}
 
-try {
-  client.settings = new Enmap({
-    name: "settings",
-    dataDir: "./src/database/settings"
-  })
+    //ENMAP
+    client.settings = new Enmap({
+      name: "settings",
+      dataDir: "./src/database/settings"
+    })
+  });
 } catch (e) {
   crystol.log(e, "erros.log", "America/Sao_Paulo")
 }
