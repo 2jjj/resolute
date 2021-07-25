@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 1000 * 2,
     description: "Desligar as logs do servidor.",
     category: "config",
-    usage: "",
+    usage: "<mod/delete/edit> <#canal>",
     example: "",
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: false,
