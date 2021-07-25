@@ -51,10 +51,34 @@ module.exports = {
 
         categories.push(data);
       });
-      
-      const embed = new MessageEmbed()
-        .addFields(categories)
-        .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
+
+
+      let acao = client.commands.filter((cmd) => cmd.category === 'acoes');
+      let config = client.commands.filter((cmd) => cmd.category === 'config');
+      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
+      let fun = client.commands.filter((cmd) => cmd.category === 'fun');
+      let economia = client.commands.filter((cmd) => cmd.category === 'economia');
+      let info = client.commands.filter((cmd) => cmd.category === 'info');
+      let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+      let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
+      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
+      let mod = client.commands.filter((cmd) => cmd.category === 'mod');
+      let music = client.commands.filter((cmd) => cmd.category === 'music');
+
+      const embed = new MessageEmbed()  
+        .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`💡 ** | Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`👥 ** | Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:interrogacao:856894534029541376> ** | Info** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
+        //.addFields(categories)
+        .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.\n**Prefixo atual: ${prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
         .setFooter(
           `Requisitado por ${message.author.tag}`,
           message.author.displayAvatarURL({
