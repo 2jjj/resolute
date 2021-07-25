@@ -51,7 +51,7 @@ module.exports = async (client, message) => {
   })
 
 
-  if(command.args == true) {
+  if (command.args == true) {
     if (!args[0]) {
       const help = new Discord.MessageEmbed()
         .setTitle(`Menu de ajuda - \`${command.name}\``)
@@ -68,7 +68,7 @@ module.exports = async (client, message) => {
         .setTimestamp();
       return message.channel.send(help);
     }
-  } else if(command.args == false) {
+  } else if (command.args == false) {
     return;
   } else return;
 
