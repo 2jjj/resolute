@@ -40,6 +40,10 @@ module.exports = {
         > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         > <:pontin:852197383974551582> **|** ${totalMembers} usuários.
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
+
+        **Links úteis :**
+        > <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+        > :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
         `)
         await message.channel.send(embed);
     })
