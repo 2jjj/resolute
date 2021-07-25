@@ -18,6 +18,7 @@ module.exports = {
           
     let prefix = db.get(`prefix_${message.guild.id}`)
     if (prefix === null) { prefix = "s." }
+
     let { version } = require("discord.js");
   
     cpuStat.usagePercent(function(err, percent, seconds) {
@@ -31,7 +32,7 @@ module.exports = {
       let mins = Math.floor((client.uptime / 60) % 60);
       //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
       let embedStats = new Discord.MessageEmbed()
-      .setTitle("*** Status ***")
+      .setTitle("** Status **")
       .setColor("#RANDOM")
       .addField("<:memoryram:854135087037153280> Memória ultilizada", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
       .addField("<a:SETA:852194614927818812> Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
