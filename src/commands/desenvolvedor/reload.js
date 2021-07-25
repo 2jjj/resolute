@@ -30,9 +30,7 @@ module.exports = {
                         client.aliases.set(alias, pull.name);
                     });
                 }
-
             });
-
         });
         message.channel.send('Todos os comandos foram reinicializados com sucesso!')
     },
