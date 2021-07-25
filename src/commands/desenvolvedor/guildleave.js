@@ -12,8 +12,7 @@ module.exports = {
     async run(client, message, args) {
         var targetGuild = message.content.split(" ")[1];
         if (!targetGuild) return;
-        if (!message.author.id == "836345581424738354")
-            return;
+        if (message.author.id !== '836345581424738354') return message.channel.send('não.')
 
         client.guilds.cache.get(targetGuild)
             .leave()
