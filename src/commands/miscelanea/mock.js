@@ -1,13 +1,13 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-  name: "morse",
+  name: "mock",
   aliases: [],
   cooldown: 1000 * 2,
-  description: "Converte o texto fornecido em código morse!",
-  category: "fun",
+  description: "Manipular texto em um tom sarcástico!",
+  category: "outros",
   usage: "<texto>",
-  example: "Ola galera!",
+  example: "Ola galera",
   permissoes: [],
   args: true,
 
@@ -16,8 +16,8 @@ module.exports = {
     let text = args.join("+")
     if (!text) return;
 
-    let res = await fetch('https://api.spr4y.xyz/morse/' + text);
+    let res = await fetch('https://api.popcatdev.repl.co/mock?text=' + text);
     let json = await res.json();
-    message.channel.send(json.morse)
+    message.channel.send(json.text)
   }
 }
