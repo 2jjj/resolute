@@ -1,4 +1,3 @@
-const Discord = require("discord.js")
 const AsciiTable = require("ascii-table"),
   table = new AsciiTable(`Shards Information`),
   unit = ["", "K", "M", "G", "T", "P"];
