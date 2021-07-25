@@ -31,7 +31,7 @@ module.exports = {
 
         message.channel.send({
             embed: {
-                description: "<a:check:835206263075242029> Seu bug/report foi computado e enviado para minha equipe, muito obrigado por me ajudar a melhorar!\n Contato com o desenvolvedor: Spray#7725",
+                description: "<a:check:835206263075242029> Seu bug/report foi enviado para minha equipe, muito obrigado por me ajudar a melhorar!\n Contato com o desenvolvedor: Spray#7725",
                 color: "RED"
             }
         });
