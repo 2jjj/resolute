@@ -51,20 +51,7 @@ module.exports = {
 
         categories.push(data);
       });
-
-
-      let acao = client.commands.filter((cmd) => cmd.category === 'acoes');
-      let config = client.commands.filter((cmd) => cmd.category === 'config');
-      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
-      let fun = client.commands.filter((cmd) => cmd.category === 'fun');
-      let economia = client.commands.filter((cmd) => cmd.category === 'economia');
-      let info = client.commands.filter((cmd) => cmd.category === 'info');
-      let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-      let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
-      let mod = client.commands.filter((cmd) => cmd.category === 'mod');
-      let music = client.commands.filter((cmd) => cmd.category === 'music');
-
+      
       const embed = new MessageEmbed()
         .addFields(categories)
         .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.`, `Por exemplo: \`${prefix}help ban\`.`)
