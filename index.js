@@ -70,9 +70,12 @@ client.on('shardReady', async (shardid) => {
 
 try {
   client.on("guildMemberAdd", async (member) => {
-    let autorole_resolute = db.get(`autorole_${member.guild.id}`);
-    if (!autorole_resolute === null) return;
-    member.roles.add(autorole_resolute)
+    var autorole_resolute = db.get(`autorole_${member.guild.id}`);
+    if (!autorole_resolute === null) {
+      return;
+    } else {
+      member.roles.add(autorole_resolute)
+    }
   });
 } catch (e) {
   crystol.log(e, "erros.log", "America/Sao_Paulo")
