@@ -1,9 +1,7 @@
 ﻿const cor = require("colors");
 const crystol = require("crystolnetwork-log");
-const {
-  Client,
-  Collection
-} = require("discord.js");
+const Enmap = require("enmap")
+const { Client, Collection } = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
 const mongoose = require("mongoose");
@@ -21,6 +19,37 @@ client.categories = fs.readdirSync("./src/commands/");
 client.queue = new Map();
 client.commands = new Collection();
 client.aliases = new Collection();
+const { SlashCommandHandler } = require("djs-slash-commands");
+client.SlashCommands = new SlashCommandHandler(client);
+
+client.on("slashCreate", async (interaction) => {
+  if (interaction.commandName === "somecommand")
+    return interaction.reply("Some reply...");
+  if (interaction.commandName === "someothercommand")
+    return interaction.reply("This is an ephemeral.", { ephemeral: true });
+
+  if (interaction.commandName === "ping") {
+    interaction.reply("Ping?!");
+    interaction.followUp("Pong!");
+  }
+
+  // Editing & deleting reply.
+  if (interaction.commandName === "thatonecommand") {
+    await interaction.reply("REPLIED?!");
+    await interaction.editReply("EDITED?!");
+    // DELETED?!
+    interaction.deleteReply();
+  }
+
+  // Deferring an interaction. Makes it say "{Name} is thinking..." and gives you 15 minutes to reply.
+  if (interaction.commandName === "defer") {
+    interaction.defer();
+    setTimeout(
+      async () => await interaction.reply("I have stopped thinking."),
+      9000
+    );
+  }
+});
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
@@ -31,42 +60,9 @@ console.log(table.toString().cyan);
 ["command", "events"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);
 });
-
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
   require(`./src/handlers/lavalink/${handler}`)(client);
 });
-
-client.on('shardReady', async (shardid) => {
-  const promises = [client.shard.fetchClientValues('guilds.cache.size'),
-    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')
-  ];
-  Promise.all(promises)
-    .then(async results => {
-      const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
-      const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-
-      const status = [{
-          name: `${totalGuilds} guilds & ${totalMembers} users. | Shard: ${shardid}`,
-          type: 'PLAYING'
-        },
-        {
-          name: `${totalMembers} users & ${totalGuilds} guilds. | Shard: ${shardid}`,
-          type: 'PLAYING'
-        },
-      ]
-
-      function Presence() {
-        const base = status[Math.floor(Math.random() * status.length)]
-        client.user.setActivity(base)
-      }
-
-      Presence();
-      setInterval(() => Presence(), 5000)
-    })
-  /*client.user.setActivity(`Online | Shard: ${shardid}`, {
-    shardID: shardid
-  });*/
-})
 
 try {
   client.on("guildMemberAdd", async (member) => {
@@ -81,8 +77,6 @@ try {
   crystol.log(e, "erros.log", "America/Sao_Paulo")
 }
 
-
-const Enmap = require("enmap")
 try {
   client.settings = new Enmap({
     name: "settings",
