@@ -24,11 +24,9 @@ module.exports = {
                 if (pull.name) {
                     console.log(`[RELOAD] -> ${pull.name} (cmd)`);
                     client.commands.set(pull.name, pull);
-
                 }
                 if (pull.aliases && Array.isArray(pull.aliases)) {
                     pull.aliases.forEach((alias) => {
-
                         client.aliases.set(alias, pull.name);
                     });
                 }
@@ -36,6 +34,6 @@ module.exports = {
             });
 
         });
-        message.channel.send('Pronto :)')
+        message.channel.send('Todos os comandos foram reinicializados com sucesso!')
     },
 };
