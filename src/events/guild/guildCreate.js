@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-const config = require("../../../config/config.json")
 
 module.exports = async (client, guild) => {
     const webhook = new Discord.WebhookClient(`841393653155102740`, "vvccMKHnmDK-vNbGNQN98telbtrzCQyQU4fQaJnKG6OKocU5Ht_xfsWtL12LoEex8jQJ")
