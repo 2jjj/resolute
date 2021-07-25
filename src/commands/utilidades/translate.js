@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['t'],
 	cooldown: 1000 * 2,
 	description: "Traduzir algo que deseja!",
-	category: "outros",
+	category: "util",
 	usage: "en/pt/fr/lt <texto>",
 	example: "en Hello",
 	permissoes: [],

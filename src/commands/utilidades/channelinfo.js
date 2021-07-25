@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['canalinfo'],
 	cooldown: 1000 * 2,
 	description: "Obtenha informações de um canal",
-	category: "outros",
+	category: "util",
 	usage: "<canal>",
 	example: "#geral",
 	permissoes: [],

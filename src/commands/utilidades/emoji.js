@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['emojiinfo'],
 	cooldown: 1000 * 2,
 	description: "Escreva o nome do emoji como argumentos e eu irei enviar o emoji!",
-	category: "outros",
+	category: "util",
 	usage: "<emoji_name>",
 	example: "emoji",
 	permissoes: [],

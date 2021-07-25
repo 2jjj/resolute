@@ -5,7 +5,7 @@ module.exports = {
 	aliases: [],
 	cooldown: 1000 * 2,
 	description: "Adicione um emoji de outro servidor!",
-	category: "outros",
+	category: "util",
 	usage: "<emoji>",
 	example: "<:linux:817057043470221362>",
 	permissoes: ["MANAGE_EMOJIS", "Gerenciar Emojis"],
