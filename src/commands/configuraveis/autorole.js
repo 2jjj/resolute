@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = {
 	name: "autorole",
@@ -17,8 +18,18 @@ module.exports = {
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
-		let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
+		var storedSettings = await GuildSettings.findOne({
+			gid: message.guild.id
+		});
+		if (!storedSettings) {
+			const newSettings = new GuildSettings({
+				gid: message.guild.id
+			});
+			await newSettings.save().catch(() => {});
+			storedSettings = await GuildSettings.findOne({
+				gid: message.guild.id
+			});
+		}
 
 		if (!args[0]) {
 			let embed = new Discord.MessageEmbed()
@@ -26,8 +37,8 @@ module.exports = {
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.setDescription(`${module.exports.description}`)
-			.addField(`:bulb: Modos de Uso:`, ` \`${prefix}autorole <set/desligar> <@cargo>\``)
-			.addField(`:thinking: Exemplo:`, ` \`${prefix}autorole set @Membros\n${prefix}autorole desligar @Membros\``)
+			.addField(`:bulb: Modos de Uso:`, ` \`${storedSettings.prefix}autorole <set/desligar> <@cargo>\``)
+			.addField(`:thinking: Exemplo:`, ` \`${storedSettings.prefix}autorole set @Membros\n${storedSettings.prefix}autorole desligar @Membros\``)
 			.addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
 			.addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
 			.setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({

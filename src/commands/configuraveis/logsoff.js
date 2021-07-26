@@ -1,5 +1,6 @@
 const db = require("quick.db");
 const { MessageEmbed } = require('discord.js')
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = {
     name: "setlogsoff",
@@ -14,8 +15,18 @@ module.exports = {
 
 	async run(client, message, args) {
 
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) prefix = "s."
+		var storedSettings = await GuildSettings.findOne({
+			gid: message.guild.id
+		});
+		if (!storedSettings) {
+			const newSettings = new GuildSettings({
+				gid: message.guild.id
+			});
+			await newSettings.save().catch(() => {});
+			storedSettings = await GuildSettings.findOne({
+				gid: message.guild.id
+			});
+		}
 
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
@@ -63,8 +74,8 @@ module.exports = {
                 .setColor("RANDOM")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .setDescription(`${module.exports.description}`)
-                .addField(`:bulb: Modos de Uso:`, ` \`${prefix}logsoff <mod/delete/edit> <#canal>\``)
-                .addField(`:thinking: Exemplo:`, ` \`${prefix}logsoff edit #logs\n${prefix}logsoff delete #logs\n${prefix}logsoff mod #logs\``)
+                .addField(`:bulb: Modos de Uso:`, ` \`${storedSettings.prefix}logsoff <mod/delete/edit> <#canal>\``)
+                .addField(`:thinking: Exemplo:`, ` \`${storedSettings.prefix}logsoff edit #logs\n${storedSettings.prefix}logsoff delete #logs\n${storedSettings.prefix}logsoff mod #logs\``)
                 .addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
                 .addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
