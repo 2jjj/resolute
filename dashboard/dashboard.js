@@ -227,7 +227,7 @@ module.exports = async (client) => {
         await storedSettings.save().catch(() => {});
 
         // We render the template with an alert text which confirms that settings have been saved.
-        renderTemplate(res, req, "settings.ejs", { guild, settings: storedSettings, alert: "Your settings have been saved." });
+        renderTemplate(res, req, "settings.ejs", { guild, settings: storedSettings, alert: "Suas configurações foram salvas!" });
     });
 
   app.listen(config.port, null, null, () => console.log(`Dashboard is up and running on port ${config.port}.`));
