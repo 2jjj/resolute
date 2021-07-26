@@ -7,6 +7,26 @@ const blacklist = require("../../../src/database/mongoDB/blacklist")
 
 module.exports = async (client, message) => {
 
+  if (!message.guild) return;
+  let xpReward;
+  if (client.user.id === "837785205061976096") xpReward = Math.floor(Math.random() * 0) + 0
+  if (xpReward == 0) xpReward = 10
+  let xp = db.fetch(`xp.${message.author.id}`)
+  let level = db.fetch(`level.${message.author.id}`) || "0"
+  let level2 = level + 1
+  let levels = level2 * 1000
+
+  if (!xp) {
+    db.add(`xp.${message.author.id}`, xpReward)
+  } else if (xp) {
+    db.add(`xp.${message.author.id}`, xpReward)
+  }
+
+  if (xp > levels) {
+    db.add(`level.${message.author.id}`, 1)
+    //message.author.send(`<@${message.author.id}>, subiu pro nivel **${level2}**`)
+  }
+
   let prefix = db.get(`prefix_${message.guild.id}`)
   if (prefix === null) prefix = "s."
 
