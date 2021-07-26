@@ -28,13 +28,10 @@ module.exports = async (client, message) => {
     //message.author.send(`<@${message.author.id}>, subiu pro nivel **${level2}**`)
   }
 
-  let prefix = db.get(`prefix_${message.guild.id}`)
-  if (prefix === null) prefix = "s."
-
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>'))
       if (message.mentions.has(client.user.id)) {
-        return message.inlineReply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
+        return message.inlineReply('Olá! meu prefixo atual é `' + storedSettings.prefix + '`, use `' + storedSettings.prefix + 'help` para obter ajuda!')
       }
   }
 
@@ -62,6 +59,8 @@ module.exports = async (client, message) => {
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   //if (!message.content.startsWith(prefix)) return;
 
+  console.log(storedSettings.prefix)
+
   blacklist.findOne({
     id: message.author.id
   }, async (err, data) => {
@@ -81,7 +80,6 @@ module.exports = async (client, message) => {
     }
   })
 
-
   if (command.args == true) {
     if (!args[0]) {
       const help = new Discord.MessageEmbed()
@@ -89,8 +87,8 @@ module.exports = async (client, message) => {
         .setColor("RANDOM")
         .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
         .setDescription(`${command.description}`)
-        .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-        .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+        .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${storedSettings.prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+        .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${storedSettings.prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
         .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
         .addField(`🔹 Permissões necessárias:`, ` \`${command.permissoes[0, 1] !== undefined ? `${command.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
