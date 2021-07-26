@@ -9,15 +9,12 @@ module.exports = {
   category: "dev",
   usage: "",
   example: "",
-	permissoes: ["ADMINISTRATOR", "Administrador"],
+	permissoes: [],
   args: false,
 
   async run(client, message, args) {
 
     if (message.author.id == ownerid) {
-
-      if (!message.member.hasPermission(module.exports.permissoes)) return;
-      if (!message.guild.me.hasPermission(module.exports.permissoes)) return;
 
       let i0 = 0;
       let i1 = 100;
