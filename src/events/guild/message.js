@@ -37,7 +37,7 @@ module.exports = async (client, message) => {
 
   var storedSettings = await GuildSettings.findOne({ gid: message.guild.id });
   if (!storedSettings) {
-    // If there are no settings stored for this guild, we create them and try to retrive them again.
+
     const newSettings = new GuildSettings({
       gid: message.guild.id
     });
@@ -58,8 +58,6 @@ module.exports = async (client, message) => {
   var command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   //if (!message.content.startsWith(prefix)) return;
-
-  console.log(storedSettings.prefix)
 
   blacklist.findOne({
     id: message.author.id
