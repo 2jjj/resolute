@@ -14,6 +14,9 @@ module.exports = {
 
 	async run(client, message, args) {
 
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+
 		let prefix = db.get(`prefix_${message.guild.id}`)
         if (prefix === null) prefix = "s."
 
@@ -33,9 +36,6 @@ module.exports = {
 			.setTimestamp();
 		message.channel.send(embed)
 		}
-
-		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
 		if(args[0] == "set") {
 			let cargo_autorole = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
