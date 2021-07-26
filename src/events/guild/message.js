@@ -1,9 +1,10 @@
-const db = require("quick.db")
+const db = require("quick.db");
 const Discord = require("discord.js");
 const crystol = require("crystolnetwork-log");
 const Timeout = new Discord.Collection();
-const ms = require("ms")
-const blacklist = require("../../../src/database/mongoDB/blacklist")
+const ms = require("ms");
+const blacklist = require("../../../src/database/mongoDB/blacklist");
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = async (client, message) => {
 
@@ -37,19 +38,29 @@ module.exports = async (client, message) => {
       }
   }
 
+  var storedSettings = await GuildSettings.findOne({ gid: message.guild.id });
+  if (!storedSettings) {
+    // If there are no settings stored for this guild, we create them and try to retrive them again.
+    const newSettings = new GuildSettings({
+      gid: message.guild.id
+    });
+    await newSettings.save().catch(()=>{});
+    storedSettings = await GuildSettings.findOne({ gid: message.guild.id });
+  }
+
   if (message.author.bot) return;
   if (!message.guild) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (message.content.indexOf(storedSettings.prefix) !== 0) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(storedSettings.prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
 
   if (cmd.length === 0) return;
 
   var command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
-  if (!message.content.startsWith(prefix)) return;
+  //if (!message.content.startsWith(prefix)) return;
 
   blacklist.findOne({
     id: message.author.id

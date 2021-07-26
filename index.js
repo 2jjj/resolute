@@ -1,22 +1,19 @@
 ﻿const cor = require("colors");
 const crystol = require("crystolnetwork-log");
 const Enmap = require("enmap")
-const { Client, Collection } = require("discord.js");
+const { Collection } = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
 const mongoose = require("mongoose");
-const ascii = require("ascii-table");
-let table = new ascii("MongoDB");
-table.setHeading("Mongo", "Load status");
 const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-	if (interaction.commandName === 'ping') {
-		await interaction.reply('Pong!');
-	}
-  console.log(client.user.id)
+const client = new Discord.Client({
+  ws: {
+    intents: [
+      "GUILDS",
+      "GUILD_MEMBERS",
+      "GUILD_MESSAGES"
+    ]
+  }
 });
 
 require("./src/util/inlineReply")
@@ -30,8 +27,7 @@ client.aliases = new Collection();
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
   useNewUrlParser: true
-}).then(table.addRow("Database", '✅'))
-console.log(table.toString().cyan);
+}).then(console.log("mongodb on"));
 
 ["command", "events"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);
