@@ -28,9 +28,18 @@ module.exports = {
                         id: User.user.id
                     })
                     .catch(err => console.log(err))
-                message.channel.send(`**${User.displayName}** Foi removido da blacklist!`)
+                const embed = new Discord.MessageEmbed()
+                    .setTitle("Resolute")
+                    .setColor("RANDOM")
+                    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+                    .addField(`Usuário REMOVIDO da blacklist`, `ﾠ<:setaaa:860626769089265665> ${User.user} | \`${User.id}\``)
+                    .addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
+                    .addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
+                    .setFooter("Resolute - Blacklist 😎", message.author.displayAvatarURL())
+                    .setTimestamp();
+                message.channel.send(embed);
             } else {
-                message.channel.send(`**${User.displayName}** não está na blacklist.`)
+                message.channel.send(`**${User.displayName}** Não está na blacklist.`)
             }
 
         })
