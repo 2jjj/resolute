@@ -18,8 +18,8 @@ const client = new Discord.Client({
   }
 });
 
-require("./src/util/inlineReply")
-require("./src/util/quote")
+require("./src/util/inlineReply");
+require("./src/util/quote");
 require('discord-buttons')(client);
 client.categories = fs.readdirSync("./src/commands/");
 client.queue = new Map();

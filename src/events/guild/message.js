@@ -37,7 +37,6 @@ module.exports = async (client, message) => {
 
   var storedSettings = await GuildSettings.findOne({ gid: message.guild.id });
   if (!storedSettings) {
-
     const newSettings = new GuildSettings({
       gid: message.guild.id
     });
@@ -72,7 +71,7 @@ module.exports = async (client, message) => {
         setTimeout(() => {
           Timeout.delete(`${command.name}${message.author.id}`)
         }, command.cooldown)
-      } else command.run(client, message, args);
+      } else command.run(client, message, args, storedSettings);
     } else {
       message.channel.send('Você está na blacklist\nAcha que isto é um engano? -> Chame o `Spray#7725`')
     }
