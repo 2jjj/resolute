@@ -64,6 +64,7 @@ module.exports = {
       let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === 'music');
+      let util = client.commands.filter((cmd) => cmd.category === 'util');
 
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
@@ -74,6 +75,7 @@ module.exports = {
         .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`👥 ** | Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🔮 ** | Utilidades** [${util.size}]:`, `\`${util.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:interrogacao:856894534029541376> ** | Info** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
