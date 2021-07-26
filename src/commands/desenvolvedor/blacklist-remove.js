@@ -1,4 +1,5 @@
-const blacklist = require('../.././database/mongoDB/blacklist')
+const blacklist = require('../.././database/mongoDB/blacklist');
+const Discord = require("discord.js");
 
 module.exports = {
     name: "blacklist-remove",
