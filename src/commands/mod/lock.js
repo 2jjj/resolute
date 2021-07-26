@@ -12,7 +12,7 @@ module.exports = {
 	permissoes: ["MANAGE_CHANNELS", "Gerenciar Canais"],
 	args: false,
 
-	async run(client, message, args) {
+	async run(client, message, args, storedSettings) {
 
 		var storedSettings = await GuildSettings.findOne({
 			gid: message.guild.id
@@ -26,9 +26,6 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
-
-		console.log(storedSettings.prefix)
-
 
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;

@@ -1,4 +1,5 @@
 const db = require("quick.db")
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = {
 	name: "unlock",
@@ -13,12 +14,22 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		let prefix = db.get(`prefix_${message.guild.id}`)
-		if (prefix === null) prefix = "s."
+		var storedSettings = await GuildSettings.findOne({
+			gid: message.guild.id
+		});
+		if (!storedSettings) {
+			const newSettings = new GuildSettings({
+				gid: message.guild.id
+			});
+			await newSettings.save().catch(() => {});
+			storedSettings = await GuildSettings.findOne({
+				gid: message.guild.id
+			});
+		}
 
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
-	
+
 		if (!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
 		let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
 
