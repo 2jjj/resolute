@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
-const db = require("quick.db")
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = {
   name: "help",
@@ -15,10 +15,18 @@ module.exports = {
 
   async run(client, message, args) {
 
-    var prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) {
-      prefix = "s."
-    }
+		var storedSettings = await GuildSettings.findOne({
+			gid: message.guild.id
+		});
+		if (!storedSettings) {
+			const newSettings = new GuildSettings({
+				gid: message.guild.id
+			});
+			await newSettings.save().catch(() => {});
+			storedSettings = await GuildSettings.findOne({
+				gid: message.guild.id
+			});
+		}
 
     const roleColor =
       message.guild.me.displayHexColor === "#000000" ?
@@ -80,7 +88,7 @@ module.exports = {
         .addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`👥 ** | Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
-        .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.\n**Prefixo atual: ${prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
+        .setDescription(`Use \`${storedSettings.prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${storedSettings.prefix}help ban\`.\n**Prefixo atual: ${storedSettings.prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
         .setFooter(
           `Requisitado por ${message.author.tag}`,
           message.author.displayAvatarURL({
