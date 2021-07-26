@@ -8,7 +8,7 @@ module.exports = (client, shardid) => {
             const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
 
             const status = [{
-                    name: `${totalGuilds} guilds & ${totalMembers} users. | Shard: ${shardid}`,
+                    name: `painel.resolutebot.xyz | Shard: ${shardid}`,
                     type: 'PLAYING'
                 },
                 {
