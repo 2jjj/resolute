@@ -6,6 +6,8 @@ const fs = require("fs");
 const db = require("quick.db");
 const mongoose = require("mongoose");
 const Discord = require('discord.js');
+const config = require("./config/config.json");
+
 const client = new Discord.Client({
   ws: {
     intents: [
@@ -28,6 +30,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
   useNewUrlParser: true
 }).then(console.log("mongodb on"));
+client.config = config;
 
 ["command", "events"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);
