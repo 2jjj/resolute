@@ -26,7 +26,10 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
-
+		if(!storedSettings.prefix){
+			storedSettings.prefix = "s."
+		}
+		
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 

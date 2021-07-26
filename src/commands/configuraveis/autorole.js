@@ -30,6 +30,9 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
+		if(!storedSettings.prefix){
+			storedSettings.prefix = "s."
+		}
 
 		if (!args[0]) {
 			let embed = new Discord.MessageEmbed()

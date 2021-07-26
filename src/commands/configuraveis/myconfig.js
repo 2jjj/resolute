@@ -32,6 +32,9 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
+        if(!storedSettings.prefix){
+			storedSettings.prefix = "s."
+		}
 
         let embed = new MessageEmbed()
             .setTitle(`Sistema de configuração - Resolute`)

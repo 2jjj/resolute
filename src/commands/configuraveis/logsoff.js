@@ -27,6 +27,9 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
+        if(!storedSettings.prefix){
+			storedSettings.prefix = "s."
+		}
 
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
