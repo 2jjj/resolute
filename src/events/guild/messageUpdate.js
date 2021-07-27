@@ -8,7 +8,6 @@ module.exports = async (client, message, oldMessage) => {
     if (!canal === null) return;
   } catch (e) {}
 
-
   if (message.author.bot) return;
 
   let author = message.author;
