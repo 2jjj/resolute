@@ -5,6 +5,7 @@ const Timeout = new Discord.Collection();
 const ms = require("ms");
 const blacklist = require("../../../src/database/mongoDB/blacklist");
 const GuildSettings = require("../../database/mongoDB/settings");
+const webhook = new Discord.WebhookClient(`869699890077376602`, "XbGs1o8sfimwuX6V1lWTf8n8sewzG1xM6hdCUrAyRmptuds7rc7pEEZamI9NA8BN3oQr")
 
 module.exports = async (client, message) => {
 
@@ -50,9 +51,10 @@ module.exports = async (client, message) => {
   try {
     blacklist.findOne({ id: message.author.id }, async (err, data) => {
       if (err) console.log("oia o erro lol");
-      if (!data) {
-        crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
+      if (!data) {        
         if (command.cooldown) {
+          crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
+          webhook.send(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)
           if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
           command.run(client, message, args)
           Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
