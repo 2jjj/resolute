@@ -1,5 +1,5 @@
-const Discord = require("discord.js")
-const db = require("quick.db")
+const Discord = require("discord.js");
+const ee = require("../../../config/embed.json");
 require("../../util/inlineReply")
 
 module.exports = {
@@ -19,12 +19,14 @@ module.exports = {
         //if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         let alterado = new Discord.MessageEmbed()
-            .setColor("RANDOM")
-            .setTitle("Como posso alterar o prefixo?")
+            .setColor("RANDOM")     
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .addField(`A configuração do prefixo é realizado pelo website do Resolute:`, `https://painel.resolutebot.xyz/dashboard/${message.guild.id}`)
-            .setFooter("Resolute", message.author.displayAvatarURL())
+            .setDescription(`Como posso alterar o prefixo?\nA configuração do prefixo é realizado pelo website do Resolute!`)
+            .addField(`<:setaaa:860626769089265665> Link para o website:`, `https://painel.resolutebot.xyz/dashboard/${message.guild.id}`)
+            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+                dynamic: true
+              }))
             .setTimestamp();
-        return message.inlineReply(alterado)
+        return message.channel.send(alterado)
     }
 }
