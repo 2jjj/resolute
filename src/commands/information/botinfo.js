@@ -42,7 +42,7 @@ module.exports = {
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
-        > <:ybs_bot:851955104345227294> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+        > 🤖 **|** [Me adicione!](https://www.resolutebot.xyz/add)
         > :small_blue_diamond: **|** [Website](https://www.resolutebot.xyz)
         > :small_blue_diamond: **|** [Dashboard](https://painel.resolutebot.xyz)
         `)

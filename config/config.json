@@ -14,13 +14,13 @@
     "clientID": "813dc7661aa248f29374df18bbb903e5"
   },
 
-  "token": "ODY4ODcxNzIxNDA5NzM2Nzc0.YP192Q.pj6BxzDg5C-47vMGLICSVdtPQfo",
+  "token": "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.cV3lxlyktIMb1HjMN2rv48O33BI",
   "shards": 1,
   "spray": "Spray#7725",
   "mongodbUrl": "mongodb+srv://spray:spray@cluster0.0qi3o.mongodb.net/dashboard",
-  "id": "868871721409736774",
-  "clientSecret": "tNw2lUGhxbbu4aLhUIjHwf6-0Ks8u3iX",
-  "domain": "https://painel.resolutebot.xyz",
+  "id": "837785205061976096",
+  "clientSecret": "Nij-SptZoJaoObkH5SXLA1-FFIBRvVVi",
+  "domain": "http://localhost",
   "port": 8080,
-  "usingCustomDomain": true
+  "usingCustomDomain": false
 }
