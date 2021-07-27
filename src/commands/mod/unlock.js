@@ -34,7 +34,7 @@ module.exports = {
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
 		if (!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
-		let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)
+		let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${storedSettings.prefix}}unlock para travar o canal!`)
 
 		try {
 			db.delete(`lock.${message.channel.id}`)
@@ -42,7 +42,7 @@ module.exports = {
 				SEND_MESSAGES: true,
 				ADD_REACTIONS: true
 			})
-			msg.edit(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}unlock para travar o canal!`)
+			msg.edit(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${storedSettings.prefix}unlock para travar o canal!`)
 
 		} catch (e) {
 			message.channel.send(e)

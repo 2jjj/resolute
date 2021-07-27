@@ -39,25 +39,10 @@ client.config = config;
   require(`./src/handlers/lavalink/${handler}`)(client);
 });
 
-try {
-  //autorole
-  client.on("guildMemberAdd", async (member) => {
-    var autorole_resolute = db.get(`autorole_${member.guild.id}`);
-    if (!autorole_resolute === null) {
-      return;
-    } else {
-      member.roles.add(autorole_resolute)
-    }
-
-    //ENMAP
-    client.settings = new Enmap({
-      name: "settings",
-      dataDir: "./src/database/settings"
-    })
-  });
-} catch (e) {
-  crystol.log(e, "erros.log", "America/Sao_Paulo")
-}
+client.settings = new Enmap({
+  name: "settings",
+  dataDir: "./src/database/settings"
+})
 
 client.login(require("./config/config.json").token);
 
