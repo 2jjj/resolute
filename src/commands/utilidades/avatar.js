@@ -22,7 +22,8 @@ module.exports = {
 
 		let embed = new Discord.MessageEmbed()
 			.setColor(`RANDOM`)
-			.setTitle(`Avatar de ${user.username}`)
+			.setTitle(`:frame_photo: Avatar de ${user.username}`)
+			.setDescription(`Clique [aqui](${avatar}) para baixar a imagem!`)
 			.setImage(avatar)
 			.setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
 				format: "png"
