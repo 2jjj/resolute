@@ -38,7 +38,7 @@ module.exports = {
 		};
 
 		if (membro.id == message.author.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Punir** nesse servidor!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Banir** nesse servidor!`);
 		};
 
 		if (!message.member.roles.highest > membro.roles.highest) {
@@ -50,7 +50,7 @@ module.exports = {
 		};
 
 		if (!membro.bannable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode banir este membro!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não possui permissão para banir este membro!`);
 		};
 
 		const embed = new Discord.MessageEmbed()

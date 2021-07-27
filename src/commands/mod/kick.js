@@ -33,23 +33,23 @@ module.exports = {
 		let motivo = args.slice(1).join(' ')
 
 		if (membro.id == client.user.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me punir, pois você não é digno disso!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me expulsar!`);
 		};
 
 		if (membro.id == message.author.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Punir** nesse servidor!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Expulsar** nesse servidor!`);
 		};
 
 		if (!message.member.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir esse membro, pois ele tem o cargo mais maior que o seu!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode expulsar esse membro, pois ele tem o cargo mais maior que o seu!`);
 		};
 
 		if (!message.guild.me.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso punir o membro, pois ele tem o cargo maior que o meu!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso expulsar o membro que possui o cargo maior que o meu!`);
 		};
 
-		if (!membro.bannable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir o membro, pois esse membro não pode ser banido!`);
+		if (!membro.kickable) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não possui permissão para expulsar este membro!`);
 		};
 
 		let embed2 = new Discord.MessageEmbed()
