@@ -25,7 +25,7 @@ module.exports = {
             .setFooter(`Requisitado por ${message.author.username}`,  message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
 
-            message.channel.send(embed)
+            message.inlineReply(embed)
 
         } else {
             message.channel.send("URL inválida.")
