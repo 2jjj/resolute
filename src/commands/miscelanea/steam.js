@@ -32,7 +32,7 @@ module.exports = {
                     <:setaaa:860626769089265665> **Desenvolvedor:** \`${other.developer.join(', ')}\``)
 					.setThumbnail(other.imageUrl)
 					.setFooter(message.author.tag, message.author.displayAvatarURL(), message.author.displayAvatarURL)
-				return message.channel.send(embed)
+				return message.inlineReply(embed)
 			})
 		})
 	}

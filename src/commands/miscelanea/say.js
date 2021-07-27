@@ -13,10 +13,8 @@ module.exports = {
 	
 	async run(client, message, args) {
 
-		if (!args[0]) {
-			return;
-		}
-
+		if (!args[0]) return;
+		
 		const user = message.author;
 		let avatar = user.avatarURL({
 			dynamic: true,
@@ -28,7 +26,7 @@ module.exports = {
 		const say = new Discord.MessageEmbed()
 			.setAuthor(user.tag, avatar)
 			.setDescription(sayMessage)
-		message.delete()
+		//message.delete()
 		message.channel.send(say)
 	}
 }

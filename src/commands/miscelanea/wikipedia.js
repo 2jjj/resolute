@@ -30,6 +30,6 @@ module.exports = {
 			.setDescription(`**[${body.title}](${body.content_urls.desktop.page})**\n\n${body.extract}`)
 			.setColor("RANDOM");
 		if (body.thumbnail) embed.setThumbnail(body.thumbnail.source);
-		message.channel.send(embed);
+		message.inlineReply(embed);
 	}
 };

@@ -36,6 +36,6 @@ module.exports = {
 			.setThumbnail(json.image)
 			.setImage(json.image_gradient, true)
 			.setColor(json.hex)
-		message.channel.send(embed)
+		message.inlineReply(embed)
 	}
 }
