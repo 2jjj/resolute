@@ -13,7 +13,7 @@ module.exports = {
 
 	async run(client, message, args) {
 
-		if(!args[0]) return;
+		if (!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
@@ -30,14 +30,34 @@ module.exports = {
 
 		var rand = list[Math.floor(Math.random() * list.length)]
 
-		let usuario = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
+		let membro = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
 		const motivo = args.slice(1).join(" ");
+
+		if (membro.id == client.user.id) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me punir, pois você não é digno disso!`);
+		};
+
+		if (membro.id == message.author.id) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Punir** nesse servidor!`);
+		};
+
+		if (!message.member.roles.highest > membro.roles.highest) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir esse membro, pois ele tem o cargo mais maior que o seu!`);
+		};
+
+		if (!message.guild.me.roles.highest > membro.roles.highest) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso punir o membro, pois ele tem o cargo maior que o meu!`);
+		};
+
+		if (!membro.bannable) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir o membro, pois esse membro não pode ser banido!`);
+		};
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${usuario.user} | \`${usuario.id}\``)
+			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${membro.user} | \`${membro.id}\``)
 			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
@@ -56,7 +76,7 @@ module.exports = {
 				dynamic: true
 			}))
 			.setTimestamp();
-		usuario.send(pv);
-		usuario.ban();
+		membro.send(pv);
+		membro.ban();
 	}
 }
