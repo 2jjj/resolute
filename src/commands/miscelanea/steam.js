@@ -26,10 +26,10 @@ module.exports = {
 					.setTitle(results.name)
 					.setColor("RANDOM")
 					.setDescription(`\n
-                    <:spr4yxyz:837798446584168468> **Gênero:** \`${results.genres.join(', ')} \`
-                    <:spr4yxyz:837798446584168468> **Plataforma:** \`${other.platforms.join(', ')}\`
-                    <:spr4yxyz:837798446584168468> **Características:** \`${other.features.join(', ')}\`
-                    <:spr4yxyz:837798446584168468> **Desenvolvedor:** \`${other.developer.join(', ')}\``)
+                    <:setaaa:860626769089265665> **Gênero:** \`${results.genres.join(', ')} \`
+                    <:setaaa:860626769089265665> **Plataforma:** \`${other.platforms.join(', ')}\`
+                    <:setaaa:860626769089265665> **Características:** \`${other.features.join(', ')}\`
+                    <:setaaa:860626769089265665> **Desenvolvedor:** \`${other.developer.join(', ')}\``)
 					.setThumbnail(other.imageUrl)
 					.setFooter(message.author.tag, message.author.displayAvatarURL(), message.author.displayAvatarURL)
 				return message.channel.send(embed)
