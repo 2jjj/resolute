@@ -1,10 +1,7 @@
 ﻿const cor = require("colors");
-const crystol = require("crystolnetwork-log");
 const Enmap = require("enmap")
 const { Collection } = require("discord.js");
 const fs = require("fs");
-const db = require("quick.db");
-const mongoose = require("mongoose");
 const Discord = require('discord.js');
 const config = require("./config/config.json");
 
