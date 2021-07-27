@@ -15,9 +15,6 @@ module.exports = {
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-		
-		let color = await db.get(`color_${message.author.id}`)
-		if (color === null) color = 'RANDOM'
 
 		let weight = args[0]
 		let height = args[1]
@@ -32,8 +29,8 @@ module.exports = {
 			if (imc < 24.9 && imc > 18.5) category = "Padrão"
 
 			const embed = new Discord.MessageEmbed()
-				.setColor(color)
-				.setTitle(`📉 Índice de Massa Corporal`)
+				.setColor("RANDOM")
+				.setTitle(`📉 | Índice de Massa Corporal`)
 				.addField('Peso', weight)
 				.addField('Altura', height)
 				.addField('IMC', imc)
