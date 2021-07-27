@@ -19,7 +19,7 @@
       <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Autorole:</p>
       <p style="font-style: italic;" class="disabled">Defini o cargo automático para o seu servidor</p>
       <select class="form-select" aria-label="Default select example" name="autorole">
-        <option selected>Selecionar o cargo</option>
+        <option selected><%= settings.autorole %></option>
         <% for (const [roleID, roleData] of guild.roles.cache.sort((a,b) => a.position > b.position ? -1 : 1)){ %>
           <option><%= roleData.name %></option>
        <% } %>
