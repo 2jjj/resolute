@@ -14,13 +14,8 @@ module.exports = {
 	
 	async run(client, message, args) {
 
-		if (!args[0]) {
-			return;
-		}
-
-        let prefix = db.get(`prefix_${message.guild.id}`)
-        if (prefix === null) { prefix = "s." }
-
+		if (!args[0]) return;
+		
 		let color = await db.get(`color_${message.author.id}`)
 		if (color === null) color = 'RANDOM'
 
