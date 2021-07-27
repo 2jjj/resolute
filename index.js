@@ -26,13 +26,9 @@ client.queue = new Map();
 client.commands = new Collection();
 client.aliases = new Collection();
 
-mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-}).then(console.log("mongodb on"));
 client.config = config;
 
-["command", "events"].forEach(handler => {
+["command", "events", "mongoose"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);
 });
 ["erela_js_handler", "erela_js_node_log"].forEach(handler => {
