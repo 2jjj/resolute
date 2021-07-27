@@ -61,7 +61,7 @@ module.exports = {
 		})
 		var embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
-			.setAuthor(message.author.username + ` está mordendo o ${user.username}`, avatar)
+			.setAuthor(message.author.username + ` está mordendo ${user.username}`, avatar)
 			.setImage(rand)
 			.setFooter('Clique em 🔁 para retribuir')
 

@@ -52,7 +52,7 @@ module.exports = {
 		var embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setDescription(`Highfive ${user}?`)
-			.setFooter('Clique em 🔁 para aceitar o highfive')
+			.setFooter('Clique em 🔁 para aceitar o highfive!')
 
 		var embed2 = new Discord.MessageEmbed()
 			.setColor("RANDOM")

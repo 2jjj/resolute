@@ -28,8 +28,7 @@ module.exports = {
 		let pessoa = message.mentions.users.first() || client.users.cache.get(args[0]);
 
 		let ataque = new Discord.MessageEmbed()
-			.setTitle(`Ataque!`)
-			.setDescription(`${message.author} atacou o ${pessoa}`)
+			.setDescription(`${message.author} atacou ${pessoa}`)
 			.setImage(rand)
 			.setTimestamp()
 			.setColor("RANDOM")

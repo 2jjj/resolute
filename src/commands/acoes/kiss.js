@@ -34,9 +34,8 @@ module.exports = {
 			format: 'png'
 		});
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Kiss')
 			.setColor("RANDOM")
-			.setDescription(`${message.author} acaba de beijar o ${user}`)
+			.setDescription(`${message.author} acaba de beijar ${user}`)
 			.setImage(rand)
 			.setTimestamp()
 			.setThumbnail(avatar)

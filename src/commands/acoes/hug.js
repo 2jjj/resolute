@@ -28,9 +28,8 @@ module.exports = {
 			format: 'png'
 		});
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Abraço!')
 			.setColor("RANDOM")
-			.setDescription(`${message.author} acaba de abraçar o ${user}`)
+			.setDescription(`${message.author} acaba de abraçar ${user}`)
 			.setImage(rand)
 			.setTimestamp()
 			.setThumbnail(avatar)
