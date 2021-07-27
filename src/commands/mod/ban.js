@@ -34,7 +34,7 @@ module.exports = {
 		const motivo = args.slice(1).join(" ");
 
 		if (membro.id == client.user.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me punir, pois você não é digno disso!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me banir!`);
 		};
 
 		if (membro.id == message.author.id) {
@@ -42,15 +42,15 @@ module.exports = {
 		};
 
 		if (!message.member.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir esse membro, pois ele tem o cargo mais maior que o seu!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode banir este membro, pois ele tem o cargo mais maior que o seu!`);
 		};
 
 		if (!message.guild.me.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso punir o membro, pois ele tem o cargo maior que o meu!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso banir este membro, pois ele tem o cargo maior que o meu!`);
 		};
 
 		if (!membro.bannable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir o membro, pois esse membro não pode ser banido!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode banir este membro!`);
 		};
 
 		const embed = new Discord.MessageEmbed()

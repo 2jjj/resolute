@@ -29,18 +29,37 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-		let target = message.mentions.members.first()
-
+		let membro = message.mentions.members.first()
 		let motivo = args.slice(1).join(' ')
 
+		if (membro.id == client.user.id) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me punir, pois você não é digno disso!`);
+		};
+
+		if (membro.id == message.author.id) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Punir** nesse servidor!`);
+		};
+
+		if (!message.member.roles.highest > membro.roles.highest) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir esse membro, pois ele tem o cargo mais maior que o seu!`);
+		};
+
+		if (!message.guild.me.roles.highest > membro.roles.highest) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso punir o membro, pois ele tem o cargo maior que o meu!`);
+		};
+
+		if (!membro.bannable) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode punir o membro, pois esse membro não pode ser banido!`);
+		};
+
 		let embed2 = new Discord.MessageEmbed()
-			.setDescription(`**O membro ${target} foi expulso do servidor!**`)
+			.setDescription(`**O membro ${membro} foi expulso do servidor!**`)
 			.setColor("RANDOM")
-			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${target}`)
+			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${membro}`)
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
 			.setImage(rand)
 		await message.channel.send(embed2)
-		await target.kick(motivo)
+		await membro.kick(motivo)
 	}
 }
