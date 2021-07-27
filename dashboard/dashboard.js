@@ -186,5 +186,5 @@ module.exports = async (client) => {
         renderTemplate(res, req, "settings.ejs", { guild, settings: storedSettings, alert: "Suas configurações foram salvas com sucesso!" });
     });
 
-  app.listen(config.port, null, null, () => console.log(`[DASHBOARD] PORTA ${config.port}.`));
+  app.listen(config.port, null, null, () => console.log(`Dashboard está na porta ${config.port}.`));
 };
