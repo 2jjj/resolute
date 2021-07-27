@@ -22,7 +22,7 @@ module.exports = {
             .setColor("RANDOM")
             .setTitle("Como posso alterar o prefixo?")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .addField(`A configuração do prefixo é realizado pela dashboard do Resolute:`, `https://painel.resolutebot.xyz`)
+            .addField(`A configuração do prefixo é realizado pelo website do Resolute:`, `https://painel.resolutebot.xyz/dashboard/${message.guild.id}`)
             .setFooter("Resolute", message.author.displayAvatarURL())
             .setTimestamp();
         return message.inlineReply(alterado)
