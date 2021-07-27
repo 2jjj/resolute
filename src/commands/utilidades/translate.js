@@ -27,7 +27,7 @@ module.exports = {
 		}).then(res => {
 			const translateEmbed = new Discord.MessageEmbed()
 				.setColor(result)
-				.setAuthor(`Google Tradutor`, googlepng)
+				.setAuthor(`📙 | Tradutor`, googlepng)
 				.setDescription("```css\n" + `${res.text}` + "\n```", false)
 				.setColor("#RANDOM")
 			message.inlineReply(translateEmbed)
