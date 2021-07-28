@@ -12,7 +12,7 @@ module.exports = {
     example: "",
     permissoes: [],
     args: false,
-    
+
     async run(client, message, args) {
 
         let user = message.author;
@@ -35,12 +35,16 @@ module.exports = {
             let time = ms(timeout - (Date.now() - daily));
 
             let moneyEmbed = new Discord.MessageEmbed()
+                .setColor("RANDOM")
                 .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!`)
+                .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+                    dynamic: true
+                }))
+                .setTimestamp();
             message.channel.send(`${user}`, moneyEmbed);
-            //Adicionando o dinheiro
-            //.addField(`Aviso`, `<:pontin:852197383974551582> \`Você só pode resgatar sua próxima recompensa daqui a ${time.hours}h ${time.minutes}m ${time.seconds}s\``)
-            db.add(`money_${message.guild.id}_${user.id}`, amount);
-            db.set(`daily_${message.guild.id}_${user.id}`, Date.now());
+
+            db.add(`money_${user.id}`, amount);
+            db.set(`daily_${user.id}`, Date.now());
         }
     }
 }
