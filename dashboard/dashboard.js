@@ -42,7 +42,7 @@ module.exports = async (client) => {
   }
   
   console.log("===");
-  console.log(`Info: Make sure you have added the following url to the discord's OAuth callback url section in the developer portal:\n${callbackUrl}`);
+  console.log(`${callbackUrl}`);
   console.log("===");
 
   passport.use(new Strategy({
