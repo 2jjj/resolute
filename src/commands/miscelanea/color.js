@@ -15,13 +15,16 @@ module.exports = {
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-
+		
 		let color = args[0]
+
 		if (color.includes("#")) {
 			color = args[0].split("#")[1]
 		}
+
 		const url = (`https://api.alexflipnote.dev/colour/${color}`)
 		let json
+
 		try {
 			json = await fetch(url).then(res => res.json())
 		} catch (e) {
