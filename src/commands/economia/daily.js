@@ -32,8 +32,6 @@ module.exports = {
                 .setTimestamp();
             message.channel.send(`${user}`, timeEmbed);
         } else {
-            let time = ms(timeout - (Date.now() - daily));
-
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!`)
