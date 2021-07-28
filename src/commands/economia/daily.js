@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 const ms = require("parse-ms");
+const GuildSettings = require("../../database/mongoDB/settings");
 
 module.exports = {
     name: "daily",
@@ -14,6 +15,24 @@ module.exports = {
     args: false,
 
     async run(client, message, args) {
+
+        
+		var storedSettings = await GuildSettings.findOne({
+			gid: message.guild.id
+		});
+		if (!storedSettings) {
+			const newSettings = new GuildSettings({
+				gid: message.guild.id
+			});
+			await newSettings.save().catch(() => {});
+			storedSettings = await GuildSettings.findOne({
+				gid: message.guild.id
+			});
+		}
+		if(!storedSettings.prefix){
+			storedSettings.prefix = "s."
+		}
+
 
         let user = message.author;
         let timeout = 86400000;
@@ -35,11 +54,11 @@ module.exports = {
         } else {
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!`)
+                .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!\n<:pontin:852197383974551582> **|** Compre itens com ${storedSettings.prefix}shop!`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
-                .setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
+                .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();
             message.channel.send(`${user}`, moneyEmbed);
 
