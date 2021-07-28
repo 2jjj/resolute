@@ -21,7 +21,7 @@
       <select class="form-select" aria-label="Default select example" name="autorole">
         <option selected><%= settings.autorole %></option>
         <% for (const [roleID, roleData] of guild.roles.cache.sort((a,b) => a.position > b.position ? -1 : 1)){ %>
-          <option><%= roleData.name %></option>
+          <option><%= roleData.name %></option>   
        <% } %>
       </select>
       <br><button type="submit" class="btn btn-secondary text-white">Salvar alterações</button>

@@ -181,7 +181,6 @@ module.exports = async (client) => {
       
         storedSettings.prefix = req.body.prefix;
         storedSettings.autorole = req.body.autorole;
-        console.log(storedSettings.autorole);
 
         await storedSettings.save().catch(() => {});
 
