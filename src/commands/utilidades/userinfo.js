@@ -1,13 +1,6 @@
 const Discord = require("discord.js");
 const moment = require('moment');
 
-const status = {
-    online: "Online",
-    idle: "Idle",
-    dnd: "Do Not Disturb",
-    offline: "Offline/Invisible"
-};
-
 module.exports = {
 	name: "userinfo",
 	aliases: ['ui'],
@@ -22,28 +15,24 @@ module.exports = {
 	async run(client, message, args) {
 		var permissions = [];
         var acknowledgements = 'None';
-        let whoisPermErr = new Discord.MessageEmbed()
-        .setTitle("**User Permission Error!**")
-        .setDescription("**Sorry, you don't have permissions to use this! ❌**")
-
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
         const user = message.mentions.users.first() || message.author;
 
         const flags = {
-            DISCORD_STAFF: '<:DiscordStaff:865600341718466570>',
+            DISCORD_STAFF: '<:BadgeDiscordStaff:869961802409209877>',
 	          DISCORD_EMPLOYEE: 'Discord Employee',
-	          DISCORD_PARTNER: '<:Partner:865598375251410984>',
-	          BUGHUNTER_LEVEL_1: '<:BugHunter1:865597855505711194>',
-	          BUGHUNTER_LEVEL_2: '<:BugHunter2:865598109177348146>',
-	          HYPESQUAD_EVENTS: '<:HypeSquad:865596357125341204>',
-	          HOUSE_BRAVERY: '<:Bravery:865597545741156372>',
-	          HOUSE_BRILLIANCE: '<:Brilliance:865597355003871252>',
-	          HOUSE_BALANCE: '<:Balance:865597097016557619>',
-	          EARLY_SUPPORTER: '<:EarlySupporter:865598696513863700>',
+	          DISCORD_PARTNER: '<:5270blurplepartner:856520144628744213>',
+	          BUGHUNTER_LEVEL_1: '<:BadgeDiscordBugHunter:853786346498031627>',
+	          BUGHUNTER_LEVEL_2: '<:BadgeDiscordBugHunterGold:853786346871193600>',
+	          HYPESQUAD_EVENTS: '<:HypeSquadEvents:869962392078020698>',
+	          HOUSE_BRAVERY: '<:BadgeHypeSquadBravery:869962263870705674>',
+	          HOUSE_BRILLIANCE: '<:1350discordbrillance:856520144762175498>',
+	          HOUSE_BALANCE: '<:BadgeHypeSquadBalance:869962147805921361>',
+	          EARLY_SUPPORTER: '<:early_developer_badge:854716150076538901>',
 	          TEAM_USER: 'Team User',
 	          SYSTEM: 'System',
-	          VERIFIED_DEVELOPER: '<:early_developer_badge:865598697189539880>'
+	          VERIFIED_DEVELOPER: '<:early_developer_badge:854716150076538901>'
         };
 
         const userFlags = user.flags.toArray();
@@ -99,18 +88,18 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
             .setColor('#2F3136')
-            .setFooter(`Userinfo`, message.client.user.avatarURL({ dynamic: true }))
             .setThumbnail(member.user.displayAvatarURL())
             .setTimestamp()
-            .addField('Usuário:', `<@${member.user.id}>`)
-            .addField('ID:', `${message.author.id}`, true)
-            .addField('Entrou em',`${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
-            .addField('Conta criada em', member.user.createdAt.toLocaleString(), true)
+            .addField('<:users:869960470986113085> Usuário:', `<@${member.user.id}>`)
+            .addField('🆔 ID:', `${message.author.id}`, true)
+            .addField('📅 Entrou em',`${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
+            .addField('📅 Conta criada em', member.user.createdAt.toLocaleString(), true)
             .addField('Badges:', `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'Nenhuma.'}`, true)
             .addField(`\nCargos [${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]:`,`${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "Sem cargos."}`)
             //.addField("\nAcknowledgements:", `${acknowledgements}`)
-            .addField("\nPermissoes:", `${permissions.join(` **|** `)}`, true);
-            
+            .addField("\n<:settings:869961070423461941> Permissoes:", `${permissions.join(` **|** `)}`, true)
+            .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
+
         message.inlineReply(embed);
 	}
 }

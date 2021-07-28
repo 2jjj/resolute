@@ -76,7 +76,8 @@ module.exports = {
             value: channels,
           }
         )
-        .setThumbnail(message.guild.iconURL({ dynamic: true }));
+        .setThumbnail(message.guild.iconURL({ dynamic: true }))
+        .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
 
       message.inlineReply(SERVERINFO);
 	}
