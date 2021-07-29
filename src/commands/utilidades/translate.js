@@ -9,8 +9,8 @@ module.exports = {
 	usage: "en/pt/fr/lt <texto>",
 	example: "en Hello",
 	permissoes: [],
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;
