@@ -50,7 +50,8 @@ module.exports = async (client, message) => {
   //Executando o comando e verificando se o usuário está na blacklist
   try {
     blacklist.findOne({ id: message.author.id }, async (err, data) => {
-      if (err) console.log("oia o erro lol");
+      if (err) return;
+      //Isso de data é se o usuário NÃO estiver na blacklist
       if (!data) {        
         if (command) {
           //Sistema de logs
@@ -99,9 +100,11 @@ module.exports = async (client, message) => {
       }
     } else if (command.args == false) return;
 
-    //Permissões
-    if (!message.member.hasPermission(command.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes[1]}\`!`)
-    if (!message.guild.me.hasPermission(command.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes[1]}\`!`)
-  } catch(e){}
-
+    //Se o membor não tiver permissão
+    if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes[1]}\`!`)
+    
+    //Se eu não tiver perm
+    if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes[1]}\`!`)
+  
+  } catch(e) {}
 }
