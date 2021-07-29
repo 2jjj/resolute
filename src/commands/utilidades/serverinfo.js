@@ -13,7 +13,7 @@ module.exports = {
   args: false,
 
   async run(client, message, args) {
-      
+
     let boost =
       message.guild.premiumSubscriptionCount === 0 ?
       "Nenhum Boost" :
