@@ -16,6 +16,8 @@ module.exports = {
     args: true,
 
     async run(client, message, args) {
+    
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         const text = args.join(" ")
         let image = `https://api.popcatdev.repl.co/pikachu?text=${encodeURIComponent(text)}`

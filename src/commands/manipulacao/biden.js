@@ -14,6 +14,8 @@ module.exports = {
   args: true,
   
   async run(client, message, args) {
+    
+    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
     const sentence = args.join(" ")
     if (!sentence) return;

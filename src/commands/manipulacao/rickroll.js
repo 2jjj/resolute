@@ -16,6 +16,8 @@ module.exports = {
 
     async run(client, message, args) {
 
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+
         const member = message.mentions.members.first() || message.member;
         if (!member) return;
         const canvas = Canvas.createCanvas(867, 892);

@@ -16,7 +16,8 @@ module.exports = {
     
     async run(client, message, args) {
 
-        if(!args[0]) return;
+        if(!args[0]) return;    
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         let img = jimp.read("https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg")
         img.then(image => {

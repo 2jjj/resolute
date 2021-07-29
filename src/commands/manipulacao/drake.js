@@ -15,6 +15,8 @@ module.exports = {
     args: true,
     
     async run(client, message, args) {
+    
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         const split = args.join(" ").split(",")
         const user = split[0];

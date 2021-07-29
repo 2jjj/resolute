@@ -13,9 +13,11 @@ module.exports = {
 		membro: [],
 		bot: ['ATTACH_FILES', 'Anexar arquivos']
 	},
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
+
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
 		if (message.content.split(' ').slice(1).join(' ').length < 1) {
 			return;

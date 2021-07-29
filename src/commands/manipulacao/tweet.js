@@ -18,6 +18,8 @@ module.exports = {
     args: true,
 
     async run(client, message, args) {
+    
+        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
         fetch(`https://nekobot.xyz/api/imagegen?type=tweet&username=${message.author.username}&text=${args.join(' ')}`)
             .then((res) => res.json())
