@@ -15,7 +15,7 @@ module.exports = {
     async run(client, message, args) {
 
         let user = message.mentions.members.first()
-        let member = db.fetch(`money_${message.guild.id}_${message.author.id}`)
+        let member = db.fetch(`money_${message.author.id}`)
 
         if (!user) return;
 
@@ -33,7 +33,7 @@ module.exports = {
 
         let embed4 = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`Você não Dinheiro suficiente para realizar o pagamento!`)
+            .setDescription(`Você não possui coins suficientes para realizar o pagamento!`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))
@@ -78,8 +78,8 @@ module.exports = {
             .setTimestamp();
 
         message.channel.send(`${message.author}`, embed6)
-        //Adicionando o dinheiro
-        db.add(`money_${message.guild.id}_${user.id}`, args[1])
-        db.subtract(`money_${message.guild.id}_${message.author.id}`, args[1])
+
+        db.add(`money_${user.id}`, args[1])
+        db.subtract(`money_${message.author.id}`, args[1])
     }
 }

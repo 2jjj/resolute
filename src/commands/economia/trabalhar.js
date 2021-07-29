@@ -15,7 +15,7 @@ module.exports = {
     async run(client, message, args) {
 
         let user = message.author;
-        let author = await db.fetch(`work_${message.guild.id}_${user.id}`)
+        let author = await db.fetch(`work_${user.id}`)
         let timeout = 600000;
 
         if (author !== null && timeout - (Date.now() - author) > 0) {
@@ -47,8 +47,8 @@ module.exports = {
                 .setTimestamp();
             message.channel.send(`${user}`, embed1);
 
-            db.add(`money_${message.guild.id}_${user.id}`, amount);
-            db.set(`work_${message.guild.id}_${user.id}`, Date.now());
+            db.add(`money_${user.id}`, amount);
+            db.set(`work_${user.id}`, Date.now());
         };
     }
 }

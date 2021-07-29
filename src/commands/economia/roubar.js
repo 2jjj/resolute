@@ -18,18 +18,16 @@ module.exports = {
         let autor = message.author;
         let user = message.mentions.users.first();
 
-        if (!user) {
-            return;
-        };
+        if (!user) return;
 
         if (user.id == autor.id) {
             return message.channel.send(`<:x_:856894534071746600> **|** Você não pode se auto-roubar!`);
         };
 
-        let user_money = await db.fetch(`money_${message.guild.id}_${user.id}`)
+        let user_money = await db.fetch(`money_${user.id}`)
         if (user_money == null) user_money = 0;
 
-        let autor_money = await db.fetch(`money_${message.guild.id}_${autor.id}`)
+        let autor_money = await db.fetch(`money_${autor.id}`)
         if (autor_money == null) autor_money = 0;
 
         if (user_money <= 0) {
@@ -38,7 +36,7 @@ module.exports = {
 
         let timeout = 86400000;
 
-        let daily = await db.fetch(`rob_${message.guild.id}_${autor.id}`);
+        let daily = await db.fetch(`rob_${autor.id}`);
 
         if (daily !== null && timeout - (Date.now() - daily) > 0) {
 
@@ -74,8 +72,8 @@ module.exports = {
 
                 message.channel.send(`${autor}`, moneyEmbed);
 
-                db.subtract(`money_${message.guild.id}_${autor.id}`, amount);
-                db.set(`rob_${message.guild.id}_${autor.id}`, Date.now());
+                db.subtract(`money_${autor.id}`, amount);
+                db.set(`rob_${autor.id}`, Date.now());
 
             } else {
 
@@ -85,7 +83,7 @@ module.exports = {
                     .setTitle("🔫 **|** Roubo Realizado")
                     .setColor("GREEN")
                     .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-                    .setDescription(`Você roubou o ${user} e conseguiu **\`${amount}\`** Coins!`)
+                    .setDescription(`Você roubou o ${user} e conseguiu **\`${amount}\`** RCoins!`)
                     .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                         dynamic: true
                     }))
@@ -93,9 +91,9 @@ module.exports = {
 
                 message.channel.send(`${autor}`, moneyEmbed);
 
-                db.subtract(`money_${message.guild.id}_${user.id}`, amount);
-                db.add(`money_${message.guild.id}_${autor.id}`, amount);
-                db.set(`rob_${message.guild.id}_${autor.id}`, Date.now());
+                db.subtract(`money_${user.id}`, amount);
+                db.add(`money_${autor.id}`, amount);
+                db.set(`rob_${autor.id}`, Date.now());
             };
         };
     }

@@ -14,7 +14,7 @@ module.exports = {
 
     async run(client, message, args) {
 
-        let member = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
+        let member = db.fetch(`bank_${message.author.id}`);
 
         if (!args[0]) return;
 
@@ -66,7 +66,7 @@ module.exports = {
 
         message.channel.send(`${message.author}`, embed6);
 
-        db.add(`money_${message.guild.id}_${message.author.id}`, args[0]);
-        db.subtract(`bank_${message.guild.id}_${message.author.id}`, args[0]);
+        db.add(`money_${message.author.id}`, args[0]);
+        db.subtract(`bank_${message.author.id}`, args[0]);
     }
 }

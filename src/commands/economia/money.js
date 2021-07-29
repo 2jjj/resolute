@@ -16,16 +16,16 @@ module.exports = {
 
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author;
 
-        let money = db.fetch(`money_${message.guild.id}_${user.id}`)
+        let money = db.fetch(`money_${user.id}`)
         if (money === null) money = 0;
 
-        let bank = db.fetch(`bank_${message.guild.id}_${user.id}`)
+        let bank = db.fetch(`bank_${user.id}`)
         if (bank === null) bank = 0;
 
         const embed = new Discord.MessageEmbed()
             .setColor("GREEN")
             .setTitle("Balanço Monetário")
-            .setDescription(`**${user.username}**, veja as informações da sua carteira:` +
+            .setDescription(`Informações de ${user.username}` +
                 `\n\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
                 `\n:bank: **| Banco:** **\`${bank}\`**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
