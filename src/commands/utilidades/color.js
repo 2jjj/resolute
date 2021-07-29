@@ -10,12 +10,12 @@ module.exports = {
 	usage: "<#cor>",
 	example: "#000",
 	permissoes: [],
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-		
+
 		let color = args[0]
 
 		if (color.includes("#")) {

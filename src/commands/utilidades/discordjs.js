@@ -9,7 +9,7 @@ module.exports = {
 	usage: "<conteudo>",
 	example: "message",
 	permissoes: [],
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 

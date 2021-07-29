@@ -8,8 +8,11 @@ module.exports = {
 	category: "util",
 	usage: "<emoji>",
 	example: "<:linux:817057043470221362>",
-	permissoes: ["MANAGE_EMOJIS", "Gerenciar Emojis"],
     args: true,
+    permissoes: {
+        membro: ['MANAGE_EMOJIS', 'Gerenciar Emojis'],
+        bot: ['MANAGE_EMOJIS', 'Gerenciar Emojis']
+    },
 
 	async run(client, message, args) {
 		
