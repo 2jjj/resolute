@@ -29,14 +29,13 @@ module.exports = {
 				gid: message.guild.id
 			});
 		}
-		if(!storedSettings.prefix){
+		if(!storedSettings.prefix) {
 			storedSettings.prefix = "s."
 		}
 
-
         let user = message.author;
         let timeout = 86400000;
-        let daily = await db.fetch(`daily_${message.guild.id}_${user.id}`);
+        let daily = await db.fetch(`daily_${user.id}`);
         let amount = Math.floor(Math.random() * 10000) + 1000;
 
         if (daily !== null && timeout - (Date.now() - daily) > 0) {
@@ -48,14 +47,14 @@ module.exports = {
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
-                .setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
+                //.setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
                 .setTimestamp();
             message.channel.send(`${user}`, timeEmbed);
         } else {
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** Coins!\n<:pontin:852197383974551582> **|** Compre itens com ${storedSettings.prefix}shop!`)
-                .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+                .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
                 .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
