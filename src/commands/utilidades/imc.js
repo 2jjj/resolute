@@ -10,8 +10,8 @@ module.exports = {
 	usage: "<kg> <metros>",
 	example: "60 170",
 	permissoes: [],
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;

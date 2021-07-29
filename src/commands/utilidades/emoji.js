@@ -7,7 +7,7 @@ module.exports = {
 	usage: "<emoji_name>",
 	example: "emoji",
 	permissoes: [],
-    args: true,
+	args: true,
 
 	async run(client, message, args) {
 
