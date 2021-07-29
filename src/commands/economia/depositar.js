@@ -20,10 +20,8 @@ module.exports = {
         let bank = db.fetch(`bank_${message.guild.id}_${message.author.id}`);
         if (bank == null) bank = 0;
 
-        if (!args[0]) {
-            return;
-        };
-
+        if (!args[0]) return;
+        
         let embed4 = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setDescription(`<:x_:856894534071746600> **|** Você não dinheiro suficiente para realizar o deposito!`)
