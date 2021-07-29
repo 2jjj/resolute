@@ -11,7 +11,7 @@ module.exports = {
   example: "",
   permissoes: {
     membro: [],
-    bot: ['a']
+    bot: ['ATTACH_FILES', 'Anexar arquivos']
   },
   args: false,
 
