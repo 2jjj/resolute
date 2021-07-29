@@ -7,7 +7,10 @@ module.exports = {
   category: "manipulacao",
   usage: "<texto>",
   example: "ola amigos!",
-  permissoes: [],
+  permissoes: {
+    membro: [],
+    bot: ['ATTACH_FILES', 'Anexar arquivos']
+  },
   args: true,
   
   async run(client, message, args) {
@@ -20,6 +23,6 @@ module.exports = {
       .setColor('ORANGE')
       .setFooter(' ');
     message.channel.send(embed)
-    
+
   }
 }

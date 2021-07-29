@@ -11,7 +11,10 @@ module.exports = {
 	category: "manipulacao",
 	usage: "<texto>",
 	example: "Ola amigos!",
-	permissoes: [],
+	permissoes: {
+		membro: [],
+		bot: ['ATTACH_FILES', 'Anexar arquivos']
+	},
 	args: true,
 	
 	async run(client, message, args) {
@@ -19,7 +22,7 @@ module.exports = {
 		if (!cooldowns[message.author.id]) cooldowns[message.author.id] = {
 			lastCmd: null
 		}
-		
+
 		let ultimoCmd = cooldowns[message.author.id].lastCmd
 		let timeout = 100
 		if (ultimoCmd !== null && timeout - (Date.now() - ultimoCmd) > 0) {

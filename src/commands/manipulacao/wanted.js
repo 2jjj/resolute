@@ -9,7 +9,10 @@ module.exports = {
     category: "manipulacao",
     usage: "@user",
     example: "",
-    permissoes: [],
+    permissoes: {
+        membro: [],
+        bot: ['ATTACH_FILES', 'Anexar arquivos']
+    },
     args: true,
 
     async run(client, message, args) {

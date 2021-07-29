@@ -9,7 +9,10 @@ module.exports = {
     category: "manipulacao",
     usage: "<texto>",
     example: "pika pika",
-    permissoes: [],
+    permissoes: {
+        membro: [],
+        bot: ['ATTACH_FILES', 'Anexar arquivos']
+      },
     args: true,
 
     async run(client, message, args) {
@@ -18,6 +21,6 @@ module.exports = {
         let image = `https://api.popcatdev.repl.co/pikachu?text=${encodeURIComponent(text)}`
         let imgae = new MessageAttachment(image, "pika.png")
         message.channel.send(imgae)
-        
+
     }
 }

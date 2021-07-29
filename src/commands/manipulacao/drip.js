@@ -7,7 +7,10 @@ module.exports = {
 	category: "manipulacao",
 	usage: "",
 	example: "",
-	permissoes: [],
+	permissoes: {
+		membro: [],
+		bot: ['ATTACH_FILES', 'Anexar arquivos']
+	},
     args: false,
 
 	async run(client, message, args) {

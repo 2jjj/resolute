@@ -7,7 +7,10 @@ module.exports = {
     category: "manipulacao",
     usage: "<texto1>, <texto2>",
     example: "Trabalhar, Ganhar dinheiro no tiktok",
-    permissoes: [],
+    permissoes: {
+        membro: [],
+        bot: ['ATTACH_FILES', 'Anexar arquivos']
+    },
     args: true,
   
     async run(client, message, args) {
