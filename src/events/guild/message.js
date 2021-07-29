@@ -22,7 +22,7 @@ module.exports = async (client, message) => {
     });
   }
 
-  if(!storedSettings.prefix){
+  if(!storedSettings.prefix) {
     storedSettings.prefix = "s."
   }
 
