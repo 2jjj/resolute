@@ -59,7 +59,8 @@ module.exports = {
 
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .addField(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** RCoins!`, `<:interrogacao:856894534029541376> **| Veja suas estatisticas usando** \`${storedSettings.prefix}atm\` **!**`)
+                .addField(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Veja suas estatisticas usando** \`${storedSettings.prefix}atm\` **!**`)
+                .addField(`<:interrogacao:856894534029541376> **|** Oque eu faço com os RCoins?`, `<:setaaa:860626769089265665> **| Com os RCoins você consegue comprar itens da loja usando ** \`${storedSettings.prefix}shop\` **!**`)
                 .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
