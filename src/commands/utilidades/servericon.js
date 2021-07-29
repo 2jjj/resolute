@@ -9,8 +9,8 @@ module.exports = {
 	usage: "",
 	example: "",
 	permissoes: [],
-    args: false,
-	
+	args: false,
+
 	async run(client, message, args) {
 
 		let icone = new Discord.MessageEmbed()
