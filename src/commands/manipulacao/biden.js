@@ -11,6 +11,7 @@ module.exports = {
   args: true,
   
   async run(client, message, args) {
+
     const sentence = args.join(" ")
     if (!sentence) return;
     let embed = new Discord.MessageEmbed()
@@ -19,5 +20,6 @@ module.exports = {
       .setColor('ORANGE')
       .setFooter(' ');
     message.channel.send(embed)
+    
   }
 }

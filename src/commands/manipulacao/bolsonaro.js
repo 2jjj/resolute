@@ -19,6 +19,7 @@ module.exports = {
 		if (!cooldowns[message.author.id]) cooldowns[message.author.id] = {
 			lastCmd: null
 		}
+		
 		let ultimoCmd = cooldowns[message.author.id].lastCmd
 		let timeout = 100
 		if (ultimoCmd !== null && timeout - (Date.now() - ultimoCmd) > 0) {

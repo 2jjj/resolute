@@ -14,6 +14,7 @@ module.exports = {
     async run(client, message, args) {
 
         if(!args[0]) return;
+        
         let text = args.join(" ");
 
         try {
