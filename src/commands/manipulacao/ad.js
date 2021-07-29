@@ -10,7 +10,7 @@ module.exports = {
   usage: "@user",
   example: "",
   permissoes: {
-    membro: ['a'],
+    membro: [],
     bot: ['a']
   },
   args: false,
