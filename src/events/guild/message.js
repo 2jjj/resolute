@@ -52,17 +52,29 @@ module.exports = async (client, message) => {
     blacklist.findOne({ id: message.author.id }, async (err, data) => {
       if (err) console.log("oia o erro lol");
       if (!data) {        
-        if (command.cooldown) {
+        if (command) {
+          //Sistema de logs
           crystol.log(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`, "comandos.log", "America/Sao_Paulo").then(console.log((`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)))
           webhook.send(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)
+
+          //Cooldown
           if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+
+          //Rodando o comando
           command.run(client, message, args)
+
+          //Setando o cooldown
           Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
           setTimeout(() => {
             Timeout.delete(`${command.name}${message.author.id}`)
           }, command.cooldown)
-        } else command.run(client, message, args, storedSettings);
+
+        } else {
+          //Se não tiver nenhum comando com esse nome
+          return;
+        }
       } else {
+        //Se o usuário estiver na blacklist
         message.channel.send('Você está na blacklist\nAcha que isto é um engano? -> Chame o `Spray#7725`')
       }
     })
