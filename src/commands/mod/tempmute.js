@@ -10,6 +10,10 @@ module.exports = {
 	example: "@Spray#0007 4000",
 	permissoes: ["MANAGE_MESSAGES", "Gerenciar Mensagens"],
 	args: true,
+	permissoes: {
+        membro: ['MANAGE_MESSAGES', 'Gerenciar Mensagens'],
+        bot: ['MANAGE_MESSAGES', 'Gerenciar Mensagens']
+    },
 
 	async run(client, message, args) {
 

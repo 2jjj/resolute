@@ -8,8 +8,11 @@ module.exports = {
 	category: "mod",
 	usage: "@usuario <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
-	permissoes: ["BAN_MEMBERS", "Banir Membros"],
 	args: true,
+	permissoes: {
+        membro: ['BAN_MEMBERS', 'Banir Membros'],
+        bot: ['BAN_MEMBERS', 'Banir Membros']
+    },
 
 	async run(client, message, args) {
 

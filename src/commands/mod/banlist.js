@@ -6,9 +6,12 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
-	permissoes: ["BAN_MEMBERS", "Banir Membros"],
 	args: false,
-
+	permissoes: {
+        membro: ['BAN_MEMBERS', 'Banir Membros'],
+        bot: ['BAN_MEMBERS', 'Banir Membros']
+    },
+	
 	async run(client, message, args) {
 
 		if (!message.member.hasPermission(module.exports.permissoes[0])) return;

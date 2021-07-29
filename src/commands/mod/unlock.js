@@ -9,8 +9,11 @@ module.exports = {
 	category: "mod",
 	usage: "",
 	example: "",
-	permissoes: ["MANAGE_CHANNELS", "Gerenciar Canais"],
 	args: false,
+	permissoes: {
+        membro: ['MANAGE_CHANNELS', 'Gerenciar Canais'],
+        bot: ['MANAGE_CHANNELS', 'Gerenciar Canais']
+    },
 
 	async run(client, message, args) {
 

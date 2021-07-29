@@ -6,8 +6,11 @@ module.exports = {
 	category: "mod",
 	usage: "<0/99>",
 	example: "99",
-	permissoes: ["MANAGE_MESSAGES", "Gerenciar Mensagens"],
 	args: true,
+	permissoes: {
+        membro: ['MANAGE_MESSAGES', 'Gerenciar Mensagens'],
+        bot: ['MANAGE_MESSAGES', 'Gerenciar Mensagens']
+    },
 
 	async run(client, message, args) {
 

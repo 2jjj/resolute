@@ -9,11 +9,17 @@ module.exports = {
 	category: "mod",
 	usage: "@user",
 	example: "",
-	permissoes: [],
 	args: false,
+	permissoes: {
+        membro: ['ADMINISTRATOR', 'Administrador'],
+        bot: ['ADMINISTRATOR', 'Administrador']
+    },
 
 	async run(client, message, args) {
-
+		
+		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+		
 		let user = message.mentions.members.first() || message.author;
 		let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;
 

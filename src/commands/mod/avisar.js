@@ -9,8 +9,11 @@ module.exports = {
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Ofensa a staff",
-	permissoes: ["ADMINISTRATOR", "Administrador"],
 	args: true,
+	permissoes: {
+        membro: ['ADMINISTRATOR', 'Administrador'],
+        bot: ['ADMINISTRATOR', 'Administrador']
+    },
 
 	async run(client, message, args) {
 
