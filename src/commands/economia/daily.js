@@ -67,7 +67,7 @@ module.exports = {
                 .setTimestamp();
             message.channel.send(`${user}`, moneyEmbed);
 
-            db.add(`money_${message.author.id}_${message.author.id}`, amount);
+            db.add(`money_${user.id}`, amount);
             db.set(`daily_${user.id}`, Date.now());
         }
     }
