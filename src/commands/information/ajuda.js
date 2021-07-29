@@ -77,7 +77,6 @@ module.exports = {
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`💡 ** | Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
@@ -87,6 +86,7 @@ module.exports = {
         .addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`👥 ** | Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
+        //.addField(`💡 ** | Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
         .setDescription(`Use \`${storedSettings.prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${storedSettings.prefix}help ban\`.\n**Prefixo atual: ${storedSettings.prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
         .setFooter(
