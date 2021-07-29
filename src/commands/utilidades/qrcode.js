@@ -5,7 +5,7 @@ module.exports = {
 	aliases: [],
 	cooldown: 1000 * 2,
 	description: "Consiga um qrcode para seu link.",
-	category: "outros",
+	category: "util",
 	usage: "<link>",
 	example: "https://resolutebot.xyz",
     permissoes: [],
