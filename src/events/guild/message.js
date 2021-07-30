@@ -59,7 +59,7 @@ module.exports = async (client, message) => {
           webhook.send(`[LOGS] - Comando ${cmd} usado por ${message.author.tag}(${message.author.id})`)
 
           //Cooldown
-          if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:1icon_x:846184439403118624> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
+          if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
 
           //Rodando o comando
           command.run(client, message, args)

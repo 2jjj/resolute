@@ -1,13 +1,14 @@
 {
-  "ksoftapi": "",
 
-  "clientsettings": {
-    "nodes": [{
-      "host": "us1.lexy.host",
-      "port": 25730,
-      "password": "spray"
-    }]
-  },
+"clientsettings": {
+  "nodes": [
+    {
+       "host": "https://lavalink-resolute.herokuapp.com",
+       "port": 80,
+       "password": "spray"
+     }
+   ]
+},
 
   "spotify": {
     "clientSecret": "62d796ebb5e44d31a011a17cd9879457",
@@ -16,6 +17,7 @@
 
   "token": "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.cV3lxlyktIMb1HjMN2rv48O33BI",
   "shards": 1,
+  "ksoftapi": "",
   "spray": "Spray#7725",
   "mongodbUrl": "mongodb+srv://spray:spray@cluster0.0qi3o.mongodb.net/dashboard",
   "id": "837785205061976096",
