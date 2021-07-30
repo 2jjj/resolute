@@ -6,7 +6,7 @@ It has SEVERAL systems and has a web-dashboard to manage the autorole, modlogs, 
 
 Among its most relevant categories are: Music, Minecraft, Economy, Fun, Utilities, Moderation, Configuration, Image manipulation, etc.
 
-----
+=====================================================================
 
 Data collection:
 
@@ -34,3 +34,14 @@ The user can also request the deletion of these data on my private, support serv
 
 ---
 
+WHAT IS THE PROCESS FOR USERS TO REQUEST DELETION OF THEIR DATA?:
+
+- The user can always contact me on dm to make the request.
+
+- You can request the deletion of data using the s.request command.
+
+- Or you can kick the bot from the server.
+
+---
+
+=====================================================================
