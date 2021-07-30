@@ -14,7 +14,7 @@ module.exports = (client, shardid) => {
                     type: 'PLAYING'
                 },
                 {
-                    name: `Shard ${shardid} [${config.shards}]`,
+                    name: `Online | Shard: ${shardid}`,
                     type: 'PLAYING'
                 },
             ]
