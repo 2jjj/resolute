@@ -45,3 +45,33 @@ WHAT IS THE PROCESS FOR USERS TO REQUEST DELETION OF THEIR DATA?:
 ---
 
 =====================================================================
+
+WHAT SYSTEMS AND INFRASTRUCTURE DO YOU USE?:
+
+I use a 2GB Ram vps, 2 vCPUs.
+
+For the database I use quick.db, MongoDB, enmap.
+
+For the music system I use Lavalink.
+
+I made the bot in discord.js(node.js)
+
+Basically this.
+
+---
+
+HOW HAVE YOU SECURED ACCESS TO YOUR SYSTEMS AND INFRASTRUCTURE?:
+
+The server has anti-ddos security.
+
+It has passwords and checks for each server.
+
+- 1 password for lavalink.
+
+- 1 Password for the server.
+
+- 1 password for the VPS.
+
+- 1 password for the database.
+
+---
