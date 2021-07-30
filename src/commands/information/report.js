@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: "report",
-    aliases: ['bug', 'reportar'],
+    aliases: ['bug', 'reportar', 'request'],
     cooldown: 1000 * 2,
     description: "Reportar um bug para minha equipe de desenvolvedores.",
     category: "info",
