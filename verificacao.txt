@@ -78,5 +78,20 @@ It has passwords and checks for each server.
 
 HOW CAN USERS CONTACT YOU WITH SECURITY ISSUES?:
 
+- They can contact me at the DM.
+
+- You can contact me through the support and security server.
+
+- You can use the s.report command.
 
 ---
+
+
+DOES YOUR APPLICATION UTILIZE OTHER THIRD-PARTY AUTH SERVICES OR CONNECTIONS? IF SO, WHICH, AND WHY?:
+
+It just uses the API itself.
+
+Reason: Some commands were made by this api, example: the OCR command uses this api, the binary code command too, basically that.
+
+
+============================
