@@ -30,13 +30,13 @@ client.config = config;
   require(`./src/handlers/${handler}`)(client);
 });
 
-client.premium = new Enmap({ name: "premium", dataDir: "./src/database/premium" })
-client.stats = new Enmap({ name: "stats", dataDir: "./src/database/stats" })
-client.settings = new Enmap({ name: "setups", dataDir: "./src/database/settings" })
-client.setups = new Enmap({ name: "setups", dataDir: "./src/database/setups" })
-client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./src/database/queuesaves", ensureProps: false})
-client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/warns" });
-client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/warns" })
+client.premium = new Enmap({ name: "premium", dataDir: "./src/database/enmap/premium" })
+client.stats = new Enmap({ name: "stats", dataDir: "./src/database/enmap/stats" })
+client.settings = new Enmap({ name: "setups", dataDir: "./src/database/enmap/settings" })
+client.setups = new Enmap({ name: "setups", dataDir: "./src/database/enmap/setups" })
+client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./src/database/enmap/queuesaves", ensureProps: false})
+client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/enmap/warns" });
+client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/enmap/warns" })
 
 const dbl = new DBL(config.topgg_token, client);
 
