@@ -38,8 +38,3 @@ client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/warns"
 client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/warns" })
 
 client.login(require("./config/config.json").token);
-
-//normal
-//ODY4ODcxNzIxNDA5NzM2Nzc0.YP192Q.pj6BxzDg5C-47vMGLICSVdtPQfo
-//canary
-//ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.cV3lxlyktIMb1HjMN2rv48O33BI
