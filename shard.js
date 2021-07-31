@@ -4,7 +4,8 @@ const config = require("./config/config.json")
 
 const manager = new ShardingManager('./index.js', {
     totalShards: config.shards, 
-    token: config.token
+    token: config.token,
+    respawn: true,
 });
 
 

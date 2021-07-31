@@ -1,9 +1,9 @@
 ﻿const cor = require("colors");
-const Enmap = require("enmap")
 const { Collection } = require("discord.js");
 const fs = require("fs");
 const Discord = require('discord.js');
 const config = require("./config/config.json");
+const Enmap = require("enmap");
 
 const client = new Discord.Client({
   ws: {
@@ -25,17 +25,17 @@ client.aliases = new Collection();
 
 client.config = config;
 
-["command", "events", "mongoose"].forEach(handler => {
+["mongoose", "clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);
 });
-["erela_js_handler", "erela_js_node_log"].forEach(handler => {
-  require(`./src/handlers/lavalink/${handler}`)(client);
-});
 
-client.settings = new Enmap({
-  name: "settings",
-  dataDir: "./src/database/settings"
-})
+client.premium = new Enmap({ name: "premium", dataDir: "./src/database/premium" })
+client.stats = new Enmap({ name: "stats", dataDir: "./src/database/stats" })
+client.settings = new Enmap({ name: "setups", dataDir: "./src/database/settings" })
+client.setups = new Enmap({ name: "setups", dataDir: "./src/database/setups" })
+client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./src/database/queuesaves", ensureProps: false})
+client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/warns" });
+client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/warns" })
 
 client.login(require("./config/config.json").token);
 

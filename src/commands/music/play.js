@@ -1,50 +1,39 @@
-const playermanager = require(`../../handlers/lavalink/playermanager`);
+const {
+	MessageEmbed
+} = require(`discord.js`);
+const config = require(`../../../config/config.json`);
+const ee = require(`../../../config/embed.json`);
+const emoji = require(`../../../config/emojis.json`);
+const playermanager = require(`../../handlers/playermanager`);
 
 module.exports = {
-  name: "play",
-  aliases: ['p'],
-  cooldown: 2000 * 2,
-  description: "Toca uma música com o nome ou url fornecido.",
-  category: "music",
-  usage: "<URL/NOME>",
-  example: "AJR - Come hang out",
-  permissoes: [],
-  args: true,
+	name: "play",
+	aliases: [],
+	cooldown: 1000 * 2,
+	description: "",
+	category: "music",
+	usage: "",
+	example: "",
+	args: true,
+	permissoes: {
+		membro: [],
+		bot: []
+	},
 
-  async run(client, message, args) {
+	async run(client, message, args, text) {
 
-    if (!args[0]) return;
+		message.channel.send(new MessageEmbed()
+			.setColor(ee.color)
+			.setTitle(`**Searching** 🔎`)
+			.setDescription(`\`\`\`${text}\`\`\``)
+		).then(msg => {
+			msg.delete({
+				timeout: 5000
+			}).catch(e => console.log("Could not delete, this prevents a bug"))
+		})
 
-    const { channel } = message.member.voice;
+		//play the SONG from YOUTUBE
+		playermanager(client, message, args, `song:youtube`);
 
-    if (!channel) return message.channel.send(`:x: **Você precisa estar em um canal de voz para usar este comando.**`);
-
-    if (message.member.voice.selfDeaf) return message.channel.send(`:x: **Você não pode executar este comando enquanto estiver silenciado**`);
-    const botchannel = message.guild.me.voice.channel;
-
-    const player = client.manager.players.get(message.guild.id);
-    if (player && channel.id !== player.voiceChannel)
-      return message.channel.send(`**:x: Você precisa estar no mesmo canal de voz que eu para usar este comando**`);
-
-    if (player && botchannel && channel.id !== botchannel.id) {
-      player.destroy();
-    }
-
-    if (message.content.includes("youtu")) {
-      message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:youtube`);
-    } else if (message.content.includes("spotify")) {
-      message.channel.send(`<:spotify:861682475809505310> **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:spotify`);
-    } else if (message.content.includes("soundcloud")) {
-      message.channel.send(`<:spr4y:861682475393482764> **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:soundcloud`);
-    } else if (message.content.includes("http")) {
-      message.channel.send(`🎵 **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:youtube`);
-    } else {
-      message.channel.send(`<:yt:861682089049325598> **Procurando** :mag_right: \`${args.join(" ")}\``)
-      playermanager(client, message, args, `play:youtube`);
-    }
-  }
-};
+	}
+}

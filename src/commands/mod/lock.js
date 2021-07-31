@@ -15,27 +15,10 @@ module.exports = {
         bot: ['MANAGE_CHANNELS', 'Gerenciar Canais']
     },
 
-	async run(client, message, args, storedSettings) {
+	async run(client, message, args, prefix) {
 
-		var storedSettings = await GuildSettings.findOne({
-			gid: message.guild.id
-		});
-		if (!storedSettings) {
-			const newSettings = new GuildSettings({
-				gid: message.guild.id
-			});
-			await newSettings.save().catch(() => {});
-			storedSettings = await GuildSettings.findOne({
-				gid: message.guild.id
-			});
-		}
-		if(!storedSettings.prefix){
-			storedSettings.prefix = "s."
-		}
-
-		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
-
+		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
 
 		if (db.fetch(`lock.${message.channel.id}`)) return message.reply("<a:SETA:852194614927818812> Este canal já está bloqueado.")
 		let msg = await message.channel.send("Sucesso!")
@@ -46,7 +29,7 @@ module.exports = {
 				SEND_MESSAGES: false,
 				ADD_REACTIONS: false
 			})
-			msg.edit(`:tada: **|** ${message.author} este canal foi bloqueado com sucesso! **|** Use ${storedSettings.prefix}unlock para destravar!`)
+			msg.edit(`:tada: **|** ${message.author} este canal foi bloqueado com sucesso! **|** Use ${prefix}unlock para destravar!`)
 
 		} catch (e) {
 			message.channel.send(e)

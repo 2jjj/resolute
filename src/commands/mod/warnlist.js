@@ -17,8 +17,8 @@ module.exports = {
 
 	async run(client, message, args) {
 		
-		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
 		
 		let user = message.mentions.members.first() || message.author;
 		let warns = await db.get(`warnsCount_${message.guild.id}-${user.id}`) || 0;

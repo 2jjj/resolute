@@ -1,14 +1,27 @@
 {
+  "settings": {
+    "progressbar_emoji": "🔶",
+    "leaveOnEmpty_Channel": {
+      "enabled": true,
+      "time_delay": 60000
+    },
+    "LeaveOnEmpty_Queue": {
+      "enabled": true,
+      "time_delay": 60000
+    },
+    "selfDeaf": true,
+    "serverDeaf": true
+  },
 
-"clientsettings": {
-  "nodes": [
-    {
-       "host": "https://lavalink-resolute.herokuapp.com",
-       "port": 80,
-       "password": "spray"
-     }
-   ]
-},
+  "clientsettings": {
+    "nodes": [
+      {
+         "host": "localhost",
+         "port": 2333,
+         "password": "spray"
+       }
+     ]
+  },
 
   "spotify": {
     "clientSecret": "62d796ebb5e44d31a011a17cd9879457",

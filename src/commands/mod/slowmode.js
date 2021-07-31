@@ -18,8 +18,8 @@ module.exports = {
 	async run(client, message, args) {
 
 		if(!args[0]) return;
-		if (!message.member.hasPermission(module.exports.permissoes[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
 		
 		const currentCooldown = message.channel.rateLimitPerUser;
 		const reason = args[1] ? args.slice(1).join(' ') : 'Sem motivos.';

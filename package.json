@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Resolute é um bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
   "main": "shard.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "ejs": "^3.1.6",
     "enmap": "^5.8.6",
     "erela.js": "^2.3.3",
-    "erela.js-deezer": "^1.0.5",
+    "erela.js-deezer": "^1.0.7",
     "erela.js-spotify": "^1.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",

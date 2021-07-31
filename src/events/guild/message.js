@@ -26,19 +26,21 @@ module.exports = async (client, message) => {
     storedSettings.prefix = "s."
   }
 
+  var prefix = storedSettings.prefix
+
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>'))
       if (message.mentions.has(client.user.id)) {
-        return message.inlineReply('Olá! meu prefixo atual é `' + storedSettings.prefix + '`, use `' + storedSettings.prefix + 'help` para obter ajuda!')
+        return message.inlineReply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
       }
   }
 
   if (message.author.bot) return;
   if (!message.guild) return;
-  if (message.content.indexOf(storedSettings.prefix) !== 0) return;
+  if (message.content.indexOf(prefix) !== 0) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
-  const args = message.content.slice(storedSettings.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
 
   if (cmd.length === 0) return;
@@ -62,7 +64,7 @@ module.exports = async (client, message) => {
           if (Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Espere \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}\` antes de usar esse comando novamente!`);
 
           //Rodando o comando
-          command.run(client, message, args)
+          command.run(client, message, args, prefix, args.join(" "))
 
           //Setando o cooldown
           Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
@@ -87,8 +89,8 @@ module.exports = async (client, message) => {
           .setColor("RANDOM")
           .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
           .setDescription(`${command.description}`)
-          .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${storedSettings.prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-          .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${storedSettings.prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+          .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+          .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
           .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
           .addField(`🔹 Permissões necessárias:`, ` \`${command.permissoes[0, 1] !== undefined ? `${command.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
           .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
