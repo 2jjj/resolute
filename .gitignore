@@ -2,6 +2,9 @@ node_modules
 package-lock.json
 json.sqlite
 comandos.log
-Resolute.zip
-shard.js
 logs
+config
+dashboard
+application.yml
+Lavalink.jar
+verificacao.txt
