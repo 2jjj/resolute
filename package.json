@@ -22,6 +22,7 @@
     "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
     "crystolnetwork-log": "^1.2.4",
+    "dblapi.js": "^2.4.1",
     "discord-buttons": "^3.2.1",
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.3",

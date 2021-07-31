@@ -4,6 +4,7 @@ const fs = require("fs");
 const Discord = require('discord.js');
 const config = require("./config/config.json");
 const Enmap = require("enmap");
+const DBL = require("dblapi.js");
 
 const client = new Discord.Client({
   ws: {
@@ -36,5 +37,15 @@ client.setups = new Enmap({ name: "setups", dataDir: "./src/database/setups" })
 client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./src/database/queuesaves", ensureProps: false})
 client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/warns" });
 client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/warns" })
+
+const dbl = new DBL(config.topgg_token, client);
+
+dbl.on('posted', () => {
+  console.log('Top.gg servers updated!');
+})
+
+dbl.on('error', e => {
+  console.log(`Error to update top.gg servers!\n ${e}`);
+})
 
 client.login(require("./config/config.json").token);
