@@ -8,7 +8,7 @@ const config = require(".././config/config.json");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const Discord = require("discord.js");
-const GuildSettings = require("../src/database/mongoDB/settings");
+const GuildSettings = require("../databases/mongoDB/settings");
 
 const app = express();
 const MemoryStore = require("memorystore")(session);
