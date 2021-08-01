@@ -8,8 +8,11 @@ module.exports = {
   category: `👀 Filter`,
   aliases: [`bb`],
   description: `Changes the Bass gain`,
-  usage: `bassboost <none/low/medium/high>`,
+  usage: `<none/low/medium/high>`,
+  example: "none",
+  permissoes: [],
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       let level = `none`;

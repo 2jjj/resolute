@@ -9,8 +9,11 @@ module.exports = {
   category: `👀 Filter`,
   aliases: [`eq`],
   description: `Changes the Equalizer`,
-  usage: `bassboost <music/bassboost/earrape>`,
+  usage: `<music/bassboost/earrape>`,
+  example: "music",
+  permissoes: [],
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       let level = `none`;

@@ -4,13 +4,17 @@ const {
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `clearfilter`,
   category: `👀 Filter`,
   aliases: [`cf`],
   description: `Clears the Equalizer`,
-  usage: `clearfilter`,
+  usage: ``,
+  example: "",
+  permissoes: [],
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       player.clearEQ();
