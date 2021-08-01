@@ -14,7 +14,7 @@ module.exports = async (client, guild) => {
 
         const embed = new Discord.MessageEmbed()
             .setColor(ee.color)
-            .setTitle(`<:info:794601003390861365> Nova guild`)
+            .setTitle(`<:setaaa:860626769089265665> Nova guild`)
             .addField('**Servidor**', guild.name, true)
             .addField('**Servidor ID**', guild.id, true)
             .addField('**Fundador**', guild.owner.user.tag)
