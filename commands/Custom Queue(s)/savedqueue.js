@@ -1,12 +1,8 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
-const {
-  TrackUtils
-} = require("erela.js");
+const { TrackUtils } = require("erela.js");
 const {
   format,
   delay,
@@ -14,6 +10,7 @@ const {
   swap_pages2,
   shuffle
 } = require(`../../handlers/functions`);
+
 module.exports = {
   name: `savedqueue`,
   category: `⚜️ Custom Queue(s)`,
