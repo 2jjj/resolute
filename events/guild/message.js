@@ -265,7 +265,7 @@ module.exports = async (client, message) => {
           try {
             const link = await sourcebin.create([
               {
-                name: 'Tortuguita logs',
+                name: 'Resolute logs',
                 content: args.slice(0).join(" "),
                 languageId: 'text'
               }
@@ -280,7 +280,7 @@ module.exports = async (client, message) => {
 
         const embed_logs = new MessageEmbed()
           .setColor(ee.color)
-          .setTitle(`<:info:794601003390861365> Nova comando executado`)
+          .setTitle(`<:setaaa:860626769089265665> Nova comando executado`)
           .addField('**Servidor**', message.guild.name)
           .addField('**Servidor ID**', message.guild.id)
           .addField('**Executada por**', message.author.tag + ' ( ' + message.author.id + ' )')
@@ -297,8 +297,8 @@ module.exports = async (client, message) => {
         return message.channel.send(new Discord.MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Something went wrong while, running the: `" + command.name + "` command")
-          .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+          .setTitle("❌ Um erro ocorreu ao executar o comando `" + command.name + "`")
+          //.setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
         ).then(msg => {
           try {
             msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey))
@@ -309,9 +309,8 @@ module.exports = async (client, message) => {
   } catch (e) {
     console.log(e)
     return message.channel.send(new MessageEmbed()
-      .setColor("RED")
-      .setTitle(`❌ ERROR | An error occurred`)
-      .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+      .setColor("RANDOM")
+      .setDescription(`\`\`\`Ocorreu um erro!\`\`\``)
     );
   }
 
