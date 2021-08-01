@@ -1,33 +1,4 @@
 {
-  "settings": {
-    "progressbar_emoji": "🔶",
-    "leaveOnEmpty_Channel": {
-      "enabled": true,
-      "time_delay": 60000
-    },
-    "LeaveOnEmpty_Queue": {
-      "enabled": true,
-      "time_delay": 60000
-    },
-    "selfDeaf": true,
-    "serverDeaf": true
-  },
-
-  "clientsettings": {
-    "nodes": [
-      {
-         "host": "localhost",
-         "port": 2333,
-         "password": "spray"
-       }
-     ]
-  },
-
-  "spotify": {
-    "clientSecret": "62d796ebb5e44d31a011a17cd9879457",
-    "clientID": "813dc7661aa248f29374df18bbb903e5"
-  },
-
   "token": "ODM3Nzg1MjA1MDYxOTc2MDk2.YIxmRg.cV3lxlyktIMb1HjMN2rv48O33BI",
   "topgg_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2ODg3MTcyMTQwOTczNjc3NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjI3NzY1OTk0fQ.0H8lit4NyFqseE3e12podvpSZktbIowqHTN13RSeXtM",
   "shards": 1,
@@ -38,5 +9,47 @@
   "clientSecret": "Nij-SptZoJaoObkH5SXLA1-FFIBRvVVi",
   "domain": "http://localhost",
   "port": 8080,
-  "usingCustomDomain": false
+  "usingCustomDomain": false,
+  "prefix": "t!",
+
+  "clientsettings": {
+    "nodes": [
+      {
+        "host": "localhost",
+        "port": 2333,
+        "password": "spray"
+      }
+    ]
+  },
+
+  "spotify": {
+    "clientSecret": "62d796ebb5e44d31a011a17cd9879457",
+    "clientID": "813dc7661aa248f29374df18bbb903e5"
+  },
+
+  "settings": {
+    "progressbar_emoji": "🔶",
+    "leaveOnEmpty_Channel": {
+      "enabled": true,
+      "time_delay": 60000
+    },
+
+    "LeaveOnEmpty_Queue": {
+      "enabled": true,
+      "time_delay": 60000
+    },
+
+    "selfDeaf": true,
+    "serverDeaf": true
+  },
+
+  "lyricssettings": {
+    "lyrics_finder": true,
+    "ksoft_api": {
+      "use_this_instead": false,
+      "api_key": ""
+    }
+  },
+  
+  "ownerIDS": ["327332773108908032"]
 }

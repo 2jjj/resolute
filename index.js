@@ -1,44 +1,41 @@
-﻿const cor = require("colors");
-const { Collection } = require("discord.js");
-const fs = require("fs");
-const Discord = require('discord.js');
-const config = require("./config/config.json");
+﻿const Discord = require("discord.js");
+const colors = require("colors");
 const Enmap = require("enmap");
+const fs = require("fs");
 const DBL = require("dblapi.js");
+const { token, topgg_token } = require("./config/config.json")
+const mongoose = require("mongoose");
 
 const client = new Discord.Client({
-  ws: {
-    intents: [
-      "GUILDS",
-      "GUILD_MEMBERS",
-      "GUILD_MESSAGES"
-    ]
-  }
+  messageCacheLifetime: 604800,
+  messageSweepInterval: 604800,
+  fetchAllMembers: false,
+  messageCacheMaxSize: 200,
+  restTimeOffset: 0,
+  shards: "auto",
+  restWsBridgetimeout: 100,
+  disableEveryone: true,
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
-require("./src/util/inlineReply");
-require("./src/util/quote");
-require('discord-buttons')(client);
-client.categories = fs.readdirSync("./src/commands/");
-client.queue = new Map();
-client.commands = new Collection();
-client.aliases = new Collection();
-
-client.config = config;
-
-["mongoose", "clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
-  require(`./src/handlers/${handler}`)(client);
+["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
+  require(`./handlers/${handler}`)(client);
 });
 
-client.premium = new Enmap({ name: "premium", dataDir: "./src/database/enmap/premium" })
-client.stats = new Enmap({ name: "stats", dataDir: "./src/database/enmap/stats" })
-client.settings = new Enmap({ name: "setups", dataDir: "./src/database/enmap/settings" })
-client.setups = new Enmap({ name: "setups", dataDir: "./src/database/enmap/setups" })
-client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./src/database/enmap/queuesaves", ensureProps: false})
-client.modActions = new Enmap({ name: 'actions', dataDir: "./src/database/enmap/warns" });
-client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./src/database/enmap/warns" })
+mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}).then(console.log("MongoDB conectado com sucesso!"));
 
-const dbl = new DBL(config.topgg_token, client);
+client.premium = new Enmap({ name: "premium", dataDir: "./databases/premium" });
+client.stats = new Enmap({ name: "stats", dataDir: "./databases/stats" });
+client.settings = new Enmap({ name: "setups", dataDir: "./databases/settings" });
+client.setups = new Enmap({ name: "setups", dataDir: "./databases/setups" });
+client.queuesaves = new Enmap({ name: "queuesaves", dataDir: "./databases/queuesaves", ensureProps: false });
+client.modActions = new Enmap({ name: 'actions', dataDir: "./databases/warns" });
+client.userProfiles = new Enmap({ name: 'userProfiles', dataDir: "./databases/warns" });
+
+const dbl = new DBL(topgg_token, client);
 
 dbl.on('posted', () => {
   console.log('Top.gg servers updated!');
@@ -48,4 +45,4 @@ dbl.on('error', e => {
   console.log(`Error to update top.gg servers!\n ${e}`);
 })
 
-client.login(require("./config/config.json").token);
+client.login(token);
