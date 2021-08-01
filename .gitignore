@@ -4,3 +4,9 @@ json.sqlite
 comandos.log
 logs
 Lavalink.jar
+databases/premium
+databases/queuesaves
+databases/settings
+databases/setups
+databases/stats
+databases/warns
