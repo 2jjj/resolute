@@ -63,19 +63,18 @@ module.exports = {
         categories.push(data);
       });
 
-
-      let acao = client.commands.filter((cmd) => cmd.category === 'acoes');
-      let config = client.commands.filter((cmd) => cmd.category === 'config');
-      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
+      let queue = client.commands.filter((cmd) => cmd.category === '⚜️ Custom Queue(s)');
       let fun = client.commands.filter((cmd) => cmd.category === 'fun');
       let economia = client.commands.filter((cmd) => cmd.category === 'economia');
-      let info = client.commands.filter((cmd) => cmd.category === 'info');
+      let filter = client.commands.filter((cmd) => cmd.category === '👀 Filter');
+      let util = client.commands.filter((cmd) => cmd.category === 'util');
       let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
+      let info = client.commands.filter((cmd) => cmd.category === 'info');
       let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
-      let miscelanea = client.commands.filter((cmd) => cmd.category === 'outros');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === 'music');
-      let util = client.commands.filter((cmd) => cmd.category === 'util');
+      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
+      let config = client.commands.filter((cmd) => cmd.category === 'config');
 
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
@@ -85,11 +84,11 @@ module.exports = {
         .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔮 ** | Utilidades** [${util.size}]:`, `\`${util.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`⚜️ ** | Custom Queue(s)** [${queue.size}]:`, `\`${queue.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`👀 ** | Filter** [${filter.size}]:`, `\`${filter.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:interrogacao:856894534029541376> ** | Informação** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
-        //.addField(`👥 ** | Ação** [${acao.size}]:`, `\`${acao.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
-        //.addField(`💡 ** | Miscelânea** [${miscelanea.size}]:`, `\`${miscelanea.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
         .setDescription(`Use \`${storedSettings.prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${storedSettings.prefix}help ban\`.\n**Prefixo atual: ${storedSettings.prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
         .setFooter(
