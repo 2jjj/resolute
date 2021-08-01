@@ -16,10 +16,12 @@ module.exports = {
   category: `⚜️ Custom Queue(s)`,
   aliases: [`savequeue`, `customqueue`, `savedqueue`],
   description: `Saves the Current Queue onto a Name`,
-  usage: `savedqueue <Type> <Name> [Options]\`\n
-**Types**: \`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`showdetails\`, \`createsave\`, \`delete\`, \`play\`, \`shuffle\`\n
-**Name**: \`Can be anything with maximum of 10 Letters\`\n
-**Options**: \`pick the track which you want to remove`,
+  usage: `savedqueue <Tipo> <Nome> [Opções]\`\n
+**Tipos**: \`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`showdetails\`, \`createsave\`, \`delete\`, \`play\`, \`shuffle\`\n
+**Nome**: \`Can be anything with maximum of 10 Letters\`\n
+**Opções**: \`pick the track which you want to remove`,
+  exaple: "",
+  permissoes: [],
 
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
