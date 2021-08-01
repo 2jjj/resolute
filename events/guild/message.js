@@ -107,8 +107,7 @@ module.exports = async (client, message) => {
           return message.channel.send(new Discord.MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`)
-            .addField("Why a delay?", "Because that's the only way how I can prevent you from abusing(spamming) me!")
+            .setTitle(`❌ Por favor aguarde ${timeLeft.toFixed(1)} segundos para usar o comando \`${command.name}\`.`)
           );
         }
       }
@@ -120,22 +119,6 @@ module.exports = async (client, message) => {
       try {
         client.stats.inc(message.guild.id, "commands");
         client.stats.inc("global", "commands");
-
-        if (command.memberpermissions) {
-          if (!message.member.hasPermission(command.memberpermissions)) {
-            not_allowed = true;
-            message.channel.send(new Discord.MessageEmbed()
-              .setColor(ee.wrongcolor)
-              .setFooter(ee.footertext, ee.footericon)
-              .setTitle("❌ Error | You are not allowed to run this command!")
-              .setDescription(`You need these Permissions: \`${command.memberpermissions.join("`, ``")}\``)
-            ).then(msg => {
-              try {
-                msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
-              } catch { /* */ }
-            });
-          }
-        }
 
         if (client.settings.get(message.guild.id, `djonlycmds`) && client.settings.get(message.guild.id, `djonlycmds`).join(" ").toLowerCase().split(" ").includes(command.name.toLowerCase())) {
 
