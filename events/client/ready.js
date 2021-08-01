@@ -1,4 +1,4 @@
-const Dashboard = require("../../../dashboard/dashboard");
+const Dashboard = require("../../dashboard/dashboard");
 
 module.exports = async(client) => {
   
