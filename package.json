@@ -1,6 +1,6 @@
 {
   "name": "resolute",
-  "version": "2.7.0",
+  "version": "3.0.0",
   "description": "Resolute é um bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
   "main": "shard.js",
   "scripts": {
