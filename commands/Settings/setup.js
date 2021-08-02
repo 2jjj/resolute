@@ -1,6 +1,4 @@
-const {
-  MessageEmbed
-} = require("discord.js");
+const { MessageEmbed } = require(`discord.js`);
 const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const emoji = require("../../config/emojis.json");
@@ -13,6 +11,7 @@ module.exports = {
   usage: "setup",
   description: "Creates an unique Music Setup for Requesting Songs!",
   memberpermissions: ["ADMINISTRATOR"],
+  
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
       let musiccmds = [];
@@ -39,7 +38,7 @@ module.exports = {
         } catch {}
       }
       
-      message.guild.channels.create("Tortuguita- Requests", {
+      message.guild.channels.create("Resolute - Requests", {
           type: 'category',
           permissionOverwrites: [{
             id: message.guild.id,
@@ -88,7 +87,7 @@ module.exports = {
                       let embed1 = new MessageEmbed()
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
-                        .setTitle("Tortuguita| Request | Guide")
+                        .setTitle("Resolute | Request | Guide")
                         .setDescription(`Enter the song name or URL to play a song\n\nYou can also type \`${prefix}command <Parameters>\``)
                         .addField(`Commands`, musiccmds.join(", "))
                         .addField(`Reactions`, `${emoji.msg.rewind} Rewind 20 seconds\n${emoji.msg.forward} Forward 20 seconds\n${emoji.msg.pause_resume} Pause/Resume\n${emoji.msg.stop} Stop Track\n${emoji.msg.previous_track} Play previous\n`, true)
