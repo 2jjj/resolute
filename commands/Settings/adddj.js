@@ -46,7 +46,7 @@ module.exports = {
       client.settings.push(message.guild.id, role.id, `djroles`);
 
       let leftb = ``;
-      if (client.settings.get(message.guild.id, `djroles`).join(``) === ``) leftb = `não dj funções, então todos os usuários são djs ^^`
+      if (client.settings.get(message.guild.id, `djroles`).join(``) === ``) leftb = `Sem o cargo de dj, então todos os usuários são djs ^^`
       else
         for (let i = 0; i < client.settings.get(message.guild.id, `djroles`).length; i++) {
           leftb += `<@&` + client.settings.get(message.guild.id, `djroles`)[i] + `> | `
