@@ -32,7 +32,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | It seems that the Role does not exist in this Server!`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Este cargo não existe no servidor!`)
         );
       }
 
@@ -40,13 +40,13 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | This Role is alerady in the List!`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Este cargo já esta listado!`)
         );
 
       client.settings.push(message.guild.id, role.id, `djroles`);
 
       let leftb = ``;
-      if (client.settings.get(message.guild.id, `djroles`).join(``) === ``) leftb = `no Dj Roles, aka All Users are Djs`
+      if (client.settings.get(message.guild.id, `djroles`).join(``) === ``) leftb = `não dj funções, então todos os usuários são djs ^^`
       else
         for (let i = 0; i < client.settings.get(message.guild.id, `djroles`).length; i++) {
           leftb += `<@&` + client.settings.get(message.guild.id, `djroles`)[i] + `> | `
@@ -55,8 +55,8 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.SUCCESS} Success | Added the DJ ROLE \`${role.name}\``)
-        .setDescription(`All Dj Roles:\n> ${leftb.substr(0, leftb.length - 3)}`)
+        .setTitle(`${emoji.msg.SUCCESS} Sucesso! | Adicionei o cargo \`${role.name}\` como cargo de DJ!!`)
+        .setDescription(`Todos os cargos de DJ:\n> ${leftb.substr(0, leftb.length - 3)}`)
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)
