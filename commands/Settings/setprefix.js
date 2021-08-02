@@ -17,7 +17,7 @@ module.exports = {
         if (!message.member.hasPermission(module.exports.permissoes[0])) return;
         //if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
 
-        let alterado = new Discord.MessageEmbed()
+        let prefixo = new Discord.MessageEmbed()
             .setColor("RANDOM")     
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .setDescription(`Como posso alterar o prefixo?\nA configuração do prefixo é realizado pelo website do Resolute!`)
@@ -26,6 +26,6 @@ module.exports = {
                 dynamic: true
               }))
             .setTimestamp();
-        return message.channel.send(alterado)
+        return message.channel.send(prefixo)
     }
 }
