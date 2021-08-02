@@ -235,14 +235,14 @@ module.exports = {
       for (let i = 0; i < 10; i++) {
         requests += `**${i + 1 + 10 * amount}**[${radios.OTHERS.request[i].split(" ")[0].replace("-", " ").substr(0, 15)}](${radios.OTHERS.request[i].split(" ")[1]})\n`;
       }
-      stationsembed3.addField("🧾 OTHERS", `>>> ${requests}`, true);
+      stationsembed3.addField("🧾 Outros", `>>> ${requests}`, true);
       requests = "";
       for (let i = 10; i < 20; i++) {
         try {
           requests += `**${i + 1 + 10 * amount}**[${radios.OTHERS.request[i].split(" ")[0].replace("-", " ").substr(0, 15)}](${radios.OTHERS.request[i].split(" ")[1]})\n`;
         } catch { }
       }
-      stationsembed3.addField("🧾 OTHERS", `>>> ${requests}`, true);
+      stationsembed3.addField("🧾 Outros", `>>> ${requests}`, true);
       message.channel.send(stationsembed);
       message.channel.send(stationsembed2);
       message.channel.send(stationsembed3);
@@ -329,7 +329,7 @@ module.exports = {
 
       if (!response || response.loadType === 'LOAD_FAILED' || response.loadType !== 'PLAYLIST_LOADED') {
         let embed = new MessageEmbed()
-          .setTitle("❌ Error | Found nothing related for the latest Song!")
+          .setTitle("❌ Erro | Não encontrei nada relacionado com a última música!")
           .setDescription(config.settings.LeaveOnEmpty_Queue.enabled && type != "skip" ? `I'll leave the Channel: ${client.channels.cache.get(player.voiceChannel).name} in: ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}, If the Queue stays Empty! ` : `I left the Channel: ${client.channels.cache.get(player.voiceChannel).name} because the Queue was empty for: ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon);
@@ -341,10 +341,10 @@ module.exports = {
               if (player.queue.size === 0) {
                 let embed = new MessageEmbed()
                 try {
-                  embed.setTitle("❌ Queue has ended.")
+                  embed.setTitle("❌ A Fila terminou.")
                 } catch { }
                 try {
-                  embed.setDescription(`I left the Channel: ${client.channels.cache.get(player.voiceChannel).name} because the Queue was empty for: ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
+                  embed.setDescription(`Sai do canal: ${client.channels.cache.get(player.voiceChannel).name} porque a fila acabou por: ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
                 } catch { }
                 try {
                   embed.setColor(ee.wrongcolor)
@@ -430,7 +430,7 @@ module.exports = {
       function SongEmbed(track) {
         let embed = new MessageEmbed()
         try {
-          embed.setTitle("Playing :notes: **`" + track.title + "`**")
+          embed.setTitle("Tocando :notes: **`" + track.title + "`**")
         } catch { }
         try {
           embed.setURL(track.uri)
@@ -442,28 +442,28 @@ module.exports = {
           embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/hqdefault.jpg`)
         } catch { }
         try {
-          embed.addField("⌛️ Duration: ", `${track.isStream ? "LIVE STREAM" : format(track.duration)}`, true)
+          embed.addField("⌛️ Duração: ", `${track.isStream ? "LIVE STREAM" : format(track.duration)}`, true)
         } catch { }
         try {
-          embed.addField("💯 Song By: ", `${track.author}`, true)
+          embed.addField("💯 Artista: ", `${track.author}`, true)
         } catch { }
         try {
-          embed.addField("🎚 Equalizer: ", `🎵 Music`, true)
+          embed.addField("🎚 Equalizador: ", `🎵 Music`, true)
         } catch { }
         try {
           embed.addField("🔊 Volume", `${player.volume}%`, true)
         } catch { }
         try {
-          embed.addField(`${player.queueRepeat ? `${emoji.msg.repeat_mode} Queue Loop: ` : `${emoji.msg.repeat_mode} Song Loop: `}`, `${player.queueRepeat ? `${emoji.msg.enabled} Enabled` : player.trackRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}`, true)
+          embed.addField(`${player.queueRepeat ? `${emoji.msg.repeat_mode} Queue Loop: ` : `${emoji.msg.repeat_mode} Song Loop: `}`, `${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}`, true)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.pause_resume}  State`, `${player.playing ? `${emoji.msg.resume}  Playing Song` : `${emoji.msg.pause}  Paused Song`}`, true)
+          embed.addField(`${emoji.msg.pause_resume}  Estado`, `${player.playing ? `${emoji.msg.resume}  Playing Song` : `${emoji.msg.pause}  Paused Song`}`, true)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.time} Progress: `, createBar(player.queue.current.duration == 0 ? player.position : player.queue.current.duration, player.position, 25, `▬`, "🔶"))
+          embed.addField(`${emoji.msg.time} Progresso: `, createBar(player.queue.current.duration == 0 ? player.position : player.queue.current.duration, player.position, 25, `▬`, "🔶"))
         } catch { }
         try {
-          embed.setFooter(`Requested by: ${track.requester.tag}`, track.requester.displayAvatarURL({
+          embed.setFooter(`Requisitado por: ${track.requester.tag}`, track.requester.displayAvatarURL({
             dynamic: true
           }));
         } catch { }
@@ -472,14 +472,14 @@ module.exports = {
 
       function QueueEmbed(client, player) {
         const queue = player.queue;
-        const embed = new MessageEmbed().setAuthor(`Tortuguita  | Music Queue`);
+        const embed = new MessageEmbed().setAuthor(`Resoute  | Fila`);
         const multiple = 15;
         const page = 1;
         const end = page * multiple;
         const start = end - multiple;
         const tracks = queue.slice(start, end);
-        if (queue.current) embed.addField("**0) CURRENT TRACK**", `**${queue.current.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${queue.current.requester.tag}*`);
-        if (!tracks.length) embed.setDescription(`No tracks in ${page > 1 ? `page ${page}` : "the queue"}.`);
+        if (queue.current) embed.addField("**0) Faixa atual**", `**${queue.current.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${queue.current.requester.tag}*`);
+        if (!tracks.length) embed.setDescription(`Sem músicas na ${page > 1 ? `pagina ${page}` : "fila"}.`);
         else embed.setDescription(tracks.map((track, i) => `**${start + ++i})** **${track.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${track.requester.tag}*`).join("\n"));
         embed.setColor(ee.color);
         embed.setFooter(ee.footertext, ee.footericon);
@@ -566,13 +566,13 @@ module.exports = {
         let embed2 = new MessageEmbed()
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("Tortuguita | Music Queue")
-          .setDescription(`Empty\nJoin a voice channel and queue songs by name or url in here.`)
+          .setTitle("Resolute | Fila")
+          .setDescription(`**Vazia\nEntre em um canal de voz e a fila ira aparecer aqui!**`)
         let embed3 = new MessageEmbed()
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("Tortuguita | Currently no song is playing!")
-          .setDescription(`Join a voice channel and enter a song name or url to play.\n[Invite ${client.user.tag}](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot) • [Support Server](https://discord.com/invite/g3ZYKk5C7A)`)
+          .setTitle("Resolute | Atualmente não está tocando nenhuma música!")
+          .setDescription(`Entre em um canal de voz para tocar uma música!\n[Invite ${client.user.tag}](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)`)
         track_info_msg.edit(embed3).catch(e => console.log("Couldn't delete msg, this is for preventing a bug".gray));
         queue_info_msg.edit(embed2).catch(e => console.log("Couldn't delete msg, this is for preventing a bug".gray));
       }
@@ -583,15 +583,15 @@ module.exports = {
   edit_request_message_queue_info: async function (client, player) {
     try {
       const queue = player.queue;
-      const embed = new MessageEmbed().setAuthor(`Tortuguita | Music Queue`);
+      const embed = new MessageEmbed().setAuthor(`Resolute | Fila`);
       const multiple = 15;
       const page = 1;
       const end = page * multiple;
       const start = end - multiple;
       const tracks = queue.slice(start, end);
-      if (queue.current) embed.addField("**0) CURRENT TRACK**", `**${queue.current.title.substr(0, 60)}** - ${queue.current.isStream ? "LIVE STREAM" : format(queue.current.duration)}\n*request by: ${queue.current.requester.tag}*`);
-      if (!tracks.length) embed.setDescription(`No tracks in ${page > 1 ? `page ${page}` : "the queue"}.`);
-      else embed.setDescription(tracks.map((track, i) => `**${start + ++i})** **${track.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${track.requester.tag}*`).join("\n"));
+      if (queue.current) embed.addField("**0) Faixa atual**", `**${queue.current.title.substr(0, 60)}** - ${queue.current.isStream ? "LIVE STREAM" : format(queue.current.duration)}\n*Requisitado por: ${queue.current.requester.tag}*`);
+      if (!tracks.length) embed.setDescription(`Sem músicas na ${page > 1 ? `pagina ${page}` : "fila"}.`);
+      else embed.setDescription(tracks.map((track, i) => `**${start + ++i})** **${track.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*Requisitado por: ${track.requester.tag}*`).join("\n"));
       embed.setColor(ee.color);
       embed.setFooter(ee.footertext, ee.footericon);
       embed;
@@ -601,7 +601,7 @@ module.exports = {
       function SongEmbed(track) {
         let embed = new MessageEmbed()
         try {
-          embed.setTitle(`Playing ${emoji.msg.playing} **\`` + track.title + "`**")
+          embed.setTitle(`Tocando ${emoji.msg.playing} **\`` + track.title + "`**")
         } catch { }
         try {
           embed.setURL(track.uri)
@@ -613,13 +613,13 @@ module.exports = {
           embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/hqdefault.jpg`)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.time} Duration: `, `${track.isStream ? "LIVE STREAM" : format(track.duration)}`, true)
+          embed.addField(`${emoji.msg.time} Duração: `, `${track.isStream ? "LIVE STREAM" : format(track.duration)}`, true)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.song_by} Song By: `, `${track.author}`, true)
+          embed.addField(`${emoji.msg.song_by} Artista: `, `${track.author}`, true)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.equalizer} Equalizer: `, `🎵 Music`, true)
+          embed.addField(`${emoji.msg.equalizer} Equalizador: `, `🎵 Music`, true)
         } catch { }
         try {
           embed.addField(`${emoji.msg.raise_volume} Volume`, `${player.volume}%`, true)
@@ -631,10 +631,10 @@ module.exports = {
           embed.addField(`${emoji.msg.pause_resume} State`, `${player.playing ? `${emoji.msg.resume} Playing Song` : `${emoji.msg.pause} Paused Song`}`, true)
         } catch { }
         try {
-          embed.addField(`${emoji.msg.time} Progress: `, createBar(player.queue.current.duration == 0 ? player.position : player.queue.current.duration, player.position, 25, "▬", "🔶"))
+          embed.addField(`${emoji.msg.time} Progresso: `, createBar(player.queue.current.duration == 0 ? player.position : player.queue.current.duration, player.position, 25, "▬", "🔶"))
         } catch { }
         try {
-          embed.setFooter(`Requested by: ${track.requester.tag}`, track.requester.displayAvatarURL({
+          embed.setFooter(`Requisitado por: ${track.requester.tag}`, track.requester.displayAvatarURL({
             dynamic: true
           }));
         } catch { }
@@ -739,18 +739,18 @@ module.exports = {
         if (reaction.emoji.name === reactionemojis[2] || reaction.emoji.id === reactionemojis[2]) {
           if (currentPage < embeds.length - 1) {
             currentPage++;
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           } else {
             currentPage = 0
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           }
         } else if (reaction.emoji.name === reactionemojis[0] || reaction.emoji.id === reactionemojis[0]) {
           if (currentPage !== 0) {
             --currentPage;
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           } else {
             currentPage = embeds.length - 1
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           }
         } else {
           collector.stop();
@@ -785,18 +785,18 @@ module.exports = {
         if (reaction.emoji.name === reactionemojis[2] || reaction.emoji.id === reactionemojis[2]) {
           if (currentPage < embeds.length - 1) {
             currentPage++;
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           } else {
             currentPage = 0
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           }
         } else if (reaction.emoji.name === reactionemojis[0] || reaction.emoji.id === reactionemojis[0]) {
           if (currentPage !== 0) {
             --currentPage;
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           } else {
             currentPage = embeds.length - 1
-            queueEmbed.edit(`**Current Page - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(`**Página atual - ${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           }
         } else {
           collector.stop();

@@ -76,7 +76,7 @@ module.exports = {
                   message.guild.channels.create(`🎵｜requests`, {
                       type: 'text', 
                       rateLimitPerUser: 6, 
-                      topic: `To request a Track, simply Type the **SONG NAME** into the Channel or the **URL** and the Bot will play it! Make sure that you are in the **right** Voice Channel (🎧｜Music)!`,
+                      topic: `Para solicitar uma música, basta digitar o nome da música no canal ou a **URL** e o bot vai tocar! Certifique-se de que você está no canal de voz **🎧｜Music**!`,
                       parent: channel1.id,
                       permissionOverwrites: [{
                           id: message.guild.id,
@@ -92,31 +92,31 @@ module.exports = {
                       let embed1 = new MessageEmbed()
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
-                        .setTitle("Resolute | Request | Guide")
-                        .setDescription(`Enter the song name or URL to play a song\n\nYou can also type \`${prefix}command <Parameters>\``)
-                        .addField(`Commands`, musiccmds.join(", "))
+                        .setTitle("Resolute | Requests")
+                        .setDescription(`Digite o nome ou URL da música para tocar uma música\n\nVocê também pode digitar \`${prefix}command <parametros>\``)
+                        .addField(`Comandos`, musiccmds.join(", "))
                         .addField(`Reactions`, `${emoji.msg.rewind} Rewind 20 seconds\n${emoji.msg.forward} Forward 20 seconds\n${emoji.msg.pause_resume} Pause/Resume\n${emoji.msg.stop} Stop Track\n${emoji.msg.previous_track} Play previous\n`, true)
                         .addField(`\u200b`, `${emoji.msg.skip_track} Skip / Next\n${emoji.msg.replay_track} Replay Track\n${emoji.msg.reduce_volume} Volume -10 %\n${emoji.msg.raise_volume} Volume +10 %\n${emoji.msg.toggle_mute} Toggle Volume Mute`, true)
                         .addField(`\u200b`, `${emoji.msg.repeat_mode} Change repeat mode\n${emoji.msg.autoplay_mode} Toggle Autoplay\n${emoji.msg.shuffle} Shuffle the queue\n${emoji.msg.show_queue} Show the Queue\n${emoji.msg.show_current_track} Shows Current Track`, true)
                       let embed2 = new MessageEmbed()
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
-                        .setTitle("Tortuguita| Music Queue")
-                        .setDescription(`Empty\nJoin a voice channel and queue songs by name or url in here.`)
+                        .setTitle("Resolute | Fila")
+                        .setDescription(`**Vazia\nEntre em um canal de voz e a fila ira aparecer aqui!**`)
                       let embed3 = new MessageEmbed()
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
-                        .setTitle("Tortuguita | Currently no song is playing!")
-                        .setDescription(`Join a voice channel and enter a song name or url to play.\n[Invite Tortuguita](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=6396308735) • [Support Server](https://discord.com/invite/g3ZYKk5C7A)`)
-                        .setImage("https://media.discordapp.net/attachments/783778738243502081/857219575687151626/batch_ted.png")
+                        .setTitle("Resolute | Atualmente, nenhuma não há nenhuma música tocando!")
+                        .setDescription(`Entre em um canal de voz e coloque um nome ou uma url para tocar!\n[Invite Resolute](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=6396308735)`)
+                        .setImage("https://cdn.discordapp.com/avatars/868871721409736774/672afa4f2a4ac5fee624580229a2efbd.png?size=1024")
                       
-                      channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Loading ...`)).then(async msg => {
+                      channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Carregando ...`)).then(async msg => {
                         
                         await msg.edit(embed1)
                         
                         client.setups.set(message.guild.id, msg.id, "message_cmd_info");
                         
-                        channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Loading ...`)).then(async msg => {
+                        channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Carregando ...`)).then(async msg => {
                           
                           await msg.edit(embed2)
                           
