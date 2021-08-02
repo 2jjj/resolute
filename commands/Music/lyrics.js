@@ -1,10 +1,6 @@
-const {
-    MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
-const {
-    KSoftClient
-} = require(`@ksoft/api`);
+const { KSoftClient } = require(`@ksoft/api`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
 const lyricsFinder = require(`lyrics-finder`);
@@ -13,6 +9,7 @@ const {
     delay,
     swap_pages
 } = require(`../../handlers/functions`);
+
 module.exports = {
     name: `lyrics`,
     category: `🎶 Music`,
@@ -28,17 +25,17 @@ module.exports = {
         "activeplayer": true,
         "previoussong": false
     },
+
     run: async (client, message, args, cmduser, text, prefix, player) => {
+        
         try {
 
             let title = player.queue.current.title;
-
             let author = player.queue.current.author;
 
             if (args[0]) {
 
                 title = args.join(` `);
-
                 message.channel.send(new MessageEmbed()
                     .setColor(ee.color)
                     .setFooter(ee.footertext, ee.footericon)
