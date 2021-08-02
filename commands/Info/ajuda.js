@@ -72,7 +72,7 @@ module.exports = {
       let info = client.commands.filter((cmd) => cmd.category === 'info');
       let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
-      let music = client.commands.filter((cmd) => cmd.category === 'music');
+      let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
       let dev = client.commands.filter((cmd) => cmd.category === 'dev');
       let config = client.commands.filter((cmd) => cmd.category === 'config');
 
