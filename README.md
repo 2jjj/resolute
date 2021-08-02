@@ -1,10 +1,11 @@
-## Resolute™ ~ [Me convide para o seu servidor!](www.rstl.ml)
-
-<h4>O Resolute conta com comandos únicos como o sistema de request de música, comandos de configuração, comandos para ler imagens, etc.</h4>
-
+## Resolute™
+ 
+ 
+<h4>
+Tutorial requests música:
+</h4>
+ 
 <h5>
-  
-* Tutorial requests música:
 
 - Para usar este comando é simples basta usar `s.setup` que a mágica acontece!
 
