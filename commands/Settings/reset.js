@@ -1,31 +1,36 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `reset`,
-  aliases: [`hardreset`],
-  category: `⚙️ Settings`,
-  description: `Resets / Deletes all of the Setups as well as the prefix!`,
-  usage: `reset`,
-  memberpermissions: [`ADMINISTRATOR`],
-  run: async (client, message, args) => {
+  aliases: [],
+  category: `config`,
+  description: `Exclui todas as configurações!`,
+  usage: ``,
+  example: "@DJ",
+  permissoes: {
+    membro: ['ADMINISTRATOR', 'Administrador'],
+    bot: []
+  },
+  cooldown: 5,
+  args: false,
+  
+  run: async (client, message, args, prefix) => {
     try {
-      
       if (message.member.guild.owner.id !== message.author.id)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | You don\'t have permission for this Command! *Only the Server-Owner*`)
+          .setTitle(`${emoji.msg.ERROR} Erro |Você não tem permissão para este comando! *Apenas o dono do servidor*`)
         );
         
       let themsg = message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`Do you really want to reset all SETTINGS?`)
-        .setDescription(`*Reply with:* **__\`yes\`__**`)
+        .setTitle(`Você realmente quer redefinir todas as configurações?`)
+        .setDescription(`*Responda com:* **__\`sim\`__**`)
       ).then((msg) => {
         
         msg.channel.awaitMessages(m => m.author.id === message.author.id, {
@@ -35,7 +40,7 @@ module.exports = {
         })
           .then(async collected => {
 
-            if (collected.first().content.toLowerCase() === `yes`) {
+            if (collected.first().content.toLowerCase() === `sim`) {
 
               client.setups.set(message.guild.id, {
                 textchannel: `0`,
@@ -47,7 +52,7 @@ module.exports = {
               });
 
               client.settings.set(message.guild.id, {
-                prefix: config.prefix,
+                prefix: prefix,
                 djroles: [],
                 botchannel: [],
               });
@@ -55,8 +60,8 @@ module.exports = {
               return message.channel.send(new MessageEmbed()
                 .setColor(ee.color)
                 .setFooter(ee.footertext, ee.footericon)
-                .setTitle(`${emoji.msg.SUCCESS} Success | Resetted everything!`)
-                .setDescription(`Prefix is now again: \`${config.prefix}\`\nNo more DJ ROLES, No more Setup, No more Bot Channels`)
+                .setTitle(`${emoji.msg.SUCCESS} Sucesso | Redefini tudo!`)
+                .setDescription(`Prefixo é agora novamente: \`${prefix}\`\nSem cargo de DJ e sem o setup!`)
               );
             }
 
@@ -65,7 +70,7 @@ module.exports = {
             return message.channel.send(new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${emoji.msg.ERROR} Error | CANCELLED CAUSE NOT THE RIGHT WORD / TIME RAN OUT!`)
+              .setTitle(`${emoji.msg.ERROR} Cancelado!`)
             );
           })
       });

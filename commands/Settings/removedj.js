@@ -8,7 +8,8 @@ module.exports = {
   aliases: [`deletedj`],
   category: `⚙️ Settings`,
   description: `Let's you DELETE a DJ ROLE`,
-  usage: `removedj @ROLE`,
+  usage: `<@cargo>`,
+  example: "@DJ",
   permissoes: {
     membro: ['ADMINISTRATOR', 'Administrador'],
     bot: []

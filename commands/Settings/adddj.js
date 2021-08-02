@@ -8,7 +8,7 @@ module.exports = {
   aliases: [`adddjrole`],
   category: `⚙️ Settings`,
   description: `Let's you define a DJ ROLE (as an array, aka you can have multiple)`,
-  usage: `@role`,
+  usage: `<@cargo>`,
   example: "@DJ",
   permissoes: {
     membro: ['ADMINISTRATOR', 'Administrador'],
