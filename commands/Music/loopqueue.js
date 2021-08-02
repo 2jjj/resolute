@@ -1,9 +1,8 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `loopqueue`,
   category: `🎶 Music`,
@@ -15,9 +14,10 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
-  run: async (client, message, args, cmduser, text, prefix, player) => {
-    try {
 
+  run: async (client, message, args, cmduser, text, prefix, player) => {
+    
+    try {
       const embed = new MessageEmbed()
         .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.repeat_mode} Changed Queue loop to: ${player.queueRepeat ? `${emoji.msg.disabled} disabled` : `${emoji.msg.enabled} active`}`)
         .setColor(ee.color)
