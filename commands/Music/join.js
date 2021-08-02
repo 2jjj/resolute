@@ -1,5 +1,5 @@
-const { MessageEmbed } = require(`discord.js`);
 const playermanager = require(`../../handlers/playermanager`);
+
 module.exports = {
   name: `join`,
   category: `🎶 Music`,
@@ -11,9 +11,10 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
-  run: async (client, message, args, cmduser, text, prefix, player) => {
-    const botchannel = message.guild.me.voice.channel;
 
+  run: async (client, message, args, cmduser, text, prefix, player) => {
+
+    const botchannel = message.guild.me.voice.channel;
     var player = client.manager.players.get(message.guild.id);
 
     if (player || botchannel) return message.channel.send(`**:x: I am already connected somewhere**`);
