@@ -2,7 +2,7 @@ const db = require('quick.db')
 
 module.exports = {
   name: "bet",
-  aliases: [],
+  aliases: [`coinflip`],
   cooldown: 1000 * 2,
   description: "Jogue cara ou coroa com seus amigos!",
   category: "economia",
