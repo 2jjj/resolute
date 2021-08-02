@@ -8,8 +8,14 @@ module.exports = {
   aliases: [`adddjrole`],
   category: `⚙️ Settings`,
   description: `Let's you define a DJ ROLE (as an array, aka you can have multiple)`,
-  usage: `adddj @role`,
-  memberpermissions: [`ADMINISTRATOR`],
+  usage: `@role`,
+  example: "@DJ",
+  permissoes: {
+    membro: ['ADMINISTRATOR', 'Administrador'],
+    bot: []
+  },
+  cooldown: 5,
+  args: true,
 
   run: async (client, message, args) => {
     try {
