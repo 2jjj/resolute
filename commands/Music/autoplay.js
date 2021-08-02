@@ -1,11 +1,8 @@
-const Discord = require(`discord.js`);
-const {
-  MessageEmbed
-} = require(`discord.js`);
-const config = require(`../../config/config.json`);
+const { MessageEmbed } = require(`discord.js`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
 const playermanager = require(`../../handlers/playermanager`);
+
 module.exports = {
   name: `autoplay`,
   category: `🎶 Music`,
