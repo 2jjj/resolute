@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 require("../../src/util/inlineReply")
 
 module.exports = {
-    name: "setprefix",
-    aliases: ['prefix'],
+    name: "prefix",
+    aliases: ['setprefix'],
     cooldown: 1000 * 2,
     description: "Já tem um outro bot com este prefixo? sem problemas com este comando você altera meu prefixo!",
     category: "config",
