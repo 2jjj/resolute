@@ -1,7 +1,3 @@
-const { MessageEmbed } = require(`discord.js`);
-const config = require("../../config/config.json");
-const emoji = require(`../../config/emojis.json`);
-const ee = require("../../config/embed.json");
 const playermanager = require(`../../handlers/playermanager`);
 
 module.exports = {
@@ -15,11 +11,12 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": true},
+  
   run: async (client, message, args, cmduser, text, prefix, player) => {
 
-      let type = `song:youtube`;
-      if (player.queue.previous.uri.includes(`soundcloud`)) type = `song:soundcloud`
-      playermanager(client, message, Array(player.queue.previous.uri), type);
+    let type = `song:youtube`;
+    if (player.queue.previous.uri.includes(`soundcloud`)) type = `song:soundcloud`
+    playermanager(client, message, Array(player.queue.previous.uri), type);
   
   }
 }
