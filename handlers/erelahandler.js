@@ -1,10 +1,5 @@
-const {
-  Manager
-} = require("erela.js"), {
-  MessageEmbed
-} = require("discord.js"),
+const { Manager } = require("erela.js"), { MessageEmbed } = require("discord.js"),
   ms = require("ms"),
-
   Spotify = require("erela.js-spotify"),
   Deezer = require("erela.js-deezer"),
 
@@ -29,8 +24,8 @@ const {
   clientSecret = config.spotify.clientSecret,
 
   hasmap = new Map();
-module.exports = (client) => {
 
+module.exports = (client) => {
   try {
     if (!clientID || !clientSecret) {
       client.manager = new Manager({
@@ -137,10 +132,10 @@ module.exports = (client) => {
 
         var embed = new MessageEmbed();
         try {
-          embed.setTitle(`:thumbsup: **Joined** \`${client.channels.cache.get(player.voiceChannel).name}\``)
+          embed.setTitle(`:thumbsup: **Entrei em:** \`${client.channels.cache.get(player.voiceChannel).name}\``)
         } catch { }
         try {
-          embed.setDescription(`**Commands bound to: ** <#${client.channels.cache.get(player.textChannel).id}>`)
+          embed.setDescription(`**Ligado no chat: ** <#${client.channels.cache.get(player.textChannel).id}>`)
         } catch { }
         if (isrequestchannel(client, player.get("message"))) return;
         client.channels.cache.get(player.textChannel).send(embed.setColor(ee.color)).catch(e => console.log("this prevents a crash"));
@@ -151,10 +146,10 @@ module.exports = (client) => {
             var embed = new MessageEmbed().setColor(ee.wrongcolor).setFooter(ee.footertext, ee.footericon);
           } catch { }
           try {
-            embed.setTitle(`${emoji.msg.ERROR} Queue has ended.`)
+            embed.setTitle(`${emoji.msg.ERROR} A fila acabou`)
           } catch { }
           try {
-            embed.setDescription(`I left the Channel: \`🔈 ${client.channels.cache.get(player.voiceChannel).name}\``)
+            embed.setDescription(`Deixei o canal: \`🔈 ${client.channels.cache.get(player.voiceChannel).name}\``)
           } catch { }
           client.channels.cache.get(player.textChannel).send(embed);
           try {
@@ -208,16 +203,16 @@ module.exports = (client) => {
             embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
           } catch { }
           try {
-            embed.addField(`**${emoji.msg.time} Duration: **`, `\`❯ ${track.isStream ? `LIVE STREAM` : format(track.duration)}\``, true)
+            embed.addField(`**${emoji.msg.time} Duração: **`, `\`❯ ${track.isStream ? `LIVE STREAM` : format(track.duration)}\``, true)
           } catch { }
           try {
-            embed.addField(`**${emoji.msg.song_by} Song By:**`, `\`❯ ${track.author}\``, true)
+            embed.addField(`**${emoji.msg.song_by} Artista:**`, `\`❯ ${track.author}\``, true)
           } catch { }
           try {
-            embed.addField(`**${emoji.msg.repeat_mode} Queue length:**`, `\`❯ ${player.queue.length} Songs\``, true)
+            embed.addField(`**${emoji.msg.repeat_mode} Tamanho da fila:**`, `\`❯ ${player.queue.length} Músicas\``, true)
           } catch { }
           try {
-            embed.setFooter(`Requested by: ${track.requester.tag}`, track.requester.displayAvatarURL({ dynamic: true }));
+            embed.setFooter(`Requisitado por: ${track.requester.tag}`, track.requester.displayAvatarURL({ dynamic: true }));
           } catch { }
 
           if (isrequestchannel(client, player.get(`message`))) return edit_request_message_track_info(client, player, track);
@@ -252,16 +247,16 @@ module.exports = (client) => {
               } catch (e) {
                 msg.channel.send(new MessageEmbed()
                   .setColor(ee.wrongcolor)
-                  .setTitle(`${emojis.msg.ERROR} ERROR | An Error Occurred`)
-                  .setDescription(`\`\`\`${e.message}\`\`\`\n Make sure that i have permissions to add (custom) REACTIONS`)
+                  .setTitle(`${emojis.msg.ERROR} ERRO | Um erro ocorreu`)
+                  .setDescription(`\`\`\`${e.message}\`\`\`\n Certifique-se que eu tenho permissões para adicionar reações (personalizadas)`)
                 )
               }
               if (failed)
                 msg.channel.send(new MessageEmbed()
                   .setColor(ee.wrongcolor)
                   .setFooter(ee.footertext, ee.footericon)
-                  .setTitle(`${emojis.msg.ERROR} ERROR | Couldn't add Reaction`)
-                  .setDescription(`Make sure that I have permissions to add (custom) REACTIONS`)
+                  .setTitle(`${emojis.msg.ERROR} ERRO | Não foi possível adicionar reação`)
+                  .setDescription(`Certifique-se que eu tenho permissões para adicionar reações (personalizadas)`)
                 )
 
               var collector = msg.createReactionCollector((reaction, user) => user.id !== client.user.id, {
@@ -329,7 +324,7 @@ module.exports = (client) => {
                       player.seek(Number(forward));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.forward} Forwarded the Song for: 20 Seconds, to: ${format(Number(player.position))}`)
+                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos, para: ${format(Number(player.position))}`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -345,7 +340,7 @@ module.exports = (client) => {
                       player.pause(player.playing);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.playing ? `${emoji.msg.resume} Resumed` : `${emoji.msg.pause} Paused`} the Player.`)
+                        .setTitle(`${player.playing ? `${emoji.msg.resume} Despausei` : `${emoji.msg.pause} Pausei`} o Player`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -362,7 +357,7 @@ module.exports = (client) => {
                       player.destroy();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.stop} Stopped and left your channel`)
+                        .setTitle(`${emoji.msg.stop} Parou e sai do seu canal`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -379,7 +374,7 @@ module.exports = (client) => {
                         return message.channel.send(new MessageEmbed()
                           .setColor(ee.wrongcolor)
                           .setFooter(ee.footertext, ee.footericon)
-                          .setTitle(`${emoji.msg.ERROR} Error | There is no previous song yet!`)
+                          .setTitle(`${emoji.msg.ERROR} Erro | Não há música anterior!`)
                         ).then(msg => {
                           try {
                             msg.delete({
@@ -388,7 +383,7 @@ module.exports = (client) => {
                           } catch { /* */ }
                         });
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.previous_track} Playing Previous Track`)
+                        .setTitle(`${emoji.msg.previous_track} Tocando a música anterior.`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -421,8 +416,8 @@ module.exports = (client) => {
                             message.channel.send(new MessageEmbed()
                               .setColor(ee.color)
                               .setFooter(ee.footertext, ee.footericon)
-                              .setTitle(`${emoji.msg.SUCCESS} Success | Added your Vote!`)
-                              .setDescription(`There are now: ${player.get("votes")} of ${voteamount} needed Votes\n\n> Amount reached! Skipping ${emoji.msg.skip_track}`)
+                              .setTitle(`${emoji.msg.SUCCESS} Sucesso | Adicionei o seu voto!`)
+                              .setDescription(`Agora tem: ${player.get("votes")} votos de ${voteamount} votos necessários\n\n> Quantidade alcançada! Pulando ${emoji.msg.skip_track}`)
                             );
                             if (player.queue.size == 0) {
                               player.destroy();
@@ -433,8 +428,8 @@ module.exports = (client) => {
                             return message.channel.send(new MessageEmbed()
                               .setColor(ee.color)
                               .setFooter(ee.footertext, ee.footericon)
-                              .setTitle(`${emoji.msg.SUCCESS} Success | Added your Vote!`)
-                              .setDescription(`There are now: ${player.get("votes")} of ${voteamount} needed Votes`)
+                              .setTitle(`${emoji.msg.SUCCESS} Sucesso | Adicionei o seu voto!`)
+                              .setDescription(`Agora tem: ${player.get("votes")} votos de ${voteamount} votos necessários`)
                             );
                           }
                         } else {
@@ -443,8 +438,8 @@ module.exports = (client) => {
                           return message.channel.send(new MessageEmbed()
                             .setColor(ee.color)
                             .setFooter(ee.footertext, ee.footericon)
-                            .setTitle(`${emoji.msg.SUCCESS} Success | Removed your Vote!`)
-                            .setDescription(`There are now: ${player.get("votes")} of ${voteamount} needed Votes`)
+                            .setTitle(`${emoji.msg.SUCCESS} Sucesso | Removi o seu voto!`)
+                            .setDescription(`Agora tem: ${player.get("votes")} votos de ${voteamount} votos necessários`)
                           );
                         }
                       } else {
@@ -456,7 +451,7 @@ module.exports = (client) => {
                           player.destroy();
 
                           return message.channel.send(new MessageEmbed()
-                            .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.stop} Stopped and left your Channel`)
+                            .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei e sai de seu canal!`)
                             .setColor(ee.color)
                             .setFooter(ee.footertext, ee.footericon)
                           );
@@ -465,7 +460,7 @@ module.exports = (client) => {
                         player.stop();
 
                         return message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.skip_track} Skipped to the next Song`)
+                          .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.skip_track} Pulei para a próxima música!`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         );
@@ -477,7 +472,7 @@ module.exports = (client) => {
                       player.seek(0);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.replay_track} Replaying Current Track`)
+                        .setTitle(`${emoji.msg.replay_track} Repetindo a primeira música!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -497,7 +492,7 @@ module.exports = (client) => {
                       player.setVolume(volumedown);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.reduce_volume} Volume set to: **${player.volume} %**`)
+                        .setTitle(`${emoji.msg.reduce_volume} Volume setado para: **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -517,7 +512,7 @@ module.exports = (client) => {
                       player.setVolume(volumeup);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.raise_volume} Volume set to: **${player.volume} %**`)
+                        .setTitle(`${emoji.msg.raise_volume} Volume setado para: **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -536,7 +531,7 @@ module.exports = (client) => {
                       player.setVolume(volumemute);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.volume === 0 ? `${emoji.msg.toggle_mute} Muted the Player` : `${emoji.msg.reduce_volume} Unmuted the Player`}`)
+                        .setTitle(`${player.volume === 0 ? `${emoji.msg.toggle_mute} O player foi mutado` : `${emoji.msg.reduce_volume} O player foi desmutado`}`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -557,8 +552,8 @@ module.exports = (client) => {
                         player.setTrackRepeat(!player.trackRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Track Loop is now ${player.trackRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
-                          .setDescription(`And Queue Loop is now ${player.queueRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setDescription(`Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
