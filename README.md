@@ -1,8 +1,10 @@
-## Resolute
+## Resolute™ ~ [Me convide para o seu servidor!](www.rstl.ml)
 
-<h2>O Resolute conta com comandos únicos como o sistema de request de música, comandos de configuração, comandos para ler imagens, etc.
+<h4>O Resolute conta com comandos únicos como o sistema de request de música, comandos de configuração, comandos para ler imagens, etc.</h4>
 
-> Tutorial requests música:
+<h5>
+  
+* Tutorial requests música:
 
 - Para usar este comando é simples basta usar `s.setup` que a mágica acontece!
 
@@ -18,11 +20,11 @@
 
 > ![msc](https://cdn.discordapp.com/attachments/869710611502731304/871749947601584159/Screenshot_3.png)
 
-
-</h2>
 ---
-<h1> Resolute também conta com: </h1>
-<h2>
+  
+</h5>
+<h4> Resolute também conta com: </h4>
+<h5>
 
 - Sistema de ler imagens:
 
@@ -38,7 +40,7 @@
 
 - Moderação: 
 
-> ![ban](https://cdn.discordapp.com/attachments/869710611502731304/871751672983068692/unknown.png)
+> ![ban](https://cdn.discordapp.com/attachments/869710611502731304/871756362672119868/unknown.png)
 
 - Utilidades:
 
@@ -47,3 +49,10 @@
 - Comandos de minecraft:
 
 > ![mine](https://cdn.discordapp.com/attachments/869710611502731304/871752369183027210/unknown.png)
+  
+E muito mais!
+  
+</h5>
+
+## 😄 Me adicione!
+[Clique aqui!](https://www.resolutebot.xyz/add) 
