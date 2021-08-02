@@ -302,7 +302,7 @@ module.exports = (client) => {
                       player.seek(Number(rewind));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.rewind} Rewinded the song for: 20 Seconds, to: ${format(Number(player.position))}`)
+                        .setTitle(`${emoji.msg.rewind} Voltei 20 segundos!`)//${format(Number(player.position))}
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -324,7 +324,7 @@ module.exports = (client) => {
                       player.seek(Number(forward));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos, para: ${format(Number(player.position))}`)
+                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos na música!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -573,8 +573,8 @@ module.exports = (client) => {
                         player.setQueueRepeat(!player.queueRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Queue Loop is now ${player.queueRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
-                          .setDescription(`And Track Loop is now ${player.trackRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
@@ -594,8 +594,8 @@ module.exports = (client) => {
                         player.setQueueRepeat(false);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Queue Loop is now ${player.queueRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
-                          .setDescription(`And Track Loop is now ${player.trackRepeat ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
@@ -612,7 +612,7 @@ module.exports = (client) => {
                       player.set("autoplay", !player.get("autoplay"))
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.get("autoplay") ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`} Autoplay`)
+                        .setTitle(`${emoji.msg.SUCCESS} Successo | ${player.get("autoplay") ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Disabled`} Desabilitado`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -629,7 +629,7 @@ module.exports = (client) => {
                       player.queue.shuffle();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.shuffle} The queue is now shuffled.`)
+                        .setTitle(`${emoji.msg.shuffle} A fila agora está embaralhada.`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -643,17 +643,17 @@ module.exports = (client) => {
                     case String(emoji.react.show_queue):
 
                       const embed = new MessageEmbed()
-                        .setAuthor(`Queue for ${message.guild.name}  -  [ ${player.queue.length} Tracks ]`, message.guild.iconURL({
+                        .setAuthor(`Fila para ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
                           dynamic: true
                         }))
                         .setColor(ee.color);
 
-                      if (player.queue.current) embed.addField("**0) CURRENT TRACK**", `[${player.queue.current.title.substr(0, 35)}](${player.queue.current.uri}) - ${player.queue.current.isStream ? "LIVE STREAM" : format(player.queue.current.duration).split(" | ")[0]} - request by: **${player.queue.current.requester.tag}**`);
+                      if (player.queue.current) embed.addField("**0) Faixa atual**", `[${player.queue.current.title.substr(0, 35)}](${player.queue.current.uri}) - ${player.queue.current.isStream ? "LIVE STREAM" : format(player.queue.current.duration).split(" | ")[0]} - Requisitado por: **${player.queue.current.requester.tag}**`);
 
                       const tracks = player.queue;
 
                       if (!tracks.length)
-                        return message.channel.send(embed.setDescription(`${emoji.msg.ERROR} No tracks in the queue`)).then(msg => {
+                        return message.channel.send(embed.setDescription(`${emoji.msg.ERROR} Sem faixas na fila`)).then(msg => {
                           try {
                             msg.delete({
                               timeout: 4000
@@ -679,12 +679,12 @@ module.exports = (client) => {
                         await user.send(embed.setDescription(String(quelist[i]).substr(0, 2048)));
                       }
                       user.send(new MessageEmbed()
-                        .setDescription(`${emoji.msg.SUCCESS} Sent from <#${message.channel.id}>${quelist.length <= 5 ? "" : "\nNote: Send 5 Embeds, but there would be more..."}`)
+                        .setDescription(`${emoji.msg.SUCCESS} Enviado de <#${message.channel.id}>${quelist.length <= 5 ? "" : "\nNote: Enviei 5 embeds, mas haveria mais ..."}`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       )
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Check your direct messages to see the Queue`)
+                        .setTitle(`${emoji.msg.SUCCESS} Verifique suas mensagens diretas para ver a fila`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -699,7 +699,7 @@ module.exports = (client) => {
                     case String(emoji.react.show_current_track):
 
                       return message.channel.send(new MessageEmbed()
-                        .setAuthor("Current song playing:", user.displayAvatarURL({
+                        .setAuthor("Música atual tocando:", user.displayAvatarURL({
                           dynamic: true
                         }))
                         .setThumbnail(`https://img.youtube.com/vi/${player.queue.current.identifier}/mqdefault.jpg`)
@@ -707,11 +707,11 @@ module.exports = (client) => {
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                         .setTitle(`${player.playing ? emoji.msg.resume : emoji.msg.pause} **${player.queue.current.title}**`)
-                        .addField(`${emoji.msg.time} Duration: `, "`" + format(player.queue.current.duration) + "`", true)
-                        .addField(`${emoji.msg.song_by} Song By: `, "`" + player.queue.current.author + "`", true)
-                        .addField(`${emoji.msg.repeat_mode} Queue length: `, `${player.queue.length} Songs`, true)
+                        .addField(`${emoji.msg.time} Duração: `, "`" + format(player.queue.current.duration) + "`", true)
+                        .addField(`${emoji.msg.song_by} Artista: `, "`" + player.queue.current.author + "`", true)
+                        .addField(`${emoji.msg.repeat_mode} Tamanho da fila: `, `${player.queue.length} Músicas`, true)
                         .addField(`${emoji.msg.time} Progress: `, createBar(player))
-                        .setFooter(`Requested by: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
+                        .setFooter(`Requisitado por: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
                           dynamic: true
                         }))
                       ).then(msg => {
@@ -735,10 +735,10 @@ module.exports = (client) => {
       .on("trackStuck", (player, track, payload) => {
         var embed = new MessageEmbed()
         try {
-          embed.setTitle(`${emoji.msg.ERROR} Track got stuck!`)
+          embed.setTitle(`${emoji.msg.ERROR} A Faixa ficou presa!`)
         } catch { }
         try {
-          embed.setDescription(`${emoji.msg.skip_track} I skipped the track: [${track.title}](${track.uri})`)
+          embed.setDescription(`${emoji.msg.skip_track} Eu pulei a faixa: [${track.title}](${track.uri})`)
         } catch { }
         try {
           embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
@@ -763,10 +763,10 @@ module.exports = (client) => {
       .on("trackError", (player, track, payload) => {
         var embed = new MessageEmbed()
         try {
-          embed.setTitle(`${emoji.msg.ERROR} Track got errored!`)
+          embed.setTitle(`${emoji.msg.ERROR} Deu um erro na faixa!`)
         } catch { }
         try {
-          embed.setDescription(`${emoji.msg.skip_track} I skipped the track: **${track.title}**`)
+          embed.setDescription(`${emoji.msg.skip_track} Eu pulei a faixa: **${track.title}**`)
         } catch { }
         try {
           embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
@@ -801,10 +801,10 @@ module.exports = (client) => {
               if (player.queue.size === 0) {
                 var embed = new MessageEmbed()
                 try {
-                  embed.setTitle(`${emoji.msg.ERROR} Queue has ended.`)
+                  embed.setTitle(`${emoji.msg.ERROR} A fila acabou.`)
                 } catch { }
                 try {
-                  embed.setDescription(`I left the Channel: ${client.channels.cache.get(player.voiceChannel).name} because the Queue was empty for: ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
+                  embed.setDescription(`Eu sai do canal: ${client.channels.cache.get(player.voiceChannel).name} Porque a fila estava vazia | ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
                 } catch { }
                 try {
                   embed.setColor(ee.wrongcolor)
@@ -814,7 +814,7 @@ module.exports = (client) => {
                 } catch { }
 
                 if (player.get(`afk-${player.get("playerauthor")}`) || player.get(`afk-${player.guild}`))
-                  return client.channels.cache.get(player.textChannel).send(embed.setDescription(`I will not Leave the Channel, cause afk is ✔️ Enabled`)).then(msg => {
+                  return client.channels.cache.get(player.textChannel).send(embed.setDescription(`Eu não irei deixar o canal o pois meu afk está ✔️ Habilitado`)).then(msg => {
                     try {
                       msg.delete({
                         timeout: 4000
@@ -892,7 +892,7 @@ module.exports = (client) => {
               (channel.name.toLowerCase().includes("cmd") || channel.name.toLowerCase().includes("command") || channel.toLowerCase().name.includes("bot")) &&
               channel.permissionsFor(newState.member.guild.me).has("SEND_MESSAGES")
           );
-          channel.send("Don't unmute me!, i muted my self again! This safes Data so it gives you a faster and smoother experience")
+          channel.send("Não me desmute!, Eu me muto novamente! Isso lhe da uma experiência mais rápida e mais suave!")
           newState.setDeaf(true);
         } catch (error) {
           try {
@@ -902,7 +902,7 @@ module.exports = (client) => {
                 channel.type === "text" &&
                 channel.permissionsFor(newState.member.guild.me).has("SEND_MESSAGES")
             );
-            channel.send("Don't unmute me!, i muted my self again! This safes Data so it gives you a faster and smoother experience")
+            channel.send("Não me desmute!, Eu me muto novamente! Isso lhe da uma experiência mais rápida e mais suave!")
             newState.setDeaf(true);
           } catch (error) {
             console.log("could not send info msg in a random chat")
@@ -939,13 +939,13 @@ module.exports = (client) => {
 
               if (player && oldState.guild.channels.cache.get(player.voiceChannel).members.size === 1) {
                 var embed = new MessageEmbed()
-                  .setTitle(`${emoji.msg.ERROR} Queue has ended | Channel Empty`)
-                  .setDescription(`I left the Channel: ${client.channels.cache.get(player.voiceChannel).name} because the Channel was empty for: ${ms(config.settings.leaveOnEmpty_Channel.time_delay, { long: true })}`)
+                  .setTitle(`${emoji.msg.ERROR} A fila acabou | Canal vazio`)
+                  .setDescription(`Eu sai do canal: ${client.channels.cache.get(player.voiceChannel).name} Porque o canal estava vazio! | ${ms(config.settings.leaveOnEmpty_Channel.time_delay, { long: true })}`)
                   .setColor(ee.wrongcolor)
                   .setFooter(ee.footertext, ee.footericon);
 
                 if (player.get(`afk-${player.get("playerauthor")}`) || player.get(`afk-${player.guild}`))
-                  return client.channels.cache.get(player.textChannel).send(embed.setDescription(`I will not Leave the Channel, cause afk is ✔️ Enabled`)).then(msg => {
+                  return client.channels.cache.get(player.textChannel).send(embed.setDescription(`Eu não irei deixar o canal o pois meu afk está ✔️ Habilitado`)).then(msg => {
                     try {
                       msg.delete({
                         timeout: 4000
