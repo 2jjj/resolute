@@ -1,9 +1,8 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `adddj`,
   aliases: [`adddjrole`],
@@ -11,18 +10,16 @@ module.exports = {
   description: `Let's you define a DJ ROLE (as an array, aka you can have multiple)`,
   usage: `adddj @role`,
   memberpermissions: [`ADMINISTRATOR`],
+
   run: async (client, message, args) => {
     try {
-
       let role = message.mentions.roles.first();
-
       if (!role)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
           .setTitle(`${emoji.msg.ERROR} Error | Please add a Role via ping, @role!`)
         );
-
       try {
         message.guild.roles.cache.get(role.id);
       } catch {
