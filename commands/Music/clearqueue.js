@@ -4,6 +4,7 @@ const {
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `clearqueue`,
   category: `🎶 Music`,
@@ -15,11 +16,11 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
-      
+    
       player.queue.clear();
-      
       return message.channel.send(new MessageEmbed()
         .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.cleared} The queue is now cleared.`)
         .setColor(ee.color)

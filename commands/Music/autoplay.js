@@ -15,16 +15,16 @@ module.exports = {
   args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
   run: async (client, message, args, cmduser, text, prefix, player) => {
+    
     try {
-      
       player.set(`autoplay`, !player.get(`autoplay`))
-      
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.get(`autoplay`) ? `${emoji.msg.enabled} Enabled` : `${emoji.msg.disabled} Disabled`} Autoplay`)
+        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.get(`autoplay`) ? `Enabled` : `Disabled`}`)
         .setDescription(`To ${player.get(`autoplay`) ? `disable` : `enable` } it type: \`${prefix}autoplay\``)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
+
     } catch (e) {
       console.log(String(e.stack).bgRed)
       return message.channel.send(new MessageEmbed()
@@ -34,5 +34,6 @@ module.exports = {
         .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
+
   }
 };
