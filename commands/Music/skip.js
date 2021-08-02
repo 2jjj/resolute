@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const { autoplay } = require("../../handlers/functions");
+
 module.exports = {
   name: "forceskip",
   category: "🎶 Music",
@@ -12,11 +13,10 @@ module.exports = {
   permissoes: [],
   cooldown: 8,
   args: false,
+
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
-
       const { channel } = message.member.voice;
-
       if (!channel)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)

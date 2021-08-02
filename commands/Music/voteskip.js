@@ -1,12 +1,9 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
-const {
-  autoplay
-} = require(`../../handlers/functions`);
+const { autoplay } = require(`../../handlers/functions`);
+
 module.exports = {
   name: `voteskip`,
   category: `🎶 Music`,
@@ -18,9 +15,9 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
-
       if (client.settings.get(message.guild.id, `djroles`).toString() !== ``) {
 
         let channelmembersize = channel.members.size;

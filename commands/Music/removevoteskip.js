@@ -2,6 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `removevoteskip`,
   category: `🎶 Music`,
@@ -9,9 +10,9 @@ module.exports = {
   description: `Removes your Vote of the VoteSkip!`,
   usage: `removevoteskip`,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
-
       if (client.settings.get(message.guild.id, `djroles`).toString() !== ``) {
         let channelmembersize = channel.members.size;
         let voteamount = 0;
