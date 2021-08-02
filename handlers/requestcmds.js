@@ -11,6 +11,7 @@ const {
   delay
 } = require("../handlers/functions")
 const playermanager = require("../handlers/playermanager");
+
 module.exports = async (client, message) => {
   try {
     if (message.author.id === client.user.id) {
