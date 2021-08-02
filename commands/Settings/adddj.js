@@ -15,7 +15,7 @@ module.exports = {
     bot: []
   },
   cooldown: 5,
-  args: true,
+  args: false,
 
   run: async (client, message, args) => {
     try {
@@ -24,7 +24,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | Please add a Role via ping, @role!`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Por favor mencione o cargo!`)
         );
       try {
         message.guild.roles.cache.get(role.id);
