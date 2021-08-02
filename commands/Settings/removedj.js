@@ -6,7 +6,7 @@ const emoji = require(`../../config/emojis.json`);
 module.exports = {
   name: `removedj`,
   aliases: [`deletedj`],
-  category: `⚙️ Settings`,
+  category: `config`,
   description: `Let's you DELETE a DJ ROLE`,
   usage: `<@cargo>`,
   example: "@DJ",

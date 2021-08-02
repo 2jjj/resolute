@@ -5,13 +5,19 @@ const emoji = require("../../config/emojis.json");
 
 module.exports = {
   name: "setup",
-  category: "⚙️ Settings",
+  category: "config",
   aliases: ["musicsetup"],
   cooldown: 10,
   usage: "setup",
-  description: "Creates an unique Music Setup for Requesting Songs!",
-  memberpermissions: ["ADMINISTRATOR"],
-  
+  description: "Cria uma configuração de música única para solicitar músicas!",
+  example: "@DJ",
+  permissoes: {
+    membro: ['ADMINISTRATOR', 'Administrador'],
+    bot: []
+  },
+  cooldown: 5,
+  args: false,
+
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
       let musiccmds = [];
