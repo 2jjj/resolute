@@ -1,29 +1,13 @@
-const config = require("../../config/config.json");
-const ee = require("../../config/embed.json");
-const { logs } = require(`../../config/webhooks.json`);
-const Discord = require("discord.js");
-const {
-    MessageEmbed
-} = require(`discord.js`);
+const Discord = require("discord.js")
 
 module.exports = async (client, guild) => {
-    try {
-        let channel = client.channels.cache.get(logs.entradas)
-        const webhooks = await channel.fetchWebhooks();
-        const webhook = webhooks.first();
+    const webhook = new Discord.WebhookClient(`871605693147410483`, "mXDLwI9O_0sgQT1lB3buWIC70Tyj0r2ymu2gauPdK3HrXg_SGQ5O-9xhvPwUS3gBNsiw")
 
-        const embed = new Discord.MessageEmbed()
-            .setColor(ee.color)
-            .setTitle(`<:setaaa:860626769089265665> Nova guild`)
-            .addField('**Servidor**', guild.name, true)
-            .addField('**Servidor ID**', guild.id, true)
-            .addField('**Fundador**', guild.owner.user.tag)
-            .addField('**Membros**', guild.memberCount, true)
-            .setThumbnail(guild.iconURL({ dynamic: true }))
-            .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
-            .setFooter(ee.footertext, ee.footericon)
-            .setTimestamp();
-
-        await webhook.send(embed);
-    } catch { /* */ }
+    let embed = new Discord.MessageEmbed()
+        .setTitle(`Novo servidor!`)
+        .setDescription(`<:info:835206734225473546> | Servidor: ${guild.name}\n<:info:835206734225473546> | ID: ${guild.id}\n<:info:835206734225473546> | Membros: ${guild.memberCount} membros\n<:info:835206734225473546> | Dono: ${guild.owner.user.tag}/${guild.owner.id}`)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTimestamp()
+        .setColor('#00FF00')
+    webhook.send(embed)
 }
