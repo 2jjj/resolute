@@ -47,7 +47,6 @@ module.exports = {
         })
         .then((channel1) => {
           try {
-            
             let maxbitrate = 96000;
             
             let boosts = message.guild.premiumSubscriptionCount;
