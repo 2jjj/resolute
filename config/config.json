@@ -15,8 +15,8 @@
   "clientsettings": {
     "nodes": [
       {
-        "host": "localhost",
-        "port": 2333,
+        "host": "us3.lexyhosting.com",
+        "port": 25750,
         "password": "spray"
       }
     ]
