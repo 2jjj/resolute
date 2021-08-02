@@ -13,6 +13,10 @@ module.exports = {
   aliases: [`skip`, `vs`, `s`],
   description: `Skips the track, but if there is a DJ Setup u will have to vote first!`,
   usage: `voteskip`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

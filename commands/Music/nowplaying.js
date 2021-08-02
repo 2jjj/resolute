@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`np`, `current`],
   description: `Shows information about the current Song`,
   usage: `nowplaying`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

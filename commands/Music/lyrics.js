@@ -19,7 +19,10 @@ module.exports = {
     aliases: [`songlyrics`, `ly`, `tracklyrics`],
     description: `Shows The Lyrics of the current track`,
     usage: `lyrics [Songtitle]`,
-    cooldown: 15,
+    example: "",
+    permissoes: [],
+    cooldown: 8,
+    args: false,
     parameters: {
         "type": "music",
         "activeplayer": true,

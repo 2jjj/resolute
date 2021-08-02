@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`adds`, `addrelated`, `addr`],
   description: `Adds a similar song of the current Track to the Queue!`,
   usage: `addsimilar`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

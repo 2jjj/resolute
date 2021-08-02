@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`pp`, `ppre`, `playprevius`, `playprevios`],
   description: `Plays the Previous played Song and skips the current Song`,
   usage: `playprevious`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": true },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

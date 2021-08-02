@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`vol`],
   description: `Changes the position(seek) of the Song`,
   usage: `seek <Duration in Seconds>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

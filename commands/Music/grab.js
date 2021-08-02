@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`save`, `yoink`],
   description: `Saves the current playing song to your Direct Messages`,
   usage: `grab`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
   run: async (client, message, args, cmduser, text, prefix, player) => {
    message.author.send(new MessageEmbed()

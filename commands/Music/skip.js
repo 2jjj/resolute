@@ -8,6 +8,10 @@ module.exports = {
   aliases: ["fs"],
   description: "Forces to skip the current song",
   usage: "forceskip",
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
 

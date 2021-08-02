@@ -12,7 +12,10 @@ module.exports = {
   aliases: [`pl`],
   description: `Plays a playlist from youtube`,
   usage: `playlist <URL>`,
-  cooldown: 30,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

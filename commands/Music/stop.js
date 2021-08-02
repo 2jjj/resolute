@@ -11,6 +11,10 @@ module.exports = {
   aliases: [`leave`],
   description: `Stops current track and leaves the channel`,
   usage: `stop`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try{

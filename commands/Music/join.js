@@ -6,6 +6,10 @@ module.exports = {
   aliases: [`summon`],
   description: `Summons the bot to the voice channel you are in`,
   usage: `summon`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     const botchannel = message.guild.me.voice.channel;

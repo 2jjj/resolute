@@ -10,6 +10,10 @@ module.exports = {
   aliases: [`vol`],
   description: `Changes the Volume`,
   usage: `volume <0-150>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

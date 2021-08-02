@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`psc`, `playsoundcloud`],
   description: `Plays a song from soundcloud`,
   usage: `playsc <Song / URL>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`seekforwards`, `fwd`],
   description: `Seeks a specific amount of Seconds forwards`,
   usage: `forward <Duration in Seconds>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

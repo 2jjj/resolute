@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`mm`, "mvm", "my", "mvy", "moveyou"],
   description: `Moves you to the BOT, if playing something`,
   usage: `move`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false, "notsamechannel": true },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

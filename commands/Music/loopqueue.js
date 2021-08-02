@@ -10,6 +10,10 @@ module.exports = {
   aliases: [`repeatqueue`, `lq`, `rq`, `loopqu`, `repeatqu`],
   description: `Repeats the Queue`,
   usage: `loopqueue`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

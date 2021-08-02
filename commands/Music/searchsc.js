@@ -12,7 +12,10 @@ module.exports = {
   aliases: [`searchsoundcloud`, `scsearch`, `soundcloudsearch`],
   description: `Searches a song from soundcloud`,
   usage: `search <Song / URL>`,
-  cooldown: 5,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

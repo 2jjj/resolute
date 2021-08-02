@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`ps`],
   description: `Plays a song instantly from youtube, which means skips current track and plays next song`,
   usage: `playskip <Song / URL>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

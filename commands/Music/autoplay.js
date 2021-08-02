@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`ap`, `toggleauto`, `toggleautoplay`, `toggleap`],
   description: `Toggles Autoplay on/off`,
   usage: `autoplay`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

@@ -10,7 +10,10 @@ module.exports = {
   aliases: [`removedupe`, `removedupetrack`, `rdt`, `removeduplicated`, `removeduplicateds`],
   description: `Removes all duplicated tracks in the Queue`,
   usage: `removedupes`,
-  cooldown: 10,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

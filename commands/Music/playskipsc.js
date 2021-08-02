@@ -12,6 +12,10 @@ module.exports = {
   aliases: [`pssc`, `playskipsoundcloud`],
   description: `Plays a song instantly from soundcloud, which means skips current track and plays next song`,
   usage: `playskipsc <Song / URL>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

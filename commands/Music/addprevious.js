@@ -10,23 +10,16 @@ module.exports = {
   aliases: [`addp`, `addpre`, `addprevius`, `addprevios`],
   description: `Adds the previous song to the Queue again!`,
   usage: `addprevious`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": true},
   run: async (client, message, args, cmduser, text, prefix, player) => {
-    try {
-      
+
       let type = `song:youtube`;
-      
       if (player.queue.previous.uri.includes(`soundcloud`)) type = `song:soundcloud`
-      
       playermanager(client, message, Array(player.queue.previous.uri), type);
-    } catch (e) {
-      console.log(String(e.stack).bgRed)
-      return message.channel.send(new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
-        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
-      );
-    }
+  
   }
-};
+}

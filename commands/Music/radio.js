@@ -15,6 +15,10 @@ module.exports = {
   aliases: [`stream`],
   description: `Plays a defined radiostream`,
   usage: `radio <1-183>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": false, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

@@ -10,6 +10,10 @@ module.exports = {
   aliases: [`unmix`, `oldshuffle`, `undoshuffle`, `oldqueue`, `us`],
   description: `Unshuffles the Queue - Restores the old Queue`,
   usage: `unshuffle`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

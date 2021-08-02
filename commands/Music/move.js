@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`mv`],
   description: `Shows the Queue`,
   usage: `move <from> <to>`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {

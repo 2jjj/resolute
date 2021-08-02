@@ -14,6 +14,10 @@ module.exports = {
   aliases: [`break`],
   description: `Pauses the Current Song`,
   usage: `pause`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
