@@ -8,51 +8,47 @@ module.exports = {
   category: `👀 Filter`,
   aliases: [`bb`],
   description: `Changes the Bass gain`,
-  usage: `<none/low/medium/high>`,
+  usage: `<nenhum/baixo/medio/alto>`,
   example: "none",
   permissoes: [],
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
 
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
-      let level = `none`;
-      if (!args.length || (!client.bassboost[args[0].toLowerCase()] && args[0].toLowerCase() != `none`))
-        return message.channel.send(new MessageEmbed()
-          .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} ERROR | Bass boost level must be one of the following: \`none\`, \`low\`, \`medium\`, \`high\`, \`earrape\``)
-          .setDescription(`Usage: \`${prefix}bassboost <Level>\`\n\nExample: \`${prefix}bassboost low\``)
-        );
+      let level = `nenhum`;
+
+      if (!args.length || (!client.bassboost[args[0].toLowerCase()] && args[0].toLowerCase() != `none`)) return;
+
       level = args[0].toLowerCase();
       switch (level) {
-        case `none`:
+        case `nenhum`:
           player.setEQ(client.bassboost.none);
           break;
-        case `low`:
+        case `baixo`:
           player.setEQ(client.bassboost.low);
           break;
-        case `medium`:
+        case `medio`:
           player.setEQ(client.bassboost.medium);
           break;
-        case `high`:
+        case `alto`:
           player.setEQ(client.bassboost.high);
-        case `earrape`:
+        case `estourado`:
           player.setEQ(client.bassboost.high);
           break;
       }
       return message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.SUCCESS} Success | Bassboost set the to \`${level}\``)
-        .setDescription(`Note: *It might take up to 5 seconds until you hear the new Equalizer*`)
+        .setTitle(`${emoji.msg.SUCCESS} Sucesso! | Bassboost foi setado para \`${level}\``)
+        //.setDescription(`Note: *It might take up to 5 seconds until you hear the new Equalizer*`)
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} ERROR | An error occurred`)
-        .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
   }

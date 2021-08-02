@@ -1,11 +1,9 @@
-const Discord = require(`discord.js`);
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require("../../config/config.json");
 const emoji = require(`../../config/emojis.json`);
 const ee = require("../../config/embed.json");
 const playermanager = require(`../../handlers/playermanager`);
+
 module.exports = {
   name: `addprevious`,
   category: `🎶 Music`,
@@ -26,8 +24,8 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} ERROR | An error occurred`)
-        .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
   }

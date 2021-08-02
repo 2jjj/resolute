@@ -29,8 +29,8 @@ module.exports = {
       console.log(String(e.stack).bgRed)
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
-        .setTitle(`${emoji.msg.ERROR} ERROR | An error occurred`)
-        .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
   }

@@ -18,8 +18,8 @@ module.exports = {
   description: `Saves the Current Queue onto a Name`,
   usage: `savedqueue <Tipo> <Nome> [Opções]\`\n
 **Tipos**: \`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`showdetails\`, \`createsave\`, \`delete\`, \`play\`, \`shuffle\`\n
-**Nome**: \`Can be anything with maximum of 10 Letters\`\n
-**Opções**: \`pick the track which you want to remove`,
+**Nome**: \`Pode ser qualquer coisa com máximo de 10 letras\`\n
+**Opções**: \`Escolha a música que você deseja remover`,
   exaple: "",
   permissoes: [],
 
@@ -28,13 +28,8 @@ module.exports = {
       let Type = args[0];
       let Name = args[1];
       let Options = args.slice(2).join(` `);
-      if (!Type)
-        return message.channel.send(new MessageEmbed()
-          .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} ERROR | You didn't entered a TYPE`)
-          .setDescription(`Usage: \`${prefix}savedqueue <Type> <Name> [Options]\`\nAvailable Types:\n\`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`createsave\`, \`delete\`, \`showdetails\`, \`play\`, \`shuffle\``)
-        );
+      if (!Type) return;
+      
       switch (Type.toLowerCase()) {
         case `create`: {
           if (!Name)
