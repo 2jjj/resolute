@@ -83,39 +83,7 @@ module.exports = async (client, message) => {
     }
 
     if (command) {
-      if (!client.cooldowns.has(command.name)) {
-        client.cooldowns.set(command.name, new Discord.Collection());
-        client.warns.set(command.name, new Discord.Collection());
-      }
-      const now = Date.now();
-      const timestamps = client.cooldowns.get(command.name);
-      const warnstamps = client.warns.get(command.name);
-      let cooldownAmount = (command.cooldown || 3) * 1000;
 
-      if (config.ownerIDS.includes(message.author.id)) {
-        cooldownAmount = 0;
-      }
-
-      if (warnstamps.has(message.author.id)) return;
-
-      if (timestamps.has(message.author.id)) {
-        const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-        if (now < expirationTime) {
-          warnstamps.set(message.author.id)
-          const timeLeft = (expirationTime - now) / 1000;
-          not_allowed = true;
-          return message.channel.send(new Discord.MessageEmbed()
-            .setColor(ee.wrongcolor)
-            .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ Por favor aguarde ${timeLeft.toFixed(1)} segundos para usar o comando \`${command.name}\`.`)
-          );
-        }
-      }
-      timestamps.set(message.author.id, now);
-      setTimeout(() => {
-        timestamps.delete(message.author.id);
-        warnstamps.delete(message.author.id);
-      }, cooldownAmount);
       try {
         client.stats.inc(message.guild.id, "commands");
         client.stats.inc("global", "commands");
@@ -259,7 +227,7 @@ module.exports = async (client, message) => {
         let channel = client.channels.cache.get(logs.comandos)
         const webhooks = await channel.fetchWebhooks();
         const webhook = webhooks.first();
-        let argumentos
+        var argumentos
 
         if (args.slice(0).join(" ").length > 1000) {
           try {
@@ -313,9 +281,8 @@ module.exports = async (client, message) => {
       .setDescription(`\`\`\`Ocorreu um erro!\`\`\``)
     );
   }
-
   if (command.args == true) {
-    if (!args[0]) {
+    if (!argumentos[0]) {
       const help = new Discord.MessageEmbed()
         .setTitle(`Menu de ajuda - \`${command.name}\``)
         .setColor("RANDOM")
@@ -332,13 +299,13 @@ module.exports = async (client, message) => {
       return message.channel.send(help);
     }
   } else if (command.args == false) return;
+//Se o membor não tiver permissão
 
-  //Se o membor não tiver permissão
+if(command.permissoes === undefined) return;
+if(command.permissoes.membro === undefined) return;
+if(command.permissoes.bot === undefined) return;
 
-  if(command.permissoes.length === 0) return;
-  if(command.permissoes.membro.length === 0) return;
-  if(command.permissoes.bot.length === 0) return;
+if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
+if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
 
-  if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
-  if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
 }
