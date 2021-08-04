@@ -10,7 +10,7 @@ const {
 module.exports = {
   name: `pause`,
   category: `🎶 Music`,
-  aliases: [`break`],
+  aliases: [`break`, `pausar`],
   description: `Pauses the Current Song`,
   usage: `pause`,
   example: "",
