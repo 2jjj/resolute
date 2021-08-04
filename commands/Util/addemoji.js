@@ -8,14 +8,14 @@ module.exports = {
 	category: "util",
 	usage: "<emoji>",
 	example: "<:linux:817057043470221362>",
-    args: true,
-    permissoes: {
-        membro: ['MANAGE_EMOJIS', 'Gerenciar Emojis'],
-        bot: ['MANAGE_EMOJIS', 'Gerenciar Emojis']
-    },
+	args: true,
+	permissoes: {
+		membro: ['MANAGE_EMOJIS', 'Gerenciar Emojis'],
+		bot: ['MANAGE_EMOJIS', 'Gerenciar Emojis']
+	},
 
 	async run(client, message, args) {
-		
+
 		if (!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
