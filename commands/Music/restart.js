@@ -23,7 +23,7 @@ module.exports = {
     try {
       player.seek(0);
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | Restarted the current Song!`)
+        .setTitle(`${emoji.msg.SUCCESS} Sucesso | Reiniciei a música atual!`)
         .addField(`${emoji.msg.time} Progress: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
