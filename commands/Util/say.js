@@ -9,12 +9,12 @@ module.exports = {
 	usage: "<texto>",
 	example: "Olá",
 	permissoes: [],
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;
-		
+
 		const user = message.author;
 		let avatar = user.avatarURL({
 			dynamic: true,

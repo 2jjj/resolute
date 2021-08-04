@@ -11,8 +11,8 @@ module.exports = {
 	usage: "<jogo>",
 	example: "csgo",
 	permissoes: [],
-    args: true,
-	
+	args: true,
+
 	async run(client, message, args) {
 
 		if (!args[0]) return;

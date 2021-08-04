@@ -16,7 +16,7 @@ module.exports = {
         if (!args[0]) return;
 
         let qrlink = `http://api.qrserver.com/v1/create-qr-code/?data=${args[0]}&size=200x200`
-        
+
         if (require('is-url')(args[0])) {
             const attachment = new Discord.MessageAttachment(qrlink, 'qrcode.png');
             const embed = new Discord.MessageEmbed()
