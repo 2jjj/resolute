@@ -22,7 +22,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | You need to give me a URL or a search term.`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você precisa me dar um URL ou um termo de pesquisa.`)
         );
       playermanager(client, message, args, `search:youtube`);
     } catch (e) {
