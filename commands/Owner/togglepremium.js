@@ -13,7 +13,9 @@ module.exports = {
   aliases: [`tp`],
   description: `Toggles premium Mode of a User / Guild`,
   usage: `togglepremium <user/guild> <Userid/Guildid>`,
+
   run: async (client, message, args, cmduser, text, prefix) => {
+    
     if (!config.ownerIDS.includes(message.author.id)) {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)

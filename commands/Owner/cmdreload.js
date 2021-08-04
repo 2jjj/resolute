@@ -1,15 +1,15 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
+
 module.exports = {
   name: `cmdreload`,
   category: `👑 Owner`,
   aliases: [``],
   description: `Reloads a command`,
   usage: `cmdreload <CMD>`,
+
   run: async (client, message, args, cmduser, text, prefix) => {
     if (!config.ownerIDS.includes(message.author.id))
       return message.channel.send(new MessageEmbed()

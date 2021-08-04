@@ -8,12 +8,14 @@ const emoji = require(`../../config/emojis.json`);
 const {
   inspect
 } = require(`util`);
+
 module.exports = {
   name: `eval`,
   category: `👑 Owner`,
   aliases: [`evaluate`],
   description: `eval Command`,
   usage: `eval <CODE>`,
+
   run: async (client, message, args, cmduser, text, prefix) => {
     if (!config.ownerIDS.includes(message.author.id)) return;
     

@@ -7,14 +7,16 @@ const emoji = require(`../../config/emojis.json`);
 const {
     inspect
 } = require(`util`);
+
 module.exports = {
     name: `guilds`,
     category: `👑 Owner`,
     description: `guilds Command`,
     usage: `guilds`,
-    run: async (client, message, args, cmduser, text, prefix) => {
-        if (!config.ownerIDS.includes(message.author.id)) return;
 
+    run: async (client, message, args, cmduser, text, prefix) => {
+
+        if (!config.ownerIDS.includes(message.author.id)) return;
         try {
             const guilds = client.guilds.cache.array()
             const generateEmbed = start => {
