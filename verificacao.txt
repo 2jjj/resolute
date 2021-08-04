@@ -20,7 +20,7 @@ Basically Guild Data and User Data.
 FOR WHAT PURPOSES DO YOU STORE IT?:
 
 I store this to make boot systems work.
-Systems like autorole, modlogs, economy (which stores the userID and guildID to save users' coins), change the prefix, etc.
+Systems like autorole, modlogs, economy (which stores userID and guildID to save users' coins), change the prefix, etc.
 
 ---
 
