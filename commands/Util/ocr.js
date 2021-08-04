@@ -11,9 +11,11 @@ module.exports = {
     usage: "<imagem>",
     example: "<imagem>",
     permissoes: [],
-    args: false,
+    args: true,
 
     async run(client, message, args) {
+
+        if (!args[0]) return;
 
         let imagem = message.attachments.first();
         if (message.attachments) {
