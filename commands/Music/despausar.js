@@ -8,9 +8,9 @@ const {
 } = require(`../../handlers/functions`);
 
 module.exports = {
-  name: `resume`,
+  name: `despausar`,
   category: `🎶 Music`,
-  aliases: [`r`],
+  aliases: [`resume`],
   description: `Resumes the Current paused Song`,
   usage: `resume`,
   example: "",
