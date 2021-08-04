@@ -14,13 +14,13 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: {"type":"music", "activeplayer": true, "previoussong": false},
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
-    
     try {
       player.set(`autoplay`, !player.get(`autoplay`))
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.get(`autoplay`) ? `Enabled` : `Disabled`}`)
-        .setDescription(`To ${player.get(`autoplay`) ? `disable` : `enable` } it type: \`${prefix}autoplay\``)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${player.get(`autoplay`) ? `Habilitado` : `Desabilitado`}`)
+        .setDescription(`Para ${player.get(`autoplay`) ? `desabilitar` : `habilitar` } escreva: \`${prefix}autoplay\``)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
