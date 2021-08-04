@@ -21,20 +21,20 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | You may set the volume \`1\` - \`150\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você pode definir o volume de \`1\` até \`150\``)
         );
 
       if (isNaN(args[0]))
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | You may set the volume \`1\` - \`150\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você pode definir o volume de \`1\` até \`150\``)
         );
 
       player.setVolume(Number(args[0]));
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.raise_volume} Volume set to: \`${player.volume} %\``)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.raise_volume} Volume definido para: \`${player.volume} %\``)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
