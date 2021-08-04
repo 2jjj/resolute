@@ -14,15 +14,15 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
-  run: async (client, message, args, cmduser, text, prefix, player) => {
 
+  run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       if (!player.get(`beforeshuffle`))
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | You haven't shuffled this Queue yet!`)
-          .setDescription(`To shuffle it type: \`${prefix}shuffle\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você ainda não embaralhou essa fila!`)
+          .setDescription(`Para embaralhar digite: \`${prefix}shuffle\``)
         );
 
       player.queue.clear();
@@ -31,7 +31,7 @@ module.exports = {
         player.queue.add(track);
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.shuffle} **Re**shuffled the Queue`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.shuffle} **Re**Embaralhei a fila`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
