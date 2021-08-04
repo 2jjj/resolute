@@ -25,7 +25,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Erro | Por favor mencione o cargo!`)
+          .setTitle(`${emoji.msg.ERROR} | Por favor mencione o cargo!`)
         );
         
       try {
