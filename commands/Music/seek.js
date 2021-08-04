@@ -8,9 +8,9 @@ const {
 } = require(`../../handlers/functions`);
 
 module.exports = {
-  name: `seek`,
+  name: `avancar`,
   category: `🎶 Music`,
-  aliases: [`vol`],
+  aliases: [`vol`, `seek`],
   description: `Changes the position(seek) of the Song`,
   usage: `seek <Duration in Seconds>`,
   example: "",
@@ -25,13 +25,13 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | You may seek from \`0\` - \`${player.queue.current.duration}\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você pode avançar de  \`0\` para \`${player.queue.current.duration}\``)
         );
 
       player.seek(Number(args[0]) * 1000);
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | Seeked song to: ${format(Number(args[0]) * 1000)}`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | Avançei o som para: ${format(Number(args[0]) * 1000)}`)
         .addField(`${emoji.msg.time} Progress: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
