@@ -32,8 +32,8 @@ module.exports = {
             message.channel.send(new MessageEmbed()
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${emoji.msg.SUCCESS} Success | Added your Vote!`)
-              .setDescription(`There are now: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes\n\n> Amount reached! Skipping ⏭`)
+              .setTitle(`${emoji.msg.SUCCESS} Successo | Adicionei o seu voto!`)
+              .setDescription(`Quantidade alcançada! Pulando ⏭.`)
             );
             if (player.queue.size == 0) {
               player.destroy();
@@ -44,16 +44,16 @@ module.exports = {
             return message.channel.send(new MessageEmbed()
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${emoji.msg.SUCCESS} Success | Added your Vote!`)
-              .setDescription(`There are now: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
+              .setTitle(`${emoji.msg.SUCCESS} Successo | Adicionado seu voto!`)
+              .setDescription(`Há agora: \`${player.get(`votes`)}\` de \`${voteamount}\` votos precisos para eu pular a música!`)
             );
           }
         } else {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} ERROR | You have already Voted!!`)
-            .setDescription(`There are: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
+            .setTitle(`${emoji.msg.ERROR} Erro | Você já votou!!`)
+            //.setDescription(`There are: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
           );
         }
       } else {
@@ -65,7 +65,7 @@ module.exports = {
           player.destroy();
 
           return message.channel.send(new MessageEmbed()
-            .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.stop} Stopped and left your Channel`)
+            .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai de seu canal de voz!`)
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
           );
@@ -74,7 +74,7 @@ module.exports = {
         player.stop();
 
         return message.channel.send(new MessageEmbed()
-          .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.skip_track} Skipped to the next Song`)
+          .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.skip_track} Pulando para a próxima música.`)
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
         );
