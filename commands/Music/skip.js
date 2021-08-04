@@ -21,7 +21,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Error | You need to join a voice channel.")
+          .setTitle("❌ Erro | Você precisa se juntar a um canal de voz.")
         );
 
       const player = client.manager.players.get(message.guild.id);
@@ -30,15 +30,15 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Error | There is nothing playing")
+          .setTitle("❌ Erro | Não há nada tocando!")
         );
 
       if (channel.id !== player.voiceChannel)
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle("❌ Error | You need to be in my voice channel to use this command!")
-          .setDescription(`Channelname: \`${message.guild.channels.cache.get(player.voiceChannel).name}\``)
+          .setTitle("❌ Erro | Você precisa estar no meu canal de voz para usar este comando!")
+          .setDescription(`Canal: \`${message.guild.channels.cache.get(player.voiceChannel).name}\``)
         );
 
       if (player.queue.size == 0) {
@@ -48,7 +48,7 @@ module.exports = {
         player.destroy();
 
         return message.channel.send(new MessageEmbed()
-          .setTitle("✅ Success | ⏹ Stopped and left your Channel")
+          .setTitle("✅ Successo | ⏹ Parei a música e sai do canal de voz!")
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
         );
@@ -57,7 +57,7 @@ module.exports = {
       player.stop();
 
       return message.channel.send(new MessageEmbed()
-        .setTitle("✅ Success | ⏭ Skipped to the next Song")
+        .setTitle("✅ Successo | ⏭ Pulei para a próxima música!")
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
