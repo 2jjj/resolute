@@ -22,7 +22,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | Please include to which track you want to jump`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Por favor, inclua a qual faixa que você quer pular`)
           .setDescription(`Example: \`jump ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2 }\``)
         );
         
@@ -30,22 +30,22 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | It has to be a queue **Number**`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Os argumentos precisam ser números!`)
         );
         
       if (Number(args[0]) > player.queue.size)
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | That song is not in the queue, sorry!`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Essa música não está na fila, desculpe!`)
         );
         
       player.queue.remove(0, Number(args[0]) - 1);
       player.stop()
       
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | Jumped to the: \`${args[0]}\` Song`)
-        .setDescription(`${emoji.msg.skip_track} Skipped \`${Number(args[0])}\` Songs`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | Pulei \`${args[0]}\` Música`)
+        .setDescription(`${emoji.msg.skip_track} Pulei \`${Number(args[0])}\` Músicas`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

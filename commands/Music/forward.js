@@ -20,13 +20,13 @@ module.exports = {
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
   
   run: async (client, message, args, cmduser, text, prefix, player) => {
+    
     try {
-
       if (!args[0])
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | You may forward for \`1\` - \`${player.queue.current.duration}\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você pode avançar para \`1\` - \`${player.queue.current.duration}\``)
         );
 
       let seektime = Number(player.position) + Number(args[0]) * 1000;
@@ -38,9 +38,9 @@ module.exports = {
       player.seek(Number(seektime));
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.forward} Forwarded the Song `)
-        .setDescription(`Forwarded for \`${args[0]} Seconds\` to: ${format(Number(player.position))}`)
-        .addField(`${emoji.msg.time} Progress: `, createBar(player))
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.forward} Avançei a música.`)
+        .setDescription(`Avançei para \`${args[0]} Segundos\` para: ${format(Number(player.position))}`)
+        .addField(`${emoji.msg.time} Progresso: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

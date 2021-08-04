@@ -21,19 +21,19 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setFooter(ee.footertext, ee.footericon)
         .setColor(ee.wrongcolor)
-        .setTitle(`${emoji.msg.ERROR} Error | No song is currently playing in this guild.`)
+        .setTitle(`${emoji.msg.ERROR} Erro | Nenhuma música está tocando atualmente nesta guild.`)
       );
       if (!player.queue.current)
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | No song is currently playing in this guild.`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Nenhuma música está tocando atualmente nesta guild.`)
         );
         
       player.destroy();
       
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.stop} Stopped and left your Channel`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai do canal de voz!`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

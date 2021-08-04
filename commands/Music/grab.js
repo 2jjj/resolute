@@ -22,7 +22,7 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix, player) => {
   
    message.author.send(new MessageEmbed()
-   .setAuthor(`Saved Song:`, message.author.displayAvatarURL({
+   .setAuthor(`Música salva:`, message.author.displayAvatarURL({
     dynamic: true
   }))
   .setThumbnail(`https://img.youtube.com/vi/${player.queue.current.identifier}/mqdefault.jpg`)
@@ -30,16 +30,16 @@ module.exports = {
   .setColor(ee.color)
   .setFooter(ee.footertext, ee.footericon)
   .setTitle(`${player.playing ? `${emoji.msg.resume}` : `${emoji.msg.pause}`} **${player.queue.current.title}**`)
-  .addField(`${emoji.msg.time} Duration: `, `\`${format(player.queue.current.duration)}\``, true)
-  .addField(`${emoji.msg.song_by} Song By: `, `\`${player.queue.current.author}\``, true)
-  .addField(`${emoji.msg.repeat_mode} Queue length: `, `\`${player.queue.length} Songs\``, true)
-  .addField(`${emoji.msg.playing} Play it:`, `\`${prefix}play ${player.queue.current.uri}\``)
-  .addField(`${emoji.msg.search} Saved in:`, `<#${message.channel.id}>`)
-  .setFooter(`Requested by: ${player.queue.current.requester.tag} | in: ${message.guild.name}`, player.queue.current.requester.displayAvatarURL({
+  .addField(`${emoji.msg.time} Duração: `, `\`${format(player.queue.current.duration)}\``, true)
+  .addField(`${emoji.msg.song_by} Artista: `, `\`${player.queue.current.author}\``, true)
+  .addField(`${emoji.msg.repeat_mode} Tamanho da fila: `, `\`${player.queue.length} Músicas\``, true)
+  .addField(`${emoji.msg.playing} Toque:`, `\`${prefix}play ${player.queue.current.uri}\``)
+  .addField(`${emoji.msg.search} Salvo em:`, `<#${message.channel.id}>`)
+  .setFooter(`Requisitado por: ${player.queue.current.requester.tag} | in: ${message.guild.name}`, player.queue.current.requester.displayAvatarURL({
     dynamic: true
   }))
     ).catch(e=>{
-      return message.channel.send("**:x: Your Dm's are disabled**")
+      return message.channel.send("**:x: Sua DM está desabilitada.**")
     })    
 
     message.react(emoji.react.SUCCESS).catch(e=>console.log("Could not react"))

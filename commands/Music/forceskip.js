@@ -26,7 +26,7 @@ module.exports = {
         player.destroy();
         
         return message.channel.send(new MessageEmbed()
-          .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.stop} Stopped and left your Channel`)
+          .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai de seu canal!`)
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
         );
@@ -35,7 +35,7 @@ module.exports = {
       player.stop();
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.skip_track} Skipped to the next Song`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.skip_track} Pulando para a próxima música..`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
