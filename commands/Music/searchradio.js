@@ -23,14 +23,14 @@ module.exports = {
       if (!args[0]) return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} Error | What should be the search Type`)
-        .setDescription(`Useage: \`${prefix}searchradio <TYPE> <Seach Query>\`\nValid Types: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Qual deve ser o tipo de pesquisa?`)
+        .setDescription(`Use: \`${prefix}searchradio <Tipo> <Consulta de pesquisa>\`\nTipos válidos: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
       );
       if (!args[1]) return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
         .setTitle(`${emoji.msg.ERROR} Error | What should I search for?`)
-        .setDescription(`Useage: \`${prefix}searchradio <TYPE> <Seach Query>\`\nValid Types: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
+        .setDescription(`Use: \`${prefix}searchradio <Tipo> <Consulta de pesquisa>\`\nTipos válidos: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
       );
 
       let filter = false;
@@ -76,7 +76,7 @@ module.exports = {
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
         .setTitle(`${emoji.msg.ERROR} Error | What should be the search Type`)
-        .setDescription(`Useage: \`${prefix}searchradio <TYPE> <Seach Query>\`\nValid Types: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
+        .setDescription(`Usage: \`${prefix}searchradio <TYPE> <Seach Query>\`\nValid Types: \`country\`, \`city\`, \`name\`, \`genre\`\nExample: \`${prefix}searchradio tag jazz\`\nExample: \`${prefix}searchradio state Austria\``)
       );
 
       RadioBrowser.getStations(filter)
@@ -94,9 +94,9 @@ module.exports = {
           }
 
           let embed = new MessageEmbed()
-            .setTitle(`Search result for: 🔎 **\`${filter.searchterm}`.substr(0, 256 - 3) + "`**")
+            .setTitle(`Resultado de pesquisa para: 🔎 **\`${filter.searchterm}`.substr(0, 256 - 3) + "`**")
             .setColor(ee.color).setFooter(ee.footertext, ee.footericon)
-            .setFooter(`Search-Request by: ${message.author.tag}`, message.author.displayAvatarURL({
+            .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
               dynamic: true
             }))
 
@@ -107,7 +107,7 @@ module.exports = {
           await message.channel.send(new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle("Pick your Radio with the `INDEX Number`")
+            .setTitle("Escolha seu rádio com o número do índice")
           )
 
           try {
@@ -119,7 +119,7 @@ module.exports = {
           } catch (e) {
             if (!player.queue.current) player.destroy();
             return message.channel.send(new MessageEmbed()
-              .setTitle("❌ Error | You didn't provide a selection")
+              .setTitle("❌ Erro | Você não forneceu uma seleção!")
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
             );
@@ -130,7 +130,7 @@ module.exports = {
             return message.channel.send(new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle('❌ Error | Cancelled selection.')
+              .setTitle('❌ Erro | Seleção cancelada.')
             );
           }
           const index = Number(first) - 1;
@@ -138,13 +138,13 @@ module.exports = {
             return message.channel.send(new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`❌ Error | The number you provided is not a Number within (1-${counter}).`)
+              .setTitle(`❌ Erro | O número que você forneceu não é um número dentro de (1-${counter}).`)
             );
           if (index < 0 || index > counter - 1)
             return message.channel.send(new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`❌ Error | The number you provided too small or too big (1-${counter}).`)
+              .setTitle(`❌ Erro | O número que você forneceu muito pequeno ou muito grande - (1-${counter}).`)
             );
 
           playermanager(client, message, Array(data[index].url), `song:radio`);
@@ -155,8 +155,8 @@ module.exports = {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} ERROR | An error occurred`)
-            .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+            .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+            .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
           );
         })
     } catch (e) {
