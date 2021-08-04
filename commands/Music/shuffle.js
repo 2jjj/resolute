@@ -14,12 +14,13 @@ module.exports = {
   cooldown: 8,
   args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       player.set(`beforeshuffle`, player.queue.map(track => track));
       player.queue.shuffle();
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.shuffle} Shuffled the Queue`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.shuffle} Embaralhei a fila`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
