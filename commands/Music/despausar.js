@@ -25,14 +25,14 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | The song is already resumed!`)
-          .setDescription(`You can pause it with: \`${prefix}pause\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | A música já esta despausada!`)
+          .setDescription(`Você pode pausar com: \`${prefix}pause\``)
         );
 
       player.pause(false);
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.playing ? `${emoji.msg.resume} Resumed` : `${emoji.msg.pause} Paused`} the Player.`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo! | ${player.playing ? `${emoji.msg.resume} Despausei` : `${emoji.msg.pause} Pausei`} o Player.`)
         .addField(`${emoji.msg.time} Progress: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
