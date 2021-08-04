@@ -2,17 +2,18 @@ const {
     MessageEmbed,
     splitMessage
 } = require(`discord.js`);
+
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
-const {
-    databasing
-} = require(`../../handlers/functions`);
+const { databasing } = require(`../../handlers/functions`);
+
 module.exports = {
     name: `blacklist`,
     category: `👑 Owner`,
     description: `blacklist Command`,
     usage: `blacklist <user> [reason]`,
+    
     run: async (client, message, args, cmduser, text, prefix) => {
         if (!config.ownerIDS.includes(message.author.id)) return;
 
