@@ -24,7 +24,7 @@ module.exports = {
       if (!args[0])
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | You may rewind for \`1\` - \`${player.queue.current.duration}\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você pode retornar de \`1\` a \`${player.queue.current.duration}\``)
         );
       let seektime = player.position - Number(args[0]) * 1000;
       if (seektime >= player.queue.current.duration - player.position || seektime < 0) {
@@ -34,8 +34,8 @@ module.exports = {
       player.seek(Number(seektime));
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.rewind} Rewinded the song for \`${args[0]} Seconds\` to: ${format(Number(player.position))}`)
-        .addField(`${emoji.msg.time} Progress: `, createBar(player))
+        .setTitle(`${emoji.msg.SUCCESS} Sucesso | ${emoji.msg.rewind} Retornei \`${args[0]} segundos\` para: ${format(Number(player.position))}`)
+        .addField(`${emoji.msg.time} Progresso: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
