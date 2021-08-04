@@ -42,7 +42,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | This Role is already a DJ-ROLE!`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Esse cargo já é um cargo de DJ!`)
         );
         
       client.settings.remove(message.guild.id, role.id, `djroles`);
@@ -65,8 +65,8 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} ERROR | An error occurred`)
-        .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
   }

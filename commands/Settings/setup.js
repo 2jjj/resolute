@@ -171,7 +171,7 @@ module.exports = {
             return message.channel.send(new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${emoji.msg.ERROR} Error | Something went Wrong`)
+              .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
               .setDescription(String("```" + e.stack + "```").substr(0, 2048))
             );
           }
@@ -181,8 +181,8 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.wrongcolor)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.ERROR} Error | Something went Wrong`)
-        .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+        .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
+        .setDescription(`\`\`\`Ocorreu um erro. Por favor tente novamente mais tarde\`\`\``)
       );
     }
   },
