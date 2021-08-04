@@ -40,7 +40,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Erro | Este cargo já esta listado!`)
+          .setTitle(`${emoji.msg.ERROR} | Este cargo já esta listado!`)
         );
 
       client.settings.push(message.guild.id, role.id, `djroles`);
