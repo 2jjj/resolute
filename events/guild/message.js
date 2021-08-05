@@ -222,7 +222,7 @@ module.exports = async (client, message) => {
         }
 
         if (not_allowed) return;
-        command.run(client, message, args, prefix, message.member, args.join(" "), player);
+        command.run(client, message, args, message.member, args.join(" "), prefix, player);
 
         let channel = client.channels.cache.get(logs.comandos)
         const webhooks = await channel.fetchWebhooks();

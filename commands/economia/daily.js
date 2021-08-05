@@ -13,7 +13,7 @@ module.exports = {
     permissoes: [],
     args: false,
 
-    async run(client, message, args, prefix) {
+    async run(client, message, args, cmduser, text, prefix, player) {
 
         let user = message.author;
         let timeout = 86400000;

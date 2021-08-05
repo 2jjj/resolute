@@ -13,7 +13,8 @@ module.exports = {
   permissoes: [],
   args: false,
 
-  async run (client, message, args) {
+  async run(client, message, args, cmduser, text, prefix, player) {
+
     const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 
     client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')];
     Promise.all(promises) 	
@@ -40,6 +41,7 @@ module.exports = {
         > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         > <:pontin:852197383974551582> **|** ${totalMembers} usuários.
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
+        > 🤔 Prefixo: ${prefix}
 
         **Links úteis :**
         > 🤖 **|** [Me adicione!](https://www.resolutebot.xyz/add)
