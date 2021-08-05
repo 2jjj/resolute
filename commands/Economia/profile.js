@@ -23,6 +23,7 @@ module.exports = {
         const profile = new Discord.MessageEmbed()
             .setAuthor(`Perfil de ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({dynamic: true}))
             .setColor("RANDOM")
+            .setDescription("MANUTENÇÃO!!!!!!!!!!!!!!!!!!!!!!!")
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .addField(`Carteira:`, `Coins: \`${coins}\``)
             .addField(`Insigneas:`, ` \`a\``)
