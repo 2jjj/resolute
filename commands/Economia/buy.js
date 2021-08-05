@@ -1,4 +1,6 @@
-const { MessageEmbed } = require('discord.js')
+const {
+    MessageEmbed
+} = require('discord.js')
 const db = require('quick.db')
 
 module.exports = {
@@ -10,29 +12,46 @@ module.exports = {
     usage: "",
     example: "cara",
     permissoes: [],
-    args: true,
-  
+    args: false,
 
-    async run(client, message, args) {
 
-            const user = message.member
-            const amount = 10 // Amount Of Fish Rod: $15,000
-            const bal = db.fetch(`money_${user.id}`) // Get User's Money In Wallet
+    async run(client, message, args, cmduser, text, prefix, player) {
 
-            if(bal <amount) { // If Balance In Wallet Is Less Then Amount Of Laptop
-                return message.reply(`You Don't Have Enough Money(\`$15,000\`) In Wallet To But Fish Rod`)
+        if (!args[0]) {
+            let embed_help = new MessageEmbed()
+                .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({
+                    dynamic: true
+                }))
+                .addField(`Items disponiveis:`, `Peixe - 15000 Rcoins`)
+                .addField(`Como fazer uma compra?`, `É simples! basta usar ${prefix}buy <item>!`)
+
+            message.channel.send(embed_help)
+        }
+
+        const user = message.member
+        const bal = db.fetch(`money_${user.id}`) 
+
+        if (args[0] === 'peixe') {
+            //valor do peixe
+            let amount = 10 
+
+            if (bal < amount) {
+                return message.reply(`Você não tem \`$15,000 RCoins\` para comprar um peixe!`)
             } else {
                 const embed = new MessageEmbed()
-                .setAuthor(`${user.user.username} Purchased`, user.user.displayAvatarURL({ dynamic: true }))
-                .setTimestamp()
-                .setColor('RANDOM')
-                .setDescription(`
-<@${user.id}> Successfully Purchased **1** *Fish Rod* For \`$15,000\`
-                `)
-                .setFooter('Shop')
+                    .setAuthor(`${user.user.username}z`, user.user.displayAvatarURL({
+                        dynamic: true
+                    }))
+                    .setTimestamp()
+                    .setColor('RANDOM')
+                    .setDescription(`
+                        <@${user.id}> Comprado com sucesso **1 peixe** por \`15,000 RCoins\`
+                    `)
+                    .setFooter('Shop - Resolute')
                 message.channel.send(embed)
-                db.push(`${user.id}`, `Peixe`) // Add 1 Laptop To User
-                db.subtract(`money_${user.id}`, amount) // Remove Money From Using
+                db.push(`${user.id}`, `Peixe`)
+                db.subtract(`money_${user.id}`, amount)
             }
         }
     }
+}
