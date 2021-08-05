@@ -22,7 +22,7 @@ module.exports = {
                 .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
-                .addField(`Items disponiveis:`, `Peixe - 15000 Rcoins`)
+                .addField(`Itens disponiveis:`, `Peixe - 15000 Rcoins`)
                 .addField(`Como fazer uma compra?`, `É simples! basta usar ${prefix}buy <item>!`)
 
             message.channel.send(embed_help)
