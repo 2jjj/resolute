@@ -15,8 +15,6 @@ module.exports = {
 
     async run(client, message, args, prefix) {
 
-        console.log(prefix)
-
         let user = message.author;
         let timeout = 86400000;
         let daily = await db.fetch(`daily_${user.id}`);
