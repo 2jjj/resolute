@@ -12,7 +12,7 @@ module.exports = {
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: false,
 
-    async run(client, message, args) {
+    async run(client, message, args, cmduser, text, prefix, player) {
 
         if (!message.member.hasPermission(module.exports.permissoes[0])) return;
         //if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;

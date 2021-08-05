@@ -12,7 +12,7 @@ module.exports = {
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: false,
 
-	async run(client, message, args, prefix) {
+    async run(client, message, args, cmduser, text, prefix, player) {
 
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)

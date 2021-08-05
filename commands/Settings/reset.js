@@ -17,7 +17,7 @@ module.exports = {
   cooldown: 5,
   args: false,
   
-  run: async (client, message, args, prefix) => {
+  async run(client, message, args, cmduser, text, prefix, player) {
     try {
       if (message.member.guild.owner.id !== message.author.id)
         return message.channel.send(new MessageEmbed()

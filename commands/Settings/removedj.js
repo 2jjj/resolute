@@ -17,7 +17,7 @@ module.exports = {
   cooldown: 5,
   args: false,
   
-  run: async (client, message, args) => {
+  async run(client, message, args, cmduser, text, prefix, player) {
 
     try {
       let role = message.mentions.roles.first();

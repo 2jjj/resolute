@@ -12,7 +12,7 @@ module.exports = {
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: false,
 
-	async run(client, message, args, prefix) {
+    async run(client, message, args, cmduser, text, prefix, player) {
 
         let modlogs = db.get(`modlogs_config_${message.guild.id}`)
         let delete_logs = db.get(`delete_config_${message.guild.id}`)

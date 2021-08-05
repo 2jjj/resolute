@@ -12,7 +12,7 @@ module.exports = {
     permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
     args: false,
 
-	async run(client, message, args) {
+    async run(client, message, args, cmduser, text, prefix, player) {
 
         let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
         let author = message.author;
