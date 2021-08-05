@@ -31,7 +31,7 @@ module.exports = {
                 `)
                 .setFooter('Shop')
                 message.channel.send(embed)
-                db.add(`fishrod_${user.id}`, 1) // Add 1 Laptop To User
+                db.push(`${user.id}`, `Peixe`) // Add 1 Laptop To User
                 db.subtract(`money_${user.id}`, amount) // Remove Money From Using
             }
         }
