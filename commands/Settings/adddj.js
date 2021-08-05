@@ -19,6 +19,9 @@ module.exports = {
 
   run: async (client, message, args) => {
     try {
+      if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+      if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
+
       let role = message.mentions.roles.first();
       if (!role)
         return message.channel.send(new MessageEmbed()

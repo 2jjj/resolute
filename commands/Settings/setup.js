@@ -20,6 +20,9 @@ module.exports = {
 
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
+      if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+      if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
+
       let musiccmds = [];
       const commands = (category) => {
         return client.commands.filter((cmd) => cmd.category.toLowerCase().includes("music")).map((cmd) => `\`${cmd.name}\``);

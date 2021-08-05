@@ -16,6 +16,9 @@ module.exports = {
     args: false,
 
     async run(client, message, args, cmduser, text, prefix, player) {
+        
+		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
 
         let modlogs = db.get(`modlogs_config_${message.guild.id}`)
         let delete_logs = db.get(`delete_config_${message.guild.id}`)
