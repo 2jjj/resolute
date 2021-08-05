@@ -303,7 +303,6 @@ module.exports = async (client, message) => {
         return message.channel.send(help);
       }  
     }
-
   } else {
     if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
     if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)

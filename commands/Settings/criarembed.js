@@ -9,7 +9,10 @@ module.exports = {
     category: "config",
     usage: "<@cargo>",
     example: "",
-    permissoes: ["ADMINISTRATOR", "Administrador"],
+	permissoes: {
+        membro: ['ADMINISTRATOR', 'Administrador'],
+        bot: ['ADMINISTRATOR', 'Administrador']
+    },
     args: false,
 
     async run(client, message, args) {

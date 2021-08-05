@@ -9,7 +9,10 @@ module.exports = {
     category: "config",
     usage: "",
     example: "",
-    permissoes: ["MANAGE_GUILD", "Gerenciar Servidor"],
+    permissoes: {
+        membro: ['MANAGE_GUILD', 'Gerenciar Servidor'],
+        bot: ['MANAGE_GUILD', 'Gerenciar Servidor']
+    }, 
     args: false,
 
     async run(client, message, args, cmduser, text, prefix, player) {
