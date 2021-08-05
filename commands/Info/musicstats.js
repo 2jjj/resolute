@@ -10,6 +10,7 @@ module.exports = {
   cooldown: 10,
   usage: "stats",
   description: "Shows music Stats, like amount of Commands and played Songs etc.",
+  
   run: async (client, message, args, user, text, prefix) => {
     try {
       let global = client.stats.get("global");
