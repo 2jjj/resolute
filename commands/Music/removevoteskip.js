@@ -1,3 +1,4 @@
+//Parei aqui vou jogar mine tchau
 const { MessageEmbed } = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);

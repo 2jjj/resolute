@@ -357,7 +357,7 @@ module.exports = (client) => {
                       player.destroy();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.stop} Parou e sai do seu canal`)
+                        .setTitle(`${emoji.msg.stop} Parei e sai do seu canal de voz!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
