@@ -16,7 +16,6 @@ const {
 const requestcmd = require("../../handlers/requestcmds");
 const { MessageEmbed } = require(`discord.js`);
 const GuildSettings = require("../../databases/mongoDB/settings");
-const blacklist = require("../../databases/mongoDB/blacklist");
 
 module.exports = async (client, message) => {
   try {
