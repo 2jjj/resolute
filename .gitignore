@@ -1,8 +1,5 @@
 node_modules
-json.sqlite
 comandos.log
-logs
-Lavalink.jar
 databases/premium
 databases/queuesaves
 databases/settings
