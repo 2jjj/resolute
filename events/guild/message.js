@@ -251,7 +251,7 @@ module.exports = async (client, message) => {
           .setTitle(`<:setaaa:860626769089265665> Nova comando executado`)
           .addField('**Servidor**', message.guild.name)
           .addField('**Servidor ID**', message.guild.id)
-          .addField('**Executada por**', message.author.tag + ' ( ' + message.author.id + ' )')
+          .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
           .addField('**Comando**', command.name)
           .setThumbnail(message.author.displayAvatarURL({ dynamic: true, format: "png" }))
           .setFooter(ee.footertext, ee.footericon)
