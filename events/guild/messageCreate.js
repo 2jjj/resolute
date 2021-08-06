@@ -53,13 +53,14 @@ module.exports = async (client, message) => {
     if (isrequestchannel(client, message)) return requestcmd(client, message);
 
     const [cmd, ...args] = message.content
-      .slice(client.config.prefix.length)
+      .slice(prefix.length)
       .trim()
       .split(" ");
 
     const command = client.commands.get(cmd.toLowerCase());
 
     if (!command) return;
+    
     await command.run(client, message, args);
 
     let not_allowed = false;
