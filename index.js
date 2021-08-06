@@ -6,6 +6,8 @@ const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
 
+client.slashCommands = new Collection();
+
 const client = new Client({
   messageCacheLifetime: 604800,
   messageSweepInterval: 604800,
@@ -18,7 +20,6 @@ const client = new Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
-
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
