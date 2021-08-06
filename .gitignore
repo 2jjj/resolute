@@ -6,3 +6,4 @@ databases/settings
 databases/setups
 databases/stats
 databases/warns
+json.sqlite
