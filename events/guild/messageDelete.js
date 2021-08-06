@@ -36,5 +36,5 @@ module.exports = async (client, message) => {
     .setTimestamp()
     .setFooter(message.guild.name, message.guild.iconURL());
 
-  client.channels.cache.get(canal).send(msg_embed)
+  client.channels.cache.get(canal).send({ embeds: [msg_embed] })
 }

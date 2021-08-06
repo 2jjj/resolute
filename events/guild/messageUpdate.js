@@ -42,7 +42,7 @@ module.exports = async (client, message, oldMessage) => {
     .setFooter(message.guild.name, message.guild.iconURL());
 
   try {
-    client.channels.cache.get(canal).send(embed)
+    client.channels.cache.get(canal).send({ embeds: [embed] })
   } catch (e) {}
 
 }
