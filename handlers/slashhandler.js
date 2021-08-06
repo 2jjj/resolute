@@ -22,7 +22,7 @@ module.exports = async (client) => {
     });
 
     // Events
-    const eventFiles = await globPromise(`${process.cwd()}/slashevents/*.js`);
+    const eventFiles = await globPromise(`${process.cwd()}/events/slashevents/*.js`);
     eventFiles.map((value) => require(value));
 
     // Slash Commands
