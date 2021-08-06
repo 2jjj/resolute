@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-require("../../src/util/inlineReply")
 
 module.exports = {
     name: "prefix",
