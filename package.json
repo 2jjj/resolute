@@ -25,7 +25,7 @@
     "dblapi.js": "^2.4.1",
     "discord-buttons": "^3.2.1",
     "discord-image-generation": "^1.4.9",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.0",
     "ejs": "^3.1.6",
     "enmap": "^5.8.6",
     "erela.js": "^2.3.3",
