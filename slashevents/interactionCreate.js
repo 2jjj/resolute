@@ -1,6 +1,6 @@
-const client = require("../../index");
+const client = require("../index");
 
-module.exports = async (interaction) => {
+client.on("interactionCreate", async (interaction) => {
     // Slash Command Handling
     if (interaction.isCommand()) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});
@@ -22,4 +22,4 @@ module.exports = async (interaction) => {
 
         cmd.run(client, interaction, args);
     }
-}
+});
