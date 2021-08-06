@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+﻿const { Client, Intents} = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
 const fs = require("fs");
@@ -6,7 +6,7 @@ const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
 
-const client = new Discord.Client({
+const client = new Client({
   messageCacheLifetime: 604800,
   messageSweepInterval: 604800,
   fetchAllMembers: false,
@@ -15,11 +15,10 @@ const client = new Discord.Client({
   shards: "auto",
   restWsBridgetimeout: 100,
   disableEveryone: true,
-  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
 
-
-require("./src/util/inlineReply");
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
