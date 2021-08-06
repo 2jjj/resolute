@@ -1,4 +1,4 @@
-﻿const { Client, Intents} = require("discord.js");
+﻿const { Collection, Client, Intents} = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
 const fs = require("fs");
