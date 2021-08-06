@@ -7,23 +7,15 @@ const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
 
 const client = new Client({
-  messageCacheLifetime: 604800,
-  messageSweepInterval: 604800,
-  fetchAllMembers: false,
-  messageCacheMaxSize: 200,
-  restTimeOffset: 0,
-  shards: "auto",
-  restWsBridgetimeout: 100,
-  disableEveryone: true,
-  partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+  intents: 32767,
 });
 
 module.exports = client;
 
 client.slashCommands = new Collection();
+client.commands = new Collection();
 
-["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
+["slashhandler","clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
 
