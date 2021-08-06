@@ -16,7 +16,7 @@ module.exports = {
   }, 
   args: false,
 
-  async run(client, message, args) {
+	async run(client, message, args, cmduser, text, prefix, player) {
 
 		var storedSettings = await GuildSettings.findOne({
 			gid: message.guild.id
@@ -76,7 +76,7 @@ module.exports = {
       let dev = client.commands.filter((cmd) => cmd.category === 'dev');
       let config = client.commands.filter((cmd) => cmd.category === 'config');
 
-      const embed = new MessageEmbed()  
+      const embed_help = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🎵 ** | Música(MANUTENÇÃO)** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
@@ -100,7 +100,7 @@ module.exports = {
         //.setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
         .setColor("RANDOM");
-      return message.channel.send(embed);
+      message.channel.send({ embeds: [embed_help] });
     } else {
       const command =
         client.commands.get(args[0].toLowerCase()) ||
@@ -148,7 +148,7 @@ module.exports = {
         )
         .setTimestamp()
         .setColor("RANDOM");
-      return message.channel.send(embed);
+      message.channel.send({ embeds: [embed] });
     }
   },
 };
