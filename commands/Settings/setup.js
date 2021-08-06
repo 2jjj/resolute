@@ -13,7 +13,7 @@ module.exports = {
   example: "@DJ",
   permissoes: {
     membro: ['ADMINISTRATOR', 'Administrador'],
-    bot: []
+    bot: ['ADMINISTRATOR', 'Administrador']
   },
   cooldown: 5,
   args: false,
@@ -162,7 +162,7 @@ module.exports = {
                   return message.channel.send(new MessageEmbed()
                     .setColor(ee.wrongcolor)
                     .setFooter(ee.footertext, ee.footericon)
-                    .setTitle(`${emoji.msg.ERROR} Error | Something went Wrong`)
+                    .setTitle(`${emoji.msg.ERROR} Erro | Ocorreu um erro!`)
                     .setDescription(String("```" + e.stack + "```").substr(0, 2048))
                   );
                 }
