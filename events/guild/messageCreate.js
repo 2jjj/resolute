@@ -3,9 +3,16 @@ const ee = require("../../config/embed.json");
 const emoji = require(`../../config/emojis.json`);
 const { logs } = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
-const moment = require('moment');
 const sourcebin = require('sourcebin_js');
-const { createBar, format, databasing, escapeRegex, isrequestchannel, getRandomInt, delay } = require("../../handlers/functions");
+const {
+  createBar,
+  format,
+  databasing,
+  escapeRegex,
+  isrequestchannel,
+  getRandomInt,
+  delay
+} = require("../../handlers/functions");
 const requestcmd = require("../../handlers/requestcmds");
 const { MessageEmbed } = require(`discord.js`);
 const GuildSettings = require("../../databases/mongoDB/settings");
@@ -16,7 +23,7 @@ module.exports = async (client, message) => {
     var storedSettings = await GuildSettings.findOne({
       gid: message.guild.id
     });
-    
+
     if (!storedSettings) {
       const newSettings = new GuildSettings({
         gid: message.guild.id
@@ -26,8 +33,8 @@ module.exports = async (client, message) => {
         gid: message.guild.id
       });
     }
-  
-    if(!storedSettings.prefix) {
+
+    if (!storedSettings.prefix) {
       storedSettings.prefix = "s."
     }
 
@@ -40,22 +47,21 @@ module.exports = async (client, message) => {
         }
     }
 
-    if (message.author.bot) return;
-    if (!message.guild) return;
-    if (message.content.indexOf(prefix) !== 0) return;
     if (!message.member) message.member = await message.guild.fetchMember(message);
     if (message.channel.partial) await message.channel.fetch();
     if (message.partial) await message.fetch();
     databasing(client, message.guild.id, message.author.id)
     if (isrequestchannel(client, message)) return requestcmd(client, message);
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const cmd = args.shift().toLowerCase();
-  
-    if (cmd.length === 0) return;
-  
-    var command = client.commands.get(cmd);
-    if (!command) command = client.commands.get(client.aliases.get(cmd));  
+    const [cmd, ...args] = message.content
+      .slice(client.config.prefix.length)
+      .trim()
+      .split(" ");
+
+    const command = client.commands.get(cmd.toLowerCase());
+
+    if (!command) return;
+    await command.run(client, message, args);
 
     let not_allowed = false;
 
@@ -76,8 +82,11 @@ module.exports = async (client, message) => {
           .setDescription(`There is a Bot chat setup in this GUILD! try using the Bot Commands here:\n> ${leftb.substr(0, leftb.length - 3)}`)
         ).then(msg => {
           try {
-            msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
-          } catch { /* */ }
+            msg.delete({
+              timeout: 5000
+            }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
+          } catch {
+            /* */ }
         });
       }
     }
@@ -114,8 +123,11 @@ module.exports = async (client, message) => {
                   .setDescription(`You need to have one of those Roles:\n${leftb.substr(0, leftb.length - 3)}\n\nOr be the Requester (${player.queue.current.requester}) of the current Track!`)
                 ).then(msg => {
                   try {
-                    msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
-                  } catch { /* */ }
+                    msg.delete({
+                      timeout: 5000
+                    }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
+                  } catch {
+                    /* */ }
                 });
               }
             }
@@ -138,8 +150,7 @@ module.exports = async (client, message) => {
 
 
         if (command.category.toLowerCase().includes("admin") || command.category.toLowerCase().includes("settings") || command.category.toLowerCase().includes("owner")) {
-          let required_perms = ["KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_CHANNELS", "ADD_REACTIONS", "VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES"
-            , "EMBED_LINKS", "ATTACH_FILES", "CONNECT", "SPEAK", "MANAGE_ROLES"]
+          let required_perms = ["KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_CHANNELS", "ADD_REACTIONS", "VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES", "EMBED_LINKS", "ATTACH_FILES", "CONNECT", "SPEAK", "MANAGE_ROLES"]
           if (!message.guild.me.hasPermission(required_perms)) {
             not_allowed = true;
             return message.channel.send(new Discord.MessageEmbed()
@@ -156,7 +167,9 @@ module.exports = async (client, message) => {
         if (command.parameters) {
           if (command.parameters.type == "music") {
 
-            const { channel } = message.member.voice;
+            const {
+              channel
+            } = message.member.voice;
             const mechannel = message.guild.me.voice.channel;
 
             if (!channel) {
@@ -182,7 +195,9 @@ module.exports = async (client, message) => {
                 );
               }
               if (!mechannel) {
-                if (player) try { player.destroy() } catch { }
+                if (player) try {
+                  player.destroy()
+                } catch {}
                 not_allowed = true;
                 return message.channel.send(new MessageEmbed()
                   .setColor(ee.wrongcolor)
@@ -231,13 +246,11 @@ module.exports = async (client, message) => {
 
         if (args.slice(0).join(" ").length > 1000) {
           try {
-            const link = await sourcebin.create([
-              {
-                name: 'Resolute logs',
-                content: args.slice(0).join(" "),
-                languageId: 'text'
-              }
-            ]);
+            const link = await sourcebin.create([{
+              name: 'Resolute logs',
+              content: args.slice(0).join(" "),
+              languageId: 'text'
+            }]);
             argumentos = link.url;
           } catch (e) {
             argumentos = `ERROR: ${e}`;
@@ -253,7 +266,10 @@ module.exports = async (client, message) => {
           .addField('**Servidor ID**', message.guild.id)
           .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
           .addField('**Comando**', command.name)
-          .setThumbnail(message.author.displayAvatarURL({ dynamic: true, format: "png" }))
+          .setThumbnail(message.author.displayAvatarURL({
+            dynamic: true,
+            format: "png"
+          }))
           .setFooter(ee.footertext, ee.footericon)
           .setTimestamp();
         if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
@@ -269,8 +285,11 @@ module.exports = async (client, message) => {
           //.setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
         ).then(msg => {
           try {
-            msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey))
-          } catch { /* */ }
+            msg.delete({
+              timeout: 5000
+            }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey))
+          } catch {
+            /* */ }
         });
       }
     }
@@ -282,8 +301,8 @@ module.exports = async (client, message) => {
     );
   }
 
-  
-  if(command.permissoes.length === 0) {
+
+  if (command.permissoes.length === 0) {
     if (command.args == true) {
       if (!argumentos[0]) {
         const help = new Discord.MessageEmbed()
@@ -301,7 +320,7 @@ module.exports = async (client, message) => {
           }))
           .setTimestamp();
         return message.channel.send(help);
-      }  
+      }
     }
   } else {
     if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
