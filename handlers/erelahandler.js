@@ -552,7 +552,7 @@ module.exports = (client) => {
                         player.setTrackRepeat(!player.trackRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Sucesso! |  O Loop na faixa está ${player.trackRepeat ? `Habilitado` : `Desabilitado`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} Sucesso! | O Loop na faixa está ${player.trackRepeat ? `Habilitado` : `Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
