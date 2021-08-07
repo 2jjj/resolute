@@ -9,5 +9,5 @@ module.exports = async (client, guild) => {
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
         .setColor('#00FF00')
-    webhook.send({ embeds: [embed] })
+    webhook.send(embed)
 }

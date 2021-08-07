@@ -1,4 +1,4 @@
-﻿const { Collection, Client, Intents} = require("discord.js");
+﻿const Discord = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
 const fs = require("fs");
@@ -6,16 +6,21 @@ const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
 
-const client = new Client({
-  intents: 32767,
+const client = new Discord.Client({
+  messageCacheLifetime: 604800,
+  messageSweepInterval: 604800,
+  fetchAllMembers: false,
+  messageCacheMaxSize: 200,
+  restTimeOffset: 0,
+  restWsBridgetimeout: 100,
+  disableEveryone: true,
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
-module.exports = client;
 
-client.slashCommands = new Collection();
-client.commands = new Collection();
+require("./src/util/inlineReply");
 
-["slashhandler","clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
+["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
 

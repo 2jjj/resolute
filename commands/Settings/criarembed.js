@@ -10,8 +10,8 @@ module.exports = {
     usage: "<@cargo>",
     example: "",
 	permissoes: {
-        membro: ['MANAGE_MESSAGES', 'Gerenciar mensagens'],
-        bot: ['MANAGE_MESSAGES', 'Gerenciar mensagens']
+        membro: ['ADMINISTRATOR', 'Administrador'],
+        bot: ['ADMINISTRATOR', 'Administrador']
     },
     args: false,
 

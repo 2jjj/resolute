@@ -24,6 +24,6 @@ module.exports = async (client, guild) => {
             .setFooter(ee.footertext, ee.footerico)
             .setTimestamp();
 
-        await webhook.send({ embeds: [embed] });
+        await webhook.send(embed);
     } catch { /* */ }
 }

@@ -1,8 +1,14 @@
 const { ShardingManager } = require('discord.js');
-const config = require('./config/config.json')
+var numWorkers = require('os').cpus().length;
+const config = require("./config/config.json")
 
-const manager = new ShardingManager('./index.js', { token: `${config.token}` });
+const manager = new ShardingManager('./index.js', {
+    totalShards: config.shards, 
+    token: config.token,
+    respawn: true,
+});
 
-manager.on('shardCreate', shard => console.log(`Launched shard ${shard.id}`));
 
 manager.spawn();
+
+manager.on('shardCreate', (shard) => console.log(`Shard ${shard.id} launched`));
