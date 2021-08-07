@@ -492,7 +492,7 @@ module.exports = (client) => {
                       player.setVolume(volumedown);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.reduce_volume} Volume setado para: **${player.volume} %**`)
+                        .setTitle(`${emoji.msg.reduce_volume} | Volume setado para: **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -512,7 +512,7 @@ module.exports = (client) => {
                       player.setVolume(volumeup);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.raise_volume} Volume setado para: **${player.volume} %**`)
+                        .setTitle(`${emoji.msg.raise_volume} | Volume setado para: **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -531,7 +531,7 @@ module.exports = (client) => {
                       player.setVolume(volumemute);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.volume === 0 ? `${emoji.msg.toggle_mute} O player foi mutado` : `${emoji.msg.reduce_volume} O player foi desmutado`}`)
+                        .setTitle(`${player.volume === 0 ? `${emoji.msg.toggle_mute} | O player foi mutado` : `${emoji.msg.reduce_volume} | O player foi desmutado`}`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
