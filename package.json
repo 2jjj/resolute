@@ -4,7 +4,7 @@
   "description": "Resolute é um bot que irá ajudar seu servidor com diversas categorias, tais delas como Música, Manipulação de imagens, Diversão, Moderação, Minecraft e entre outras!",
   "main": "shard.js",
   "scripts": {
-    "test": "node ./github/workflows/tests.js",
+    "test": "node .github/workflows/tests.js",
     "start": "node shard.js"
   },
   "author": "Spray#7725",
