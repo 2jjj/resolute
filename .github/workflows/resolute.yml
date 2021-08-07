@@ -40,6 +40,6 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies 👨🏻‍💻
-        run: yarn
+        run: npm install
       - name: Run Linter ✏️
-        run: yarn lint
+        run: npm run test
