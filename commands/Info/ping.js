@@ -24,8 +24,8 @@ module.exports = {
     let shardPing = await client.shard.fetchClientValues('ws.ping', 0)
 
     const startLL = process.hrtime();
-    await fetch(`http://localhost:2333/version`, {
-      headers: { Authorization: "spray" }
+    await fetch(`https://lavalink-resolute.herokuapp.com/version`, {
+      headers: { Authorization: "spraylavalink" }
     });
 
     const stopLL = process.hrtime(startLL);
