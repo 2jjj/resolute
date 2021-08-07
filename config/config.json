@@ -16,9 +16,9 @@
   "clientsettings": {
     "nodes": [
       {
-        "host": "us3.lexyhosting.com",
-        "port": 25750,
-        "password": "spray"
+        "host": "lavalink-resolute.herokuapp.com",
+        "port": 80,
+        "password": "spraylavalink"
       }
     ]
   },
