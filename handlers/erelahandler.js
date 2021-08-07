@@ -302,7 +302,7 @@ module.exports = (client) => {
                       player.seek(Number(rewind));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.rewind} Voltei 20 segundos!`)//${format(Number(player.position))}
+                        .setTitle(`${emoji.msg.rewind} | Voltei 20 segundos na música atual!`)//${format(Number(player.position))}
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -611,7 +611,7 @@ module.exports = (client) => {
                       player.set("autoplay", !player.get("autoplay"))
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Successo! | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}`)
+                        .setTitle(`${emoji.msg.SUCCESS} Successo! | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}.`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -628,7 +628,7 @@ module.exports = (client) => {
                       player.queue.shuffle();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.shuffle} A fila agora está embaralhada.`)
+                        .setTitle(`${emoji.msg.shuffle} | A fila agora está embaralhada!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
