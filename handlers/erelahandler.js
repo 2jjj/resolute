@@ -324,7 +324,7 @@ module.exports = (client) => {
                       player.seek(Number(forward));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos na música atual!`)
+                        .setTitle(`${emoji.msg.forward} | Avançei 20 Segundos na música atual!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -340,7 +340,7 @@ module.exports = (client) => {
                       player.pause(player.playing);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.playing ? `${emoji.msg.resume} Despausei` : `${emoji.msg.pause} Pausei`} o Player`)
+                        .setTitle(`${player.playing ? `${emoji.msg.resume} | Despausei` : `${emoji.msg.pause} | Pausei`} o Player!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -472,7 +472,7 @@ module.exports = (client) => {
                       player.seek(0);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.replay_track} Repetindo a primeira música!`)
+                        .setTitle(`${emoji.msg.replay_track} | Repetindo a primeira música!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
