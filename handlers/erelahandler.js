@@ -383,7 +383,7 @@ module.exports = (client) => {
                           } catch { /* */ }
                         });
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.previous_track} Tocando a música anterior.`)
+                        .setTitle(`${emoji.msg.previous_track} | Tocando a música anterior!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -451,7 +451,7 @@ module.exports = (client) => {
                           player.destroy();
 
                           return message.channel.send(new MessageEmbed()
-                            .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei e sai de seu canal!`)
+                            .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai de seu canal de voz!`)
                             .setColor(ee.color)
                             .setFooter(ee.footertext, ee.footericon)
                           );
