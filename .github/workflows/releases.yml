@@ -1,0 +1,41 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  realese:
+    name: Release Creation
+    runs-on: ubuntu-latest
+    if: "github.event_name == 'push' && github.ref == 'refs/heads/master'"
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: Package Version
+        id: info
+        run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
+      - name: Compact files
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'resolute.zip'
+          exclusions: '*.git* *.eslintrc.json *package-lock.json'
+      - name: Send to Release
+        uses: marvinpinto/action-automatic-releases@master
+        with:
+          repo_token: "${{secrets.GITHUB_TOKEN}}"
+          prerelease: false
+          automatic_release_tag: "${{ steps.info.outputs.version }}"
+          title: "Resolute Bot v${{ steps.info.outputs.version }}"
+          files: |
+            *.zip
+  artifact:
+    name: Creation of Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: compress the files
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'resolute.zip'
+          exclusions: '*.git* *.eslintrc.json *package-lock.json *yarn.lock'
+      - name: Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: 'resolute.zip'
