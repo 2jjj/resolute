@@ -46,9 +46,9 @@ module.exports = async (client, message) => {
         }
     }
 
-    if (!message.member) message.member = await message.guild.fetchMember(message);
-    if (message.channel.partial) await message.channel.fetch();
-    if (message.partial) await message.fetch();
+    //if (!message.member) message.member = await message.guild.fetchMember(message);
+    //if (message.channel.partial) await message.channel.fetch();
+    //if (message.partial) await message.fetch();
     databasing(client, message.guild.id, message.author.id)
     if (isrequestchannel(client, message)) return requestcmd(client, message);
 
@@ -60,7 +60,7 @@ module.exports = async (client, message) => {
     const command = client.commands.get(cmd.toLowerCase());
 
     if (!command) return;
-    
+
     await command.run(client, message, args);
 
     let not_allowed = false;
