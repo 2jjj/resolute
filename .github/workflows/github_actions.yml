@@ -1,4 +1,4 @@
-name: ResoluteBOT tests
+name: Resolute Actions
 
 on:
   pull_request:
