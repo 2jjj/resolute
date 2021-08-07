@@ -15,7 +15,7 @@ module.exports = {
     try {
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
-        .setTitle("🩸 My Reactions when playing a Track does those Things")
+        .setTitle("🩸 Minhas reações e suas funções")
         .setFooter(ee.footertext, ee.footericon)
         .addField(`\u200b`, `${emoji.msg.rewind} Rewind 20 seconds\n${emoji.msg.forward} Forward 20 seconds\n${emoji.msg.pause_resume} Pause/Resume\n${emoji.msg.stop} Stop Track\n${emoji.msg.previous_track} Play previous\n`, true)
         .addField(`\u200b`, `${emoji.msg.skip_track} Skip / Next\n${emoji.msg.replay_track} Replay Track\n${emoji.msg.reduce_volume} Volume -10 %\n${emoji.msg.raise_volume} Volume +10 %\n${emoji.msg.toggle_mute} Toggle Volume Mute`, true)
