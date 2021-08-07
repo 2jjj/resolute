@@ -803,7 +803,7 @@ module.exports = (client) => {
                   embed.setTitle(`${emoji.msg.ERROR} A fila acabou.`)
                 } catch { }
                 try {
-                  embed.setDescription(`Eu sai do canal: ${client.channels.cache.get(player.voiceChannel).name} Porque a fila estava vazia | ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}`)
+                  embed.setDescription(`Eu sai do canal: \`${client.channels.cache.get(player.voiceChannel).name}\` Pois a fila estava vazia!`)// | ${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}
                 } catch { }
                 try {
                   embed.setColor(ee.wrongcolor)
