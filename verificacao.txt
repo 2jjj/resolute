@@ -2,9 +2,11 @@ application DETAILS:
 
 Resolute is a complete application for your server.
 
-It has SEVERAL systems and has a web-dashboard to manage the autorole, modlogs, welcome message, prefix, etc.
+It has SEVERAL systems and has a setup music channel, web-dashboard to manage the autorole, modlogs, welcome message, prefix, etc.
 
 Among its most relevant categories are: Music, Minecraft, Economy, Fun, Utilities, Moderation, Configuration, Image manipulation, etc.
+
+for more information: https://github.com/ResoluteProject/resolutebot
 
 =====================================================================
 
