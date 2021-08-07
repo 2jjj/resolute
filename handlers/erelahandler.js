@@ -57,6 +57,11 @@ module.exports = (client) => {
     client.manager
       .on("nodeConnect", (node) => {
         try {
+          setInterval(() => {
+            node.send({
+              op: 'ping'
+            });
+          }, 45000);
           const stringlength = 69;
           console.log("\n")
           console.log(`     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓`.bold.brightGreen)
