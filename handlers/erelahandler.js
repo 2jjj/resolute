@@ -324,7 +324,7 @@ module.exports = (client) => {
                       player.seek(Number(forward));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos na música!`)
+                        .setTitle(`${emoji.msg.forward} Avançei 20 Segundos na música atual!`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
