@@ -611,7 +611,7 @@ module.exports = (client) => {
                       player.set("autoplay", !player.get("autoplay"))
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Successo! | O Autoplay está ${player.get("autoplay") ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}`)
+                        .setTitle(`${emoji.msg.SUCCESS} Successo! | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
