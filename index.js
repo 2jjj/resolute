@@ -17,9 +17,6 @@ const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
-
-require("./src/util/inlineReply");
-
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
