@@ -5,7 +5,7 @@ const moment = require("moment");
 
 module.exports = {
   name: "shards",
-  aliases: ['shard'],
+  aliases: ['shard', 'shardinfo'],
   cooldown: 1000 * 2,
   description: "Shards informations.",
   category: "info",
