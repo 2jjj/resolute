@@ -100,7 +100,7 @@ module.exports = {
                         .addField(`Comandos`, musiccmds.join(", "))
                         .addField(`Reações`, `${emoji.msg.rewind} Voltar 20 segundos\n${emoji.msg.forward} Avançar 20 segundos\n${emoji.msg.pause_resume} Pausar/Despausar\n${emoji.msg.stop} Parar a música\n${emoji.msg.previous_track} Tocar a música anterior.\n`, true)
                         .addField(`\u200b`, `${emoji.msg.skip_track} Pular / Próxima\n${emoji.msg.replay_track} Replay música.\n${emoji.msg.reduce_volume} Volume -10 %\n${emoji.msg.raise_volume} Volume +10 %\n${emoji.msg.toggle_mute} Alternar volume para mudo.`, true)
-                        .addField(`\u200b`, `${emoji.msg.repeat_mode} Change repeat mode\n${emoji.msg.autoplay_mode} Ativar o autoplay.\n${emoji.msg.shuffle} Embaralhe a fila.\n${emoji.msg.show_queue} Mostrar a fila.\n${emoji.msg.show_current_track} Mostrar a música atual.`, true)
+                        .addField(`\u200b`, `${emoji.msg.repeat_mode} Alterar o modo de repetição\n${emoji.msg.autoplay_mode} Ativar o autoplay.\n${emoji.msg.shuffle} Embaralhe a fila.\n${emoji.msg.show_queue} Mostrar a fila.\n${emoji.msg.show_current_track} Mostrar a música atual.`, true)
                       let embed2 = new MessageEmbed()
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
