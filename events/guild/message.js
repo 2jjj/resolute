@@ -8,8 +8,7 @@ const sourcebin = require('sourcebin_js');
 const { createBar, format, databasing, escapeRegex, isrequestchannel, getRandomInt, delay } = require("../../handlers/functions");
 const requestcmd = require("../../handlers/requestcmds");
 const { MessageEmbed } = require(`discord.js`);
-const GuildSettings = require("../../databases/mongoDB/settings");
-const blacklist = require("../../databases/mongoDB/blacklist");
+const GuildSettings = require("../../databases/Schemas/settings");
 
 module.exports = async (client, message) => {
   try {

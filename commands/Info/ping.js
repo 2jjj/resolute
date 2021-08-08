@@ -1,5 +1,5 @@
 const config = require("../../config/config.json");
-const User = require("../../databases/mongoDB/User.js")
+const User = require("../../databases/Schemas/User.js")
 const fetch = require('node-fetch');
 
 module.exports = {

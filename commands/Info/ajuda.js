@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
-const GuildSettings = require("../../databases/mongoDB/settings");
+const GuildSettings = require("../../databases/Schemas/settings");
 
 module.exports = {
   name: "help",
