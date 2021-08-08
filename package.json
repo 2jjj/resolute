@@ -57,7 +57,7 @@
     "tinyurl": "^1.1.7",
     "url": "^0.11.0",
     "weather-js": "^2.0.0",
-    "ws": "^7.5.0"
+    "ws": "^7.5.3"
   },
   "devDependencies": {
     "ascii-table": "0.0.9",
