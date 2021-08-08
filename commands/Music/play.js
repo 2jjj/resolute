@@ -23,11 +23,11 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | You need to give me a URL or a Search term.`)
+          .setTitle(`Por favor, me de o nome da Música ou a URL!`)
         );
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
-        .setTitle(`**Searching** 🔎`)
+        .setTitle(`**Procurando** 🔎`)
         .setDescription(`\`\`\`${text}\`\`\``)
       ).then(msg => {
         msg.delete({ timeout: 5000 }).catch(e => console.log("Could not delete, this prevents a bug"))
