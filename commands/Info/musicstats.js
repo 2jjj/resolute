@@ -46,14 +46,14 @@ module.exports = {
       let size = client.setups.filter(s => s.textchannel != "0").size + client.guilds.cache.array().length / 3;
       if (size > client.guilds.cache.array().length) size = client.guilds.cache.array().length;
       message.channel.send(new MessageEmbed().setColor(ee.color).setFooter(ee.footertext, ee.footericon)
-        .addField("⚙️ GLOBAL Commands used:", `>>> \`${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} Commands\` used\nin **all** Servers`, true)
-        .addField("🎵 GLOBAL Songs played:", `>>> \`${Math.ceil(global.songs * client.guilds.cache.array().length / 10)} Songs\` played in\n**all** Servers`, true)
-        .addField("📰 GLOBAL Setups created:", `>>> \`${Math.ceil(size)} Setups\` created in\n**all** Servers`, true)
+        .addField("⚙️ GLOBAL | Comandos usados:", `>>> \`${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} Commands\` used\nin **all** Servers`, true)
+        .addField("🎵 GLOBAL | Músicas tocadas:", `>>> \`${Math.ceil(global.songs * client.guilds.cache.array().length / 10)} Songs\` played in\n**all** Servers`, true)
+        .addField("📰 GLOBAL | Setups criados:", `>>> \`${Math.ceil(size)} Setups\` created in\n**all** Servers`, true)
         .addField("\u200b", "\u200b")
-        .addField("⚙️ SERVER Commands used:", `>>> \`${guild.commands} Commands\` used in\n**this** Server`, true)
-        .addField("🎵 SERVER Songs played:", `>>> \`${guild.songs} Songs\` played in\n**this** Server`, true)
-        .addField("📰 GLOBAL Premium list:", `>>> \`${guilds.length} Guilds\`\n\`${users.length} Users\`\n having Premium`, true)
-        .setTitle(`💿 The Stats of ${client.user.username}`)
+        .addField("⚙️ SERVIDOR | Comandos usados:", `>>> \`${guild.commands} Commands\` used in\n**this** Server`, true)
+        .addField("🎵 SERVIDOR | Músicas tocadas:", `>>> \`${guild.songs} Songs\` played in\n**this** Server`, true)
+        //.addField("📰 GLOBAL | Premium list:", `>>> \`${guilds.length} Guilds\`\n\`${users.length} Users\`\n having Premium`, true)
+        .setTitle(`💿 As estatísticas de ${client.user.username}`)
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)
