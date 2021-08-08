@@ -13,6 +13,7 @@ module.exports = {
   permissoes: [],
   args: false,
 
+
   async run(client, message, args) {
 
     const startDB = process.hrtime();
