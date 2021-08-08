@@ -1,7 +1,6 @@
 const Discord = require("discord.js")
 const os = require('os')
 const cpuStat = require("cpu-stat");
-const db = require("quick.db");
 
 module.exports = {
   name: "status",
@@ -16,9 +15,6 @@ module.exports = {
 
   async run (client, message, args) {
           
-    let prefix = db.get(`prefix_${message.guild.id}`)
-    if (prefix === null) { prefix = "s." }
-
     let { version } = require("discord.js");
   
     cpuStat.usagePercent(function(err, percent, seconds) {
