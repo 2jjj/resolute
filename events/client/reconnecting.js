@@ -1,3 +1,3 @@
 module.exports = client => {
-    console.log(`Reconnceting at ${new Date()}.`.bgYellow.black)
+    console.log(`Reconectando em ${new Date()}.`.bgYellow.black)
 }
