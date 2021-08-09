@@ -24,9 +24,25 @@ const GuildSettings = require("../../databases/Schemas/settings");
 
 module.exports = async (client, message) => {
   try {
-    var prefix = client.settings.get(message.guild.id, "prefix");
+
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.member) message.member = await message.guild.fetchMember(message);
+    if (message.channel.partial) await message.channel.fetch();
+    if (message.partial) await message.fetch();
+    databasing(client, message.guild.id, message.author.id)
+    if (isrequestchannel(client, message)) return requestcmd(client, message);
+
+    
+    let prefix = client.settings.get(message.guild.id, "prefix");
 
     if (prefix === null) prefix = config.prefix;
+
+    const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+
+    if (!prefixRegex.test(message.content)) return;
+
+    const [, matchedPrefix] = message.content.match(prefixRegex);
 
     if (message.content.startsWith('<')) {
       if (message.content.endsWith('>'))
@@ -34,15 +50,6 @@ module.exports = async (client, message) => {
           return message.inlineReply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
         }
     }
-
-    if (message.author.bot) return;
-    if (!message.guild) return;
-    if (message.content.indexOf(prefix) !== 0) return;
-    if (!message.member) message.member = await message.guild.fetchMember(message);
-    if (message.channel.partial) await message.channel.fetch();
-    if (message.partial) await message.fetch();
-    databasing(client, message.guild.id, message.author.id)
-    if (isrequestchannel(client, message)) return requestcmd(client, message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
@@ -286,26 +293,30 @@ module.exports = async (client, message) => {
     console.log(e)
   }
   
-  if(command.permissoes.length === 0) return;
+  /*if(command.permissoes.length === 0) return;
 
-  if (!argumentos[0]) {
-    const help = new Discord.MessageEmbed()
-      .setTitle(`Menu de ajuda - \`${command.name}\``)
-      .setColor("RANDOM")
-      .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-      .setDescription(`${command.description}`)
-      .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-      .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
-      .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-      .addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro[0, 1] !== undefined ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
-      .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot[0, 1] !== undefined ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
-      .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-        dynamic: true
-      }))
-      .setTimestamp();
-    return message.channel.send(help);
-  }
+  if(command.args === true) {
+
+    if (!argumentos[0]) {
+      const help = new Discord.MessageEmbed()
+        .setTitle(`Menu de ajuda - \`${command.name}\``)
+        .setColor("RANDOM")
+        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+        .setDescription(`${command.description}`)
+        .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+        .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+        .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
+        .addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro[0, 1] !== undefined ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
+        .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot[0, 1] !== undefined ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
+        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+          dynamic: true
+        }))
+        .setTimestamp();
+      return message.channel.send(help);
+    }
+ } else return;
 
   if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
   if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
+*/
 }
