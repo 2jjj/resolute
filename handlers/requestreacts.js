@@ -12,6 +12,7 @@ const {
 } = require("../handlers/functions")
 const playermanager = require("../handlers/playermanager");
 let hasmap = new Map();
+
 module.exports = async (client, message) => {
   try {
     client.on("messageReactionAdd", async (reaction, user) => {

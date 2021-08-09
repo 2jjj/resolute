@@ -1,7 +1,5 @@
 const Discord = require("discord.js")
-const {
-  MessageEmbed
-} = require("discord.js")
+const { MessageEmbed } = require("discord.js")
 const config = require("../config/config.json")
 const ee = require("../config/embed.json")
 const {
@@ -11,6 +9,7 @@ const {
   edit_request_message_queue_info,
   arrayMove
 } = require("../handlers/functions")
+
 module.exports = async (client, message, args, type) => {
   let method = type.includes(":") ? type.split(":") : Array(type)
   if (!message.guild) return;
