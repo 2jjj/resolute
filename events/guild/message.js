@@ -1,13 +1,25 @@
 const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const emoji = require(`../../config/emojis.json`);
-const { logs } = require(`../../config/webhooks.json`);
+const {
+  logs
+} = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
 const moment = require('moment');
 const sourcebin = require('sourcebin_js');
-const { createBar, format, databasing, escapeRegex, isrequestchannel, getRandomInt, delay } = require("../../handlers/functions");
+const {
+  createBar,
+  format,
+  databasing,
+  escapeRegex,
+  isrequestchannel,
+  getRandomInt,
+  delay
+} = require("../../handlers/functions");
 const requestcmd = require("../../handlers/requestcmds");
-const { MessageEmbed } = require(`discord.js`);
+const {
+  MessageEmbed
+} = require(`discord.js`);
 const GuildSettings = require("../../databases/Schemas/settings");
 
 module.exports = async (client, message) => {
@@ -34,11 +46,11 @@ module.exports = async (client, message) => {
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
-  
+
     if (cmd.length === 0) return;
-  
+
     var command = client.commands.get(cmd);
-    if (!command) command = client.commands.get(client.aliases.get(cmd));  
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
 
     let not_allowed = false;
 
@@ -59,8 +71,11 @@ module.exports = async (client, message) => {
           .setDescription(`There is a Bot chat setup in this GUILD! try using the Bot Commands here:\n> ${leftb.substr(0, leftb.length - 3)}`)
         ).then(msg => {
           try {
-            msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
-          } catch { /* */ }
+            msg.delete({
+              timeout: 5000
+            }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
+          } catch {
+            /* */ }
         });
       }
     }
@@ -97,8 +112,11 @@ module.exports = async (client, message) => {
                   .setDescription(`You need to have one of those Roles:\n${leftb.substr(0, leftb.length - 3)}\n\nOr be the Requester (${player.queue.current.requester}) of the current Track!`)
                 ).then(msg => {
                   try {
-                    msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
-                  } catch { /* */ }
+                    msg.delete({
+                      timeout: 5000
+                    }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey));
+                  } catch {
+                    /* */ }
                 });
               }
             }
@@ -121,8 +139,7 @@ module.exports = async (client, message) => {
 
 
         if (command.category.toLowerCase().includes("admin") || command.category.toLowerCase().includes("settings") || command.category.toLowerCase().includes("owner")) {
-          let required_perms = ["KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_CHANNELS", "ADD_REACTIONS", "VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES"
-            , "EMBED_LINKS", "ATTACH_FILES", "CONNECT", "SPEAK", "MANAGE_ROLES"]
+          let required_perms = ["KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_CHANNELS", "ADD_REACTIONS", "VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES", "EMBED_LINKS", "ATTACH_FILES", "CONNECT", "SPEAK", "MANAGE_ROLES"]
           if (!message.guild.me.hasPermission(required_perms)) {
             not_allowed = true;
             return message.channel.send(new Discord.MessageEmbed()
@@ -139,7 +156,9 @@ module.exports = async (client, message) => {
         if (command.parameters) {
           if (command.parameters.type == "music") {
 
-            const { channel } = message.member.voice;
+            const {
+              channel
+            } = message.member.voice;
             const mechannel = message.guild.me.voice.channel;
 
             if (!channel) {
@@ -165,7 +184,9 @@ module.exports = async (client, message) => {
                 );
               }
               if (!mechannel) {
-                if (player) try { player.destroy() } catch { }
+                if (player) try {
+                  player.destroy()
+                } catch {}
                 not_allowed = true;
                 return message.channel.send(new MessageEmbed()
                   .setColor(ee.wrongcolor)
@@ -214,13 +235,11 @@ module.exports = async (client, message) => {
 
         if (args.slice(0).join(" ").length > 1000) {
           try {
-            const link = await sourcebin.create([
-              {
-                name: 'Resolute logs',
-                content: args.slice(0).join(" "),
-                languageId: 'text'
-              }
-            ]);
+            const link = await sourcebin.create([{
+              name: 'Resolute logs',
+              content: args.slice(0).join(" "),
+              languageId: 'text'
+            }]);
             argumentos = link.url;
           } catch (e) {
             argumentos = `ERROR: ${e}`;
@@ -236,7 +255,10 @@ module.exports = async (client, message) => {
           .addField('**Servidor ID**', message.guild.id)
           .addField('**Executada por**', message.author.tag + ' ( ' + message.author.id + ' )')
           .addField('**Comando**', command.name)
-          .setThumbnail(message.author.displayAvatarURL({ dynamic: true, format: "png" }))
+          .setThumbnail(message.author.displayAvatarURL({
+            dynamic: true,
+            format: "png"
+          }))
           .setFooter(ee.footertext, ee.footericon)
           .setTimestamp();
         if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
@@ -252,58 +274,38 @@ module.exports = async (client, message) => {
           //.setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
         ).then(msg => {
           try {
-            msg.delete({ timeout: 5000 }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey))
-          } catch { /* */ }
+            msg.delete({
+              timeout: 5000
+            }).catch(e => console.log("couldn't delete message this is a catch to prevent a crash".grey))
+          } catch {
+            /* */ }
         });
       }
     }
   } catch (e) {
     console.log(e)
   }
-
   
-  if(command.permissoes.length === 0) {
-    if (command.args == true) {
-      if (!argumentos[0]) {
-        const help = new Discord.MessageEmbed()
-          .setTitle(`Menu de ajuda - \`${command.name}\``)
-          .setColor("RANDOM")
-          .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-          .setDescription(`${command.description}`)
-          .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-          .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
-          .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-          .addField(`🔹 Permissões que você precisa:`, `\`Não é necessário nenhuma permissão!\``)
-          .addField(`🔹 Permissões que eu preciso:`, `\`Não é necessário nenhuma permissão!\``)
-          .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-            dynamic: true
-          }))
-          .setTimestamp();
-        return message.channel.send(help);
-      }  
-    }
-  } else {
-    if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
-    if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
+  if(command.permissoes.length === 0) return;
 
-    if (command.args == true) {
-      if (!argumentos[0]) {
-        const help = new Discord.MessageEmbed()
-          .setTitle(`Menu de ajuda - \`${command.name}\``)
-          .setColor("RANDOM")
-          .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-          .setDescription(`${command.description}`)
-          .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-          .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
-          .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
-          .addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro[0, 1] !== undefined ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
-          .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot[0, 1] !== undefined ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
-          .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-            dynamic: true
-          }))
-          .setTimestamp();
-        return message.channel.send(help);
-      }
-    } else if (command.args == false) return;
+  if (!argumentos[0]) {
+    const help = new Discord.MessageEmbed()
+      .setTitle(`Menu de ajuda - \`${command.name}\``)
+      .setColor("RANDOM")
+      .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+      .setDescription(`${command.description}`)
+      .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+      .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+      .addField(`🔹 Aliases:`, ` \`${command.aliases.length !== 0 ? `${command.aliases}` : `Sem sinonimos para este comando.` }\``)
+      .addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro[0, 1] !== undefined ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
+      .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot[0, 1] !== undefined ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
+      .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+        dynamic: true
+      }))
+      .setTimestamp();
+    return message.channel.send(help);
   }
+
+  if (!message.member.hasPermission(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
+  if (!message.guild.me.hasPermission(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
 }
