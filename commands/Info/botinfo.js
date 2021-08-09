@@ -4,7 +4,7 @@ const os = require('os')
 
 module.exports = {
   name: "botinfo",
-  aliases: ['sobre', 'bot', 'aboutbot'],
+  aliases: ['sobre', 'bot', 'aboutbot', 'bi'],
   cooldown: 1000 * 2, 
   description: "Minhas informações.",
   category: "info",
@@ -34,7 +34,7 @@ module.exports = {
         **Informações**
         > 👑 **|** Criador: ${config.spray}
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
-        > <:config:856894534197313536> **|** Versão: 2.6.0
+        > <:config:856894534197313536> **|** Versão: 2.5.0
         > <:djs:868314375751102484> **|** Versão Discord.js: ${version}
         
         **Estatísticas**
