@@ -33,7 +33,6 @@ module.exports = async (client, message) => {
     databasing(client, message.guild.id, message.author.id)
     if (isrequestchannel(client, message)) return requestcmd(client, message);
 
-    
     let prefix = client.settings.get(message.guild.id, "prefix");
 
     if (prefix === null) prefix = config.prefix;
