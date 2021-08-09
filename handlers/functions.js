@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
-const {
-  MessageEmbed
-} = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const emoji = require("../config/emojis.json");
 const config = require("../config/config.json");
 const ee = require("../config/embed.json");
