@@ -20,7 +20,14 @@ module.exports = {
 		if (!args[0]) return;
 		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
-		
+
+		let membro = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
+		var warns = await db.get(`warnsCount_${message.guild.id}-${membro.id}`) || 0;
+
+		if (!message.member.roles.highest > membro.roles.highest) {
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!`);
+		}
+
 		var list = [
 			'https://imgur.com/ZNuAcum.gif',
 			'https://imgur.com/xlD7P3N.gif',
@@ -33,8 +40,6 @@ module.exports = {
 		]
 
 		var rand = list[Math.floor(Math.random() * list.length)]
-		
-		let membro = message.mentions.users.first()
 		let motivo = args.slice(1).join(" ");
 
 		let embed1 = new Discord.MessageEmbed()
@@ -58,5 +63,18 @@ module.exports = {
 		membro.send(embed)
 		message.channel.send(embed1)
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
+
+		if(warns >= 3) {
+			let embed_adv = new Discord.Embed()
+			.setTitle("Resolute")
+			.setColor("RANDOM")
+			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+			.setDescription(`O usuário ${membro} foi **banido** por atingir 3 advertências!`)
+			.setTimestamp();
+			
+			message.channel.send(`O usuário ${membro} foi **banido** por atingir 3 advertências!`)
+			db.subtract(`warnsCount_${message.guild.id}-${membro.id}`, 3)
+			membro.ban()
+		}
 	}
 }

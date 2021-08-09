@@ -21,6 +21,8 @@ const client = new Discord.Client({
   require(`./handlers/${handler}`)(client);
 });
 
+require("./src/util/inlineReply")
+
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
   useNewUrlParser: true
