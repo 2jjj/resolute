@@ -12,25 +12,9 @@ const GuildSettings = require("../../databases/Schemas/settings");
 
 module.exports = async (client, message) => {
   try {
-    var storedSettings = await GuildSettings.findOne({
-      gid: message.guild.id
-    });
-    
-    if (!storedSettings) {
-      const newSettings = new GuildSettings({
-        gid: message.guild.id
-      });
-      await newSettings.save().catch(() => {});
-      storedSettings = await GuildSettings.findOne({
-        gid: message.guild.id
-      });
-    }
-  
-    if(!storedSettings.prefix) {
-      storedSettings.prefix = "s."
-    }
+    var prefix = client.settings.get(message.guild.id, "prefix");
 
-    var prefix = storedSettings.prefix;
+    if (prefix === null) prefix = config.prefix;
 
     if (message.content.startsWith('<')) {
       if (message.content.endsWith('>'))
@@ -275,10 +259,6 @@ module.exports = async (client, message) => {
     }
   } catch (e) {
     console.log(e)
-    return message.channel.send(new MessageEmbed()
-      .setColor("RANDOM")
-      .setDescription(`\`\`\`Ocorreu um erro!\`\`\``)
-    );
   }
 
   
