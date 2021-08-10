@@ -2,8 +2,8 @@ const db = require("quick.db");
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: "setlogs",
-    aliases: ['setmodlogs', "logs"],
+    name: "logs",
+    aliases: ["setlogs"],
     cooldown: 1000 * 2,
     description: "Ativar as logs no servidor.",
     category: "config",
@@ -60,14 +60,13 @@ module.exports = {
 
         if (!args[0]) {
             let embed = new MessageEmbed()
-                .setTitle(`Menu de ajuda - \`setlogs\``)
+                .setTitle(`Como aplicar as logs no servidor:`)
                 .setColor("RANDOM")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .setDescription(`${module.exports.description}`)
-                .addField(`:bulb: Modos de Uso:`, ` \`${prefix}setlogs edit <#canal>\n${prefix}setlogs delete <#canal>\n${prefix}setlogs mod <#canal>\n\n${prefix}logsoff <mod/delete/edit> <#canal>\``)
-                .addField(`:thinking: Exemplo:`, ` \`${prefix}setlogs edit #logs\n${prefix}setlogs delete #logs\n${prefix}setlogs mod #logs\n\n${prefix}logsoff delete #logs\n${prefix}logsoff edit #logs\n${prefix}logsoff mod #logs\``)
+                .addField(`:bulb: Modo de Uso:`, ` \`${prefix}logs edit <#canal>\n${prefix}logs delete <#canal>\n${prefix}logs mod <#canal>\n\n${prefix}logsoff <mod/delete/edit> <#canal>\``)
+                .addField(`:thinking: Exemplos:`, ` \`${prefix}logs edit #logs\n${prefix}logs delete #logs\n${prefix}logs mod #logs\n\n${prefix}logsoff delete #logs\n${prefix}logsoff edit #logs\n${prefix}logsoff mod #logs\``)
                 .addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
-                .addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
