@@ -36,44 +36,44 @@ module.exports = {
         };
 
         const userFlags = user.flags.toArray();
-
-        if (member.hasPermission("KICK_MEMBERS")) {
+ 
+        if (member.permissions.has("KICK_MEMBERS")) {
             permissions.push("Expulsar membros");
         }
 
-        if (member.hasPermission("BAN_MEMBERS")) {
+        if (member.permissions.has("BAN_MEMBERS")) {
             permissions.push("Banir membros");
         }
 
-        if (member.hasPermission("ADMINISTRATOR")) {
+        if (member.permissions.has("ADMINISTRATOR")) {
             permissions.push("Administrador");
         }
 
-        if (member.hasPermission("MANAGE_MESSAGES")) {
+        if (member.permissions.has("MANAGE_MESSAGES")) {
             permissions.push("Gerenciar Mensagens");
         }
 
-        if (member.hasPermission("MANAGE_CHANNELS")) {
+        if (member.permissions.has("MANAGE_CHANNELS")) {
             permissions.push("Gerenciar Canais");
         }
 
-        if (member.hasPermission("MENTION_EVERYONE")) {
+        if (member.permissions.has("MENTION_EVERYONE")) {
             permissions.push("Mencionar everyone");
         }
 
-        if (member.hasPermission("MANAGE_NICKNAMES")) {
+        if (member.permissions.has("MANAGE_NICKNAMES")) {
             permissions.push("Gerenciar apelidos");
         }
 
-        if (member.hasPermission("MANAGE_ROLES")) {
+        if (member.permissions.has("MANAGE_ROLES")) {
             permissions.push("Gerenciar cargos");
         }
 
-        if (member.hasPermission("MANAGE_WEBHOOKS")) {
+        if (member.permissions.has("MANAGE_WEBHOOKS")) {
             permissions.push("Gerenciar Webhooks");
         }
 
-        if (member.hasPermission("MANAGE_EMOJIS")) {
+        if (member.permissions.has("MANAGE_EMOJIS")) {
             permissions.push("Gerenciar Emojis");
         }
 
@@ -90,18 +90,18 @@ module.exports = {
             .setColor('#2F3136')
             .setThumbnail(member.user.displayAvatarURL())
             .setTimestamp()
-            .addField('<:users:869960470986113085> Usuário:', `<@${member.user.id}>`)
-            .addField('🆔 ID:', `${message.author.id}`, true)
-            .addField('📅 Entrou em', `${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
-            .addField('📅 Conta criada em', member.user.createdAt.toLocaleString(), true)
+            .addField('<:users:869960470986113085> **|** Usuário:', `<@${member.user.id}>`)
+            .addField('🆔 **|** ID:', `${message.author.id}`, true)
+            .addField('📅 **|** Entrou em', `${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
+            .addField('📅 **|** Conta criada em', member.user.createdAt.toLocaleString(), true)
             .addField('Badges:', `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'Nenhuma.'}`, true)
             .addField(`\nCargos [${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]:`, `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "Sem cargos."}`)
             //.addField("\nAcknowledgements:", `${acknowledgements}`)
-            .addField("\n<:settings:869961070423461941> Permissoes:", `${permissions.join(` **|** `)}`, true)
+            .addField("\n<:settings:869961070423461941> **|** Permissoes:", `${permissions.join(` **|** `)}`, true)
             .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
                 dynamic: true
             }));
 
-        message.inlineReply(embed);
+        message.reply({ embeds: [embed] });
     }
 }
