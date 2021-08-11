@@ -19,11 +19,11 @@ module.exports = async (client, message) => {
     .setColor("RANDOM")
     .addFields({
       name: `Autor da mensagem`,
-      value: author,
+      value: `> ${author}`,
       inline: false
     }, {
       name: `Canal`,
-      value: canal_2,
+      value: `> ${canal_2}`,
       inline: false
     }, {
       name: `Mensagem`,
