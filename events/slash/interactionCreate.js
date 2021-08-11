@@ -1,5 +1,5 @@
 const client = require("../../index");
-
+const config = require("../../config/config.json")
 
 client.on("interactionCreate", async (interaction) => {
 
@@ -11,9 +11,7 @@ client.on("interactionCreate", async (interaction) => {
 
     if(!interaction.client.guilds.cache.get(interaction.guildId)) return interaction.editReply(`Eu não fui adicionado corretamente ao servidor.`);
  
-    const prefix = client.settings.get(message.guild.id, "prefix");
-
-    if (prefix === null) prefix = config.prefix;
+    const prefix = config.prefix;
 
     interaction.author = interaction.user;
 
@@ -43,8 +41,5 @@ client.on("interactionCreate", async (interaction) => {
         } else {
             return this.client.channels.cache.get(interaction.channelId).send(x, f)
         }
-    }
-    
-    this.client.emit("messageCreate", interaction)
-
+    }  
 })
