@@ -49,6 +49,6 @@ module.exports = {
         > <:6055blurpleinvite:856520144884727818> **|** [Me adicione!](https://www.resolutebot.xyz/add)
         > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
         `)
-        await message.channel.send({ embeds: [embed] });
+        await message.reply({ embeds: [embed] });
     })
 }}
