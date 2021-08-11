@@ -1,7 +1,6 @@
 ﻿const Discord = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
-const fs = require("fs");
 const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
@@ -17,6 +16,7 @@ const client = new Discord.Client({
   partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
   intents: 32767,
 });
+module.exports = client;
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);

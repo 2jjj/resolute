@@ -41,9 +41,9 @@ module.exports = async (client, message, oldMessage) => {
       }
     )
 
-    .setThumbnail(message.author.displayAvatarURL({
+    /*.setThumbnail(message.author.displayAvatarURL({
       dynamic: true
-    }))
+    }))*/
     .setTimestamp()
     .setFooter(message.guild.name, message.guild.iconURL());
 

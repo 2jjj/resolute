@@ -1,4 +1,7 @@
-module.exports = async (interaction, client) => {
+const client = require("../../index");
+
+
+client.on("interactionCreate", async (interaction) => {
 
     if(!interaction.isCommand()) return;
 
@@ -23,5 +26,25 @@ module.exports = async (interaction, client) => {
     interaction.slash = true;
 
     let response = false;
+
+    interaction.reply = async(x, f) => {
+        if(!response) {
+            response = true;
+            return interaction.editReply(x, f);
+        } else {
+            return this.client.channels.cache.get(interaction.channelId).send(x, f)
+        }
+    }
+
+    interaction.edit = async(x, f) => {
+        if(!response) {
+            response = true;
+            return interaction.editReply(x, f);
+        } else {
+            return this.client.channels.cache.get(interaction.channelId).send(x, f)
+        }
+    }
     
-}
+    this.client.emit("messageCreate", interaction)
+
+})
