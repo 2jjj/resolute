@@ -9,7 +9,7 @@ module.exports = async (client, message, oldMessage) => {
   } catch (e) {}
 
   //if (message.author.bot) return;
-
+  
   let author = message.author;
   let canal_2 = message.channel;
   let msg_antiga = message.content;
@@ -18,23 +18,29 @@ module.exports = async (client, message, oldMessage) => {
   let embed = new Discord.MessageEmbed()
     .setTitle(`📝 Mensagem editada`)
     .setColor("RANDOM")
-    .addFields({
-      name: `Autor da mensagem`,
-      value: author,
-      inline: false
-    }, {
-      name: `Canal`,
-      value: canal_2,
-      inline: false
-    }, {
-      name: `Mensagem antiga`,
-      value: `\`\`\`${msg_antiga}\`\`\``,
-      inline: false
-    }, {
-      name: `Mensagem editada`,
-      value: `\`\`\`${msg_editada}\`\`\``,
-      inline: false
-    })
+    .addFields(
+      {
+        name: `Autor da mensagem`,
+        value: `> ${author}`,
+        inline: false
+      }, 
+      {
+        name: `Canal`,
+        value: `> ${canal_2}`,
+        inline: false
+      }, 
+      {
+        name: `Mensagem antiga`,
+        value: `\`\`\`${msg_antiga}\`\`\``,
+        inline: false
+      }, 
+      {
+        name: `Mensagem editada`,
+        value: `\`\`\`${msg_editada}\`\`\``,
+        inline: false
+      }
+    )
+
     .setThumbnail(message.author.displayAvatarURL({
       dynamic: true
     }))

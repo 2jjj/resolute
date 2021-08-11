@@ -269,7 +269,7 @@ module.exports = async (client, message) => {
           .setTimestamp();
         if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
 
-        await webhook.send(embed_logs);
+        await webhook.send({ embeds: [embed_logs] });
 
       } catch (e) {
         console.log(String(e.stack).red)

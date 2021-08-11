@@ -14,14 +14,13 @@ const client = new Discord.Client({
   restTimeOffset: 0,
   restWsBridgetimeout: 100,
   disableEveryone: true,
-  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+  intents: 32767,
 });
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
-
-require("./src/util/inlineReply")
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
