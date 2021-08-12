@@ -27,7 +27,7 @@ module.exports = {
                 }))
                 .setTimestamp()
 
-            message.inlineReply(embed)
+            message.reply({ embeds: [embed] })
 
         } else {
             message.channel.send("URL inválida.")
