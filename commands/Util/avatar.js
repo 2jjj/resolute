@@ -28,7 +28,7 @@ module.exports = {
 			.setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
 				format: "png"
 			}));
-		await message.channel.send(embed);
+		await message.reply({ embeds: [embed] });
 
 	}
 }
