@@ -31,27 +31,27 @@ module.exports = {
         }`,
     ].join("\n");
 
-    const SERVERINFO = new Discord.MessageEmbed()
+    const serverinfo = new Discord.MessageEmbed()
       .setAuthor(message.guild.name, message.guild.iconURL({
         dynamic: true
       }))
       .addFields({
-        name: "🆔 ID do Servidor:",
+        name: "<:IDDD:875166854325342268> ID do Servidor:",
         value: message.guild.id,
         inline: true
-      }, {
+      },/* {
         name: "<:coroa:856527751816937482> Propietário:",
-        value: message.guild.owner.user.tag,
+        value: `${await message.guild.fetchOwner().username}#${await message.guild.fetchOwner().discriminator}`,
         inline: true,
       }, {
-        name: "📅 Data de Criação:",
+        name: "<:dataadsa:875167603415478325> Data de Criação:",
         value: `${moment(message.guild.createdAt).format("L")} ( ${moment(
               message.guild.createdAt
             )
               .startOf("day")
               .fromNow()} )`,
       }, {
-        name: "📅 Data da minha Entrada:",
+        name: "<:dataadsa:875167603415478325> Data da minha Entrada:",
         value: `${moment(
               message.guild.member(client.user.id).joinedAt
             ).format("L")} ( ${moment(
@@ -60,11 +60,11 @@ module.exports = {
               .startOf("day")
               .fromNow()} )`,
         inline: true,
-      }, {
+      },*/ {
         name: "<:NitroBoost:869959413379792896> Boosters",
         value: boost
       }, {
-        name: "👥 Total de Usuários:",
+        name: "<:users:869960470986113085> Total de Usuários:",
         value: message.guild.memberCount.toLocaleString(),
         inline: true,
       }, {
@@ -84,6 +84,6 @@ module.exports = {
         dynamic: true
       }));
 
-    message.inlineReply(SERVERINFO);
+    message.reply({ embeds: [serverinfo] });
   }
 }

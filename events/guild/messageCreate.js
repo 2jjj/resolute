@@ -317,6 +317,9 @@ module.exports = async (client, message) => {
         return message.reply({ embeds: [help] });
       }
     } else {
+      if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
+      if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)    
+      
       if (!argumentos[0]) {
         const help = new Discord.MessageEmbed()
           .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
@@ -335,7 +338,4 @@ module.exports = async (client, message) => {
       }
     }
   }//args
-  if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
-  if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
-
 }
