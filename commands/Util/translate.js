@@ -17,7 +17,6 @@ module.exports = {
 
 		let googlepng = 'https://i.imgur.com/oZA4FaQ.png'
 		let language = args[0]
-		let text = args.slice(1).join(" ")
 
 		let colors = ['RED', 'YELLOW', 'GREEN', 'BLUE']
 		let result = colors[Math.floor(Math.random() * colors.length)]
@@ -30,9 +29,9 @@ module.exports = {
 				.setAuthor(`📙 | Tradutor`, googlepng)
 				.setDescription("```css\n" + `${res.text}` + "\n```", false)
 				.setColor("#RANDOM")
-			message.inlineReply(translateEmbed)
+			message.reply({ embeds: [translateEmbed] })
 		}).catch(err => {
-			message.inlineReply("<:1926blurplecross:856520144872407060> **|** Eu tive um problema com a tradução.\n:1926blurplecross: **|** Tente novamente com outro idioma.")
+			message.reply("<:1926blurplecross:856520144872407060> **|** Eu tive um problema com a tradução.\nTente novamente com outro idioma.")
 		})
 	}
 }
