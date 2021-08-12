@@ -87,7 +87,6 @@ module.exports = async (client, message) => {
     }
 
     if (command) {
-
       try {
         client.stats.inc(message.guild.id, "commands");
         client.stats.inc("global", "commands");

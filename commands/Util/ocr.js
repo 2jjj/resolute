@@ -24,8 +24,6 @@ module.exports = {
           imagem = args.join(' ')
         }
 
-        console.log(imagem)
-
         try {
           get(`https://api.ocr.space/parse/imageurl?apikey=${ocr}&url=${imagem}`).then(response => {
                 const embed = new Discord.MessageEmbed()
