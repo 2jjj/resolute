@@ -17,9 +17,9 @@ module.exports = {
 
 	async run(client, message, args, cmduser, text, prefix, player) {
 		
-		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
-
+		if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
+  
 		if (!args[0]) {
 			let embed = new Discord.MessageEmbed()
 			.setTitle(`Menu de ajuda - \`autorole\``)

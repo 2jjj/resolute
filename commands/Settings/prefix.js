@@ -19,10 +19,9 @@ module.exports = {
 
     run: async (client, message, args) => {
         try {
-            
-            if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-            if(!args[0]) return;
-            //if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
+            if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+             if(!args[0]) return;
+            //if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
             let prefix = client.settings.get(message.guild.id, `prefix`);
 

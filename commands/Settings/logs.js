@@ -17,9 +17,9 @@ module.exports = {
 
     async run(client, message, args, cmduser, text, prefix, player) {
 
-        if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
-
+        if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+        if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
+  
         let canal = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
         let author = message.author;
         let err = "Mencione um canal!";

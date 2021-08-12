@@ -17,9 +17,9 @@ module.exports = {
 
     async run(client, message, args, cmduser, text, prefix, player) {
 
-        if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
-
+        if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+        if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
+  
         if (args[0] === "edit") {
             if (!message.member.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${module.exports.permissoes[1]}\`!`)
             if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${module.exports.permissoes[1]}\`!`)
