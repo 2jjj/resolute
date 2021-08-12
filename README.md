@@ -1,11 +1,10 @@
-## Resolute™
+# Resolute™
  
+<h3>
+Tutorial requests música:
+</h3>
  
 <h4>
-Tutorial requests música:
-</h4>
- 
-<h5>
 
 - Para usar este comando é simples basta usar `s.setup` que a mágica acontece!
 
@@ -15,7 +14,7 @@ Tutorial requests música:
 
 - Logo depois o bot irá enviar uma mensagem com os tutoriais para controlar a música **totalmente** a partir das reações.
 
-> ![Tutorial](https://cdn.discordapp.com/attachments/869710611502731304/871749946985029702/Screenshot_1.png)
+> ![image](https://user-images.githubusercontent.com/71204668/128781549-014df354-c007-4555-b1de-bd4e2f6f509b.png)
 
 - Após isso é só começar a tocar as músicas!
 
@@ -23,9 +22,11 @@ Tutorial requests música:
 
 ---
   
-</h5>
-<h4> Resolute também conta com: </h4>
-<h5>
+</h4>
+
+<h3> Resolute também conta com: </h3>
+
+<h4>
 
 - Sistema de ler imagens:
 
@@ -33,7 +34,7 @@ Tutorial requests música:
 
 - Sistema de configuração:
 
-> ![config](https://cdn.discordapp.com/attachments/869710611502731304/871752475693154374/unknown.png)
+> ![config](https://cdn.discordapp.com/attachments/869710611502731304/873620068196581376/unknown.png)
 
 - Manipulação de imagens:
 
@@ -41,7 +42,7 @@ Tutorial requests música:
 
 - Moderação: 
 
-> ![ban](https://cdn.discordapp.com/attachments/869710611502731304/871756362672119868/unknown.png)
+> ![ban](https://user-images.githubusercontent.com/71204668/128609120-04323d74-773b-4015-8b07-f9bd13aa632f.png)
 
 - Utilidades:
 
@@ -49,11 +50,12 @@ Tutorial requests música:
 
 - Comandos de minecraft:
 
-> ![mine](https://cdn.discordapp.com/attachments/869710611502731304/871752369183027210/unknown.png)
-  
-E muito mais!
-  
-</h5>
+> ![mine](https://user-images.githubusercontent.com/71204668/128609153-36f07313-131a-4351-8271-064586cbd826.png)
 
-## 😄 Me adicione!
-[Clique aqui!](https://www.resolutebot.xyz/add) 
+</h4>
+
+<h3> E muito mais! </h3>
+
+
+### 😄 Me adicione!
+## [Clique aqui!](https://www.resolutebot.xyz/add) 
