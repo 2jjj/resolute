@@ -19,6 +19,6 @@ module.exports = {
 				dynamic: true,
 				size: 2048
 			}))
-		message.channel.send({ embeds: [icone] })
+		message.reply({ embeds: [icone] })
 	}
 }
