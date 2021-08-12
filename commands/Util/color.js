@@ -28,8 +28,10 @@ module.exports = {
 		try {
 			json = await fetch(url).then(res => res.json())
 		} catch (e) {
-			return message.reply('Erro.')
+			console.log(e)
+			return message.reply('Ocorreu um erro!')
 		}
+
 		if (json.description) return message.reply("Cor inválida.")
 		let embed = new Discord.MessageEmbed()
 			.setTitle(json.name)
@@ -39,6 +41,6 @@ module.exports = {
 			.setThumbnail(json.image)
 			.setImage(json.image_gradient, true)
 			.setColor(json.hex)
-		message.inlineReply(embed)
+		message.reply({ embeds: [embed] })
 	}
 }
