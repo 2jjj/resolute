@@ -15,10 +15,11 @@ module.exports = {
 
     if (!args[0]) return;
 
-    const EMBED = new Discord.MessageEmbed()
-      .setTitle(`Nick: ${args[0]}`)
-      .setImage(`https://mc-heads.net/head/${args[0]}/200`);
-
-    await message.channel.send(EMBED);
+    const embed = new Discord.MessageEmbed()
+      .setTitle(`Cabeça de: ${args[0]}`)
+      .setImage(`https://mc-heads.net/head/${args[0]}/200`)
+      .setColor("RANDOM")
+      .setTimestamp()
+    await message.inlineReply(embed);
   }
 };

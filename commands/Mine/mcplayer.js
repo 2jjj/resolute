@@ -16,12 +16,10 @@ module.exports = {
         if (!args[0]) return;
 
         let embed = new Discord.MessageEmbed()
-            .setTitle(`Skin de: ${args[0]}`)
+            .setTitle(`Player de: ${args[0]}`)
             .setImage(`https://mc-heads.net/player/${args[0]}`)
             .setColor("RANDOM")
             .setTimestamp()
-
-        await message.channel.send(embed)
-
+        await message.inlineReply(embed)
     }
 }

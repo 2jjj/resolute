@@ -15,9 +15,11 @@ module.exports = {
 
     if (!args[0]) return;
 
-    const EMBED = new Discord.MessageEmbed()
-      .setTitle(`Nick: ${args[0]}`)
-      .setImage(`https://minotar.net/helm/${args[0]}/200.png`);
-    await message.channel.send(EMBED);
+    const embed = new Discord.MessageEmbed()
+      .setTitle(`Helm de: ${args[0]}`)
+      .setImage(`https://minotar.net/helm/${args[0]}/200.png`)
+      .setColor("RANDOM")
+      .setTimestamp()
+    await message.inlineReply(embed);
   }
 };
