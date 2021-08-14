@@ -3,7 +3,7 @@ module.exports = {
   name: "biden",
   aliases: ["bidenmeme"],
   cooldown: 1000 * 2,
-  description: "",
+  description: "biden",
   category: "manipulacao",
   usage: "<texto>",
   example: "ola amigos!",
@@ -20,7 +20,6 @@ module.exports = {
     const sentence = args.join(" ")
     if (!sentence) return;
     let embed = new Discord.MessageEmbed()
-      .setTitle('Biden')
       .setImage(`https://api.popcatdev.repl.co/biden?text=${encodeURIComponent(sentence)}`)
       .setColor('ORANGE')
       .setFooter(' ');
