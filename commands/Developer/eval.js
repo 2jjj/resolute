@@ -16,9 +16,8 @@ module.exports = {
 
         if (message.author.id == ownerid) {
 
-            message.delete()
             const code = args.join(' ')
-            if (!code) return;
+            if (!code) return message.channel.send("kd o eval");
 
             try {
                 const evaled = eval(code)
@@ -29,9 +28,7 @@ module.exports = {
                         .setColor('RED')
                         .setDescription(`***\`\`\`\n ❎ • Você não pode pegar meu token ou me reiniciar! \`\`\`***`)
 
-                    return message.channel.send(Embed).then(msg => {
-                        setTimeout(() => msg.delete(), 5000)
-                    })
+                    return message.channel.send(Embed)
                 }
                 const {
                     inspect
@@ -48,7 +45,7 @@ module.exports = {
                 message.channel.send(Embed)
             }
         } else {
-            message.channel.send("Você não é o Spray#0007 xD")
+            message.channel.send("Você não é o Spray#7725 xD")
         }
     }
 }
