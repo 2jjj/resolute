@@ -36,44 +36,44 @@ module.exports = {
         };
 
         const userFlags = user.flags.toArray();
- 
-        if (member.permissions.has("KICK_MEMBERS")) {
+
+        if (member.hasPermission("KICK_MEMBERS")) {
             permissions.push("Expulsar membros");
         }
 
-        if (member.permissions.has("BAN_MEMBERS")) {
+        if (member.hasPermission("BAN_MEMBERS")) {
             permissions.push("Banir membros");
         }
 
-        if (member.permissions.has("ADMINISTRATOR")) {
+        if (member.hasPermission("ADMINISTRATOR")) {
             permissions.push("Administrador");
         }
 
-        if (member.permissions.has("MANAGE_MESSAGES")) {
+        if (member.hasPermission("MANAGE_MESSAGES")) {
             permissions.push("Gerenciar Mensagens");
         }
 
-        if (member.permissions.has("MANAGE_CHANNELS")) {
+        if (member.hasPermission("MANAGE_CHANNELS")) {
             permissions.push("Gerenciar Canais");
         }
 
-        if (member.permissions.has("MENTION_EVERYONE")) {
+        if (member.hasPermission("MENTION_EVERYONE")) {
             permissions.push("Mencionar everyone");
         }
 
-        if (member.permissions.has("MANAGE_NICKNAMES")) {
+        if (member.hasPermission("MANAGE_NICKNAMES")) {
             permissions.push("Gerenciar apelidos");
         }
 
-        if (member.permissions.has("MANAGE_ROLES")) {
+        if (member.hasPermission("MANAGE_ROLES")) {
             permissions.push("Gerenciar cargos");
         }
 
-        if (member.permissions.has("MANAGE_WEBHOOKS")) {
+        if (member.hasPermission("MANAGE_WEBHOOKS")) {
             permissions.push("Gerenciar Webhooks");
         }
 
-        if (member.permissions.has("MANAGE_EMOJIS")) {
+        if (member.hasPermission("MANAGE_EMOJIS")) {
             permissions.push("Gerenciar Emojis");
         }
 
@@ -90,18 +90,18 @@ module.exports = {
             .setColor('#2F3136')
             .setThumbnail(member.user.displayAvatarURL())
             .setTimestamp()
-            .addField('<:users:869960470986113085> **|** Usuário:', `<@${member.user.id}>`)
-            .addField('<:IDDD:875166854325342268> **|** ID:', `${message.author.id}`, true)
-            .addField('<:dataadsa:875167603415478325> **|** Entrou em', `${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
-            .addField('<:dataadsa:875167603415478325> **|** Conta criada em', member.user.createdAt.toLocaleString(), true)
+            .addField('<:users:869960470986113085> Usuário:', `<@${member.user.id}>`)
+            .addField('🆔 ID:', `${message.author.id}`, true)
+            .addField('📅 Entrou em', `${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
+            .addField('📅 Conta criada em', member.user.createdAt.toLocaleString(), true)
             .addField('Badges:', `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'Nenhuma.'}`, true)
-            .addField(`\n<:papel:875166854849658910> **|** Cargos [${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]:`, `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "Sem cargos."}`)
+            .addField(`\nCargos [${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}]:`, `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id }>`).join(" **|** ") || "Sem cargos."}`)
             //.addField("\nAcknowledgements:", `${acknowledgements}`)
-            .addField("\n<:settings:869961070423461941> **|** Permissoes:", `${permissions.join(` **|** `)}`, true)
+            .addField("\n<:settings:869961070423461941> Permissoes:", `${permissions.join(` **|** `)}`, true)
             .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
                 dynamic: true
             }));
 
-        message.reply({ embeds: [embed] });
+        message.inlineReply(embed);
     }
 }

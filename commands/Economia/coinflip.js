@@ -13,8 +13,6 @@ module.exports = {
 
   async run(client, message, args) {
 
-    try {
-
       const user = message.mentions.users.first()
       if (user == message.author) return message.inlineReply(`Você não pode apostar consigo mesmo, bobinho`)
 
@@ -73,9 +71,6 @@ module.exports = {
             db.subtract(`coins_${message.author.id}`, args[2])
           }
         })
-      })
-    } catch (e) {
-      console.log(e)
-    }
+    })
   }
 }

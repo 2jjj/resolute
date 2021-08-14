@@ -1,6 +1,4 @@
-const {
-    MessageEmbed
-} = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 const db = require('quick.db')
 
 module.exports = {
@@ -13,7 +11,6 @@ module.exports = {
     example: "cara",
     permissoes: [],
     args: false,
-
 
     async run(client, message, args, cmduser, text, prefix, player) {
 

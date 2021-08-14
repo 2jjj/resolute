@@ -25,7 +25,7 @@ module.exports = {
           leftb += "<@&" + client.settings.get(message.guild.id, `djroles`)[i] + ">\n"
         }
 
-      message.channel.send(new MessageEmbed()
+      message.inlineReply(new MessageEmbed()
         .setColor(ee.color)
         .setTitle("💢 Dj Mode")
         .setDescription("If a Command is listed here, and at least one role exists, then it means that you have to have this Role, in order to be able to use these listed Commands")

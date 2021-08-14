@@ -19,12 +19,12 @@ module.exports = {
     
     try {
       const embed = new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.repeat_mode} Changed Track loop to: ${player.trackRepeat ? `${emoji.msg.disabled} disabled` : `${emoji.msg.enabled} active`}`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | O loop na faixa está ${player.trackRepeat ? `${emoji.msg.disabled} Desabilitado` : `${emoji.msg.enabled} Habilitado`}`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
 
       if (player.queueRepeat) {
-        embed.setDescription(`And **Queue** Repeat got **${emoji.msg.disabled} disabled**`);
+        //embed.setDescription(`And **Queue** Repeat got **${emoji.msg.disabled} disabled**`);
         player.setQueueRepeat(false);
       }
 

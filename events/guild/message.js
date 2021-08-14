@@ -1,9 +1,7 @@
 const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const emoji = require(`../../config/emojis.json`);
-const {
-  logs
-} = require(`../../config/webhooks.json`);
+const { logs } = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
 const moment = require('moment');
 const sourcebin = require('sourcebin_js');
@@ -17,10 +15,7 @@ const {
   delay
 } = require("../../handlers/functions");
 const requestcmd = require("../../handlers/requestcmds");
-const {
-  MessageEmbed
-} = require(`discord.js`);
-const GuildSettings = require("../../databases/Schemas/settings");
+const { MessageEmbed } = require(`discord.js`);
 
 module.exports = async (client, message) => {
   try {
@@ -33,7 +28,7 @@ module.exports = async (client, message) => {
     databasing(client, message.guild.id, message.author.id)
     if (isrequestchannel(client, message)) return requestcmd(client, message);
 
-    const prefix = client.settings.get(message.guild.id, "prefix");
+    let prefix = client.settings.get(message.guild.id, "prefix");
 
     if (prefix === null) prefix = config.prefix;
 
@@ -87,6 +82,7 @@ module.exports = async (client, message) => {
     }
 
     if (command) {
+
       try {
         client.stats.inc(message.guild.id, "commands");
         client.stats.inc("global", "commands");
@@ -268,7 +264,7 @@ module.exports = async (client, message) => {
           .setTimestamp();
         if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
 
-        await webhook.send({ embeds: [embed_logs] });
+        await webhook.send(embed_logs);
 
       } catch (e) {
         console.log(String(e.stack).red)
@@ -292,7 +288,6 @@ module.exports = async (client, message) => {
   }
 
   const prefix = client.settings.get(message.guild.id, "prefix");
-
   if (prefix === null) prefix = config.prefix;
 
   if(command.args == true) {
@@ -313,7 +308,7 @@ module.exports = async (client, message) => {
             dynamic: true
           }))
           .setTimestamp();
-        return message.reply({ embeds: [help] });
+        return message.inlineReply(help);
       }
     } else {
       if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
@@ -333,7 +328,7 @@ module.exports = async (client, message) => {
             dynamic: true
           }))
           .setTimestamp();
-        return message.reply({ embeds: [help] });
+        return message.inlineReply(help);
       }
     }
   }//args

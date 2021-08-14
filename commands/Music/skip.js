@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const { autoplay } = require("../../handlers/functions");
+const emoji = require(`../../config/emojis.json`);
 
 module.exports = {
   name: "forceskip",
@@ -48,7 +49,7 @@ module.exports = {
         player.destroy();
 
         return message.channel.send(new MessageEmbed()
-          .setTitle("✅ Successo | ⏹ Parei a música e sai do canal de voz!")
+          .setTitle("✅ Successo | Parei a música e sai do canal de voz!")
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
         );
@@ -57,7 +58,7 @@ module.exports = {
       player.stop();
 
       return message.channel.send(new MessageEmbed()
-        .setTitle("✅ Successo | ⏭ Pulei para a próxima música!")
+        .setTitle("✅ Successo | Pulei para a próxima música!")
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

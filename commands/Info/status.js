@@ -26,9 +26,7 @@ module.exports = {
       let days = Math.floor((client.uptime % 31536000) / 86400);
       let hours = Math.floor((client.uptime / 3600) % 24);
       let mins = Math.floor((client.uptime / 60) % 60);
-      
       //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
-
       let embedStats = new Discord.MessageEmbed()
       .setTitle("** Status **")
       .setColor("#RANDOM")
@@ -40,7 +38,7 @@ module.exports = {
       .addField("<:cpuv:854137395254657026> CPU Usada", `\`${percent.toFixed(2)}%\``,true)
       .addField("<:linux:854135555557425163> Arquitetura", `\`${os.arch()}\``,true)
       .addField("<:linux:854135555557425163> OS", `\`\`${os.platform()}\`\``,true)
-      message.channel.send(embedStats)
+      message.inlineReply(embedStats)
    })
   }
 }

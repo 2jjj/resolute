@@ -17,7 +17,7 @@ module.exports = {
     const botchannel = message.guild.me.voice.channel;
     var player = client.manager.players.get(message.guild.id);
 
-    if (player || botchannel) return message.channel.send(`**:x: Eu já estou conectado em algum lugar!**`);
+    if (player || botchannel) return message.channel.send(`**:x: Eu já estou conectado em algum lugar deste servidor!**`);
     player = client.manager.create({
       guild: message.guild.id,
       voiceChannel: message.member.voice.channel.id,

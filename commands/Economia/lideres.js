@@ -19,7 +19,7 @@ module.exports = {
             let noEmbed = new Discord.MessageEmbed()
                 .setAuthor(message.member.displayName, message.author.displayAvatarURL())
                 .setColor("#ff58c3")
-                .setFooter("Não tem nada aqui!")
+                .setFooter("Ninguém")
             return message.channel.send(noEmbed)
         };
 

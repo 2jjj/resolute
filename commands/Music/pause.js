@@ -25,17 +25,17 @@ module.exports = {
       if (!player.playing)
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setTitle(`${emoji.msg.ERROR} Error | The song is already paused!`)
-          .setDescription(`You can resume it with: \`${prefix}resume\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | A música já está pausada!`)
+          .setDescription(`Você pode retomar a música com: \`${prefix}resume\``)
         );
 
       player.pause(true);
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${player.playing ? `${emoji.msg.resume} Resumed` : `${emoji.msg.pause} Paused`} the Player.`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${player.playing ? `${emoji.msg.resume} Retomei` : `${emoji.msg.pause} Pausei`} o player.`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .addField(`${emoji.msg.time} Progress: `, createBar(player))
+        .addField(`${emoji.msg.time} Progresso: `, createBar(player))
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)

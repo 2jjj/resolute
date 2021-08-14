@@ -4,9 +4,9 @@ const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
 
 module.exports = {
-  name: `loopqueue`,
+  name: `loopfila`,
   category: `🎶 Music`,
-  aliases: [`repeatqueue`, `lq`, `rq`, `loopqu`, `repeatqu`],
+  aliases: [`repeatqueue`, `lq`, `rq`, `loopqu`, `repeatqu`, 'loopqueue'],
   description: `Repeats the Queue`,
   usage: `loopqueue`,
   example: "",
@@ -19,12 +19,12 @@ module.exports = {
     
     try {
       const embed = new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.repeat_mode} Changed Queue loop to: ${player.queueRepeat ? `${emoji.msg.disabled} disabled` : `${emoji.msg.enabled} active`}`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | O loop da fila agora está ${player.queueRepeat ? `Desabilitado` : `Habilitado`}`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
 
       if (player.trackRepeat) {
-        embed.setDescription(`And **Song** Repeat got **${emoji.msg.disabled} disabled**`);
+        //embed.setDescription(`And **Song** Repeat got **${emoji.msg.disabled} disabled**`);
         player.setTrackRepeat(false);
       }
 

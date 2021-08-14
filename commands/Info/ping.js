@@ -31,13 +31,17 @@ module.exports = {
     const stopLL = process.hrtime(startLL);
     const lavalinkPing = Math.round(((stopLL[0] * 1e9) + stopLL[1]) / 1e6);
 
-    message.reply(`🏓 **|** Pong!
-    :satellite: **|** Shard: ${message.guild.shard.id}/${config.shards}
-    :zap: **|** Ping: ${client.ws.ping}
-    :stopwatch: **|** API: ${svPing}
-    <:memoryram:854135087037153280> **|** Shard: ${shardPing}ms
-    <:mongodb:873390462235451413> **|** MongoDB: ${pingDB}
-    <:lavalink:873390462046711878> **|** Lavalink: ${lavalinkPing}ms
+    message.inlineReply('Ping?').then(msg => {
+
+      msg.edit(`🏓 **|** Pong!
+:satellite: **|** Shard: ${message.guild.shard.id}/${config.shards}
+:zap: **|** Ping: ${client.ws.ping}
+:stopwatch: **|** API: ${svPing}
+<:memoryram:854135087037153280> **|** Shard: ${shardPing}ms
+<:mongodb:873390462235451413> **|** MongoDB: ${pingDB}
+<:lavalink:873390462046711878> **|** Lavalink: ${lavalinkPing}ms
     `)
-    }
+
+    });
   }
+}

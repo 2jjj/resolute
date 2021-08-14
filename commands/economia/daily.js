@@ -33,20 +33,19 @@ module.exports = {
                 }))
                 //.setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
                 .setTimestamp();
-            message.channel.send(`${user}`, timeEmbed);
+            message.inlineReply(timeEmbed);
         } else {
             let time = ms(timeout - (Date.now() - daily));
 
             let moneyEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
-                .addField(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Veja suas estatisticas usando** \`${prefix}atm\` **!**`)
-                .addField(`<:interrogacao:856894534029541376> **|** Oque eu faço com os RCoins?`, `<:setaaa:860626769089265665> **| Com os RCoins você consegue comprar itens da loja usando ** \`${prefix}shop\` **!**`)
+                .addField(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Compre items com** \`${prefix}shop\` **!**`)
                 .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
                 .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();
-            message.channel.send(`${user}`, moneyEmbed);
+            message.inlineReply(moneyEmbed);
 
             db.add(`money_${user.id}`, amount);
             db.set(`daily_${user.id}`, Date.now());

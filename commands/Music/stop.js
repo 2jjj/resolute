@@ -33,7 +33,7 @@ module.exports = {
       player.destroy();
       
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai do canal de voz!`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai de seu canal de voz!`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

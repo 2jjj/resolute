@@ -20,13 +20,14 @@ module.exports = {
         if (require('is-url')(args[0])) {
             const attachment = new Discord.MessageAttachment(qrlink, 'qrcode.png');
             const embed = new Discord.MessageEmbed()
+                .attachFiles(attachment)
                 .setImage('attachment://qrcode.png')
                 .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
                 .setTimestamp()
 
-            message.reply({ embeds: [embed], files: [attachment] })
+            message.inlineReply(embed)
 
         } else {
             message.channel.send("URL inválida.")

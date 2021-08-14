@@ -16,20 +16,7 @@ module.exports = {
   }, 
   args: false,
 
-  async run(client, message, args) {
-
-		var storedSettings = await GuildSettings.findOne({
-			gid: message.guild.id
-		});
-		if (!storedSettings) {
-			const newSettings = new GuildSettings({
-				gid: message.guild.id
-			});
-			await newSettings.save().catch(() => {});
-			storedSettings = await GuildSettings.findOne({
-				gid: message.guild.id
-			});
-		}
+  run: async (client, message, args, user, text, prefix) => {
 
     const roleColor =
       message.guild.me.displayHexColor === "#000000" ?
@@ -79,7 +66,7 @@ module.exports = {
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🎵 ** | Música(MANUTENÇÃO)** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
@@ -100,7 +87,7 @@ module.exports = {
         //.setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
         .setColor("RANDOM");
-      return message.channel.send(embed);
+      return message.inlineReply(embed);
     } else {
       const command =
         client.commands.get(args[0].toLowerCase()) ||
@@ -116,39 +103,45 @@ module.exports = {
       }
 
       const embed = new MessageEmbed()
-        .setTitle("Detalhes do comando:")
-        .addField("Prefixo:", `\`${prefix}\``)
+        .setTitle(`<:1598blurplesupport:856520144599777291> | Detalhes do comando \`${command.name}\``)
+        .addField("<:setaaa:860626769089265665> Prefixo:", `\`${prefix}\``)
         .addField(
-          "Comando:",
+          "<:setaaa:860626769089265665> Comando:",
           command.name ? `\`${command.name}\`` : "Sem nome para esse comando."
         )
         .addField(
-          "Aliases/apelidos:",
+          "<:setaaa:860626769089265665> Aliases/apelidos:",
           command.aliases ?
           `\`${command.aliases.join("` `")}\`` :
           "Sem aliases para esse comando."
         )
         .addField(
-          "Forma de uso:",
+          "<:setaaa:860626769089265665> Forma de uso:",
           command.usage ?
           `\`${prefix}${command.name} ${command.usage}\`` :
           `\`${prefix}${command.name}\``
         )
         .addField(
-          "Descrição:",
+          "<:setaaa:860626769089265665> Exemplo:",
+          command.usage ?
+          `\`${prefix}${command.name} ${command.example}\`` :
+          `\`${prefix}${command.name}\``
+        )
+        .addField(
+          "<:setaaa:860626769089265665> Descrição:",
           command.description ?
           `\`${command.description}\`` :
           "Sem aliases para esse comando."
         )
         .setFooter(
-          `Requerido por: ${message.author.tag}`,
+          `Requisitado por: ${message.author.tag}`,
           message.author.displayAvatarURL({
             dynamic: true
           })
         )
         .setTimestamp()
         .setColor("RANDOM");
-      return message.channel.send(embed);
+      return message.inlineReply(embed);
     }
   },
 };

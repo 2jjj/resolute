@@ -71,7 +71,7 @@ module.exports = {
       botUsers.toLocaleString("pt-BR")
     );
 
-    message.channel.send(`\`\`\`prolog\n${table.toString()}\`\`\``);
+    message.inlineReply(`\`\`\`prolog\n${table.toString()}\`\`\``);
     table.clearRows();
   }
 }

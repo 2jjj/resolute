@@ -23,14 +23,14 @@ module.exports = {
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Erro | Por favor, adicione seu método!`)
-          .setDescription(`\`loop song\` / \`loop queue\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Por favor, adicione o métodoe em que deseja colocar o loop!`)
+          .setDescription(`\`loop musica\` / \`loop queue\``)
         );
 
-      if (args[0].toLowerCase() === `song` || args[0].toLowerCase() === `track` || args[0].toLowerCase() === `s` || args[0].toLowerCase() === `t`) {
+      if (args[0].toLowerCase() === `musica` || args[0].toLowerCase() === `track` || args[0].toLowerCase() === `s` || args[0].toLowerCase() === `t`) {
 
         let embed = new MessageEmbed()
-          .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.repeat_mode} Loop da faixa alterado para: ${player.trackRepeat ? `${emoji.msg.disabled} desabilitado` : `${emoji.msg.enabled} ativo`}`)
+          .setTitle(`${emoji.msg.SUCCESS} Successo | Loop na faixa alterado para: ${player.trackRepeat ? `${emoji.msg.disabled} Desabilitado` : `Habilitado`}`)
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
 
@@ -65,8 +65,8 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Erro | Por favor, adicione seu método!`)
-          .setDescription(`\`loop song\` / \`loop queue\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Por favor, adicione o métodoe em que deseja colocar o loop!`)
+          .setDescription(`\`loop musica\` / \`loop queue\``)
         );
       }
     } catch (e) {

@@ -1,6 +1,7 @@
 ﻿const Discord = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
+const fs = require("fs");
 const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./config/config.json")
 const mongoose = require("mongoose");
@@ -13,14 +14,14 @@ const client = new Discord.Client({
   restTimeOffset: 0,
   restWsBridgetimeout: 100,
   disableEveryone: true,
-  partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-  intents: 32767,
+  partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
-module.exports = client;
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
+
+require("./src/util/inlineReply")
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,

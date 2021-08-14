@@ -5,15 +5,15 @@ const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const emoji = require(`../../config/emojis.json`);
 module.exports = {
-  name: "reactions",
+  name: "reacoes",
   category: "info",
-  aliases: ["reacts"],
+  aliases: ["reacts", "reactions"],
   cooldown: 5,
   usage: "reactions",
   description: "Gives you Information, which reaction dues what",
   run: async (client, message, args, user, text, prefix) => {
     try {
-      message.channel.send(new MessageEmbed()
+      message.inlineReply(new MessageEmbed()
         .setColor(ee.color)
         .setTitle("🩸 My Reactions when playing a Track does those Things")
         .setFooter(ee.footertext, ee.footericon)

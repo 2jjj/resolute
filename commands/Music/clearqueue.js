@@ -22,7 +22,7 @@ module.exports = {
     
       player.queue.clear();
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.cleared} A fila agora esta limpa.`)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | A fila agora esta limpa!`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

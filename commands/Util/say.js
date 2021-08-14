@@ -27,6 +27,6 @@ module.exports = {
 			.setAuthor(user.tag, avatar)
 			.setDescription(sayMessage)
 		//message.delete()
-		message.reply({ embeds: [say] })
+		message.channel.send(say)
 	}
 }

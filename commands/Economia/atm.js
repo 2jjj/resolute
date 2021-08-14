@@ -24,8 +24,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor("GREEN")
-            .setTitle("Balanço Monetário")
-            .setDescription(`Informações de ${user.username}` +
+            .setDescription(`**Balanço monetário de ${user.username}:**` +
                 `\n\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
                 `\n:bank: **| Banco:** **\`${bank}\`**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
@@ -33,6 +32,6 @@ module.exports = {
             }))
             .setTimestamp();
 
-        message.channel.send(`${user}`, embed);
+        message.inlineReply(embed);
     }
 }
