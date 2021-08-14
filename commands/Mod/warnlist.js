@@ -33,6 +33,6 @@ module.exports = {
 					dynamic: true
 				})
 			)
-		message.channel.send(embed);
+		message.inlineReply(embed);
 	}
 }

@@ -31,7 +31,7 @@ module.exports = {
 			msg.edit(`:tada: **|** ${message.author} este canal foi bloqueado com sucesso! **|** Use ${prefix}unlock para destravar!`)
 
 		} catch (e) {
-			message.channel.send(e)
+			message.inlineReply(e)
 		}
 	}
 }
