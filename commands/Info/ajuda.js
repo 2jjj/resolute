@@ -123,7 +123,7 @@ module.exports = {
         )
         .addField(
           "<:setaaa:860626769089265665> Exemplo:",
-          command.usage ?
+          command.example ?
           `\`${prefix}${command.name} ${command.example}\`` :
           `\`${prefix}${command.name}\``
         )
