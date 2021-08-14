@@ -84,7 +84,6 @@ module.exports = {
       .setDescription("**" + amor + "%** [`" + loveLevel + "`]")
       .setFooter("Resolute")
       .attachFiles([amorat]).setImage('attachment://ship.png')
-
-    message.channel.send('<@' + message.author.id + '> \n' + desc, amorEmbed)
+    message.inlineReply('<@' + message.author.id + '> \n' + desc, amorEmbed)
   }
 };

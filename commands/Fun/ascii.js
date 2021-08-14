@@ -20,15 +20,14 @@ module.exports = {
 
             if (err) {
                 console.log(err)
-                return message.channel.send(`Ocorreu um erro!`)
+                return message.inlineReply(`Ocorreu um erro!`)
             }
 
             const embed = new Discord.MessageEmbed()
                 .setTitle(`Ascii`)
                 .setColor("RANDOM")
                 .setDescription(`\`\`\`${text.trimRight()}\`\`\``)
-
-            message.channel.send(embed)
+            message.inlineReply(embed)
         })
     }
 }
