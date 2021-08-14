@@ -20,7 +20,7 @@ module.exports = {
                 .setAuthor(message.member.displayName, message.author.displayAvatarURL())
                 .setColor("#ff58c3")
                 .setFooter("Ninguém")
-            return message.channel.send(noEmbed)
+            return message.inlineReply(noEmbed)
         };
 
         money.length = 20;
@@ -38,7 +38,7 @@ module.exports = {
             .setDescription(finalLb)
             .setFooter(`Seu dinheiro » ${bal}RCoins!`, client.user.displayAvatarURL())
             .setTimestamp()
-        message.channel.send(embed);
+        message.inlineReply(embed);
 
     }
 }
