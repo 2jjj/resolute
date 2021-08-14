@@ -22,7 +22,7 @@ module.exports = {
                 .addField(`Itens disponiveis:`, `Peixe - 15000 Rcoins`)
                 .addField(`Como fazer uma compra?`, `É simples! basta usar ${prefix}buy <item>!`)
 
-            message.channel.send(embed_help)
+            message.inlineReply(embed_help)
         }
 
         const user = message.member
@@ -45,7 +45,7 @@ module.exports = {
                         <@${user.id}> Comprado com sucesso **1 peixe** por \`15,000 RCoins\`
                     `)
                     .setFooter('Shop - Resolute')
-                message.channel.send(embed)
+                message.inlineReply(embed)
                 db.push(`${user.id}`, `Peixe`)
                 db.subtract(`money_${user.id}`, amount)
             }
