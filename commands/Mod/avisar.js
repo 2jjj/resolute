@@ -5,7 +5,7 @@ module.exports = {
 	name: "avisar",
 	aliases: ['warn', 'aviso'],
 	cooldown: 1000 * 2,
-	description: "Avisar uma pessoa com aviso na dm e acrescentar warns no warnlist(ps: quando o usuário receber 3 warns ele vai ser banido.)",
+	description: "Avisar uma pessoa com aviso na dm e acrescentar warns no warnlist(ps: quando o usuário receber 3 warns ele será banido.)",
 	category: "mod",
 	usage: "@user <motivo>",
 	example: "@Spray#7725 Ofensa a staff",

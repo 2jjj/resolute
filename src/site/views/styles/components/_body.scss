@@ -1,0 +1,9 @@
+$headerBackground: #093332;
+
+body {
+    background-color: $headerBackground;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

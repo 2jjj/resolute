@@ -4,7 +4,7 @@ module.exports = {
 	name: "ban",
 	aliases: ['banir'],
 	cooldown: 1000 * 2,
-	description: "Banir um usuário permanentemente de seu servidor com aviso na dm.	",
+	description: "Banir um usuário permanentemente de seu servidor com aviso na dm.",
 	category: "mod",
 	usage: "@usuario <motivo>",
 	example: "@Spray#7725 Ofensa a staff",

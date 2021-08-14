@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+@import "./components/body";
+@import "./components/objects";
+@import "./components/header";
+@import "./components/main";
+@import "./components/aside";
+@import "./components/footer";
