@@ -7,7 +7,7 @@ module.exports = {
     name: "prefix",
     aliases: ['setprefix', "prefixo"],
     cooldown: 1000 * 2,
-    description: "",
+    description: "Altere meu prefixo!",
     category: "config",
     usage: "",
     example: "",

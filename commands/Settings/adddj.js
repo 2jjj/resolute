@@ -7,7 +7,7 @@ module.exports = {
   name: `adddj`,
   aliases: [`adddjrole`],
   category: `config`,
-  description: `Let's you define a DJ ROLE (as an array, aka you can have multiple)`,
+  description: `Comando para definir o cargo de DJ`,
   usage: `<@cargo>`,
   example: "@DJ",
   permissoes: {

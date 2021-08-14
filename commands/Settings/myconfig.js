@@ -5,7 +5,7 @@ module.exports = {
     name: "myconfig",
     aliases: ['config', "start"],
     cooldown: 1000 * 2,
-    description: "",
+    description: "Menu de configuração do bot.",
     category: "config",
     usage: "",
     example: "",

@@ -7,7 +7,7 @@ module.exports = {
   name: `removedj`,
   aliases: [`deletedj`],
   category: `config`,
-  description: `Let's you DELETE a DJ ROLE`,
+  description: `Comando para excluir um cargo de DJ!`,
   usage: `<@cargo>`,
   example: "@DJ",
   permissoes: {

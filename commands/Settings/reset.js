@@ -7,7 +7,7 @@ module.exports = {
   name: `reset`,
   aliases: [],
   category: `config`,
-  description: `Exclui todas as configurações!`,
+  description: `Exclui todas as configurações do setup!`,
   usage: ``,
   example: "@DJ",
   permissoes: {
