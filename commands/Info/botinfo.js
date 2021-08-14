@@ -25,6 +25,10 @@ module.exports = {
         let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
         let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
         let { version } = require("discord.js");
+        let secs = Math.floor(client.uptime % 60);
+        let days = Math.floor((client.uptime % 31536000) / 86400);
+        let hours = Math.floor((client.uptime / 3600) % 24);
+        let mins = Math.floor((client.uptime / 60) % 60);
 
         let embed = new Discord.MessageEmbed()
         .setTitle("**Prazer, meu nome é Resolute!**")
