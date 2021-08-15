@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const ownerid = "836345581424738354";
+const config = require('../../config/config.json')
 
 module.exports = {
     name: "eval",
@@ -10,11 +10,11 @@ module.exports = {
     usage: "",
     example: "",
     permissoes: [],
-    args: true,
+    args: false,
 
     async run(client, message, args) {
 
-        if (message.author.id == ownerid) {
+        if (!config.ownerIDS.includes(message.author.id)) return message.channel.send("Você não pode executar esse comando");
 
             const code = args.join(' ')
             if (!code) return message.channel.send("kd o eval");
@@ -35,7 +35,7 @@ module.exports = {
                 } = require('util')
                 const Embed1 = new Discord.MessageEmbed()
                     .setColor('GREEN')
-                    .setDescription(`**🐱💻 • Eval completo \n\n • Entrada \n \`\`\`\n${code} \`\`\` \n\n • Saida \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Type \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Time Taken \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)
+                    .setDescription(`**🐱💻 • Eval completo \n\n • Entrada \n \`\`\`\n${code} \`\`\` \n\n • Saida \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Modelo \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Tempo \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)
 
                 message.channel.send(Embed1)
             } catch (err) {
@@ -44,8 +44,5 @@ module.exports = {
                     .setDescription(`**🐱💻 • Eval não completo \n\n • Código \n \`\`\`\n${code}\`\`\` \n\n • Erro \n \`\`\`\n${err}\`\`\`**`)
                 message.channel.send(Embed)
             }
-        } else {
-            message.channel.send("Você não é o Spray#7725 xD")
         }
     }
-}
