@@ -1,14 +1,11 @@
 const Discord = require("discord.js");
 const fs = require("fs")
-const config = require("../config/config.json");
-const ee = require("../config/embed.json");
-const radios = require("../config/radiostations.json");
 module.exports = (client) => {
   try {
 
     client.commands = new Discord.Collection();
     client.aliases = new Discord.Collection();
-    client.categories = fs.readdirSync("./commands/");
+    client.categories = fs.readdirSync("./src/commands/");
     client.cooldowns = new Discord.Collection();
     client.warns = new Discord.Collection();
 

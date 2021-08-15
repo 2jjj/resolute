@@ -1,14 +1,14 @@
 ﻿const Discord = require("discord.js")
 const { MessageEmbed } = require("discord.js")
-const config = require("../config/config.json")
-const ee = require("../config/embed.json")
+const config = require(".././config/config.json")
+const ee = require(".././config/embed.json")
 const {
   format,
   databasing,
   escapeRegex,
   delay
-} = require("../handlers/functions")
-const playermanager = require("../handlers/playermanager");
+} = require("./functions")
+const playermanager = require("./playermanager");
 
 module.exports = async (client, message) => {
   try {

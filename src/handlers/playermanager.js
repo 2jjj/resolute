@@ -8,7 +8,7 @@ const {
   isrequestchannel,
   edit_request_message_queue_info,
   arrayMove
-} = require("../handlers/functions")
+} = require("./functions")
 
 module.exports = async (client, message, args, type) => {
   let method = type.includes(":") ? type.split(":") : Array(type)

@@ -3,9 +3,9 @@ const { Manager } = require("erela.js"), { MessageEmbed } = require("discord.js"
   Spotify = require("erela.js-spotify"),
   Deezer = require("erela.js-deezer"),
 
-  config = require("../config/config.json"),
-  emoji = require("../config/emojis.json"),
-  ee = require("../config/embed.json"),
+  config = require(".././config/config.json"),
+  emoji = require(".././config/emojis.json"),
+  ee = require(".././config/embed.json"),
 
   {
     createBar,
@@ -17,8 +17,8 @@ const { Manager } = require("erela.js"), { MessageEmbed } = require("discord.js"
     edit_request_message_track_info,
     getRandomInt,
     autoplay
-  } = require("../handlers/functions"),
-  playermanager = require("../handlers/playermanager"),
+  } = require("./functions"),
+  playermanager = require("./playermanager"),
 
   clientID = config.spotify.clientID,
   clientSecret = config.spotify.clientSecret,

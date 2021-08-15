@@ -8,8 +8,8 @@ const {
   escapeRegex,
   autoplay,
   createBar
-} = require("../handlers/functions")
-const playermanager = require("../handlers/playermanager");
+} = require("./functions")
+const playermanager = require("./playermanager");
 let hasmap = new Map();
 
 module.exports = async (client, message) => {
