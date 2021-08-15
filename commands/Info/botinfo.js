@@ -21,7 +21,8 @@ module.exports = {
     .then(async results => { 	
         const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
         const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);   
-        
+        const global = client.stats.get("global");
+
         let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
         let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
         let { version } = require("discord.js");
@@ -39,12 +40,15 @@ module.exports = {
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
         > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.0
         > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
-        > <:djs:868314375751102484> **|** Versão Discord.js: ${version}
+        > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
+        > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
 
         **Estatísticas**
         > 🤔 **|** Uptime ${hours}h ${mins}m
         > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
         > <:pontin:852197383974551582> **|** Com o total de ${totalMembers} usuários.
+        > <:pontin:852197383974551582> **|** Com ${client.commands.size}
+        > <:pontin:852197383974551582> **|** E ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos usados globalmente!
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
