@@ -59,7 +59,7 @@ module.exports = {
                     if(dinheiro < 100) {
                         menu.reply.send("Você não possui dinheiro para adquirir o peixe!", true)
                     } else {
-                        db.push(`${user.id}`, `Peixe`)
+                        db.push(`${user.id}`, 'Peixe')
                         db.subtract(`money_${user.id}`, 100)
                         menu.reply.send("Você adquiriu o seu peixe com sucesso!", true)
                     }

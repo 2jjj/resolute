@@ -16,7 +16,12 @@ module.exports = {
 
         let inv = db.get(`${message.author.id}`)
         if(inv === null) inv = "Nada"
+
+        const inv_map = Object.keys(inv).map((key) => {
+            return `${key}(${inv[key]})`
+        }).join("\n")
         
+
         let coins = db.fetch(`money_${message.author.id}`);
         if (coins == null) member = 0;
 
@@ -27,7 +32,7 @@ module.exports = {
             .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
             .addField(`Carteira:`, `Coins: \`${coins}\``)
             .addField(`Insigneas:`, ` \`a\``)
-            .addField(`Inventário:`, ` \`${inv}\``)
+            .addField(`Inventário:`, ` \`${inv_map}\``)
             .addField(`Sobre mim:`, `\`a\``)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
