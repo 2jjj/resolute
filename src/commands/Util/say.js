@@ -27,6 +27,6 @@ module.exports = {
 			.setAuthor(user.tag, avatar)
 			.setDescription(sayMessage)
 		//message.delete()
-		message.channel.send(say)
+		message.inlineReply(say)
 	}
 }
