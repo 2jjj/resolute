@@ -456,7 +456,7 @@ module.exports = (client) => {
                           player.destroy();
 
                           return message.channel.send(new MessageEmbed()
-                            .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.stop} Parei a música e sai de seu canal de voz!`)
+                            .setTitle(`${emoji.msg.SUCCESS} Como não tinha nenhuma música eu sai de seu canal de voz!`)
                             .setColor(ee.color)
                             .setFooter(ee.footertext, ee.footericon)
                           );
@@ -577,8 +577,8 @@ module.exports = (client) => {
                         player.setQueueRepeat(!player.queueRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
-                          .setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          //.setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
@@ -598,8 +598,8 @@ module.exports = (client) => {
                         player.setQueueRepeat(false);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
-                          .setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setTitle(`${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          //.setDescription(`O Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
@@ -616,7 +616,7 @@ module.exports = (client) => {
                       player.set("autoplay", !player.get("autoplay"))
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Successo! | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}.`)
+                        .setTitle(`♾️ | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}.`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -688,7 +688,7 @@ module.exports = (client) => {
                         .setFooter(ee.footertext, ee.footericon)
                       )
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} Verifique suas mensagens diretas para ver a fila`)
+                        .setTitle(`${emoji.msg.SUCCESS} | Verifique suas mensagens diretas para ver a fila`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
