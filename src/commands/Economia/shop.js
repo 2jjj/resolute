@@ -65,7 +65,13 @@ module.exports = {
                     }
                     break;
                 case "Livro":
-                    menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
+                    if(dinheiro < 100) {
+                        menu.reply.send("Você não possui dinheiro para adquirir o peixe!", true)
+                    } else {
+                        db.push(`${user.id}`, `Livro`)
+                        db.subtract(`money_${user.id}`, 100)
+                        menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
+                    }
                     break;
                 case "Carro":
                     menu.reply.send("Você adquiriu o seu carro com sucesso!", true)
@@ -76,7 +82,7 @@ module.exports = {
         client.on("clickMenu", (menu) => {
             if (menu.message.id == menumsg.id) {
                 if (menu.clicker.user.id == message.author.id) menuselection(menu)
-                else menu.reply.send(":x: you are not allowed to pick something", true)
+                else menu.reply.send(":x: Apenas o usuário que executou o comando pode adquirir algo!", true)
             }
         })
     }
