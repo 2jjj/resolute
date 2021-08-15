@@ -6,7 +6,7 @@ module.exports = {
   name: "help",
   aliases: ['h', 'ajuda', 'comandos', 'commands'],
   description: "Mostrar os comandos disponiveis.",
-  category: "info",
+  category: "bot",
   cooldown: 1000 * 2,
   usage: "",
   example: "",

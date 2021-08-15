@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['bug', 'reportar', 'request'],
     cooldown: 1000 * 2,
     description: "Reportar um bug para minha equipe de desenvolvedores.",
-    category: "info",
+    category: "bot",
     usage: "<bug/report>",
     example: "report O bot ta com bug no help mano...",
     permissoes: [],

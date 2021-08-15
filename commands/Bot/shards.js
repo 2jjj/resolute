@@ -8,7 +8,7 @@ module.exports = {
   aliases: ['shard', 'shardinfo'],
   cooldown: 1000 * 2,
   description: "Shards informations.",
-  category: "info",
+  category: "bot",
   usage: "",
   example: "",
   permissoes: [],

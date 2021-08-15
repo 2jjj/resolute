@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['sobre', 'bot', 'aboutbot', 'bi'],
   cooldown: 1000 * 2, 
   description: "Minhas informações.",
-  category: "info",
+  category: "bot",
   usage: "",
   example: "",
   permissoes: [],
