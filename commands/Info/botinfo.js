@@ -32,11 +32,10 @@ module.exports = {
         let mins = Math.floor((client.uptime / 60) % 60);
 
         let embed = new Discord.MessageEmbed()
-        .setTitle("**Prazer, meu nome é Resolute!**")
+        .setTitle("**Outras informações**")
         .setColor("RANDOM")
         .setThumbnail(avatar)
         .setDescription(`
-        **Informações**
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
         > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.0
         > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
@@ -45,10 +44,10 @@ module.exports = {
 
         **Estatísticas**
         > 🤔 **|** Uptime ${hours}h ${mins}m
-        > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores.
-        > <:pontin:852197383974551582> **|** Com o total de ${totalMembers} usuários.
-        > <:pontin:852197383974551582> **|** Com ${client.commands.size}
-        > <:pontin:852197383974551582> **|** E ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos usados globalmente!
+        > <:pontin:852197383974551582> **|** ${totalGuilds} servidores.
+        > <:pontin:852197383974551582> **|** ${totalMembers} usuários.
+        > <:pontin:852197383974551582> **|** ${client.commands.size}
+        > <:pontin:852197383974551582> **|** ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos usados globalmente!
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
