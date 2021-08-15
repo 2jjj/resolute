@@ -32,9 +32,9 @@ module.exports = {
         
                     USERs.forEach((m, i) => {
                         setTimeout(async function () {
-                            await guild.members.ban(m, { reason: `BAN global` })
+                            await guild.members.ban(m, { reason: `Quebrou a violação.` })
                             if (i == (USERs.length - 1)) {
-                                return a.edit(moji.certo + `${message.author}| Banimento terminado.`);
+                                return a.edit(`${message.author}| Banimento terminado.`);
                             }
                         }, i * delay * 1000)
                     });
