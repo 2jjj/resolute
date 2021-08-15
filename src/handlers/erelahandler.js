@@ -379,7 +379,7 @@ module.exports = (client) => {
                         return message.channel.send(new MessageEmbed()
                           .setColor(ee.wrongcolor)
                           .setFooter(ee.footertext, ee.footericon)
-                          .setDescription(`**${emoji.msg.ERROR} Erro | Não há nenhuma música anterior!**`)
+                          .setDescription(`**${emoji.msg.ERROR} Erro | Não a nenhuma música anterior!**`)
                         ).then(msg => {
                           try {
                             msg.delete({

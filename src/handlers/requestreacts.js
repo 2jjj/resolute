@@ -46,7 +46,7 @@ module.exports = async (client, message) => {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} ERROR | You need to join a voice channel.`)
+            .setTitle(`${emoji.msg.ERROR} Erro | Você precisa entrar em um canal de voz.`)
           );
 
         const player = client.manager.players.get(message.guild.id);
@@ -55,7 +55,7 @@ module.exports = async (client, message) => {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(client.user.username, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} Error | There is nothing playing`)
+            .setTitle(`${emoji.msg.ERROR} Erro | Não a nada tocando`)
           );
 
         if (player && channel.id !== player.voiceChannel)
