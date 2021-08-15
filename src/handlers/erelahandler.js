@@ -307,7 +307,7 @@ module.exports = (client) => {
                       player.seek(Number(rewind));
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.rewind} | Voltei 20 segundos na música atual!`)//${format(Number(player.position))}
+                        .setDescription(`**${emoji.msg.rewind} | Voltei 20 segundos na música atual!**`)//${format(Number(player.position))}
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -345,7 +345,7 @@ module.exports = (client) => {
                       player.pause(player.playing);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.playing ? `${emoji.msg.resume} | Despausei` : `${emoji.msg.pause} | Pausei`} o Player!`)
+                        .setDescription(`${emoji.msg.SUCCESS} Sucesso! | **${player.playing ? `${emoji.msg.resume} | Despausei` : `${emoji.msg.pause} | Pausei`} o Player!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -362,7 +362,7 @@ module.exports = (client) => {
                       player.destroy();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.stop} | Parei a música e sai de seu canal de voz!`)
+                        .setDescription(`**${emoji.msg.stop} | Parei a música e sai de seu canal de voz!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -379,7 +379,7 @@ module.exports = (client) => {
                         return message.channel.send(new MessageEmbed()
                           .setColor(ee.wrongcolor)
                           .setFooter(ee.footertext, ee.footericon)
-                          .setTitle(`${emoji.msg.ERROR} Erro | Não há nenhuma música anterior!`)
+                          .setDescription(`**${emoji.msg.ERROR} Erro | Não há nenhuma música anterior!**`)
                         ).then(msg => {
                           try {
                             msg.delete({
@@ -388,7 +388,7 @@ module.exports = (client) => {
                           } catch { /* */ }
                         });
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.previous_track} | Tocando a música anterior!`)
+                        .setDescription(`**${emoji.msg.previous_track} | Tocando a música anterior!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -456,7 +456,7 @@ module.exports = (client) => {
                           player.destroy();
 
                           return message.channel.send(new MessageEmbed()
-                            .setTitle(`${emoji.msg.SUCCESS} Como não tinha nenhuma música eu sai de seu canal de voz!`)
+                            .setDescription(`**${emoji.msg.SUCCESS} Como não tinha nenhuma música eu sai de seu canal de voz!**`)
                             .setColor(ee.color)
                             .setFooter(ee.footertext, ee.footericon)
                           );
@@ -465,7 +465,7 @@ module.exports = (client) => {
                         player.stop();
 
                         return message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.skip_track} Pulei para a próxima música!`)
+                          .setDescription(`**${emoji.msg.SUCCESS} Successo | ${emoji.msg.skip_track} Pulei para a próxima música!**`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         );
@@ -477,7 +477,7 @@ module.exports = (client) => {
                       player.seek(0);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.replay_track} | Repetindo a primeira música!`)
+                        .setDescription(`**${emoji.msg.replay_track} | Repetindo a primeira música!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -497,7 +497,7 @@ module.exports = (client) => {
                       player.setVolume(volumedown);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.reduce_volume} | Volume setado para: **${player.volume} %**`)
+                        .setDescription(`**${emoji.msg.reduce_volume} | Volume setado para:** **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -517,7 +517,7 @@ module.exports = (client) => {
                       player.setVolume(volumeup);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.raise_volume} | Volume setado para: **${player.volume} %**`)
+                        .setDescription(`**${emoji.msg.raise_volume} | Volume setado para:** **${player.volume} %**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -536,7 +536,7 @@ module.exports = (client) => {
                       player.setVolume(volumemute);
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${player.volume === 0 ? `${emoji.msg.toggle_mute} | O player foi mutado` : `${emoji.msg.reduce_volume} | O player foi desmutado`}`)
+                        .setDescription(`**${player.volume === 0 ? `${emoji.msg.toggle_mute} | O player foi mutado` : `${emoji.msg.reduce_volume} | O player foi desmutado`}**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -557,7 +557,7 @@ module.exports = (client) => {
                         player.setTrackRepeat(!player.trackRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} Sucesso! | O Loop na faixa está ${player.trackRepeat ? `Habilitado` : `Desabilitado`}.`)
+                          .setDescription(`**${emoji.msg.repeat_mode} Sucesso! | O Loop na faixa está ${player.trackRepeat ? `Habilitado` : `Desabilitado`}.**`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
                         ).then(msg => {
@@ -571,13 +571,11 @@ module.exports = (client) => {
 
                       else if (player.trackRepeat && hasmap.get(message.guild.id) === 1) {
                         hasmap.set(message.guild.id, 2)
-
                         player.setTrackRepeat(!player.trackRepeat);
-
                         player.setQueueRepeat(!player.queueRepeat);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setDescription(`**${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.**`)
                           //.setDescription(`Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
@@ -592,13 +590,11 @@ module.exports = (client) => {
 
                       else {
                         hasmap.delete(message.guild.id)
-
                         player.setTrackRepeat(false);
-
                         player.setQueueRepeat(false);
 
                         message.channel.send(new MessageEmbed()
-                          .setTitle(`${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
+                          .setDescription(`**${emoji.msg.repeat_mode} | O Loop na fila está ${player.queueRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.**`)
                           //.setDescription(`O Loop na faixa está ${player.trackRepeat ? `${emoji.msg.enabled} Habilitado` : `${emoji.msg.disabled} Desabilitado`}.`)
                           .setColor(ee.color)
                           .setFooter(ee.footertext, ee.footericon)
@@ -616,7 +612,7 @@ module.exports = (client) => {
                       player.set("autoplay", !player.get("autoplay"))
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`♾️ | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}.`)
+                        .setDescription(`**♾️ | O Autoplay agora está ${player.get("autoplay") ? `Habilitado` : `Desabilitado`}.**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -633,7 +629,7 @@ module.exports = (client) => {
                       player.queue.shuffle();
 
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.shuffle} | A fila agora está embaralhada!`)
+                        .setDescription(`**${emoji.msg.shuffle} | A fila agora está embaralhada!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -647,7 +643,7 @@ module.exports = (client) => {
                     case String(emoji.react.show_queue):
 
                       const embed = new MessageEmbed()
-                        .setAuthor(`Fila para ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
+                        .setDescription(`**Fila para ${message.guild.name}  -  [ ${player.queue.length} Faixas ]**`, message.guild.iconURL({
                           dynamic: true
                         }))
                         .setColor(ee.color);
@@ -688,7 +684,7 @@ module.exports = (client) => {
                         .setFooter(ee.footertext, ee.footericon)
                       )
                       message.channel.send(new MessageEmbed()
-                        .setTitle(`${emoji.msg.SUCCESS} | Verifique suas mensagens diretas para ver a fila`)
+                        .setDescription(`**${emoji.msg.SUCCESS} | Verifique suas mensagens diretas para ver a fila**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
@@ -767,7 +763,7 @@ module.exports = (client) => {
       .on("trackError", (player, track, payload) => {
         var embed = new MessageEmbed()
         try {
-          embed.setTitle(`${emoji.msg.ERROR} Deu um erro na faixa!`)
+          embed.setTitle(`${emoji.msg.ERROR} Ocorreu um erro na faixa!`)
         } catch { }
         try {
           embed.setDescription(`${emoji.msg.skip_track} Eu pulei a faixa: **${track.title}**`)
