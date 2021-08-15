@@ -64,7 +64,7 @@ module.exports = {
             if (boosts >= 15) maxbitrate = 256000;
             if (boosts >= 30) maxbitrate = 384000;
 
-            message.guild.channels.create(`🎧｜Music`, {
+            message.guild.channels.create(`🎧｜Musica`, {
                 type: 'voice',
                 bitrate: maxbitrate, 
                 userLimit: 10, 
@@ -79,7 +79,7 @@ module.exports = {
                   message.guild.channels.create(`🎵｜requests`, {
                       type: 'text', 
                       rateLimitPerUser: 6, 
-                      topic: `Para solicitar uma música, basta digitar o nome da música no canal ou a **URL** e o bot vai tocar! Certifique-se de que você está no canal de voz **🎧｜Music**!`,
+                      topic: `Para solicitar uma música, basta digitar o nome da música no canal ou a **URL** e o bot vai tocar! Certifique-se de que você está no canal de voz **🎧｜Musica**!`,
                       parent: channel1.id,
                       permissionOverwrites: [{
                           id: message.guild.id,
@@ -125,7 +125,7 @@ module.exports = {
                           
                           client.setups.set(message.guild.id, msg.id, "message_queue_info");
                           
-                          channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Loading ...`)).then(async msg => {
+                          channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Carregando ...`)).then(async msg => {
                       
                             await msg.edit(embed3)
                             
