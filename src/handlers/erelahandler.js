@@ -140,7 +140,7 @@ module.exports = (client) => {
           embed.setTitle(`:thumbsup: **Entrei em:** \`${client.channels.cache.get(player.voiceChannel).name}\``)
         } catch { }
         try {
-          embed.setDescription(`**Ligado no chat: ** <#${client.channels.cache.get(player.textChannel).id}>`)
+          embed.setDescription(`**Comando ligado no chat: ** <#${client.channels.cache.get(player.textChannel).id}>`)
         } catch { }
         if (isrequestchannel(client, player.get("message"))) return;
         client.channels.cache.get(player.textChannel).send(embed.setColor(ee.color)).catch(e => console.log("this prevents a crash"));
