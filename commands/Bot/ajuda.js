@@ -56,7 +56,7 @@ module.exports = {
       let filter = client.commands.filter((cmd) => cmd.category === '👀 Filter');
       let util = client.commands.filter((cmd) => cmd.category === 'util');
       let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-      let info = client.commands.filter((cmd) => cmd.category === 'info');
+      let info = client.commands.filter((cmd) => cmd.category === 'bot');
       let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
