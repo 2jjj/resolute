@@ -37,7 +37,7 @@ module.exports = {
         .setThumbnail(avatar)
         .setDescription(`
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
-        > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.0
+        > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.5
         > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
         > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
         > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
