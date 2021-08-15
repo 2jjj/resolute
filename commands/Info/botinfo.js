@@ -44,10 +44,8 @@ module.exports = {
 
         **Estatísticas**
         > 🤔 **|** Uptime ${hours}h ${mins}m
-        > <:pontin:852197383974551582> **|** ${totalGuilds} servidores.
-        > <:pontin:852197383974551582> **|** ${totalMembers} usuários.
-        > <:pontin:852197383974551582> **|** ${client.commands.size}
-        > <:pontin:852197383974551582> **|** ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos usados globalmente!
+        > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
+        > <:pontin:852197383974551582> **|** Ao total já foram usados ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos!
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
