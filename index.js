@@ -22,7 +22,6 @@ const client = new Discord.Client({
 });
 
 require("./src/util/inlineReply")
-require("./site/index")
 
 mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useUnifiedTopology: true,
