@@ -35,13 +35,13 @@ module.exports = {
                 } = require('util')
                 const Embed1 = new Discord.MessageEmbed()
                     .setColor('GREEN')
-                    .setDescription(`**🐱💻 • Evaculated Complete \n\n • Input \n \`\`\`\n${code} \`\`\` \n\n • Output \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Type \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Time Taken \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)
+                    .setDescription(`**🐱💻 • Eval completo \n\n • Entrada \n \`\`\`\n${code} \`\`\` \n\n • Saida \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Type \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Time Taken \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)
 
                 message.channel.send(Embed1)
             } catch (err) {
                 const Embed = new Discord.MessageEmbed()
                     .setColor('RED')
-                    .setDescription(`**🐱💻 • Evaculated Not Complete \n\n • Code \n \`\`\`\n${code}\`\`\` \n\n • Error \n \`\`\`\n${err}\`\`\`**`)
+                    .setDescription(`**🐱💻 • Eval não completo \n\n • Código \n \`\`\`\n${code}\`\`\` \n\n • Erro \n \`\`\`\n${err}\`\`\`**`)
                 message.channel.send(Embed)
             }
         } else {

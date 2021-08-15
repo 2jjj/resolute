@@ -1,9 +1,9 @@
 node_modules
 comandos.log
-databases/premium
-databases/queuesaves
-databases/settings
-databases/setups
-databases/stats
-databases/warns
+src/databases/premium
+src/databases/queuesaves
+src/databases/settings
+src/databases/setups
+src/databases/stats
+src/databases/warns
 json.sqlite
