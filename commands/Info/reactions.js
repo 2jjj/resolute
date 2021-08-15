@@ -15,7 +15,7 @@ module.exports = {
     try {
       message.inlineReply(new MessageEmbed()
         .setColor(ee.color)
-        .setTitle("🩸 My Reactions when playing a Track does those Things")
+        .setTitle("🩸 Oque minhas reações fazem:")
         .setFooter(ee.footertext, ee.footericon)
         .addField(`Comandos`, musiccmds.join(", "))
         .addField(`Reações`, `${emoji.msg.rewind} Voltar 20 segundos\n${emoji.msg.forward} Avançar 20 segundos\n${emoji.msg.pause_resume} Pausar/Despausar\n${emoji.msg.stop} Parar a música\n${emoji.msg.previous_track} Tocar a música anterior.\n`, true)
