@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const { MessageMenuOption,  MessageMenu } = require("discord-buttons")
+const db = require("quick.db")
 
 module.exports = {
     name: "shop",
@@ -13,6 +14,9 @@ module.exports = {
     args: false,
 
     async run(client, message, args) {
+        const user = message.member
+        var dinheiro = db.fetch(`money_${user.id}`)
+
         let option1 = new MessageMenuOption()
             .setLabel("Peixe")
             .setValue("Peixe")
@@ -36,7 +40,7 @@ module.exports = {
             .setID("Selection")
             .setMaxValues(1)
             .setMinValues(1)
-            .setPlaceholder("Click me to make a Selection! | POG")
+            .setPlaceholder("Selecione um item!")
             .addOption(option1)
             .addOption(option2)
             .addOption(option3)
@@ -46,14 +50,18 @@ module.exports = {
             .addField(`Peixe`, `Peixe\n Preço: 15000k`, true)
             .addField(`Livro`, `livro\n Preço: 2000k`, true)
             .addField(`Carro`, `ad\n Preço: 15000k`, true)
-
-
         let menumsg = await message.channel.send(embed, selection)
 
         function menuselection(menu) {
             switch (menu.values[0]) {
                 case "Peixe":
-                    menu.reply.send("Você adquiriu o seu peixe com sucesso!", true)
+                    if(dinheiro < 100) {
+                        menu.reply.send("Você não possui dinheiro para adquirir o peixe!", true)
+                    } else {
+                        db.push(`${user.id}`, `Peixe`)
+                        db.subtract(`money_${user.id}`, 100)
+                        menu.reply.send("Você adquiriu o seu peixe com sucesso!", true)
+                    }
                     break;
                 case "Livro":
                     menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
