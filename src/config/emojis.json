@@ -1,11 +1,11 @@
 {
   "msg": {
    
-    "ERROR" : "❌",
-    "SUCCESS" : "✅",
+    "ERROR" : "<:error:876542134411493466>",
+    "SUCCESS" : "<:sucess:876542133996257303>",
 
-    "disabled" : "❌",
-    "enabled" : "✅",
+    "disabled" : "<:offfzz:868635422086013018>",
+    "enabled" : "<:onnnzz:868635422153121822>",
 
     "progress_bar": {
       "leftindicator": "[",
