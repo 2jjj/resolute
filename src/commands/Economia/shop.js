@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { MessageMenuOption,  MessageMenu } = require("discord-buttons")
 
 module.exports = {
     name: "shop",
@@ -12,17 +13,62 @@ module.exports = {
     args: false,
 
     async run(client, message, args) {
+        let option1 = new MessageMenuOption()
+            .setLabel("Peixe")
+            .setValue("Peixe")
+            .setDescription("Compre um peixe para se alimentar!")
+            .setDefault()
+            .setEmoji("😁")
 
-        const profile = new Discord.MessageEmbed()
-            .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({dynamic: true}))
+        let option2 = new MessageMenuOption()
+            .setLabel("Livro")
+            .setValue("Livro")
+            .setDescription("Consiga um livro para a sua coleção!")
+            .setDefault()
+            .setEmoji("🚙")
+        let option3 = new MessageMenuOption()
+            .setLabel("Carro")
+            .setValue("Carro")
+            .setDescription("Consiga um carro")
+            .setDefault()
+            .setEmoji("🚙")
+        let selection = new MessageMenu()
+            .setID("Selection")
+            .setMaxValues(1)
+            .setMinValues(1)
+            .setPlaceholder("Click me to make a Selection! | POG")
+            .addOption(option1)
+            .addOption(option2)
+            .addOption(option3)
+        let embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setDescription("Obtenha itens em nosso shopping!")
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .addField(`Itens disponiveis:`, `Peixe - 15000 Rcoins`)
-            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-                dynamic: true
-            }))
-            .setTimestamp();
-        message.channel.send(profile);
+            .setTitle("Shopping - Resolute")
+            .addField(`Peixe`, `Peixe\n Preço: 15000k`, true)
+            .addField(`Livro`, `livro\n Preço: 2000k`, true)
+            .addField(`Carro`, `ad\n Preço: 15000k`, true)
+
+
+        let menumsg = await message.channel.send(embed, selection)
+
+        function menuselection(menu) {
+            switch (menu.values[0]) {
+                case "Peixe":
+                    menu.reply.send("Você adquiriu o seu peixe com sucesso!", true)
+                    break;
+                case "Livro":
+                    menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
+                    break;
+                case "Carro":
+                    menu.reply.send("Você adquiriu o seu carro com sucesso!", true)
+                    break;
+            }
+        }
+
+        client.on("clickMenu", (menu) => {
+            if (menu.message.id == menumsg.id) {
+                if (menu.clicker.user.id == message.author.id) menuselection(menu)
+                else menu.reply.send(":x: you are not allowed to pick something", true)
+            }
+        })
     }
 }
