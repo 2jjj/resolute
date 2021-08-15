@@ -5,6 +5,7 @@ const fs = require("fs");
 const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./src/config/config.json")
 const mongoose = require("mongoose");
+const dbs = require("discord-buttons");
 
 const client = new Discord.Client({
   messageCacheLifetime: 604800,
@@ -16,6 +17,8 @@ const client = new Discord.Client({
   disableEveryone: true,
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
+
+dbs(client);
 
 ["clientvariables", "command", "events", "erelahandler", "requestreacts"].forEach(handler => {
   require(`./src/handlers/${handler}`)(client);

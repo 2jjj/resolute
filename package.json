@@ -16,6 +16,7 @@
     "canvas": "^2.8.0",
     "cpu-stat": "^2.0.1",
     "dblapi.js": "^2.4.1",
+    "discord-buttons": "^4.0.0",
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",

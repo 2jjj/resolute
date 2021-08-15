@@ -62,8 +62,8 @@ module.exports = async (client, message) => {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} ERROR | I am already playing somewhere else!`)
-            .setDescription(`You can listen to me in: \`${message.guild.channels.cache.get(player.VoiceChannel).name}\``)
+            .setTitle(`${emoji.msg.ERROR} Erro | Eu já estou tocando algo.`)
+            .setDescription(`Você pode ouvir oque eu estou tocando em: \`${message.guild.channels.cache.get(player.VoiceChannel).name}\``)
           );
 
         if (channel.id !== db.voicechannel) return message.channel.send(new MessageEmbed().setColor(ee.wrongcolor).setFooter(ee.footertext, ee.footericon).setTitle(`${emoji.msg.ERROR} ERROR | You need to be in the: \`${message.guild.channels.cache.get(db.voicechannel).name}\` VoiceChannel`));
@@ -81,7 +81,7 @@ module.exports = async (client, message) => {
             player.seek(Number(rewind));
 
             message.channel.send(new MessageEmbed()
-              .setTitle(`${emoji.msg.rewind} Rewinded the song for: 20 Seconds, to: ${format(Number(player.position))}`)
+              .setTitle(`${emoji.msg.rewind} Voltei 20 segundos da música!`)//${format(Number(player.position))}
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
             ).then(msg => {
@@ -103,7 +103,7 @@ module.exports = async (client, message) => {
             player.seek(Number(forward));
 
             message.channel.send(new MessageEmbed()
-              .setTitle(`${emoji.msg.forward} Forwarded the Song for: 20 Seconds, to: ${format(Number(player.position))}`)
+              .setTitle(`${emoji.msg.forward} Avancei 20 segundos da música!`)//, to: ${format(Number(player.position))}
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
             ).then(msg => {
