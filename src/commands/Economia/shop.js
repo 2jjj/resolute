@@ -47,9 +47,10 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle("Shopping - Resolute")
-            .addField(`Peixe`, `Peixe\n Preço: 15000k`, true)
-            .addField(`Livro`, `livro\n Preço: 2000k`, true)
-            .addField(`Carro`, `ad\n Preço: 15000k`, true)
+            .addField(`Peixe`, `Compre um peixe para se alimentar!\n Preço: 100 Coins`, true)
+            .addField(`Livro`, `Consiga um livro para a sua coleção!\n Preço: 200 Coins`, true)
+            .addField(`Carro`, `Consiga um carro\n Preço: 15000k`, true)
+            //.addField(`Carro`, `Consiga um carro\n Preço: 15000k`, true)
         let menumsg = await message.channel.send(embed, selection)
 
         function menuselection(menu) {
