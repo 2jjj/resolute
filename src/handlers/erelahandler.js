@@ -345,7 +345,7 @@ module.exports = (client) => {
                       player.pause(player.playing);
 
                       message.channel.send(new MessageEmbed()
-                        .setDescription(`${emoji.msg.SUCCESS} Sucesso! | **${player.playing ? `${emoji.msg.resume} | Despausei` : `${emoji.msg.pause} | Pausei`} o Player!**`)
+                        .setDescription(`**${emoji.msg.SUCCESS} Sucesso! ${player.playing ? `| Despausei` : `| Pausei`} o Player!**`)
                         .setColor(ee.color)
                         .setFooter(ee.footertext, ee.footericon)
                       ).then(msg => {
