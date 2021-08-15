@@ -476,9 +476,9 @@ module.exports = {
         const end = page * multiple;
         const start = end - multiple;
         const tracks = queue.slice(start, end);
-        if (queue.current) embed.addField("**0) Faixa atual**", `**${queue.current.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${queue.current.requester.tag}*`);
-        if (!tracks.length) embed.setDescription(`Sem músicas na ${page > 1 ? `pagina ${page}` : "fila"}.`);
-        else embed.setDescription(tracks.map((track, i) => `**${start + ++i})** **${track.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\n*request by: ${track.requester.tag}*`).join("\n"));
+        if (queue.current) embed.addField("**0) Faixa atual**", `**${queue.current.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\nRequisitado por: ${queue.current.requester.tag}`);
+        if (!tracks.length) embed.setDescription(`Sem músicas na ${page > 1 ? `página ${page}` : "fila"}.`);
+        else embed.setDescription(tracks.map((track, i) => `**${start + ++i})** **${track.title.substr(0, 60)}** - ${track.isStream ? "LIVE STREAM" : format(track.duration)}\nRequisitado por: ${track.requester.tag}`).join("\n"));
         embed.setColor(ee.color);
         embed.setFooter(ee.footertext, ee.footericon);
         return embed;
