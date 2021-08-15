@@ -65,8 +65,8 @@ module.exports = {
                     }
                     break;
                 case "Livro":
-                    if(dinheiro < 100) {
-                        menu.reply.send("Você não possui dinheiro para adquirir o peixe!", true)
+                    if(dinheiro < 200) {
+                        menu.reply.send("Você não possui dinheiro para adquirir o livro!", true)
                     } else {
                         db.push(`${user.id}`, `Livro`)
                         db.subtract(`money_${user.id}`, 100)
@@ -74,7 +74,13 @@ module.exports = {
                     }
                     break;
                 case "Carro":
-                    menu.reply.send("Você adquiriu o seu carro com sucesso!", true)
+                    if(dinheiro < 15000) {
+                        menu.reply.send("Você não possui dinheiro para adquirir o carro!", true)
+                    } else {
+                        db.push(`${user.id}`, `Carro`)
+                        db.subtract(`money_${user.id}`, 100)
+                        menu.reply.send("Você adquiriu o seu carro com sucesso!", true)
+                    }
                     break;
             }
         }
