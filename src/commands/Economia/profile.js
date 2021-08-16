@@ -30,7 +30,7 @@
             let str = '';
 
             for (const x in obj) {
-                str += x + `(${obj[x]})`
+                str += x + `(${obj[x]})\n`
             }
 
             const profile = new Discord.MessageEmbed()
@@ -51,3 +51,4 @@
             message.channel.send(profile);
         }
     }
+//Créditos: Spray e cleiton#2040
