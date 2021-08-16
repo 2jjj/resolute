@@ -1,43 +1,53 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
+    const Discord = require("discord.js");
+    const db = require("quick.db");
 
-module.exports = {
-    name: "profile",
-    aliases: [],
-    cooldown: 1000 * 2,
-    description: "",
-    category: "economia",
-    usage: "",
-    example: "",
-    permissoes: [],
-    args: false,
+    module.exports = {
+        name: "profile",
+        aliases: [],
+        cooldown: 1000 * 2,
+        description: "",
+        category: "economia",
+        usage: "",
+        example: "",
+        permissoes: [],
+        args: false,
 
-    async run(client, message, args) {
+        async run(client, message, args) {
 
-        let inv = db.get(`${message.author.id}`)
-        if(inv === null) inv = "Nada"
+            let inv = db.get(`${message.author.id}`)
+            if (inv === null) inv = "Nada"
 
-        const inv_map = Object.keys(inv).map((key) => {
-            return `${key}(${inv[key]})`
-        }).join("\n")
-        
+            let coins = db.fetch(`money_${message.author.id}`);
+            if (coins == null) member = 0;
 
-        let coins = db.fetch(`money_${message.author.id}`);
-        if (coins == null) member = 0;
+            const obj = {}
 
-        const profile = new Discord.MessageEmbed()
-            .setAuthor(`Perfil de ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({dynamic: true}))
-            .setColor("RANDOM")
-            .setDescription("MANUTENÇÃO!!!!!!!!!!!!!!!!!!!!!!!")
-            .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-            .addField(`Carteira:`, `Coins: \`${coins}\``)
-            .addField(`Insigneas:`, ` \`a\``)
-            .addField(`Inventário:`, ` \`${inv_map}\``)
-            .addField(`Sobre mim:`, `\`a\``)
-            .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-                dynamic: true
-            }))
-            .setTimestamp();
-        message.channel.send(profile);
+            inv.map(x => {
+                if (!obj[x]) obj[x] = 0;
+                ++obj[x];
+            })
+
+            let str = '';
+
+            for (const x in obj) {
+                str += x + `(${obj[x]})`
+            }
+
+            const profile = new Discord.MessageEmbed()
+                .setAuthor(`Perfil de ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL({
+                    dynamic: true
+                }))
+                .setColor("RANDOM")
+                .setDescription("MANUTENÇÃO!!!!!!!!!!!!!!!!!!!!!!!")
+                .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+                .addField(`Carteira:`, `Coins: \`${coins}\``)
+                .addField(`Insigneas:`, ` \`a\``)
+                .addField(`Inventário:`, ` \`${str}\``)
+                .addField(`Sobre mim:`, `\`a\``)
+                .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+                    dynamic: true
+                }))
+                .setTimestamp();
+            message.channel.send(profile);
+        }
     }
-}
