@@ -5,10 +5,9 @@ const config = require("./src/config/config.json")
 const manager = new ShardingManager('./index.js', {
     totalShards: config.shards, 
     token: config.token,
-    respawn: true,
 });
 
 
-manager.spawn();
+manager.on('shardCreate', (shard) => console.log(`Shard ${shard.id} iniciada`));
 
-manager.on('shardCreate', (shard) => console.log(`Shard ${shard.id} launched`));
+manager.spawn(manager.totalShards, 10000);
