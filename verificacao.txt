@@ -2,11 +2,10 @@ application DETAILS:
 
 Resolute is a complete application for your server.
 
-It has SEVERAL systems and has a setup music channel, web-dashboard to manage the autorole, modlogs, welcome message, prefix, etc.
-
+It has SEVERAL systems and has a setup music channel, an config panel to manage the autorole, modlogs, welcome message, prefix, etc.
 Among its most relevant categories are: Music, Minecraft, Economy, Fun, Utilities, Moderation, Configuration, Image manipulation, etc.
-
-for more information: https://github.com/ResoluteProject/resolutebot
+Most people are interested in the bot because of the music system, in it you can control music in real time.
+For more information: https://github.com/ResoluteProject/resolutebot
 
 =====================================================================
 
@@ -91,9 +90,9 @@ HOW CAN USERS CONTACT YOU WITH SECURITY ISSUES?:
 
 DOES YOUR APPLICATION UTILIZE OTHER THIRD-PARTY AUTH SERVICES OR CONNECTIONS? IF SO, WHICH, AND WHY?:
 
-It just uses the API itself.
+It uses the apis: api.ocr.space, the api itself, and the topgg api to update the bot information.
 
-Reason: Some commands were made by this api, example: the OCR command uses this api, the binary code command too, basically that.
-
+I use topgg's api to update bot info;
+The OCR api for the OCR command;
 
 ============================
