@@ -21,12 +21,11 @@ module.exports = {
         var dinheiro = db.fetch(`money_${user.id}`)
 
         let option1 = new MessageMenuOption()
-            .setLabel("Peixe")
-            .setValue("Peixe")
-            .setDescription("Compre um peixe para se alimentar!")
+            .setLabel("Batata")
+            .setValue("Batata")
+            .setDescription("Compre uma batata para se alimentar") 
             .setDefault()
-            .setEmoji("🎣")
-
+            .setEmoji("877167710419689492")
         let option2 = new MessageMenuOption()
             .setLabel("Livro")
             .setValue("Livro")
@@ -66,13 +65,13 @@ module.exports = {
 
         function menuselection(menu) {
             switch (menu.values[0]) {
-                case "Peixe":
+                case "Batata":
                     if (dinheiro < 100) {
-                        menu.reply.send("Você não possui dinheiro para adquirir o peixe!", true)
+                        menu.reply.send("Você não possui dinheiro para adquirir a batata!", true)
                     } else {
-                        db.push(`${user.id}`, 'Peixes')
-                        db.subtract(`money_${user.id}`, 100)
-                        menu.reply.send("Você adquiriu o seu peixe com sucesso!", true)
+                        db.push(`${user.id}`, 'Batatas')
+                        db.subtract(`money_${user.id}`, 10)
+                        menu.reply.send("Você adquiriu a sua batata com sucesso!", true)
                     }
                     break;
                 case "Livro":
