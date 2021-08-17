@@ -44,14 +44,14 @@ module.exports = {
         value: message.guild.owner.user.tag,
         inline: true,
       }, {
-        name: "📅 Data de Criação:",
+        name: "<:calendario:876819338802376735> Data de Criação:",
         value: `${moment(message.guild.createdAt).format("L")} ( ${moment(
               message.guild.createdAt
             )
               .startOf("day")
               .fromNow()} )`,
       }, {
-        name: "📅 Data da minha Entrada:",
+        name: "<:calendario:876819338802376735> Data da minha Entrada:",
         value: `${moment(
               message.guild.member(client.user.id).joinedAt
             ).format("L")} ( ${moment(
