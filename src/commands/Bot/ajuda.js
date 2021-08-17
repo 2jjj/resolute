@@ -50,18 +50,17 @@ module.exports = {
         categories.push(data);
       });
 
-      let queue = client.commands.filter((cmd) => cmd.category === '⚜️ Custom Queue(s)');
       let fun = client.commands.filter((cmd) => cmd.category === 'fun');
       let economia = client.commands.filter((cmd) => cmd.category === 'economia');
       let filter = client.commands.filter((cmd) => cmd.category === '👀 Filter');
-      let util = client.commands.filter((cmd) => cmd.category === 'bot');
+      let util = client.commands.filter((cmd) => cmd.category === 'util');
       let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
-      let bot = client.commands.filter((cmd) => cmd.category === 'bot');
+      let info = client.commands.filter((cmd) => cmd.category === 'info');
       let minecraft = client.commands.filter((cmd) => cmd.category === 'minecraft');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
-      let dev = client.commands.filter((cmd) => cmd.category === 'dev');
       let config = client.commands.filter((cmd) => cmd.category === 'config');
+      let social = client.commands.filter((cmd) => cmd.category === 'misc')
 
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
@@ -69,11 +68,12 @@ module.exports = {
         .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`💵 ** | Economia** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`<:interrogacao:856894534029541376> ** | Informação** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔮 ** | Utilidades** [${util.size}]:`, `\`${util.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`👀 ** | Filtro** [${filter.size}]:`, `\`${filter.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`<:interrogacao:856894534029541376> ** | Bot** [${bot.size}]:`, `\`${bot.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🔍 ** | Social** [${social.size}]:`, `\`${social.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`👀 ** | Filtro** [${filter.size}]:`, `\`${filter.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`⚜️ ** | Custom Queue(s)** [${queue.size}]:`, `\`${queue.map(cmd => cmd.name).join(' | ')}\``)
         //.addFields(categories)
