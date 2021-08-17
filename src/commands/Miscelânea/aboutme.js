@@ -13,6 +13,10 @@ module.exports = {
     args: true,
 
     async run(client, message, args, cmduser, text, prefix, player) {
-        
+        const user = message.member
+        if(!args[0]) return;
+
+        db.set(`${user.id}`, `${args[0]}`)
+        message.inlineReply("Sucesso! sua mensagem foi alterada.")
     }
 }

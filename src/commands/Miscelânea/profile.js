@@ -6,7 +6,7 @@
         aliases: [],
         cooldown: 1000 * 2,
         description: "",
-        category: "economia",
+        category: "misc",
         usage: "",
         example: "",
         permissoes: [],
@@ -21,8 +21,8 @@
             let coins = db.fetch(`money_${message.author.id}`);
             if (coins == null) coins = 0;
 
-            let sobre_mim = db.fetch(`money_${message.author.id}`);
-            if (sobre_mim == null) sobre_mim = `Altere essa mensagem com \`${prefix}sobremim\``;
+            let sobre_mim = db.get(`sobre_mim_${message.author.id}`);
+            if (sobre_mim == null) sobre_mim = `Altere essa mensagem com \`${prefix}sobremim\`!`;
 
             try {
                 inv.map(x => {
