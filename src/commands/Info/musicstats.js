@@ -5,7 +5,7 @@ const emoji = require(`../../config/emojis.json`);
 
 module.exports = {
   name: "musicstats",
-  category: "bot",
+  category: "info",
   aliases: [],
   cooldown: 10,
   usage: "stats",

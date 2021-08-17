@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['serveravatar'],
 	cooldown: 1000 * 2,
 	description: "Comando para ver o icone do servidor.",
-	category: "util",
+	category: "info",
 	usage: "",
 	example: "",
 	permissoes: [],

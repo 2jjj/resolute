@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['cpu', 'info', 'stats'],
   cooldown: 1000 * 2, 
   description: "Status/Info da máquina do resolute.",
-  category: "bot",
+  category: "info",
   usage: "",
   example: "",
   permissoes: [],

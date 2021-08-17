@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['av', 'icon'],
 	cooldown: 1000 * 2,
 	description: "Pegue um avatar de alguém!",
-	category: "util",
+	category: "info",
 	usage: "<@user>",
 	example: "@Spray#7725",
 	permissoes: [],
