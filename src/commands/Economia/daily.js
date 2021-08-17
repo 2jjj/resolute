@@ -43,7 +43,7 @@ module.exports = {
                 .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
-                .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
+                //.setThumbnail(message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();
             message.inlineReply(moneyEmbed);
 
