@@ -59,7 +59,7 @@
                 str_badges += x
             }
             if(b === 4) {
-                str_badges += `Você não possui nenhuma badge.`
+                str_badges += `\`Você não possui nenhuma badge.\``
             }
 
             const profile = new Discord.MessageEmbed()

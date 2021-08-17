@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
 const db = require("quick.db");
+const emoji = require("../../config/emojis.json")
 
 module.exports = {
     name: "aboutme",
@@ -17,6 +17,6 @@ module.exports = {
         if(!args[0]) return;
 
         db.set(`sobre_mim_${user.id}`, `${args[0]}`)
-        message.inlineReply("Sucesso! sua mensagem foi alterada.")
+        message.inlineReply(` ${emoji.msg.check}**|** Sucesso! sua mensagem foi alterada.`)
     }
 }
