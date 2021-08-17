@@ -48,7 +48,7 @@
                     dynamic: true
                 }))
                 .setColor("RANDOM")
-                .setDescription("MANUTENÇÃO!!!!!!!!!!!!!!!!!!!!!!!")
+               //.setDescription("MANUTENÇÃO!!!!!!!!!!!!!!!!!!!!!!!")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
                 .addField(`Carteira:`, `Coins: \`${coins}\``)
                 .addField(`Insigneas:`, ` \`a\``)
