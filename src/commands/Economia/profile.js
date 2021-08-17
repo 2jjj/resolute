@@ -22,15 +22,23 @@
 
             const obj = {}
 
-            inv.map(x => {
-                if (!obj[x]) obj[x] = 0;
-                ++obj[x];
-            })
+            try {
+                inv.map(x => {
+                    if (!obj[x]) obj[x] = 0;
+                    ++obj[x];
+                })
+            } catch (e) {
+                var a = 4;
+            }
 
             let str = '';
 
             for (const x in obj) {
                 str += x + `(${obj[x]})\n`
+            }
+
+            if(a === 4) {
+                str += "Você não possui nenhum item no inventário, compre itens com s.shop"
             }
 
             const profile = new Discord.MessageEmbed()
