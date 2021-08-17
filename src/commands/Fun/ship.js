@@ -13,7 +13,7 @@ module.exports = {
   permissoes: [],
   args: true,
 
-  async run(client, message, args) {
+  async run(client, message, args, cmduser, text, prefix, player) {
 
     if (!args[0]) return;
 
