@@ -5,7 +5,7 @@ Resolute is a complete application for your server.
 It has SEVERAL systems and has a setup music channel, an config panel to manage the autorole, modlogs, welcome message, prefix, etc.
 Among its most relevant categories are: Music, Minecraft, Economy, Fun, Utilities, Moderation, Configuration, Image manipulation, etc.
 Most people are interested in the bot because of the music system, in it you can control music in real time.
-For more information: https://github.com/ResoluteProject/resolutebot
+For more information: https://github.com/ResoluteProject/guide
 
 =====================================================================
 
