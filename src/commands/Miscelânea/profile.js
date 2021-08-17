@@ -14,6 +14,7 @@
 
         async run(client, message, args, cmduser, text, prefix, player) {
             const obj = {}
+            const user = message.member;
 
             let inv = db.get(`${message.author.id}`)
             if (inv === null) inv = "Nada"
@@ -21,7 +22,7 @@
             let coins = db.fetch(`money_${message.author.id}`);
             if (coins == null) coins = 0;
 
-            let sobre_mim = db.get(`sobre_mim_${message.author.id}`);
+            let sobre_mim = db.get(`sobre_mim_${user.id}`);
             if (sobre_mim == null) sobre_mim = `Altere essa mensagem com \`${prefix}sobremim\`!`;
 
             try {
