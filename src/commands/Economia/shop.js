@@ -31,13 +31,13 @@ module.exports = {
             .setValue("Livro")
             .setDescription("Consiga um livro para a sua coleção!")
             .setDefault()
-            .setEmoji("📖")
+            .setEmoji("850193163679301642")
         let option3 = new MessageMenuOption()
-            .setLabel("Carro")
-            .setValue("Carro")
-            .setDescription("Compre um carro!")
+            .setLabel("Pão")
+            .setValue("Pão")
+            .setDescription("Consiga um pão")
             .setDefault()
-            .setEmoji("🚙")
+            .setEmoji("877167710470033428")
         let option4 = new MessageMenuOption()
             .setLabel("Foguete")
             .setValue("Foguete")
@@ -56,9 +56,9 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle("Shopping - Resolute")
-            .addField(`Peixe`, `Compre um peixe para se alimentar!\n Preço: 100 Coins`, true)
-            .addField(`Livro`, `Consiga um livro para a sua coleção!\n Preço: 200 Coins`, true)
-            .addField(`Carro`, `Consiga um carro\n Preço: 15k`, true)
+            .addField(`Batata`, `Compre uma Batata para se alimentar!\n Preço: 10 Coins`, true)
+            .addField(`Livro`, `Consiga um livro para a sua coleção!\n Preço: 50 Coins`, true)
+            .addField(`Pão`, `Consiga um pão\n Preço: 4 Coins`, true)
             .addField(`Foguete`, `Consiga um foguete\n Preço: 2k`, true)
         //.addField(`Carro`, `Consiga um carro\n Preço: 15000k`, true)
         let menumsg = await message.channel.send(embed, selection)
@@ -79,17 +79,18 @@ module.exports = {
                         menu.reply.send("Você não possui dinheiro para adquirir o livro!", true)
                     } else {
                         db.push(`${user.id}`, `Livros`)
-                        db.subtract(`money_${user.id}`, 200)
+                        db.subtract(`money_${user.id}`, 50)
                         menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
                     }
                     break;
-                case "Carro":
-                    if (dinheiro < 15000) {
-                        menu.reply.send("Você não possui dinheiro para adquirir o carro!", true)
+                case "Pão":
+                    if (dinheiro < 10) {
+                        menu.reply.send("Você não possui dinheiro para adquirir o pão!", true)
                     } else {
-                        db.push(`${user.id}`, `Carros`)
-                        db.subtract(`money_${user.id}`, 15000)
-                        menu.reply.send("Você adquiriu o seu carro com sucesso!", true)
+                        db.push(`${user.id}`, `Pães`)
+                        db.push(`badges_${user.id}`, `<:9415_Minecraft_bread:877167710470033428>`)
+                        db.subtract(`money_${user.id}`, 10)
+                        menu.reply.send("Você adquiriu o seu pão com sucesso!", true)
                     }
                     break;
                 case "Foguete":
@@ -97,6 +98,7 @@ module.exports = {
                         menu.reply.send("Você não possui dinheiro para adquirir o foguete!", true)
                     } else {
                         db.push(`${user.id}`, `Foguetes`)
+                        db.push(`badges_${user.id}`, `<:mine_foguete:852197847754604565>`)
                         db.subtract(`money_${user.id}`, 2000)
                         menu.reply.send("Você adquiriu o seu foguete com sucesso!", true)
                     }
