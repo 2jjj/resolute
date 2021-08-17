@@ -17,7 +17,7 @@ module.exports = {
   cooldown: 5,
   args: false,
 
-  run: async (client, message, args) => {
+  async run(client, message, args, cmduser, text, prefix, player) {
     try {
       if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
       if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;

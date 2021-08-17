@@ -17,7 +17,7 @@ module.exports = {
     },
     args: true,
 
-    run: async (client, message, args) => {
+    async run(client, message, args, cmduser, text, prefix, player) {
         try {
             
             if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;

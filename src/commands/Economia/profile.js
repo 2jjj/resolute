@@ -12,15 +12,17 @@
         permissoes: [],
         args: false,
 
-        async run(client, message, args) {
+        async run(client, message, args, cmduser, text, prefix, player) {
+            const obj = {}
 
             let inv = db.get(`${message.author.id}`)
             if (inv === null) inv = "Nada"
 
             let coins = db.fetch(`money_${message.author.id}`);
-            if (coins == null) member = 0;
+            if (coins == null) coins = 0;
 
-            const obj = {}
+            let sobre_mim = db.fetch(`money_${message.author.id}`);
+            if (sobre_mim == null) sobre_mim = `Altere essa mensagem com \`${prefix}sobremim\``;
 
             try {
                 inv.map(x => {
@@ -38,7 +40,7 @@
             }
 
             if(a === 4) {
-                str += "Você não possui nenhum item no inventário, compre itens com s.shop"
+                str += `Você não possui nenhum item no inventário, compre itens com ${prefix}shop`
             }
 
             const profile = new Discord.MessageEmbed()
@@ -51,7 +53,7 @@
                 .addField(`Carteira:`, `Coins: \`${coins}\``)
                 .addField(`Insigneas:`, ` \`a\``)
                 .addField(`Inventário:`, ` \`${str}\``)
-                .addField(`Sobre mim:`, `\`a\``)
+                .addField(`Sobre mim:`, `${sobre_mim}`)
                 .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
