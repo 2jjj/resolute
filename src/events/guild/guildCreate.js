@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports = async (client, guild) => {
     try {
-        const guildSchema = require('../../../databases/Schemas/Guild');
+        const guildSchema = require('../../databases/Schemas/Guild');
         guildSchema.findOneAndDelete({ Guild: guild.id }, async (err, data) => {
         if(err) return console.log(err)
         })
@@ -16,7 +16,7 @@ module.exports = async (client, guild) => {
 
         const embed = new Discord.MessageEmbed()
             .setColor(ee.color)
-            .setTitle(`<:info:794601003390861365> Novo servidor!`)
+            .setTitle(`<:1113blurpleplus:856520144797040690> Novo servidor!`)
             .addField('**Servidor**', guild.name, true)
             .addField('**Server ID**', guild.id, true)
             .addField('**Dono**', guild.owner.user.tag)
@@ -27,5 +27,7 @@ module.exports = async (client, guild) => {
             .setTimestamp();
 
         await webhook.send(embed);
-    } catch { /* */ }
+    } catch(e) {
+        console.log(e)
+    }
 }

@@ -5,9 +5,9 @@ const Discord = require("discord.js");
 
 module.exports = async (client, guild) => {
     try {
-        const guildSchema = require('../../../databases/Schemas/Guild');
+        const guildSchema = require('../../databases/Schemas/Guild');
         guildSchema.findOneAndDelete({ Guild: guild.id }, async (err, data) => {
-        if(err) return console.log(err)
+            if(err) return console.log(err)
         })
 
         let channel = client.channels.cache.get(logs.saidas)
@@ -16,7 +16,7 @@ module.exports = async (client, guild) => {
 
         const embed = new Discord.MessageEmbed()
             .setColor(ee.color)
-            .setTitle(`<:setaaa:860626769089265665> Sai de um servidor`)
+            .setTitle(`<:minecraftdog:877167710423879710> Sai de um servidor`)
             .addField('**Servidor**', guild.name, true)
             .addField('**Servidor ID**',  guild.id , true)
             .addField('**Fundador**', guild.owner.user.tag )
@@ -27,5 +27,7 @@ module.exports = async (client, guild) => {
             .setTimestamp();
 
         await webhook.send(embed);
-    } catch { /* */ }
+    } catch(e) {
+        console.log(e)
+    }
 }
