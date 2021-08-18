@@ -3,7 +3,7 @@
   "prefix": "s.",
   "spray": "Spray#7725",
   "topgg_token": "",
-  "shards": 1,
+  "shards": 2,
 
   "clientsettings": {
     "nodes": [

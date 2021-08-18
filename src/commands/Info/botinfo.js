@@ -49,7 +49,7 @@ module.exports = {
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
-        > <:6055blurpleinvite:856520144884727818> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+        > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
         > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
         `)
         await message.inlineReply(embed);
