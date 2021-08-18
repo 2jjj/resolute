@@ -24,9 +24,12 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor("GREEN")
-            .setDescription(`**Balanço monetário de ${user.username}:**` +
+            .setDescription(`\`Informações de ${user.username}:\`` +
                 `\n\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
-                `\n:bank: **| Banco:** **\`${bank}\`**`)
+                `\n:bank: **| Banco:** **\`${bank}\`**` +
+                `\n📝 **| Empresas:** **\`test\`**` +
+                `\n🔍 **| Badges:** **\`test\`**` +
+                `\n🔒 **| Trabalho:** **\`test\`**`)
             .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
                 dynamic: true
             }))

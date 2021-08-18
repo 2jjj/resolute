@@ -7,7 +7,7 @@ module.exports = async (client, guild) => {
     try {
         const guildSchema = require('../../databases/Schemas/Guild');
         guildSchema.findOneAndDelete({ Guild: guild.id }, async (err, data) => {
-        if(err) return console.log(err)
+            if(err) return console.log(err)
         })
         
         let channel = client.channels.cache.get(logs.entradas)
