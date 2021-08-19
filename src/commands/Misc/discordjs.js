@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['docs', 'discord.js'],
 	cooldown: 1000 * 2,
 	description: "Comando para pesquisar algo nas docs do discord.js",
-	category: "util",
+	category: "misc",
 	usage: "<conteudo>",
 	example: "message",
 	permissoes: [],

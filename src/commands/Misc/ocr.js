@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['ler'],
     cooldown: 1000 * 2,
     description: "Consiga ler textos de imagens!",
-    category: "util",
+    category: "misc",
     usage: "<imagem>",
     example: "<imagem>",
     permissoes: [],

@@ -5,7 +5,7 @@ module.exports = {
   description: "Comando para pegar o Helm de uma Skin de Minecraft.",
   aliases: ['helm'],
   cooldown: 1000 * 2,
-  category: "minecraft",
+	category: "misc",
   usage: "<nickname>",
   example: "spraythebest",
   permissoes: [],

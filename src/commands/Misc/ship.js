@@ -7,7 +7,7 @@ module.exports = {
   aliases: [],
   cooldown: 1000 * 2,
   description: "Veja se um casal daria certo com este comando!",
-  category: "fun",
+	category: "misc",
   usage: "@user1 @user2",
   example: "@Spray#0007 @px0#0001",
   permissoes: [],

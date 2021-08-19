@@ -5,7 +5,7 @@ module.exports = {
 	aliases: [],
 	cooldown: 1000 * 2,
 	description: "Com esse comando eu posso falar oque você deseja por embed!",
-	category: "util",
+	category: "misc",
 	usage: "<texto>",
 	example: "Olá",
 	permissoes: [],

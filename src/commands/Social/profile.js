@@ -6,7 +6,7 @@
         aliases: [],
         cooldown: 1000 * 2,
         description: "",
-        category: "misc",
+        category: "social",
         usage: "",
         example: "",
         permissoes: [],

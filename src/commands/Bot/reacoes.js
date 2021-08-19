@@ -6,7 +6,7 @@ const ee = require("../../config/embed.json");
 const emoji = require(`../../config/emojis.json`);
 module.exports = {
   name: "reacoes",
-  category: "info",
+  category: "bot",
   aliases: ["reacts", "reactions"],
   cooldown: 5,
   usage: "reactions",

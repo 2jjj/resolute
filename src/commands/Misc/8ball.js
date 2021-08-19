@@ -5,7 +5,7 @@ module.exports = {
     aliases: [],
     cooldown: 1000 * 2,
     description: "Faça um pergunta ao 8ball | Sabedoria infinita!!",
-    category: "fun",
+	category: "misc",
     usage: "<Pegunta>",
     example: "Irei ser rico?",
     permissoes: [],

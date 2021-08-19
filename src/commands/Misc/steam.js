@@ -7,7 +7,7 @@ module.exports = {
 	aliases: ['game', 'steamgame'],
 	cooldown: 1000 * 2,
 	description: "Busque por informações do seu jogo favorito da steam!",
-	category: "util",
+	category: "misc",
 	usage: "<jogo>",
 	example: "csgo",
 	permissoes: [],

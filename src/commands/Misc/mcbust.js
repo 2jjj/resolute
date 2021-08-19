@@ -1,11 +1,11 @@
 const Discord = require("discord.js")
 
 module.exports = {
-  name: "mchead",
-  description: "Comando para pegar o Head de uma Skin de Minecraft.",
-  aliases: ['head'],
+  name: "mcbust",
+  description: "Comando para pegar o Bust de uma Skin de Minecraft.",
+  aliases: ['bust'],
   cooldown: 1000 * 2,
-  category: "minecraft",
+	category: "misc",
   usage: "<nickname>",
   example: "spraythebest",
   permissoes: [],
@@ -16,8 +16,8 @@ module.exports = {
     if (!args[0]) return;
 
     const embed = new Discord.MessageEmbed()
-      .setTitle(`Cabeça de: ${args[0]}`)
-      .setImage(`https://mc-heads.net/head/${args[0]}/200`)
+      .setTitle(`Bust de: ${args[0]}`)
+      .setImage(`https://minotar.net/bust/${args[0]}/200.png`)
       .setColor("RANDOM")
       .setTimestamp()
     await message.inlineReply(embed);

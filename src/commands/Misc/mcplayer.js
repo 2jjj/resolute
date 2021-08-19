@@ -5,7 +5,7 @@ module.exports = {
     description: "Pegar uma imagem de um player do minecraft.",
     aliases: ['player'],
     cooldown: 1000 * 2,
-    category: "minecraft",
+	category: "misc",
     usage: "<nickname>",
     example: "spraythebest",
     permissoes: [],

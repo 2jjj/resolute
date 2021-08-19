@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['sobremim'],
     cooldown: 1000 * 2,
     description: "Troque o seu sobremim!",
-    category: "misc",
+    category: "social",
     usage: "<texto>",
     example: "Ola!",
     permissoes: [],
