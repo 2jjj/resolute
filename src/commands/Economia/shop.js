@@ -70,6 +70,7 @@ module.exports = {
                         menu.reply.send("Você não possui dinheiro para adquirir a batata!", true)
                     } else {
                         db.push(`${user.id}`, 'Batatas')
+                        db.push(`badges_${user.id}`, `<:7005_MCbakedpotato:877167710419689492>`)
                         db.subtract(`money_${user.id}`, 10)
                         menu.reply.send("Você adquiriu a sua batata com sucesso!", true)
                     }
@@ -79,6 +80,7 @@ module.exports = {
                         menu.reply.send("Você não possui dinheiro para adquirir o livro!", true)
                     } else {
                         db.push(`${user.id}`, `Livros`)
+                        db.push(`badges_${user.id}`, `<:livro:850193163679301642>`)
                         db.subtract(`money_${user.id}`, 50)
                         menu.reply.send("Você adquiriu o seu livro com sucesso!", true)
                     }
