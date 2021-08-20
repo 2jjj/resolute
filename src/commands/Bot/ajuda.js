@@ -58,7 +58,7 @@ module.exports = {
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
       let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
       let config = client.commands.filter((cmd) => cmd.category === 'config');
-      let social = client.commands.filter((cmd) => cmd.category === 'social')
+      let bot = client.commands.filter((cmd) => cmd.category === 'bot')
 
       const embed = new MessageEmbed()  
         .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
@@ -68,7 +68,7 @@ module.exports = {
         .addField(`💵 ** | Economia e social** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`<:interrogacao:856894534029541376> ** | Info** [${info.size}]:`, `\`${info.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔮 ** | Misc** [${misc.size}]:`, `\`${misc.map(cmd => cmd.name).join(' | ')}\``)
-        //.addField(`🔍 ** | Social** [${social.size}]:`, `\`${social.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🔍 ** | Bot** [${bot.size}]:`, `\`${bot.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`<:mine_foguete:852197847754604565> ** | Minecraft** [${minecraft.size}]:`, `\`${minecraft.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`🤣 ** | Diversão** [${fun.size}]:`, `\`${fun.map(cmd => cmd.name).join(' | ')}\``)
         //.addField(`<:early_developer_badge:854716150076538901> ** | Desenvolvedor** [${dev.size}]:`, `\`${dev.map(cmd => cmd.name).join(' | ')}\``)
