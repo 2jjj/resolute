@@ -33,7 +33,7 @@ module.exports = {
 
       return message.channel.send(new MessageEmbed()
         .setTitle(`${emoji.msg.SUCCESS} Successo! | ${player.playing ? `${emoji.msg.resume} Despausei` : `${emoji.msg.pause} Pausei`} o Player.`)
-        .addField(`${emoji.msg.time} Progress: `, createBar(player))
+        .addField(`${emoji.msg.time} Progresso: `, createBar(player))
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

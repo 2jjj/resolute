@@ -23,7 +23,7 @@ module.exports = {
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
           .setTitle(`${emoji.msg.ERROR} Erro | Por favor, inclua a qual faixa que você quer pular`)
-          .setDescription(`Example: \`jump ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2 }\``)
+          .setDescription(`Exemplo: \`jump ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2 }\``)
         );
         
       if (isNaN(args[0]))

@@ -6,10 +6,10 @@ const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
 
 module.exports = {
-  name: `clearqueue`,
+  name: `limparfila`,
   category: `🎶 Music`,
-  aliases: [`clearqu`],
-  description: `Cleares the Queue`,
+  aliases: [`clearqueue`],
+  description: ``,
   usage: `clearqueue`,
   example: "",
   permissoes: [],
