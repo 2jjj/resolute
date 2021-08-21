@@ -10,7 +10,7 @@ module.exports = {
   name: `radio`,
   category: `🎶 Music`,
   aliases: [`stream`],
-  description: `Plays a defined radiostream`,
+  description: `Reproduz um radiostream definida`,
   usage: `radio <1-183>`,
   example: "",
   permissoes: [],

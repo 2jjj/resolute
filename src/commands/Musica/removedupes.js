@@ -7,7 +7,7 @@ module.exports = {
   name: `removedupes`,
   category: `🎶 Music`,
   aliases: [`removedupe`, `removedupetrack`, `rdt`, `removeduplicated`, `removeduplicateds`],
-  description: `Removes all duplicated tracks in the Queue`,
+  description: `Remove todas as faixas duplicadas na fila`,
   usage: `removedupes`,
   example: "",
   permissoes: [],

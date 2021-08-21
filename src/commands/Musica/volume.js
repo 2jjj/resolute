@@ -7,7 +7,7 @@ module.exports = {
   name: `volume`,
   category: `🎶 Music`,
   aliases: [`vol`],
-  description: `Changes the Volume`,
+  description: `Muda o volume`,
   usage: `volume <0-150>`,
   example: "",
   permissoes: [],

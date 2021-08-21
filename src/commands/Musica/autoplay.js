@@ -7,7 +7,7 @@ module.exports = {
   name: `autoplay`,
   category: `🎶 Music`,
   aliases: [`ap`, `toggleauto`, `toggleautoplay`, `toggleap`],
-  description: `Toggles Autoplay on/off`,
+  description: `Liga ou desliga o autoplay`,
   usage: `autoplay`,
   example: "",
   permissoes: [],

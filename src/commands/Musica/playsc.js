@@ -9,7 +9,7 @@ module.exports = {
   name: `playsc`,
   category: `🎶 Music`,
   aliases: [`psc`, `playsoundcloud`],
-  description: `Plays a song from soundcloud`,
+  description: `Toca uma música do SoundCloud`,
   usage: `playsc <Song / URL>`,
   example: "",
   permissoes: [],

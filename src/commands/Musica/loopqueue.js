@@ -7,7 +7,7 @@ module.exports = {
   name: `loopfila`,
   category: `🎶 Music`,
   aliases: [`repeatqueue`, `lq`, `rq`, `loopqu`, `repeatqu`, 'loopqueue'],
-  description: `Repeats the Queue`,
+  description: `Colocar a fila em loop`,
   usage: `loopqueue`,
   example: "",
   permissoes: [],

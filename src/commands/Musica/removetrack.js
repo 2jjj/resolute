@@ -7,7 +7,7 @@ module.exports = {
   name: `removetrack`,
   category: `🎶 Music`,
   aliases: [`rt`, `remove`],
-  description: `Removes a track from the Queue`,
+  description: `Remove uma faixa da fila`,
   usage: `removetrack <Trackindex>`,
   example: "",
   permissoes: [],

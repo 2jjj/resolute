@@ -8,7 +8,7 @@ module.exports = {
   name: `searchsc`,
   category: `🎶 Music`,
   aliases: [`searchsoundcloud`, `scsearch`, `soundcloudsearch`],
-  description: `Searches a song from soundcloud`,
+  description: `Procura uma música do SoundCloud`,
   usage: `search <Song / URL>`,
   example: "",
   permissoes: [],

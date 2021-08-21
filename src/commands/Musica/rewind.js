@@ -11,7 +11,7 @@ module.exports = {
   name: `rewind`,
   category: `🎶 Music`,
   aliases: [`seekbackwards`, `rew`],
-  description: `Seeks a specific amount of Seconds backwards`,
+  description: `Procura uma quantidade específica de segundos para trás`,
   usage: `rewind <Duration in Seconds>`,
   example: "",
   permissoes: [],

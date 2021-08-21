@@ -7,7 +7,7 @@ module.exports = {
   name: `loop`,
   category: `🎶 Music`,
   aliases: [`repeat`, `l`],
-  description: `Repeats the current song`,
+  description: `Repetir o som atual`,
   usage: `loopsong`,
   example: "",
   permissoes: [],

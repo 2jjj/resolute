@@ -8,7 +8,7 @@ module.exports = {
   name: `search`,
   category: `🎶 Music`,
   aliases: [`search`],
-  description: `Searches a song from youtube`,
+  description: `Procura uma música do youtube`,
   usage: `search <Song / URL>`,
   example: "",
   permissoes: [],

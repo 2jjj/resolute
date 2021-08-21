@@ -8,8 +8,12 @@ module.exports = {
   name: `removevoteskip`,
   category: `🎶 Music`,
   aliases: [`rvs`, `removeskip`, `removevs`, `votestop`, `stopvote`],
-  description: `Removes your Vote of the VoteSkip!`,
+  description: `Remove seu voto do Voteskip!`,
   usage: `removevoteskip`,
+  example: "",
+  permissoes: [],
+  cooldown: 8,
+  args: false,
   parameters: { "type": "music", "activeplayer": true, "previoussong": false },
 
   run: async (client, message, args, cmduser, text, prefix, player) => {

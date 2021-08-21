@@ -8,7 +8,7 @@ module.exports = {
   name: `addsimilar`,
   category: `🎶 Music`,
   aliases: [`adds`, `addrelated`, `addr`],
-  description: `Adds a similar song of the current Track to the Queue!`,
+  description: `Adiciona uma música semelhante da faixa atual à fila!`,
   usage: `addsimilar`,
   example: "",
   permissoes: [],

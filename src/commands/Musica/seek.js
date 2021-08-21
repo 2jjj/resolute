@@ -11,7 +11,7 @@ module.exports = {
   name: `avancar`,
   category: `🎶 Music`,
   aliases: [`vol`, `seek`],
-  description: `Changes the position(seek) of the Song`,
+  description: `Muda a posição (busca) da música`,
   usage: `seek <Duration in Seconds>`,
   example: "",
   permissoes: [],

@@ -11,7 +11,7 @@ module.exports = {
   name: `restart`,
   category: `🎶 Music`,
   aliases: [`replay`],
-  description: `Restarts the current song`,
+  description: `Reinicia a música atual`,
   usage: `restart`,
   example: "",
   permissoes: [],

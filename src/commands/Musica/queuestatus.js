@@ -9,7 +9,7 @@ module.exports = {
   name: `queuestatus`,
   category: `🎶 Music`,
   aliases: [`qs`, `status`, `queuestats`, `qus`],
-  description: `Shows the current Queuestatus`,
+  description: `Mostra os status da fila`,
   usage: `queuestatus`,
   example: "",
   permissoes: [],

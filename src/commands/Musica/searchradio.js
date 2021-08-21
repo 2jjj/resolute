@@ -10,7 +10,7 @@ module.exports = {
   name: `searchradio`,
   category: `🎶 Music`,
   aliases: [`searchr`],
-  description: `Searches for a Radio station`,
+  description: `Pesquisa por uma estação de rádio`,
   usage: `searchradio `,
   example: "",
   permissoes: [],

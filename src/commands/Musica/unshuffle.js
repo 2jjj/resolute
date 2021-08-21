@@ -7,7 +7,7 @@ module.exports = {
   name: `unshuffle`,
   category: `🎶 Music`,
   aliases: [`unmix`, `oldshuffle`, `undoshuffle`, `oldqueue`, `us`],
-  description: `Unshuffles the Queue - Restores the old Queue`,
+  description: `Restaura a fila`,
   usage: `unshuffle`,
   example: "",
   permissoes: [],

@@ -7,7 +7,7 @@ module.exports = {
   name: `shuffle`,
   category: `🎶 Music`,
   aliases: [`mix`],
-  description: `Shuffles the Queue`,
+  description: `Embaralha a fila`,
   usage: `shuffle`,
   example: "",
   permissoes: [],

@@ -20,8 +20,9 @@ module.exports = {
 **Tipos**: \`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`showdetails\`, \`createsave\`, \`delete\`, \`play\`, \`shuffle\`\n
 **Nome**: \`Pode ser qualquer coisa com máximo de 10 letras\`\n
 **Opções**: \`Escolha a música que você deseja remover`,
-  exaple: "",
+  example: "",
   permissoes: [],
+  args: false,
 
   run: async (client, message, args, cmduser, text, prefix) => {
     try {
@@ -624,7 +625,6 @@ module.exports = {
             .setDescription(`Usage: \`${prefix}savedqueue <Type> <Name>\`\nValid Types:\n\`create\`, \`addcurrenttrack\`, \`addcurrentqueue\`, \`removetrack\`, \`removedupes\`, \`showall\`, \`createsave\`, \`delete\`, \`showdetails\`, \`play\`, \`shuffle\``)
           );
           break;
-
       }
 
     } catch (e) {

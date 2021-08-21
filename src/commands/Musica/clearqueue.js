@@ -9,7 +9,7 @@ module.exports = {
   name: `limparfila`,
   category: `🎶 Music`,
   aliases: [`clearqueue`],
-  description: ``,
+  description: `Comando para limpar a fila`,
   usage: `clearqueue`,
   example: "",
   permissoes: [],

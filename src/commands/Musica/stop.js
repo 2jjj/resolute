@@ -7,7 +7,7 @@ module.exports = {
   name: `stop`,
   category: `🎶 Music`,
   aliases: [`leave`],
-  description: `Stops current track and leaves the channel`,
+  description: `Pára a faixa atual e deixa o canal`,
   usage: `stop`,
   example: "",
   permissoes: [],

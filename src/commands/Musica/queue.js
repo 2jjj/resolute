@@ -13,7 +13,7 @@ module.exports = {
   name: `queue`,
   category: `🎶 Music`,
   aliases: [`qu`, `que`, `queu`, `list`, `fila`],
-  description: `Shows the Queue`,
+  description: `Mostar a fila`,
   usage: `queue`,
   example: "",
   permissoes: [],

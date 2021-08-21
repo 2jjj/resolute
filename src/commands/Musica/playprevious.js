@@ -8,7 +8,7 @@ module.exports = {
   name: `playprevious`,
   category: `🎶 Music`,
   aliases: [`pp`, `ppre`, `playprevius`, `playprevios`],
-  description: `Plays the Previous played Song and skips the current Song`,
+  description: `Reproduz a música tocada anteriormente e pula a música atual`,
   usage: `playprevious`,
   example: "",
   permissoes: [],

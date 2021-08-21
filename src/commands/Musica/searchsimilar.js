@@ -8,7 +8,7 @@ module.exports = {
   name: `searchsimilar`,
   category: `🎶 Music`,
   aliases: [`searchs`, `searchrelated`, `searchr`],
-  description: `Seraches a similar song of the current Track!`,
+  description: `Pesquisa uma música semelhante da faixa atual!`,
   usage: `searchsimilar`,
   example: "",
   permissoes: [],

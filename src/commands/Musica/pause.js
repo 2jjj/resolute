@@ -11,7 +11,7 @@ module.exports = {
   name: `pause`,
   category: `🎶 Music`,
   aliases: [`break`, `pausar`],
-  description: `Pauses the Current Song`,
+  description: `Pausar a música atual`,
   usage: `pause`,
   example: "",
   permissoes: [],

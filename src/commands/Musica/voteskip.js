@@ -8,7 +8,7 @@ module.exports = {
   name: `voteskip`,
   category: `🎶 Music`,
   aliases: [`skip`, `vs`, `s`],
-  description: `Skips the track, but if there is a DJ Setup u will have to vote first!`,
+  description: `Pula a pista, mas se houver um conjunto de DJ, você terá que votar primeiro!`,
   usage: `voteskip`,
   example: "",
   permissoes: [],

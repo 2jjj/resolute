@@ -8,7 +8,7 @@ module.exports = {
   name: `play`,
   category: `🎶 Music`,
   aliases: [`p`],
-  description: `Plays a song from youtube`,
+  description: `Tocar uma música ou video`,
   usage: `play <Song / URL>`,
   example: "",
   permissoes: [],

@@ -4,7 +4,7 @@ module.exports = {
   name: `addprevious`,
   category: `🎶 Music`,
   aliases: [`addp`, `addpre`, `addprevius`, `addprevios`],
-  description: `Adds the previous song to the Queue again!`,
+  description: `Adiciona a música anterior à fila novamente!`,
   usage: `addprevious`,
   example: "",
   permissoes: [],

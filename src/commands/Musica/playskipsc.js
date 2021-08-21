@@ -9,7 +9,7 @@ module.exports = {
   name: `playskipsc`,
   category: `🎶 Music`,
   aliases: [`pssc`, `playskipsoundcloud`],
-  description: `Plays a song instantly from soundcloud, which means skips current track and plays next song`,
+  description: `Reproduz uma música instantaneamente do SoundCloud, que significa que pula a faixa atual e reproduz a próxima música`,
   usage: `playskipsc <Song / URL>`,
   example: "",
   permissoes: [],

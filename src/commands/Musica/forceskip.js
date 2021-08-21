@@ -8,7 +8,7 @@ module.exports = {
   name: `forceskip`,
   category: `🎶 Music`,
   aliases: [`fs`],
-  description: `Forces to skip the current song`,
+  description: `Comando para forçar para ir pra próxima música`,
   usage: `forceskip`,
   example: "",
   permissoes: [],

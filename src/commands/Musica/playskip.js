@@ -8,7 +8,7 @@ module.exports = {
   name: `playskip`,
   category: `🎶 Music`,
   aliases: [`ps`],
-  description: `Plays a song instantly from youtube, which means skips current track and plays next song`,
+  description: `Reproduz uma música instantaneamente do YouTube, o que significa que pula a faixa atual e toca a próxima música`,
   usage: `playskip <Song / URL>`,
   example: "",
   permissoes: [],
