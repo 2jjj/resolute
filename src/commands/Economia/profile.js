@@ -19,7 +19,7 @@
             const user = message.member;
 
             let inv = db.get(`${message.author.id}`)
-            if (inv === null) inv = "Nada"
+            if (inv === null) inv = "Nada";
             //
             let coins = db.fetch(`money_${message.author.id}`);
             if (coins == null) coins = 0;
