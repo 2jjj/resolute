@@ -21,7 +21,7 @@ module.exports = {
         if (!user) return;
 
         if (user.id == autor.id) {
-            return message.channel.send(`<:x_:856894534071746600> **|** Você não pode se auto-roubar!`);
+            return message.inlineReply(`<:x_:856894534071746600> **|** Você não pode se auto-roubar!`);
         };
 
         let user_money = await db.fetch(`money_${user.id}`)
@@ -31,7 +31,7 @@ module.exports = {
         if (autor_money == null) autor_money = 0;
 
         if (user_money <= 0) {
-            return message.channel.send(`Você não pode roubar alguem que não possui dinheiro!`);
+            return message.inlineReply(`Você não pode roubar alguem que não possui dinheiro!`);
         };
 
         let timeout = 86400000;
@@ -51,7 +51,7 @@ module.exports = {
                 }))
                 .setTimestamp();
 
-            message.channel.send(`${autor}`, timeEmbed);
+            message.inlineReply(`${autor}`, timeEmbed);
 
         } else {
 
@@ -69,8 +69,7 @@ module.exports = {
                         dynamic: true
                     }))
                     .setTimestamp();
-
-                message.channel.send(`${autor}`, moneyEmbed);
+                message.inlineReply(`${autor}`, moneyEmbed);
 
                 db.subtract(`money_${autor.id}`, amount);
                 db.set(`rob_${autor.id}`, Date.now());
@@ -89,7 +88,7 @@ module.exports = {
                     }))
                     .setTimestamp();
 
-                message.channel.send(`${autor}`, moneyEmbed);
+                message.inlineReply(`${autor}`, moneyEmbed);
 
                 db.subtract(`money_${user.id}`, amount);
                 db.add(`money_${autor.id}`, amount);

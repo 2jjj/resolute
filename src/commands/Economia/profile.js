@@ -77,7 +77,7 @@
                     dynamic: true
                 }))
                 .setTimestamp();
-            message.channel.send(profile);
+            message.inlineReply(profile);
         }
     }
 //Créditos: Spray e cleiton#2040
