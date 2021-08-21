@@ -19,7 +19,7 @@ module.exports = {
 		
 		const bans = await message.guild.fetchBans();
 
-		if (!bans.first()) return message.channel.send('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
+		if (!bans.first()) return message.inlineReply('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
 
 		let msg = '';
 
@@ -27,7 +27,7 @@ module.exports = {
 			msg += `\`${user.user.tag}\`, `;
 		});
 
-		message.channel.send('<:mod:856894534088523776> **|** Lista de membros banidos:\n' + msg, {
+		message.inlineReply('<:mod:856894534088523776> **|** Lista de membros banidos:\n' + msg, {
 			split: true
 		});
 	}

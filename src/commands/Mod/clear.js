@@ -27,7 +27,7 @@ module.exports = {
 		});
 
 		message.channel.bulkDelete(fetched); {
-			await message.channel.send(`<:v_:856894534184468480> **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`);
+			await message.inlineReply(`<:v_:856894534184468480> **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`);
 		}
 	}
 };

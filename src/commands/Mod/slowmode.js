@@ -57,6 +57,5 @@ module.exports = {
 			.addField('Razão: ', reason)
 			.setColor("RANDOM");
 		message.channel.setRateLimitPerUser(time, reason).then(m => m.send(embed));
-
 	}
 }

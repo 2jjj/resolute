@@ -62,7 +62,7 @@ module.exports = {
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
 			.setImage(rand)
-		await message.channel.send(embed2)
+		await message.inlineReply(embed2)
 		await membro.kick(motivo)
 	}
 }
