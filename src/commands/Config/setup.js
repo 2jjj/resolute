@@ -112,7 +112,7 @@ module.exports = {
                         .setTitle("Resolute | Atualmente, nenhuma não há nenhuma música tocando!")
                         .setDescription(`Entre em um canal de voz e coloque um termo de pesquisa ou uma URL para tocar!\n[Me convide para aproveitar essas funcionalidades!](https://discord.com/oauth2/authorize?client_id=868871721409736774&permissions=8&scope=bot%20applications.commands)`)
                         //.setImage("https://cdn.discordapp.com/avatars/868871721409736774/672afa4f2a4ac5fee624580229a2efbd.png?size=1024")
-                      
+
                       channel3.send(new MessageEmbed().setColor(ee.color).setDescription(`Carregando ...`)).then(async msg => {
                         
                         await msg.edit(embed1)

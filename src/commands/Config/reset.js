@@ -32,7 +32,7 @@ module.exports = {
       let themsg = message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`Você realmente quer redefinir todas as configurações?`)
+        .setTitle(`Você realmente quer redefinir **todas** as configurações?`)
         .setDescription(`*Responda com:* **__\`sim\`__**`)
       ).then((msg) => {
         

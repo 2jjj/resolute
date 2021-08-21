@@ -1,11 +1,8 @@
-const {
-  MessageEmbed
-} = require(`discord.js`);
-const config = require(`../../config/config.json`);
+const { MessageEmbed } = require(`discord.js`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
 module.exports = {
-  name: `equalizer`,
+  name: `equalizador`,
   category: `👀 Filter`,
   aliases: [`eq`],
   description: `Changes the Equalizer`,
@@ -21,8 +18,8 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} ERROR | Equalizer level must be one of the following`)
-          .setDescription(`Valid Equalizers:\n\`music\`, \`pop\`, \`electronic\`, \`classical\`, \`rock\`, \`full\`, \`gaming\`, \`bassboost\`, \`earrape\`\n\nUsage: \`${prefix}equalizer <Level>\`\n\nExample: \`${prefix}equalizer music\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | O nível do equalizador deve ser um dos seguintes:`)
+          .setDescription(`\`music\`, \`pop\`, \`electronic\`, \`classical\`, \`rock\`, \`full\`, \`gaming\`, \`bassboost\`, \`earrape\`\n\nModo de uso: \`${prefix}equalizador <Modo>\`\n\nExample: \`${prefix}equalizador music\``)
         );
       level = args[0].toLowerCase();
       switch (level) {
@@ -69,8 +66,8 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.SUCCESS} Success | Set Equalizer to \`${level}\``)
-        .setDescription(`Note: *It might take up to 5 seconds until you hear the new Equalizer*`)
+        .setTitle(`${emoji.msg.SUCCESS} Sucesso | Configurei o equalizador para \`${level}\``)
+        .setDescription(`Observação: *Pode levar até 5 segundos até o novo equalizador*`)
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)
