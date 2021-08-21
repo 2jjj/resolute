@@ -26,23 +26,23 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} | Wrong Command Usage!`)
-          .setDescription(`Usage: \`${prefix}move <from> <to>\`\nExample: \`${prefix}move ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2} 1\``)
+          .setTitle(`${emoji.msg.ERROR} | Modo de uso errado.`)
+          .setDescription(`Uso: \`${prefix}move <de> <para>\`\nExemplo: \`${prefix}move ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2} 1\``)
         );
 
       if (!args[1])
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} | Wrong Command Usage!`)
-          .setDescription(`Usage: \`${prefix}move <from> <to>\`\nExample: \`${prefix}move ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2} 1\``));
+          .setTitle(`${emoji.msg.ERROR} | Modo de uso errado.`)
+          .setDescription(`Uso: \`${prefix}move <de> <para>\`\nExemplo: \`${prefix}move ${player.queue.size - 2 <= 0 ? player.queue.size : player.queue.size - 2} 1\``));
 
       if (isNaN(args[0]) || args[0] <= 1 || args[0] > player.queue.length)
         return message.channel.send(
           new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} | Error Your Input must be a Number greater then \`1\` and smaller then \`${player.queue.length}\``)
+            .setTitle(`${emoji.msg.ERROR} | Você deve fornecer um número entre \`1\` e \`${player.queue.length}\``)
         );
 
       let song = player.queue[player.queue.length - 1];
@@ -57,9 +57,9 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`${emoji.msg.SUCCESS} Success | Mmoved the Song in the Queue from Position \`${args[0]}\` to Position: \`${args[1]}\``)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | Movi o som da fila \`${args[0]}\` para a posição: \`${args[1]}\``)
         .setThumbnail(song.displayThumbnail())
-        .setDescription(`[${song.title}](${song.uri}) - \`${format(song.duration)}\` - requested by **${song.requester.tag}**`)
+        .setDescription(`[${song.title}](${song.uri}) - \`${format(song.duration)}\` - Requisitado por **${song.requester.tag}**`)
       );
     } catch (e) {
       console.log(String(e.stack).bgRed)

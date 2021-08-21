@@ -38,7 +38,7 @@ module.exports = {
         player.queue.add(track);
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Success | ${emoji.msg.cleared} I removed the track at position: \`${Number(args[0])}\``)
+        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.cleared} Eu removi a faixa na posição: \`${Number(args[0])}\``)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

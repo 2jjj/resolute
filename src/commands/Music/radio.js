@@ -27,8 +27,8 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | Not a valid radio station`)
-          .setDescription(`Please use a Number between \`1\` and \`183\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Não é uma estação de rádio válida`)
+          .setDescription(`Por favor, forneça um número de \`1\` até \`183\``)
         );
       }
 
@@ -36,8 +36,8 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | Volume Number out of Range`)
-          .setDescription(`Please use a Number between \`1\` and \`150\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Volume fora do padrão`)
+          .setDescription(`Por favor, forneça um número de \`1\` até \`183\``)
         );
 
       let volume;
@@ -73,8 +73,8 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | Radio Station not found`)
-          .setDescription(`Please use a Station between \`1\` and \`183\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Estação de rádio não encontrada`)
+          .setDescription(`Por favor, forneça um número de \`1\` até \`183\``)
         );
 
       const song = {
@@ -85,7 +85,7 @@ module.exports = {
       let embed = new MessageEmbed()
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
-        .setTitle(`Searching: ${emoji.msg.search}` + song.title)
+        .setTitle(`🔍 Procurando: ${emoji.msg.search}` + song.title)
       try {
         embed.setURL(song.url)
       } catch { }

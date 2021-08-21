@@ -24,11 +24,11 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | You need to give me a URL or a Search term.`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Você precisa me dar uma URL ou um termo de pesquisa.`)
         );
       message.channel.send(new MessageEmbed()
         .setColor(ee.color)
-        .setTitle(`**Searching** 🔎 & **Skipping** ${emoji.msg.skip_track}`)
+        .setTitle(`**Pesquisando** 🔎 & **Pulando** ${emoji.msg.skip_track}`)
         .setDescription(`\`\`\`${text}\`\`\``)
       ).then(msg => {
         msg.delete({ timeout: 5000 }).catch(e => console.log("Could not delete, this prevents a bug"))

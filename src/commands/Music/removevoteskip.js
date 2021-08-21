@@ -27,23 +27,23 @@ module.exports = {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.SUCCESS} Success | Removed your Vote!`)
-            .setDescription(`There are now: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
+            .setTitle(`${emoji.msg.SUCCESS} Sucesso | Seus votos foram removidos!`)
+            .setDescription(`Agora tem: \`${player.get(`votes`)}\` votos de \`${voteamount}\` votos precisos.`)
           );
         } else {
           return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${emoji.msg.ERROR} ERROR | You havn't voted yet!!`)
-            .setDescription(`There are: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
+            .setTitle(`${emoji.msg.ERROR} Erro | Você não votou!`)
+            //.setDescription(`There are: \`${player.get(`votes`)}\` of \`${voteamount}\` needed Votes`)
           );
         }
       } else
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} ERROR | Cannot remove your Vote!`)
-          .setDescription(`Because ther is no DJ-Role Setup created yet, create it by typing \`${prefix}adddj @DJ-Setup\``)
+          .setTitle(`${emoji.msg.ERROR} Erro | Não foi possivel remover o seu voto.`)
+          .setDescription(`Porque não há configuração de função DJ criada ainda, você pode criar digitando \`${prefix}adddj @DJ\``)
         );
     } catch (e) {
       console.log(String(e.stack).bgRed)

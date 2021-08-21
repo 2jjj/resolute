@@ -39,7 +39,7 @@ module.exports = {
                 message.channel.send(new MessageEmbed()
                     .setColor(ee.color)
                     .setFooter(ee.footertext, ee.footericon)
-                    .setTitle(`Searching lyrics for: ${emoji.msg.search} \`${title}\``.substr(0, 256))
+                    .setTitle(`Procurando letra para: ${emoji.msg.search} \`${title}\``.substr(0, 256))
                 )
             }
 
@@ -57,9 +57,8 @@ module.exports = {
                             return message.channel.send(new MessageEmbed()
                                 .setColor(ee.wrongcolor)
                                 .setFooter(ee.footertext, ee.footericon)
-                                .setTitle(`${emoji.msg.ERROR} Error | No Lyrics found for:`)
+                                .setTitle(`${emoji.msg.ERROR} Erro | Não achei nenhuma letra para:`)
                             );
-
                         lyrics = track.lyrics;
                     });
 
@@ -72,7 +71,7 @@ module.exports = {
                             return message.channel.send(new MessageEmbed()
                                 .setColor(ee.wrongcolor)
                                 .setFooter(ee.footertext, ee.footericon)
-                                .setTitle(`${emoji.msg.ERROR} Error | No Lyrics found for:`)
+                                .setTitle(`${emoji.msg.ERROR} Erro | Não achei nenhuma letra para:`)
                             );
 
                     } catch (e) {
@@ -81,13 +80,13 @@ module.exports = {
                         return message.channel.send(new MessageEmbed()
                             .setColor(ee.wrongcolor)
                             .setFooter(ee.footertext, ee.footericon)
-                            .setTitle(`${emoji.msg.ERROR} Error | No Lyrics found for:`)
+                            .setTitle(`${emoji.msg.ERROR} Erro | Não achei nenhuma letra para:`)
                         );
                     }
                 }
             }
 
-            return swap_pages(client, message, lyrics, `Lyrics for: ${emoji.msg.lyrics} \`${title}\``.substr(0, 256))
+            return swap_pages(client, message, lyrics, `Letra de: ${emoji.msg.lyrics} \`${title}\``.substr(0, 256))
 
         } catch (e) {
             console.log(String(e.stack).bgRed)

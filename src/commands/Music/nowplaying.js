@@ -25,7 +25,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${emoji.msg.ERROR} Error | There is nothing playing`)
+          .setTitle(`${emoji.msg.ERROR} Erro | Não a nada tocando.`)
         );
 
       return message.channel.send(new MessageEmbed()
@@ -37,11 +37,11 @@ module.exports = {
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
         .setTitle(`${player.playing ? `${emoji.msg.resume}` : `${emoji.msg.pause}`} **${player.queue.current.title}**`)
-        .addField(`${emoji.msg.time} Duration: `, `\`${format(player.queue.current.duration)}\``, true)
-        .addField(`${emoji.msg.song_by} Song By: `, `\`${player.queue.current.author}\``, true)
-        .addField(`${emoji.msg.repeat_mode} Queue length: `, `\`${player.queue.length} Songs\``, true)
-        .addField(`${emoji.msg.time} Progress: `, createBar(player))
-        .setFooter(`Requested by: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
+        .addField(`${emoji.msg.time} Duração: `, `\`${format(player.queue.current.duration)}\``, true)
+        .addField(`${emoji.msg.song_by} Música por: `, `\`${player.queue.current.author}\``, true)
+        .addField(`${emoji.msg.repeat_mode} Tamanho da fila: `, `\`${player.queue.length} Songs\``, true)
+        .addField(`${emoji.msg.time} Progresso: `, createBar(player))
+        .setFooter(`Requisitado por: ${player.queue.current.requester.tag}`, player.queue.current.requester.displayAvatarURL({
           dynamic: true
         }))
       );

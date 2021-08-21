@@ -12,7 +12,7 @@ const {
 module.exports = {
   name: `queue`,
   category: `🎶 Music`,
-  aliases: [`qu`, `que`, `queu`, `list`],
+  aliases: [`qu`, `que`, `queu`, `list`, `fila`],
   description: `Shows the Queue`,
   usage: `queue`,
   example: "",
@@ -27,12 +27,12 @@ module.exports = {
       
       if (!tracks.length)
         return message.channel.send(new MessageEmbed()
-          .setAuthor(`Queue for ${message.guild.name}  -  [ ${player.queue.length} Tracks ]`, message.guild.iconURL({
+          .setAuthor(`Fila de ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
             dynamic: true
           }))
           .setFooter(ee.footertext, ee.footericon)
-          .setColor(ee.color).addField(`**0) CURRENT TRACK**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*request by: ${player.queue.current.requester.tag}*`)
-          .setDescription(`${emoji.msg.ERROR} No tracks in the queue`)
+          .setColor(ee.color).addField(`**0) Faixa atual**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*Requisitado por: ${player.queue.current.requester.tag}*`)
+          .setDescription(`${emoji.msg.ERROR} Sem faixas na fila.`)
         ).then(msg => {
           try {
             msg.delete({
@@ -43,12 +43,12 @@ module.exports = {
 
       if (tracks.length < 15)
         return message.channel.send(new MessageEmbed()
-          .setAuthor(`Queue for ${message.guild.name}  -  [ ${player.queue.length} Tracks ]`, message.guild.iconURL({
+          .setAuthor(`Fila de ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
             dynamic: true
           }))
           .setFooter(ee.footertext, ee.footericon)
-          .addField(`**0) CURRENT TRACK**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*request by: ${player.queue.current.requester.tag}*`)
-          .setColor(ee.color).setDescription(tracks.map((track, i) => `**${++i})** **${track.title.substr(0, 60)}** - \`${track.isStream ? `LIVE STREAM` : format(track.duration).split(` | `)[0]}\`\n*requested by: ${track.requester.tag}*`).join(`\n`))
+          .addField(`**0) Faixa atual**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*Requisitado por: ${player.queue.current.requester.tag}*`)
+          .setColor(ee.color).setDescription(tracks.map((track, i) => `**${++i})** **${track.title.substr(0, 60)}** - \`${track.isStream ? `LIVE STREAM` : format(track.duration).split(` | `)[0]}\`\n*Requisitado por: ${track.requester.tag}*`).join(`\n`))
         ).then(msg => {
           try {
             msg.delete({
@@ -60,19 +60,19 @@ module.exports = {
       let quelist = [];
       for (let i = 0; i < tracks.length; i += 15) {
         let songs = tracks.slice(i, i + 15);
-        quelist.push(songs.map((track, index) => `**${i + ++index})** **${track.title.substr(0, 60)}** - \`${track.isStream ? `LIVE STREAM` : format(track.duration).split(` | `)[0]}\`\n*requested by: ${track.requester.tag}*`).join(`\n`))
+        quelist.push(songs.map((track, index) => `**${i + ++index})** **${track.title.substr(0, 60)}** - \`${track.isStream ? `LIVE STREAM` : format(track.duration).split(` | `)[0]}\`\n*Requisitado por: ${track.requester.tag}*`).join(`\n`))
       }
       let limit = quelist.length <= 5 ? quelist.length : 5
       let embeds = []
       for (let i = 0; i < limit; i++) {
         let desc = String(quelist[i]).substr(0, 2048)
         await embeds.push(new MessageEmbed()
-          .setAuthor(`Queue for ${message.guild.name}  -  [ ${player.queue.length} Tracks ]`, message.guild.iconURL({
+          .setAuthor(`Fila de ${message.guild.name}  -  [ ${player.queue.length} Tracks ]`, message.guild.iconURL({
             dynamic: true
           }))
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.color)
-          .addField(`**0) CURRENT TRACK**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*request by: ${player.queue.current.requester.tag}*`)
+          .addField(`**0) Faixa atual**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*Requisitado por: ${player.queue.current.requester.tag}*`)
           .setDescription(desc));
       }
 

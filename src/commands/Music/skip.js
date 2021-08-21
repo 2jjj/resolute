@@ -22,7 +22,7 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Erro | Você precisa se juntar a um canal de voz.")
+          .setTitle(`${emoji.msg.ERROR} Erro | Você precisa se juntar a um canal de voz.`)
         );
 
       const player = client.manager.players.get(message.guild.id);
@@ -31,14 +31,14 @@ module.exports = {
         return message.channel.send(new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Erro | Não há nada tocando!")
+          .setTitle(`${emoji.msg.ERROR} Erro | Não a nada tocando!`)
         );
 
       if (channel.id !== player.voiceChannel)
         return message.channel.send(new MessageEmbed()
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.wrongcolor)
-          .setTitle("❌ Erro | Você precisa estar no meu canal de voz para usar este comando!")
+          .setTitle(`${emoji.msg.ERROR} Erro | Você precisa estar no meu canal de voz para usar este comando!`)
           .setDescription(`Canal: \`${message.guild.channels.cache.get(player.voiceChannel).name}\``)
         );
 
@@ -49,7 +49,7 @@ module.exports = {
         player.destroy();
 
         return message.channel.send(new MessageEmbed()
-          .setTitle("✅ Successo | Parei a música e sai do canal de voz!")
+          .setTitle(`${emoji.msg.SUCCESS} Successo | Parei a música e sai do canal de voz!`)
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
         );
@@ -58,7 +58,7 @@ module.exports = {
       player.stop();
 
       return message.channel.send(new MessageEmbed()
-        .setTitle("✅ Successo | Pulei para a próxima música!")
+        .setTitle(`${emoji.msg.SUCCESS} Successo | Pulei para a próxima música!`)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );

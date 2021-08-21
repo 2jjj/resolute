@@ -22,37 +22,37 @@ module.exports = {
 
       let embed = new MessageEmbed()
       try {
-        embed.setTitle(`Connected to:  \`🔈${client.channels.cache.get(player.voiceChannel).name}\``)
+        embed.setTitle(`Conectado em:  \`🔈${client.channels.cache.get(player.voiceChannel).name}\``)
       } catch { }
       try {
-        embed.setDescription(`And bound to: \`#${client.channels.cache.get(player.textChannel).name}\`   **▬**   Queue length: \`${player.queue.length} Songs\``)
+        embed.setDescription(`E ligado em: \`#${client.channels.cache.get(player.textChannel).name}\`   **▬**   Tamanho da fila: \`${player.queue.length} Músicas\``)
       } catch { }
       try {
         embed.addField(`${emoji.msg.raise_volume} Volume`, `${player.volume}%`, true)
       } catch { }
       try {
-        embed.addField(`${emoji.msg.equalizer} Equalizer: `, `${emoji.msg.playing} Music`, true)
+        embed.addField(`${emoji.msg.equalizer} Equalizador: `, `${emoji.msg.playing} Music`, true)
       } catch { }
       try {
-        embed.addField(`${player.queueRepeat ? `${emoji.msg.autoplay_mode} Queue Loop: ` : `${emoji.msg.autoplay_mode} Song Loop: `}`, `${player.queueRepeat ? `${emoji.msg.SUCCESS} Enabled` : player.trackRepeat ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
+        embed.addField(`${player.queueRepeat ? `${emoji.msg.autoplay_mode} Queue Loop: ` : `${emoji.msg.autoplay_mode} Song Loop: `}`, `${player.queueRepeat ? `${emoji.msg.SUCCESS} Habilitado` : player.trackRepeat ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}`, true)
       } catch { }
       try {
-        embed.addField(`${emoji.msg.leave_on_empty} Leave on Empty Channel: `, `${config.settings.leaveOnEmpty_Channel.enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
+        embed.addField(`${emoji.msg.leave_on_empty} Sair quando o canal estiver vazio: `, `${config.settings.leaveOnEmpty_Channel.enabled ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}`, true)
       } catch { }
       try {
-        embed.addField(`${emoji.msg.repeat_mode} Leave on Empty Queue: `, `${config.settings.LeaveOnEmpty_Queue.enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
+        embed.addField(`${emoji.msg.repeat_mode} Sair quando a fila estivar vazia:`, `${config.settings.LeaveOnEmpty_Queue.enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
       } catch { }
       try {
         embed.addField(`${emoji.msg.autoplay_mode} Autoplay`, `${player.get(`autoplay`) ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
       } catch { }
-      try {
+      /*try {
         embed.addField(`${emoji.msg.premium} Premium GUILD`, `${client.premium.get(player.guild).enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
       } catch { }
       try {
         embed.addField(`${emoji.msg.premium} Premium USER`, `${client.premium.get(player.get(`playerauthor`)).enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
-      } catch { }
+      } catch { }*/
       try {
-        embed.addField(`${emoji.msg.premium} 24/7 AFK Setup`, `PLAYER: ${player.get(`afk-${player.get(`playerauthor`)}`) ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}\nGUILD: ${player.get(`afk-${player.guild}`) ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
+        embed.addField(`${emoji.msg.premium} 24/7 AFK Setup`, `PLAYER: ${player.get(`afk-${player.get(`playerauthor`)}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}\nServidor: ${player.get(`afk-${player.guild}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}`, true)
       } catch { }
       try {
         embed.setColor(ee.color)
@@ -61,10 +61,10 @@ module.exports = {
         embed.setFooter(ee.footertext, ee.footericon);
       } catch { }
       try {
-        embed.addField(`${emoji.msg.disk} Current Track: `, `${player.playing ? `${emoji.msg.resume}` : `${emoji.msg.pause}`} [**${player.queue.current.title}**](${player.queue.current.uri})`)
+        embed.addField(`${emoji.msg.disk} Faixa atual: `, `${player.playing ? `${emoji.msg.resume}` : `${emoji.msg.pause}`} [**${player.queue.current.title}**](${player.queue.current.uri})`)
       } catch { }
       try {
-        embed.addField(`${emoji.msg.time} Progress: `, createBar(player))
+        embed.addField(`${emoji.msg.time} Progresso: `, createBar(player))
       } catch { }
       message.channel.send(embed);
     } catch (e) {
