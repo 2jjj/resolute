@@ -72,7 +72,7 @@ module.exports = {
 			.setDescription(`O usuário ${membro} foi **banido** por atingir 3 advertências!`)
 			.setTimestamp();
 			
-			message.channel.send(`O usuário ${membro} foi **banido** por atingir 3 advertências!`)
+			message.channel.send(embed_adv)
 			db.subtract(`warnsCount_${message.guild.id}-${membro.id}`, 3)
 			membro.ban()
 		}
