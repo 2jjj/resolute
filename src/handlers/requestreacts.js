@@ -119,7 +119,7 @@ module.exports = async (client, message) => {
             player.pause(player.playing);
 
             message.channel.send(new MessageEmbed()
-              .setTitle(`${player.playing ? `${emoji.msg.resume} Resumed` : `${emoji.msg.pause} Paused`} the Player.`)
+              .setTitle(`${player.playing ? `${emoji.msg.resume} Despausei` : `${emoji.msg.pause} Pausei`} o Player.`)
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
             ).then(msg => {
@@ -136,7 +136,7 @@ module.exports = async (client, message) => {
             player.destroy();
 
             message.channel.send(new MessageEmbed()
-              .setTitle(`${emoji.msg.stop} Stopped and left your channel`)
+              .setTitle(`${emoji.msg.stop} Parei a música e sai de seu canal de voz!`)
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
             ).then(msg => {
