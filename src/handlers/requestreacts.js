@@ -153,7 +153,7 @@ module.exports = async (client, message) => {
               return message.channel.send(new MessageEmbed()
                 .setColor(ee.wrongcolor)
                 .setFooter(ee.footertext, ee.footericon)
-                .setTitle(`${emoji.msg.ERROR} Error | There is no previous song yet!`)
+                .setTitle(`${emoji.msg.ERROR} Erro | Não há música anterior!`)
               ).then(msg => {
                 try {
                   msg.delete({
@@ -162,7 +162,7 @@ module.exports = async (client, message) => {
                 } catch { /* */ }
               });
             message.channel.send(new MessageEmbed()
-              .setTitle(`${emoji.msg.previous_track} Playing Previous Track`)
+              .setTitle(`${emoji.msg.previous_track} Tocando a faixa anterior.`)
               .setColor(ee.color)
               .setFooter(ee.footertext, ee.footericon)
             ).then(msg => {
