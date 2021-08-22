@@ -54,13 +54,13 @@ module.exports = {
     h = h % 24;
 
     if (d) {
-      return `${d} Days, ${h} Hours, ${m} Minutes, ${s} Seconds`
+      return `${d} Dias, ${h} Horas, ${m} Minutos, ${s} Segundos`
     } else if (h) {
-      return `${h} Hours, ${m} Minutes, ${s} Seconds`
+      return `${h} Horas, ${m} Minutos, ${s} Segundos`
     } else if (m) {
-      return `${m} Minutes, ${s} Seconds`
+      return `${m} Minutos, ${s} Segundos`
     } else {
-      return `${s} Seconds`
+      return `${s} Segundos`
     }
   },
   promptMessage: async function (message, author, time, validReactions) {
@@ -121,8 +121,8 @@ module.exports = {
       var h = Math.floor(millis / 3600000),
         m = Math.floor(millis / 60000),
         s = ((millis % 60000) / 1000).toFixed(0);
-      if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
-      else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
+      if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
+      else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
     } catch (e) {
       console.log(String(e.stack).bgRed)
     }
@@ -489,8 +489,8 @@ module.exports = {
           var h = Math.floor(millis / 3600000),
             m = Math.floor(millis / 60000),
             s = ((millis % 60000) / 1000).toFixed(0);
-          if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
-          else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
+          if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
+          else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
         } catch (e) {
           console.log(String(e.stack).bgRed)
         }
@@ -643,8 +643,8 @@ module.exports = {
         var h = Math.floor(millis / 3600000),
           m = Math.floor(millis / 60000),
           s = ((millis % 60000) / 1000).toFixed(0);
-        if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
-        else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
+        if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
+        else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Segundos";
       }
 
       function createBar(total, current, size = 25, line = "▬", slider = "🔶") {
