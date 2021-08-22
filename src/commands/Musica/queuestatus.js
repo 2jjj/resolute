@@ -52,7 +52,7 @@ module.exports = {
         embed.addField(`${emoji.msg.premium} Premium USER`, `${client.premium.get(player.get(`playerauthor`)).enabled ? `${emoji.msg.SUCCESS} Enabled` : `${emoji.msg.ERROR} Disabled`}`, true)
       } catch { }*/
       try {
-        embed.addField(`${emoji.msg.premium} 24/7 AFK Setup`, `PLAYER: ${player.get(`afk-${player.get(`playerauthor`)}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}\nServidor: ${player.get(`afk-${player.guild}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}`, true)
+        embed.addField(`${emoji.msg.premium} 24/7 AFK Setup`, `Player: ${player.get(`afk-${player.get(`playerauthor`)}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}\nServidor: ${player.get(`afk-${player.guild}`) ? `${emoji.msg.SUCCESS} Habilitado` : `${emoji.msg.ERROR} Desabilitado`}`, true)
       } catch { }
       try {
         embed.setColor(ee.color)
