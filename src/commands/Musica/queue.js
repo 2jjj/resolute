@@ -1,4 +1,6 @@
-const { MessageEmbed } = require(`discord.js`);
+const {
+  MessageEmbed
+} = require(`discord.js`);
 const config = require(`../../config/config.json`);
 const ee = require(`../../config/embed.json`);
 const emoji = require(`../../config/emojis.json`);
@@ -19,43 +21,35 @@ module.exports = {
   permissoes: [],
   cooldown: 8,
   args: false,
-  parameters: { "type": "music", "activeplayer": true, "previoussong": false },
+  parameters: {
+    "type": "music",
+    "activeplayer": true,
+    "previoussong": false
+  },
 
   run: async (client, message, args, cmduser, text, prefix, player) => {
     try {
       const tracks = player.queue;
-      
+
       if (!tracks.length)
-        return message.channel.send(new MessageEmbed()
+        return message.inlineReply(new MessageEmbed()
           .setAuthor(`Fila de ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
             dynamic: true
           }))
           .setFooter(ee.footertext, ee.footericon)
           .setColor(ee.color).addField(`**0) Faixa atual**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*Requisitado por: ${player.queue.current.requester.tag}*`)
           .setDescription(`${emoji.msg.ERROR} Sem faixas na fila.`)
-        ).then(msg => {
-          try {
-            msg.delete({
-              timeout: 5000
-            }).catch(e => console.log("Couldn't delete msg, this is for preventing a bug".gray));
-          } catch { /* */ }
-        })
+        )
 
       if (tracks.length < 15)
-        return message.channel.send(new MessageEmbed()
+        return message.inlineReply(new MessageEmbed()
           .setAuthor(`Fila de ${message.guild.name}  -  [ ${player.queue.length} Faixas ]`, message.guild.iconURL({
             dynamic: true
           }))
           .setFooter(ee.footertext, ee.footericon)
           .addField(`**0) Faixa atual**`, `**${player.queue.current.title.substr(0, 60)}** - \`${player.queue.current.isStream ? `LIVE STREAM` : format(player.queue.current.duration).split(` | `)[0]}\`\n*Requisitado por: ${player.queue.current.requester.tag}*`)
           .setColor(ee.color).setDescription(tracks.map((track, i) => `**${++i})** **${track.title.substr(0, 60)}** - \`${track.isStream ? `LIVE STREAM` : format(track.duration).split(` | `)[0]}\`\n*Requisitado por: ${track.requester.tag}*`).join(`\n`))
-        ).then(msg => {
-          try {
-            msg.delete({
-              timeout: 5000
-            }).catch(e => console.log("Couldn't delete msg, this is for preventing a bug".gray));
-          } catch { /* */ }
-        })
+        )
 
       let quelist = [];
       for (let i = 0; i < tracks.length; i += 15) {

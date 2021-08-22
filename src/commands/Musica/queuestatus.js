@@ -66,7 +66,7 @@ module.exports = {
       try {
         embed.addField(`${emoji.msg.time} Progresso: `, createBar(player))
       } catch { }
-      message.channel.send(embed);
+      message.inlineReply(embed);
     } catch (e) {
       console.log(String(e.stack).bgRed)
       return message.channel.send(new MessageEmbed()

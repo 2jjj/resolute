@@ -34,7 +34,7 @@ module.exports = {
       player.setVolume(Number(args[0]));
 
       return message.channel.send(new MessageEmbed()
-        .setTitle(`${emoji.msg.SUCCESS} Successo | ${emoji.msg.raise_volume} Volume definido para: \`${player.volume} %\``)
+        .setTitle(`${emoji.msg.raise_volume} | Volume definido para: \`${player.volume} %\``)
         .setColor(ee.color)
         .setFooter(ee.footertext, ee.footericon)
       );
