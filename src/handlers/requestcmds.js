@@ -49,8 +49,8 @@ module.exports = async (client, message) => {
     if (cmd.length === 0) return message.channel.send(new Discord.MessageEmbed()
       .setColor(ee.wrongcolor)
       .setFooter(ee.footertext, ee.footericon)
-      .setTitle(`❌ Unkown command, try: **\`${config.prefix}help\`**`)
-      .setDescription(`To play Music simply type \`${config.prefix}play <Title / Url>\`\n\nYou can also just type the song name / url into the channel and I'll search for it!`)
+      .setTitle(`❌ Comando inválido, tente: **\`${config.prefix}help\`**`)
+      //.setDescription(`To play Music simply type \`${config.prefix}play <Title / Url>\`\n\nYou can also just type the song name / url into the channel and I'll search for it!`)
     );
     let command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
@@ -68,7 +68,7 @@ module.exports = async (client, message) => {
           return message.channel.send(new Discord.MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`)
+            .setTitle(`❌ Por favor aguarde ${timeLeft.toFixed(1)} segundos antes de usar o comando \`${command.name}\``)
           );
         }
       }
@@ -84,8 +84,8 @@ module.exports = async (client, message) => {
         return message.channel.send(new Discord.MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle("❌ Something went wrong while, running the: `" + command.name + "` command")
-          .setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
+          .setTitle("❌ Algo deu errado ao rodar o comando `" + command.name + "`")
+          //.setDescription(`\`\`\`An error occurred, please try again later\`\`\``)
         )
       }
     }
