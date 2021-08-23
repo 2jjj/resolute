@@ -1,5 +1,6 @@
 const db = require("quick.db");
 const Discord = require("discord.js");
+const ee = require(`../../config/embed.json`);
 
 module.exports = {
     name: "pescar",
@@ -14,18 +15,41 @@ module.exports = {
 
     async run(client, message, args, cmduser, text, prefix, player) {
 
+
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member;
+        db.add(`varinhas_${user.id}`, 1)
+
 
         let varinhas = db.fetch(`varinhas_${user.id}`)
         if (varinhas === null) varinhas = 0;
 
         if (varinhas < 1) {
             const embed = new Discord.MessageEmbed()
-                .addField("a", "a")
+                .addField(`Você não possui varinhas!", "Para comprar uma varinha digite \`${prefix}varinha comprar\``)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
+            return message.channel.send(embed);
+        } else {
 
-            message.channel.send(embed)
+            let baiacus = Math.floor(Math.random() * 6 + 1);
+            let salmoes = Math.floor(Math.random() * 3 + 1);
+            let bacalhais = Math.floor(Math.random() * 10 + 1);
+
+            db.add(`baiacus_${user.id}`, baiacus)
+            db.add(`salmoes_${user.id}`, salmoes)
+            db.add(`bacalhais_${user.id}`, bacalhais)
+            
+            const embed = new Discord.MessageEmbed()
+                .setTitle('<:pescaria:879504651739861064> Pescaria')
+                .setDescription(`Você pescou e conseguiu:
+                
+                ${baiacus} baiacus
+                ${salmoes} salmoes
+                ${bacalhais} bacalhais
+                `)
+                .setFooter(ee.footertext, ee.footericon)
+                .setColor("#1E90FF");
+            return message.channel.send(embed);
         }
     }
 }
