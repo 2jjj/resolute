@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['pp', 'latencia'],
   cooldown: 1000 * 2,
   description: "Pong! Minha latência!",
-  category: "info",
+  category: "bot",
   usage: "",
   example: "",
   permissoes: [],
