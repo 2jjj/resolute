@@ -21,7 +21,9 @@ module.exports = {
 
         if (varinhas < 1) {
             const embed = new Discord.MessageEmbed()
-                .setTitle("a");
+                .addField("a", "a")
+                .setFooter(ee.footertext, ee.footericon)
+                .setColor("#1E90FF");
 
             message.channel.send(embed)
         }
