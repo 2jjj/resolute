@@ -25,14 +25,14 @@ module.exports = {
                 .setTitle(c.name)
                 .setColor("4169e1")
                 .setThumbnail(c.flag)
-                .addField("Nome", c.name, true)
-                .addField("Capital", c.capital, true)
-                .addField("Dominio", c.domain, true)
-                .addField("Região", c.region, true)
-                .addField("População", c.population, true)
-                .addField("Area", c.area, true)
-                .addField("Moeda", `${c.currency.name} (${c.currency.short})\nSimbolo: ${c.currency.symbol}`)
-
+                .addField("Nome:", c.name, true)
+                .addField("Capital:", c.capital, true)
+                .addField("Dominio:", c.domain, true)
+                .addField("Região:", c.region, true)
+                .addField("População:", c.population, true)
+                .addField("Área:", c.area, true)
+                .addField("Moeda:", `${c.currency.name} (${c.currency.short})\nSimbolo: ${c.currency.symbol}`)
+            message.channel.send(embed)
         } catch {}
     }
 }
