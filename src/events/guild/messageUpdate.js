@@ -35,12 +35,8 @@ module.exports = async (client, message, oldMessage) => {
       value: `\`\`\`${msg_editada}\`\`\``,
       inline: false
     })
-    .setThumbnail(message.author.displayAvatarURL({
-      dynamic: true
-    }))
     .setTimestamp()
     .setFooter(message.guild.name, message.guild.iconURL());
-
   try {
     client.channels.cache.get(canal).send(embed)
   } catch (e) {}

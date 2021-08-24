@@ -1,7 +1,6 @@
 ﻿const Discord = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
-const fs = require("fs");
 const DBL = require("dblapi.js");
 const { token, topgg_token } = require("./src/config/config.json")
 const mongoose = require("mongoose");
