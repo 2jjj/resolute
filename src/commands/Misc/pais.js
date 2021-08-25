@@ -33,6 +33,8 @@ module.exports = {
                 .addField("Área:", c.area, true)
                 .addField("Moeda:", `${c.currency.name} (${c.currency.short})\nSimbolo: ${c.currency.symbol}`)
             message.channel.send(embed)
-        } catch(e) { console.log(e) }
+        } catch(e) {
+            message.inlineReply("Não encontrei esse pais!")
+        }
     }
 }
