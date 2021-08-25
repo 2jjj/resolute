@@ -21,14 +21,25 @@ module.exports = {
         let varinhas = db.fetch(`varinhas_${user.id}`)
         if (varinhas === null) varinhas = 0;
 
+        let iscas = db.fetch(`iscas_${user.id}`)
+        if (iscas === null) varinhas = 0;
+
         if (varinhas < 1) {
             const embed = new Discord.MessageEmbed()
-                .addField(`Você não possui varinhas!", "Para comprar uma varinha digite \`${prefix}varinha comprar\``)
+                .addField(`Você não possui varinhas!`, `Para comprar uma varinha digite \`${prefix}shop\` e compre uma varinha.`)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
             return message.channel.send(embed);
-        } else {
+        }
 
+        if(varinhas > 1) {
+            if(iscas < 1) {
+                const embed_isca = new Discord.MessageEmbed()
+                    .addField(`Você não possui iscas!`, `Para comprar uma isca digite \`${prefix}shop\` e compre uma isca.`)
+                    .setFooter(ee.footertext, ee.footericon)
+                    .setColor("#1E90FF");
+                return message.channel.send(embed_isca);       
+            }
             let baiacus = Math.floor(Math.random() * 6 + 1);
             let salmoes = Math.floor(Math.random() * 3 + 1);
             let bacalhais = Math.floor(Math.random() * 10 + 1);
