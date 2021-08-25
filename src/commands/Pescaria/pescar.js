@@ -15,10 +15,8 @@ module.exports = {
 
     async run(client, message, args, cmduser, text, prefix, player) {
 
-
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member;
         db.add(`varinhas_${user.id}`, 1)
-
 
         let varinhas = db.fetch(`varinhas_${user.id}`)
         if (varinhas === null) varinhas = 0;
