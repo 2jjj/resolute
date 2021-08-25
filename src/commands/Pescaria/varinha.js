@@ -25,7 +25,6 @@ module.exports = {
                 .addField("Você não possui nenhuma varinha de pesca.", "Para comprar uma varinha basta ultilizar s.varinha comprar")
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
-
             message.channel.send(embed)
         }
     }
