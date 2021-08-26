@@ -1,8 +1,5 @@
 const Discord = require("discord.js");
-const {
-    MessageMenuOption,
-    MessageMenu
-} = require("discord-buttons")
+const { MessageMenuOption,  MessageMenu } = require("discord-buttons")
 const db = require("quick.db")
 
 module.exports = {
@@ -17,7 +14,7 @@ module.exports = {
     args: false,
 
     async run(client, message, args) {
-        
+
         const user = message.member
         var dinheiro = db.fetch(`money_${user.id}`)
 

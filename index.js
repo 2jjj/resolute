@@ -30,7 +30,6 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useNewUrlParser: true
 }).then(console.log("MongoDB conectado com sucesso!"));
 
-
 client.premium = new Enmap({ name: "premium", dataDir: "./src/databases/premium" });
 client.stats = new Enmap({ name: "stats", dataDir: "./src/databases/stats" });
 client.settings = new Enmap({ name: "setups", dataDir: "./src/databases/settings" });
