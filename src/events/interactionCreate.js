@@ -1,6 +1,9 @@
-const client = require("../../../index");
+const client = require("../../index");
+const config = require("../../config.json");
 
-module.exports = async (interaction) => {
+client.on("interactionCreate", async (interaction) => {
+    const prefix = config.prefix
+
     if (interaction.isCommand()) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
@@ -20,12 +23,12 @@ module.exports = async (interaction) => {
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
-        cmd.run(client, interaction, args);
+        cmd.run(client, interaction, args, prefix);
     }
 
     if (interaction.isContextMenu()) {
         await interaction.deferReply({ ephemeral: false });
         const command = client.slashCommands.get(interaction.commandName);
-        if (command) command.run(client, interaction);
+        if (command) command.run(client, interaction, prefix);
     }
-}
+})

@@ -1,7 +1,7 @@
-const client = require("../../../index");
-const config = require("../../../config.json");
+const client = require("../../index");
+const config = require("../../config.json");
 
-module.exports = async (message) => {
+client.on("messageCreate", async (message) => {
 
     const prefix = config.prefix
 
@@ -15,11 +15,11 @@ module.exports = async (message) => {
     if (
         message.author.bot ||
         !message.guild ||
-        !message.content.toLowerCase().startsWith(config.prefix)
+        !message.content.toLowerCase().startsWith(prefix)
     ) return;
 
     const [cmd, ...args] = message.content
-        .slice(config.prefix.length)
+        .slice(prefix.length)
         .trim()
         .split(" ");
 
@@ -31,4 +31,4 @@ module.exports = async (message) => {
     if(command) {
         console.log(prefix)
     }
-}
+})
