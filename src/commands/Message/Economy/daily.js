@@ -13,7 +13,7 @@ module.exports = {
     permissoes: [],
     args: false,
 
-    async run(client, message, args, cmduser, text, prefix, player) {
+    async run(client, message, args, prefix) {
 
         let user = message.author;
         let timeout = 86400000;
@@ -33,7 +33,7 @@ module.exports = {
                 }))
                 //.setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
                 .setTimestamp();
-            message.inlineReply(timeEmbed);
+            message.reply({ embeds: [timeEmbed] });
         } else {
             let time = ms(timeout - (Date.now() - daily));
 
@@ -45,7 +45,7 @@ module.exports = {
                 }))
                 //.setThumbnail(message.author.displayAvatarURL({dynamic: true}))
                 .setTimestamp();
-            message.inlineReply(moneyEmbed);
+            message.reply({ embeds: [moneyEmbed] });
 
             db.add(`money_${user.id}`, amount);
             db.set(`daily_${user.id}`, Date.now());

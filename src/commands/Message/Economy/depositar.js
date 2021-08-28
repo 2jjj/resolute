@@ -27,7 +27,7 @@ module.exports = {
             .setDescription(`<:x_:856894534071746600> **|** Você não dinheiro suficiente para realizar o deposito!`)
 
         if (member < args[0]) {
-            return message.inlineReply(`${message.author}`, embed4);
+            return message.reply({ embeds: [embed4] });
         };
 
         let embed5 = new Discord.MessageEmbed()
@@ -35,7 +35,7 @@ module.exports = {
             .setDescription(`Você tem que colocar um valor maior que 0 para realizar o deposito!`)
 
         if (args[0] < 0) {
-            return message.inlineReply(`${message.author}`, embed5);
+            return message.reply({ embeds: [embed5] });
         };
 
         let embed6 = new Discord.MessageEmbed()
@@ -43,7 +43,7 @@ module.exports = {
             .setDescription(`Você precisa colocar um valor numérico para realizar o deposito!`)
 
         if (isNaN(args[0])) {
-            return message.channel.send(`${message.author}`, embed6);
+            return message.reply({ embeds: [embed6] });
         };
 
         let embed7 = new Discord.MessageEmbed()
@@ -54,7 +54,7 @@ module.exports = {
                 dynamic: true
             }))
             .setTimestamp();
-        message.inlineReply(`${message.author}`, embed7);
+        message.reply({ embeds: [embed7] });
 
         db.add(`bank_${message.author.id}`, args[0]);
         db.subtract(`money_${message.author.id}`, args[0]);
