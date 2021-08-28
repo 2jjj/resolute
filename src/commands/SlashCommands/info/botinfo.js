@@ -11,6 +11,6 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        interaction.followUp({ embeds:  });
+        interaction.followUp({ content: `a`});
     },
 };

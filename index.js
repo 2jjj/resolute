@@ -15,6 +15,6 @@ client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
 
-require("./src/handler")(client);
+require("./src/handler/index")(client).then(console.log('Carreguei os eventos e comandos'))
 
 client.login(client.config.token);
