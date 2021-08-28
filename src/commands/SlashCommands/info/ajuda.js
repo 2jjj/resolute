@@ -56,11 +56,13 @@ module.exports = {
             let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
             let config = client.commands.filter((cmd) => cmd.category === 'config');
             let bot = client.commands.filter((cmd) => cmd.category === 'bot')
-      
+            let pescaria = client.commands.filter((cmd) => cmd.category === 'pescaria')
+
             const embed = new MessageEmbed()  
               //.addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
               .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
               //.addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
+              .addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
               .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
               .addField(`💵 ** | Economia e social** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
               .addField(`🔮 ** | Misc** [${misc.size}]:`, `\`${misc.map(cmd => cmd.name).join(' | ')}\``)

@@ -7,7 +7,7 @@ module.exports = {
     aliases: [""],
     cooldown: 1000 * 2,
     description: "",
-    category: "",
+    category: "pescaria",
     usage: "",
     example: "",
     permissoes: [],
