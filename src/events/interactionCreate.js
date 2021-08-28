@@ -2,7 +2,7 @@ const client = require("../../index");
 const config = require("../../config.json");
 
 client.on("interactionCreate", async (interaction) => {
-    const prefix = config.prefix
+    const prefix = "/"
 
     if (interaction.isCommand()) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});

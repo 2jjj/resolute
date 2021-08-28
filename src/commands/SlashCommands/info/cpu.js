@@ -17,9 +17,7 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        let {
-            version
-        } = require("discord.js");
+        let { version  } = require("discord.js");
 
         cpuStat.usagePercent(function (err, percent, seconds) {
             if (err) {
@@ -35,7 +33,7 @@ module.exports = {
                 .setTitle("** Status **")
                 .setColor("RANDOM")
                 .addField("<:memoryram:854135087037153280> Memória ultilizada", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
-                .addField("<:3199blurplejoin:856520144829808650> Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
+                .addField("<:3199blurplejoin:856520144829808650> Uptime ", `${days}d, ${hours}h, ${mins}m, ${secs}s `, true) //`${duration}`, true)
                 .addField("<:djs:868314375751102484> Discord.js", `v${version}`, true)
                 .addField("<:node:845780252940959744> Versão do Node", `${process.version}`, true)
                 .addField("<:cpu:854137097521987624> CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)

@@ -2,7 +2,7 @@ const { MessageEmbed, Client, CommandInteraction } = require("discord.js");
 const { readdirSync } = require("fs");
 
 module.exports = {
-    name: "ajuda",
+    name: "help",
     description: "Veja os meus comandos",
     type: 'CHAT_INPUT',
     options: [
