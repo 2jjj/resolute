@@ -14,7 +14,7 @@ module.exports = {
 
     async run(client, message, args) {
 
-        if (!config.ownerIDS.includes(message.author.id)) return message.channel.send("Você não pode executar esse comando");
+        if (!config.ownerIDS.includes(message.author.id)) return message.channel.send("Apenas desenvolvedores.");
 
             const code = args.join(' ')
             if (!code) return message.channel.send("kd o eval");

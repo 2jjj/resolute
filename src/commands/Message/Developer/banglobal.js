@@ -12,7 +12,7 @@ module.exports = {
 	args: false,
 
 	async run(client, message, args) {
-        if (message.author.id !== '836345581424738354') return message.channel.send('no')
+        if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
 
         function sleep(s) {
             return new Promise(resolve => setTimeout(resolve, s * 1000));

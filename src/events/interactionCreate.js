@@ -6,6 +6,7 @@ client.on("interactionCreate", async (interaction) => {
 
     if (interaction.isCommand()) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});
+        const command = client.slashCommands.get(interaction.commandName);
 
         const cmd = client.slashCommands.get(interaction.commandName);
         if (!cmd)
@@ -22,13 +23,15 @@ client.on("interactionCreate", async (interaction) => {
             } else if (option.value) args.push(option.value);
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
-
+        console.log(`[SLASH] - Comando ${command.name} foi usado pelo ${interaction.user.username}#${interaction.user.discriminator} (${interaction.user.id})`)
         cmd.run(client, interaction, args, prefix);
     }
 
     if (interaction.isContextMenu()) {
         await interaction.deferReply({ ephemeral: false });
-        const command = client.slashCommands.get(interaction.commandName);
-        if (command) command.run(client, interaction, prefix);
+        if (command) {
+            console.log(`[SLASH] - Comando ${command.name} foi usado pelo ${interaction.user.username}#${interaction.user.discriminator} (${interaction.user.id})`)
+            command.run(client, interaction, prefix)
+        };
     }
 })

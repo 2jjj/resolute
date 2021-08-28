@@ -13,7 +13,7 @@ module.exports = {
 
     async run(client, message, args) {
 
-        if (message.author.id !== '836345581424738354') return message.channel.send('no')
+        if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
 
         client.commands.sweep(() => true)
         glob(`${__dirname}/../**/*.js`, async (err, filePaths) => {

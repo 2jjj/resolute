@@ -15,7 +15,7 @@ module.exports = {
     async run(client, message, args) {
 
         let motivo = args.slice(1).join(" ");
-        if (message.author.id !== '836345581424738354') return message.channel.send('no')
+        if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
         const User = message.guild.members.cache.get(args[0])
         if (!User) return;
 
@@ -38,7 +38,7 @@ module.exports = {
                     .addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
                     .setFooter("Resolute - Blacklist 😎", message.author.displayAvatarURL())
                     .setTimestamp();
-                message.channel.send(embed);
+                message.channel.send({embeds: [embed] });
             }
         })
     }

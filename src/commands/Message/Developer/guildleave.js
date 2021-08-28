@@ -21,7 +21,7 @@ module.exports = {
             .then(g => console.log(`[GUILDLEAVE] -> ${g}`))
             .catch(console.error);
         } else {
-            return;
+            return message.channel.send(`Apenas desenvolvedores.`);
         }
     }
 } 

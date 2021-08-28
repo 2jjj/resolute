@@ -129,7 +129,7 @@ module.exports = {
         await reaction.users.remove(message.author.id);
       });
     } else {
-      return message.channel.send('não quero');
+      return message.channel.send('Apenas desenvolvedores.');
     }
   }
 };

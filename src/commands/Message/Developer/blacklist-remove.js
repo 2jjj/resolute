@@ -14,7 +14,7 @@ module.exports = {
 
     async run(client, message, args) {
 
-        if (message.author.id !== '836345581424738354') return message.channel.send('no')
+        if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
         let motivo = args.slice(1).join(" ");
 
         const User = message.guild.members.cache.get(args[0])
