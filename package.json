@@ -5,7 +5,7 @@
     "main": "shard.js",
     "scripts": {
         "start": "node shard.js",
-        "test": "node .github/tests.js"
+        "test": "node .github/workflows/tests.js"
     },
     "keywords": [],
     "author": "",
