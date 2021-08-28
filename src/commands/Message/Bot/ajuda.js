@@ -85,7 +85,7 @@ module.exports = {
         //.setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
         .setColor("RANDOM");
-      return message.inlineReply(embed);
+      return message.reply({ embeds: [embed] });
     } else {
       const command =
         client.commands.get(args[0].toLowerCase()) ||
@@ -139,7 +139,7 @@ module.exports = {
         )
         .setTimestamp()
         .setColor("RANDOM");
-      return message.inlineReply(embed);
+      return message.reply({ embeds: [embed] });
     }
   },
 };

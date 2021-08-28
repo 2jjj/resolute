@@ -1,11 +1,11 @@
 {
-    "name": "djs",
-    "version": "1.0.0",
+    "name": "resolute",
+    "version": "3.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "shard.js",
     "scripts": {
-        "start": "node index.js",
-        "test": "nodemon index.js"
+        "start": "node shard.js",
+        "test": "node .github/tests.js"
     },
     "keywords": [],
     "author": "",

@@ -15,13 +15,9 @@ module.exports = {
 
   async run(client, message, args, cmduser, text, prefix, player) {
 
-    const promises = [ client.shard.fetchClientValues('guilds.cache.size'), 
-    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')];
-    Promise.all(promises) 	
-    .then(async results => { 	
-        const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0); 	
-        const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);   
-        const global = client.stats.get("global");
+	
+        const totalGuilds = client.guilds.cache.size
+        const totalMembers = client.users.cache.size
 
         let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
         let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
@@ -45,13 +41,12 @@ module.exports = {
         **Estatísticas**
         > 🤔 **|** Uptime ${hours}h ${mins}m
         > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
-        > <:pontin:852197383974551582> **|** Ao total já foram usados ${Math.ceil(global.commands * client.guilds.cache.array().length / 10)} comandos!
         > <:cpu:854137097521987624> **|** Shard: ${message.guild.shard.id}/${config.shards}
 
         **Links úteis :**
         > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
         > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
         `)
-        await message.inlineReply(embed);
-    })
-}}
+        await message.reply({ embeds: [embed] });
+    }
+}
