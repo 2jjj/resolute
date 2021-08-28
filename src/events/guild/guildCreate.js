@@ -1,6 +1,7 @@
-const ee = require(".././config/embed.json");
-const { logs } = require(`.././config/webhooks.json`);
+const ee = require("../../config/embed.json");
+const { logs } = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
+const client = require("../../../index");
 
 module.exports = async (client, guild) => {
     try {

@@ -1,4 +1,5 @@
 const db = require("quick.db");
+const client = require("../../../index");
 
 module.exports = async (member) => {
     try {
