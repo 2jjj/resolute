@@ -36,7 +36,7 @@ module.exports = {
                     .addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
                     .setFooter("Resolute - Blacklist 😎", message.author.displayAvatarURL())
                     .setTimestamp();
-                message.channel.send(embed);
+                message.channel.send({embeds: [embed] });
             } else {
                 message.channel.send(`**${User.displayName}** Não está na blacklist.`)
             }

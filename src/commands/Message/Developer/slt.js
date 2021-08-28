@@ -25,7 +25,7 @@ module.exports = {
         client.guilds.cache
         .sort((a, b) => b.memberCount - a.memberCount)
         .map(r => r)
-        .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
+        .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Membros\nID - ${r.id}`)
         .slice(0, 100)
         .join("\n\n");
 
@@ -39,7 +39,7 @@ module.exports = {
         .setFooter(`Página - ${page}/${Math.ceil(client.guilds.cache.size / 10)}`)
         .setDescription(description);
 
-      let msg = await message.channel.send(embed);
+      let msg = await message.channel.send({ embeds: [embed] });
 
       await msg.react("⬅");
       await msg.react("➡");
@@ -71,7 +71,7 @@ module.exports = {
             .sort((a, b) => b.memberCount - a.memberCount)
             .map(r => r)
             .map(
-              (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Memrosers\nID - ${r.id}`)
+              (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Membros\nID - ${r.id}`)
             .slice(i0, i1)
             .join("\n\n");
 
@@ -83,7 +83,7 @@ module.exports = {
             .setDescription(description);
 
           // Edit the message
-          msg.edit(embed);
+          msg.edit({ embeds: [embed] });
         }
 
         if (reaction._emoji.name === "➡") {
@@ -118,7 +118,7 @@ module.exports = {
             .setDescription(description);
 
           // Edit the message
-          msg.edit(embed);
+          msg.edit({ embeds: [embed] });
         }
 
         if (reaction._emoji.name === "❌") {

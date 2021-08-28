@@ -16,7 +16,7 @@ module.exports = {
         if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
 
         client.commands.sweep(() => true)
-        glob(`${__dirname}/../**/*.js`, async (err, filePaths) => {
+        glob(`${__dirname}/../../**/*.js`, async (err, filePaths) => {
             if (err) return console.log(err);
             filePaths.forEach((file) => {
                 delete require.cache[require.resolve(file)];

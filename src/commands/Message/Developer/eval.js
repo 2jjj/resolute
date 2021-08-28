@@ -28,7 +28,7 @@ module.exports = {
                         .setColor('RED')
                         .setDescription(`***\`\`\`\n ❎ • Você não pode pegar meu token ou me reiniciar! \`\`\`***`)
 
-                    return message.channel.send(Embed)
+                    return message.channel.send({embeds: [Embed] });
                 }
                 const {
                     inspect
@@ -37,12 +37,12 @@ module.exports = {
                     .setColor('GREEN')
                     .setDescription(`**🐱💻 • Eval completo \n\n • Entrada \n \`\`\`\n${code} \`\`\` \n\n • Saida \n \`\`\`\n${inspect(evaled, {depth: 0})}\`\`\` \n\n • Modelo \n \`\`\`\n${typeof(evaled)} \`\`\` \n\n ⌛ • Tempo \n \`\`\`\n${Date.now() - message.createdAt}ms\`\`\`**`)
 
-                message.channel.send(Embed1)
+                message.channel.send({embeds: [Embed1] })
             } catch (err) {
                 const Embed = new Discord.MessageEmbed()
                     .setColor('RED')
                     .setDescription(`**🐱💻 • Eval não completo \n\n • Código \n \`\`\`\n${code}\`\`\` \n\n • Erro \n \`\`\`\n${err}\`\`\`**`)
-                message.channel.send(Embed)
+                message.channel.send({embeds: [Embed] })
             }
         }
     }
