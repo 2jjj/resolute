@@ -13,7 +13,7 @@ module.exports = {
     permissoes: [],
     args: false,
 
-    async run(client, message, args, cmduser, text, prefix, player) {
+    async run(client, message, args, prefix) {
 
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member;
         db.add(`varinhas_${user.id}`, 1)
@@ -29,7 +29,7 @@ module.exports = {
                 .addField(`Você não possui varinhas!`, `Para comprar uma varinha digite \`${prefix}shop\` e compre uma varinha.`)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
-            return message.channel.send(embed);
+            return message.channel.send({ embeds: [embed] });
         }
 
         if(varinhas > 1) {
@@ -38,7 +38,7 @@ module.exports = {
                     .addField(`Você não possui iscas!`, `Para comprar uma isca digite \`${prefix}shop\` e compre uma isca.`)
                     .setFooter(ee.footertext, ee.footericon)
                     .setColor("#1E90FF");
-                return message.channel.send(embed_isca);       
+                return message.channel.send({ embeds: [embed_isca] });       
             }
             let baiacus = Math.floor(Math.random() * 6 + 1);
             let salmoes = Math.floor(Math.random() * 3 + 1);

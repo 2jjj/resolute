@@ -8,7 +8,7 @@ const cpuStat = require("cpu-stat");
 
 module.exports = {
     name: "cpu",
-    description: "Obtenha o meu ping",
+    description: "Consiga informacoes da minha vps",
     type: 'CHAT_INPUT',
     /**
      *

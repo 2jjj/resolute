@@ -39,9 +39,9 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
     client.on("ready", async () => {
-        await client.guilds.cache
+        /*await client.guilds.cache
             .get("836725674567663616")
-            .commands.set(arrayOfSlashCommands);
-        // await client.application.commands.set(arrayOfSlashCommands);
+            .commands.set(arrayOfSlashCommands);*/
+        await client.application.commands.set(arrayOfSlashCommands);
     });
 };

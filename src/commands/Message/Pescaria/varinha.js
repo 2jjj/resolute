@@ -13,7 +13,7 @@ module.exports = {
     permissoes: [],
     args: false,
 
-    async run(client, message, args, cmduser, text, prefix, player) {
+    async run(client, message, args) {
         
         let user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member;
 
