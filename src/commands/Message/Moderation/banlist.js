@@ -17,9 +17,9 @@ module.exports = {
 		if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
 		if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 		
-		const bans = await message.guild.fetchBans();
+		const bans = await message.guild.bans.fetch();
 
-		if (!bans.first()) return message.inlineReply('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
+		if (!bans.first()) return message.reply('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
 
 		let msg = '';
 
@@ -27,7 +27,7 @@ module.exports = {
 			msg += `\`${user.user.tag}\`, `;
 		});
 
-		message.inlineReply('<:mod:856894534088523776> **|** Lista de membros banidos:\n' + msg, {
+		message.reply('<:mod:856894534088523776> **|** Lista de membros banidos:\n' + msg, {
 			split: true
 		});
 	}

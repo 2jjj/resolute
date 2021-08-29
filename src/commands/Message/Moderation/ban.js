@@ -66,7 +66,7 @@ module.exports = {
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setImage(rand)
 			.setTimestamp();
-		message.inlineReply(embed);
+		message.reply({ embeds: [embed] });
 
 		const pv = new Discord.MessageEmbed()
 			.setTitle("Você foi banido!")
@@ -79,7 +79,7 @@ module.exports = {
 				dynamic: true
 			}))
 			.setTimestamp();
-		membro.send(pv);
-		membro.ban();
+		membro.send({ embeds: [pv] });
+		membro.ban({ reason: `Banido por ${message.author.username}#${message.author.discriminator} (${message.author.id}) ` });
 	}
 }
