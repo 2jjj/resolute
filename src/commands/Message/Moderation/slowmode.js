@@ -53,9 +53,9 @@ module.exports = {
 
 		embed.setTitle('Slowmode Ativado com sucesso!')
 			.addField('Slowmode: ', args[0])
-			.addField('Ativado por: ', message.author)
+			.addField('Ativado por: ', ` ${message.author}`)
 			.addField('Razão: ', reason)
 			.setColor("RANDOM");
-		message.channel.setRateLimitPerUser(time, reason).then(m => m.send(embed));
+		message.channel.setRateLimitPerUser(time, reason).then(m => m.send({ embeds: [embed] }));
 	}
 }

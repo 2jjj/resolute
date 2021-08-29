@@ -26,13 +26,13 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			.setTitle(':scales: | Warnlist')
 			.setColor("RANDOM")
-			.setDescription(`🔹 **${user} Tem ${warns} Warns \n🔹 ** Siga as regras para não sofrer advertencia!`)
+			.setDescription(`🔹 **${user} Tem ${warns} Warn's \n🔹 ** Siga as regras para não sofrer advertencia!`)
 			.setFooter(
 				`Requisitado por ${message.author.tag}`,
 				message.author.displayAvatarURL({
 					dynamic: true
 				})
 			)
-		message.inlineReply(embed);
+		message.reply({ embeds: [embed] });
 	}
 }
