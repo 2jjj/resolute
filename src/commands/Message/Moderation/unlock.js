@@ -16,8 +16,8 @@ module.exports = {
 
     async run(client, message, args, prefix) {
 
-		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
+		if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
 		if (!db.fetch(`lock.${message.channel.id}`)) return message.channel.send(`<:x_:856894534071746600> **|** Este canal não está bloqueado.`)
 		let msg = await message.channel.send(`:tada: **|** ${message.author} o canal foi desbloqueado com sucesso! Use ${prefix}}unlock para travar o canal!`)

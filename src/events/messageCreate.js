@@ -105,6 +105,7 @@ client.on("messageCreate", async (message) => {
           if(command.permissoes.bot == 0 || command.permissoes.membro == 0) {
             if (!argumentos[0]) return message.reply({ embeds: [help] });
           } else {
+            if(!argumentos[0]) {
                 help.
                 addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro !== 0 ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
                 .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot !== 0 ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
@@ -112,6 +113,7 @@ client.on("messageCreate", async (message) => {
                 if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)    
                 
                 return message.reply({ embeds: [help] });    
+            }
           }
         }
     } catch { }

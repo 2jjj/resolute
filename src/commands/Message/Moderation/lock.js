@@ -16,8 +16,8 @@ module.exports = {
 
     async run(client, message, args, prefix) {
 
-		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
-		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;
+		if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+		if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
 		if (db.fetch(`lock.${message.channel.id}`)) return message.reply("<a:SETA:852194614927818812> Este canal já está bloqueado.")
 		let msg = await message.channel.send("Sucesso!")
