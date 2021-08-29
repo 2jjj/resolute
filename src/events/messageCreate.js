@@ -1,120 +1,130 @@
 const client = require("../../index");
 const config = require("../../config.json");
-const { logs } = require(`../config/webhooks.json`);
+const {
+  logs
+} = require(`../config/webhooks.json`);
 const sourcebin = require('sourcebin_js');
 const ee = require(`../config/embed.json`)
-const { MessageEmbed } = require(`discord.js`);
+const {
+  MessageEmbed
+} = require(`discord.js`);
 
 client.on("messageCreate", async (message) => {
 
-    //dando fetch nos webhooks
-    let channel = client.channels.cache.get(logs.comandos)
-    const webhooks = await channel.fetchWebhooks();
-    const webhook = webhooks.first();
-    //variavel de argumentos pras logs
-    var argumentos
+  //dando fetch nos webhooks
+  let channel = client.channels.cache.get(logs.comandos)
+  const webhooks = await channel.fetchWebhooks();
+  const webhook = webhooks.first();
+  //variavel de argumentos pras logs
+  var argumentos
 
-    //prefixo
-    const prefix = config.prefix
+  //prefixo
+  const prefix = config.prefix
 
-    //se mencionar o bot`
-    if (message.content.startsWith('<')) {
-        if (message.content.endsWith('>'))
-          if (message.mentions.has(client.user.id)) {
-            return message.reply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
-        }
+  //se mencionar o bot`
+  if (message.content.startsWith('<')) {
+    if (message.content.endsWith('>'))
+      if (message.mentions.has(client.user.id)) {
+        return message.reply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
+      }
+  }
+
+  //verify
+  if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return;
+
+  const [cmd, ...args] = message.content
+    .slice(prefix.length)
+    .trim()
+    .split(" ");
+  const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases ?.includes(cmd.toLowerCase()));
+
+  //se nao tiver o comando
+  if (!command) return;
+  //rodando
+  await command.run(client, message, args, prefix);
+
+  if (command) {
+    //sourcebin e args
+    if (args.slice(0).join(" ").length > 1000) {
+      try {
+        const link = await sourcebin.create([{
+          name: 'Resolute logs',
+          content: args.slice(0).join(" "),
+          languageId: 'text'
+        }]);
+        argumentos = link.url;
+      } catch (e) {
+        argumentos = `ERROR: ${e}`;
+      }
+    } else {
+      argumentos = args.slice(0).join(" ");
     }
 
-    //verify
-    if ( message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix) ) return;
+    //Logs
+    const embed_logs = new MessageEmbed()
+      .setColor(ee.color)
+      .setTitle(`<:setaaa:860626769089265665> Nova comando executado`)
+      .addField('**Servidor**', message.guild.name)
+      .addField('**Servidor ID**', message.guild.id)
+      .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
+      .addField('**Comando**', command.name)
+      .setThumbnail(message.author.displayAvatarURL({
+        dynamic: true,
+        format: "png"
+      }))
+      .setFooter(ee.footertext, ee.footericon)
+      .setTimestamp();
+    if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
+    //enviando
+    await webhook.send({
+      embeds: [embed_logs]
+    });
+    //outras logs no console.log
+    console.log(`[MESSAGE] - Comando ${command.name} foi usado pelo ${message.author.username}#${message.author.discriminator} (${message.author.id})`)
+  }
 
-    const [cmd, ...args] = message.content
-        .slice(prefix.length)
-        .trim()
-        .split(" ");
-    const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
 
-    //se nao tiver o comando
-    if (!command) return;
-    //rodando
-    await command.run(client, message, args, prefix);
+  /**
+   * 
+   * Sistema de args e permissoes
+   * 
+   */
 
-    if(command) {
-        //sourcebin e args
-        if (args.slice(0).join(" ").length > 1000) {
-            try {
-              const link = await sourcebin.create([{
-                name: 'Resolute logs',
-                content: args.slice(0).join(" "),
-                languageId: 'text'
-              }]);
-              argumentos = link.url;
-            } catch (e) {
-              argumentos = `ERROR: ${e}`;
-            }
-        } else {
-            argumentos = args.slice(0).join(" ");
+  const help = new MessageEmbed()
+    .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
+    .setColor("RANDOM")
+    .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
+    .setDescription(`**${command.description}**`)
+    .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
+    .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
+    .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
+      dynamic: true
+    }))
+    .setTimestamp();
+
+  try {
+    if (command.args == true) {
+
+      if (command.permissoes.membro == undefined) command.permissoes.membro = 0;
+      if (command.permissoes.bot == undefined) command.permissoes.bot = 0;
+
+      if (command.permissoes.bot == 0 || command.permissoes.membro == 0) {
+        if (!argumentos[0]) return message.reply({
+          embeds: [help]
+        });
+      } else {
+        if (!argumentos[0]) {
+          help.
+          addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro !== 0 ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
+          .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot !== 0 ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
+          if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
+          if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
+
+          return message.reply({
+            embeds: [help]
+          });
         }
-
-        //Logs
-        const embed_logs = new MessageEmbed()
-            .setColor(ee.color)
-            .setTitle(`<:setaaa:860626769089265665> Nova comando executado`)
-            .addField('**Servidor**', message.guild.name)
-            .addField('**Servidor ID**', message.guild.id)
-            .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
-            .addField('**Comando**', command.name)
-            .setThumbnail(message.author.displayAvatarURL({
-                dynamic: true,
-                format: "png"
-            }))
-            .setFooter(ee.footertext, ee.footericon)
-            .setTimestamp();
-        if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
-        //enviando
-        await webhook.send({ embeds: [embed_logs] });  
-        //outras logs no console.log
-        console.log(`[MESSAGE] - Comando ${command.name} foi usado pelo ${message.author.username}#${message.author.discriminator} (${message.author.id})`)
+      }
     }
-
-
-    /**
-     * 
-     * Sistema de args e permissoes
-     * 
-     */
-    
-    const help = new MessageEmbed()
-        .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
-        .setColor("RANDOM")
-        .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-        .setDescription(`**${command.description}**`)
-        .addField(`:bulb: Modos de Uso:`, ` \`${command.usage.length !== 0 ? `${prefix}${command.name} ${command.usage}` : `${command.name}` }\``)
-        .addField(`:thinking: Exemplo:`, ` \`${command.example !== undefined ? `${prefix}${command.name} ${command.example}` : `Sem exemplos para este comando.` }\``)
-        .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
-            dynamic: true
-        }))
-        .setTimestamp();
-
-    try {
-        if(command.args == true) {
-            
-          if(command.permissoes.membro == undefined) command.permissoes.membro = 0;
-          if(command.permissoes.bot == undefined) command.permissoes.bot = 0;    
-      
-          if(command.permissoes.bot == 0 || command.permissoes.membro == 0) {
-            if (!argumentos[0]) return message.reply({ embeds: [help] });
-          } else {
-            if(!argumentos[0]) {
-                help.
-                addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro !== 0 ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
-                .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot !== 0 ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
-                if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
-                if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)    
-                
-                return message.reply({ embeds: [help] });    
-            }
-          }
-        }
-    } catch { }
+  } catch {}
 })
