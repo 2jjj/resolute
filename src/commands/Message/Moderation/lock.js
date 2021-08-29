@@ -14,7 +14,7 @@ module.exports = {
         bot: ['MANAGE_CHANNELS', 'Gerenciar Canais']
     },
 
-	async run(client, message, args, cmduser, text, prefix, player) {
+    async run(client, message, args, prefix) {
 
 		if (!message.member.hasPermission(module.exports.permissoes.membro[0])) return;
 		if (!message.guild.me.hasPermission(module.exports.permissoes.bot[0])) return;

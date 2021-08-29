@@ -28,7 +28,7 @@ module.exports = {
             .setTimestamp();
 
         if (!args[1]) {
-            return message.inlineReply(`${message.author}`, embed2)
+            return message.reply({ embeds: [embed2] })
         }
 
         let embed4 = new Discord.MessageEmbed()
@@ -40,7 +40,7 @@ module.exports = {
             .setTimestamp();
 
         if (member < args[1]) {
-            return message.inlineReply(`${message.author}`, embed4)
+            return message.reply({  embeds: [embed4] })
         }
 
         let embed5 = new Discord.MessageEmbed()
@@ -52,7 +52,7 @@ module.exports = {
             .setTimestamp();
 
         if (args[1] < 0) {
-            return message.inlineReply(`${message.author}`, embed5)
+            return message.reply({ embeds: [embed5] })
         }
 
         let embed7 = new Discord.MessageEmbed()
@@ -64,7 +64,7 @@ module.exports = {
             .setTimestamp();
 
         if (isNaN(args[1])) {
-            return message.inlineReply(`${message.author}`, embed7)
+            return message.reply({ embeds: [embed7] })
         }
 
         let embed6 = new Discord.MessageEmbed()
@@ -76,7 +76,7 @@ module.exports = {
                 dynamic: true
             }))
             .setTimestamp();
-        message.inlineReply(`${message.author}`, embed6)
+        message.reply({ embeds: [embed6] })
 
         db.add(`money_${user.id}`, args[1])
         db.subtract(`money_${message.author.id}`, args[1])

@@ -12,7 +12,7 @@
         permissoes: [],
         args: false,
 
-        async run(client, message, args, cmduser, text, prefix, player) {
+        async run(client, message, args, prefix) {
 
             const obj = {}
             const obj_badges = {}
@@ -77,7 +77,6 @@
                     dynamic: true
                 }))
                 .setTimestamp();
-            message.inlineReply(profile);
+            message.reply({ embeds: [profile] });
         }
     }
-//Créditos: Spray e cleiton#2040
