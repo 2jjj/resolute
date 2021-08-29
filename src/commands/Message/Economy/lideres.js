@@ -38,7 +38,7 @@ module.exports = {
             .setDescription(finalLb)
             .setFooter(`Seu dinheiro » ${bal}RCoins!`, client.user.displayAvatarURL())
             .setTimestamp()
-        message.inlineReply(embed);
+        message.reply({ embeds: [embed] });
 
     }
 }
