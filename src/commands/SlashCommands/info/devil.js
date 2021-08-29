@@ -2,7 +2,7 @@ const { Client, CommandInteraction } = require("discord.js");
 const fetch = require('node-fetch');
 
 module.exports = {
-    name: "ping",
+    name: "devil",
     description: "Obtenha o meu ping",
     type: 'CHAT_INPUT',
     /**
