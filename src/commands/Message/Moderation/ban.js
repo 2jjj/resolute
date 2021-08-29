@@ -53,7 +53,7 @@ module.exports = {
 		};
 
 		if (!membro.bannable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não possui permissão para banir este membro!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não consigo banir esse membro!`);
 		};
 
 		const embed = new Discord.MessageEmbed()
@@ -70,7 +70,7 @@ module.exports = {
 
 		const pv = new Discord.MessageEmbed()
 			.setTitle("Você foi banido!")
-			.setColor("#RANDOM")
+			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)

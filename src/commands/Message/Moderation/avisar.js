@@ -25,7 +25,7 @@ module.exports = {
 		var warns = await db.get(`warnsCount_${message.guild.id}-${membro.id}`) || 0;
 
 		if (!message.member.roles.highest > membro.roles.highest) {
-			return message.reply(`<:x_:856894534071746600> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!`);
+			return message.reply({ content: `<:x_:856894534071746600> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!`});
 		}
 
 		var list = [
@@ -59,13 +59,12 @@ module.exports = {
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
 			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o warn.` }\``)
-
-		membro.send({ embeds: [embed] })
+		//membro.send({ embeds: [embed] })
 		message.channel.send({ embeds: [embed1] })
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
 
 		if(warns >= 3) {
-			let embed_adv = new Discord.Embed()
+			let embed_adv = new Discord.MessageEmbed()
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)

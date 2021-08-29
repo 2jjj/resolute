@@ -52,17 +52,17 @@ module.exports = {
 		};
 
 		if (!membro.kickable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não possui permissão para expulsar este membro!`);
+			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não consigo expulsar esse membro!`);
 		};
 
 		let embed2 = new Discord.MessageEmbed()
-			.setDescription(`**O membro ${membro} foi expulso do servidor!**`)
+			.setDescription(`**<:ban:843861447522910230> O membro ${membro} foi expulso do servidor!**`)
 			.setColor("RANDOM")
 			.addField("Usuário", `ﾠ<:setaaa:860626769089265665> ${membro}`)
 			.addField("Moderador", `ﾠ<:setaaa:860626769089265665> ${message.author}`)
 			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos.` }\``)
 			.setImage(rand)
-		await message.inlineReply(embed2)
-		await membro.kick(motivo)
+		await message.reply({ embeds: [embed2] })
+		await membro.kick({ reason: motivo})
 	}
 }

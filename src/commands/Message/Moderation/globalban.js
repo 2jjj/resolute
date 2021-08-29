@@ -54,12 +54,10 @@ module.exports = {
 				.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 				.setImage(rand)
 				.setTimestamp();
-			message.channel.send(bannedEmbed)
+			message.reply({embeds: [bannedEmbed] })
 
 		}).catch(err => {
 			console.log(err)
 		})
-
-
 	}
 }
