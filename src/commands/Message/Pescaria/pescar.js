@@ -29,7 +29,7 @@ module.exports = {
                 .addField(`Você não possui varinhas!`, `Para comprar uma varinha digite \`${prefix}shop\` e compre uma varinha.`)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
-            return message.channel.send({ embeds: [embed] });
+            return message.reply({ embeds: [embed] });
         }
 
         if(varinhas > 1) {
@@ -38,7 +38,7 @@ module.exports = {
                     .addField(`Você não possui iscas!`, `Para comprar uma isca digite \`${prefix}shop\` e compre uma isca.`)
                     .setFooter(ee.footertext, ee.footericon)
                     .setColor("#1E90FF");
-                return message.channel.send({ embeds: [embed_isca] });       
+                return message.reply({ embeds: [embed_isca] });      
             }
             let baiacus = Math.floor(Math.random() * 6 + 1);
             let salmoes = Math.floor(Math.random() * 3 + 1);
@@ -58,7 +58,7 @@ module.exports = {
                 `)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
-            return message.channel.send(embed);
+            return message.reply({ embeds: [embed] });
         }
     }
 }
