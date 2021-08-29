@@ -22,7 +22,6 @@ module.exports = {
         const text = args.join(" ")
         let image = `https://api.popcatdev.repl.co/pikachu?text=${encodeURIComponent(text)}`
         let imgae = new MessageAttachment(image, "pika.png")
-        message.channel.send(imgae)
-
+        message.reply({ files: [imgae] });
     }
 }

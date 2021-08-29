@@ -28,6 +28,6 @@ module.exports = {
     let img = await new DIG.Beautiful().getImage(avatar);
 
     let attach = new Discord.MessageAttachment(img, "resolute.png");
-    message.channel.send(attach);
+    message.reply({ files: [attach] });
   }
 }

@@ -23,7 +23,6 @@ module.exports = {
 
     const img = `https://api.popcatdev.repl.co/alert?text=${text}`
     const attachment = new Discord.MessageAttachment(img, `resolute_${message.author.username}.jpg`);
-    message.channel.send(attachment);
-
+    message.reply({ files: [attachment] });
   }
 }

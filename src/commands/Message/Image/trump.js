@@ -26,7 +26,7 @@ module.exports = {
             let json = await res.json();
             let attachment = new(require("discord.js")).MessageAttachment(json.message, `trump-${message.author.id}.png`);
 
-            message.quote(message.author, attachment).then(m2 => {
+            message.reply(message.author, attachment).then(m2 => {
                 message.channel.stopTyping()
             })
         } catch (e) {

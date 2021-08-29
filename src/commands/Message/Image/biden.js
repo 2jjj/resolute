@@ -22,8 +22,6 @@ module.exports = {
     let embed = new Discord.MessageEmbed()
       .setImage(`https://api.popcatdev.repl.co/biden?text=${encodeURIComponent(sentence)}`)
       .setColor('ORANGE')
-      .setFooter(' ');
-    message.channel.send(embed)
-
+    message.reply({ embeds: [embed] })
   }
 }

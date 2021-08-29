@@ -23,7 +23,6 @@ module.exports = {
         if (!text1 || !text2) return;
         const Image = `https://api.popcatdev.repl.co/pooh?text1=${encodeURIComponent(text1)}&text2=${encodeURIComponent(text2)}`
         const poo = new Discord.MessageAttachment(Image, "tuxedopooh.png");
-        message.channel.send(poo);
-
+        message.reply({ files: [poo] });
     }
 }

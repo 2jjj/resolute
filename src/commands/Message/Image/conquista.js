@@ -28,7 +28,7 @@ module.exports = {
 			.setColor("RANDOM")
 			.setImage(`https://minecraftskinstealer.com/achievement/${Math.floor(Math.random() * 39) + 1}/Achievement+Get%21/${a}`);
 
-		message.channel.send(`${message.author}`, embed_conquista)
+		message.reply({ embeds: [embed_conquista] })
 	}
 
 }

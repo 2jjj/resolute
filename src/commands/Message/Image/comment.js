@@ -29,7 +29,7 @@ module.exports = {
                 "content": args.join(" ")
             })
             let attachment = new Discord.MessageAttachment(yt, 'comment.png')
-            message.channel.send(attachment)
+            message.reply({ files: [attachment] });
         } catch (err) {
             console.log(err)
         }

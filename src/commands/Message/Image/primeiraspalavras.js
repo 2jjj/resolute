@@ -36,7 +36,7 @@ module.exports = {
 								var aguardeMessage = message
 								image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
 									const attachment = new Discord.MessageAttachment(buffer, 'primeiraspalavras.png')
-									message.reply(attachment).then(message => {
+									message.reply({ files: [attachment] }).then(message => {
 										aguardeMessage.delete()
 									})
 								})

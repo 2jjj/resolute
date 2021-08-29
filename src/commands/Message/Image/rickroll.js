@@ -31,6 +31,6 @@ module.exports = {
 
         ctx.drawImage(avatar, 270, 10, 300, 320);
         const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'resolute.jpg');
-        message.channel.send(attachment);
+        message.reply({ files: [attachment] });
     }
 }

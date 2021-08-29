@@ -28,6 +28,6 @@ module.exports = {
     let img = await new DIG.Blur().getImage(avatar);
 
     let attach = new Discord.MessageAttachment(img, "blur.png");
-    message.channel.send(attach);
+    message.reply({ files: [attach] });
   }
 }

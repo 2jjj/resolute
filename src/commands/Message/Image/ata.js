@@ -32,7 +32,7 @@ module.exports = {
 		ctx.drawImage(background, 0, 0);
 		let raw = canvas.toBuffer()
 		const attachment = new(require("discord.js")).MessageAttachment(raw, `ata-${message.author.id}.png`);
-		message.quote(message.author, attachment).then(a => {
+		message.reply({ files: [attach] }).then(a => {
 			message.channel.stopTyping()
 		})
 	}

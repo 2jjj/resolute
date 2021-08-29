@@ -28,6 +28,6 @@ module.exports = {
     let img = await new DIG.Trash().getImage(avatar);
 
     let attach = new Discord.MessageAttachment(img, "delete.png");
-    message.channel.send(attach);
+    message.reply({ files: [attach] });
   }
 }

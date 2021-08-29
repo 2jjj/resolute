@@ -28,6 +28,6 @@ module.exports = {
     let gif = await new DIG.Triggered().getImage(avatar);
 
     let attach = new Discord.MessageAttachment(gif, "resolute.gif");
-    message.channel.send(attach);
+    message.reply({ files: [attach] });
   }
 }
