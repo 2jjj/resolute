@@ -19,14 +19,14 @@ module.exports = {
         if (!pergunta) return;
 
         setTimeout(function () {
-            message.reply(respostas)
-        }, 2000)
-        return message.reply('Procurando uma resposta...').then(msg => msg.delete({
-            timeout: 1900
-        }).catch(err => {
-            console.log(err)
-            return;
-        }))
+                message.reply(respostas)
+            }, 2000)
+            return message.reply('Procurando uma resposta...').then(msg => msg.delete({
+                timeout: 1900
+            }).catch(err => {
+                console.log(err)
+                return;
+            }))
 
     }
 }
