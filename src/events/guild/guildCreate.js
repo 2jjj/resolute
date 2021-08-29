@@ -1,7 +1,6 @@
 const ee = require("../../config/embed.json");
 const { logs } = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
-const client = require("../../../index");
 
 module.exports = async (client, guild) => {
     try {
@@ -25,8 +24,7 @@ module.exports = async (client, guild) => {
             .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
             .setFooter(ee.footertext, ee.footericon)
             .setTimestamp();
-
-        await webhook.send(embed);
+        await webhook.send({ embeds: [embed] });
     } catch(e) {
         console.log(e)
     }
