@@ -20,7 +20,6 @@ module.exports = {
             .setImage(`https://mc-heads.net/body/${args[0]}`)
             .setColor("RANDOM")
             .setTimestamp()
-        await message.inlineReply(embed)
-
+        await message.reply({ embeds: [embed] });
     }
 }

@@ -20,8 +20,8 @@ module.exports = {
 		fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${query}`)
 			.then(res => res.json())
 			.then(json => {
-				message.channel.send({
-					embed: json
+				message.reply({
+					embeds: [json]
 				}).catch(() => message.reply("Não achei nenhum resultado para a sua pesquisa!"))
 
 			})

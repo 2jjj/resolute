@@ -33,12 +33,12 @@ module.exports = {
 		if (json.description) return message.reply("Cor inválida.")
 		let embed = new Discord.MessageEmbed()
 			.setTitle(json.name)
-			.addField("RGB", json.rgb, true)
-			.addField("Brightness", json.brightness, true)
-			.addField("Hex", json.hex, true)
+			.addField("RGB", ` ${json.rgb}`, true)
+			.addField("Brilho", ` ${json.brightness} `, true)
+			.addField("Hex", ` ${json.hex} `, true)
 			.setThumbnail(json.image)
 			.setImage(json.image_gradient, true)
 			.setColor(json.hex)
-		message.inlineReply(embed)
+		message.reply({ embeds: [embed] })
 	}
 }

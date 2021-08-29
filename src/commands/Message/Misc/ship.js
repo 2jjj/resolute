@@ -83,7 +83,7 @@ module.exports = {
       .setColor("RANDOM")
       .setDescription("**" + amor + "%** [`" + loveLevel + "`]")
       .setFooter("Resolute")
-      .attachFiles([amorat]).setImage('attachment://ship.png')
-    message.inlineReply('<@' + message.author.id + '> \n' + desc, amorEmbed)
+      .setImage('attachment://ship.png')
+    message.reply({ content: '<@' + message.author.id + '> \n' + desc, embeds: [amorEmbed], files: [amorat] })
   }
 };

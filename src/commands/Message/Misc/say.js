@@ -24,9 +24,10 @@ module.exports = {
 		const sayMessage = args.join(' ')
 
 		const say = new Discord.MessageEmbed()
+			.setColor('#2F3136')
 			.setAuthor(user.tag, avatar)
 			.setDescription(sayMessage)
 		//message.delete()
-		message.inlineReply(say)
+		message.reply({ embeds: [say] })
 	}
 }

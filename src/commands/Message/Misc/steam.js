@@ -24,7 +24,7 @@ module.exports = {
 				let other = results.otherData
 				const embed = new Discord.MessageEmbed()
 					.setTitle(results.name)
-					.setColor("RANDOM")
+					.setColor('#2F3136')
 					.setDescription(`\n
                     <:setaaa:860626769089265665> **Gênero:** \`${results.genres.join(', ')} \`
                     <:setaaa:860626769089265665> **Plataforma:** \`${other.platforms.join(', ')}\`
@@ -32,7 +32,7 @@ module.exports = {
                     <:setaaa:860626769089265665> **Desenvolvedor:** \`${other.developer.join(', ')}\``)
 					.setThumbnail(other.imageUrl)
 					.setFooter(message.author.tag, message.author.displayAvatarURL(), message.author.displayAvatarURL)
-				return message.inlineReply(embed)
+				return message.reply({ embeds: [embed] })
 			})
 		})
 	}

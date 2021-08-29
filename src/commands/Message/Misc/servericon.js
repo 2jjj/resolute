@@ -14,11 +14,12 @@ module.exports = {
 	async run(client, message, args) {
 
 		let icone = new Discord.MessageEmbed()
+		    .setColor('#2F3136')
 			.setDescription(`**Clique [aqui](${message.guild.iconURL()}) para baixar o ícone do servidor!**`)
 			.setImage(message.guild.iconURL({
 				dynamic: true,
 				size: 2048
 			}))
-		message.channel.send(icone)
+		message.reply({ embeds: [icone] })
 	}
 }

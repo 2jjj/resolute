@@ -23,7 +23,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setTitle(c.name)
-                .setColor("4169e1")
+                .setColor('#2F3136')
                 .setThumbnail(c.flag)
                 .addField("Nome:", c.name, true)
                 .addField("Capital:", c.capital, true)
@@ -32,7 +32,7 @@ module.exports = {
                 .addField("População:", c.population, true)
                 .addField("Área:", c.area, true)
                 .addField("Moeda:", `${c.currency.name} (${c.currency.short})\nSimbolo: ${c.currency.symbol}`)
-            message.channel.send(embed)
+            message.reply({ embeds: [embed] })
         } catch(e) {
             message.inlineReply("Não encontrei esse pais!")
         }

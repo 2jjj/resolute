@@ -20,17 +20,17 @@ module.exports = {
         if (require('is-url')(args[0])) {
             const attachment = new Discord.MessageAttachment(qrlink, 'qrcode.png');
             const embed = new Discord.MessageEmbed()
+                .setColor('#2F3136')
                 .attachFiles(attachment)
                 .setImage('attachment://qrcode.png')
                 .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
                     dynamic: true
                 }))
                 .setTimestamp()
-
-            message.inlineReply(embed)
+            message.reply({ embeds: [embed] })
 
         } else {
-            message.channel.send("URL inválida.")
+            message.reply("URL inválida.")
         }
     }
 }

@@ -32,50 +32,41 @@ module.exports = {
     ].join("\n");
 
     const SERVERINFO = new Discord.MessageEmbed()
+      .setColor('#2F3136')
       .setAuthor(message.guild.name, message.guild.iconURL({
         dynamic: true
       }))
       .addFields({
         name: "🆔 ID do Servidor:",
-        value: message.guild.id,
+        value: ` ${message.guild.id}`,
         inline: true
       }, {
         name: "<:coroa:856527751816937482> Propietário:",
-        value: message.guild.owner.user.tag,
+        value: ` ${message.guild.fetchOwner().user}`,
         inline: true,
       }, {
         name: "<:calendario:876819338802376735> Data de Criação:",
         value: `${moment(message.guild.createdAt).format("L")} ( ${moment(
               message.guild.createdAt
             )
-              .startOf("day")
-              .fromNow()} )`,
-      }, {
-        name: "<:calendario:876819338802376735> Data da minha Entrada:",
-        value: `${moment(
-              message.guild.member(client.user.id).joinedAt
-            ).format("L")} ( ${moment(
-              message.guild.member(client.user.id).joinedAt
-            )
-              .startOf("day")
-              .fromNow()} )`,
-        inline: true,
+            .startOf("day")
+            .fromNow()} )`,
       }, {
         name: "<:NitroBoost:869959413379792896> Boosters",
-        value: boost
+        value: ` ${boost}`
       }, {
         name: "👥 Total de Usuários:",
-        value: message.guild.memberCount.toLocaleString(),
+        value: ` ${ message.guild.memberCount.toLocaleString()}`,
         inline: true,
       }, {
         name: "🤖 Bots:",
-        value: message.guild.members.cache
+        value: ` ${message.guild.members.cache
           .filter((x) => x.user.bot)
-          .size.toLocaleString(),
+          .size.toLocaleString()}`,
         inline: true,
       }, {
-        name: `<:5702blurpletextchannel:856520145042931722> Total de Canais: ( **${message.guild.channels.cache.size}** )`,
-        value: channels,
+        name: `<:3199blurplejoin:856520144829808650> Total de Canais: ( **${message.guild.channels.cache.size}** )`,
+        value: ` ${channels}`,
       })
       .setThumbnail(message.guild.iconURL({
         dynamic: true
@@ -84,6 +75,6 @@ module.exports = {
         dynamic: true
       }));
 
-    message.inlineReply(SERVERINFO);
+    message.reply({ embeds: [SERVERINFO] });
   }
 }

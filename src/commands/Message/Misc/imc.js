@@ -34,10 +34,11 @@ module.exports = {
 				.addField('Altura', height)
 				.addField('IMC', imc)
 				.addField('Categoria', category)
+				.setColor('#2F3136')
 
-			return message.inlineReply(embed)
+			return message.reply({ embeds: [embed] })
 		} else {
-			return message.inlineReply('Algo deu errado, por favor, verifique os dados informados e tente novamente.')
+			return message.reply('Algo deu errado, por favor, verifique os dados informados e tente novamente.')
 		}
 	}
 }

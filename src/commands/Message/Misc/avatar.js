@@ -21,14 +21,14 @@ module.exports = {
 		});
 
 		let embed = new Discord.MessageEmbed()
-			.setColor(`RANDOM`)
+			.setColor('#2F3136')
 			.setTitle(`:frame_photo: Avatar de ${user.username}`)
 			.setDescription(`Clique [aqui](${avatar}) para baixar a imagem!`)
 			.setImage(avatar)
 			.setFooter(`» Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
 				format: "png"
 			}));
-		await message.channel.send(embed);
+		await message.reply({ embeds: [embed] });
 
 	}
 }

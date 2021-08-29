@@ -32,7 +32,7 @@ module.exports = {
                   .setColor(`RANDOM`)
                   .setTitle(`:frame_photo: OCR | ${message.author.username}`)
                   .setDescription(`\`\`\`${response.data.ParsedResults.map(parse => parse.ParsedText.replace(/`/g, ''))}\`\`\``)
-                message.channel.send(embed);
+                message.reply({ embeds: [embed] });
               })
         } catch(e) {
             console.log(e);

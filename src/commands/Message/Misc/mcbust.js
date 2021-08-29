@@ -20,6 +20,6 @@ module.exports = {
       .setImage(`https://minotar.net/bust/${args[0]}/200.png`)
       .setColor("RANDOM")
       .setTimestamp()
-    await message.inlineReply(embed);
+    await message.reply({ embeds: [embed] });
   }
 };
