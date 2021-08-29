@@ -4,7 +4,7 @@ module.exports = {
 	cooldown: 1000 * 2,
 	description: "Limpar uma determinada quantidade de mensagens no chat.",
 	category: "mod",
-	usage: "<0/99>",
+	usage: "<1/99>",
 	example: "99",
 	args: true,
 	permissoes: {
@@ -18,16 +18,12 @@ module.exports = {
 		if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
 		if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
-		let user = message.author.username
+        let amount = args[0]
 
-		const deleteCount = parseInt(args[0], 10);
+        if (amount <= 100) {
+            message.channel.bulkDelete(amount, true)
+        }
 
-		const fetched = await message.channel.messages.fetch({
-			limit: deleteCount + 1
-		});
-
-		message.channel.bulkDelete(fetched); {
-			await message.inlineReply(`<:v_:856894534184468480> **|** O chat teve ${deleteCount} mensagens deletadas por ${message.author}!`);
-		}
+		message.reply({ content: `<:v_:856894534184468480> **|** O chat teve ${amount} mensagens deletadas por ${message.author}!` });
 	}
 };
