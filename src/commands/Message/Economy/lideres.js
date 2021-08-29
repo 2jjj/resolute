@@ -20,7 +20,7 @@ module.exports = {
                 .setAuthor(message.member.displayName, message.author.displayAvatarURL())
                 .setColor("#ff58c3")
                 .setFooter("Ninguém")
-            return message.inlineReply(noEmbed)
+            return message.reply({ embeds: [noEmbed] })
         };
 
         money.length = 20;
