@@ -52,9 +52,9 @@ module.exports = {
                 .setTitle('<:pescaria:879504651739861064> Pescaria')
                 .setDescription(`Você pescou e conseguiu:
                 
-                ${baiacus} baiacus
-                ${salmoes} salmoes
-                ${bacalhais} bacalhais
+                ${baiacus} Baiacus
+                ${salmoes} Salmoes
+                ${bacalhais} Bacalhais
                 `)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");

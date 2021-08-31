@@ -22,7 +22,7 @@ module.exports = {
 
         if (varinhas < 1) {
             const embed = new Discord.MessageEmbed()
-                .addField("Você não possui nenhuma varinha de pesca.", "Para comprar uma varinha basta ultilizar s.varinha comprar")
+                .addField("Você não possui nenhuma varinha de pesca.", `Para comprar uma varinha basta ultilizar \`${prefix}loja\` para comprar`)
                 .setFooter(ee.footertext, ee.footericon)
                 .setColor("#1E90FF");
             message.channel.send(embed)
