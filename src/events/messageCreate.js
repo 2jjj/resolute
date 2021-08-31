@@ -43,6 +43,7 @@ client.on("messageCreate", async (message) => {
   //rodando
   await command.run(client, message, args, prefix);
 
+  //******** IF COMMAND ********
   if (command) {
     //sourcebin e args
     if (args.slice(0).join(" ").length > 1000) {

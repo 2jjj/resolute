@@ -13,7 +13,6 @@
     "dependencies": {
         "ascii-table": "^0.0.9",
         "axios": "^0.21.1",
-        "canvacord": "^5.2.3",
         "colors": "^1.4.0",
         "cpu-stat": "^2.0.1",
         "discord-image-generation": "^1.4.9",
