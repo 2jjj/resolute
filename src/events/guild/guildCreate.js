@@ -1,4 +1,3 @@
-const config = require("../../config/config.json");
 const ee = require("../../config/embed.json");
 const { logs } = require(`../../config/webhooks.json`);
 const Discord = require("discord.js");
@@ -19,14 +18,13 @@ module.exports = async (client, guild) => {
             .setTitle(`<:1113blurpleplus:856520144797040690> Novo servidor!`)
             .addField('**Servidor**', guild.name, true)
             .addField('**Server ID**', guild.id, true)
-            .addField('**Dono**', guild.owner.user.tag)
+            .addField('**Dono**', guild.fetchOwner())
             .addField('**Total de membros**', guild.memberCount, true)
             .setThumbnail(guild.iconURL({ dynamic: true }))
             .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
             .setFooter(ee.footertext, ee.footericon)
             .setTimestamp();
-
-        await webhook.send(embed);
+        await webhook.send({ embeds: [embed] });
     } catch(e) {
         console.log(e)
     }
