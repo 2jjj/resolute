@@ -1,0 +1,98 @@
+application DETAILS:
+
+Resolute is a complete application for your server.
+
+It has SEVERAL systems and has a setup music channel, an config panel to manage the autorole, modlogs, welcome message, prefix, etc.
+Among its most relevant categories are: Music, Minecraft, Economy, Fun, Utilities, Moderation, Configuration, Image manipulation, etc.
+Most people are interested in the bot because of the music system, in it you can control music in real time.
+For more information: https://github.com/ResoluteProject/guide
+
+=====================================================================
+
+Data collection:
+
+what discord data your store?:
+
+ServerID, UserID, ChannelsID, RolesID, Emojis and texts messages.
+Basically Guild Data and User Data.
+
+---
+
+FOR WHAT PURPOSES DO YOU STORE IT?:
+
+I store this to make boot systems work.
+Systems like autorole, modlogs, economy (which stores userID and guildID to save users' coins), change the prefix, etc.
+
+---
+
+FOR HOW LONG DO YOU STORE IT?:
+
+While the bot is on the server data are kept, economy data, autorole, modlogs, prefix, etc.
+
+When the bot is removed from the server this data is deleted from the database.
+
+The user can also request the deletion of these data on my private, support server or by the s.request command.
+
+---
+
+WHAT IS THE PROCESS FOR USERS TO REQUEST DELETION OF THEIR DATA?:
+
+- The user can always contact me on dm to make the request.
+
+- You can request the deletion of data using the s.request command.
+
+- Or you can kick the bot from the server.
+
+---
+
+=====================================================================
+
+WHAT SYSTEMS AND INFRASTRUCTURE DO YOU USE?:
+
+I use a 2GB Ram vps, 2 vCPUs.
+
+For the database I use quick.db, MongoDB, enmap.
+
+For the music system I use Lavalink.
+
+I made the bot in discord.js(node.js)
+
+Basically this.
+
+---
+
+HOW HAVE YOU SECURED ACCESS TO YOUR SYSTEMS AND INFRASTRUCTURE?:
+
+The server has anti-ddos security.
+
+It has passwords and checks for each server.
+
+- 1 password for lavalink.
+
+- 1 Password for the server.
+
+- 1 password for the VPS.
+
+- 1 password for the database.
+
+---
+
+HOW CAN USERS CONTACT YOU WITH SECURITY ISSUES?:
+
+- They can contact me at the DM.
+
+- You can contact me through the support and security server.
+
+- You can use the s.report command.
+
+---
+
+
+DOES YOUR APPLICATION UTILIZE OTHER THIRD-PARTY AUTH SERVICES OR CONNECTIONS? IF SO, WHICH, AND WHY?:
+
+It uses the apis: api.ocr.space, the api itself, and the topgg api to update the bot information.
+
+I use topgg's api to update bot info;
+The OCR api for the OCR command;
+
+============================
