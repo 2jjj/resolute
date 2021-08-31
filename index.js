@@ -1,4 +1,4 @@
-const { Client, Collection } = require("discord.js");
+﻿const { Client, Collection } = require("discord.js");
 const mongoose = require("mongoose");
 require(`colors`)
 
@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
 }).then(console.log("MongoDB conectado com sucesso!"));
 
 const client = new Client({
-    intents: 32767,
+  intents: 32767,
 });
 module.exports = client;
 
