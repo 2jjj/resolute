@@ -21,7 +21,7 @@ module.exports = {
         if (!user) return;
 
         if (user.id == autor.id) {
-            return message.inlineReply(`<:x_:856894534071746600> **|** Você não pode se auto-roubar!`);
+            return message.reply(`<:x_:856894534071746600> **|** Você não pode se auto-roubar!`);
         };
 
         let user_money = await db.fetch(`money_${user.id}`)
@@ -31,7 +31,7 @@ module.exports = {
         if (autor_money == null) autor_money = 0;
 
         if (user_money <= 0) {
-            return message.inlineReply(`Você não pode roubar alguem que não possui dinheiro!`);
+            return message.reply(`Você não pode roubar alguem que não possui dinheiro!`);
         };
 
         let timeout = 86400000;
@@ -51,7 +51,7 @@ module.exports = {
                 }))
                 .setTimestamp();
 
-            message.inlineReply(`${autor}`, timeEmbed);
+            message.reply({ embeds: [timeEmbed] });
 
         } else {
 
@@ -60,7 +60,6 @@ module.exports = {
             if (sorte == 2) {
 
                 let amount = Math.floor(Math.random() * autor_money) + 1;
-
                 let moneyEmbed = new Discord.MessageEmbed()
                     .setTitle("👮 **|** Preso por Roubo")
                     .setColor("RED")
@@ -69,7 +68,7 @@ module.exports = {
                         dynamic: true
                     }))
                     .setTimestamp();
-                message.inlineReply(`${autor}`, moneyEmbed);
+                message.reply({ embeds: [moneyEmbed] });
 
                 db.subtract(`money_${autor.id}`, amount);
                 db.set(`rob_${autor.id}`, Date.now());
@@ -77,7 +76,6 @@ module.exports = {
             } else {
 
                 let amount = Math.floor(Math.random() * user_money) + 1;
-
                 let moneyEmbed = new Discord.MessageEmbed()
                     .setTitle("🔫 **|** Roubo Realizado")
                     .setColor("GREEN")
@@ -88,7 +86,7 @@ module.exports = {
                     }))
                     .setTimestamp();
 
-                message.inlineReply(`${autor}`, moneyEmbed);
+                message.reply({ embeds: [moneyEmbed] });
 
                 db.subtract(`money_${user.id}`, amount);
                 db.add(`money_${autor.id}`, amount);
