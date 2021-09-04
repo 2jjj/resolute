@@ -3,12 +3,12 @@ const { readdirSync } = require("fs");
 
 module.exports = {
     name: "ajuda",
-    description: "Veja os meus comandos",
+    description: "[📝 INFO]  Veja os meus comandos!",
     type: 'CHAT_INPUT',
     options: [
         {
             name: 'comando',
-            description: 'Caso queira informacoes mais complexas de um comando',
+            description: 'Caso queira informacões mais complexas de um comando.',
             type: 'STRING',
             required: false
         }

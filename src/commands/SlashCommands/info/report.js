@@ -2,7 +2,7 @@ const { MessageEmbed, Client, CommandInteraction, DiscordAPIError } = require("d
 
 module.exports = {
     name: "report",
-    description: "Reportar um erro para a minha equipe de desenvolvedores",
+    description: "[📝 INFO]  Reportar um erro para a minha equipe de desenvolvedores.",
     type: 'CHAT_INPUT',
     options: [
         {

@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: "ping",
-    description: "Obtenha o meu ping",
+    description: "[📝 INFO]  Obtenha o meu ping!",
     type: 'CHAT_INPUT',
     /**
      *
