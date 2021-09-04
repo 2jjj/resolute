@@ -2,7 +2,6 @@ const { bsToken } = require('../../../config/keys.json');
 const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 const { stripIndents } = require('common-tags');
-const { Permissions } = require('discord.js');
 
 module.exports = {
   name: "club",
@@ -10,24 +9,20 @@ module.exports = {
   description: "Ver informações de um clan",
   category: "brawl",
   cooldown: 1000 * 2,
-  usage: "",
-  example: "",
+  usage: "<tag>",
+  example: "#2QGPUJV82",
   permissoes: {
     membro: [],
     bot: []
   }, 
-  args: false,
+  args: true,
 
   run: async (client, message, args, prefix) => {
 
     let members = 0;
     let president;
     const bestPlayers = [];
-    if (!args[0]) {
-        return message.channel.send(
-            'Por favor me de a tag do clan!'
-        );
-    }
+    if (!args[0]) return;
 
     const res = await fetch(`https://api.brawlstars.com/v1/clubs/${encodeURIComponent(args[0])}`, {
         method: 'GET',

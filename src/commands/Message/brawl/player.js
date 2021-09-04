@@ -3,29 +3,24 @@ const { MessageEmbed } = require('discord.js');
 const { stripIndents } = require('common-tags');
 const {  bsToken } = require('../../../config/keys.json');
 
-
 module.exports = {
     name: "player",
     aliases: [],
     description: "Ver informações de um player",
     category: "brawl",
     cooldown: 1000 * 2,
-    usage: "",
-    example: "",
+    usage: "<tag>",
+    example: "#2QGPUJV82",
     permissoes: {
         membro: [],
         bot: []
     },
-    args: false,
+    args: true,
 
     run: async (client, message, args, prefix) => {
 
         let brawlers = 0;
-		if (!args[0]) {
-			return message.channel.send(
-				'Please provide a tag!'
-			);
-		}
+		if (!args[0]) return;
 
 		const res = await fetch(`https://api.brawlstars.com/v1/players/${encodeURIComponent(args[0])}`, {
 			method: 'GET',
@@ -38,11 +33,11 @@ module.exports = {
 		const json = await res.json();
 		if (status === 404) {
 			return message.channel.send(
-				'Por favor me de uma tag!'
+				'Essa tag é inválida.'
 			);
 		} else if (status === 503) {
 			return message.channel.send(
-                '**Brawl Stars** está em manutenção, tente novamente mais tarde.'
+                'O **Brawl Stars** está em manutenção, tente novamente mais tarde.'
             );
 		}
 
@@ -66,11 +61,11 @@ module.exports = {
 					\`${json.club.name ? `${json.club.name} | ${json.club.tag}` : 'Nenhum'}\`
 					**Troféus**
 					\`${json.trophies}\`
-					**Maior troféus**
+					**Maiores troféus**
 					\`${json.highestTrophies}\`
 					**Maiores Pontos de Potência**
 					\`${json.highestPowerPlayPoints}\`
-					**O mais alto nível Robo Rumble passou**
+					**Nivel mais alto que passou no Robo Rumble**
 					\`${json.bestRoboRumbleTime}\`
 					**3 vs 3 Vitórias**
 					\`${json['3vs3Victories']}\`
