@@ -1,6 +1,7 @@
 const db = require("quick.db");
 const Discord = require("discord.js");
 const ee = require(`../../../config/embed.json`);
+const peixes = require("./peixes.json")
 
 module.exports = {
     name: "pescar",
@@ -43,11 +44,22 @@ module.exports = {
             let baiacus = Math.floor(Math.random() * 6 + 1);
             let salmoes = Math.floor(Math.random() * 3 + 1);
             let bacalhais = Math.floor(Math.random() * 10 + 1);
+            let bota = Math.floor(Math.random() * 2 + 1);
+            let tilapias = Math.floor(Math.random() * 7 + 1);
+            let pirapitingas = Math.floor(Math.random() * 14 + 1);
+            let piraibas = Math.floor(Math.random() * 20 + 1);
+            let pirararas = Math.floor(Math.random() * 4 + 1);
 
             db.add(`baiacus_${user.id}`, baiacus)
             db.add(`salmoes_${user.id}`, salmoes)
             db.add(`bacalhais_${user.id}`, bacalhais)
-            
+
+            var rand1 = peixes[Math.floor(Math.random() * peixes.length)];
+            var rand2 = peixes[Math.floor(Math.random() * peixes.length)];
+            var rand3 = peixes[Math.floor(Math.random() * peixes.length)];
+            var arr = [];
+            var arr_final = arr.concat(rand1, rand2, rand3)
+
             const embed = new Discord.MessageEmbed()
                 .setTitle('<:pescaria:879504651739861064> Pescaria')
                 .setDescription(`Você pescou e conseguiu:
