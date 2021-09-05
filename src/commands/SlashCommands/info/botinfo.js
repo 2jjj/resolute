@@ -30,18 +30,21 @@ module.exports = {
             //.setTitle("**Outras informações**")
             .setColor("RANDOM")
             .setDescription(`
-        > **Outras informações:**
-        > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
-        > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.5
-        > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
-        > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
-        > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
-        > <:offfzz:868635422086013018> **|** Uptime de ${hours}h ${mins}m
-        > <:mine_foguete:852197847754604565> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
+        ・ Olá ${interaction.user} como vai? me chamo Resolute, tenho o intuito de melhorar o seu servidor!
+        Fui criado na linguagem Javascript e atualmente possuo mais de ${client.commands.size} comandos para ajudar o seu servidor!
 
-        > **Links úteis:**
-        > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
-        > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
+        ** ・ Outras informações:**
+            > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
+            > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.5
+            > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
+            > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
+            > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
+            > <:offfzz:868635422086013018> **|** Uptime de ${hours}h ${mins}m
+            > <:mine_foguete:852197847754604565> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
+        **・ Links úteis:**
+            > <:1113blurpleplus:856520144797040690> **|** [Suporte](https://discord.gg/GRhdTpsTGE)
+            > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
+            > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
         `)
 
         const message = await interaction.followUp({ embeds: [embed] });
