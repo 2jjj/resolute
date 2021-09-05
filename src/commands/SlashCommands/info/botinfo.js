@@ -13,6 +13,7 @@ module.exports = {
      */
     run: async (client, interaction, args, prefix) => {
 
+
         const totalGuilds = client.guilds.cache.size
         const totalMembers = client.users.cache.size
 
@@ -40,8 +41,19 @@ module.exports = {
         > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
         `)
 
-        interaction.followUp({
-            embeds: [embed]
+        const message = await interaction.followUp({ embeds: [embed] });
+        message.react('👍');
+
+        const filter = (reaction, user) => {
+            return reaction.emoji.name === '👍' && user.id === interaction.user.id;
+        };
+        
+        const collector = message.createReactionCollector({ filter, time: 40000 });
+
+        collector.on('collect', (reaction, user) => {
+            if(user.id == client.user.id) return;
+            console.log(0)
+            interaction.editReply('Clico')
         });
     },
 };
