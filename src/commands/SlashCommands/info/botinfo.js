@@ -23,19 +23,17 @@ module.exports = {
         let mins = Math.floor((client.uptime / 60) % 60);
 
         let embed = new MessageEmbed()
-            .setTitle("**Outras informações**")
+            //.setTitle("**Outras informações**")
             .setColor("RANDOM")
             .setDescription(`
+        > **Outras informações:**
         > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
         > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.5
         > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
         > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
         > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
-
-        > **Estatísticas:**
-        > 🤔 **|** Uptime ${hours}h ${mins}m
-        > <:pontin:852197383974551582> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
-        > <:cpu:854137097521987624> **|** Shard: ${interaction.guild.shard.id}/${config.shards}
+        > <:offfzz:868635422086013018> **|** Uptime de ${hours}h ${mins}m
+        > <:mine_foguete:852197847754604565> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
 
         > **Links úteis:**
         > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
