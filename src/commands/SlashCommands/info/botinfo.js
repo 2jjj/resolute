@@ -17,6 +17,9 @@ module.exports = {
         const totalGuilds = client.guilds.cache.size
         const totalMembers = client.users.cache.size
 
+        const os = require('os')
+        const cpuStat = require("cpu-stat");
+
         let { version } = require("discord.js");
         let secs = Math.floor(client.uptime % 60);
         let days = Math.floor((client.uptime % 31536000) / 86400);
@@ -42,18 +45,33 @@ module.exports = {
         `)
 
         const message = await interaction.followUp({ embeds: [embed] });
-        message.react('👍');
+        message.react('<:5864blurplesearch:856520144817881118>');
 
         const filter = (reaction, user) => {
-            return reaction.emoji.name === '👍' && user.id === interaction.user.id;
+            return reaction.emoji.id === '856520144817881118' && user.id === interaction.user.id;
         };
         
         const collector = message.createReactionCollector({ filter, time: 40000 });
 
         collector.on('collect', (reaction, user) => {
             if(user.id == client.user.id) return;
-            console.log(0)
-            interaction.editReply('Clico')
+            cpuStat.usagePercent(function (err, percent, seconds) {
+                if (err) {
+                    return console.log(err);
+                }
+                let embed2 = new MessageEmbed()
+                    .setTitle("** Status **")
+                    .setColor("RANDOM")
+                    .addField("<:memoryram:854135087037153280> Memória ultilizada", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
+                    .addField("<:3199blurplejoin:856520144829808650> Uptime ", `${days}d, ${hours}h, ${mins}m, ${secs}s `, true) //`${duration}`, true)
+                    .addField("<:djs:868314375751102484> Discord.js", `v${version}`, true)
+                    .addField("<:node:845780252940959744> Versão do Node", `${process.version}`, true)
+                    .addField("<:cpu:854137097521987624> CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
+                    .addField("<:cpuv:854137395254657026> CPU Usada", `\`${percent.toFixed(2)}%\``, true)
+                    .addField("<:linux:854135555557425163> Arquitetura", `\`${os.arch()}\``, true)
+                    .addField("<:linux:854135555557425163> OS", `\`\`${os.platform()}\`\``, true)
+                interaction.editReply({ embeds: [embed2] })
+            })
         });
     },
 };
