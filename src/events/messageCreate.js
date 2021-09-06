@@ -3,14 +3,12 @@ const config = require("../../config.json");
 const { logs } = require(`../config/webhooks.json`);
 const ee = require(`../config/embed.json`)
 const { MessageEmbed } = require(`discord.js`);
-const blacklist = require('../databases/Schemas/blacklist')
 
 client.on("messageCreate", async (message) => {
 
   let channel = client.channels.cache.get(logs.comandos);
   const webhooks = await channel.fetchWebhooks();
   const webhook = webhooks.first();
-
   var argumentos;
 
   const prefix = config.prefix;
