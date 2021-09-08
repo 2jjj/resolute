@@ -25,7 +25,7 @@ module.exports = {
 		var warns = await db.get(`warnsCount_${message.guild.id}-${membro.id}`) || 0;
 
 		if (!message.member.roles.highest > membro.roles.highest) {
-			return message.reply({ content: `<:x_:856894534071746600> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!`});
+			return message.reply({ content: `<:outline_clear_black_24dp:884962739007672390> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!`});
 		}
 
 		var list = [
@@ -46,9 +46,9 @@ module.exports = {
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário avisado:`, `ﾠ<:setaaa:860626769089265665> ${membro} | \`${membro.id}\``)
-			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+			.addField(`Usuário avisado:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${membro} | \`${membro.id}\``)
+			.addField(`Autor:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setImage(rand)
 			.setTimestamp();
@@ -58,7 +58,7 @@ module.exports = {
 			.setColor("RANDOM")
 			.setFooter(`Staff responsável: ${message.author.username}`, message.author.displayAvatarURL())
 			.setImage(rand)
-			.setDescription(`<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o warn.` }\``)
+			.setDescription(`<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o warn.` }\``)
 		//membro.send({ embeds: [embed] })
 		message.channel.send({ embeds: [embed1] })
 		await db.add(`warnsCount_${message.guild.id}-${membro.id}`, 1)
@@ -68,7 +68,7 @@ module.exports = {
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.setDescription(`O usuário ${membro} foi **banido** por atingir 3 advertências!`)
+			.setDescription(`<:outline_arrow_right_alt_black_24:884959628973178910> O usuário ${membro} foi **banido** por atingir 3 advertências!`)
 			.setTimestamp();
 			
 			message.channel.send({ embeds: [embed_adv]})
