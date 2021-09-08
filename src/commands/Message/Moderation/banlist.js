@@ -19,7 +19,7 @@ module.exports = {
 		
 		const bans = await message.guild.bans.fetch();
 
-		if (!bans.first()) return message.reply('<:x_:856894534071746600> **|** Este servidor não possui membros banidos!');
+		if (!bans.first()) return message.reply('<:outline_clear_black_24dp:884962739007672390> **|** Este servidor não possui membros banidos!');
 
 		let msg = '';
 

@@ -24,6 +24,6 @@ module.exports = {
             message.channel.bulkDelete(amount, true)
         }
 
-		message.reply({ content: `<:v_:856894534184468480> **|** O chat teve ${amount} mensagens deletadas por ${message.author}!` });
+		message.reply({ content: `<:outline_check_circle_black_24dp:884962192502423582> **|** O chat teve ${amount} mensagens deletadas por ${message.author}!` });
 	}
 };
