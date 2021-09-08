@@ -1,7 +1,6 @@
 const { glob } = require("glob");
 const { promisify } = require("util");
 const { Client } = require("discord.js");
-
 const globPromise = promisify(glob);
 
 /**
@@ -20,7 +19,6 @@ module.exports = async (client) => {
             client.commands.set(file.name, properties);
         }
     });
-
     
     const eventFiles = await globPromise(`${process.cwd()}/src/events/*.js`);
     eventFiles.map((value) => require(value));
@@ -38,7 +36,10 @@ module.exports = async (client) => {
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);
     });
+
     client.on("ready", async () => {
+        client.manager.init(client.user.id);
+        console.log('init lavalink')
         await client.guilds.cache
             .get("836725674567663616")
             .commands.set(arrayOfSlashCommands);

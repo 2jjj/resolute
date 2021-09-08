@@ -1,5 +1,5 @@
 const client = require("../../index");
-const config = require("../../config.json");
+const config = require("../config/config.json");
 const { logs } = require(`../config/webhooks.json`);
 const ee = require(`../config/embed.json`)
 const { MessageEmbed } = require(`discord.js`);
@@ -59,7 +59,6 @@ client.on("messageCreate", async (message) => {
   
   }//Finalizado o if(command) btw
 
-
   /**
    * 
    * Sistema de args e permissoes
@@ -103,6 +102,23 @@ client.on("messageCreate", async (message) => {
       }
     }
   } catch {}
+  const player = message.client.manager.get(message.guild.id);
 
-  //Finalização do código ;v
+  const embed = new MessageEmbed()
+  .setColor("RED");
+  
+  if (command.player && !player) {
+      embed.setDescription("There is no player for this guild.");
+      return message.channel.send({embeds: [embed]});
+  }
+
+  if (command.inVoiceChannel && !message.member.voice.channel) {
+      embed.setDescription("You must be in a voice channel!");
+      return message.channel.send({embeds: [embed]});
+  }
+
+  if (command.sameVoiceChannel && message.member.voice.channel !== message.guild.me.voice.channel) {
+      embed.setDescription(`You must be in the same channel as ${message.client.user}!`);
+      return message.channel.send({embeds: [embed]});
+  }
 })
