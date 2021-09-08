@@ -14,7 +14,7 @@ module.exports = client;
 
 client.commands = new Collection();
 client.slashCommands = new Collection();
-client.config = require("./config.json");
+client.config = require("./src/config/config.json");
 
 require("./src/handler/index")(client).then(console.log('Carreguei os comandos'))
 require("./src/handler/events")(client).then(console.log('Carreguei os eventos'))
