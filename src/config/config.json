@@ -8,6 +8,8 @@
   "SpotifySecret": "62d796ebb5e44d31a011a17cd9879457",
   "ownerID": "836345581424738354",
   "embedColor": "#303236",
+  "mongourl": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db",
+  "ksoftapi": "",
 
   "nodes": [
     {
