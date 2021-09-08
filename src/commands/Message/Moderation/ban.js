@@ -37,32 +37,32 @@ module.exports = {
 		const motivo = args.slice(1).join(" ");
 
 		if (membro.id == client.user.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me banir!`);
+			return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode me banir!`);
 		};
 
 		if (membro.id == message.author.id) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Banir** nesse servidor!`);
+			return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode se **Auto-Banir** nesse servidor!`);
 		};
 
 		if (!message.member.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode banir este membro, pois ele tem o cargo mais maior que o seu!`);
+			return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode banir este membro, pois ele tem o cargo mais maior que o seu!`);
 		};
 
 		if (!message.guild.me.roles.highest > membro.roles.highest) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso banir este membro, pois ele tem o cargo maior que o meu!`);
+			return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, eu não posso banir este membro, pois ele tem o cargo maior que o meu!`);
 		};
 
 		if (!membro.bannable) {
-			return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não consigo banir esse membro!`);
+			return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, eu não consigo banir esse membro!`);
 		};
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Resolute")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Usuário banido:`, `ﾠ<:setaaa:860626769089265665> ${membro.user} | \`${membro.id}\``)
-			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+			.addField(`Usuário banido:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${membro.user} | \`${membro.id}\``)
+			.addField(`Autor:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setFooter("Resolute - Punições", message.author.displayAvatarURL())
 			.setImage(rand)
 			.setTimestamp();
@@ -72,8 +72,8 @@ module.exports = {
 			.setTitle("Você foi banido!")
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-			.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-			.addField(`Motivo:`, `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
+			.addField(`Autor:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+			.addField(`Motivo:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : `Sem motivos para o banimento.` }\``)
 			.setImage(rand)
 			.setFooter("Resolute - Punições", message.guild.iconURL({
 				dynamic: true
