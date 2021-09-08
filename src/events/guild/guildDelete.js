@@ -9,7 +9,7 @@ module.exports = async (client, guild) => {
             if(err) return console.log(err)
         })
 
-        let channel = client.channels.cache.get(logs.saidas)
+        let channel = client.channels.cache.get(logs.saidas);
         const webhooks = await channel.fetchWebhooks();
         const webhook = webhooks.first();
 
