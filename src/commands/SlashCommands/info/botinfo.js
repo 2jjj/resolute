@@ -1,3 +1,6 @@
+
+const os = require('os')
+const cpuStat = require("cpu-stat");
 const { MessageEmbed , Client, CommandInteraction} = require("discord.js");
 const config = require("../../../config/config.json")
 
@@ -13,14 +16,13 @@ module.exports = {
      */
     run: async (client, interaction, args, prefix) => {
 
+        var usedMemory = os.totalmem() -os.freemem(), totalMemory = os.totalmem();
+        var getpercentage = ((usedMemory/totalMemory) * 100).toFixed(2) + '%'
+        
+        let { version } = require("discord.js");
 
         const totalGuilds = client.guilds.cache.size
         const totalMembers = client.users.cache.size
-
-        const os = require('os')
-        const cpuStat = require("cpu-stat");
-
-        let { version } = require("discord.js");
         let secs = Math.floor(client.uptime % 60);
         let days = Math.floor((client.uptime % 31536000) / 86400);
         let hours = Math.floor((client.uptime / 3600) % 24);
@@ -28,23 +30,21 @@ module.exports = {
 
         let embed = new MessageEmbed()
             //.setTitle("**Outras informações**")
-            .setColor("RANDOM")
+            .setColor("#2F3136")
             .setDescription(`
-        ・ Olá ${interaction.user} como vai? me chamo Resolute, tenho o intuito de melhorar o seu servidor!
+        <:outline_info_black_24dp:884959629124186172> ・ Olá ${interaction.user} como vai? me chamo Resolute, tenho o intuito de melhorar o seu servidor!
         Fui criado na linguagem Javascript e atualmente possuo mais de ${client.commands.size} comandos para ajudar o seu servidor!
-
         ** ・ Outras informações:**
-            > <:early_developer_badge:854716150076538901> **|** Desenvolvedor: ${config.spray}
-            > <:1520blurplesettings:856520144851435540> **|** Versão: 3.0.5
-            > <:1598blurplesupport:856520144599777291> **|** Prefixo: ${prefix}
-            > <:djs:868314375751102484> **|** Versão Discord.Js: ${version}
-            > <:node:845780252940959744> **|** Versão do Node.Js: ${process.version}
-            > <:offfzz:868635422086013018> **|** Uptime de ${hours}h ${mins}m
-            > <:mine_foguete:852197847754604565> **|** Estou em ${totalGuilds} servidores com o total de ${totalMembers} usuários.
+            > <:outline_code_black_24dp:884959629078061086> Desenvolvedor: \`${config.spray}\`
+            > <:outline_dashboard_black_24dp:884959629040291870> Total de comandos: \`${client.commands.size}\`
+            > <:outline_groups_black_24dp:884959629036114000> Total de servidores: \`${totalGuilds}\`
+            > <:outline_people_black_24dp:884959628889309237> Total de usuários: \`${totalMembers}\`
+            > <:outline_tag_black_24dp:884959628989968444> Total de canais: \`${client.channels.cache.size}\`
+            > <:outline_emoji_emotions_black_24d:884959628843180083> Total de emojis: \`${client.emojis.cache.size}\`
         **・ Links úteis:**
-            > <:1113blurpleplus:856520144797040690> **|** [Suporte](https://discord.gg/GRhdTpsTGE)
-            > <:1113blurpleplus:856520144797040690> **|** [Me adicione!](https://www.resolutebot.xyz/add)
-            > <:8512blurplelink:856520144843046922> **|** [Website](https://www.resolutebot.xyz)
+            > <:outline_help_outline_black_24dp:884959629191315526> [Suporte](https://discord.gg/GRhdTpsTGE)
+            > <:outline_add_black_24dp:884959502577844244> [Me adicione!](https://www.resolutebot.xyz/add)
+            > <:outline_public_black_24dp:884959885769474118> [Website](https://www.resolutebot.xyz)
         `)
 
         const message = await interaction.followUp({ embeds: [embed] });
