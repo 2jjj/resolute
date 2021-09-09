@@ -61,5 +61,7 @@ client.manager = new Manager({
   client.manager.on(eventName, event.bind(null, client));
 });
 
+client.on("raw", (d) => client.manager.updateVoiceState(d));
+
 
 client.login(client.config.token);

@@ -11,6 +11,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@ksoft/api": "^3.1.9",
         "ascii-table": "^0.0.9",
         "axios": "^0.21.1",
         "chalk": "^4.1.2",
@@ -26,6 +27,8 @@
         "erela.js-spotify": "^1.2.0",
         "figlet": "^1.5.2",
         "glob": "^7.1.7",
+        "image-palette": "^2.1.0",
+        "image-pixels": "^2.2.2",
         "moment": "^2.29.1",
         "mongoose": "^6.0.2",
         "node-fetch": "^2.6.1",
