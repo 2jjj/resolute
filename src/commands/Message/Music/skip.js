@@ -4,7 +4,7 @@ module.exports = {
 	name: "skip",
 	aliases: ["s"],
 	category: "Music",
-	description: "Skip the currently playing song",
+	description: "Pule para a próxima música da fila",
 	args: false,
     usage: "",
     example: "",

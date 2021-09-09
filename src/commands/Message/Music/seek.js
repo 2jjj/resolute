@@ -6,7 +6,7 @@ module.exports = {
 	name: "seek",
 	aliases: [],
 	category: "Music",
-	description: "Seek the currently playing song",
+	description: "Va no minuto desejado da música",
 	args: true,
     usage: "<10s || 10m || 10h>",
     example: "",

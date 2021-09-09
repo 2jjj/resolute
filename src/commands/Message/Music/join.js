@@ -4,7 +4,7 @@ module.exports = {
 	name: "join",
     aliases: ["j"],
     category: "Music",
-    description: "Join voice channel",
+    description: "Faça eu entrar no canal de voz",
     args: false,
     usage: "",
     example: "",

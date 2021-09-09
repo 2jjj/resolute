@@ -4,7 +4,7 @@ module.exports = {
 	name: "leave",
     aliases: ["dc"],
     category: "Music",
-    description: "Leave voice channel",
+    description: "Faça eu sair do canal de voz",
     args: false,
     usage: "",
     example: "",

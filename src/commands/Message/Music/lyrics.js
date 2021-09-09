@@ -6,10 +6,10 @@ const { KSoftClient } = require('@ksoft/api');
 const ksoft = ksoftapi ? new KSoftClient(ksoftapi) : null;
 
 module.exports = {
-	name: "lyrics",
+	//name: "lyrics",
     aliases: ["ly"],
     category: "Music",
-    description: "Get lyrics for the currently playing song",
+    description: "Obter a letra de uma música!",
     args: false,
     usage: "",
     example: "",

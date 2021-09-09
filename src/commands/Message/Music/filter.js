@@ -4,7 +4,7 @@ module.exports = {
 	//name: "filter",
     category: "Music",
     aliases: [ "eq", "equalizer" ],
-    description: "Set EqualizerBand",
+    description: "Equalizador",
     args: true,
     usage: "<Party || Bass || Radio || Pop || Trablebass || Soft || Custom || Off>",
     example: "",

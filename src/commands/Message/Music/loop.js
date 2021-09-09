@@ -4,7 +4,7 @@ module.exports = {
 	name: "loop",
     aliases: ['l'],
     category: "Music",
-	description: "Toggle music loop",
+	description: "Ativar o loop na música",
 	args: false,
     usage: "",
     example: "",

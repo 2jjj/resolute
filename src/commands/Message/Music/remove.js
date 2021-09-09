@@ -3,9 +3,9 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: "remove",
     category: "Music",
-	description: "Remove song from the queue",
+	description: "Remover uma música da fila",
 	args: false,
-    usage: "<Number of song in queue>",
+    usage: "<número da música na fila>",
     example: "",
     permissoes: [],
     player: true,

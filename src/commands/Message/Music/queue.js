@@ -5,7 +5,7 @@ module.exports = {
     name: "queue",
     category: "Music",
     aliases: ["q"],
-    description: "Show the music queue and now playing.",
+    description: "Comando para mostrar a fila de músicas",
     args: false,
     usage: "",
     example: "",

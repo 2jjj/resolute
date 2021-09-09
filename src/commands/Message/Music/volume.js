@@ -4,7 +4,7 @@ module.exports = {
 	name: "volume",
 	aliases: ["v", "vol"],
 	category: "Music",
-	description: "Change volume of currently playing music",
+	description: "Mude o volume da música atual",
 	args: true,
 	usage: "",
 	example: "",

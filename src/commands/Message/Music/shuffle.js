@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: "shuffle",
     category: "Music",
-    description: "Shuffle queue",
+    description: "Embaralhar a fila",
     args: false,
     usage: "",
     example: "",

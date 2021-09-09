@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: "stop",
     category: "Music",
-    description: "Stops the music",
+    description: "Pare a música",
     args: false,
     usage: "",
     example: "",

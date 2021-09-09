@@ -4,7 +4,7 @@ module.exports = {
     name: "autoplay",
     aliases: ["ap"],
 	category: "Music",
-    description: "Toggle music autoplay",
+    description: "Ativar o autoplay na música.",
     args: false,
     usage: "",
     example: "",
