@@ -37,10 +37,9 @@ module.exports = {
 		const emojiskip = message.client.emoji.skip;
 
 		let thing = new MessageEmbed()
-			.setDescription(`${emojiskip} **Skipped**\n[${song.title}](${song.uri})`)
+			.setDescription(`${emojiskip} **Música avancada para a próxima da fila;**\n[${song.title}](${song.uri})`)
 			.setColor(message.client.embedColor)
 			.setTimestamp()
 		return message.channel.send({embeds: [thing]});
-	
     }
 };

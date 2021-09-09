@@ -39,14 +39,14 @@ module.exports = {
 
         const tracks = queue.slice(start, end);
 
-        if (queue.current) embed.addField("Now Playing", `[${queue.current.title}](${queue.current.uri}) \`[${convertTime(queue.current.duration)}]\``);
+        if (queue.current) embed.addField("Agora está tocando:", `[${queue.current.title}](${queue.current.uri}) \`[${convertTime(queue.current.duration)}]\``);
 
-        if (!tracks.length) embed.setDescription(`No tracks in ${page > 1 ? `page ${page}` : "the queue"}.`);
-        else embed.setDescription(`${emojiQueue} Queue List\n` + tracks.map((track, i) => `${start + (++i)} - [${track.title}](${track.uri}) \`[${convertTime(track.duration)}]\``).join("\n"));
+        if (!tracks.length) embed.setDescription(`Sem faixas na ${page > 1 ? `pagina ${page}` : "fila"}.`);
+        else embed.setDescription(`${emojiQueue} Lista de fila\n` + tracks.map((track, i) => `${start + (++i)} - [${track.title}](${track.uri}) \`[${convertTime(track.duration)}]\``).join("\n"));
 
         const maxPages = Math.ceil(queue.length / multiple);
 
-        embed.addField("\u200b", `Page ${page > maxPages ? maxPages : page} of ${maxPages}`);
+        embed.addField("\u200b", `Pagina ${page > maxPages ? maxPages : page} de ${maxPages}`);
 
         return message.channel.send({embeds: [embed]});
     }

@@ -30,7 +30,7 @@ module.exports = {
 		if (!position || position < 0 || position > player.queue.size) { 
 			let thing = new MessageEmbed()
                 .setColor("RED")
-				.setDescription(`Usage: ${message.client.prefix}volume <Number of song in queue>`)
+				.setDescription(`Forma de uso: ${message.client.prefix}skipto <número da música na fila>`)
             return message.channel.send({embeds: [thing]});
 		}
 
@@ -40,7 +40,7 @@ module.exports = {
 		const emojijump = message.client.emoji.jump;
 
 		let thing = new MessageEmbed()
-			.setDescription(`${emojijump} Forward **${position}** Songs`)
+			.setDescription(`${emojijump} Avancei **${position}** músicas`)
 			.setColor(message.client.embedColor)
 			.setTimestamp()
 			

@@ -27,7 +27,7 @@ module.exports = {
         const emojishuffle = message.client.emoji.shuffle;
 
         let thing = new MessageEmbed()
-            .setDescription(`${emojishuffle} Shuffled the queue`)
+            .setDescription(`${emojishuffle} Filha embaralhada.`)
             .setColor(message.client.embedColor)
             .setTimestamp()
         return message.channel.send({embeds: [thing]}).catch(error => message.client.logger.log(error, "error"));

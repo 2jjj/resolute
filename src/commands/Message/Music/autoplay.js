@@ -39,7 +39,7 @@ module.exports = {
                 .setColor(message.client.embedColor)
                 .setTimestamp()
                 .setDescription(`${emojireplay} Autoplay está **habilitado**`)
-           return message.channel.send({embeds: [thing]});
+           return message.reply({embeds: [thing]});
         } else {
             player.set("autoplay", false);
             player.queue.clear();
@@ -48,7 +48,7 @@ module.exports = {
                 .setTimestamp()
                 .setDescription(`${emojireplay} Autoplay está **desabilitado**`)
                
-            return message.channel.send({embeds: [thing]});
+            return message.reply({embeds: [thing]});
         }
 
     }

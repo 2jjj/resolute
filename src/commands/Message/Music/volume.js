@@ -31,7 +31,7 @@ module.exports = {
 			let thing = new MessageEmbed()
 			.setColor(message.client.embedColor)
 			.setTimestamp()
-			.setDescription(`${volumeEmoji} The current volume is: **${player.volume}%**`)
+			.setDescription(`${volumeEmoji} O volume atual é: **${player.volume}%**`)
 			return message.channel.send({embeds: [thing]});
 		}
 
@@ -40,7 +40,7 @@ module.exports = {
 		if (!volume || volume < 0 || volume > 100) { 
 			let thing = new MessageEmbed()
                 .setColor("RED")
-				.setDescription(`Usage: ${message.client.prefix}volume <Number of volume between 0 - 100>`)
+				.setDescription(`Forma de uso: ${message.client.prefix}volume <0/100>`)
             return message.channel.send({embeds: [thing]});
 		}
 
@@ -51,20 +51,20 @@ module.exports = {
 			let thing = new MessageEmbed()
 				.setColor(message.client.embedColor)
 				.setTimestamp()
-				.setDescription(`${emojivolume} Volume set to: **${volume}%**`)
+				.setDescription(`${emojivolume} Ajustei o volume para: **${volume}%**`)
 		  return message.channel.send({embeds: [thing]});
 		} else if (volume < player.volume) {
 			var emojivolume = message.client.emoji.volumelow;
 			let thing = new MessageEmbed()
 				.setColor(message.client.embedColor)
 				.setTimestamp()
-				.setDescription(`${emojivolume} Volume set to: **${volume}%**`)
+				.setDescription(`${emojivolume} Ajustei o volume para: **${volume}%**`)
 		  return message.channel.send({embeds: [thing]});
 		} else {
 			let thing = new MessageEmbed()
 				.setColor(message.client.embedColor)
 				.setTimestamp()
-				.setDescription(`${volumeEmoji} Volume set to: **${volume}%**`)
+				.setDescription(`${volumeEmoji} Ajustei o volume para: **${volume}%**`)
 			return message.channel.send({embeds: [thing]});
 		}
 		

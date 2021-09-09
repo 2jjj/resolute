@@ -27,9 +27,9 @@ module.exports = {
         if (player.paused) {
             let thing = new MessageEmbed()
                 .setColor("RED")
-                .setDescription(`${emojipause} The player is already paused.`)
+                .setDescription(`${emojipause} O player já está pausado.`)
                 .setTimestamp()
-                return message.channel.send({embeds: [thing]});
+            return message.channel.send({embeds: [thing]});
         }
 
         player.pause(true);
@@ -39,8 +39,7 @@ module.exports = {
         let thing = new MessageEmbed()
             .setColor(message.client.embedColor)
             .setTimestamp()
-            .setDescription(`${emojipause} **Paused**\n[${song.title}](${song.uri})`)
-          return message.channel.send({embeds: [thing]});
-	
+            .setDescription(`${emojipause} **Pausei o player\nPara despausar use \`${prefix}resume\`**\n[${song.title}](${song.uri})`)
+        return message.channel.send({embeds: [thing]});
     }
 };

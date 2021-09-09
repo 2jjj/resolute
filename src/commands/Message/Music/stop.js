@@ -35,7 +35,7 @@ module.exports = {
 		let thing = new MessageEmbed()
             .setColor(message.client.embedColor)
             .setTimestamp()
-            .setDescription(`${emojistop} Stopped the music`)
+            .setDescription(`${emojistop} Parei a música`)
         message.channel.send({embeds: [thing]});
 	
   	}

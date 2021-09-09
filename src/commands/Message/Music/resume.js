@@ -13,8 +13,9 @@ module.exports = {
     inVoiceChannel: true,
     sameVoiceChannel: true,
     async run(client, message, args, prefix) {
-  
-		const player = message.client.manager.get(message.guild.id);
+
+        const player = message.client.manager.get(message.guild.id);
+        const song = player.queue.current;
         
         if (!player.queue.current) {
             let thing = new MessageEmbed()
@@ -39,7 +40,6 @@ module.exports = {
             .setDescription(`${emojiresume} **Resumed**\n[${song.title}](${song.uri})`)
             .setColor(message.client.embedColor)
             .setTimestamp()
-        return message.channel.send({embeds: [thing]});
-	
+        return message.channel.send({embeds: [thing]});	
     }
 };

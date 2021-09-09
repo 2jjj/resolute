@@ -27,20 +27,20 @@ module.exports = {
 
         if (args.length && /queue/i.test(args[0])) {
             player.setQueueRepeat(!player.queueRepeat);
-            const queueRepeat = player.queueRepeat ? "enabled" : "disabled";
+            const queueRepeat = player.queueRepeat ? "habilitado" : "desabilitado";
 			let thing = new MessageEmbed()
 				.setColor(message.client.embedColor)
 				.setTimestamp()
-				.setDescription(`${emojiloop} Loop queue is now **${queueRepeat}**`)
+				.setDescription(`${emojiloop} O loop está **${queueRepeat}**`)
 		   return message.channel.send({embeds: [thing]});
         }
 
         player.setTrackRepeat(!player.trackRepeat);
-        const trackRepeat = player.trackRepeat ? "enabled" : "disabled";
+        const trackRepeat = player.trackRepeat ? "habilitado" : "desabilitado";
 		let thing = new MessageEmbed()
 			.setColor(message.client.embedColor)
 			.setTimestamp()
-			.setDescription(`${emojiloop} Loop track is now **${trackRepeat}**`)
+			.setDescription(`${emojiloop} O loop na faixa está **${trackRepeat}**`)
 		    return message.channel.send({embeds: [thing]});
     }
 };

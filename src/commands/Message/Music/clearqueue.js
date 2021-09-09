@@ -31,7 +31,7 @@ module.exports = {
 		let thing = new MessageEmbed()
 			.setColor(message.client.embedColor)
 			.setTimestamp()
-			.setDescription(`${emojieject} Removed all songs from the queue`)
-			  return message.channel.send({embeds: [thing]});
+			.setDescription(`${emojieject} Removi todos os sons da fila.`)
+		return message.reply({embeds: [thing]});
     }
 };

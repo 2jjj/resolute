@@ -27,7 +27,7 @@ module.exports = {
             const number = (position + 1);
             let thing = new MessageEmbed()
                 .setColor("RED")
-                .setDescription(`No songs at number ${number}.\nTotal Songs: ${player.queue.size}`);
+                .setDescription(`Sem músicas no número ${number}.\nMúsicas totais: ${player.queue.size}`);
             return message.channel.send({embeds: [thing]});
         }
 
@@ -38,7 +38,7 @@ module.exports = {
 		let thing = new MessageEmbed()
 			.setColor(message.client.embedColor)
 			.setTimestamp()
-			.setDescription(`${emojieject} Removed\n[${song.track.title}](${song.track.uri})`)
+			.setDescription(`${emojieject} Removida a música:\n[${song.track.title}](${song.track.uri})`)
 		  return message.channel.send({embeds: [thing]});
 	
     }

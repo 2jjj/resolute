@@ -37,7 +37,7 @@ module.exports = {
         var slider = '🔘';
 
         let embed = new MessageEmbed()
-            .setDescription(`${emojimusic} **Now Playing**\n[${song.title}](${song.uri}) - \`[${convertTime(song.duration)}]\` [<@${song.requester.id}>]`)
+            .setDescription(`[${song.title}](${song.uri}) - \`[${convertTime(song.duration)}]\` [<@${song.requester.id}>]`)
             .setThumbnail(song.displayThumbnail("3"))
             .setColor(message.client.embedColor)
             .addField("\u200b", progressbar(total, current, size, line, slider))
