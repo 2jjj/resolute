@@ -12,8 +12,8 @@ module.exports = {
     description: "Get lyrics for the currently playing song",
     args: false,
     usage: "",
-    permission: [],
-    owner: false,
+    example: "",
+    permissoes: [],
     async run(client, message, args, prefix) {
     
 	  try {
