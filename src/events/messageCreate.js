@@ -59,11 +59,29 @@ client.on("messageCreate", async (message) => {
   
   }//Finalizado o if(command) btw
 
-  /**
-   * 
-   * Sistema de args e permissoes
-   * 
-   */
+  //LAVALINK
+
+  const player = message.client.manager.get(message.guild.id);
+
+  const embed = new MessageEmbed()
+  .setColor("#2F3136");
+
+  if (command.player && !player) {
+    embed.setDescription("Não há nada tocando para este servidor.");
+    return message.channel.send({embeds: [embed]});
+  }
+
+  if (command.inVoiceChannel && !message.member.voice.channel) {
+    embed.setDescription("Você precisa estar em um canal de voz!");
+    return message.channel.send({embeds: [embed]});
+  }
+
+  if (command.sameVoiceChannel && message.member.voice.channel !== message.guild.me.voice.channel) {
+    embed.setDescription(`Você precisa estar no mesmo canal que o ${message.client.user}!`);
+    return message.channel.send({embeds: [embed]});
+  }
+
+  //args automátizada.
 
   const help = new MessageEmbed()
     .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
@@ -92,8 +110,8 @@ client.on("messageCreate", async (message) => {
           help.
           addField(`🔹 Permissões que você precisa:`, ` \`${command.permissoes.membro !== 0 ? `${command.permissoes.membro[1]}` : `Não é necessário nenhuma permissão!` }\``)
           .addField(`🔹 Permissões que eu preciso:`, ` \`${command.permissoes.bot !== 0 ? `${command.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
-          if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:x_:856894534071746600> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
-          if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:x_:856894534071746600> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
+          if (!message.member.permissions.has(command.permissoes.membro[0])) return message.reply(`<:outline_clear_black_24dp:884962739007672390> **|** Você não possui a permissão necessária para usar este comando, você precisa da permissão de \`${command.permissoes.membro[1]}\`!`)
+          if (!message.guild.me.permissions.has(command.permissoes.bot[0])) return message.reply(`<:outline_clear_black_24dp:884962739007672390> **|** Eu não tenho a permissão necessária para executar este comando, eu preciso da permissão de \`${command.permissoes.bot[1]}\`!`)
 
           return message.reply({
             embeds: [help]
@@ -102,23 +120,6 @@ client.on("messageCreate", async (message) => {
       }
     }
   } catch {}
-  const player = message.client.manager.get(message.guild.id);
-
-  const embed = new MessageEmbed()
-  .setColor("RED");
-  
-  if (command.player && !player) {
-      embed.setDescription("There is no player for this guild.");
-      return message.channel.send({embeds: [embed]});
-  }
-
-  if (command.inVoiceChannel && !message.member.voice.channel) {
-      embed.setDescription("You must be in a voice channel!");
-      return message.channel.send({embeds: [embed]});
-  }
-
-  if (command.sameVoiceChannel && message.member.voice.channel !== message.guild.me.voice.channel) {
-      embed.setDescription(`You must be in the same channel as ${message.client.user}!`);
-      return message.channel.send({embeds: [embed]});
-  }
 })
+
+//by spray.
