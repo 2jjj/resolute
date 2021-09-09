@@ -13,6 +13,7 @@ module.exports = {
     player: false,
     inVoiceChannel: true,
     sameVoiceChannel: false,
+
     async run(client, message, args, prefix) {
 
         if(!args[0]) return;
@@ -24,7 +25,7 @@ module.exports = {
             let thing = new MessageEmbed()
                 .setColor("RED")
                 .setDescription(`You must be in the same channel as ${message.client.user}`);
-             message.channel.send({embeds: [thing]});
+             message.channel.send({ embeds: [thing] });
         } else if (!player) {
             var player = message.client.manager.create({
                 guild: message.guild.id,
