@@ -12,6 +12,7 @@ module.exports = {
     player: true,
     inVoiceChannel: true,
     sameVoiceChannel: true,
+
     async run(client, message, args, prefix) {
   
 		const player = message.client.manager.get(message.guild.id);
@@ -19,8 +20,8 @@ module.exports = {
         if (!player.queue.current) {
             let thing = new MessageEmbed()
                 .setColor("RED")
-                .setDescription("There is no music playing.");
-            return message.channel.send({embeds: [thing]});
+                .setDescription("Não há nenhuma música tocando atualmente!");
+            return message.reply({embeds: [thing]});
         }
 
 		player.queue.clear();

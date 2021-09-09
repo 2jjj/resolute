@@ -18,10 +18,9 @@ module.exports = {
         if (!player.queue.current) {
             let thing = new MessageEmbed()
                 .setColor("RED")
-                .setDescription("There is no music playing.");
-            return message.channel.send({embeds: [thing]});
+                .setDescription("Não há nenhuma música tocando atualmente!");
+            return message.reply({embeds: [thing]});
         }
-
 
         player.queue.shuffle();
         

@@ -11,6 +11,7 @@ module.exports = {
   player: true,
   inVoiceChannel: true,
   sameVoiceChannel: true,
+
   async run(client, message, args, prefix) {
 
     const player = message.client.manager.players.get(message.guild.id);
@@ -18,16 +19,16 @@ module.exports = {
       player.twentyFourSeven = false;
       const embed = new MessageEmbed()
        .setColor(client.embedColor)
-       .setDescription(`24/7 mode is now off.`)
-      return message.channel.send({embeds: [embed]});
+       .setDescription(`24/7 agora está desabilitado.`)
+      return message.reply({embeds: [embed]});
     }
     else {
       player.twentyFourSeven = true;
       const embed = new MessageEmbed()
        .setColor(client.embedColor)
-       .setDescription(`24/7 mode is now on.`)
+       .setDescription(`24/7 agora está habilitado.`)
       
-      return message.channel.send({embeds: [embed]});
+      return message.reply({embeds: [embed]});
     }
   }
 };

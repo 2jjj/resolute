@@ -16,15 +16,14 @@ module.exports = {
   
 		if(!args[0]) return;
 
-
 		const player = message.client.manager.get(message.guild.id);
 
         if (!player.queue.current) {
             let thing = new MessageEmbed()
                 .setColor("RED")
-                .setDescription("There is no music playing.");
-            return message.channel.send({embeds: [thing]});
-		}
+                .setDescription("Não há nenhuma música tocando atualmente!");
+            return message.reply({embeds: [thing]});
+        }
 		
 		const volumeEmoji = message.client.emoji.volumehigh;
 
