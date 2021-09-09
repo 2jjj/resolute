@@ -55,15 +55,15 @@ module.exports = {
       let manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao');
       let info = client.commands.filter((cmd) => cmd.category === 'info');
       let mod = client.commands.filter((cmd) => cmd.category === 'mod');
-      let music = client.commands.filter((cmd) => cmd.category === '🎶 Music');
+      let music = client.commands.filter((cmd) => cmd.category === 'Music');
       let config = client.commands.filter((cmd) => cmd.category === 'config');
       let bot = client.commands.filter((cmd) => cmd.category === 'bot')
       let pescaria = client.commands.filter((cmd) => cmd.category === 'pescaria')
 
       const embed = new MessageEmbed()  
         //.addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
-        //.addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
+        //.addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`⭐ ** | Brawlstars** [${brawl.size}]:`, `\`${brawl.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`💵 ** | Economia e social** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)

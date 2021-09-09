@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-	name: "filter",
+	//name: "filter",
     category: "Music",
     aliases: [ "eq", "equalizer" ],
     description: "Set EqualizerBand",
