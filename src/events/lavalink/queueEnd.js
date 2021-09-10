@@ -8,7 +8,7 @@ module.exports = async (client, player, message) => {
 	const emojiwarn = client.emoji.warn;
 	let thing = new MessageEmbed()
 		.setColor(client.embedColor)
-		.setDescription(`${emojiwarn} **Todas as músicas foram tocadas.\nEstou saindo do canal de voz!**`)
+		.setDescription(`${emojiwarn} **Todas as músicas foram tocadas.\n👋 Estou saindo do canal de voz!**`)
 		.setFooter(client.user.username, client.user.displayAvatarURL());
 	channel.send({embeds: [thing]});
 }
