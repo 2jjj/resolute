@@ -57,7 +57,7 @@ client.manager = new Manager({
  readdirSync("./src/events/lavalink/").forEach(file => {
   const event = require(`./src/events/lavalink/${file}`);
   let eventName = file.split(".")[0];
-  client.logger.log(`Loading Events Lavalink ${eventName}`, "event");
+  client.logger.log(`Eventos do lavalink -> ${eventName}`, "event");
   client.manager.on(eventName, event.bind(null, client));
 });
 
