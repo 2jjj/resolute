@@ -4,5 +4,5 @@ module.exports = async (client, node) => {
 		  op: 'ping'
 		});
 	  }, 45000);
-	client.logger.log(`Node "${node.options.identifier}" connected.`, "ready");
+	client.logger.log(`Node "${node.options.identifier}" conectado.`, "ready");
 }
