@@ -15,6 +15,14 @@ module.exports = {
   async run(client, message, args, prefix) {
 
     const player = message.client.manager.players.get(message.guild.id);
+
+    if (!player) {
+      let thing = new MessageEmbed()
+        .setColor("RED")
+        .setDescription("Não há nenhuma música tocando atualmente!");
+      return message.reply({embeds: [thing]});
+    }
+
     if (player.twentyFourSeven) {
       player.twentyFourSeven = false;
       const embed = new MessageEmbed()

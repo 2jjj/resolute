@@ -13,9 +13,17 @@ module.exports = {
     inVoiceChannel: true,
     sameVoiceChannel: false,
     async run(client, message, args, prefix) {
-  
-		const { channel } = message.member.voice;
-
+    
+        
+        const { channel } = message.member.voice;
+        
+        if(!channel) {
+            let thing = new MessageEmbed()
+                .setColor("RED")
+                .setDescription("Você não está em nenhum canal de voz!");
+            return message.reply({embeds: [thing]});
+        }
+        
         const emojiJoin = message.client.emoji.join;
 
         if(!message.guild.me.voice.channel) {

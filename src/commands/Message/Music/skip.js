@@ -16,7 +16,7 @@ module.exports = {
   
 		const player = message.client.manager.get(message.guild.id);
 
-        if (!player.queue.current) {
+        if (!player) {
             let thing = new MessageEmbed()
                 .setColor("RED")
                 .setDescription("Não há nenhuma música tocando atualmente!");

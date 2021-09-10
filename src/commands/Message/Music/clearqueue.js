@@ -17,12 +17,12 @@ module.exports = {
   
 		const player = message.client.manager.get(message.guild.id);
 
-        if (!player.queue.current) {
-            let thing = new MessageEmbed()
-                .setColor("RED")
-                .setDescription("Não há nenhuma música tocando atualmente!");
-            return message.reply({embeds: [thing]});
-        }
+    if (!player) {
+      let thing = new MessageEmbed()
+        .setColor("RED")
+        .setDescription("Não há nenhuma música tocando atualmente!");
+      return message.reply({embeds: [thing]});
+    }
 
 		player.queue.clear();
 

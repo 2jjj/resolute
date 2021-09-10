@@ -62,24 +62,25 @@ client.on("messageCreate", async (message) => {
   //LAVALINK
 
   const player = message.client.manager.get(message.guild.id);
+  
+  /*
 
   const embed = new MessageEmbed()
   .setColor("#2F3136");
-
-  if (command.player && !player) {
-    embed.setDescription("Não há nada tocando para este servidor.");
-    return message.channel.send({embeds: [embed]});
-  }
-
+  
   if (command.inVoiceChannel && !message.member.voice.channel) {
     embed.setDescription("Você precisa estar em um canal de voz!");
     return message.channel.send({embeds: [embed]});
   }
-
+  
+  if (command.player && !player) {
+    embed.setDescription("Não há nada tocando para este servidor.");
+    return message.channel.send({embeds: [embed]});
+  }
   if (command.sameVoiceChannel && message.member.voice.channel !== message.guild.me.voice.channel) {
     embed.setDescription(`Você precisa estar no mesmo canal que o ${message.client.user}!`);
     return message.channel.send({embeds: [embed]});
-  }
+  }*/
 
   //args automátizada.
 

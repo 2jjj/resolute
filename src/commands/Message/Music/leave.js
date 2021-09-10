@@ -13,7 +13,14 @@ module.exports = {
     inVoiceChannel: true,
     sameVoiceChannel: true,
     async run(client, message, args, prefix) {
-       
+
+        if(!player) {
+            let thing = new MessageEmbed()
+                .setColor("RED")
+                .setDescription("Eu não estou em um canal de voz!");
+            return message.reply({embeds: [thing]});
+        }
+        
         const player = message.client.manager.get(message.guild.id);
         const emojiLeave = message.client.emoji.leave;
 

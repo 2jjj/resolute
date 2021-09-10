@@ -8,14 +8,14 @@ module.exports = {
     usage: "",
     example: "",
     permissoes: [],
-    player: true,
+    player: false,
     inVoiceChannel: true,
     sameVoiceChannel: true,
     async run(client, message, args, prefix) {
   
         const player = message.client.manager.get(message.guild.id);
 
-        if (!player.queue.current) {
+        if (!player) {
             let thing = new MessageEmbed()
                 .setColor("RED")
                 .setDescription("Não há nenhuma música tocando atualmente!");
@@ -35,7 +35,7 @@ module.exports = {
 		let thing = new MessageEmbed()
             .setColor(message.client.embedColor)
             .setTimestamp()
-            .setDescription(`${emojistop} Parei a música`)
+            .setDescription(`${emojistop} Parei a música e sai de seu canal de voz!`)
         message.channel.send({embeds: [thing]});
 	
   	}

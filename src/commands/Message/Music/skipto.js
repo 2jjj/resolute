@@ -6,8 +6,8 @@ module.exports = {
 	category: "Music",
 	description: "Avance a música",
 	args: true,
-    usage: "",
-    example: "",
+    usage: "<número da música na fila>",
+    example: "2",
     permissoes: [],
     player: true,
     inVoiceChannel: true,
@@ -18,7 +18,7 @@ module.exports = {
 
 		const player = message.client.manager.get(message.guild.id);
 
-        if (!player.queue.current) {
+        if (!player) {
             let thing = new MessageEmbed()
                 .setColor("RED")
                 .setDescription("Não há nenhuma música tocando atualmente!");

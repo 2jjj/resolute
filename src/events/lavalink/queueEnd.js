@@ -2,7 +2,7 @@ const delay = require("delay");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = async (client, player, message) => {
-	message.guild.me.voice.channel.leave();
+	player.destroy();
 
 	const channel = client.channels.cache.get(player.textChannel);
 	const emojiwarn = client.emoji.warn;

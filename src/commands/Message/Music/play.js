@@ -8,7 +8,7 @@ module.exports = {
     description: "Faça eu tocar uma música do Youtube, Soundcloud e Spotify!",
     args: true,
     usage: "<YouTube URL | Nome | Spotify URL>",
-    example: "",
+    example: "Bobby Vinton Mr Lonely",
     permissoes: [],
     player: false,
     inVoiceChannel: true,

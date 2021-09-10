@@ -15,15 +15,15 @@ module.exports = {
     async run(client, message, args, prefix) {
 
         const player = message.client.manager.get(message.guild.id);
-        const song = player.queue.current;
         
-        if (!player.queue.current) {
+        if (!player) {
             let thing = new MessageEmbed()
-                .setColor("RED")
-                .setDescription("Não há nenhuma música tocando atualmente!");
+            .setColor("RED")
+            .setDescription("Não há nenhuma música tocando atualmente!");
             return message.reply({embeds: [thing]});
         }
-
+        
+        const song = player.queue.current;
         const emojiresume = message.client.emoji.resume;
 
         if (!player.paused) {
