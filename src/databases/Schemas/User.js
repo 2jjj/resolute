@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require('mongoose')
 
-let userSchema = new Schema({
-    User: String,
+const userSchema = new Schema({
+  User: String
 })
 
-module.exports = model("user", userSchema)
+module.exports = model('user', userSchema)

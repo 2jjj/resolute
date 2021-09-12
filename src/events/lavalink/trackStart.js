@@ -1,15 +1,14 @@
-const { MessageEmbed } = require("discord.js");
-const { convertTime } = require('../../util/convert');
+const { MessageEmbed } = require('discord.js')
+const { convertTime } = require('../../util/convert')
 
 module.exports = async (client, player, track, payload) => {
-    const channel = client.channels.cache.get(player.textChannel);
-    const emojiplay = client.emoji.play;
+  const channel = client.channels.cache.get(player.textChannel)
+  const emojiplay = client.emoji.play
 
-    const thing = new MessageEmbed()
-        .setDescription(`${emojiplay} **Começando a tocar:**\n [${track.title}](${track.uri}) - \`[${convertTime(track.duration)}]\` [<@${track.requester.id}>]`)
-        .setThumbnail(track.displayThumbnail("3"))
-        .setColor(client.embedColor)
-        .setTimestamp()
-    return channel.send({embeds: [thing]});
-    
+  const thing = new MessageEmbed()
+    .setDescription(`${emojiplay} **Começando a tocar:**\n [${track.title}](${track.uri}) - \`[${convertTime(track.duration)}]\` [<@${track.requester.id}>]`)
+    .setThumbnail(track.displayThumbnail('3'))
+    .setColor(client.embedColor)
+    .setTimestamp()
+  return channel.send({ embeds: [thing] })
 }

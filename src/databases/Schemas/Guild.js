@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require('mongoose')
 
-let guildSchema = new Schema({
-    Guild: String,
-    Name: String,
+const guildSchema = new Schema({
+  Guild: String,
+  Name: String
 })
-module.exports = model("guild", guildSchema)
+module.exports = model('guild', guildSchema)

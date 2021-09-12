@@ -1,43 +1,42 @@
-const Discord = require("discord.js");
-const Jimp = require("jimp");
+const Discord = require('discord.js')
+const Jimp = require('jimp')
 
 module.exports = {
-    name: "wanted",
-    aliases: ["procurado"],
-    cooldown: 1000 * 2,
-    description: "Faça uma pessoa ser procurada.",
-    category: "manipulacao",
-    usage: "@user",
-    example: "",
-    permissoes: {
-        membro: [],
-        bot: ['ATTACH_FILES', 'Anexar arquivos']
-    },
-    args: true,
+  name: 'wanted',
+  aliases: ['procurado'],
+  cooldown: 1000 * 2,
+  description: 'Faça uma pessoa ser procurada.',
+  category: 'manipulacao',
+  usage: '@user',
+  example: '',
+  permissoes: {
+    membro: [],
+    bot: ['ATTACH_FILES', 'Anexar arquivos']
+  },
+  args: true,
 
-    async run(client, message, args) {
+  async run (client, message, args) {
+    const GuildMember = message.mentions.members.first()
+    if (!GuildMember) return
+    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
 
-        let GuildMember = message.mentions.members.first();
-        if (!GuildMember) return;
-        if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return;
+    message.channel.startTyping()
 
-        message.channel.startTyping();
+    const i1 = Jimp.read(GuildMember.user.displayAvatarURL({
+      format: 'png',
+      size: 2048
+    }))
+    const i2 = Jimp.read('https://cdn.discordapp.com/attachments/469606974548344853/501026267798175756/aranuyr.png')
 
-        let i1 = Jimp.read(GuildMember.user.displayAvatarURL({
-            format: "png",
-            size: 2048
-        }));
-        let i2 = Jimp.read("https://cdn.discordapp.com/attachments/469606974548344853/501026267798175756/aranuyr.png");
+    Promise.all([i1, i2]).then((images) => {
+      images[0].resize(450, 442).quality(100)
+      images[1].composite(images[0], 140, 354).quality(100).getBuffer(Jimp.MIME_PNG, (err, buffer) => {
+        if (err) {
+          console.log('\x1b[31m*\x1b[0m Error creating \x1b[33m(Most Wanted)\x1b[0m meme: \x1b[31m' + err + '\x1b[0m')
+        }
 
-        Promise.all([i1, i2]).then((images) => {
-            images[0].resize(450, 442).quality(100);
-            images[1].composite(images[0], 140, 354).quality(100).getBuffer(Jimp.MIME_PNG, (err, buffer) => {
-                if (err) {
-                    console.log("\x1b[31m*\x1b[0m Error creating \x1b[33m(Most Wanted)\x1b[0m meme: \x1b[31m" + err + "\x1b[0m");
-                }
-
-                message.reply(new Discord.MessageAttachment(buffer, "wanted.png")).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
-            });
-        });
-    }
+        message.reply(new Discord.MessageAttachment(buffer, 'wanted.png')).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true))
+      })
+    })
+  }
 }
