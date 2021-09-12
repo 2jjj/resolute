@@ -14,6 +14,8 @@ module.exports = {
     sameVoiceChannel: true,
     async run(client, message, args, prefix) {
 
+        const player = message.client.manager.get(message.guild.id);
+
         if(!player) {
             let thing = new MessageEmbed()
                 .setColor("RED")
@@ -21,7 +23,6 @@ module.exports = {
             return message.reply({embeds: [thing]});
         }
         
-        const player = message.client.manager.get(message.guild.id);
         const emojiLeave = message.client.emoji.leave;
 
         player.destroy();

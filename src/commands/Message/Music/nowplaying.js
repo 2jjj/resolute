@@ -42,7 +42,7 @@ module.exports = {
             .setColor(message.client.embedColor)
             .addField("\u200b", progressbar(total, current, size, line, slider))
             .addField("\u200b", `\`${convertTime(current)} / ${convertTime(total)}\``)
-         return message.channel.send({embeds: [embed]})
+         return message.reply({embeds: [embed]})
             
     }
 };

@@ -32,7 +32,7 @@ module.exports = {
 				.setColor(message.client.embedColor)
 				.setTimestamp()
 				.setDescription(`${emojiloop} O loop está **${queueRepeat}**`)
-		   return message.channel.send({embeds: [thing]});
+		   return message.reply({embeds: [thing]});
         }
 
         player.setTrackRepeat(!player.trackRepeat);
@@ -41,6 +41,6 @@ module.exports = {
 			.setColor(message.client.embedColor)
 			.setTimestamp()
 			.setDescription(`${emojiloop} O loop na faixa está **${trackRepeat}**`)
-		    return message.channel.send({embeds: [thing]});
+		    return message.reply({embeds: [thing]});
     }
 };

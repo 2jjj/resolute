@@ -25,7 +25,7 @@ module.exports = {
             let thing = new MessageEmbed()
                 .setColor("RED")
                 .setDescription(`Você precisa estar no mesmo canal que eu!`);
-             message.channel.send({ embeds: [thing] });
+             message.reply({ embeds: [thing] });
         } else if (!player) {
             var player = message.client.manager.create({
                 guild: message.guild.id,
