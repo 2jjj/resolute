@@ -24,7 +24,7 @@ module.exports = {
     const warns = await db.get(`warnsCount_${message.guild.id}-${membro.id}`) || 0
 
     if (!message.member.roles.highest > membro.roles.highest) {
-      return message.reply({ content: '<:outline_clear_black_24dp:884962739007672390> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao seu!' })
+      return message.reply({ content: '<:outline_clear_black_24dp:884962739007672390> **|** Você não pode dar warn nesse usuário, pois o cargo dele é superior ao meu ou seu!' })
     }
 
     const list = [

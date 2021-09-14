@@ -26,7 +26,6 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
 client.commands = new Collection()
 client.slashCommands = new Collection()
 client.config = require('./src/config/config.json')
-// client.db = new Database(client.config.mongourl);
 client.owner = client.config.ownerID
 client.prefix = client.config.prefix
 client.embedColor = client.config.embedColor
