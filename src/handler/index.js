@@ -38,11 +38,12 @@ module.exports = async (client) => {
   })
 
   client.on('ready', async () => {
+    //Lavalink
     client.manager.init(client.user.id)
-    console.log('init lavalink')
+    //Slash
     await client.guilds.cache
       .get('836725674567663616')
       .commands.set(arrayOfSlashCommands)
-    // await client.application.commands.set(arrayOfSlashCommands).then(console.log(`[SLASH] SETEI OS COMANDOS`));
+    //await client.application.commands.set(arrayOfSlashCommands).then(console.log(`[SLASH] SETEI OS COMANDOS`));
   })
 }
