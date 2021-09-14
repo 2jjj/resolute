@@ -55,32 +55,7 @@ client.on('messageCreate', async (message) => {
     })
 
     console.log(`[MESSAGE] - Comando ${command.name} foi usado pelo ${message.author.username}#${message.author.discriminator} (${message.author.id})`)
-  }// Finalizado o if(command) btw
-
-  // LAVALINK
-
-  const player = message.client.manager.get(message.guild.id)
-
-  /*
-
-  const embed = new MessageEmbed()
-  .setColor("#2F3136");
-
-  if (command.inVoiceChannel && !message.member.voice.channel) {
-    embed.setDescription("Você precisa estar em um canal de voz!");
-    return message.channel.send({embeds: [embed]});
   }
-
-  if (command.player && !player) {
-    embed.setDescription("Não há nada tocando para este servidor.");
-    return message.channel.send({embeds: [embed]});
-  }
-  if (command.sameVoiceChannel && message.member.voice.channel !== message.guild.me.voice.channel) {
-    embed.setDescription(`Você precisa estar no mesmo canal que o ${message.client.user}!`);
-    return message.channel.send({embeds: [embed]});
-  } */
-
-  // args automátizada.
 
   const help = new MessageEmbed()
     .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
@@ -119,5 +94,3 @@ client.on('messageCreate', async (message) => {
     }
   } catch {}
 })
-
-// by spray.
