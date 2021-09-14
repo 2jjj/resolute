@@ -14,8 +14,6 @@ module.exports = async (client, guild) => {
     const webhook = webhooks.first()
     const dono = await guild.fetchOwner()
 
-    console.log(dono)
-
     const embed = new Discord.MessageEmbed()
       .setColor(ee.color)
       .setTitle('<:1113blurpleplus:856520144797040690> Novo servidor!')

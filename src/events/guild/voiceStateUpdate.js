@@ -7,14 +7,14 @@ module.exports = async (client, oldState, newState) => {
   const emojiLeave = client.emoji.leave
   const thing = new MessageEmbed()
     .setColor(client.embedColor)
-    .setDescription(`${emojiLeave} **Leave the voice channel**\nThank you for using ${client.user.username}!`)
+    .setDescription(`${emojiLeave} **Deixei o canal de voz**`)
     .setFooter(client.user.username, client.user.displayAvatarURL())
 
   if (oldVoice != newVoice) {
     if (oldVoice == null) {
 
     } else if (newVoice == null) {
-      // User leaves a voice channel
+      // Usuário deixa um canal de voz
 
       const player = client.manager.get(oldState.guild.id)
       if (!player) return
