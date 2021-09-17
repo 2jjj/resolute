@@ -1,5 +1,5 @@
 module.exports = async (client, shardid) => {
-  client.user.setActivity(`spray no topo | Shard: ${shardid}`, {
+  client.user.setActivity(`Shard: ${shardid}`, {
     shardID: shardid
   })
 }
