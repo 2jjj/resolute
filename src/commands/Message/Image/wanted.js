@@ -18,7 +18,7 @@ module.exports = {
   async run (client, message, args) {
     const GuildMember = message.mentions.members.first()
     if (!GuildMember) return
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
 
     message.channel.startTyping()
 
