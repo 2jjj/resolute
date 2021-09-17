@@ -37,7 +37,7 @@ client.on('messageCreate', async (message) => {
     // Logs
     const embed_logs = new MessageEmbed()
       .setColor(ee.color)
-      .setTitle('<:setaaa:860626769089265665> Nova comando executado')
+      .setTitle('<:outline_search_black_24dp:887149614266990632> Nova comando executado')
       .addField('**Servidor**', message.guild.name)
       .addField('**Servidor ID**', message.guild.id)
       .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
@@ -58,7 +58,7 @@ client.on('messageCreate', async (message) => {
   }
 
   const help = new MessageEmbed()
-    .setTitle(`<:1598blurplesupport:856520144599777291> | Menu de ajuda - \`${command.name}\``)
+    .setTitle(`<:outline_search_black_24dp:887149614266990632> | Menu de ajuda - \`${command.name}\``)
     .setColor('RANDOM')
     .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
     .setDescription(`**${command.description}**`)
