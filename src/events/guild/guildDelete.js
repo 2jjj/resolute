@@ -15,7 +15,7 @@ module.exports = async (client, guild, message) => {
     
     const embed = new Discord.MessageEmbed()
       .setColor(ee.color)
-      .setTitle('<:minecraftdog:877167710423879710> Sai de um servidor')
+      .setTitle('<:outline_remove_black_24dp:887149613864329228> Sai de um servidor')
       .addField('**Servidor**', ' ' + guild.name, true)
       .addField('**Servidor ID**', ' ' + guild.id, true)
       //.addField('**Fundador**', `${owner.user}(${owner})`)

@@ -16,7 +16,7 @@ module.exports = async (client, guild) => {
 
     const embed = new Discord.MessageEmbed()
       .setColor(ee.color)
-      .setTitle('<:1113blurpleplus:856520144797040690> Novo servidor!')
+      .setTitle('<:outline_add_black_24dp:884959502577844244> Novo servidor!')
       .addField('**Servidor**', ' ' + guild.name, true)
       .addField('**Server ID**', ' ' + guild.id, true)
       .addField('**Dono**', ' ' + `${dono.user.username}#${dono.user.discriminator}(${dono})`)
