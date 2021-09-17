@@ -4,7 +4,7 @@ const { convertTime } = require('../../../util/convert')
 module.exports = {
   name: 'play',
   category: 'Music',
-  aliases: ['p'],
+  aliases: ['p', 'tocar', 'plays'],
   description: 'Faça eu tocar uma música do Youtube, Soundcloud e Spotify!',
   args: true,
   usage: '<YouTube URL | Nome | Spotify URL>',
