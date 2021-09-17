@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
-const { flags } = require('../../../util/Emojis')
+const { flags } = require('../../../util/flags')
 
 module.exports = {
   name: 'atm',
