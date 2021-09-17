@@ -13,7 +13,7 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
 
     const Canvas = require('canvas')
     const canvas = Canvas.createCanvas(300, 300)

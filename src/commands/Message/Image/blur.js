@@ -16,7 +16,7 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
 
     const user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member
     const avatar = user.user.displayAvatarURL({
