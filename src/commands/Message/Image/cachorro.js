@@ -16,7 +16,7 @@ module.exports = {
 
   async run (client, message, args) {
     if (!args[0]) return
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
 
     const img = jimp.read('https://pbs.twimg.com/media/DIP-webXgAA6iJQ.jpg')
     img.then(image => {

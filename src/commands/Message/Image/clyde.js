@@ -18,7 +18,7 @@ module.exports = {
   args: true,
 
   async run (client, message, args) {
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
     if (!args[0]) return
 
     const url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${args[0]}`
