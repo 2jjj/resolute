@@ -15,7 +15,7 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    if (!message.guild.me.hasPermission(module.exports.permissoes[0])) return
+    if (!message.guild.me.permissions.has(`${Discord.Permissions}.FLAGS.${module.exports.permissoes[0]}`)) return
 
     const user = message.mentions.members.first() || message.member
     const msg = await message.channel.send('Carregando...')
