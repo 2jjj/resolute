@@ -15,7 +15,7 @@ client.on('messageCreate', async (message) => {
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>')) {
       if (message.mentions.has(client.user.id)) {
-        return message.reply('Olá! meu prefixo atual é `' + prefix + '`, use `' + prefix + 'help` para obter ajuda!')
+        return message.reply(`Olá! meu prefixo atual é ${prefix} use ${prefix}help para obter ajuda!`)
       }
     }
   }
