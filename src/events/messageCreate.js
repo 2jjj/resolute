@@ -15,7 +15,7 @@ client.on('messageCreate', async (message) => {
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>')) {
       if (message.mentions.has(client.user.id)) {
-        return message.reply(`Olá! o meu prefixo atual é ${prefix} use ${prefix}help para obter os meus comandos!\nServidor de suporte: https://discord.gg/GRhdTpsTGE`)
+        return message.reply(`Olá! o meu prefixo atual é \`${prefix}\` use \`${prefix}help\` para obter os meus comandos!\nServidor de suporte: https://discord.gg/GRhdTpsTGE`)
       }
     }
   }
