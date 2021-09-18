@@ -1,5 +1,10 @@
 module.exports = async (client, shardid) => {
-  client.user.setActivity(`Shard: ${shardid}`, {
+  const usersEval = await client.shard.broadcastEval(u => u.users.cache.size)
+  const guildsEval = await client.shard.broadcastEval(g => g.guilds.cache.size)
+  const botUsers = usersEval.reduce((prev, val) => prev + val, 0)
+  const botGuilds = guildsEval.reduce((prev, val) => prev + val, 0)
+
+  client.user.setActivity(`${botGuilds} guilds | Shard: ${shardid}`, {
     shardID: shardid
   })
 }
