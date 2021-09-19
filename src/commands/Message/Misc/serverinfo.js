@@ -40,7 +40,7 @@ module.exports = {
         value: ` ${message.guild.id}`,
         inline: true
       }, {
-        name: '<:coroa:856527751816937482> Propietário:',
+        name: '<:royalcrown:889219130035695616> Propietário:',
         value: ` ${message.guild.fetchOwner().user}`,
         inline: true
       }, {
