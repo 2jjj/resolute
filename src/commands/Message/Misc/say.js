@@ -26,7 +26,7 @@ module.exports = {
       .setColor('#2F3136')
       .setAuthor(user.tag, avatar)
       .setDescription(sayMessage)
-    // message.delete()
+    //message.delete()
     message.reply({ embeds: [say] })
   }
 }
