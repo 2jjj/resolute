@@ -29,7 +29,7 @@ module.exports = {
       }))
 
     if (args[0] === 'off') {
-      if (currentCooldown === 0) return message.channel.send(`<:v_:856894534184468480> **|** O slowmode foi desativado com sucesso por ${message.author}`)
+      if (currentCooldown === 0) return message.channel.send(`<:outline_check_circle_black_24dp:884962192502423582> **|** O slowmode foi desativado com sucesso por ${message.author}`)
 
       embed.setTitle('Slowmode Desativado.')
         .setColor('#00ff00')
@@ -39,13 +39,13 @@ module.exports = {
     const time = ms(args[0]) / 1000
 
     if (isNaN(time)) {
-      return message.channel.send('<:x_:856894534071746600> **|** O tempo que você colocou é inválido!').then(m => m.delete({
+      return message.channel.send('<:outline_clear_black_24dp:884962739007672390> **|** O tempo que você colocou é inválido!').then(m => m.delete({
         timeout: 5000
       }))
     }
 
     if (time >= 21600) {
-      return message.channel.send('<:x_:856894534071746600> **|** Esse limite de modo lento é muito alto, digite qualquer coisa menor que 6 horas.').then(m => m.delete({
+      return message.channel.send('<:outline_clear_black_24dp:884962739007672390> **|** Esse limite de modo lento é muito alto, digite qualquer coisa menor que 6 horas.').then(m => m.delete({
         timeout: 5000
       }))
     }

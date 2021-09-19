@@ -35,31 +35,31 @@ module.exports = {
     const motivo = args.slice(1).join(' ')
 
     if (membro.id == client.user.id) {
-      return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode me expulsar!`)
+      return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode me expulsar!`)
     };
 
     if (membro.id == message.author.id) {
-      return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode se **Auto-Expulsar** nesse servidor!`)
+      return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode se **Auto-Expulsar** nesse servidor!`)
     };
 
     if (!message.member.roles.highest > membro.roles.highest) {
-      return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, você não pode expulsar esse membro, pois ele tem o cargo mais maior que o seu!`)
+      return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, você não pode expulsar esse membro, pois ele tem o cargo mais maior que o seu!`)
     };
 
     if (!message.guild.me.roles.highest > membro.roles.highest) {
-      return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não posso expulsar o membro que possui o cargo maior que o meu!`)
+      return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, eu não posso expulsar o membro que possui o cargo maior que o meu!`)
     };
 
     if (!membro.kickable) {
-      return message.channel.send(`<:x_:856894534071746600> **|** ${message.author}, eu não consigo expulsar esse membro!`)
+      return message.channel.send(`<:outline_clear_black_24dp:884962739007672390> **|** ${message.author}, eu não consigo expulsar esse membro!`)
     };
 
     const embed2 = new Discord.MessageEmbed()
       .setDescription(`**<:ban:843861447522910230> O membro ${membro} foi expulso do servidor!**`)
       .setColor('RANDOM')
-      .addField('Usuário', `ﾠ<:setaaa:860626769089265665> ${membro}`)
-      .addField('Moderador', `ﾠ<:setaaa:860626769089265665> ${message.author}`)
-      .addField('Motivo:', `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos.'}\``)
+      .addField('Usuário', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${membro}`)
+      .addField('Moderador', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author}`)
+      .addField('Motivo:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos.'}\``)
       .setImage(rand)
     await message.reply({ embeds: [embed2] })
     await membro.kick({ reason: motivo })

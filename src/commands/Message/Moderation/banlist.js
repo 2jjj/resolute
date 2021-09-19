@@ -26,7 +26,7 @@ module.exports = {
       msg += `\`${user.user.tag}\`, `
     })
 
-    message.reply('<:mod:856894534088523776> **|** Lista de membros banidos:\n' + msg, {
+    message.reply('Lista de membros banidos:\n' + msg, {
       split: true
     })
   }

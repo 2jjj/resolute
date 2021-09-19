@@ -35,8 +35,8 @@ module.exports = {
     const userID = args[0]
     const motivo = args.slice(1).join(' ')
 
-    if (userID === message.author.id) return message.reply('<:x_:856894534071746600> **|** Você não pode se banir.')
-    if (userID == client.user.id) return message.reply('<:x_:856894534071746600> **|** Você não pode me banir com o **meu própio** comando.')
+    if (userID === message.author.id) return message.reply('<:outline_clear_black_24dp:884962739007672390> **|** Você não pode se banir.')
+    if (userID == client.user.id) return message.reply('<:outline_clear_black_24dp:884962739007672390> **|** Você não pode me banir com o **meu própio** comando.')
 
     client.users.fetch(userID).then(async (user) => {
       await message.guild.members.ban(user.id, {
@@ -46,9 +46,9 @@ module.exports = {
         .setTitle('Resolute')
         .setColor('RANDOM')
         .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
-        .addField('Usuário banido:', `ﾠ<:setaaa:860626769089265665> \`${userID}\``)
-        .addField('Autor:', `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-        .addField('Motivo:', `ﾠ<:setaaa:860626769089265665> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos para o banimento.'}\``)
+        .addField('Usuário banido:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${userID}\``)
+        .addField('Autor:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+        .addField('Motivo:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos para o banimento.'}\``)
         .setFooter('Resolute - Punições', message.author.displayAvatarURL())
         .setImage(rand)
         .setTimestamp()
