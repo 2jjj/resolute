@@ -29,7 +29,7 @@ module.exports = {
 				message.guild.channels.cache.filter((x) => x.type == 'voice').size
 			}`
     ].join('\n')
-
+    
     const SERVERINFO = new Discord.MessageEmbed()
       .setColor('#2F3136')
       .setAuthor(message.guild.name, message.guild.iconURL({
@@ -58,7 +58,7 @@ module.exports = {
         value: ` ${message.guild.memberCount.toLocaleString()}`,
         inline: true
       }, {
-        name: '🤖 Bots:',
+        name: '<:outline_smart_toy_black_24dp:889218032407289916> Bots:',
         value: ` ${message.guild.members.cache
 					.filter((x) => x.user.bot)
 					.size.toLocaleString()}`,
