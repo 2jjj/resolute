@@ -29,7 +29,7 @@ module.exports = {
 				message.guild.channels.cache.filter((x) => x.type == 'GUILD_VOICE').size
 			}`
     ].join('\n')
-    
+
     const serverinfo = new Discord.MessageEmbed()
       .setColor('#2F3136')
       .setAuthor(message.guild.name, message.guild.iconURL({
@@ -59,9 +59,7 @@ module.exports = {
         inline: true
       }, {
         name: '<:outline_smart_toy_black_24dp:889218032407289916> Bots:',
-        value: ` ${message.guild.members.cache
-					.filter((x) => x.user.bot)
-					.size.toLocaleString()}`,
+        value: ` ${message.guild.members.cache.filter(member => member.user.bot).size}`,
         inline: true
       }, {
         name: `<:outline_tag_black_24dp:884959628989968444> Total de Canais: ( **${message.guild.channels.cache.size}** )`,
@@ -73,7 +71,7 @@ module.exports = {
       .setFooter(`Requisitado por: ${message.author.tag}`, message.author.displayAvatarURL({
         dynamic: true
       }))
-
+      
     message.reply({
       embeds: [serverinfo]
     })
