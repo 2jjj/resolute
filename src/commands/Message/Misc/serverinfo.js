@@ -12,20 +12,20 @@ module.exports = {
   permissoes: [],
   args: false,
 
-  async run (client, message, args) {
+  async run(client, message, args) {
     const boost =
-      message.guild.premiumSubscriptionCount === 0
-      	? 'Nenhum Boost'
-      	: `${message.guild.premiumSubscriptionCount} Boost(s) ( Level Server: ${message.guild.premiumTier} )`
+      message.guild.premiumSubscriptionCount === 0 ?
+      'Nenhum Boost' :
+      `${message.guild.premiumSubscriptionCount} Boost(s) ( Level Server: ${message.guild.premiumTier} )`
 
     const channels = [
-			`Categoria: ${
+      `Categoria: ${
 				message.guild.channels.cache.filter((x) => x.type == 'category').size
 			}`,
-			`Texto: ${
+      `Texto: ${
 				message.guild.channels.cache.filter((x) => x.type == 'text').size
 			}`,
-			`Voz: ${
+      `Voz: ${
 				message.guild.channels.cache.filter((x) => x.type == 'voice').size
 			}`
     ].join('\n')
@@ -74,6 +74,8 @@ module.exports = {
         dynamic: true
       }))
 
-    message.reply({ embeds: [SERVERINFO] })
+    message.reply({
+      embeds: [SERVERINFO]
+    })
   }
 }
