@@ -51,7 +51,7 @@ module.exports = {
 					.startOf('day')
 					.fromNow()} )`
       }, {
-        name: '<:badgeBoostLVL9:889219239964180541> Boosters',
+        name: '<:badgeBoostLVL9:889219238978531359> Boosters',
         value: ` ${boost}`
       }, {
         name: '<:outline_people_black_24dp:884959628889309237> Total de Usuários:',
