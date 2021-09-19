@@ -13,7 +13,7 @@ module.exports = {
   permissoes: [],
   args: true,
 
-  async run (client, message, args, cmduser, text, prefix, player) {
+  async run (client, message, args, prefix) {
     if (!args[0]) return
 
     const membro1 = message.mentions.members.first(2)[0] || message.guild.members.cache.get(args[0]) || message.guild.members.cache.get(client.user.id)
