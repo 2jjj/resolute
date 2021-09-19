@@ -20,13 +20,13 @@ module.exports = {
 
     const channels = [
       `Categoria: ${
-				message.guild.channels.cache.filter((x) => x.type == 'category').size
+				message.guild.channels.cache.filter((x) => x.type == 'GUILD_CATEGORY').size
 			}`,
       `Texto: ${
-				message.guild.channels.cache.filter((x) => x.type == 'text').size
+				message.guild.channels.cache.filter((x) => x.type == 'GUILD_TEXT').size
 			}`,
       `Voz: ${
-				message.guild.channels.cache.filter((x) => x.type == 'voice').size
+				message.guild.channels.cache.filter((x) => x.type == 'GUILD_VOICE').size
 			}`
     ].join('\n')
     
