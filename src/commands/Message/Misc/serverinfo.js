@@ -30,7 +30,7 @@ module.exports = {
 			}`
     ].join('\n')
     
-    const SERVERINFO = new Discord.MessageEmbed()
+    const serverinfo = new Discord.MessageEmbed()
       .setColor('#2F3136')
       .setAuthor(message.guild.name, message.guild.iconURL({
         dynamic: true
@@ -41,7 +41,7 @@ module.exports = {
         inline: true
       }, {
         name: '<:royalcrown:889219130035695616> Propietário:',
-        value: ` ${message.guild.fetchOwner().user}`,
+        value: ` ${await message.guild.fetchOwner()}`,
         inline: true
       }, {
         name: '<:outline_event_black_24dp:889218032403120158> Data de Criação:',
@@ -75,7 +75,7 @@ module.exports = {
       }))
 
     message.reply({
-      embeds: [SERVERINFO]
+      embeds: [serverinfo]
     })
   }
 }
