@@ -44,7 +44,7 @@ module.exports = {
         value: ` ${message.guild.fetchOwner().user}`,
         inline: true
       }, {
-        name: '<:calendario:876819338802376735> Data de Criação:',
+        name: '<:outline_event_black_24dp:889218032403120158> Data de Criação:',
         value: `${moment(message.guild.createdAt).format('L')} ( ${moment(
 					message.guild.createdAt
 				)
@@ -64,7 +64,7 @@ module.exports = {
 					.size.toLocaleString()}`,
         inline: true
       }, {
-        name: `<:outline_tag_black_24dp:884959628989968444>s Total de Canais: ( **${message.guild.channels.cache.size}** )`,
+        name: `<:outline_tag_black_24dp:884959628989968444> Total de Canais: ( **${message.guild.channels.cache.size}** )`,
         value: ` ${channels}`
       })
       .setThumbnail(message.guild.iconURL({
