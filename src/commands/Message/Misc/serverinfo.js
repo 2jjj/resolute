@@ -36,7 +36,7 @@ module.exports = {
         dynamic: true
       }))
       .addFields({
-        name: '🆔 ID do Servidor:',
+        name: '<:outline_description_black_24dp:889218032331788308> ID do Servidor:',
         value: ` ${message.guild.id}`,
         inline: true
       }, {
@@ -54,7 +54,7 @@ module.exports = {
         name: '<:NitroBoost:869959413379792896> Boosters',
         value: ` ${boost}`
       }, {
-        name: '👥 Total de Usuários:',
+        name: '<:outline_people_black_24dp:884959628889309237> Total de Usuários:',
         value: ` ${message.guild.memberCount.toLocaleString()}`,
         inline: true
       }, {
@@ -64,7 +64,7 @@ module.exports = {
 					.size.toLocaleString()}`,
         inline: true
       }, {
-        name: `<:3199blurplejoin:856520144829808650> Total de Canais: ( **${message.guild.channels.cache.size}** )`,
+        name: `<:outline_tag_black_24dp:884959628989968444>s Total de Canais: ( **${message.guild.channels.cache.size}** )`,
         value: ` ${channels}`
       })
       .setThumbnail(message.guild.iconURL({
