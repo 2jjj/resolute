@@ -51,11 +51,9 @@ module.exports = {
       const economia = client.commands.filter((cmd) => cmd.category === 'economia')
       const brawl = client.commands.filter((cmd) => cmd.category === 'brawl')
       const manipulacao = client.commands.filter((cmd) => cmd.category === 'manipulacao')
-      const info = client.commands.filter((cmd) => cmd.category === 'info')
       const mod = client.commands.filter((cmd) => cmd.category === 'mod')
       const music = client.commands.filter((cmd) => cmd.category === 'Music')
       const config = client.commands.filter((cmd) => cmd.category === 'config')
-      const bot = client.commands.filter((cmd) => cmd.category === 'bot')
       const pescaria = client.commands.filter((cmd) => cmd.category === 'pescaria')
 
       const embed = new MessageEmbed()
@@ -125,7 +123,7 @@ module.exports = {
             : 'Sem aliases para esse comando.'
         )
         .setFooter(
-					`Requisitado por: ${message.author.tag}`,
+					`Requisitado por: ${interaction.author.tag}`,
 					message.author.displayAvatarURL({
 					  dynamic: true
 					})
