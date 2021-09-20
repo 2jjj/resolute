@@ -8,8 +8,6 @@ client.on('messageCreate', async (message) => {
   const channel = client.channels.cache.get(logs.comandos)
   const webhooks = await channel.fetchWebhooks()
   const webhook = webhooks.first()
-  let argumentos
-
   const prefix = config.prefix
 
   if (message.content.startsWith('<')) {
@@ -32,9 +30,8 @@ client.on('messageCreate', async (message) => {
   await command.run(client, message, args, prefix)
 
   if (command) {
+    let argumentos;
     argumentos = args.slice(0).join(' ')
-
-    // Logs
     const embed_logs = new MessageEmbed()
       .setColor(ee.color)
       .setTitle('<:outline_search_black_24dp:887149614266990632> Nova comando executado')
@@ -48,12 +45,8 @@ client.on('messageCreate', async (message) => {
       }))
       .setFooter(ee.footertext, ee.footericon)
       .setTimestamp()
-    if (argumentos) embed_logs.addField('**Argumentos**', argumentos)
-
-    await webhook.send({
-      embeds: [embed_logs]
-    })
-
+    if (argumentos) embed_logs.addField('**Argumentos**', argumentos);
+    await webhook.send({embeds: [embed_logs]})
     console.log(`[MESSAGE] - Comando ${command.name} foi usado pelo ${message.author.username}#${message.author.discriminator} (${message.author.id})`)
   }
 
