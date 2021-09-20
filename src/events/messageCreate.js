@@ -1,5 +1,4 @@
 const client = require('../../index')
-const config = require('../config/config.json')
 const { logs } = require('../config/webhooks.json')
 const ee = require('../config/embed.json')
 const { MessageEmbed } = require('discord.js')
@@ -22,7 +21,7 @@ client.on('messageCreate', async (message) => {
     }
   }
 
-  if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return
+  if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return;
 
   const [cmd, ...args] = message.content
     .slice(prefix.length)
@@ -50,7 +49,7 @@ client.on('messageCreate', async (message) => {
       .setFooter(ee.footertext, ee.footericon)
       .setTimestamp()
     if (argumentos) embed_logs.addField('**Argumentos**', argumentos);
-    await webhook.send({embeds: [embed_logs]})
+    webhook.send({embeds: [embed_logs]})
     console.log(`[MESSAGE] - Comando ${command.name} foi usado pelo ${message.author.username}#${message.author.discriminator} (${message.author.id})`)
   }
 

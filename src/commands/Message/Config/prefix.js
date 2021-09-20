@@ -9,7 +9,8 @@ module.exports = {
     usage: '',
     example: '',
     permissoes: {
-        membro: ['ADMINISTRATOR', 'Administrador']
+        membro: ['ADMINISTRATOR', 'Administrador'],
+        bot: []
     },
     args: true,
     
