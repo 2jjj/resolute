@@ -73,6 +73,12 @@ module.exports = {
       // .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.\n**Prefixo atual: ${prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
       // .setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
         .setTimestamp()
+        .setFooter(
+					`Requisitado por: ${interaction.user.tag}`,
+					interaction.user.displayAvatarURL({
+					  dynamic: true
+					})
+        )
         .setColor('#2F3136')
       interaction.followUp({ embeds: [embed] })
     } else {
