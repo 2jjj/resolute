@@ -1,5 +1,4 @@
-const { Client, Message, MessageEmbed } = require('discord.js');
-const db = require('PREFIX SCHEMA FILE PATH')
+const db = require('../../../databases/Schemas/Prefix')
 
 module.exports = {
     name: 'setprefix',
@@ -9,37 +8,34 @@ module.exports = {
     category: 'dev',
     usage: '',
     example: '',
-    permissoes: [],
-    args: false,
+    permissoes: {
+        membro: ['ADMINISTRATOR', 'Administrador']
+    },
+    args: true,
     
     async run (client, message, args) {
 
-        if(!message.member.permissions.has("ADMINISTRATOR")) return message.reply('You need `ADMINISTRATOR` permission to run this command.')
-
+        if(!message.member.permissions.has("ADMINISTRATOR")) return;
 
         const new_prefix = args[0];
-        if(!new_prefix) return message.reply({content: 'Please specify a new prefix you want to send!'})
+        if(!new_prefix) return;
 
         if(new_prefix) {
           let data = await db.findOne({guild: message.guild.id})
         
-
           if(!data) {
               const new_data = await db.create({
                   prefix: new_prefix,
                   guild: message.guild.id
               })
-              new_data.save();
-              message.reply(`The server prefix is now changed to \`${new_prefix}\``)
+            new_data.save();
+            message.reply(`<:outline_check_circle_black_24dp:884962192502423582> **|** Agora o prefixo do servidor é \`${new_prefix}\``)
           } 
  
           if(data) {
-              await db.findOneAndUpdate({guild: message.guild.id}, { $set: {prefix: new_prefix}})
-              message.reply(`The server prefix is now changed to \`${new_prefix}\``)
-
+            await db.findOneAndUpdate({guild: message.guild.id}, { $set: {prefix: new_prefix}})
+            message.reply(`<:outline_check_circle_black_24dp:884962192502423582> **|** Agora o prefixo do servidor é \`${new_prefix}\``)
           }
-        
         }
-
     }
 }

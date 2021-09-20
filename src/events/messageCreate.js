@@ -3,12 +3,16 @@ const config = require('../config/config.json')
 const { logs } = require('../config/webhooks.json')
 const ee = require('../config/embed.json')
 const { MessageEmbed } = require('discord.js')
+const prefixdb = require('../databases/Schemas/Prefix')
 
 client.on('messageCreate', async (message) => {
   const channel = client.channels.cache.get(logs.comandos)
   const webhooks = await channel.fetchWebhooks()
   const webhook = webhooks.first()
-  const prefix = config.prefix
+  let fetchprefix = await prefixdb.findOne({guild: message.guild.id})
+  let prefix;
+  if(fetchprefix) prefix = fetchprefix.prefix;
+  if(!fetchprefix) prefix = "s."
 
   if (message.content.startsWith('<')) {
     if (message.content.endsWith('>')) {
