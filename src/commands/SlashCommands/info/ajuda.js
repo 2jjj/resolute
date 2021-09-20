@@ -94,35 +94,41 @@ module.exports = {
       }
 
       const embed = new MessageEmbed()
-        .setTitle(`<:1598blurplesupport:856520144599777291> | Detalhes do comando \`${command.name}\``)
-        .addField('<:setaaa:860626769089265665> Prefixo:', `\`${prefix}\``)
+        .setTitle(`<:outline_info_black_24dp:884959629124186172> | Detalhes do comando \`${command.name}\``)
+        .addField('<:outline_arrow_right_alt_black_24:884959628973178910> Prefixo:', `\`${prefix}\``)
         .addField(
-          '<:setaaa:860626769089265665> Comando:',
+          '<:outline_arrow_right_alt_black_24:884959628973178910> Comando:',
           command.name ? `\`${command.name}\`` : 'Sem nome para esse comando.'
         )
         .addField(
-          '<:setaaa:860626769089265665> Aliases/apelidos:',
+          '<:outline_arrow_right_alt_black_24:884959628973178910> Aliases/apelidos:',
           command.aliases
             ? `\`${command.aliases.join('` `')}\``
             : 'Sem aliases para esse comando.'
         )
         .addField(
-          '<:setaaa:860626769089265665> Forma de uso:',
+          '<:outline_arrow_right_alt_black_24:884959628973178910> Forma de uso:',
           command.usage
             ? `\`${prefix}${command.name} ${command.usage}\``
             : `\`${prefix}${command.name}\``
         )
         .addField(
-          '<:setaaa:860626769089265665> Exemplo:',
+          '<:outline_arrow_right_alt_black_24:884959628973178910> Exemplo:',
           command.example
             ? `\`${prefix}${command.name} ${command.example}\``
             : `\`${prefix}${command.name}\``
         )
         .addField(
-          '<:setaaa:860626769089265665> Descrição:',
+          '<:outline_arrow_right_alt_black_24:884959628973178910> Descrição:',
           command.description
             ? `\`${command.description}\``
             : 'Sem aliases para esse comando.'
+        )
+        .setFooter(
+					`Requisitado por: ${message.author.tag}`,
+					message.author.displayAvatarURL({
+					  dynamic: true
+					})
         )
         .setTimestamp()
         .setColor('RANDOM')
