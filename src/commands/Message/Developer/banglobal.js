@@ -26,8 +26,7 @@ module.exports = {
       client.guilds.cache.map(guild => {
         if (list.includes(guild.id)) {
           const USERs = [
-            'ID_DO_USUÁRIO_1',
-            'ID_DO_USUÁRIO_2'
+            args[0]
           ]
 
           USERs.forEach((m, i) => {
