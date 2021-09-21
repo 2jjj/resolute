@@ -16,7 +16,7 @@ module.exports = {
     
     async run (client, message, args) {
 
-        if(!message.member.permissions.has("ADMINISTRATOR")) return;
+        if(!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
 
         const new_prefix = args[0];
         if(!new_prefix) return;
