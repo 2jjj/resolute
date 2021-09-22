@@ -16,9 +16,9 @@ module.exports = {
   },
 
   async run (client, message, args) {
-    if (!args[0]) return
-    if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return
-    if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return
+    if (!args[0]) return;
+    if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+    if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
     const membro = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase())
     const warns = await db.get(`warnsCount_${message.guild.id}-${membro.id}`) || 0

@@ -13,9 +13,9 @@ module.exports = {
   },
 
   async run (client, message, args) {
-    if (!args[0]) return
-    if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return
-    if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return
+    if (!args[0]) return;
+    if (!message.member.permissions.has(module.exports.permissoes.membro[0])) return;
+    if (!message.guild.me.permissions.has(module.exports.permissoes.bot[0])) return;
 
     const amount = args[0]
 
