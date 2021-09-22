@@ -38,7 +38,7 @@ module.exports = {
       )
     } else if (status === 503) {
       return message.channel.send(
-        '**Brawl Stars** está em manutenção, tente novamente mais tarde.'
+        'O **Brawl Stars** está em manutenção, tente novamente mais tarde.'
       )
     }
     const embed = new MessageEmbed()
