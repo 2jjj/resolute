@@ -2,6 +2,9 @@
     "name": "resolute",
     "version": "3.0.0",
     "description": "",
+    "engines": {
+        "node": "16.x"
+    },
     "main": "shard.js",
     "scripts": {
         "start": "node shard.js",
