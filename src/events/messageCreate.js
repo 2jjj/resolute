@@ -3,6 +3,7 @@ const { logs } = require('../config/webhooks.json')
 const ee = require('../config/embed.json')
 const { MessageEmbed } = require('discord.js')
 const prefixdb = require('../databases/Schemas/Prefix')
+let argumentos;
 
 client.on('messageCreate', async (message) => {
   const channel = client.channels.cache.get(logs.comandos)
@@ -33,8 +34,8 @@ client.on('messageCreate', async (message) => {
   await command.run(client, message, args, prefix)
 
   if (command) {
-    let argumentos;
     argumentos = args.slice(0).join(' ')
+
     const embed_logs = new MessageEmbed()
       .setColor(ee.color)
       .setTitle('<:outline_search_black_24dp:887149614266990632> Nova comando executado')
@@ -65,7 +66,6 @@ client.on('messageCreate', async (message) => {
     }))
     .setTimestamp()
 
-  try {
     if (command.args == true) {
       if (command.permissoes.membro == undefined) command.permissoes.membro = 0
       if (command.permissoes.bot == undefined) command.permissoes.bot = 0
@@ -87,6 +87,5 @@ client.on('messageCreate', async (message) => {
           embeds: [help]
         })
       }
-    }
-  } catch {}
+  }
 })
