@@ -22,7 +22,7 @@ module.exports = {
 
 		if (!args[0]) {
 			let embed = new Discord.MessageEmbed()
-			.setTitle(`Menu de ajuda - \`autorole\``)
+			.setTitle(`:outline_search_black_24dp: | Menu de ajuda - \`autorole\``)
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.setDescription(`${module.exports.description}`)

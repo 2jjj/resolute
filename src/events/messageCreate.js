@@ -38,7 +38,7 @@ client.on('messageCreate', async (message) => {
 
     const embed_logs = new MessageEmbed()
       .setColor(ee.color)
-      .setTitle('<:outline_search_black_24dp:887149614266990632> Nova comando executado')
+      .setTitle('<:outline_search_black_24dp:887149614266990632> Novo comando executado')
       .addField('**Servidor**', message.guild.name)
       .addField('**Servidor ID**', message.guild.id)
       .addField('**Executado por**', message.author.tag + ' ( ' + message.author.id + ' )')
