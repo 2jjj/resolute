@@ -17,7 +17,7 @@ module.exports = {
   },
   args: true,
 
-  run: async (client, message, args, prefix) => {
+  async run(client, message, args, prefix) {
     let members = 0
     let president
     const bestPlayers = []

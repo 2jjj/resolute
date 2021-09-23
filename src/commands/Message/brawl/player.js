@@ -17,7 +17,7 @@ module.exports = {
   },
   args: true,
 
-  run: async (client, message, args, prefix) => {
+  async run(client, message, args, prefix) {
     let brawlers = 0
     if (!args[0]) return
 

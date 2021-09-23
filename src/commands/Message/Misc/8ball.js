@@ -11,7 +11,7 @@ module.exports = {
   permissoes: [],
   args: true,
 
-  async run (client, message, args, cmduser, text, prefix, player) {
+  async run (client, message, args) {
     const respostas = Respostas8Ball[Math.floor(Math.random() * Respostas8Ball.length)]
     const pergunta = args.join(' ')
 

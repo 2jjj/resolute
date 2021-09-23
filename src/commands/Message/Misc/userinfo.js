@@ -14,7 +14,6 @@ module.exports = {
 
   async run (client, message, args) {
     const permissions = []
-    let acknowledgements = 'None'
     const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member
 
     const user = message.mentions.users.first() || message.author
