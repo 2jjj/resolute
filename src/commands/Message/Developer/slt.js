@@ -13,7 +13,7 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    if (message.author.id == ownerid) {
+    if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
       let i0 = 0
       let i1 = 100
       let page = 1
@@ -126,8 +126,5 @@ module.exports = {
         // Remove the reaction when the user react to the message
         await reaction.users.remove(message.author.id)
       })
-    } else {
-      return message.channel.send('Apenas desenvolvedores.')
-    }
   }
 }
