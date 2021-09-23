@@ -13,7 +13,7 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    if (message.author.id == !config.ownerID) return;
+    if (message.author.id !== '836345581424738354') return message.channel.send('Apenas desenvolvedores.')
 
     const code = args.join(' ')
     if (!code) return message.channel.send('kd o eval')
