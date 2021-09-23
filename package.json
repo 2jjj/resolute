@@ -5,9 +5,9 @@
     "engines": {
         "node": "16.x"
     },
-    "main": "shard.js",
+    "main": "clusters.js",
     "scripts": {
-        "start": "node shard.js",
+        "start": "node clusters.js",
         "test": "node .github/workflows/tests.js"
     },
     "keywords": [],
