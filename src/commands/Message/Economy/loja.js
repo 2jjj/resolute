@@ -13,8 +13,5 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    const embed = new Discord.MessageEmbed()
-      .setAuthor(`${message.author.username} - Loja`, message.author.displayAvatarURL({ dynamic: true }))
-      .setDescription('Categorias:\n')
   }
 }
