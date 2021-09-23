@@ -1,7 +1,6 @@
 const { Client, Collection } = require('discord.js')
 require('colors')
 const { readdirSync } = require('fs')
-const { Database } = require('quickmongo')
 const { Manager } = require('erela.js')
 const Spotify = require('erela.js-spotify')
 const Deezer = require('erela.js-deezer')

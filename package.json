@@ -33,6 +33,7 @@
         "image-palette": "^2.1.0",
         "image-pixels": "^2.2.2",
         "moment": "^2.29.1",
+        "mongodb": "^4.1.2",
         "mongoose": "^6.0.2",
         "node-fetch": "^2.6.1",
         "parse-ms": "^2.1.0",
