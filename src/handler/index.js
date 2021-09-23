@@ -20,9 +20,11 @@ module.exports = async (client) => {
     }
   })
 
+  //Event handler for messagecreate/interactioncreate
   const eventFiles = await globPromise(`${process.cwd()}/src/events/*.js`)
   eventFiles.map((value) => require(value))
 
+  //Slash handler
   const slashCommands = await globPromise(
 		`${process.cwd()}/src/commands/SlashCommands/*/*.js`
   )
@@ -44,6 +46,7 @@ module.exports = async (client) => {
     await client.guilds.cache
       .get('836725674567663616')
       .commands.set(arrayOfSlashCommands)
+    //Setar global
     //await client.application.commands.set(arrayOfSlashCommands).then(console.log(`[SLASH] SETEI OS COMANDOS`));
   })
 }
