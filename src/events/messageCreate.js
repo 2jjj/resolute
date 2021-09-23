@@ -5,7 +5,7 @@ const client = require('../../index')
 const ee = require('../config/embed.json')
 const prefixdb = require('../databases/Schemas/Prefix')
 const config = require("../config/config.json")
-const db = new Database(config.mongourl)
+const db = new Database(config.quickmongo)
 let argumentos;
 
 client.on('messageCreate', async (message) => {

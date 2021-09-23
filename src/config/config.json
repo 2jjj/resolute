@@ -9,6 +9,7 @@
   "ownerID": "836345581424738354",
   "embedColor": "#303236",
   "mongourl": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db",
+  "quickmongo": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/database?retryWrites=true&w=majority",
   "ksoftapi": "",
 
   "nodes": [
