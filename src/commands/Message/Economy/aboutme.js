@@ -12,7 +12,7 @@ module.exports = {
   permissoes: [],
   args: true,
 
-  async run (client, message, args, cmduser, text, prefix, player) {
+  async run (client, message, args, prefix) {
     const user = message.member
     if (!args[0]) return
 
