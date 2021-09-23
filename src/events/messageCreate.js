@@ -1,8 +1,11 @@
-const client = require('../../index')
-const { logs } = require('../config/webhooks.json')
-const ee = require('../config/embed.json')
 const { MessageEmbed } = require('discord.js')
+const { Database } = require("quickmongo");
+const { logs } = require('../config/webhooks.json')
+const client = require('../../index')
+const ee = require('../config/embed.json')
 const prefixdb = require('../databases/Schemas/Prefix')
+const config = require("../config/config.json")
+const db = new Database(config.mongourl)
 let argumentos;
 
 client.on('messageCreate', async (message) => {
