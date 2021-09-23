@@ -43,10 +43,6 @@ module.exports = async (client) => {
     }
   })
 
-  //Event handler for messagecreate/interactioncreate
-  const eventFiles = await globPromise(`${process.cwd()}/src/events/*.js`)
-  eventFiles.map((value) => require(value))
-
   //Slash handler
   const slashCommands = await globPromise(
 		`${process.cwd()}/src/commands/SlashCommands/*/*.js`

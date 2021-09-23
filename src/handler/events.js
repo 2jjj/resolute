@@ -3,8 +3,15 @@ const ascii = require('ascii-table')
 const table = new ascii('Events')
 table.setHeading('Events', 'Load status')
 const allevents = []
+const { promisify } = require('util')
+const { glob } = require('glob')
+const globPromise = promisify(glob)
+
 module.exports = async (client) => {
   try {
+    const eventFiles = await globPromise(`${process.cwd()}/src/events/*.js`)
+    eventFiles.map((value) => require(value))
+
     const load_dir = (dir) => {
       const event_files = fs.readdirSync(`./src/events/${dir}`).filter((file) => file.endsWith('.js'))
       for (const file of event_files) {
