@@ -6,11 +6,12 @@ if(cluster.isMaster) {
 
     console.log(`[LOGS] - [CLUSTER]-[CONFIGURAÇÃO] - Master cluster está configurando ${numWorkers} workers...`.rainbow);
 
-    for(var i = 0; i < 60; i++) {
+    for(var i = 0; i < numWorkers; i++) {
         cluster.fork();
     }
 
     cluster.on('online', function(worker) {
+        console.log(worker.id)
         require("./shard");
         console.log(`[LOGS] - [CLUSTER] Worker ${worker.process.pid} está online.`.rainbow);
     });
