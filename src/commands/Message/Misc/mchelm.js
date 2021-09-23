@@ -19,6 +19,6 @@ module.exports = {
       .setImage(`https://minotar.net/helm/${args[0]}/200.png`)
       .setColor('RANDOM')
       .setTimestamp()
-    await message.reply({ embeds: [embed] })
+    message.reply({ embeds: [embed] })
   }
 }
