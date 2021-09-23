@@ -17,6 +17,6 @@ module.exports = {
     if (!args[0]) return
 
     db.set(`sobre_mim_${user.id}`, `${args[0]}`)
-    message.inlineReply(` ${emoji.msg.check}**|** Sucesso! sua mensagem foi alterada.`)
+    message.reply(` ${emoji.msg.check}**|** Sucesso! sua mensagem foi alterada.`)
   }
 }
