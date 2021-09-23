@@ -1,10 +1,6 @@
 const { Client, Collection } = require('discord.js')
 require('colors')
 const { readdirSync } = require('fs')
-const { Manager } = require('erela.js')
-const Spotify = require('erela.js-spotify')
-const Deezer = require('erela.js-deezer')
-const FaceBook = require('erela.js-facebook')
 const mongoose = require('mongoose')
 
 const client = new Client({
@@ -36,21 +32,6 @@ client.emoji = require('./src/util/emoji.json')
 
 require('./src/handler/index')(client).then(console.log('Carreguei os comandos'))
 require('./src/handler/events')(client).then(console.log('Carreguei os eventos'))
-client.manager = new Manager({
-  nodes: client.config.nodes,
-  send: (id, payload) => {
-    const guild = client.guilds.cache.get(id)
-    if (guild) guild.shard.send(payload)
-  },
-  autoPlay: true,
-  plugins: [new Spotify({
-    clientID: client.config.SpotifyID,
-    clientSecret: client.config.SpotifySecret
-  }),
-  new Deezer(),
-  new FaceBook()
-  ]
-})
 
 readdirSync('./src/events/lavalink/').forEach(file => {
   const event = require(`./src/events/lavalink/${file}`)
