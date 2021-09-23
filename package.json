@@ -39,7 +39,6 @@
         "popcat-wrapper": "^1.4.0",
         "quick.db": "^7.1.3",
         "quickmongo": "^4.0.0",
-        "sourcebin_js": "^0.0.3-ignore",
         "steam-provider": "^0.3.2"
     }
 }
