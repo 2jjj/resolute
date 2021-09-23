@@ -47,7 +47,7 @@ module.exports = {
       .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
       .addField('Usuário avisado:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${membro} | \`${membro.id}\``)
       .addField('Autor:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
-      .addField('Motivo:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos para o banimento.'}\``)
+      .addField('Motivo:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos para o aviso.'}\``)
       .setFooter('Resolute - Punições', message.author.displayAvatarURL())
       .setImage(rand)
       .setTimestamp()
