@@ -14,9 +14,10 @@
 
   "nodes": [
     {
-      "host": "lavalinkspray.herokuapp.com",
-      "port": 80,
-      "password": "spraylavalink"
+      "host": "lavalink-repl-2.spray777.repl.co",
+      "port": 443,
+      "password": "spraylavalink",
+      "secure": true
     }
   ]
 }
