@@ -15,6 +15,15 @@ module.exports = {
   args: false,
 
   async run (client, message, args, prefix) {
+    function json(expression, valueObj) {
+      const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
+      let text = expression.replace(templateMatcher, (substring, value, index) => {
+        value = valueObj[value];
+        return value;
+      });
+      return text
+    }
+    
     const user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member
     db.add(`varinhas_${user.id}`, 1)
 
@@ -61,7 +70,7 @@ module.exports = {
         let embed_pescar = new Discord.MessageEmbed()
           .setTitle('<:outline_sailing_black_24dp:890758052620406784> Pescaria')
           .setDescription(`Você pescou e conseguiu:
-                  ${arr_final}
+                  ${json(arr_final)}
                   `)
           .setFooter(ee.footertext, ee.footericon)
           .setColor('#2F3136')

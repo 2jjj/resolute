@@ -1,6 +1,6 @@
 [
-    "${baiacus} Baiacus",
-    "${salmoes} Salmoes",
-    "${bacalhais} Bacalhais",
-    "${bota} bota"
+    "${{baiacus}} Baiacus",
+    "${{salmoes}} Salmoes",
+    "${{bacalhais}} Bacalhais",
+    "${{bota}} bota"
 ]
