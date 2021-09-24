@@ -28,7 +28,7 @@ module.exports = {
       let embed = new Discord.MessageEmbed()
         .addField('Você não possui varinhas!', `Para comprar uma varinha digite \`${prefix}buy varinha\` e compre uma varinha.`)
         .setFooter(ee.footertext, ee.footericon)
-        .setColor('#1E90FF')
+        .setColor('#2F3136')
       return message.reply({ embeds: [embed] })
     }
 
@@ -41,7 +41,7 @@ module.exports = {
         let embed_isca = new Discord.MessageEmbed()
           .addField('Você não possui iscas!', `Para comprar uma isca digite \`${prefix}buy iscas <quantidade>\` e compre uma isca.`)
           .setFooter(ee.footertext, ee.footericon)
-          .setColor('#1E90FF')
+          .setColor('#2F3136')
         return message.reply({ embeds: [embed_isca] })
       } else {
         const baiacus = Math.floor(Math.random() * 6 + 1)
@@ -61,7 +61,7 @@ module.exports = {
                   ${bacalhais} Bacalhais
                   `)
           .setFooter(ee.footertext, ee.footericon)
-          .setColor('#1E90FF')
+          .setColor('#2F3136')
         return message.reply({ embeds: [embed_pescar] })
       }
     }
