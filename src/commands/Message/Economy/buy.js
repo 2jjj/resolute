@@ -25,7 +25,7 @@ module.exports = {
       if(args[1]) {
         let quantidade = args[1];
         db.add(`iscas_${user.id}`, quantidade)
-        console.log(iscas)
+        console.log(quantidade)
       }  
     } 
   }
