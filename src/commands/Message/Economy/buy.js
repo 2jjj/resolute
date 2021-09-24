@@ -21,10 +21,11 @@ module.exports = {
       message.reply("Sucesso!")
     }
 
-    if(args[0] == 'isca') {
+    if(args[0] == 'iscas') {
       if(args[1]) {
         let quantidade = args[1];
         db.add(`iscas_${user.id}`, quantidade)
+        console.log(iscas)
       }  
     } 
   }

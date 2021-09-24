@@ -34,36 +34,37 @@ module.exports = {
 
     if (varinhas >= 1) {
       if (iscas < 1) {
-      
         let iscas = db.fetch(`iscas_${user.id}`)
         if (iscas === null) iscas = 0
+        console.log(iscas)
 
         let embed_isca = new Discord.MessageEmbed()
           .addField('Você não possui iscas!', `Para comprar uma isca digite \`${prefix}buy iscas <quantidade>\` e compre uma isca.`)
           .setFooter(ee.footertext, ee.footericon)
           .setColor('#1E90FF')
         return message.reply({ embeds: [embed_isca] })
+      } else {
+        const baiacus = Math.floor(Math.random() * 6 + 1)
+        const salmoes = Math.floor(Math.random() * 3 + 1)
+        const bacalhais = Math.floor(Math.random() * 10 + 1)
+        const bota = Math.floor(Math.random() * 2 + 1)
+        const tilapias = Math.floor(Math.random() * 7 + 1)
+        const pirapitingas = Math.floor(Math.random() * 14 + 1)
+        const piraibas = Math.floor(Math.random() * 20 + 1)
+        const pirararas = Math.floor(Math.random() * 4 + 1)
+        console.log(baiacus)
+        console.log(arr_final)
+        let embed_pescar = new Discord.MessageEmbed()
+          .setTitle('<:pescaria:879504651739861064> Pescaria')
+          .setDescription(`Você pescou e conseguiu:
+                  ${baiacus} Baiacus
+                  ${salmoes} Salmoes
+                  ${bacalhais} Bacalhais
+                  `)
+          .setFooter(ee.footertext, ee.footericon)
+          .setColor('#1E90FF')
+        return message.reply({ embeds: [embed_pescar] })
       }
-      const baiacus = Math.floor(Math.random() * 6 + 1)
-      const salmoes = Math.floor(Math.random() * 3 + 1)
-      const bacalhais = Math.floor(Math.random() * 10 + 1)
-      const bota = Math.floor(Math.random() * 2 + 1)
-      const tilapias = Math.floor(Math.random() * 7 + 1)
-      const pirapitingas = Math.floor(Math.random() * 14 + 1)
-      const piraibas = Math.floor(Math.random() * 20 + 1)
-      const pirararas = Math.floor(Math.random() * 4 + 1)
-      console.log(baiacus)
-      console.log(arr_final)
-      let embed_pescar = new Discord.MessageEmbed()
-        .setTitle('<:pescaria:879504651739861064> Pescaria')
-        .setDescription(`Você pescou e conseguiu:
-                ${baiacus} Baiacus
-                ${salmoes} Salmoes
-                ${bacalhais} Bacalhais
-                `)
-        .setFooter(ee.footertext, ee.footericon)
-        .setColor('#1E90FF')
-      return message.reply({ embeds: [embed_pescar] })
     }
   }
 }
