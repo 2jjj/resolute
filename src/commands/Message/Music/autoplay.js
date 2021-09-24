@@ -37,7 +37,7 @@ module.exports = {
       const thing = new MessageEmbed()
         .setColor(message.client.embedColor)
         .setTimestamp()
-        .setDescription(`${emojireplay} Autoplay está **habilitado**`)
+        .setDescription(`${emojireplay} O Autoplay está **habilitado**`)
       return message.reply({ embeds: [thing] })
     } else {
       player.set('autoplay', false)
@@ -45,7 +45,7 @@ module.exports = {
       const thing = new MessageEmbed()
         .setColor(message.client.embedColor)
         .setTimestamp()
-        .setDescription(`${emojireplay} Autoplay está **desabilitado**`)
+        .setDescription(`${emojireplay} O Autoplay está **desabilitado**`)
 
       return message.reply({ embeds: [thing] })
     }
