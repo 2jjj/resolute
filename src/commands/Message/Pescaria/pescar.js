@@ -52,10 +52,16 @@ module.exports = {
         const pirapitingas = Math.floor(Math.random() * 14 + 1)
         const piraibas = Math.floor(Math.random() * 20 + 1)
         const pirararas = Math.floor(Math.random() * 4 + 1)
-        console.log(baiacus)
+        const rand1 = peixes[Math.floor(Math.random() * peixes.length)]
+        const rand2 = peixes[Math.floor(Math.random() * peixes.length)]
+        const rand3 = peixes[Math.floor(Math.random() * peixes.length)]
+        const arr = []
+        const arr_final = arr.concat(rand1, rand2, rand3)
+        console.log(arr_final)
         let embed_pescar = new Discord.MessageEmbed()
-          .setTitle('<:pescaria:879504651739861064> Pescaria')
+          .setTitle('<:outline_sailing_black_24dp:890758052620406784> Pescaria')
           .setDescription(`Você pescou e conseguiu:
+                  ${arr_final}
                   ${baiacus} Baiacus
                   ${salmoes} Salmoes
                   ${bacalhais} Bacalhais
