@@ -15,14 +15,6 @@ module.exports = {
   args: false,
 
   async run (client, message, args, prefix) {
-    function json(expression, valueObj) {
-      const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
-      let text = expression.replace(templateMatcher, (substring, value, index) => {
-        value = valueObj[value];
-        return value;
-      });
-      return text
-    }
     
     const user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member
     db.add(`varinhas_${user.id}`, 1)
@@ -63,7 +55,10 @@ module.exports = {
         const pirararas = Math.floor(Math.random() * 4 + 1)
         const rand1 = peixes[Math.floor(Math.random() * peixes.length)]
         const rand2 = peixes[Math.floor(Math.random() * peixes.length)]
-        const rand3 = peixes[Math.floor(Math.random() * peixes.length)]
+        const rand3 = peixes[Math.floor(Math.random() * peixes.length)]  
+        const peixes = [
+          
+        ]
         const arr = []
         const arr_final = arr.concat(rand1, rand2, rand3)
         console.log(arr_final)
