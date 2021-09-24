@@ -48,7 +48,7 @@ module.exports = {
       const pirapitingas = Math.floor(Math.random() * 14 + 1)
       const piraibas = Math.floor(Math.random() * 20 + 1)
       const pirararas = Math.floor(Math.random() * 4 + 1)
-
+      console.log(baiacus)
       console.log(arr_final)
       const embed = new Discord.MessageEmbed()
         .setTitle('<:pescaria:879504651739861064> Pescaria')
