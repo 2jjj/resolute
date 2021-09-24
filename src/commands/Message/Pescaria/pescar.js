@@ -58,11 +58,10 @@ module.exports = {
       const rand3 = peixes[Math.floor(Math.random() * peixes.length)]
       const arr = []
       const arr_final = arr.concat(rand1, rand2, rand3)
-
+      console.log(arr_final)
       const embed = new Discord.MessageEmbed()
         .setTitle('<:pescaria:879504651739861064> Pescaria')
         .setDescription(`Você pescou e conseguiu:
-                
                 ${baiacus} Baiacus
                 ${salmoes} Salmoes
                 ${bacalhais} Bacalhais
