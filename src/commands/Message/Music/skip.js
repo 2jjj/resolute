@@ -37,9 +37,9 @@ module.exports = {
 
     const thing = new MessageEmbed()
     //\n[${song.title}](${song.uri})
-      .setDescription(`${emojiskip} **A Música avancada para a próxima da fila!**`)
+      .setDescription(`${emojiskip} **A Música foi avançada para a próxima da fila!**`)
       .setColor(message.client.embedColor)
       .setTimestamp()
-    return message.channel.send({ embeds: [thing] })
+    return message.reply({ embeds: [thing] })
   }
 }
