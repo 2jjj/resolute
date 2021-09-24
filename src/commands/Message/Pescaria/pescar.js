@@ -21,6 +21,9 @@ module.exports = {
     let varinhas = db.fetch(`varinhas_${user.id}`)
     if (varinhas === null) varinhas = 0
 
+    let iscas = db.fetch(`iscas_${user.id}`)
+    if (iscas === null) iscas = 0
+
     if (varinhas < 1) {
       let embed = new Discord.MessageEmbed()
         .addField('Você não possui varinhas!', `Para comprar uma varinha digite \`${prefix}buy varinha\` e compre uma varinha.`)
@@ -31,6 +34,10 @@ module.exports = {
 
     if (varinhas >= 1) {
       if (iscas < 1) {
+      
+        let iscas = db.fetch(`iscas_${user.id}`)
+        if (iscas === null) iscas = 0
+
         let embed_isca = new Discord.MessageEmbed()
           .addField('Você não possui iscas!', `Para comprar uma isca digite \`${prefix}buy iscas <quantidade>\` e compre uma isca.`)
           .setFooter(ee.footertext, ee.footericon)
