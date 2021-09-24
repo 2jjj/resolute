@@ -30,7 +30,7 @@ module.exports = {
       const thing = new MessageEmbed()
         .setColor('RED')
         .setDescription(`Forma de uso: ${message.client.prefix}skipto <número da música na fila>`)
-      return message.channel.send({ embeds: [thing] })
+      return message.reply({ embeds: [thing] })
     }
 
     player.queue.remove(0, position - 1)
@@ -43,6 +43,6 @@ module.exports = {
       .setColor(message.client.embedColor)
       .setTimestamp()
 
-    return message.channel.send({ embeds: [thing] })
+    return message.reply({ embeds: [thing] })
   }
 }
