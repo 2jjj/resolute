@@ -62,9 +62,6 @@ module.exports = {
           .setTitle('<:outline_sailing_black_24dp:890758052620406784> Pescaria')
           .setDescription(`Você pescou e conseguiu:
                   ${arr_final}
-                  ${baiacus} Baiacus
-                  ${salmoes} Salmoes
-                  ${bacalhais} Bacalhais
                   `)
           .setFooter(ee.footertext, ee.footericon)
           .setColor('#2F3136')
