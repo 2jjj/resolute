@@ -4,7 +4,7 @@ module.exports = {
   name: 'clearqueue',
   aliases: ['cq'],
   category: 'Music',
-  	description: 'Limpar a fila de músicas',
+  description: 'Limpar a fila de músicas',
   args: false,
   usage: '',
   example: '',
