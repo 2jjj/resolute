@@ -77,8 +77,6 @@ module.exports = {
           return a
         }, {})
 
-        var duplicados = Object.keys(uniq).filter((a) => uniq[a] > 1)
-
         const arr = []
         const arr_final = arr.concat(rand1, rand2, rand3)
         console.log(arr_final)
