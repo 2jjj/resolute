@@ -79,10 +79,11 @@ module.exports = {
 
         var duplicados = Object.keys(uniq).filter((a) => uniq[a] > 1)
         console.log(duplicados)
+        console.log(uniq)
 
         const arr = []
         const arr_final = arr.concat(rand1, rand2, rand3)
-        console.log(arr_final)
+
         let embed_pescar = new Discord.MessageEmbed()
           .setTitle('<:outline_sailing_black_24dp:890758052620406784> Pescaria')
           .setDescription(`Você pescou e conseguiu:
