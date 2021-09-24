@@ -56,7 +56,11 @@ module.exports = {
           `${baiacus} baiacus`,
           `${salmoes} salmoes`,
           `${bacalhais} bacalhais`,
-          `${bota} bota`
+          `${bota} bota`,
+          `${tilapias} tilapias`,
+          `${pirapitingas} pirapitingas`,
+          `${piraibas} piraibas`,
+          `${pirararas} pirararas`
         ]
         const rand1 = peixes[Math.floor(Math.random() * peixes.length)]
         const rand2 = peixes[Math.floor(Math.random() * peixes.length)]
