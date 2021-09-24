@@ -65,7 +65,21 @@ module.exports = {
         const rand1 = peixes[Math.floor(Math.random() * peixes.length)]
         const rand2 = peixes[Math.floor(Math.random() * peixes.length)]
         const rand3 = peixes[Math.floor(Math.random() * peixes.length)]  
-      
+        var uniq = peixes
+        .map((peixe) => {
+          return {
+            count: 1,
+            peixe: peixe
+          }
+        })
+        .reduce((a, b) => {
+          a[b.peixe] = (a[b.peixe] || 0) + b.count
+          return a
+        }, {})
+
+        var duplicados = Object.keys(uniq).filter((a) => uniq[a] > 1)
+        console.log(duplicados)
+
         const arr = []
         const arr_final = arr.concat(rand1, rand2, rand3)
         console.log(arr_final)
