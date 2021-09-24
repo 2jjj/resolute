@@ -17,7 +17,7 @@ module.exports = {
     if(!args[0]) return;
 
     if(args[0] == 'varinha') {
-      db.add(`varinhas_${user.id}`)
+      db.add(`varinhas_${user.id}`, 1)
       message.reply("Sucesso!")
     }
 
