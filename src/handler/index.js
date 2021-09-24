@@ -62,10 +62,10 @@ module.exports = async (client) => {
     //Lavalink
     client.manager.init(client.user.id)
     //Slash
-    await client.guilds.cache
-      .get('836725674567663616')
-      .commands.set(arrayOfSlashCommands)
+    //await client.guilds.cache
+      //.get('836725674567663616')
+      //.commands.set(arrayOfSlashCommands)
     //Setar global
-    //await client.application.commands.set(arrayOfSlashCommands).then(console.log(`[SLASH] SETEI OS COMANDOS`));
+    await client.application.commands.set(arrayOfSlashCommands).then(console.log(`[SLASH] SETEI OS COMANDOS`));
   })
 }
