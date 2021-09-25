@@ -57,7 +57,7 @@ module.exports = {
       const pescaria = client.commands.filter((cmd) => cmd.category === 'pescaria')
 
       const embed = new MessageEmbed()
-      // .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
+        .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
       // .addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
         .addField(`⭐ ** | Brawlstars** [${brawl.size}]:`, `\`${brawl.map(cmd => cmd.name).join(' | ')}\``)
