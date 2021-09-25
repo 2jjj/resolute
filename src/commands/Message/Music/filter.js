@@ -20,7 +20,7 @@ module.exports = {
     if (!player.queue.current) {
       const thing = new MessageEmbed()
         .setColor('RED')
-        .setDescription('Não há nenhuma música tocando atualmente!')
+        .setDescription('Não tem nenhuma música tocando atualmente!')
       return message.reply({ embeds: [thing] })
     }
 
