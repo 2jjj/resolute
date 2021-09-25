@@ -18,10 +18,10 @@ module.exports = {
     if (!player) {
       const thing = new MessageEmbed()
         .setColor('RED')
-        .setDescription('Não há nenhuma música tocando atualmente!')
+        .setDescription('Não tem nenhuma música tocando atualmente nesse servidor!')
       return message.reply({ embeds: [thing] })
     }
-
+    
     if (player.twentyFourSeven) {
       player.twentyFourSeven = false
       const embed = new MessageEmbed()
