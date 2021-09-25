@@ -19,8 +19,10 @@ module.exports = {
 
     const { version } = require('discord.js')
 
-    const totalGuilds = client.guilds.cache.size
-    const totalMembers = client.users.cache.size
+    const usersEval = await client.shard.broadcastEval(u => u.users.cache.size)
+    const guildsEval = await client.shard.broadcastEval(g => g.guilds.cache.size)
+    const totalMembers = usersEval.reduce((prev, val) => prev + val, 0)
+    const totalGuilds = guildsEval.reduce((prev, val) => prev + val, 0)
     const secs = Math.floor(client.uptime % 60)
     const days = Math.floor(client.uptime % 31536000 / 86400)
     const hours = Math.floor(client.uptime / 3600 % 24)
