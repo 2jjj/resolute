@@ -55,13 +55,13 @@ module.exports = {
     };
 
     const embed2 = new Discord.MessageEmbed()
-      .setDescription(`**<:ban:843861447522910230> O membro ${membro} foi expulso do servidor!**`)
+      .setDescription(`<:outline_check_circle_black_24dp:884962192502423582> O membro ${membro} foi expulso do servidor!**`)
       .setColor('RANDOM')
       .addField('Usuário', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${membro}`)
       .addField('Moderador', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author}`)
       .addField('Motivo:', `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> \`${motivo.length !== 0 ? `${motivo}` : 'Sem motivos.'}\``)
       .setImage(rand)
-    await message.reply({ embeds: [embed2] })
-    await membro.kick({ reason: motivo })
+    message.reply({ embeds: [embed2] })
+    membro.kick({ reason: motivo })
   }
 }
