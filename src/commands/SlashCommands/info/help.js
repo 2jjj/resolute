@@ -57,25 +57,25 @@ module.exports = {
       const pescaria = client.commands.filter((cmd) => cmd.category === 'pescaria')
 
       const embed = new MessageEmbed()
-        .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
-      // .addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`⭐ ** | Brawlstars** [${brawl.size}]:`, `\`${brawl.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`💵 ** | Economia e social** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🔍 ** | Outros comandos** [${misc.size}]:`, `\`${misc.map(cmd => cmd.name).join(' | ')}\``)
-        .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
-      // .addFields(categories)
-      // .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.\n**Prefixo atual: ${prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
-      // .setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
-        .setTimestamp()
-        .setFooter(
-					`Requisitado por: ${interaction.user.tag}`,
-					interaction.user.displayAvatarURL({
-					  dynamic: true
-					})
-        )
-        .setColor('#2F3136')
+      .addField(`🎵 ** | Música** [${music.size}]:`, `\`${music.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`🔰 ** | Moderação** [${mod.size}]:`, `\`${mod.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`⚙️ ** | Configuráveis** [${config.size}]:`, `\`${config.map(cmd => cmd.name).join(' | ')}\``)
+      //.addField(`🎣 ** | Pescaria** [${pescaria.size}]:`, `\`${pescaria.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`⭐ ** | Brawlstars** [${brawl.size}]:`, `\`${brawl.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`💵 ** | Economia e social** [${economia.size}]:`, `\`${economia.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`🔍 ** | Outros comandos** [${misc.size}]:`, `\`${misc.map(cmd => cmd.name).join(' | ')}\``)
+      .addField(`🖼️ ** | Manipulação de imagens** [${manipulacao.size}]:`, `\`${manipulacao.map(cmd => cmd.name).join(' | ')}\``)
+    // .addFields(categories)
+    // .setDescription(`Use \`${prefix}help\` seguido por um nome de comando para obter mais informações adicionais sobre um comando.\nPor exemplo: \`${prefix}help ban\`.\n**Prefixo atual: ${prefix}**\n**Meus Comandos[${client.commands.size}]:**`)
+    // .setImage("https://cdn.discordapp.com/attachments/852652786139136060/853441413396168734/Sem_Titulo22-1.png")
+      .setTimestamp()
+      .setFooter(
+        `Requisitado por: ${interaction.user.tag}`,
+        interaction.user.displayAvatarURL({
+          dynamic: true
+        })
+      )
+      .setColor('#2F3136')
       interaction.followUp({ embeds: [embed] })
     } else {
       const command =
