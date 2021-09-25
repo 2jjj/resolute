@@ -26,10 +26,10 @@ module.exports = {
 
     const position = Number(args[0])
 
-    if (!position || position < 0 || position > player.queue.size) {
+    if (!player) {
       const thing = new MessageEmbed()
         .setColor('RED')
-        .setDescription(`Forma de uso: ${message.client.prefix}skipto <número da música na fila>`)
+        .setDescription('Não tem nenhuma música tocando atualmente nesse servidor!')
       return message.reply({ embeds: [thing] })
     }
 

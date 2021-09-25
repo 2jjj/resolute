@@ -16,7 +16,7 @@ module.exports = {
   permissoes: [],
   async run (client, message, args, prefix) {
 	  try {
-      if (!ksoft) return message.channel.send({ embeds: [new MessageEmbed().setDescription('por enquanto o spray ta sem a key do Ksoft.')] })
+      if (!ksoft) return message.channel.send({ embeds: [new MessageEmbed().setDescription('por enquanto esse comando está desabilitado')] })
       const player = message.client.manager.get(message.guild.id)
       if (!args[0] && !player) return message.channel.send({ embeds: [new MessageEmbed().setDescription('Specify a title')] })
       const songTitle = args.join(' ') ? args.join(' ') : player.queue.current.title

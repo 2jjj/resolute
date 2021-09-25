@@ -18,7 +18,7 @@ module.exports = {
     if (!player) {
       const thing = new MessageEmbed()
         .setColor('RED')
-        .setDescription('Eu não estou em um canal de voz!')
+        .setDescription('Não tem nenhuma música tocando atualmente nesse servidor!')
       return message.reply({ embeds: [thing] })
     }
 
