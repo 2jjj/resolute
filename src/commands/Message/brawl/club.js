@@ -18,10 +18,10 @@ module.exports = {
   args: true,
 
   async run(client, message, args, prefix) {
+    if (!args[0]) return
     let members = 0
     let president
     const bestPlayers = []
-    if (!args[0]) return
 
     const res = await fetch(`https://api.brawlstars.com/v1/clubs/${encodeURIComponent(args[0])}`, {
       method: 'GET',

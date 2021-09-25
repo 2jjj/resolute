@@ -18,8 +18,8 @@ module.exports = {
   args: true,
 
   async run(client, message, args, prefix) {
-    let brawlers = 0
     if (!args[0]) return
+    let brawlers = 0
 
     const res = await fetch(`https://api.brawlstars.com/v1/players/${encodeURIComponent(args[0])}`, {
       method: 'GET',
