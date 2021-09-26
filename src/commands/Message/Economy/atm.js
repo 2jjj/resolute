@@ -6,7 +6,7 @@ module.exports = {
   name: 'atm',
   aliases: [],
   cooldown: 1000 * 2,
-  description: 'ATM o comando que mostra seu dinheiro(e o dos outros também)!',
+  description: 'O comando que mostra seu dinheiro(e o dos outros também)!',
   category: 'economia',
   usage: '',
   example: '',
