@@ -26,7 +26,7 @@ module.exports = {
 
       const timeEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você já recebeu sua recompensa diária!\n<:interrogacao:856894534029541376> **|** Colete novamente daqui a **${time.hours} horas ${time.minutes} minutos e ${time.seconds} segundos!**`)
+        .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você já recebeu sua recompensa diária!\n<:outline_event_black_24dp:889218032403120158> **»** Colete novamente daqui a **${time.hours} horas ${time.minutes} minutos e ${time.seconds} segundos!**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
@@ -34,11 +34,11 @@ module.exports = {
         .setTimestamp()
       message.reply({ embeds: [timeEmbed] })
     } else {
-      const time = ms(timeout - (Date.now() - daily))
+      //const time = ms(timeout - (Date.now() - daily))
 
       const moneyEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .addField(`<:outline_check_circle_black_24dp:884962192502423582> **»** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Compre items com** \`${prefix}shop\` **!**`)
+        .addField(`<:outline_check_circle_black_24dp:884962192502423582> **»** Você recebeu **\`${amount}\`** RCoins!`, `<:outline_info_black_24dp:884959629124186172> **» Compre items com** \`${prefix}shop\` **!**`)
         .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
