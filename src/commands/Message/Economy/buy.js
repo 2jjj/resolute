@@ -23,9 +23,8 @@ module.exports = {
 
     if(args[0] == 'iscas') {
       if(args[1]) {
-        let quantidade = args[1];
+        message.reply("Sucesso!")
         db.add(`iscas_${user.id}`, quantidade)
-        console.log(quantidade)
       }  
     } 
   }
