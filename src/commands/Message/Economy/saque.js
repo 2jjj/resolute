@@ -54,7 +54,7 @@ module.exports = {
     };
 
     const embed6 = new Discord.MessageEmbed()
-      .setTitle('🏦 **|** Saque realizado!')
+      .setTitle('<:outline_account_balance_black_24:891832991465218048> **|** Saque realizado!')
       .setColor('RANDOM')
       .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
       .setDescription(`<:ybs_dinheiro:856961057204600833> Você sacou o total de **\`R$${args[0]}\`** Coins!`)
