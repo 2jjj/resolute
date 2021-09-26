@@ -26,7 +26,7 @@ module.exports = {
 
       const timeEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`<:ybs_dinheiro:856961057204600833> **|** Você já recebeu sua recompensa diária!\n<:outline_event_black_24dp:889218032403120158> **»** Colete novamente daqui a **${time.hours} horas ${time.minutes} minutos e ${time.seconds} segundos!**`)
+        .setDescription(`<:outline_info_black_24dp:884959629124186172> **»** Você já recebeu sua recompensa diária!\n<:outline_event_black_24dp:889218032403120158> **»** Colete novamente daqui a **${time.hours} horas ${time.minutes} minutos e ${time.seconds} segundos!**`)
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
