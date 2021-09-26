@@ -46,7 +46,7 @@ module.exports = {
     };
 
     const embed7 = new Discord.MessageEmbed()
-      .setTitle('🏦 | Depósito')
+      .setTitle('<:outline_account_balance_black_24:891832991465218048> | Depósito')
       .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
       .setDescription(`Você depositou **\`R$${args[0]}\`** RCoins!`)
       .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
