@@ -31,7 +31,7 @@ module.exports = {
     const userbal = await db.fetch(`money_${user.id}`)
 
     if (userbal < args[2]) {
-      return message.reply(`💸 **|** ${user} Não tem RCoins suficientes para apostar`)
+      return message.reply(`💸 **|** ${user} Não tem   RCoins suficientes para apostar`)
     }
 
     if (authorbal < args[2]) {
@@ -40,8 +40,7 @@ module.exports = {
 
     if (user == client.user) reply = 'Opa, vamos apostar então!'
     message.reply(reply).then((msg) => {
-      setTimeout(() => msg.react('✅'),
-        1000)
+      setTimeout(() => msg.react('✅'), 1000)
 
       const filterYes = (reaction, usuario) => reaction.emoji.name === '✅' && usuario.id === user.id
       const yesCollector = msg.createReactionCollector(filterYes, {
