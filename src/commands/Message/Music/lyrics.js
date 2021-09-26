@@ -16,18 +16,18 @@ module.exports = {
   permissoes: [],
   async run (client, message, args, prefix) {
 	  try {
-      if (!ksoft) return message.channel.send({ embeds: [new MessageEmbed().setDescription('por enquanto esse comando está desabilitado')] })
+      if (!ksoft) return message.channel.send({ embeds: [new MessageEmbed().setDescription('Por enquanto esse comando está desabilitado')] })
       const player = message.client.manager.get(message.guild.id)
-      if (!args[0] && !player) return message.channel.send({ embeds: [new MessageEmbed().setDescription('Specify a title')] })
+      if (!args[0] && !player) return message.channel.send({ embeds: [new MessageEmbed().setDescription('Especifique um título')] })
       const songTitle = args.join(' ') ? args.join(' ') : player.queue.current.title
-      if (!songTitle) return message.channel.send({ embeds: [new MessageEmbed().setDescription('No music currently playing. Specify a title')] })
+      if (!songTitle) return message.channel.send({ embeds: [new MessageEmbed().setDescription('Não tem nenhuma música tocando atualmente, especifique o titulo.')] })
 
-      const wait = await message.channel.send({ embeds: [new MessageEmbed().setDescription('Searching...')] })
+      const wait = await message.channel.send({ embeds: [new MessageEmbed().setDescription('Procurando...')] })
       let err
       const lyrics = await ksoft.lyrics.get(songTitle).catch(x => {
         if (!wait.deleted) { wait.delete() };
         err = 'yes'
-        return message.channel.send({ embeds: [new MessageEmbed().setDescription('No result was found')] })
+        return message.channel.send({ embeds: [new MessageEmbed().setDescription('Nenhum resultado foi encontrado')] })
       })
       if (err == 'yes') return
       const chunked = this.chunkString(lyrics.lyrics, 1600)
@@ -140,5 +140,4 @@ module.exports = {
     }
     return chunks
   }
-
 }
