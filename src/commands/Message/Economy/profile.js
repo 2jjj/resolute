@@ -3,7 +3,7 @@ const db = require('quick.db')
 
 module.exports = {
   name: 'profile',
-  aliases: [],
+  aliases: ['perfil'],
   cooldown: 1000 * 2,
   description: '',
   category: 'economia',
