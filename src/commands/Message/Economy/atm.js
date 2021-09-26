@@ -58,11 +58,11 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setColor('GREEN')
       .setDescription(`\`Informações de ${user.username}:\`` +
-                `\n\n🔍 **| Badges:** ${str_badges}` +
+                `\n\n<:outline_search_black_24dp:887149614266990632> **| Badges:** ${str_badges}` +
                 `\n<:outline_monetization_on_black_24:891830762544971847> **| Coins:** **\`${money}\`**` +
-                `\n:bank: **| Banco:** **\`${bank}\`**` +
-                '\n📝 **| Empresas:** **`2`**' +
-                '\n🔒 **| Trabalho:** **`Programador`**')
+                `\n<:outline_account_balance_black_24:891832991465218048> **| Banco:** **\`${bank}\`**` +
+                '\n<:outline_description_black_24dp:889218032331788308> **| Empresas:** **`2`**' +
+                '\n<:outline_lock_black_24dp:891834584575123457> **| Trabalho:** **`Programador`**')
       .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
         dynamic: true
       }))
