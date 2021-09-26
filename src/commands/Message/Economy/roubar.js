@@ -20,7 +20,7 @@ module.exports = {
     if (!user) return
 
     if (user.id == autor.id) {
-      return message.reply('<:x_:856894534071746600> **|** Você não pode se auto-roubar!')
+      return message.reply('<:outline_clear_black_24dp:884962739007672390> **|** Você não pode se auto-roubar!')
     };
 
     let user_money = await db.fetch(`money_${user.id}`)
