@@ -30,7 +30,7 @@ module.exports = {
         .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
-      // .setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
+      //.setThumbnail(`${message.guild.iconURL({dynamic: true})}`)
         .setTimestamp()
       message.reply({ embeds: [timeEmbed] })
     } else {
