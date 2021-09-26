@@ -59,7 +59,7 @@ module.exports = {
       .setColor('GREEN')
       .setDescription(`\`Informações de ${user.username}:\`` +
                 `\n\n🔍 **| Badges:** ${str_badges}` +
-                `\n<:ybs_dinheiro:856961057204600833> **| Coins:** **\`${money}\`**` +
+                `\n<:outline_monetization_on_black_24:891830762544971847> **| Coins:** **\`${money}\`**` +
                 `\n:bank: **| Banco:** **\`${bank}\`**` +
                 '\n📝 **| Empresas:** **`2`**' +
                 '\n🔒 **| Trabalho:** **`Programador`**')
