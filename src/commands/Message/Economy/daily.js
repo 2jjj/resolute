@@ -38,7 +38,7 @@ module.exports = {
 
       const moneyEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .addField(`<:ybs_dinheiro:856961057204600833> **|** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Compre items com** \`${prefix}shop\` **!**`)
+        .addField(`<:outline_check_circle_black_24dp:884962192502423582> **»** Você recebeu **\`${amount}\`** RCoins!`, `<:setaaa:860626769089265665> **| Compre items com** \`${prefix}shop\` **!**`)
         .setFooter(`Requisitado por ${message.author.username}`, message.author.displayAvatarURL({
           dynamic: true
         }))
