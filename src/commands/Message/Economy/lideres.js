@@ -18,7 +18,7 @@ module.exports = {
       const noEmbed = new Discord.MessageEmbed()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL())
         .setColor('#ff58c3')
-        .setFooter('Ninguém')
+        .setDescription('Ninguém')
       return message.reply({ embeds: [noEmbed] })
     };
 
@@ -27,15 +27,17 @@ module.exports = {
     for (const i in money) {
       if (money[i].data === null) money[i].data = 0
       const user = client.users.cache.get(money[i].ID.split('_')[2])
-      finalLb += `<:setaaa:860626769089265665> **${money.indexOf(money[i]) + 1}. ${client.users.cache.get(money[i].ID.split('_')[1]) ? client.users.cache.get(money[i].ID.split('_')[1]).tag : `${user}`}** - **${money[i].data} RCoins**\n`
+      finalLb += `**»** **${money.indexOf(money[i]) + 1}. ${client.users.cache.get(money[i].ID.split('_')[1]) ? client.users.cache.get(money[i].ID.split('_')[1]).tag : `${user}`}** - \`[${money[i].data} RCoins]\`\n`
     };
     let bal = db.fetch(`money_${message.author.id}`)
     if (bal === null) bal = '0'
     const embed = new Discord.MessageEmbed()
-      .setTitle('<:ybs_status:856961057083621377> **|** Rank Global - Top 20 pessoas com mais RCoins')
+      .setTitle('<:outline_info_black_24dp:884959629124186172> **»** Rank Global - Top 20 pessoas com mais RCoins')
       .setColor('#ff58c3')
       .setDescription(finalLb)
-      .setFooter(`Seu dinheiro » ${bal}RCoins!`, client.user.displayAvatarURL())
+      .setFooter(`Seu dinheiro » ${bal} RCoins!`, message.author.displayAvatarURL({
+        dynamic: true
+      }))
       .setTimestamp()
     message.reply({ embeds: [embed] })
   }
