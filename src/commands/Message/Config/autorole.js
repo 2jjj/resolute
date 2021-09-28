@@ -22,14 +22,14 @@ module.exports = {
 
 		if (!args[0]) {
 			let embed = new Discord.MessageEmbed()
-			.setTitle(`:outline_search_black_24dp: | Menu de ajuda - \`autorole\``)
+			.setTitle(`<:outline_search_black_24dp:887149614266990632> | Menu de ajuda - \`autorole\``)
 			.setColor("RANDOM")
 			.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
 			.setDescription(`${module.exports.description}`)
 			.addField(`:bulb: Modos de Uso:`, ` \`${prefix}autorole <set/desligar> <@cargo>\``)
 			.addField(`:thinking: Exemplo:`, ` \`${prefix}autorole set @Membros\n${prefix}autorole desligar @Membros\``)
 			.addField(`🔹 Aliases:`, ` \`${module.exports.aliases.length !== 0 ? `${module.exports.aliases}` : `Sem sinonimos para este comando.` }\``)
-			.addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes[0, 1] !== undefined ? `${module.exports.permissoes[1]}` : `Não é necessário nenhuma permissão!` }\``)
+			.addField(`🔹 Permissões necessárias:`, ` \`${module.exports.permissoes.bot[0, 1] !== undefined ? `${module.exports.permissoes.bot[1]}` : `Não é necessário nenhuma permissão!` }\``)
 			.setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
 				dynamic: true
 			}))

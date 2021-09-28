@@ -25,16 +25,16 @@ module.exports = {
         .setTitle(c.name)
         .setColor('#2F3136')
         .setThumbnail(c.flag)
-        .addField('Nome:', c.name, true)
-        .addField('Capital:', c.capital, true)
-        .addField('Dominio:', c.domain, true)
-        .addField('Região:', c.region, true)
-        .addField('População:', c.population, true)
-        .addField('Área:', c.area, true)
+        .addField('Nome:', " " + c.name, true)
+        .addField('Capital:', " " + c.capital, true)
+        .addField('Dominio:', " " + c.domain, true)
+        .addField('Região:', " " + c.region, true)
+        .addField('População:', " " + c.population, true)
+        .addField('Área:', " " + c.area, true)
         .addField('Moeda:', `${c.currency.name} (${c.currency.short})\nSimbolo: ${c.currency.symbol}`)
       message.reply({ embeds: [embed] })
     } catch (e) {
-      message.inlineReply('Não encontrei esse pais!')
+      message.reply('Não encontrei esse pais!')
     }
   }
 }
