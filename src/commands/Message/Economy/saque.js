@@ -57,7 +57,7 @@ module.exports = {
       .setTitle('<:outline_account_balance_black_24:891832991465218048> **|** Saque realizado!')
       .setColor('RANDOM')
       .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
-      .setDescription(`<:ybs_dinheiro:856961057204600833> Você sacou o total de **\`R$${args[0]}\`** Coins!`)
+      .setDescription(`Você sacou o total de **\`R$${args[0]}\`** RCoins!`)
       .setFooter(`Requisitado por: ${message.author.username}`, message.author.displayAvatarURL({
         dynamic: true
       }))
