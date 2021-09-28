@@ -19,7 +19,6 @@ module.exports = {
 
     const user = message.mentions.users.first() || message.author
 
-
     const userFlags = user.flags.toArray()
 
     if (member.permissions.has('KICK_MEMBERS')) {

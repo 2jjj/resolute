@@ -18,6 +18,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useNewUrlParser: true
 }).then(console.log('MongoDB conectado com sucesso!'))
 
+var cor = "#2F3136"
 client.commands = new Collection()
 client.slashCommands = new Collection()
 client.config = require('./src/config/config.json')
@@ -29,6 +30,7 @@ client.commands = new Collection()
 client.categories = readdirSync('./src/commands/Message/')
 client.logger = require('./src/util/logger.js')
 client.emoji = require('./src/util/emoji.json')
+client.cor = cor
 
 require('./src/handler/index')(client).then(console.log('Carreguei os comandos'))
 require('./src/handler/events')(client).then(console.log('Carreguei os eventos'))
