@@ -13,8 +13,8 @@ module.exports = {
   args: false,
 
   async run (client, message, args) {
-    const user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member
     if(!args[0]) return;
+    const user = client.users.cache.get(args[0]) || message.mentions.users.first() || message.author || message.member
 
     if(args[0] == 'varinha') {
       db.add(`varinhas_${user.id}`, 1)
