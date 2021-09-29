@@ -75,6 +75,6 @@ module.exports = {
 					**Braws desbloqueados**
 					\`${brawlers}\`
 					`)
-    return message.channel.send({ embeds: [embed] })
+    return message.reply({ embeds: [embed] })
   }
 }

@@ -76,7 +76,6 @@ module.exports = {
                 \`${json.type.charAt(0).toUpperCase() + json.type.slice(1)}\`
                 **Membros**
                 \`${members}/100\`
-                
                 `
       )
       .addFields([
@@ -88,6 +87,6 @@ module.exports = {
 					}`
         }
       ])
-    return message.channel.send({ embeds: [embed] })
+    return message.reply({ embeds: [embed] })
   }
 }
