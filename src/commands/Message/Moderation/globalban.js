@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports = {
-  name: 'globalban',
+  name: 'banid',
   description: 'Banir um usuário por ID permanentemente de seu servidor.',
   cooldown: 1000 * 2,
   aliases: ['globalban'],
