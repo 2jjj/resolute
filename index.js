@@ -24,13 +24,12 @@ client.slashCommands = new Collection()
 client.config = require('./src/config/config.json')
 client.owner = client.config.ownerID
 client.prefix = client.config.prefix
-client.embedColor = client.config.embedColor
+client.embedColor = cor
 client.aliases = new Collection()
 client.commands = new Collection()
 client.categories = readdirSync('./src/commands/Message/')
 client.logger = require('./src/util/logger.js')
 client.emoji = require('./src/util/emoji.json')
-client.cor = cor
 
 require('./src/handler/index')(client).then(console.log('Carreguei os comandos'))
 require('./src/handler/events')(client).then(console.log('Carreguei os eventos'))
