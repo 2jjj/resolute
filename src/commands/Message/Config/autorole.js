@@ -46,8 +46,8 @@ module.exports = {
 			const confirma = new Discord.MessageEmbed()
 				.setTitle("Autorole ativado!")
 				.setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-				.addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-				.addField(`Cargo:`, `ﾠ<:setaaa:860626769089265665> ${cargo_autorole}`)
+				.addField(`Autor:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+				.addField(`Cargo:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${cargo_autorole}`)
 				.setFooter("Resolute - Autorole", message.author.displayAvatarURL())
 				.setTimestamp();
 			message.reply({ embeds: [confirma] });
@@ -60,14 +60,14 @@ module.exports = {
             db.delete(`autorole_${message.guild.id}`, cargo_autorole.id);
             db.delete(`autorole_config_${message.guild.id}`, true)
 
-            const confirma = new Discord.MessageEmbed()
+            const confirma2 = new Discord.MessageEmbed()
                 .setTitle("Autorole desativado!")
                 .setThumbnail(`${message.author.displayAvatarURL({dynamic: true})}`)
-                .addField(`Autor:`, `ﾠ<:setaaa:860626769089265665> ${message.author} | \`${message.author.id}\``)
-                .addField(`Cargo:`, `ﾠ<:setaaa:860626769089265665> ${cargo_autorole}`)
+                .addField(`Autor:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${message.author} | \`${message.author.id}\``)
+                .addField(`Cargo:`, `ﾠ<:outline_arrow_right_alt_black_24:884959628973178910> ${cargo_autorole}`)
                 .setFooter("Resolute - Autorole", message.author.displayAvatarURL())
                 .setTimestamp();
-            message.reply({ embeds: [confirma] });
+            message.reply({ embeds: [confirma2] });
         }
 	}
 }
