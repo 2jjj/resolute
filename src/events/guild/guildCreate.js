@@ -9,10 +9,12 @@ module.exports = async (client, guild) => {
       if (err) return console.log(err)
     })
 
+    /*
+
     const channel = client.channels.cache.get(logs.entradas)
     const webhooks = await channel.fetchWebhooks()
     const webhook = webhooks.first()
-    const dono = await guild.fetchOwner()
+    const dono = await guild.fetchOwner() */
 
     const embed = new Discord.MessageEmbed()
       .setColor(ee.color)
@@ -25,7 +27,7 @@ module.exports = async (client, guild) => {
       .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
       .setFooter(ee.footertext, ee.footericon)
       .setTimestamp()
-    await webhook.send({ embeds: [embed] })
+    //await webhook.send({ embeds: [embed] })
   } catch (e) {
     console.log(e)
   }

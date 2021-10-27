@@ -9,10 +9,12 @@ module.exports = async (client, guild, message) => {
       if (err) return console.log(err)
     })
 
+    /*
     const channel = client.channels.cache.get(logs.saidas)
     const webhooks = await channel.fetchWebhooks()
     const webhook = webhooks.first()
-    
+    */
+
     const embed = new Discord.MessageEmbed()
       .setColor(ee.color)
       .setTitle('<:outline_remove_black_24dp:887149613864329228> Sai de um servidor')
@@ -24,7 +26,7 @@ module.exports = async (client, guild, message) => {
       .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
       .setFooter(ee.footertext, ee.footerico)
       .setTimestamp()
-    await webhook.send({ embeds: [embed] })
+    //await webhook.send({ embeds: [embed] })
   } catch (e) {
     console.log(e)
   }
