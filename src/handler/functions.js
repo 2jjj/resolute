@@ -1,3 +1,5 @@
+//functions
+
 module.exports = {
   getMember: function (message, toFind = "") {
     try {
