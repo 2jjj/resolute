@@ -7,7 +7,7 @@ module.exports = {
   aliases: ['p', 'tocar', 'plays'],
   description: 'Faça eu tocar uma música do Youtube, Soundcloud e Spotify!',
   args: true,
-  usage: '<YouTube URL | Nome | Spotify URL>',
+  usage: '<SoundCloud URL | Nome | Spotify URL>',
   example: 'Bobby Vinton Mr Lonely',
   permissoes: [],
   player: false,

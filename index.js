@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
 
 var cor = "#2F3136"
 client.commands = new Collection()
-client.slashCommands = new Collection()
+client.slashCommands = new Collection() 
 client.config = require('./src/config/config.json')
 client.owner = client.config.ownerID
 client.prefix = client.config.prefix
