@@ -5,6 +5,6 @@ const manager = new ShardingManager('./index.js', {
     token: config.token
 })
 
-manager.on('shardCreate', shard => console.log(`[SHARDS] - INICIANDO A SHARD ${shard.id}`))
+manager.on('shardCreate', shard => console.log(`[Shard Controller] - INICIANDO A SHARD ${shard.id}`))
 
 manager.spawn()
