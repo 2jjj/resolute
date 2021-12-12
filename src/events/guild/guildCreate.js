@@ -21,7 +21,6 @@ module.exports = async (client, guild) => {
       .setTitle('<:outline_add_black_24dp:884959502577844244> Novo servidor!')
       .addField('**Servidor**', ' ' + guild.name, true)
       .addField('**Server ID**', ' ' + guild.id, true)
-      .addField('**Dono**', ' ' + `${dono.user.username}#${dono.user.discriminator}(${dono})`)
       .addField('**Total de membros**', ' ' + guild.memberCount, true)
       .setThumbnail(guild.iconURL({ dynamic: true }))
       .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
