@@ -26,6 +26,8 @@ module.exports = async (client, guild) => {
       .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
       .setFooter(ee.footertext, ee.footericon)
       .setTimestamp()
+    //debug
+    console.log(embed)
     //await webhook.send({ embeds: [embed] })
   } catch (e) {
     console.log(e)
