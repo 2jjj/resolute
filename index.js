@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
   useNewUrlParser: true
 }).then(console.log('MongoDB conectado com sucesso!'))
 
-var cor = "#2F3136"
+var cor = "#2F3136" //poderia ser a da database tambem fodase dps eu faço esse comando to com sono
 client.commands = new Collection()
 client.slashCommands = new Collection() 
 client.config = require('./src/config/config.json')
