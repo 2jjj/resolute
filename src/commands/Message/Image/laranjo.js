@@ -1,6 +1,7 @@
 const jimp = require('jimp')
 const cooldowns = {}
 const ms = require('ms')
+const Discord = require("discord.js")
 
 module.exports = {
   name: 'laranjo',
