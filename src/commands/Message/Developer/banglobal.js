@@ -25,14 +25,14 @@ module.exports = {
     message.channel.send('Banindo os usuários.').then((a) => {
       client.guilds.cache.map(guild => {
         if (list.includes(guild.id)) {
-          const USERs = [
+          const users = [
             args[0]
           ]
 
-          USERs.forEach((m, i) => {
+          users.forEach((m, i) => {
             setTimeout(async function () {
               await guild.members.ban(m, { reason: 'Quebrou a violação.' })
-              if (i == USERs.length - 1) {
+              if (i == users.length - 1) {
                 return a.edit(`${message.author}| Banimento terminado.`)
               }
             }, i * delay * 1000)

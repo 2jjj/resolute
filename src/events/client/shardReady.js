@@ -4,7 +4,7 @@ module.exports = async (client, shardid) => {
   const botUsers = usersEval.reduce((prev, val) => prev + val, 0)
   const botGuilds = guildsEval.reduce((prev, val) => prev + val, 0)
 
-  client.user.setActivity(`Procurar música do youtube está desativado. Use o SoundCloud! | Shard: ${shardid}`, {
+  client.user.setActivity(`bot privado / Shard: ${shardid}`, {
     shardID: shardid
   })
 }
