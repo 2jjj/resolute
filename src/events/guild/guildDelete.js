@@ -20,7 +20,6 @@ module.exports = async (client, guild, message) => {
       .setTitle('<:outline_remove_black_24dp:887149613864329228> Sai de um servidor')
       .addField('**Servidor**', ' ' + guild.name, true)
       .addField('**Servidor ID**', ' ' + guild.id, true)
-      //.addField('**Fundador**', `${owner.user}(${owner})`)
       .addField('**Membros**', ' ' + guild.memberCount, true)
       .setThumbnail(guild.iconURL({ dynamic: true }))
       .setImage(guild.bannerURL({ dynamic: true, size: 1024 }))
