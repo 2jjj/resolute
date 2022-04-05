@@ -17,8 +17,8 @@ if(cluster.isMaster) {
     });
 
     cluster.on('exit', function(worker, code, signal) {
-        console.log(`[LOGS] - [CLUSTER] Worker  ${worker.process.pid} died with code: ${code}, and signal: ${signal}`.rainbow);
-        console.log('[LOGS] - [CLUSTER] Starting a new worker'.rainbow);
+        console.log(`[LOGS] - [CLUSTER] Worker  ${worker.process.pid} morreu / code: ${code}, signal: ${signal}`.rainbow);
+        console.log('[LOGS] - [CLUSTER] Iniciando um novo worker'.rainbow);
         cluster.fork();
     });
 }
