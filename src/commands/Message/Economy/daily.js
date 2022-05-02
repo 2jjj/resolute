@@ -24,6 +24,7 @@ module.exports = {
     if (daily !== null && timeout - (Date.now() - daily) > 0) {
       const time = ms(timeout - (Date.now() - daily))
 
+      
       const timeEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setDescription(`<:outline_info_black_24dp:884959629124186172> **»** Você já recebeu sua recompensa diária!\n<:outline_event_black_24dp:889218032403120158> **»** Colete novamente daqui a **${time.hours} horas ${time.minutes} minutos e ${time.seconds} segundos!**`)
