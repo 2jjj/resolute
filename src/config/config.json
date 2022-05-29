@@ -1,23 +1,23 @@
 {
-  "token": "ODY4ODcxNzIxNDA5NzM2Nzc0.YP192Q._kS8bXauXOkYjOHc6cVa_j1MTfs",
-  "prefix": "s.",
-  "spray": "Spray#7725",
-  "topgg_token": "",
-  "shards": 1,
-  "SpotifyID": "813dc7661aa248f29374df18bbb903e5",
-  "SpotifySecret": "62d796ebb5e44d31a011a17cd9879457",
-  "ownerID": "836345581424738354",
-  "embedColor": "#303236",
-  "mongourl": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db",
-  "quickmongo": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/database?retryWrites=true&w=majority",
-  "ksoftapi": "",
-
-  "nodes": [
-    {
-      "host": "lavalink-repl-2.spray777.repl.co",
-      "port": 443,
-      "password": "spraylavalink",
-      "secure": true
-    }
-  ]
-}
+    "token": "ODY4ODcxNzIxNDA5NzM2Nzc0.YP192Q._kS8bXauXOkYjOHc6cVa_j1MTfs",
+    "prefix": "s.",
+    "spray": "Spray#7725",
+    "topgg_token": "",
+    "shards": 1,
+    "SpotifyID": "813dc7661aa248f29374df18bbb903e5",
+    "SpotifySecret": "62d796ebb5e44d31a011a17cd9879457",
+    "ownerID": "836345581424738354",
+    "embedColor": "#303236",
+    "mongourl": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db",
+    "quickmongo": "mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/database?retryWrites=true&w=majority",
+    "ksoftapi": "",
+  
+    "nodes": [
+      {
+        "host": "lavalink-repl-2.spray777.repl.co",
+        "port": 443,
+        "password": "spraylavalink",
+        "secure": true
+      }
+    ]
+  }
