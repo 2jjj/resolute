@@ -1,36 +1,73 @@
-const { Client, Collection } = require('discord.js')
-require('colors')
-const { readdirSync } = require('fs')
-const mongoose = require('mongoose')
+const Discord = require("discord.js"); 
+const client = new Discord.Client({intents: 32767});
+const config = require("./config.json"); 
+const db = require("quick.db");
 
-const client = new Client({
-  intents: ['GUILDS', 'GUILD_INVITES', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES'],
-  allowedMentions: {
-    parse: ['everyone', 'roles', 'users'],
-    repliedUser: true
-  },
-  partials: ['CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION', 'USER']
+client.login(config.token); 
+
+client.once('ready', async () => {
+
+    console.log("✅ - Logado em "+client.user.username+" com sucesso!")
+
 })
-module.exports = client
 
-mongoose.connect('mongodb+srv://spray:spray@cluster0.u1wmc.mongodb.net/db', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-}).then(console.log('MongoDB conectado com sucesso!'))
+module.exports = client;
+client.commands = new Discord.Collection();
+client.slashCommands = new Discord.Collection();
+client.config = require("./config.json");
+require("./handler")(client);
+const { glob } = require("glob");
+const { promisify } = require("util");
 
-var cor = "#2F3136" // cor da embed
-client.commands = new Collection()
-client.slashCommands = new Collection() 
-client.config = require('./src/config/config.json')
-client.owner = client.config.ownerID
-client.prefix = client.config.prefix
-client.embedColor = cor
-client.aliases = new Collection()
-client.commands = new Collection()
-client.categories = readdirSync('./src/commands/Message/')
-client.logger = require('./src/util/logger.js')
-client.emoji = require('./src/util/emoji.json')
+const globPromise = promisify(glob);
 
-require('./src/handler/index')(client).then(console.log('Carreguei os comandos'))
+client.on("guildMemberAdd", (member) => {
+  let id = db.get(`contador_${member.guild.id}`);
+  let canal = member.guild.channels.cache.get(id);
+  if (!canal) return;
 
-client.login(client.config.token)
+  let membros = member.guild.memberCount;
+  canal.setName(`👥 Membros: ${membros}`)
+})
+client.on("guildMemberRemove", (member) => {
+  let id = db.get(`contador_${member.guild.id}`);
+  let canal = member.guild.channels.cache.get(id);
+  if (!canal) return;
+
+  let membros = member.guild.memberCount;
+  canal.setName(`👥 Membros: ${membros}`)
+})
+
+client.on("interactionCreate", async (interaction) => {
+
+    if (!interaction.guild) return;
+  
+    if (interaction.isCommand()) {
+
+        const cmd = client.slashCommands.get(interaction.commandName);
+
+        if (!cmd)
+            return;
+
+        const args = [];
+
+        for (let option of interaction.options.data) {
+
+            if (option.type === "SUB_COMMAND") {
+                if (option.name) args.push(option.name);
+                option.options?.forEach((x) => {
+                    if (x.value) args.push(x.value);
+                });
+            } else if (option.value) args.push(option.value);
+        }
+
+        cmd.run(client, interaction, args);
+    }
+
+    if (interaction.isContextMenu()) {
+        await interaction.deferReply({ ephemeral: false });
+        const command = client.slashCommands.get(interaction.commandName);
+        if (command) command.run(client, interaction);
+        
+    }
+});
