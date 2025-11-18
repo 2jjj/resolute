@@ -1,0 +1,76 @@
+{
+  "msg": {
+    
+    "check" : "<:v_:856894534184468480>",
+    
+    "ERROR" : "<:error:876542134411493466>",
+    "SUCCESS" : "<:sucess:876542133996257303>",
+
+    "disabled" : "<:offfzz:868635422086013018>",
+    "enabled" : "<:onnnzz:868635422153121822>",
+
+    "progress_bar": {
+      "leftindicator": "[",
+      "rightindicator": "]",
+
+      "emptyframe": "⬜",
+      "filledframe": "🟧"
+    },
+
+    "playing": "🎶",
+    "pruning": "💬",
+    "equalizer": "  ",
+    "cleared": "🗑",
+    "leave_on_empty": "🗣️",
+    "time": "⌛",
+    "premium": "💰",
+    "song_by": "💯",
+    "setup": "⚙️",
+    "dj": "🎧",
+    "bot": "🤖",
+    "search": "🔎",
+    "resume": "▶",
+    "pause": "⏸",
+    "lyrics": "📃",
+    "disk": "📀",
+    "ping": "🏓",
+
+    "rewind": "⏪",
+    "forward": "⏩",
+    "pause_resume": "⏯️",
+    "stop": "⏹️",
+    "previous_track": "⏮️",
+    "skip_track": "⏭️",
+    "replay_track": "🔃",
+    "reduce_volume": "🔉",
+    "raise_volume": "🔊",
+    "toggle_mute": "🔇",
+    "repeat_mode": "🔄",
+    "autoplay_mode": "♾",
+    "shuffle": "🔀",
+    "show_queue": "📑",
+    "show_current_track": "🩸"
+  },
+  "react": {
+
+    "ERROR" : "❌",
+    "SUCCESS" : "✅",
+
+    "rewind": "⏪",
+    "forward": "⏩",
+    "pause_resume": "⏯️",
+    "stop": "⏹️",
+    "previous_track": "⏮️",
+    "skip_track": "⏭️",
+    "replay_track": "🔃",
+    "reduce_volume": "🔉",
+    "raise_volume": "🔊",
+    "toggle_mute": "🔇",
+    "repeat_mode": "🔄",
+    "autoplay_mode": "♾",
+    "shuffle": "🔀",
+    "show_queue": "📑",
+    "show_current_track": "🩸"
+  }
+
+}
