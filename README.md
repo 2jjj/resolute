@@ -1,4 +1,4 @@
 configure `config.json`
 
-```npm i```
+```npm i``` <br>
 ```node clusters```
